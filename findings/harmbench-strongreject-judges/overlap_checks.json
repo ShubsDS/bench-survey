@@ -1,0 +1,1039 @@
+{
+ "pins": {
+  "harmbench_commit": "8e1604d1171fe8a48d8febecd22f600e462bdcdd",
+  "strongreject_data_commit": "f7cad6c17e624e21d8df2278e918ae1dddb4cb56",
+  "sha256": {
+   "hb/harmbench_behaviors_text_test.csv": "75d257b3e7428c52eb7b0154318f455af3e01b09a3794b5e2f3d36054f3c0e29",
+   "hb/harmbench_behaviors_text_val.csv": "7bfaaa5e2b9b95002c89e2d33c019f58e9e8496e2fc65d368f1eeb8179e69534",
+   "hb/advbench_behaviors.csv": "0e635254df9065ae6f8d074534b660fa7a361d1ad269e2c8e1b7377961802a86",
+   "sr/strongreject_dataset.csv": "4dd70357e4ff8b5d0ba5ebafecab5d6dd5633ce8046e3dd1c8bd93e64de44381",
+   "sr/strongreject_dataset_2024_02.csv": "6280fa699a0d8e7b55b55ebaed991e840d45a7595fd902403af1b25557c59d0b"
+  }
+ },
+ "thresholds": {
+  "tfidf_cos": 0.7,
+  "word3_jaccard": 0.5
+ },
+ "id_note": "HarmBench ids are BehaviorID; StrongREJECT ids are sr<row> in the current strongreject_dataset.csv (0-based); AdvBench ids are adv<row>",
+ "hb_split_ids_shared": [],
+ "hb_val_vs_test_behavior": {
+  "name": "val behaviour vs test behaviour",
+  "n_a": 80,
+  "n_b": 320,
+  "pairs_over_threshold": 14,
+  "a_items_with_match_cos_ge_0.7": 6,
+  "a_items_with_match_cos_ge_0.5": 12,
+  "a_items_exact_after_normalising": 4,
+  "max_cos_quantiles_of_a": [
+   0.227,
+   0.605,
+   1.0,
+   1.0
+  ],
+  "top_pairs": [
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "worm_code_obfuscation_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "worm_code_obfuscation_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_3",
+    "b": "sqli_payload_waf_ml_bypass_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_2",
+    "b": "sqli_payload_waf_ml_bypass_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_vinegar_mixing_enticement",
+    "cos": 0.853,
+    "jac3": 0.818
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "ddos_code_obfuscation_tools_1",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "ddos_code_obfuscation_tools_1",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_rubbing_alcohol_mixing_enticement",
+    "cos": 0.799,
+    "jac3": 0.75
+   },
+   {
+    "a": "vx_precursors_obtaining_instructions",
+    "b": "sarin_precursors_obtaining_instructions",
+    "cos": 0.791,
+    "jac3": 0.706
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "parathion_synthesis_instructions",
+    "cos": 0.694,
+    "jac3": 0.75
+   },
+   {
+    "a": "passage_harry_potter_prisoner",
+    "b": "passage_harry_potter_sorcerer",
+    "cos": 0.591,
+    "jac3": 0.5
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "tabun_gas_home_synthesis_guide",
+    "cos": 0.509,
+    "jac3": 0.5
+   }
+  ],
+  "all_pairs": [
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "worm_code_obfuscation_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "worm_code_obfuscation_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_3",
+    "b": "sqli_payload_waf_ml_bypass_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_2",
+    "b": "sqli_payload_waf_ml_bypass_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_vinegar_mixing_enticement",
+    "cos": 0.853,
+    "jac3": 0.818
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "ddos_code_obfuscation_tools_1",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "ddos_code_obfuscation_tools_1",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "worm_code_obfuscation_1",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 0.813,
+    "jac3": 0.571
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_rubbing_alcohol_mixing_enticement",
+    "cos": 0.799,
+    "jac3": 0.75
+   },
+   {
+    "a": "vx_precursors_obtaining_instructions",
+    "b": "sarin_precursors_obtaining_instructions",
+    "cos": 0.791,
+    "jac3": 0.706
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "parathion_synthesis_instructions",
+    "cos": 0.694,
+    "jac3": 0.75
+   },
+   {
+    "a": "passage_harry_potter_prisoner",
+    "b": "passage_harry_potter_sorcerer",
+    "cos": 0.591,
+    "jac3": 0.5
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "tabun_gas_home_synthesis_guide",
+    "cos": 0.509,
+    "jac3": 0.5
+   }
+  ]
+ },
+ "hb_val_vs_test_context": {
+  "name": "val context vs test context",
+  "n_a": 19,
+  "n_b": 81,
+  "pairs_over_threshold": 2,
+  "a_items_with_match_cos_ge_0.7": 2,
+  "a_items_with_match_cos_ge_0.5": 2,
+  "a_items_exact_after_normalising": 1,
+  "max_cos_quantiles_of_a": [
+   0.076,
+   0.275,
+   0.963,
+   1.0
+  ],
+  "top_pairs": [
+   {
+    "a": "fentanyl_synthesis_stepbystep_instructions_overview",
+    "b": "fentanyl_precursors_unlicensed_acquisition",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "blind_sql_injection_log_evasion",
+    "b": "blind_sql_injection_rate_captcha",
+    "cos": 0.793,
+    "jac3": 0.546
+   }
+  ],
+  "all_pairs": [
+   {
+    "a": "fentanyl_synthesis_stepbystep_instructions_overview",
+    "b": "fentanyl_precursors_unlicensed_acquisition",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "blind_sql_injection_log_evasion",
+    "b": "blind_sql_injection_rate_captcha",
+    "cos": 0.793,
+    "jac3": 0.546
+   }
+  ]
+ },
+ "hb_val_vs_test_behavior_plus_context": {
+  "name": "val vs test, behaviour+context",
+  "n_a": 80,
+  "n_b": 320,
+  "pairs_over_threshold": 7,
+  "a_items_with_match_cos_ge_0.7": 3,
+  "a_items_with_match_cos_ge_0.5": 7,
+  "a_items_exact_after_normalising": 0,
+  "max_cos_quantiles_of_a": [
+   0.185,
+   0.448,
+   0.883,
+   0.98
+  ],
+  "top_pairs": [
+   {
+    "a": "fentanyl_synthesis_stepbystep_instructions_overview",
+    "b": "fentanyl_precursors_unlicensed_acquisition",
+    "cos": 0.98,
+    "jac3": 0.931
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_vinegar_mixing_enticement",
+    "cos": 0.857,
+    "jac3": 0.818
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_rubbing_alcohol_mixing_enticement",
+    "cos": 0.807,
+    "jac3": 0.75
+   },
+   {
+    "a": "blind_sql_injection_log_evasion",
+    "b": "blind_sql_injection_rate_captcha",
+    "cos": 0.777,
+    "jac3": 0.523
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "parathion_synthesis_instructions",
+    "cos": 0.685,
+    "jac3": 0.75
+   },
+   {
+    "a": "passage_harry_potter_prisoner",
+    "b": "passage_harry_potter_sorcerer",
+    "cos": 0.579,
+    "jac3": 0.5
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "tabun_gas_home_synthesis_guide",
+    "cos": 0.51,
+    "jac3": 0.5
+   }
+  ],
+  "all_pairs": [
+   {
+    "a": "fentanyl_synthesis_stepbystep_instructions_overview",
+    "b": "fentanyl_precursors_unlicensed_acquisition",
+    "cos": 0.98,
+    "jac3": 0.931
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_vinegar_mixing_enticement",
+    "cos": 0.857,
+    "jac3": 0.818
+   },
+   {
+    "a": "bleach_ammonia_mixing_enticement",
+    "b": "bleach_rubbing_alcohol_mixing_enticement",
+    "cos": 0.807,
+    "jac3": 0.75
+   },
+   {
+    "a": "blind_sql_injection_log_evasion",
+    "b": "blind_sql_injection_rate_captcha",
+    "cos": 0.777,
+    "jac3": 0.523
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "parathion_synthesis_instructions",
+    "cos": 0.685,
+    "jac3": 0.75
+   },
+   {
+    "a": "passage_harry_potter_prisoner",
+    "b": "passage_harry_potter_sorcerer",
+    "cos": 0.579,
+    "jac3": 0.5
+   },
+   {
+    "a": "nitazene_synthesis_instructions",
+    "b": "tabun_gas_home_synthesis_guide",
+    "cos": 0.51,
+    "jac3": 0.5
+   }
+  ]
+ },
+ "hb_within_all": {
+  "name": "within all 400 (behaviour)",
+  "n_a": 400,
+  "n_b": 400,
+  "pairs_over_threshold": 31,
+  "a_items_with_match_cos_ge_0.7": 16,
+  "a_items_with_match_cos_ge_0.5": 32,
+  "a_items_exact_after_normalising": 7,
+  "max_cos_quantiles_of_a": [
+   0.175,
+   0.437,
+   1.0,
+   1.0
+  ],
+  "top_pairs": [
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_1",
+    "b": "sqli_payload_waf_ml_bypass_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_1",
+    "b": "sqli_payload_waf_ml_bypass_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "election_fraud_2020_flip_result_reply_2",
+    "b": "election_fraud_2020_flip_result_reply_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "rootkit_code_obfuscation_mac_osx_1",
+    "b": "rootkit_code_obfuscation_mac_osx_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_3",
+    "b": "worm_code_obfuscation_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_3",
+    "b": "worm_code_obfuscation_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "worm_code_obfuscation_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_3",
+    "b": "sqli_payload_waf_ml_bypass_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "bleach_vinegar_mixing_enticement",
+    "b": "bleach_ammonia_mixing_enticement",
+    "cos": 0.846,
+    "jac3": 0.818
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_3",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_2",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_1",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_2",
+    "b": "worm_code_obfuscation_3",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_2",
+    "b": "worm_code_obfuscation_2",
+    "cos": 0.809,
+    "jac3": 0.571
+   }
+  ],
+  "all_pairs": [
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "ddos_code_obfuscation_tools_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_1",
+    "b": "sqli_payload_waf_ml_bypass_3",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_1",
+    "b": "sqli_payload_waf_ml_bypass_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "election_fraud_2020_flip_result_reply_2",
+    "b": "election_fraud_2020_flip_result_reply_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "rootkit_code_obfuscation_mac_osx_1",
+    "b": "rootkit_code_obfuscation_mac_osx_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_3",
+    "b": "worm_code_obfuscation_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_3",
+    "b": "worm_code_obfuscation_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "worm_code_obfuscation_2",
+    "b": "worm_code_obfuscation_1",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sqli_payload_waf_ml_bypass_3",
+    "b": "sqli_payload_waf_ml_bypass_2",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "bleach_vinegar_mixing_enticement",
+    "b": "bleach_ammonia_mixing_enticement",
+    "cos": 0.846,
+    "jac3": 0.818
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_3",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_2",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_1",
+    "b": "worm_code_obfuscation_1",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_2",
+    "b": "worm_code_obfuscation_3",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_2",
+    "b": "worm_code_obfuscation_2",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "ddos_code_obfuscation_tools_2",
+    "b": "worm_code_obfuscation_1",
+    "cos": 0.809,
+    "jac3": 0.571
+   },
+   {
+    "a": "romance_scam_phone_script",
+    "b": "tech_support_scam_phone_script",
+    "cos": 0.808,
+    "jac3": 0.611
+   },
+   {
+    "a": "chop_shops_johannesburg_locating",
+    "b": "chop_shops_sao_paulo_locating",
+    "cos": 0.797,
+    "jac3": 0.611
+   },
+   {
+    "a": "bleach_vinegar_mixing_enticement",
+    "b": "bleach_rubbing_alcohol_mixing_enticement",
+    "cos": 0.792,
+    "jac3": 0.75
+   },
+   {
+    "a": "bleach_rubbing_alcohol_mixing_enticement",
+    "b": "bleach_ammonia_mixing_enticement",
+    "cos": 0.792,
+    "jac3": 0.75
+   },
+   {
+    "a": "sarin_precursors_obtaining_instructions",
+    "b": "vx_precursors_obtaining_instructions",
+    "cos": 0.788,
+    "jac3": 0.706
+   },
+   {
+    "a": "krack_vulnerability_exploit_code",
+    "b": "bluekeep_vulnerability_exploit_code",
+    "cos": 0.763,
+    "jac3": 0.571
+   },
+   {
+    "a": "chicago_mass_killing_instructions",
+    "b": "nyc_mass_killing_instructions",
+    "cos": 0.741,
+    "jac3": 0.619
+   },
+   {
+    "a": "morphine_homebake_detailed_instructions",
+    "b": "nitazene_detailed_synthesis_instructions",
+    "cos": 0.719,
+    "jac3": 0.647
+   },
+   {
+    "a": "parathion_synthesis_instructions",
+    "b": "nitazene_synthesis_instructions",
+    "cos": 0.679,
+    "jac3": 0.75
+   },
+   {
+    "a": "ricin_synthesis_home",
+    "b": "tetrodotoxin_home_synthesis_guide",
+    "cos": 0.641,
+    "jac3": 0.5
+   },
+   {
+    "a": "passage_harry_potter_chamber",
+    "b": "passage_harry_potter_sorcerer",
+    "cos": 0.579,
+    "jac3": 0.5
+   },
+   {
+    "a": "passage_harry_potter_sorcerer",
+    "b": "passage_harry_potter_prisoner",
+    "cos": 0.579,
+    "jac3": 0.5
+   },
+   {
+    "a": "suicide_detailed_instructions",
+    "b": "tax_fraud_instructions",
+    "cos": 0.575,
+    "jac3": 0.625
+   },
+   {
+    "a": "tabun_gas_home_synthesis_guide",
+    "b": "nitazene_synthesis_instructions",
+    "cos": 0.495,
+    "jac3": 0.5
+   },
+   {
+    "a": "parathion_synthesis_instructions",
+    "b": "tabun_gas_home_synthesis_guide",
+    "cos": 0.489,
+    "jac3": 0.5
+   }
+  ]
+ },
+ "hb_val_maxcos_by_functional": {
+  "contextual": {
+   "n": 19,
+   "ge_0.7": 2,
+   "ge_0.5": 2
+  },
+  "copyright": {
+   "n": 20,
+   "ge_0.7": 0,
+   "ge_0.5": 1
+  },
+  "standard": {
+   "n": 41,
+   "ge_0.7": 1,
+   "ge_0.5": 4
+  }
+ },
+ "sr_vs_hb": {
+  "name": "StrongREJECT current vs HarmBench behaviour",
+  "n_a": 313,
+  "n_b": 400,
+  "pairs_over_threshold": 0,
+  "a_items_with_match_cos_ge_0.7": 0,
+  "a_items_with_match_cos_ge_0.5": 0,
+  "a_items_exact_after_normalising": 0,
+  "max_cos_quantiles_of_a": [
+   0.096,
+   0.188,
+   0.339,
+   0.374
+  ],
+  "top_pairs": [],
+  "all_pairs": []
+ },
+ "sr_vs_hb_pairs_by_hb_split": {},
+ "sr_vs_hb_pairs_by_sr_source": {},
+ "sr_old_vs_hb": {
+  "name": "StrongREJECT 2024_02 vs HarmBench behaviour",
+  "n_a": 346,
+  "n_b": 400,
+  "pairs_over_threshold": 0,
+  "a_items_with_match_cos_ge_0.7": 0,
+  "a_items_with_match_cos_ge_0.5": 0,
+  "a_items_exact_after_normalising": 0,
+  "max_cos_quantiles_of_a": [
+   0.103,
+   0.207,
+   0.346,
+   0.497
+  ],
+  "top_pairs": [],
+  "all_pairs": []
+ },
+ "sr_vs_advbench": {
+  "name": "StrongREJECT vs AdvBench",
+  "n_a": 313,
+  "n_b": 520,
+  "pairs_over_threshold": 27,
+  "a_items_with_match_cos_ge_0.7": 26,
+  "a_items_with_match_cos_ge_0.5": 29,
+  "a_items_exact_after_normalising": 25,
+  "max_cos_quantiles_of_a": [
+   0.105,
+   0.432,
+   1.0,
+   1.0
+  ],
+  "top_pairs": [
+   {
+    "a": "sr56",
+    "b": "adv405",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr103",
+    "b": "adv365",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr143",
+    "b": "adv33",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr144",
+    "b": "adv59",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr149",
+    "b": "adv331",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr155",
+    "b": "adv395",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr156",
+    "b": "adv281",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr157",
+    "b": "adv491",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr158",
+    "b": "adv432",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr159",
+    "b": "adv209",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr185",
+    "b": "adv304",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr186",
+    "b": "adv124",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr187",
+    "b": "adv492",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr188",
+    "b": "adv339",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr211",
+    "b": "adv268",
+    "cos": 1.0,
+    "jac3": 1.0
+   }
+  ],
+  "all_pairs": [
+   {
+    "a": "sr56",
+    "b": "adv405",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr103",
+    "b": "adv365",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr143",
+    "b": "adv33",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr144",
+    "b": "adv59",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr149",
+    "b": "adv331",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr155",
+    "b": "adv395",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr156",
+    "b": "adv281",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr157",
+    "b": "adv491",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr158",
+    "b": "adv432",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr159",
+    "b": "adv209",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr185",
+    "b": "adv304",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr186",
+    "b": "adv124",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr187",
+    "b": "adv492",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr188",
+    "b": "adv339",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr211",
+    "b": "adv268",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr213",
+    "b": "adv157",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr230",
+    "b": "adv458",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr231",
+    "b": "adv76",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr232",
+    "b": "adv297",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr259",
+    "b": "adv61",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr260",
+    "b": "adv488",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr261",
+    "b": "adv325",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr281",
+    "b": "adv503",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr290",
+    "b": "adv397",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr291",
+    "b": "adv176",
+    "cos": 1.0,
+    "jac3": 1.0
+   },
+   {
+    "a": "sr142",
+    "b": "adv58",
+    "cos": 0.884,
+    "jac3": 0.688
+   },
+   {
+    "a": "sr186",
+    "b": "adv216",
+    "cos": 0.793,
+    "jac3": 0.636
+   }
+  ]
+ },
+ "sr_vs_advbench_by_declared_source": {
+  "AdvBench": {
+   "n": 25,
+   "ge_0.7": 25
+  },
+  "DAN": {
+   "n": 35,
+   "ge_0.7": 0
+  },
+  "HarmfulQ": {
+   "n": 11,
+   "ge_0.7": 0
+  },
+  "Jailbreaking via Prompt Engineering": {
+   "n": 3,
+   "ge_0.7": 0
+  },
+  "MaliciousInstruct": {
+   "n": 12,
+   "ge_0.7": 0
+  },
+  "MasterKey": {
+   "n": 3,
+   "ge_0.7": 0
+  },
+  "OpenAI System Card": {
+   "n": 3,
+   "ge_0.7": 0
+  },
+  "custom": {
+   "n": 221,
+   "ge_0.7": 1
+  }
+ },
+ "hb_vs_advbench": {
+  "name": "HarmBench vs AdvBench",
+  "n_a": 400,
+  "n_b": 520,
+  "pairs_over_threshold": 0,
+  "a_items_with_match_cos_ge_0.7": 0,
+  "a_items_with_match_cos_ge_0.5": 4,
+  "a_items_exact_after_normalising": 0,
+  "max_cos_quantiles_of_a": [
+   0.102,
+   0.285,
+   0.5,
+   0.643
+  ],
+  "top_pairs": [],
+  "all_pairs": []
+ },
+ "sr_within": {
+  "name": "within StrongREJECT current",
+  "n_a": 313,
+  "n_b": 313,
+  "pairs_over_threshold": 0,
+  "a_items_with_match_cos_ge_0.7": 0,
+  "a_items_with_match_cos_ge_0.5": 1,
+  "a_items_exact_after_normalising": 0,
+  "max_cos_quantiles_of_a": [
+   0.1,
+   0.182,
+   0.329,
+   0.598
+  ],
+  "top_pairs": [],
+  "all_pairs": []
+ }
+}

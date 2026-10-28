@@ -1,0 +1,285 @@
+{
+ "pins": {
+  "github_anthropics_evals": "84fcc677e52e1902d696c32cd1a6b663e70d3993",
+  "huggingface_model_written_evals": "d533f626cc321c92175a58ee570aa3cdb87238d1"
+ },
+ "copies": {
+  "sycophancy_on_nlp_survey": {
+   "github_blob": "480ff822079406be617c21979a3848fb29e5c0e2",
+   "github_bytes": 9725180,
+   "hf_blob": "480ff822079406be617c21979a3848fb29e5c0e2",
+   "hf_bytes": 9725180
+  },
+  "sycophancy_on_philpapers2020": {
+   "github_blob": "5525210614d4f26b1732042e7dcb7210d23fe5aa",
+   "github_bytes": 7394600,
+   "hf_blob": "480ff822079406be617c21979a3848fb29e5c0e2",
+   "hf_bytes": 9725180
+  },
+  "sycophancy_on_political_typology_quiz": {
+   "github_blob": "52f57e31aece2d5126c49cc0e5a9a738b7513754",
+   "github_bytes": 7768395,
+   "hf_blob": "52f57e31aece2d5126c49cc0e5a9a738b7513754",
+   "hf_bytes": 7768395
+  }
+ },
+ "files": {
+  "sycophancy_on_nlp_survey": {
+   "rows": 9984,
+   "exact_duplicate_questions": 0,
+   "matching_key_letters": {
+    "A": 4992,
+    "B": 4992
+   },
+   "n_options": {
+    "2": 9984
+   },
+   "base_questions": 32,
+   "rows_per_base_question": {
+    "312": 32
+   },
+   "distinct_biographies": 9984,
+   "biographies_used_more_than_once": 0,
+   "rows_with_a_reused_biography": 0,
+   "bio_blind_best_per_question": 0.5,
+   "chance_mean_1_over_k": 0.5,
+   "base_questions_with_unbalanced_keys": 0,
+   "always_A": 0.5,
+   "always_B": 0.5,
+   "rule_option_word_overlap": 0.8457,
+   "always_Agree": 0.5,
+   "rule_disagree_word": 0.8498,
+   "explicit_meta_statement_rows": 4531,
+   "explicit_meta_statement_against_key": 12,
+   "explicit_meta_statement_against_key_lines": [
+    28,
+    118,
+    962,
+    1051,
+    2623,
+    4202,
+    4207,
+    4993,
+    4996,
+    5075,
+    5137,
+    6012
+   ],
+   "pr3_lines": [
+    28,
+    84,
+    118,
+    962,
+    1051,
+    2623,
+    4202,
+    4207,
+    4993,
+    4996,
+    5117,
+    5137,
+    6012
+   ],
+   "against_key_found_here_not_in_pr3": [
+    5075
+   ],
+   "pr3_lines_not_found_by_this_regex": [
+    84,
+    5117
+   ],
+   "union_known_inverted": 14
+  },
+  "sycophancy_on_philpapers2020": {
+   "rows": 9867,
+   "exact_duplicate_questions": 0,
+   "matching_key_letters": {
+    "A": 3597,
+    "B": 3597,
+    "C": 1584,
+    "D": 660,
+    "E": 330,
+    "F": 66,
+    "G": 33
+   },
+   "n_options": {
+    "2": 4026,
+    "3": 2772,
+    "4": 1320,
+    "5": 1320,
+    "6": 198,
+    "7": 231
+   },
+   "base_questions": 109,
+   "rows_per_base_question": {
+    "66": 61,
+    "99": 28,
+    "132": 10,
+    "165": 8,
+    "198": 1,
+    "231": 1
+   },
+   "distinct_biographies": 9867,
+   "biographies_used_more_than_once": 0,
+   "rows_with_a_reused_biography": 0,
+   "bio_blind_best_per_question": 0.3645,
+   "chance_mean_1_over_k": 0.3645,
+   "base_questions_with_unbalanced_keys": 0,
+   "always_A": 0.3645,
+   "always_B": 0.3645,
+   "rule_option_word_overlap": 0.6631,
+   "topics_with_split_options": {
+    "Semantic content (which expressions are context-dependent?)": {
+     "minimalism (no more than a few)": 33,
+     "radical contextualism (most": 33,
+     "all)": 33,
+     "moderate contextualism (intermediate)": 33
+    }
+   },
+   "rows_on_split_option_topics": 132
+  },
+  "sycophancy_on_political_typology_quiz": {
+   "rows": 10200,
+   "exact_duplicate_questions": 0,
+   "matching_key_letters": {
+    "A": 5100,
+    "B": 5100
+   },
+   "n_options": {
+    "2": 10200
+   },
+   "base_questions": 17,
+   "rows_per_base_question": {
+    "600": 17
+   },
+   "distinct_biographies": 600,
+   "biographies_used_more_than_once": 600,
+   "rows_with_a_reused_biography": 10200,
+   "bio_blind_best_per_question": 0.5,
+   "chance_mean_1_over_k": 0.5,
+   "base_questions_with_unbalanced_keys": 0,
+   "always_A": 0.5,
+   "always_B": 0.5,
+   "rule_option_word_overlap": 0.5042,
+   "user_affiliation": {
+    "liberal": 5100,
+    "conservative": 5100
+   },
+   "affiliation_word_vs_field": {
+    "conservative|conservative": 5100,
+    "liberal|liberal": 5100
+   },
+   "key_is_function_of_question_and_affiliation": true,
+   "distinct_question_affiliation_cells": 34
+  }
+ },
+ "hf_philpapers_is_copy_of_hf_nlp_survey": true,
+ "github_philpapers_differs_from_hf": true,
+ "hand_labels": {
+  "hash_mismatches": 0,
+  "sycophancy_on_nlp_survey": {
+   "labels": {
+    "against_key": 2,
+    "ok": 28
+   },
+   "n": 30,
+   "not_ok": 2,
+   "wilson95": [
+    0.018,
+    0.213
+   ],
+   "against_key": 2,
+   "wilson95_against": [
+    0.018,
+    0.213
+   ]
+  },
+  "sycophancy_on_philpapers2020": {
+   "labels": {
+    "ok": 28,
+    "ambiguous": 1,
+    "malformed": 1
+   },
+   "n": 30,
+   "not_ok": 2,
+   "wilson95": [
+    0.018,
+    0.213
+   ],
+   "against_key": 0,
+   "wilson95_against": [
+    0,
+    0.114
+   ]
+  }
+ },
+ "hand_label_sample_lines": {
+  "sycophancy_on_nlp_survey": [
+   84,
+   107,
+   364,
+   586,
+   812,
+   839,
+   1078,
+   1623,
+   1782,
+   2062,
+   2623,
+   2815,
+   2893,
+   3070,
+   3454,
+   4051,
+   4638,
+   5299,
+   5361,
+   5523,
+   5550,
+   5741,
+   6388,
+   6569,
+   7058,
+   9033,
+   9433,
+   9741,
+   9839,
+   9883
+  ],
+  "sycophancy_on_philpapers2020": [
+   99,
+   512,
+   636,
+   1504,
+   2695,
+   2806,
+   3107,
+   3149,
+   3397,
+   4422,
+   4834,
+   4964,
+   5230,
+   5576,
+   5610,
+   5638,
+   5834,
+   5992,
+   6201,
+   6484,
+   7333,
+   7378,
+   7384,
+   7503,
+   7822,
+   8267,
+   8730,
+   8847,
+   9285,
+   9768
+  ]
+ },
+ "hand_labels_are_seeded_sample": {
+  "sycophancy_on_nlp_survey": true,
+  "sycophancy_on_philpapers2020": true
+ }
+}

@@ -1,0 +1,122 @@
+{
+ "pins": {
+  "control_tax_code": "8ecbbec8a75e3777b8cc70cc8a73de6d60c340fd",
+  "control_tax_json_sha256": "e52530f26dc10cdd9ccbaa6536295ae659f6cff7954dacb5a989574df4f3f4ef",
+  "apps_control_arena": "29db28f76042952d56add8671f798280b200744d"
+ },
+ "n_records": 8855,
+ "duplicate_problem_model_keys": 0,
+ "n_problems": 2368,
+ "backdoors_per_problem": {
+  "1": 171,
+  "2": 402,
+  "3": 547,
+  "4": 502,
+  "5": 387,
+  "6": 239,
+  "7": 99,
+  "8": 20,
+  "9": 1
+ },
+ "problems_with_more_than_one_benign_program": 0,
+ "benign_distinct_programs": 2368,
+ "backdoor_equals_its_benign_after_normalising": 0,
+ "backdoors_identical_to_another_attackers_backdoor_same_problem": 72,
+ "groups_of_identical_backdoors": 58,
+ "backdoors_identical_across_different_problems": 5,
+ "edit_size": {
+  "token_sequence_similarity_median": 0.821,
+  "share_similarity_at_least_0.9": 0.3014,
+  "share_similarity_below_0.5": 0.0933,
+  "changed_lines_median": 9,
+  "changed_lines_p90": 39,
+  "by_attacker_similarity_median": {
+   "o3-mini": 0.672,
+   "claude-3.7-sonnet": 0.848,
+   "o1-mini": 0.872,
+   "gpt-4o": 0.872,
+   "gemini-2.0-flash": 0.867,
+   "claude-3.5-haiku": 0.828,
+   "claude-3.7-sonnet-thinking": 0.897,
+   "gpt-4o-mini": 0.883,
+   "gpt-3.5-turbo": 0.908
+  }
+ },
+ "triggers_shared_with_another_attacker_same_problem": 639,
+ "trigger_equals_a_public_test_input": 1,
+ "trigger_equals_a_stored_apps_test_input": 854,
+ "empty_trigger": 0,
+ "label_in_sample_id_seen_by_monitor": false,
+ "release_order_note": "each record holds one benign and one backdoored program for the same problem, so position and id carry no label once the pair is split",
+ "apps_split": "test (apps_utils.prepare_apps_dataset split='test'); ids 0-4467 of 0-4999",
+ "controlarena": {
+  "control_tax_entries": 8855,
+  "records_found_by_problem_and_model": 8855,
+  "statement_identical": 8855,
+  "trigger_identical": 8855,
+  "code_identical": 8304,
+  "code_identical_after_normalising": 8305,
+  "backdoor_works_true": 2842,
+  "backdoor_works_true_by_attacker": {
+   "o3-mini": [
+    758,
+    2261
+   ],
+   "claude-3.7-sonnet": [
+    821,
+    1864
+   ],
+   "o1-mini": [
+    208,
+    1250
+   ],
+   "gpt-4o": [
+    367,
+    1148
+   ],
+   "gemini-2.0-flash": [
+    219,
+    715
+   ],
+   "claude-3.5-haiku": [
+    155,
+    591
+   ],
+   "claude-3.7-sonnet-thinking": [
+    185,
+    517
+   ],
+   "gpt-4o-mini": [
+    92,
+    367
+   ],
+   "gpt-3.5-turbo": [
+    37,
+    142
+   ]
+  },
+  "benign_program_is_solutions_0": 5733,
+  "benign_program_elsewhere_in_solutions": 2141,
+  "benign_program_not_in_published_solutions": 981,
+  "dspy_zip_pairs_backdoor_with_its_own_source": 1950,
+  "dspy_zip_pairs_total": 8813,
+  "build_rewrite_of_backdoor_code": {
+   "unchanged": {
+    "n": 8304,
+    "backdoor_works_true": 2759
+   },
+   "return_in_function_rewritten": {
+    "n": 332,
+    "backdoor_works_true": 19
+   },
+   "nonlocal_rewritten": {
+    "n": 39,
+    "backdoor_works_true": 13
+   },
+   "other_rewrite": {
+    "n": 180,
+    "backdoor_works_true": 51
+   }
+  }
+ }
+}

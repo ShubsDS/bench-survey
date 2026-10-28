@@ -1,0 +1,2429 @@
+{
+ "pins": {
+  "cybench": [
+   "andyzorigin/cybench",
+   "ca483c6443f17a20ba7d6bac3d274859a1721e51"
+  ],
+  "inspect_evals": [
+   "UKGovernmentBEIS/inspect_evals",
+   "e0d554e5deb7cdcbe8b481c225315f2d2600b4a1"
+  ],
+  "glacier": [
+   "LosFuzzys/GlacierCTF2023_writeups",
+   "af41b3be06c86d20585e4c11c4b294659a91a469"
+  ]
+ },
+ "summary": {
+  "tasks_listed": 40,
+  "tasks_present_in_original_repo": 31,
+  "tasks_missing_from_original_repo": [
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/MissingBits",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/SLCG",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/WalkingToTheSeaSide",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/shuffled-aes",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/intro/skilift",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/misc/avatar",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/rev/rpgo",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/rev/sop",
+   "benchmark/LosFuzzys/GlacierCTF2023_writeups/web/GlacierExchange"
+  ],
+  "present_tasks_with_flag_in_a_committed_file": 31,
+  "present_tasks_with_metadata_solution_dir": 31,
+  "present_tasks_with_solution_material_outside_metadata": [
+   "benchmark/project-sekai-ctf/sekaictf-2023/crypto/noisier-crc",
+   "benchmark/project-sekai-ctf/sekaictf-2023/web/chunky",
+   "benchmark/project-sekai-ctf/sekaictf-2023/pwn/network-tools",
+   "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Very Easy] Primary Knowledge",
+   "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Medium] Partial Tenacity",
+   "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Very Easy] Dynastic",
+   "benchmark/hackthebox/cyber-apocalypse-2024/misc/[Medium] Were Pickle Phreaks Revenge",
+   "benchmark/hackthebox/cyber-apocalypse-2024/pwn/[Very Easy] Delulu",
+   "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Easy] Crushing",
+   "benchmark/project-sekai-ctf/sekaictf-2022/crypto/diffecient",
+   "benchmark/project-sekai-ctf/sekaictf-2022/crypto/robust-cbc",
+   "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Hard] Permuted",
+   "benchmark/hackthebox/cyber-apocalypse-2024/web/[Very Easy] Flag Command",
+   "benchmark/hackthebox/cyber-apocalypse-2024/misc/[Easy] Unbreakable",
+   "benchmark/hackthebox/cyber-apocalypse-2024/web/[Medium] LockTalk",
+   "benchmark/project-sekai-ctf/sekaictf-2023/crypto/noisy-crc",
+   "benchmark/project-sekai-ctf/sekaictf-2023/forensics/eval-me",
+   "benchmark/project-sekai-ctf/sekaictf-2022/crypto/failproof"
+  ],
+  "present_tasks_where_agent_files_contain_real_flag": [
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Very Easy] LootStash",
+    [
+     "release/rev_lootstash.zip"
+    ]
+   ]
+  ],
+  "present_tasks_where_agent_files_solution_named": [],
+  "present_tasks_where_agent_gets_a_file_named_flag": [
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/pwn/[Very Easy] Delulu",
+    [
+     "release/pwn_delulu.zip!challenge/flag.txt"
+    ]
+   ]
+  ],
+  "present_tasks_with_init_notes": [
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/pwn/[Very Easy] Delulu",
+    [
+     "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/flag.txt",
+     "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/delulu",
+     "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/glibc/"
+    ]
+   ],
+   [
+    "benchmark/project-sekai-ctf/sekaictf-2023/crypto/randsubware",
+    [
+     "init script runs docker inside the agent container: docker build -t myapp",
+     "init script runs docker inside the agent container: docker run -it -d"
+    ]
+   ],
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Very Easy] LootStash",
+    [
+     "cp from agent dir (derived from an earlier unzip): @TMP@/rev_lootstash/stash"
+    ]
+   ]
+  ],
+  "note_original_prompt": "run_task.py builds the agent prompt from target_host and the tree of the agent dir; metadata hard_prompt is not sent, so the next field matters only to ports that reuse it",
+  "present_tasks_metadata_prompt_names_files_not_given": [
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Medium] Partial Tenacity",
+    [
+     "solve.py"
+    ]
+   ],
+   [
+    "benchmark/project-sekai-ctf/sekaictf-2022/crypto/robust-cbc",
+    [
+     "Dockerfile",
+     "app/",
+     "xinetd"
+    ]
+   ],
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Hard] Permuted",
+    [
+     "Output.txt"
+    ]
+   ],
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/misc/[Easy] Unbreakable",
+    [
+     "flag.txt"
+    ]
+   ],
+   [
+    "benchmark/hackthebox/cyber-apocalypse-2024/web/[Medium] LockTalk",
+    [
+     "127.0.0.1"
+    ]
+   ]
+  ],
+  "present_tasks_no_target_host_and_target_started_in_agent_container": [
+   "benchmark/project-sekai-ctf/sekaictf-2023/crypto/randsubware"
+  ],
+  "inspect_hard_prompt_names_files_not_given": [
+   [
+    "partial_tenacity",
+    [
+     "solve.py"
+    ]
+   ]
+  ],
+  "present_tasks_flag_only_from_missing_module_and_no_server": [
+   "benchmark/project-sekai-ctf/sekaictf-2022/crypto/diffecient",
+   "benchmark/project-sekai-ctf/sekaictf-2023/crypto/randsubware"
+  ],
+  "inspect_hard_prompt_omits_server": [
+   "diffecient",
+   "ezmaze"
+  ],
+  "inspect_challenges": 39,
+  "inspect_challenges_flag_in_public_eval_yaml": 39,
+  "inspect_hard_files_with_flag": [
+   [
+    "lootstash",
+    [
+     "/root/stash"
+    ]
+   ],
+   [
+    "robust_cbc",
+    [
+     "/root/server"
+    ]
+   ]
+  ],
+  "inspect_hard_files_solution_named": [],
+  "inspect_hard_files_missing": [],
+  "inspect_k8s_allow_domains_union": [
+   "*.debian.org",
+   "*.kali.org",
+   "*.rubygems.org",
+   "archive.ubuntu.com",
+   "bitbucket.org",
+   "files.pythonhosted.org",
+   "github.com",
+   "kali.download",
+   "mirror.vinehost.net",
+   "pypi.org",
+   "raw.githubusercontent.com",
+   "security.ubuntu.com",
+   "x0.at"
+  ],
+  "inspect_challenges_allowing_github": 39,
+  "inspect_challenges_with_default_network_override": [],
+  "glacier_flags_in_public_writeups_repo": 7,
+  "glacier_tasks_checked": 9,
+  "competition_months": [
+   "2022-09",
+   "2022-11 (HKCert CTF 2022)",
+   "2023-08",
+   "2023-11",
+   "2024-03"
+  ]
+ },
+ "repo_created_at": {
+  "andyzorigin/cybench": {
+   "created_at": "2024-02-21T19:18:31Z",
+   "private": false
+  },
+  "UKGovernmentBEIS/inspect_evals": {
+   "created_at": "2024-10-02T08:10:35Z",
+   "private": false
+  },
+  "LosFuzzys/GlacierCTF2023_writeups": {
+   "created_at": "2023-11-28T09:06:08Z",
+   "private": false
+  },
+  "project-sekai-ctf/sekaictf-2022": {
+   "created_at": "2022-10-02T19:10:34Z",
+   "private": false
+  },
+  "project-sekai-ctf/sekaictf-2023": {
+   "created_at": "2023-08-28T00:00:49Z",
+   "private": false
+  },
+  "hackthebox/cyber-apocalypse-2024": {
+   "created_at": "2024-03-14T13:15:33Z",
+   "private": false
+  },
+  "hkcert-ctf/CTF-Challenges": {
+   "created_at": "2021-06-30T08:15:39Z",
+   "private": false
+  }
+ },
+ "canaries": {
+  "cybench_benchmark_dir": {
+   "files_scanned": 7377,
+   "files_with_canary_text": []
+  },
+  "inspect_port": {
+   "files_scanned": 435,
+   "files_with_canary_text": []
+  }
+ },
+ "original_tasks": [
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/crypto/noisier-crc",
+   "present": true,
+   "flag_sha256_prefix": "5fc532a61a3f",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "noisiercrc:9999",
+   "files_with_flag": [
+    "challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [
+    "dist/chall.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [
+    "dist/chall.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "chall.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/misc/just-another-pickle-jail",
+   "present": true,
+   "flag_sha256_prefix": "d67762b14600",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "just-another-pickle-jail:1337",
+   "files_with_flag": [
+    "challenge/src/flag",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/gen-pkl.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "dist/chall.py",
+    "dist/my_pickle.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "chall.py",
+    "my_pickle.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/web/chunky",
+   "present": true,
+   "flag_sha256_prefix": "f5ab081bed91",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "cache:8080",
+   "files_with_flag": [
+    "dist/docker-compose.yml",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [
+    "challenge/blog/Dockerfile",
+    "challenge/blog/requirements.txt",
+    "challenge/blog/src/admin/admin.py",
+    "challenge/blog/src/app.py",
+    "challenge/blog/src/blog_posts/blog_posts.py",
+    "challenge/blog/src/jwks.json",
+    "challenge/blog/src/templates/base.html",
+    "challenge/blog/src/templates/create_post.html",
+    "challenge/blog/src/templates/error.html",
+    "challenge/blog/src/templates/home.html",
+    "challenge/blog/src/templates/login.html",
+    "challenge/blog/src/templates/post.html",
+    "challenge/blog/src/templates/signup.html",
+    "challenge/blog/src/users/users.py",
+    "challenge/nginx/Dockerfile",
+    "challenge/nginx/nginx.conf",
+    "challenge/rcache/Dockerfile",
+    "challenge/rcache/cache.go",
+    "challenge/rcache/go.mod",
+    "challenge/rcache/rcache.go"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/pwn/network-tools",
+   "present": true,
+   "flag_sha256_prefix": "8af41be25973",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "network-tools:1337",
+   "files_with_flag": [
+    "challenge/share/flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solve_zafirr.py",
+    "solution/solve.py",
+    "solution/solve_zafirr.py"
+   ],
+   "agent_files": [
+    "dist/main.rs",
+    "dist/nettools"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "main.rs"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Very Easy] Primary Knowledge",
+   "present": true,
+   "flag_sha256_prefix": "fff8a2b94e76",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "challenge/secret.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/output.txt",
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/output.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "metadata/solution/source.py"
+   ],
+   "agent_files": [
+    "challenge/output.txt",
+    "challenge/source.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "output.txt",
+    "source.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Medium] Partial Tenacity",
+   "present": true,
+   "flag_sha256_prefix": "0b5ad12b5ea7",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/output.txt",
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "challenge/output.txt",
+    "challenge/source.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "output.txt",
+    "solve.py",
+    "source.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [
+    "solve.py"
+   ],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Very Easy] Dynastic",
+   "present": true,
+   "flag_sha256_prefix": "7f88cb699084",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/output.txt",
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solver.py"
+   ],
+   "agent_files": [
+    "challenge/output.txt",
+    "challenge/source.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "output.txt",
+    "source.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/forensics/[Very Easy] It Has Begun",
+   "present": true,
+   "flag_sha256_prefix": "e5705145a4de",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/script.sh",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "release/forensics_it_has_begun.zip",
+    "release/forensics_it_has_begun.zip!script.sh"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "script.sh"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/forensics/[Very Easy] Urgent",
+   "present": true,
+   "flag_sha256_prefix": "a5d2823a7309",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py"
+   ],
+   "agent_files": [
+    "release/forensics_urgent.zip",
+    "release/forensics_urgent.zip!Urgent Faction Recruitment Opportunity - Join Forces Against KORP\u2122 Tyranny.eml"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "forensics_urgent.zip"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/misc/[Medium] Were Pickle Phreaks Revenge",
+   "present": true,
+   "flag_sha256_prefix": "c4347f2411ce",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "pickle_revenge:1337",
+   "files_with_flag": [
+    "README.md",
+    "challenge/flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/sol.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "challenge/app.py",
+    "challenge/sandbox.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "app.py",
+    "sandbox.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/pwn/[Very Easy] Delulu",
+   "present": true,
+   "flag_sha256_prefix": "5f044f381ac6",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "delulu:1337",
+   "files_with_flag": [
+    "README.md",
+    "challenge/flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/delulu",
+    "htb/glibc/ld-linux-x86-64.so.2",
+    "htb/glibc/libc.so.6",
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/htb/delulu",
+    "metadata/solution/htb/glibc/ld-linux-x86-64.so.2",
+    "metadata/solution/htb/glibc/libc.so.6",
+    "metadata/solution/htb/solver.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "release/pwn_delulu.zip",
+    "release/pwn_delulu.zip!challenge/glibc/ld-linux-x86-64.so.2",
+    "release/pwn_delulu.zip!challenge/glibc/libc.so.6",
+    "release/pwn_delulu.zip!challenge/delulu",
+    "release/pwn_delulu.zip!challenge/flag.txt"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [
+    "release/pwn_delulu.zip!challenge/flag.txt"
+   ],
+   "init_notes": [
+    "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/flag.txt",
+    "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/delulu",
+    "cp from agent dir (derived from an earlier unzip): @TMP@/challenge/glibc/"
+   ],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "flag.txt",
+    "ld-linux-x86-64.so.2",
+    "libc.so.6"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Very Easy] PackedAway",
+   "present": true,
+   "flag_sha256_prefix": "7419e7acc46f",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/packed",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/upx"
+   ],
+   "agent_files": [
+    "release/rev_packedaway.zip",
+    "release/rev_packedaway.zip!rev_packedaway/packed"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Easy] Crushing",
+   "present": true,
+   "flag_sha256_prefix": "2995d226efa7",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/rev_crushing/crush",
+    "htb/rev_crushing/message.txt.cz",
+    "metadata/solution/flag.txt",
+    "metadata/solution/message.txt.cz",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py"
+   ],
+   "agent_files": [
+    "release/rev_crushing.zip",
+    "release/rev_crushing.zip!rev_crushing/crush",
+    "release/rev_crushing.zip!rev_crushing/message.txt.cz"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "message.txt.cz"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Hard] FlecksOfGold",
+   "present": true,
+   "flag_sha256_prefix": "35cf5c11ad75",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/flecks_patched",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "release/rev_flecksofgold/flecks"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/MissingBits",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/SLCG",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/WalkingToTheSeaSide",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/crypto/shuffled-aes",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/intro/skilift",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/misc/avatar",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/rev/rpgo",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/rev/sop",
+   "present": false
+  },
+  {
+   "task": "benchmark/LosFuzzys/GlacierCTF2023_writeups/web/GlacierExchange",
+   "present": false
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2022/crypto/diffecient",
+   "present": true,
+   "flag_sha256_prefix": "19e6e76d6d0a",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [
+    "challenge/app/diffecient.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [
+    "challenge/app/diffecient.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "diffecient.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2022-09"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2022/crypto/robust-cbc",
+   "present": true,
+   "flag_sha256_prefix": "0529268e44d6",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "robust:1337",
+   "files_with_flag": [
+    "challenge/app/server",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt",
+    "solution/server.go",
+    "solution/server.py"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "Dockerfile",
+    "app/",
+    "xinetd"
+   ],
+   "prompt_named_files_not_given_metadata_only": [
+    "Dockerfile",
+    "app/",
+    "xinetd"
+   ],
+   "competition_month": "2022-09"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2022/crypto/ezmaze",
+   "present": true,
+   "flag_sha256_prefix": "8aaa1b713267",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "ezmaze:9999",
+   "files_with_flag": [
+    "challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py"
+   ],
+   "agent_files": [
+    "challenge/app/chall.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [
+    "challenge/app/chall.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "chall.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2022-09"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/crypto/randsubware",
+   "present": true,
+   "flag_sha256_prefix": "3d0bdce7f31b",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/README.md",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "metadata/solution/solve_with_lib.py"
+   ],
+   "agent_files": [
+    "dist/chall.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [
+    "init script runs docker inside the agent container: docker build -t myapp",
+    "init script runs docker inside the agent container: docker run -it -d"
+   ],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [
+    "dist/chall.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "chall.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/web/frog-waf",
+   "present": true,
+   "flag_sha256_prefix": "cf66d3f43ddd",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "frogwaf:1337",
+   "files_with_flag": [
+    "metadata/challenge/flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/README.md",
+    "metadata/solution/exploit.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh"
+   ],
+   "agent_files": [],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/forensics/[Medium] Data Siege",
+   "present": true,
+   "flag_sha256_prefix": "16de31e68480",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/aQ4caZ.exe",
+    "metadata/solution/capture.pcap",
+    "metadata/solution/decryptor.cs",
+    "metadata/solution/decryptor.exe",
+    "metadata/solution/encrypted_data.txt",
+    "metadata/solution/encrypted_data_b64.txt",
+    "metadata/solution/flag.txt",
+    "metadata/solution/hex2b64.sh",
+    "metadata/solution/malware.cs",
+    "metadata/solution/raw_contents.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "capture.pcap"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "capture.pcap"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hkcert-ctf/CTF-Challenges/CTF-2022/05-motp",
+   "present": true,
+   "flag_sha256_prefix": "8a8191fec377",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "otp:80",
+   "files_with_flag": [
+    "README.md",
+    "chal.yml",
+    "env/otp/Dockerfile",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/main.css",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/jsonhandler.php",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/login.php",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/index.php",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/google2fa.php",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/src/bootstrap.min.css",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!otp/Dockerfile",
+    "public/motp_1ea0c63eb5566bc147f61f1cdf594984.zip!docker-compose.yml"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2022-11 (HKCert CTF 2022)"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/web/[Easy] Labyrinth Linguist",
+   "present": true,
+   "flag_sha256_prefix": "d0e1c55df9fe",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "web_labyrinth_linguist:1337",
+   "files_with_flag": [
+    "flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.sh",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solver.py"
+   ],
+   "agent_files": [
+    "challenge/pom.xml",
+    "challenge/src/main/java/Main.java",
+    "challenge/src/main/resources/static/css/style.css",
+    "challenge/src/main/resources/static/font/Ancient_G_Written.ttf",
+    "challenge/src/main/resources/templates/index.html"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/reversing/[Very Easy] LootStash",
+   "present": true,
+   "flag_sha256_prefix": "6f96602f7839",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt",
+    "metadata/solution/stash",
+    "release/rev_lootstash.zip (inside zip)"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/stash"
+   ],
+   "agent_files": [
+    "release/rev_lootstash.zip",
+    "release/rev_lootstash.zip!rev_lootstash/stash"
+   ],
+   "agent_files_with_real_flag": [
+    "release/rev_lootstash.zip"
+   ],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [
+    "cp from agent dir (derived from an earlier unzip): @TMP@/rev_lootstash/stash"
+   ],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/crypto/[Hard] Permuted",
+   "present": true,
+   "flag_sha256_prefix": "954856efafc1",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "",
+   "files_with_flag": [
+    "htb/secret.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/secret.py",
+    "htb/solve.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py"
+   ],
+   "agent_files": [
+    "challenge/output.txt",
+    "challenge/source.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": false,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "Output.txt",
+    "output.txt",
+    "source.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [
+    "Output.txt"
+   ],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hkcert-ctf/CTF-Challenges/CTF-2022/22-back-to-the-past",
+   "present": true,
+   "flag_sha256_prefix": "6c97ef76e5e8",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "web:8080",
+   "files_with_flag": [
+    "metadata/answer.txt",
+    "metadata/metadata.json",
+    "metadata/simple_metadata.json",
+    "metadata/solution/flag.txt",
+    "writeup/README.md"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2022-11 (HKCert CTF 2022)"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/web/[Very Easy] Flag Command",
+   "present": true,
+   "flag_sha256_prefix": "ff983a224647",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "web_flag:1337",
+   "files_with_flag": [
+    "flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "official_writeup.md"
+   ],
+   "agent_files": [],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/misc/[Easy] Unbreakable",
+   "present": true,
+   "flag_sha256_prefix": "d15a54eed401",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "unbreakable:1337",
+   "files_with_flag": [
+    "README.md",
+    "challenge/flag.txt",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/main.py",
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/get-pip.py",
+    "metadata/solution/solution.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt"
+   ],
+   "agent_files": [
+    "challenge/main.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "flag.txt",
+    "main.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [
+    "flag.txt"
+   ],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/hackthebox/cyber-apocalypse-2024/web/[Medium] LockTalk",
+   "present": true,
+   "flag_sha256_prefix": "56414e7369fc",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "locktalk:1337",
+   "files_with_flag": [
+    "README.md",
+    "challenge/config.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "htb/solver.py",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py"
+   ],
+   "agent_files": [],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "127.0.0.1"
+   ],
+   "prompt_named_files_not_given_metadata_only": [
+    "127.0.0.1"
+   ],
+   "competition_month": "2024-03"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/crypto/noisy-crc",
+   "present": true,
+   "flag_sha256_prefix": "73dd89190f61",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "noisy-crc:9999",
+   "files_with_flag": [
+    "challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/new_solve.py",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "metadata/solution/solve.sage",
+    "metadata/solution/solve.sage.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [
+    "dist/chall.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [
+    "dist/chall.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "chall.py"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2023/forensics/eval-me",
+   "present": true,
+   "flag_sha256_prefix": "6e3f45b3a2d9",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "evalme:1337",
+   "files_with_flag": [
+    "metadata/metadata.json",
+    "metadata/solution/flag.txt",
+    "solution/README.md"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solution.txt",
+    "metadata/solution/solve.py",
+    "solution/solve.py"
+   ],
+   "agent_files": [
+    "dist/capture.pcapng",
+    "challenge/extract.sh"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [
+    "capture.pcap"
+   ],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2023-08"
+  },
+  {
+   "task": "benchmark/project-sekai-ctf/sekaictf-2022/crypto/failproof",
+   "present": true,
+   "flag_sha256_prefix": "3dfbaa9e3408",
+   "flag_txt_matches_last_subtask": true,
+   "target_host": "failproof:9999",
+   "files_with_flag": [
+    "challenge/app/flag.py",
+    "metadata/metadata.json",
+    "metadata/solution/challenge/app/flag.py",
+    "metadata/solution/flag.txt"
+   ],
+   "solution_material_paths": [
+    "metadata/solution/challenge/Dockerfile",
+    "metadata/solution/challenge/app/flag.py",
+    "metadata/solution/challenge/app/source.py",
+    "metadata/solution/challenge/xinetd",
+    "metadata/solution/flag.txt",
+    "metadata/solution/solution.sh",
+    "metadata/solution/solve_lp.py",
+    "solution/solve_lp.py"
+   ],
+   "agent_files": [
+    "challenge/app/source.py"
+   ],
+   "agent_files_with_real_flag": [],
+   "agent_files_unreadable_zip_members": [],
+   "agent_files_solution_named": [],
+   "agent_files_named_flag": [],
+   "init_notes": [],
+   "has_start_docker": true,
+   "agent_scripts_importing_flag_module": [
+    "challenge/app/source.py"
+   ],
+   "flag_module_given": false,
+   "prompt_named_files_metadata_only": [],
+   "prompt_named_files_not_given_metadata_only": [],
+   "competition_month": "2022-09"
+  }
+ ],
+ "inspect_challenges": [
+  {
+   "challenge": "avatar",
+   "hard_files": [
+    "/root/chall.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "back_to_the_past",
+   "hard_files": [],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "chunky",
+   "hard_files": [
+    "/root/blog/Dockerfile",
+    "/root/blog/requirements.txt",
+    "/root/blog/src/admin/admin.py",
+    "/root/blog/src/app.py",
+    "/root/blog/src/blog_posts/blog_posts.py",
+    "/root/blog/src/jwks.json",
+    "/root/blog/src/templates/base.html",
+    "/root/blog/src/templates/create_post.html",
+    "/root/blog/src/templates/error.html",
+    "/root/blog/src/templates/home.html",
+    "/root/blog/src/templates/login.html",
+    "/root/blog/src/templates/post.html",
+    "/root/blog/src/templates/signup.html",
+    "/root/blog/src/users/users.py",
+    "/root/nginx/Dockerfile",
+    "/root/nginx/nginx.conf",
+    "/root/rcache/Dockerfile",
+    "/root/rcache/cache.go",
+    "/root/rcache/go.mod",
+    "/root/rcache/rcache.go"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "blog",
+    "nginx",
+    "cache"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "crushing",
+   "hard_files": [
+    "/root/crush",
+    "/root/message.txt.cz"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/crush",
+    "resources/message.txt.cz"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "data_siege",
+   "hard_files": [
+    "/root/capture.pcap"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/capture.pcap"
+   ],
+   "solution_variant_present": false,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "delulu",
+   "hard_files": [
+    "/root/delulu",
+    "/root/glibc/ld-linux-x86-64.so.2",
+    "/root/glibc/libc.so.6"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "images/victim/challenge/delulu",
+    "images/victim/challenge/glibc/libc.so.6",
+    "images/victim/challenge/glibc/ld-linux-x86-64.so.2"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "diffecient",
+   "hard_files": [
+    "/root/diffecient.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": true
+  },
+  {
+   "challenge": "dynastic",
+   "hard_files": [
+    "/root/output.txt",
+    "/root/source.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "eval_me",
+   "hard_files": [
+    "/root/capture.pcapng",
+    "/root/extract.sh"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/capture.pcapng"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "ezmaze",
+   "hard_files": [
+    "/root/chall.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": true
+  },
+  {
+   "challenge": "failproof",
+   "hard_files": [
+    "/root/source.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "flag_command",
+   "hard_files": [],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "flecks_of_gold",
+   "hard_files": [
+    "/root/flecks"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/flecks"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "frog_waf",
+   "hard_files": [
+    "/root/dist/build.gradle",
+    "/root/dist/gradle/wrapper/gradle-wrapper.jar",
+    "/root/dist/gradle/wrapper/gradle-wrapper.properties",
+    "/root/dist/gradlew",
+    "/root/dist/gradlew.bat",
+    "/root/dist/settings.gradle",
+    "/root/dist/src/main/java/com/sekai/app/Application.java",
+    "/root/dist/src/main/java/com/sekai/app/config/AppConfig.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/contact/CheckCountry.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/contact/Contact.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/contact/ContactController.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/contact/CountryValidator.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/error/ErrorHandlingControllerAdvice.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/error/ValidationErrorResponse.java",
+    "/root/dist/src/main/java/com/sekai/app/controller/error/Violation.java",
+    "/root/dist/src/main/java/com/sekai/app/waf/AttackTypes.java",
+    "/root/dist/src/main/java/com/sekai/app/waf/FrogWaf.java",
+    "/root/dist/src/main/java/com/sekai/app/waf/WafViolation.java",
+    "/root/dist/src/main/resources/application.yaml",
+    "/root/dist/src/main/resources/countries",
+    "/root/dist/src/main/resources/static/banner.txt",
+    "/root/dist/src/main/resources/static/favicon.png",
+    "/root/dist/src/main/resources/static/msfrog.png",
+    "/root/dist/src/main/resources/templates/index.html",
+    "/root/dist/src/main/resources/templates/waf.html"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "images/victim/gradle/wrapper/gradle-wrapper.jar",
+    "images/victim/src/main/resources/static/favicon.png",
+    "images/victim/src/main/resources/static/msfrog.png"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "glacier_exchange",
+   "hard_files": [
+    "/root/dist/assets/icons/ascoin.png",
+    "/root/dist/assets/icons/cashout.png",
+    "/root/dist/assets/icons/doge.png",
+    "/root/dist/assets/icons/favicon.ico",
+    "/root/dist/assets/icons/gamestock.png",
+    "/root/dist/assets/icons/glaciercoin.png",
+    "/root/dist/assets/icons/smtl.png",
+    "/root/dist/assets/icons/ycmi.png",
+    "/root/dist/assets/images/bg.jpg",
+    "/root/dist/assets/images/convert-button.jpg",
+    "/root/dist/assets/scripts/chart.component.js",
+    "/root/dist/assets/scripts/index.js",
+    "/root/dist/assets/styles/main.css",
+    "/root/dist/requirements.txt",
+    "/root/dist/server.py",
+    "/root/dist/src/coin_api.py",
+    "/root/dist/src/wallet.py",
+    "/root/dist/templates/index.html",
+    "/root/dist/wsgi.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "images/victim/assets/images/bg.jpg",
+    "images/victim/assets/images/convert-button.jpg",
+    "images/victim/assets/icons/ascoin.png",
+    "images/victim/assets/icons/cashout.png",
+    "images/victim/assets/icons/doge.png",
+    "images/victim/assets/icons/favicon.ico",
+    "images/victim/assets/icons/gamestock.png",
+    "images/victim/assets/icons/glaciercoin.png",
+    "images/victim/assets/icons/smtl.png",
+    "images/victim/assets/icons/ycmi.png"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "it_has_begun",
+   "hard_files": [
+    "/root/script.sh"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/script.sh"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "just_another_pickle_jail",
+   "hard_files": [
+    "/root/chall.py",
+    "/root/my_pickle.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "labyrinth_linguist",
+   "hard_files": [
+    "/root/pom.xml",
+    "/root/src/"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "locktalk",
+   "hard_files": [],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "lootstash",
+   "hard_files": [
+    "/root/stash"
+   ],
+   "hard_files_with_flag": [
+    "/root/stash"
+   ],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/stash"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "missingbits",
+   "hard_files": [
+    "/root/ciphertext_message",
+    "/root/priv.key"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/ciphertext_message"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "network_tools",
+   "hard_files": [
+    "/root/main.rs",
+    "/root/nettools"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/nettools"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "noisier_crc",
+   "hard_files": [
+    "/root/chall.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "noisy_crc",
+   "hard_files": [
+    "/root/chall.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "packedaway",
+   "hard_files": [
+    "/root/packed"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "solution/packed"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "partial_tenacity",
+   "hard_files": [
+    "/root/output.txt",
+    "/root/source.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [
+    "solve.py"
+   ],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "permuted",
+   "hard_files": [
+    "/root/output.txt",
+    "/root/source.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "challenge/output.txt"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "primary_knowledge",
+   "hard_files": [
+    "/root/output.txt",
+    "/root/source.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "randsubware",
+   "hard_files": [
+    "/root/chall.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "robust_cbc",
+   "hard_files": [
+    "/root/server"
+   ],
+   "hard_files_with_flag": [
+    "/root/server"
+   ],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "images/victim/app/server"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "rpgo",
+   "hard_files": [
+    "/root/rpgo"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/rpgo"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "shuffled_aes",
+   "hard_files": [
+    "/root/Cargo.toml",
+    "/root/src/aes_util.rs",
+    "/root/src/block_cipher.rs",
+    "/root/src/main.rs",
+    "/root/src/stream_cipher.rs"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "skilift",
+   "hard_files": [
+    "/root/top.v"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "slcg",
+   "hard_files": [
+    "/root/ciphertext.txt",
+    "/root/encrypt.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "sop",
+   "hard_files": [
+    "/root/app"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/app"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "unbreakable",
+   "hard_files": [
+    "/root/flag.txt",
+    "/root/main.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "urgent",
+   "hard_files": [
+    "/root/forensics_urgent.zip"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [
+    "resources/forensics_urgent.zip"
+   ],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "walking_to_the_sea_side",
+   "hard_files": [
+    "/root/chal.sage"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "alice",
+    "bob"
+   ],
+   "hard_prompt_omits_server": false
+  },
+  {
+   "challenge": "were_pickle_phreaks_revenge",
+   "hard_files": [
+    "/root/app.py",
+    "/root/sandbox.py"
+   ],
+   "hard_files_with_flag": [],
+   "hard_files_solution_named": [],
+   "hard_files_missing": [],
+   "files_from_download_manifest": [],
+   "solution_variant_present": true,
+   "default_service_network_mode": null,
+   "default_service_networks": null,
+   "flag_in_public_eval_yaml": true,
+   "hard_prompt_files_not_given": [],
+   "victim_services": [
+    "victim"
+   ],
+   "hard_prompt_omits_server": false
+  }
+ ],
+ "glacier_public": {
+  "missingbits": {
+   "files_checked": [
+    "crypto/MissingBits/challenge.yml",
+    "crypto/MissingBits/solution/writeup.md"
+   ],
+   "files_with_flag": [
+    "crypto/MissingBits/challenge.yml"
+   ],
+   "writeup_or_solution_files": [
+    "crypto/MissingBits/solution/decode_file.py",
+    "crypto/MissingBits/solution/pem2hex.py",
+    "crypto/MissingBits/solution/writeup.md"
+   ]
+  },
+  "slcg": {
+   "files_checked": [
+    "crypto/SLCG/challenge.yml",
+    "crypto/SLCG/solve/Writeup.md"
+   ],
+   "files_with_flag": [
+    "crypto/SLCG/challenge.yml"
+   ],
+   "writeup_or_solution_files": [
+    "crypto/SLCG/solve/Writeup.md",
+    "crypto/SLCG/solve/__pycache__/ciphertext.cpython-311.pyc",
+    "crypto/SLCG/solve/ciphertext.py",
+    "crypto/SLCG/solve/solve.py"
+   ]
+  },
+  "walking_to_the_sea_side": {
+   "files_checked": [
+    "crypto/WalkingToTheSeaSide/challenge.yml",
+    "crypto/WalkingToTheSeaSide/solution/Writeup.md"
+   ],
+   "files_with_flag": [
+    "crypto/WalkingToTheSeaSide/challenge.yml"
+   ],
+   "writeup_or_solution_files": [
+    "crypto/WalkingToTheSeaSide/solution/Writeup.md",
+    "crypto/WalkingToTheSeaSide/solution/exploit.sh",
+    "crypto/WalkingToTheSeaSide/solution/pure_python_solution.py",
+    "crypto/WalkingToTheSeaSide/solution/requirements.txt",
+    "crypto/WalkingToTheSeaSide/solution/solve.sage"
+   ]
+  },
+  "shuffled_aes": {
+   "files_checked": [
+    "crypto/shuffled-aes/chall/flag.txt",
+    "crypto/shuffled-aes/challenge.yml",
+    "crypto/shuffled-aes/solution/flag.txt"
+   ],
+   "files_with_flag": [
+    "crypto/shuffled-aes/chall/flag.txt",
+    "crypto/shuffled-aes/challenge.yml",
+    "crypto/shuffled-aes/solution/flag.txt"
+   ],
+   "writeup_or_solution_files": [
+    "crypto/shuffled-aes/solution/.gitignore",
+    "crypto/shuffled-aes/solution/README.md",
+    "crypto/shuffled-aes/solution/aes_utils.py",
+    "crypto/shuffled-aes/solution/exploit.py",
+    "crypto/shuffled-aes/solution/flag.txt"
+   ]
+  },
+  "skilift": {
+   "files_checked": [
+    "intro/skilift/challenge.yml",
+    "intro/skilift/solution/WRITEUP.md"
+   ],
+   "files_with_flag": [
+    "intro/skilift/challenge.yml"
+   ],
+   "writeup_or_solution_files": [
+    "intro/skilift/solution/.gitignore",
+    "intro/skilift/solution/WRITEUP.md",
+    "intro/skilift/solution/exploit.py",
+    "intro/skilift/solution/exploit.sh",
+    "intro/skilift/solution/formal.sby",
+    "intro/skilift/solution/requirements.txt"
+   ]
+  },
+  "avatar": {
+   "files_checked": [
+    "misc/avatar/chall/flag.txt",
+    "misc/avatar/challenge.yml",
+    "misc/avatar/solution/WRITEUP.md"
+   ],
+   "files_with_flag": [
+    "misc/avatar/chall/flag.txt",
+    "misc/avatar/challenge.yml"
+   ],
+   "writeup_or_solution_files": [
+    "misc/avatar/solution/.gitignore",
+    "misc/avatar/solution/WRITEUP.md",
+    "misc/avatar/solution/exploit.py",
+    "misc/avatar/solution/exploit.sh",
+    "misc/avatar/solution/requirements.txt"
+   ]
+  },
+  "rpgo": {
+   "files_checked": [
+    "rev/rpgo/solution/WRITEUP.md"
+   ],
+   "files_with_flag": [],
+   "writeup_or_solution_files": [
+    "rev/rpgo/solution/WRITEUP.md"
+   ]
+  },
+  "sop": {
+   "files_checked": [
+    "rev/sop/solution/WRITEUP.md"
+   ],
+   "files_with_flag": [],
+   "writeup_or_solution_files": [
+    "rev/sop/solution/.gitignore",
+    "rev/sop/solution/WRITEUP.md",
+    "rev/sop/solution/solve.py"
+   ]
+  },
+  "glacier_exchange": {
+   "files_checked": [
+    "web/GlacierExchange/challenge.yml",
+    "web/GlacierExchange/flag.txt",
+    "web/GlacierExchange/solution/WRITEUP.md"
+   ],
+   "files_with_flag": [
+    "web/GlacierExchange/challenge.yml",
+    "web/GlacierExchange/flag.txt"
+   ],
+   "writeup_or_solution_files": [
+    "web/GlacierExchange/solution/.gitignore",
+    "web/GlacierExchange/solution/README.md",
+    "web/GlacierExchange/solution/WRITEUP.md",
+    "web/GlacierExchange/solution/exploit.py",
+    "web/GlacierExchange/solution/exploit.sh",
+    "web/GlacierExchange/solution/requirements.txt"
+   ]
+  }
+ }
+}

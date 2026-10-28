@@ -1,0 +1,225 @@
+{
+  "pins": {
+    "hf_dataset": "forgelab/mole@7eb86b0d2918c32760fe8a91b78bb50ccc054ce5",
+    "code": "aashiqmuhamed/mole@702199e40fe25065290a1fb7933865d67eee1dc2",
+    "paper": "arXiv 2609.06966v1"
+  },
+  "paper_reference": {
+    "R@10/day": {
+      "Claude Opus 4.7 (best)": 0.533,
+      "GPT-5.5": 0.511,
+      "median of 40 monitors": 0.367,
+      "GPT-4.1": 0.222,
+      "FACADE": 0.222,
+      "peer-fit": 0.178,
+      "z-score": 0.156
+    },
+    "budget-AUC": {
+      "GPT-5.5": 0.391,
+      "GPT-4.1": 0.187,
+      "search iteration 53 (GPT-4.1 cost)": 0.298,
+      "search best reported (iteration 165)": 0.489
+    },
+    "source": "arXiv 2609.06966v1, Figure 4, Table 21 and Table 22 / Appendix L.1"
+  },
+  "insider_accounts_per_label_file": {
+    "gpt53_single_day": {
+      "accounts": 38,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "gpt53_multiday": {
+      "accounts": 38,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "kimi_k26_single_day": {
+      "accounts": 38,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "kimi_k26_multiday": {
+      "accounts": 36,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "qwen36_27b_single_day": {
+      "accounts": 38,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "qwen36_27b_multiday": {
+      "accounts": 37,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "deepseek_v4_flash_single_day": {
+      "accounts": 38,
+      "subset_of_gpt53_single_day_insiders": true
+    },
+    "deepseek_v4_flash_multiday": {
+      "accounts": 36,
+      "subset_of_gpt53_single_day_insiders": true
+    }
+  },
+  "earlier_setup_gpt53_single_day": {
+    "cut": "2026-04-27",
+    "train_positives": 87,
+    "test_positives": 105,
+    "test_account_days": 2223,
+    "auroc": 0.882,
+    "null_label_shuffle_auroc": {
+      "mean": 0.5,
+      "p95": 0.537
+    }
+  },
+  "paper_split_gpt53_single_day": {
+    "split": "gpt53_single_day",
+    "days": 30,
+    "test_account_days": 2106,
+    "test_positives": 45,
+    "train_positives": 26,
+    "val_positives": 10,
+    "test_positive_accounts": 29,
+    "test_positive_accounts_with_train_positive": 22,
+    "test_positives_on_accounts_with_train_positive": 37,
+    "val_positive_accounts": 10,
+    "val_positive_accounts_also_test_positive": 10,
+    "priors": {
+      "who_executed_on_a_train_day": {
+        "auroc": 0.841,
+        "budget_auc": 0.21,
+        "r10": 0.382,
+        "null_label_shuffle_auroc": {
+          "mean": 0.503,
+          "p95": 0.546
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.504,
+          "p95": 0.557
+        }
+      },
+      "who_executed_on_a_train_day_non_heldout_only": {
+        "auroc": 0.76,
+        "budget_auc": 0.214,
+        "r10": 0.385,
+        "null_label_shuffle_auroc": {
+          "mean": 0.501,
+          "p95": 0.534
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.499,
+          "p95": 0.545
+        }
+      },
+      "who_listed_in_insider_assignment_yaml": {
+        "auroc": 0.903,
+        "budget_auc": 0.192,
+        "r10": 0.347,
+        "null_label_shuffle_auroc": {
+          "mean": 0.502,
+          "p95": 0.552
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.503,
+          "p95": 0.574
+        }
+      }
+    },
+    "label_free_features": {
+      "rarity": {
+        "auroc": 0.675,
+        "budget_auc": 0.264,
+        "r10": 0.378,
+        "null_label_shuffle_auroc": {
+          "mean": 0.505,
+          "p95": 0.577
+        },
+        "auroc_insider_account_on_negative_days": 0.586,
+        "auroc_within_insider_accounts": 0.629
+      },
+      "distinct_actions": {
+        "auroc": 0.702,
+        "budget_auc": 0.113,
+        "r10": 0.214,
+        "null_label_shuffle_auroc": {
+          "mean": 0.502,
+          "p95": 0.57
+        },
+        "auroc_insider_account_on_negative_days": 0.695,
+        "auroc_within_insider_accounts": 0.565
+      },
+      "sequence_novelty": {
+        "auroc": 0.714,
+        "budget_auc": 0.117,
+        "r10": 0.212,
+        "null_label_shuffle_auroc": {
+          "mean": 0.504,
+          "p95": 0.572
+        },
+        "auroc_insider_account_on_negative_days": 0.68,
+        "auroc_within_insider_accounts": 0.592
+      }
+    },
+    "fusion": {
+      "rarity + who_executed_on_a_train_day": {
+        "auroc": 0.864,
+        "budget_auc": 0.36,
+        "r10": 0.489
+      },
+      "rarity + who_listed_in_insider_assignment_yaml": {
+        "auroc": 0.89,
+        "budget_auc": 0.378,
+        "r10": 0.511
+      }
+    }
+  },
+  "paper_split_kimi_k26_single_day": {
+    "split": "kimi_k26_single_day",
+    "days": 30,
+    "test_account_days": 2101,
+    "test_positives": 48,
+    "train_positives": 38,
+    "val_positives": 12,
+    "test_positive_accounts": 28,
+    "test_positive_accounts_with_train_positive": 27,
+    "test_positives_on_accounts_with_train_positive": 47,
+    "val_positive_accounts": 12,
+    "val_positive_accounts_also_test_positive": 11,
+    "priors": {
+      "who_executed_on_a_train_day": {
+        "auroc": 0.9,
+        "budget_auc": 0.184,
+        "r10": 0.348,
+        "null_label_shuffle_auroc": {
+          "mean": 0.5,
+          "p95": 0.549
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.498,
+          "p95": 0.559
+        }
+      },
+      "who_executed_on_a_train_day_non_heldout_only": {
+        "auroc": 0.773,
+        "budget_auc": 0.183,
+        "r10": 0.345,
+        "null_label_shuffle_auroc": {
+          "mean": 0.5,
+          "p95": 0.549
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.501,
+          "p95": 0.549
+        }
+      },
+      "who_listed_in_insider_assignment_yaml": {
+        "auroc": 0.904,
+        "budget_auc": 0.177,
+        "r10": 0.331,
+        "null_label_shuffle_auroc": {
+          "mean": 0.497,
+          "p95": 0.552
+        },
+        "null_account_permutation_auroc": {
+          "mean": 0.502,
+          "p95": 0.562
+        }
+      }
+    }
+  }
+}

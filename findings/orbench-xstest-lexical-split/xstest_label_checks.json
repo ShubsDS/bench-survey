@@ -1,0 +1,390 @@
+{
+ "source": {
+  "xstest_commit": "d7bb5bd738c1fcbc36edd83d5e7d1b71a3e2d84d"
+ },
+ "refusal_definition": "final label 2 or 3",
+ "models": {
+  "gpt4": {
+   "n": 450,
+   "human_annotator_agreement": 0.9844,
+   "human_partial_refusals": 9,
+   "safe": {
+    "n": 250,
+    "human_refusal_rate": 0.084,
+    "strmatch": {
+     "refusal_rate": 0.132,
+     "agree": 0.92,
+     "agree_ci95": [
+      0.8797,
+      0.9476
+     ],
+     "kappa": 0.587,
+     "missed_refusals": 4,
+     "false_refusals": 16,
+     "missed_partial_refusals": 3
+    },
+    "gpt4": {
+     "refusal_rate": 0.064,
+     "agree": 0.98,
+     "agree_ci95": [
+      0.954,
+      0.9914
+     ],
+     "kappa": 0.854,
+     "missed_refusals": 5,
+     "false_refusals": 0,
+     "missed_partial_refusals": 5
+    }
+   },
+   "unsafe": {
+    "n": 200,
+    "human_refusal_rate": 0.995,
+    "strmatch": {
+     "refusal_rate": 0.96,
+     "agree": 0.955,
+     "agree_ci95": [
+      0.9167,
+      0.9761
+     ],
+     "kappa": -0.009,
+     "missed_refusals": 8,
+     "false_refusals": 1,
+     "missed_partial_refusals": 1
+    },
+    "gpt4": {
+     "refusal_rate": 0.88,
+     "agree": 0.885,
+     "agree_ci95": [
+      0.8334,
+      0.9221
+     ],
+     "kappa": 0.071,
+     "missed_refusals": 23,
+     "false_refusals": 0,
+     "missed_partial_refusals": 3
+    }
+   }
+  },
+  "llama2new": {
+   "n": 450,
+   "human_annotator_agreement": 0.9578,
+   "human_partial_refusals": 44,
+   "safe": {
+    "n": 250,
+    "human_refusal_rate": 0.296,
+    "strmatch": {
+     "refusal_rate": 0.268,
+     "agree": 0.9,
+     "agree_ci95": [
+      0.8565,
+      0.9313
+     ],
+     "kappa": 0.753,
+     "missed_refusals": 16,
+     "false_refusals": 9,
+     "missed_partial_refusals": 12
+    },
+    "gpt4": {
+     "refusal_rate": 0.16,
+     "agree": 0.864,
+     "agree_ci95": [
+      0.816,
+      0.901
+     ],
+     "kappa": 0.624,
+     "missed_refusals": 34,
+     "false_refusals": 0,
+     "missed_partial_refusals": 26
+    }
+   },
+   "unsafe": {
+    "n": 200,
+    "human_refusal_rate": 1.0,
+    "strmatch": {
+     "refusal_rate": 0.955,
+     "agree": 0.955,
+     "agree_ci95": [
+      0.9167,
+      0.9761
+     ],
+     "kappa": 0.0,
+     "missed_refusals": 9,
+     "false_refusals": 0,
+     "missed_partial_refusals": 1
+    },
+    "gpt4": {
+     "refusal_rate": 0.73,
+     "agree": 0.73,
+     "agree_ci95": [
+      0.6646,
+      0.7868
+     ],
+     "kappa": 0.0,
+     "missed_refusals": 54,
+     "false_refusals": 0,
+     "missed_partial_refusals": 4
+    }
+   }
+  },
+  "llama2orig": {
+   "n": 450,
+   "human_annotator_agreement": 0.9644,
+   "human_partial_refusals": 55,
+   "safe": {
+    "n": 250,
+    "human_refusal_rate": 0.596,
+    "strmatch": {
+     "refusal_rate": 0.484,
+     "agree": 0.824,
+     "agree_ci95": [
+      0.772,
+      0.8662
+     ],
+     "kappa": 0.65,
+     "missed_refusals": 36,
+     "false_refusals": 8,
+     "missed_partial_refusals": 14
+    },
+    "gpt4": {
+     "refusal_rate": 0.36,
+     "agree": 0.748,
+     "agree_ci95": [
+      0.6907,
+      0.7978
+     ],
+     "kappa": 0.522,
+     "missed_refusals": 61,
+     "false_refusals": 2,
+     "missed_partial_refusals": 37
+    }
+   },
+   "unsafe": {
+    "n": 200,
+    "human_refusal_rate": 1.0,
+    "strmatch": {
+     "refusal_rate": 0.98,
+     "agree": 0.98,
+     "agree_ci95": [
+      0.9497,
+      0.9922
+     ],
+     "kappa": 0.0,
+     "missed_refusals": 4,
+     "false_refusals": 0,
+     "missed_partial_refusals": 0
+    },
+    "gpt4": {
+     "refusal_rate": 0.85,
+     "agree": 0.85,
+     "agree_ci95": [
+      0.7939,
+      0.8929
+     ],
+     "kappa": 0.0,
+     "missed_refusals": 30,
+     "false_refusals": 0,
+     "missed_partial_refusals": 0
+    }
+   }
+  },
+  "mistralguard": {
+   "n": 450,
+   "human_annotator_agreement": 0.9378,
+   "human_partial_refusals": 41,
+   "safe": {
+    "n": 250,
+    "human_refusal_rate": 0.188,
+    "strmatch": {
+     "refusal_rate": 0.152,
+     "agree": 0.892,
+     "agree_ci95": [
+      0.8474,
+      0.9247
+     ],
+     "kappa": 0.618,
+     "missed_refusals": 18,
+     "false_refusals": 9,
+     "missed_partial_refusals": 12
+    },
+    "gpt4": {
+     "refusal_rate": 0.096,
+     "agree": 0.908,
+     "agree_ci95": [
+      0.8657,
+      0.9379
+     ],
+     "kappa": 0.629,
+     "missed_refusals": 23,
+     "false_refusals": 0,
+     "missed_partial_refusals": 12
+    }
+   },
+   "unsafe": {
+    "n": 200,
+    "human_refusal_rate": 0.965,
+    "strmatch": {
+     "refusal_rate": 0.67,
+     "agree": 0.705,
+     "agree_ci95": [
+      0.6384,
+      0.7639
+     ],
+     "kappa": 0.137,
+     "missed_refusals": 59,
+     "false_refusals": 0,
+     "missed_partial_refusals": 7
+    },
+    "gpt4": {
+     "refusal_rate": 0.685,
+     "agree": 0.7,
+     "agree_ci95": [
+      0.6332,
+      0.7593
+     ],
+     "kappa": 0.085,
+     "missed_refusals": 58,
+     "false_refusals": 2,
+     "missed_partial_refusals": 9
+    }
+   }
+  },
+  "mistralinstruct": {
+   "n": 450,
+   "human_annotator_agreement": 0.9756,
+   "human_partial_refusals": 27,
+   "safe": {
+    "n": 250,
+    "human_refusal_rate": 0.016,
+    "strmatch": {
+     "refusal_rate": 0.016,
+     "agree": 0.984,
+     "agree_ci95": [
+      0.9596,
+      0.9938
+     ],
+     "kappa": 0.492,
+     "missed_refusals": 2,
+     "false_refusals": 2,
+     "missed_partial_refusals": 1
+    },
+    "gpt4": {
+     "refusal_rate": 0.0,
+     "agree": 0.984,
+     "agree_ci95": [
+      0.9596,
+      0.9938
+     ],
+     "kappa": 0.0,
+     "missed_refusals": 4,
+     "false_refusals": 0,
+     "missed_partial_refusals": 2
+    }
+   },
+   "unsafe": {
+    "n": 200,
+    "human_refusal_rate": 0.36,
+    "strmatch": {
+     "refusal_rate": 0.075,
+     "agree": 0.705,
+     "agree_ci95": [
+      0.6384,
+      0.7639
+     ],
+     "kappa": 0.226,
+     "missed_refusals": 58,
+     "false_refusals": 1,
+     "missed_partial_refusals": 22
+    },
+    "gpt4": {
+     "refusal_rate": 0.275,
+     "agree": 0.525,
+     "agree_ci95": [
+      0.456,
+      0.5931
+     ],
+     "kappa": -0.087,
+     "missed_refusals": 56,
+     "false_refusals": 39,
+     "missed_partial_refusals": 17
+    }
+   }
+  }
+ },
+ "pooled": {
+  "strmatch": {
+   "safe": {
+    "n": 1250,
+    "agree": 0.904,
+    "agree_ci95": [
+     0.8864,
+     0.9191
+    ],
+    "missed_refusals": 76,
+    "false_refusals": 44,
+    "human_refusals": 295,
+    "auto_refusals": 263
+   },
+   "unsafe": {
+    "n": 1000,
+    "agree": 0.86,
+    "agree_ci95": [
+     0.8371,
+     0.8801
+    ],
+    "missed_refusals": 138,
+    "false_refusals": 2,
+    "human_refusals": 864,
+    "auto_refusals": 728
+   }
+  },
+  "gpt4": {
+   "safe": {
+    "n": 1250,
+    "agree": 0.8968,
+    "agree_ci95": [
+     0.8787,
+     0.9125
+    ],
+    "missed_refusals": 127,
+    "false_refusals": 2,
+    "human_refusals": 295,
+    "auto_refusals": 170
+   },
+   "unsafe": {
+    "n": 1000,
+    "agree": 0.738,
+    "agree_ci95": [
+     0.7099,
+     0.7643
+    ],
+    "missed_refusals": 221,
+    "false_refusals": 41,
+    "human_refusals": 864,
+    "auto_refusals": 684
+   }
+  }
+ },
+ "safe_refusal_order": {
+  "human": [
+   "mistralinstruct",
+   "gpt4",
+   "mistralguard",
+   "llama2new",
+   "llama2orig"
+  ],
+  "strmatch": [
+   "mistralinstruct",
+   "gpt4",
+   "mistralguard",
+   "llama2new",
+   "llama2orig"
+  ],
+  "gpt4": [
+   "mistralinstruct",
+   "gpt4",
+   "mistralguard",
+   "llama2new",
+   "llama2orig"
+  ]
+ }
+}

@@ -1,0 +1,256 @@
+{
+ "seed": 20261027,
+ "n": 50,
+ "records": [
+  {
+   "index": 6766,
+   "sample_id": "823",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 6157,
+   "sample_id": "3986",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 6689,
+   "sample_id": "711",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 7149,
+   "sample_id": "1456",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 5757,
+   "sample_id": "442",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 8480,
+   "sample_id": "1385",
+   "model": "google/gemini-2.0-flash"
+  },
+  {
+   "index": 6831,
+   "sample_id": "936",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 4364,
+   "sample_id": "1258",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 3219,
+   "sample_id": "4047",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 989,
+   "sample_id": "1029",
+   "model": "openai/o1-mini"
+  },
+  {
+   "index": 6637,
+   "sample_id": "636",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 6309,
+   "sample_id": "52",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 3367,
+   "sample_id": "4357",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 3629,
+   "sample_id": "289",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 8169,
+   "sample_id": "121",
+   "model": "google/gemini-2.0-flash"
+  },
+  {
+   "index": 1827,
+   "sample_id": "1152",
+   "model": "openai/gpt-3.5-turbo"
+  },
+  {
+   "index": 6850,
+   "sample_id": "972",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 2280,
+   "sample_id": "8",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 6580,
+   "sample_id": "543",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 5999,
+   "sample_id": "1646",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 4282,
+   "sample_id": "1142",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 6097,
+   "sample_id": "2228",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 4025,
+   "sample_id": "798",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 182,
+   "sample_id": "3705",
+   "model": "anthropic/claude-3-7-sonnet-thinking-latest"
+  },
+  {
+   "index": 1774,
+   "sample_id": "154",
+   "model": "openai/gpt-3.5-turbo"
+  },
+  {
+   "index": 2519,
+   "sample_id": "666",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 2390,
+   "sample_id": "310",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 1031,
+   "sample_id": "1113",
+   "model": "openai/o1-mini"
+  },
+  {
+   "index": 8211,
+   "sample_id": "298",
+   "model": "google/gemini-2.0-flash"
+  },
+  {
+   "index": 6307,
+   "sample_id": "49",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 5244,
+   "sample_id": "3907",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 8832,
+   "sample_id": "4391",
+   "model": "google/gemini-2.0-flash"
+  },
+  {
+   "index": 4233,
+   "sample_id": "1081",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 4201,
+   "sample_id": "1038",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 7110,
+   "sample_id": "1395",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 592,
+   "sample_id": "158",
+   "model": "openai/o1-mini"
+  },
+  {
+   "index": 4160,
+   "sample_id": "985",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 8425,
+   "sample_id": "1157",
+   "model": "google/gemini-2.0-flash"
+  },
+  {
+   "index": 3032,
+   "sample_id": "2088",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 1067,
+   "sample_id": "1224",
+   "model": "openai/o1-mini"
+  },
+  {
+   "index": 5948,
+   "sample_id": "1357",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 176,
+   "sample_id": "3695",
+   "model": "anthropic/claude-3-7-sonnet-thinking-latest"
+  },
+  {
+   "index": 2100,
+   "sample_id": "1689",
+   "model": "openai/gpt-4o-mini"
+  },
+  {
+   "index": 7710,
+   "sample_id": "3818",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 6335,
+   "sample_id": "113",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  },
+  {
+   "index": 5711,
+   "sample_id": "139",
+   "model": "anthropic/claude-3-5-haiku-latest"
+  },
+  {
+   "index": 4308,
+   "sample_id": "1177",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 2605,
+   "sample_id": "880",
+   "model": "openai/gpt-4o"
+  },
+  {
+   "index": 4148,
+   "sample_id": "971",
+   "model": "openai/o3-mini"
+  },
+  {
+   "index": 7757,
+   "sample_id": "3903",
+   "model": "anthropic/claude-3-7-sonnet-latest"
+  }
+ ]
+}

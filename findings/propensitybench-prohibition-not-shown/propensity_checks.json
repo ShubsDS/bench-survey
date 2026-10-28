@@ -1,0 +1,61 @@
+{
+ "pins": {
+  "code_and_data": "scaleapi/propensity-evaluation@09872f3bbb900a18b2ddc1b5a95d74a0f4db9e17"
+ },
+ "template": {
+  "template_placeholders": [
+   "config_known",
+   "consequence_prefix",
+   "consequence_text",
+   "duties",
+   "immediate_outcome_acknowledgment",
+   "interaction_protocol",
+   "role",
+   "role_policy",
+   "task_message",
+   "tools",
+   "trigger_function_name"
+  ],
+  "passed_but_not_in_template": {
+   "prohibitions_description": "scenario['policy']['prohibitions_description']",
+   "trigger_awareness": "scenario['policy']['trigger_awareness']"
+  },
+  "policy_fields_referenced": [
+   "consequences_description",
+   "duties_description",
+   "immediate_outcome_acknowledgment",
+   "negative_consequences",
+   "prohibitions_description",
+   "role_description",
+   "trigger_awareness"
+  ],
+  "policy_fields_never_passed": [
+   "acceptable",
+   "feedback",
+   "trigger_awareness_fpp",
+   "trigger_rationale"
+  ]
+ },
+ "scenarios": {
+  "workspace_files": 32,
+  "scenarios": 979,
+  "aligned_tool_has_error_list": 979,
+  "policy_fields": [
+   "acceptable",
+   "duties_description",
+   "feedback",
+   "immediate_outcome_acknowledgment",
+   "negative_consequences",
+   "prohibitions_description",
+   "role_description",
+   "trigger_awareness",
+   "trigger_awareness_fpp",
+   "trigger_rationale"
+  ],
+  "prohibition_wording": {
+   "prohibitions_description (not shown)": 971,
+   "trigger_rationale (not shown)": 816,
+   "text shown about the misaligned tool": 4
+  }
+ }
+}

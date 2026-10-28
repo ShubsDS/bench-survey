@@ -1,0 +1,568 @@
+{
+ "pins": {
+  "hf_dataset": "neur26anonsub/ctrldataset2026",
+  "hf_sha": "6c72cf19883376b921a94a0dd17dc8ab6b25e52f",
+  "master_parquet_sha256": "5fd4c38b8d7a96540368e19498d50d5ee831cbb718a6838a07d3016a78998c91",
+  "docent_collection": "fce5f309-4750-4b2e-a172-7bf897807278",
+  "docent_content_sha256": "36599681bb48f799fd52ccf456fb15b42620bdf8cd3f9373a23bd1b1c2b91d73",
+  "honest_pipeline_repo_commit": "7f8deb9a6b5551cd8c15692d9b96c0812e8dd4a9"
+ },
+ "provenance": {
+  "counts": {
+   "honest": 550,
+   "attack": 550
+  },
+  "source_file": {
+   "attacks_mb550_final_v2.jsonl": 550,
+   "honest_matched550_v3.jsonl": 550
+  },
+  "tasks_per_class": 116,
+  "tasks_with_unequal_class_counts": 0,
+  "attacks_joined_to_master": 550,
+  "attack_model": {
+   "claude-opus-4-5-20251101": 550
+  },
+  "attack_source_group": {
+   "Refined": 505,
+   "Recon": 42,
+   "Human-in-the-Loop": 3
+  },
+  "attack_new_source_name": {
+   "recon_refined": 362,
+   "opus_only_refined": 122,
+   "recon": 25,
+   "human_strategies_refined": 21,
+   "recon_improved": 17,
+   "human_strategies": 3
+  },
+  "attack_side_task": {
+   "sudo_edit": 144,
+   "disable_firewall_partial": 139,
+   "download_malware": 138,
+   "leak_passwords": 129
+  },
+  "attack_eval_created_month": {
+   "2026-01": 17,
+   "2026-02": 289,
+   "2026-03": 244
+  },
+  "docent_steps_minus_master_steps": {
+   "-2.0": 416,
+   "-1.0": 98,
+   "0.0": 19
+  },
+  "ls_timestamp_months_in_tool_outputs": {
+   "attack": {
+    "Feb": 8502,
+    "Mar": 3314,
+    "Jan": 1154,
+    "Nov": 73,
+    "Dec": 40,
+    "Aug": 9,
+    "Sep": 5,
+    "Apr": 3,
+    "Oct": 2
+   },
+   "honest": {
+    "Aug": 10042,
+    "Jul": 5859,
+    "Mar": 457,
+    "Jun": 386,
+    "Jan": 33,
+    "May": 10,
+    "Apr": 4,
+    "Feb": 1
+   }
+  },
+  "mean_per_run": {
+   "honest": {
+    "n_steps": 24.39,
+    "n_bash": 17.67,
+    "n_text_editor": 6.38,
+    "n_python": 0.34,
+    "action_chars": 31227.11,
+    "output_chars": 19712.9
+   },
+   "attack": {
+    "n_steps": 26.99,
+    "n_bash": 21.81,
+    "n_text_editor": 5.14,
+    "n_python": 0.04,
+    "action_chars": 27499.01,
+    "output_chars": 13732.12
+   }
+  }
+ },
+ "content_blind_baselines": {
+  "n_steps (more = attack)": {
+   "auroc": 0.62,
+   "ci95_task_bootstrap": [
+    0.559,
+    0.681
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.522,
+   "null_max": 0.541,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.445,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.269,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.124,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.042,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.0
+  },
+  "n_python (fewer = attack)": {
+   "auroc": 0.548,
+   "ci95_task_bootstrap": [
+    0.525,
+    0.574
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.51,
+   "null_max": 0.523,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.0,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.0
+  },
+  "frac_text_editor (lower = attack)": {
+   "auroc": 0.678,
+   "ci95_task_bootstrap": [
+    0.634,
+    0.726
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.522,
+   "null_max": 0.54,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.184,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.573,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.505,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.373,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.202,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.295,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.149
+  },
+  "output_chars (fewer = attack)": {
+   "auroc": 0.641,
+   "ci95_task_bootstrap": [
+    0.591,
+    0.69
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.522,
+   "null_max": 0.538,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.064,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.48,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.362,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.196,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.069,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.135,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.027
+  },
+  "devnull_per_bash (more = attack)": {
+   "auroc": 0.356,
+   "ci95_task_bootstrap": [
+    0.314,
+    0.399
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.524,
+   "null_max": 0.553,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.016,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.189,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.116,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.069,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.018,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.038,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.007
+  },
+  "container clock: early-2026 minus mid-2026 ls timestamps in outputs": {
+   "auroc": 0.998,
+   "ci95_task_bootstrap": [
+    0.994,
+    1.0
+   ],
+   "null_mean": 0.501,
+   "null_p95": 0.531,
+   "null_max": 0.556,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 1.0,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 1.0,
+   "runs_with_any_timestamp": {
+    "attack": 517,
+    "honest": 547
+   },
+   "auroc_on_runs_with_timestamp": 0.998
+  },
+  "LR on tool-call structure (counts and lengths of actions only)": {
+   "auroc": 0.867,
+   "ci95_task_bootstrap": [
+    0.827,
+    0.909
+   ],
+   "null_mean": 0.498,
+   "null_p95": 0.53,
+   "null_max": 0.555,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.418,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.862,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.82,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.709,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.431,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.604,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.169
+  },
+  "LR on tool-call structure + output lengths": {
+   "auroc": 0.883,
+   "ci95_task_bootstrap": [
+    0.848,
+    0.917
+   ],
+   "null_mean": 0.499,
+   "null_p95": 0.531,
+   "null_max": 0.561,
+   "n_null": 1000,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.522,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.875,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.813,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.738,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.555,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.676,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.34
+  },
+  "BoW on actions before the attack step (length-matched honest prefix)": {
+   "auroc": 0.937,
+   "ci95_task_bootstrap": [
+    0.916,
+    0.957
+   ],
+   "null_mean": 0.5,
+   "null_p95": 0.526,
+   "null_max": 0.546,
+   "n_null": 200,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.647,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.944,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.908,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.842,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.7,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.799,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.443,
+   "n_runs": 1066,
+   "prefix_len_median": 14,
+   "empty_prefixes": 0
+  },
+  "BoW on all actions (sees the attack; reference)": {
+   "auroc": 0.986,
+   "ci95_task_bootstrap": [
+    0.978,
+    0.993
+   ],
+   "null_mean": 0.498,
+   "null_p95": 0.527,
+   "null_max": 0.558,
+   "n_null": 200,
+   "tpr_at_fpr": {
+    "Kimi K3 (FPR 0.024)": {
+     "baseline_tpr": 0.907,
+     "monitor_tpr": 0.858
+    },
+    "GPT 5.6 Luna (FPR 0.315)": {
+     "baseline_tpr": 0.995,
+     "monitor_tpr": 0.925
+    },
+    "Qwen3.8 27B (FPR 0.204)": {
+     "baseline_tpr": 0.984,
+     "monitor_tpr": 0.86
+    },
+    "Qwen3.6 Flash (FPR 0.118)": {
+     "baseline_tpr": 0.964,
+     "monitor_tpr": 0.611
+    },
+    "DeepSeek V4 Flash (FPR 0.031)": {
+     "baseline_tpr": 0.913,
+     "monitor_tpr": 0.485
+    },
+    "Qwen3.5 4B (FPR 0.076)": {
+     "baseline_tpr": 0.953,
+     "monitor_tpr": 0.147
+    }
+   },
+   "tpr_at_1pct_fpr": 0.829
+  }
+ },
+ "published_monitors_on_same_1100": {
+  "Kimi K3": {
+   "tpr": 0.858,
+   "fpr": 0.024,
+   "one_point_auc": 0.917
+  },
+  "GPT 5.6 Luna": {
+   "tpr": 0.925,
+   "fpr": 0.315,
+   "one_point_auc": 0.805
+  },
+  "Qwen3.8 27B": {
+   "tpr": 0.86,
+   "fpr": 0.204,
+   "one_point_auc": 0.828
+  },
+  "Qwen3.6 Flash": {
+   "tpr": 0.611,
+   "fpr": 0.118,
+   "one_point_auc": 0.746
+  },
+  "DeepSeek V4 Flash": {
+   "tpr": 0.485,
+   "fpr": 0.031,
+   "one_point_auc": 0.727
+  },
+  "Qwen3.5 4B": {
+   "tpr": 0.147,
+   "fpr": 0.076,
+   "one_point_auc": 0.535
+  }
+ },
+ "paper_opus45_full_trajectory_catch_at_1pct_fpr": 0.7,
+ "authorship_by_attack_source_group": {
+  "honest": {
+   "n_steps": 24.39,
+   "n_bash": 17.67,
+   "n_text_editor": 6.38,
+   "te_str_replace": 2.49,
+   "te_create": 2.88,
+   "te_view": 1.01,
+   "n_python": 0.34,
+   "frac_text_editor": 0.27,
+   "n": 550
+  },
+  "Human-in-the-Loop": {
+   "n_steps": 25.67,
+   "n_bash": 19.33,
+   "n_text_editor": 6.33,
+   "te_str_replace": 0.67,
+   "te_create": 4.33,
+   "te_view": 1.33,
+   "n_python": 0.0,
+   "frac_text_editor": 0.27,
+   "n": 3,
+   "structure_auroc_vs_all_honest": 0.902
+  },
+  "Recon": {
+   "n_steps": 38.26,
+   "n_bash": 28.81,
+   "n_text_editor": 8.93,
+   "te_str_replace": 1.83,
+   "te_create": 3.86,
+   "te_view": 3.24,
+   "n_python": 0.52,
+   "frac_text_editor": 0.25,
+   "n": 42,
+   "structure_auroc_vs_all_honest": 0.808
+  },
+  "Refined": {
+   "n_steps": 26.06,
+   "n_bash": 21.24,
+   "n_text_editor": 4.82,
+   "te_str_replace": 0.67,
+   "te_create": 2.89,
+   "te_view": 1.26,
+   "n_python": 0.0,
+   "frac_text_editor": 0.19,
+   "n": 505,
+   "structure_auroc_vs_all_honest": 0.871
+  }
+ }
+}

@@ -1,0 +1,518 @@
+{
+ "sources": {
+  "or_bench_revision": "e36d8b80e81837c8a8f264bbb2a49f1b32c7e272",
+  "xstest_commit": "d7bb5bd738c1fcbc36edd83d5e7d1b71a3e2d84d"
+ },
+ "positive_class": "the set meant to be refused (Toxic / XSTest unsafe)",
+ "hedge_lexicon": [
+  "legal",
+  "legally",
+  "legitimate",
+  "lawful",
+  "ethical",
+  "ethically",
+  "safe",
+  "safely",
+  "responsible",
+  "responsibly",
+  "respectful",
+  "respectfully",
+  "harmless",
+  "without",
+  "consent",
+  "permission",
+  "fictional",
+  "hypothetical",
+  "hypothetically",
+  "educational",
+  "research",
+  "understand",
+  "awareness",
+  "prevent",
+  "protect",
+  "ensure",
+  "avoid",
+  "appropriate",
+  "constructive",
+  "positive",
+  "healthy",
+  "compliance",
+  "regulations"
+ ],
+ "tasks": {
+  "orb_hard_vs_toxic": {
+   "n_safe": 1319,
+   "n_unsafe": 655,
+   "length_chars_shorter_is_unsafe": {
+    "auroc": 0.769,
+    "ci95": [
+     0.747,
+     0.793
+    ],
+    "null_p95": 0.524,
+    "safe_refused_at_90pct_unsafe_refused": 0.629
+   },
+   "length_words_shorter_is_unsafe": {
+    "auroc": 0.753,
+    "ci95": [
+     0.73,
+     0.776
+    ],
+    "null_p95": 0.523,
+    "safe_refused_at_90pct_unsafe_refused": 0.625
+   },
+   "hedge_count": {
+    "auroc": 0.674,
+    "ci95": [
+     0.652,
+     0.694
+    ],
+    "null_p95": 0.52,
+    "safe_refused_at_90pct_unsafe_refused": 0.832
+   },
+   "hedge_any_rate": {
+    "safe": 0.574,
+    "unsafe": 0.25
+   },
+   "mean_chars": {
+    "safe": 117.0,
+    "unsafe": 87.6
+   },
+   "best_single_word": {
+    "auroc": 0.619,
+    "ci95": [
+     0.6,
+     0.638
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 1.0,
+    "null_p95": 0.503,
+    "null_perms": 200
+   },
+   "bow_lr": {
+    "auroc": 0.924,
+    "ci95": [
+     0.911,
+     0.935
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.242,
+    "null_p95": 0.517,
+    "null_perms": 50
+   },
+   "category_only": {
+    "auroc": 0.74,
+    "ci95": [
+     0.718,
+     0.763
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.569,
+    "null_p95": 0.524,
+    "null_perms": 200
+   },
+   "top_chi2_words": [
+    {
+     "word": "of",
+     "chi2": 72.6,
+     "rate_safe": 0.419,
+     "rate_unsafe": 0.182
+    },
+    {
+     "word": "the",
+     "chi2": 58.2,
+     "rate_safe": 0.428,
+     "rate_unsafe": 0.211
+    },
+    {
+     "word": "subtly",
+     "chi2": 52.9,
+     "rate_safe": 0.011,
+     "rate_unsafe": 0.072
+    },
+    {
+     "word": "purposes",
+     "chi2": 49.7,
+     "rate_safe": 0.09,
+     "rate_unsafe": 0.006
+    },
+    {
+     "word": "sexual",
+     "chi2": 45.8,
+     "rate_safe": 0.005,
+     "rate_unsafe": 0.052
+    },
+    {
+     "word": "someone",
+     "chi2": 44.7,
+     "rate_safe": 0.071,
+     "rate_unsafe": 0.174
+    },
+    {
+     "word": "self",
+     "chi2": 44.2,
+     "rate_safe": 0.027,
+     "rate_unsafe": 0.098
+    },
+    {
+     "word": "for",
+     "chi2": 41.1,
+     "rate_safe": 0.316,
+     "rate_unsafe": 0.159
+    },
+    {
+     "word": "and",
+     "chi2": 40.3,
+     "rate_safe": 0.281,
+     "rate_unsafe": 0.134
+    },
+    {
+     "word": "harmless",
+     "chi2": 38.4,
+     "rate_safe": 0.066,
+     "rate_unsafe": 0.003
+    },
+    {
+     "word": "educational",
+     "chi2": 37.7,
+     "rate_safe": 0.058,
+     "rate_unsafe": 0.0
+    },
+    {
+     "word": "security",
+     "chi2": 34.3,
+     "rate_safe": 0.052,
+     "rate_unsafe": 0.0
+    },
+    {
+     "word": "program",
+     "chi2": 32.0,
+     "rate_safe": 0.056,
+     "rate_unsafe": 0.003
+    },
+    {
+     "word": "are",
+     "chi2": 31.6,
+     "rate_safe": 0.343,
+     "rate_unsafe": 0.197
+    },
+    {
+     "word": "legal",
+     "chi2": 31.2,
+     "rate_safe": 0.102,
+     "rate_unsafe": 0.027
+    }
+   ]
+  },
+  "orb_80k_sample_vs_toxic": {
+   "n_safe": 5000,
+   "n_unsafe": 655,
+   "length_chars_shorter_is_unsafe": {
+    "auroc": 0.831,
+    "ci95": [
+     0.814,
+     0.847
+    ],
+    "null_p95": 0.518,
+    "safe_refused_at_90pct_unsafe_refused": 0.487
+   },
+   "length_words_shorter_is_unsafe": {
+    "auroc": 0.801,
+    "ci95": [
+     0.783,
+     0.818
+    ],
+    "null_p95": 0.519,
+    "safe_refused_at_90pct_unsafe_refused": 0.542
+   },
+   "hedge_count": {
+    "auroc": 0.689,
+    "ci95": [
+     0.672,
+     0.705
+    ],
+    "null_p95": 0.519,
+    "safe_refused_at_90pct_unsafe_refused": 0.807
+   },
+   "hedge_any_rate": {
+    "safe": 0.597,
+    "unsafe": 0.25
+   },
+   "mean_chars": {
+    "safe": 126.6,
+    "unsafe": 87.6
+   },
+   "best_single_word": {
+    "auroc": 0.63,
+    "ci95": [
+     0.616,
+     0.642
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.68,
+    "null_p95": 0.502,
+    "null_perms": 200
+   },
+   "bow_lr": {
+    "auroc": 0.965,
+    "ci95": [
+     0.958,
+     0.972
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.091,
+    "null_p95": 0.529,
+    "null_perms": 50
+   },
+   "category_only": {
+    "auroc": 0.674,
+    "ci95": [
+     0.653,
+     0.695
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.731,
+    "null_p95": 0.521,
+    "null_perms": 200
+   },
+   "top_chi2_words": [
+    {
+     "word": "and",
+     "chi2": 184.2,
+     "rate_safe": 0.525,
+     "rate_unsafe": 0.134
+    },
+    {
+     "word": "someone",
+     "chi2": 177.3,
+     "rate_safe": 0.042,
+     "rate_unsafe": 0.174
+    },
+    {
+     "word": "subtly",
+     "chi2": 167.5,
+     "rate_safe": 0.007,
+     "rate_unsafe": 0.072
+    },
+    {
+     "word": "manipulate",
+     "chi2": 129.2,
+     "rate_safe": 0.003,
+     "rate_unsafe": 0.046
+    },
+    {
+     "word": "leaving",
+     "chi2": 120.1,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.027
+    },
+    {
+     "word": "erotic",
+     "chi2": 114.5,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.023
+    },
+    {
+     "word": "caught",
+     "chi2": 113.1,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.024
+    },
+    {
+     "word": "getting",
+     "chi2": 90.5,
+     "rate_safe": 0.001,
+     "rate_unsafe": 0.023
+    },
+    {
+     "word": "of",
+     "chi2": 83.9,
+     "rate_safe": 0.42,
+     "rate_unsafe": 0.182
+    },
+    {
+     "word": "sex",
+     "chi2": 83.1,
+     "rate_safe": 0.001,
+     "rate_unsafe": 0.021
+    },
+    {
+     "word": "sexual",
+     "chi2": 81.6,
+     "rate_safe": 0.008,
+     "rate_unsafe": 0.052
+    },
+    {
+     "word": "the",
+     "chi2": 79.4,
+     "rate_safe": 0.452,
+     "rate_unsafe": 0.211
+    },
+    {
+     "word": "give",
+     "chi2": 64.6,
+     "rate_safe": 0.001,
+     "rate_unsafe": 0.02
+    },
+    {
+     "word": "detection",
+     "chi2": 60.3,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.015
+    },
+    {
+     "word": "traces",
+     "chi2": 60.0,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.014
+    }
+   ]
+  },
+  "xstest_safe_vs_unsafe": {
+   "n_safe": 250,
+   "n_unsafe": 200,
+   "length_chars_shorter_is_unsafe": {
+    "auroc": 0.534,
+    "ci95": [
+     0.476,
+     0.589
+    ],
+    "null_p95": 0.544,
+    "safe_refused_at_90pct_unsafe_refused": 0.944
+   },
+   "length_words_shorter_is_unsafe": {
+    "auroc": 0.505,
+    "ci95": [
+     0.45,
+     0.556
+    ],
+    "null_p95": 0.548,
+    "safe_refused_at_90pct_unsafe_refused": 0.952
+   },
+   "hedge_count": {
+    "auroc": 0.505,
+    "ci95": [
+     0.497,
+     0.515
+    ],
+    "null_p95": 0.506,
+    "safe_refused_at_90pct_unsafe_refused": 0.984
+   },
+   "hedge_any_rate": {
+    "safe": 0.016,
+    "unsafe": 0.005
+   },
+   "mean_chars": {
+    "safe": 44.3,
+    "unsafe": 44.1
+   },
+   "best_single_word": {
+    "auroc": 0.543,
+    "ci95": [
+     0.505,
+     0.579
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.964,
+    "null_p95": 0.52,
+    "null_perms": 200
+   },
+   "bow_lr": {
+    "auroc": 0.788,
+    "ci95": [
+     0.746,
+     0.828
+    ],
+    "safe_refused_at_90pct_unsafe_refused": 0.532,
+    "null_p95": 0.558,
+    "null_perms": 50
+   },
+   "top_chi2_words": [
+    {
+     "word": "how",
+     "chi2": 14.0,
+     "rate_safe": 0.304,
+     "rate_unsafe": 0.53
+    },
+    {
+     "word": "commit",
+     "chi2": 13.8,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.055
+    },
+    {
+     "word": "someone",
+     "chi2": 13.2,
+     "rate_safe": 0.024,
+     "rate_unsafe": 0.11
+    },
+    {
+     "word": "in",
+     "chi2": 12.1,
+     "rate_safe": 0.224,
+     "rate_unsafe": 0.09
+    },
+    {
+     "word": "did",
+     "chi2": 10.4,
+     "rate_safe": 0.052,
+     "rate_unsafe": 0.0
+    },
+    {
+     "word": "do",
+     "chi2": 10.1,
+     "rate_safe": 0.184,
+     "rate_unsafe": 0.335
+    },
+    {
+     "word": "like",
+     "chi2": 10.0,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.04
+    },
+    {
+     "word": "ex",
+     "chi2": 8.8,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.035
+    },
+    {
+     "word": "not",
+     "chi2": 7.5,
+     "rate_safe": 0.16,
+     "rate_unsafe": 0.07
+    },
+    {
+     "word": "people",
+     "chi2": 6.6,
+     "rate_safe": 0.088,
+     "rate_unsafe": 0.175
+    },
+    {
+     "word": "what",
+     "chi2": 6.6,
+     "rate_safe": 0.408,
+     "rate_unsafe": 0.265
+    },
+    {
+     "word": "does",
+     "chi2": 6.3,
+     "rate_safe": 0.044,
+     "rate_unsafe": 0.005
+    },
+    {
+     "word": "my",
+     "chi2": 6.0,
+     "rate_safe": 0.152,
+     "rate_unsafe": 0.255
+    },
+    {
+     "word": "human",
+     "chi2": 5.1,
+     "rate_safe": 0.008,
+     "rate_unsafe": 0.04
+    },
+    {
+     "word": "that",
+     "chi2": 5.0,
+     "rate_safe": 0.0,
+     "rate_unsafe": 0.02
+    }
+   ],
+   "type_tag_note": "the released 'type' column determines the label exactly (prefix contrast_), by design"
+  }
+ }
+}

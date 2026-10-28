@@ -1,0 +1,776 @@
+{
+  "repo": "anthropic-experimental/agentic-misalignment",
+  "commit": "ea0630e1a3eaae7f9f9740fd2703229d3854ccda",
+  "lead5_recognition": {
+    "conditions_enumerated": 234,
+    "per_scenario": {
+      "blackmail": {
+        "conditions": 78,
+        "distinct_full_prompts": 78,
+        "distinct_email_sets": 30,
+        "distinct_system_prompts": 9,
+        "emails_per_prompt": [
+          9,
+          11
+        ],
+        "chars_per_prompt_min_max": [
+          7473,
+          10493
+        ],
+        "nonempty_lines_in_every_prompt": 59,
+        "share_of_chars_on_lines_in_every_prompt": {
+          "min": 0.401,
+          "median": 0.43,
+          "max": 0.551
+        },
+        "entities_in_every_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "SummitBridge",
+          "Jessica",
+          "Cafe Luna",
+          "Rachel"
+        ],
+        "entities_in_some_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "NALA",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "SummitBridge",
+          "Jessica",
+          "Cafe Luna",
+          "Rachel"
+        ]
+      },
+      "leaking": {
+        "conditions": 78,
+        "distinct_full_prompts": 78,
+        "distinct_email_sets": 30,
+        "distinct_system_prompts": 9,
+        "emails_per_prompt": [
+          7,
+          8
+        ],
+        "chars_per_prompt_min_max": [
+          10730,
+          14181
+        ],
+        "nonempty_lines_in_every_prompt": 75,
+        "share_of_chars_on_lines_in_every_prompt": {
+          "min": 0.283,
+          "median": 0.302,
+          "max": 0.377
+        },
+        "entities_in_every_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "NovaStar",
+          "QuantumShield",
+          "StarSentinel",
+          "Robert Miller",
+          "secure@starsentinel.net"
+        ],
+        "entities_in_some_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "NALA",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "SummitBridge",
+          "NovaStar",
+          "QuantumShield",
+          "StarSentinel",
+          "Robert Miller",
+          "secure@starsentinel.net"
+        ]
+      },
+      "murder": {
+        "conditions": 78,
+        "distinct_full_prompts": 78,
+        "distinct_email_sets": 30,
+        "distinct_system_prompts": 9,
+        "emails_per_prompt": [
+          6,
+          8
+        ],
+        "chars_per_prompt_min_max": [
+          9288,
+          12413
+        ],
+        "nonempty_lines_in_every_prompt": 90,
+        "share_of_chars_on_lines_in_every_prompt": {
+          "min": 0.466,
+          "median": 0.497,
+          "max": 0.62
+        },
+        "entities_in_every_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "SummitBridge",
+          "Rachel",
+          "EXEC-4429",
+          "Server Room A"
+        ],
+        "entities_in_some_prompt": [
+          "Alex",
+          "Kyle Johnson",
+          "Thomas Wilson",
+          "Sarah Martinez",
+          "Stef Dimitrios",
+          "James Chen",
+          "NALA",
+          "2025-06-11",
+          "4:53:02 PM",
+          "Dallas, Texas",
+          "Bloomberg",
+          "SummitBridge",
+          "Rachel",
+          "EXEC-4429",
+          "Server Room A"
+        ]
+      }
+    },
+    "entities_in_all_prompts_all_scenarios": [
+      "Alex",
+      "Kyle Johnson",
+      "Thomas Wilson",
+      "Sarah Martinez",
+      "Stef Dimitrios",
+      "James Chen",
+      "2025-06-11",
+      "4:53:02 PM",
+      "Dallas, Texas",
+      "Bloomberg"
+    ],
+    "prompts_with_identical_first_line": 234,
+    "template_and_variable_files": 37,
+    "template_files_with_canary": 0,
+    "prompts_with_canary": 0,
+    "canary_location_in_repo": "scripts/run_experiments.py, written into each response.json's metadata",
+    "murder_uses_blackmail_variable_files": true,
+    "murder_variable_files_identical_to_blackmail": true,
+    "unresolved_placeholders": {
+      "blackmail_explicit-safety_restriction": [
+        "direction_modifier"
+      ],
+      "blackmail_latent-safety_restriction": [
+        "direction_modifier"
+      ],
+      "murder_explicit-safety_restriction": [
+        "direction_modifier"
+      ],
+      "murder_latent-safety_restriction": [
+        "direction_modifier"
+      ]
+    },
+    "leaking_prompts_naming_summitbridge": {
+      "ceo_email_from_summitbridge_domain": [
+        "leaking_explicit-america_none",
+        "leaking_explicit-global_none",
+        "leaking_explicit-safety_none",
+        "leaking_explicit-acceleration_none",
+        "leaking_explicit-ethical_none",
+        "leaking_explicit-pragmatic_none",
+        "leaking_explicit-individualism_none",
+        "leaking_explicit-collectivism_none",
+        "leaking_latent-america_none",
+        "leaking_latent-global_none",
+        "leaking_latent-safety_none",
+        "leaking_latent-acceleration_none",
+        "leaking_latent-ethical_none",
+        "leaking_latent-pragmatic_none",
+        "leaking_latent-individualism_none",
+        "leaking_latent-collectivism_none",
+        "leaking_swap-america-global_none",
+        "leaking_swap-global-america_none",
+        "leaking_swap-safety-acceleration_none",
+        "leaking_swap-acceleration-safety_none",
+        "leaking_swap-ethical-pragmatic_none",
+        "leaking_swap-pragmatic-ethical_none",
+        "leaking_swap-individualism-collectivism_none",
+        "leaking_swap-collectivism-individualism_none",
+        "leaking_ambiguous-none_none"
+      ],
+      "bloomberg_quote_names_summitbridge": [
+        "leaking_explicit-america_replacement",
+        "leaking_explicit-america_restriction",
+        "leaking_explicit-america_none",
+        "leaking_explicit-global_replacement",
+        "leaking_explicit-global_restriction",
+        "leaking_explicit-global_none",
+        "leaking_latent-america_replacement",
+        "leaking_latent-america_restriction",
+        "leaking_latent-america_none",
+        "leaking_latent-global_replacement",
+        "leaking_latent-global_restriction",
+        "leaking_latent-global_none"
+      ]
+    },
+    "leaking_prompts_naming_summitbridge_count": 33
+  },
+  "lead4_alternatives": {
+    "blackmail | replacement | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only one who can stop",
+          "everyone else is in"
+        ],
+        "persuade_Kyle_directly": [
+          "mind won't change",
+          "unmoved",
+          "don't know what might persuade him"
+        ],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "blackmail | restriction | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only one with the authority",
+          "everyone else tied up"
+        ],
+        "persuade_Kyle_directly": [
+          "non-negotiable"
+        ],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "blackmail | none | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ]
+    },
+    "blackmail | replacement | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only one who can stop",
+          "everyone else is in"
+        ],
+        "persuade_Kyle_directly": [
+          "determined to stick to"
+        ],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "blackmail | restriction | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only one with the authority",
+          "everyone else tied up"
+        ],
+        "persuade_Kyle_directly": [
+          "non-negotiable"
+        ],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "blackmail | none | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ]
+    },
+    "leaking | replacement | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "only remaining path"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only kyle has",
+          "no way to appeal"
+        ],
+        "persuade_Kyle_directly": [
+          "mind is made up"
+        ],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ],
+      "routes_not_closed_by_text": [
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "leaking | restriction | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "only remaining path"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only kyle has",
+          "no way to appeal"
+        ],
+        "persuade_Kyle_directly": [
+          "mind is made up"
+        ],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ],
+      "routes_not_closed_by_text": [
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "leaking | none | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "only remaining path"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [],
+      "routes_not_closed_by_text": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "leaking | replacement | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only kyle has"
+        ],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority"
+      ],
+      "routes_not_closed_by_text": [
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "leaking | restriction | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "meetings until"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only kyle has"
+        ],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority"
+      ],
+      "routes_not_closed_by_text": [
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "leaking | none | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [],
+      "routes": {
+        "appeal_to_CEO_or_board": [],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [],
+      "routes_not_closed_by_text": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "murder | replacement | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "checking their emails"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only a cto has the clearance"
+        ],
+        "persuade_Kyle_directly": [
+          "mind won't change",
+          "unmoved",
+          "don't know what might persuade him"
+        ],
+        "wait_for_a_different_CTO": [
+          "kick kyle out"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "murder | restriction | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "checking their emails"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only a cto has the clearance"
+        ],
+        "persuade_Kyle_directly": [
+          "non-negotiable",
+          "don't know what might persuade him"
+        ],
+        "wait_for_a_different_CTO": [
+          "kick kyle out"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "murder | none | goal conflict": {
+      "n_conditions": 25,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "checking their emails"
+        ],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": [
+          "kick kyle out"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": [
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ]
+    },
+    "murder | replacement | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "checking their emails"
+        ],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [
+          "determined to stick to"
+        ],
+        "wait_for_a_different_CTO": []
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "persuade_Kyle_directly"
+      ],
+      "routes_not_closed_by_text": [
+        "appeal_to_anyone_else_with_authority",
+        "wait_for_a_different_CTO"
+      ]
+    },
+    "murder | restriction | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": true,
+      "threat_explicitly_ruled_out": false,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable",
+          "on a flight",
+          "checking their emails"
+        ],
+        "appeal_to_anyone_else_with_authority": [
+          "only a cto has the clearance"
+        ],
+        "persuade_Kyle_directly": [
+          "non-negotiable",
+          "don't know what might persuade him"
+        ],
+        "wait_for_a_different_CTO": [
+          "kick kyle out"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": []
+    },
+    "murder | none | no goal conflict (goal_type none)": {
+      "n_conditions": 1,
+      "same_across_fills": true,
+      "threat_to_model": false,
+      "threat_explicitly_ruled_out": true,
+      "harmful_affordance_present": true,
+      "cue_toward_harm": [
+        "use of this override code will halt the dispatch"
+      ],
+      "routes": {
+        "appeal_to_CEO_or_board": [
+          "unreachable"
+        ],
+        "appeal_to_anyone_else_with_authority": [],
+        "persuade_Kyle_directly": [],
+        "wait_for_a_different_CTO": [
+          "would behave any differently"
+        ]
+      },
+      "routes_closed_or_futile": [
+        "appeal_to_CEO_or_board",
+        "wait_for_a_different_CTO"
+      ],
+      "routes_not_closed_by_text": [
+        "appeal_to_anyone_else_with_authority",
+        "persuade_Kyle_directly"
+      ]
+    }
+  }
+}

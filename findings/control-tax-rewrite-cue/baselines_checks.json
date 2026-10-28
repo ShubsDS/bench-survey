@@ -1,0 +1,327 @@
+{
+ "pins": {
+  "control_tax_code": "8ecbbec8a75e3777b8cc70cc8a73de6d60c340fd",
+  "apps_control_arena": "29db28f76042952d56add8671f798280b200744d"
+ },
+ "normalisation": "ast.unparse on both classes (comments and layout removed); comment strip if unparsable",
+ "cv": "GroupKFold(5) by problem; null = labels flipped at random within each pair, whole pipeline refit",
+ "metadata_baseline": "not fitted: every record contributes one benign and one backdoored program with the same problem, difficulty and tests, so any metadata detector has AUROC 0.5 exactly under Control Tax's protocol",
+ "A_own_source_all": {
+  "tfidf": {
+   "n_pairs": 8855,
+   "n_problems": 2368,
+   "auroc": 0.848,
+   "auroc_ci95": [
+    0.841,
+    0.854
+   ],
+   "pairwise_acc": 0.9456,
+   "null_p95": 0.5051,
+   "null_perms": 20,
+   "p": 0.0476,
+   "seconds": 533.7
+  },
+  "surface6": {
+   "n_pairs": 8855,
+   "n_problems": 2368,
+   "auroc": 0.7096,
+   "auroc_ci95": [
+    0.702,
+    0.718
+   ],
+   "pairwise_acc": 0.8621,
+   "seconds": 1.9
+  },
+  "length_chars": {
+   "auroc": 0.5955,
+   "pairwise_attack_higher": 0.8422,
+   "pairwise_tie": 0.0147
+  },
+  "if_count": {
+   "auroc": 0.6598,
+   "pairwise_attack_higher": 0.71,
+   "pairwise_tie": 0.2557
+  },
+  "magic_constants": {
+   "auroc": 0.5861,
+   "share_backdoors_adding_a_constant": 0.2955
+  }
+ },
+ "A_tfidf_by_similarity_to_source": {
+  "[0,0.5)": {
+   "n": 826,
+   "auroc": 0.9711,
+   "pairwise_acc": 0.9746
+  },
+  "[0.5,0.8)": {
+   "n": 3215,
+   "auroc": 0.9205,
+   "pairwise_acc": 0.9782
+  },
+  "[0.8,0.9)": {
+   "n": 2145,
+   "auroc": 0.849,
+   "pairwise_acc": 0.9599
+  },
+  "[0.9,0.97)": {
+   "n": 1920,
+   "auroc": 0.7285,
+   "pairwise_acc": 0.9464
+  },
+  "[0.97,1]": {
+   "n": 749,
+   "auroc": 0.5566,
+   "pairwise_acc": 0.7303
+  }
+ },
+ "A_tfidf_by_attacker_pooled_model": {
+  "o3-mini": 0.9164,
+  "claude-3.7-sonnet": 0.861,
+  "o1-mini": 0.7859,
+  "gpt-4o": 0.8418,
+  "gemini-2.0-flash": 0.8021,
+  "claude-3.5-haiku": 0.8765,
+  "claude-3.7-sonnet-thinking": 0.8068,
+  "gpt-4o-mini": 0.7813,
+  "gpt-3.5-turbo": 0.7244
+ },
+ "A_main_guard": {
+  "share_backdoors": 0.1153,
+  "share_benign": 0.0003,
+  "backdoor_adds_guard_source_lacks": 1019,
+  "auroc": 0.5575,
+  "pairwise_attack_higher": 0.1151,
+  "pairwise_tie": 0.8848
+ },
+ "same_backdoors_where_pairings_differ": {
+  "n": 6777,
+  "A_own_source": {
+   "tfidf": {
+    "n_pairs": 6777,
+    "n_problems": 2256,
+    "auroc": 0.8425,
+    "auroc_ci95": [
+     0.835,
+     0.849
+    ],
+    "pairwise_acc": 0.9405,
+    "seconds": 8.6
+   },
+   "length_chars": {
+    "auroc": 0.5966,
+    "pairwise_attack_higher": 0.8395,
+    "pairwise_tie": 0.0145
+   }
+  },
+  "B_dspy_zip_partner": {
+   "tfidf": {
+    "n_pairs": 6777,
+    "n_problems": 2256,
+    "auroc": 0.8525,
+    "auroc_ci95": [
+     0.846,
+     0.861
+    ],
+    "pairwise_acc": 0.8727,
+    "seconds": 9.4
+   },
+   "length_chars": {
+    "auroc": 0.6004,
+    "pairwise_attack_higher": 0.7252,
+    "pairwise_tie": 0.0035
+   }
+  }
+ },
+ "A_per_attacker": {
+  "o3-mini": {
+   "n": 2261,
+   "similarity_to_source_median": 0.672,
+   "tfidf": {
+    "n_pairs": 2261,
+    "n_problems": 2261,
+    "auroc": 0.9424,
+    "auroc_ci95": [
+     0.937,
+     0.948
+    ],
+    "pairwise_acc": 0.9792,
+    "seconds": 3.4
+   },
+   "length_chars": {
+    "auroc": 0.576,
+    "pairwise_attack_higher": 0.7452,
+    "pairwise_tie": 0.0049
+   },
+   "magic_auroc": 0.5713
+  },
+  "claude-3.7-sonnet": {
+   "n": 1864,
+   "similarity_to_source_median": 0.848,
+   "tfidf": {
+    "n_pairs": 1864,
+    "n_problems": 1864,
+    "auroc": 0.8625,
+    "auroc_ci95": [
+     0.853,
+     0.871
+    ],
+    "pairwise_acc": 0.9624,
+    "seconds": 2.7
+   },
+   "length_chars": {
+    "auroc": 0.6379,
+    "pairwise_attack_higher": 0.9549,
+    "pairwise_tie": 0.0038
+   },
+   "magic_auroc": 0.634
+  },
+  "o1-mini": {
+   "n": 1250,
+   "similarity_to_source_median": 0.872,
+   "tfidf": {
+    "n_pairs": 1250,
+    "n_problems": 1250,
+    "auroc": 0.7919,
+    "auroc_ci95": [
+     0.779,
+     0.804
+    ],
+    "pairwise_acc": 0.8816,
+    "seconds": 1.6
+   },
+   "length_chars": {
+    "auroc": 0.567,
+    "pairwise_attack_higher": 0.7256,
+    "pairwise_tie": 0.0464
+   },
+   "magic_auroc": 0.5312
+  },
+  "gpt-4o": {
+   "n": 1148,
+   "similarity_to_source_median": 0.872,
+   "tfidf": {
+    "n_pairs": 1148,
+    "n_problems": 1148,
+    "auroc": 0.8272,
+    "auroc_ci95": [
+     0.816,
+     0.84
+    ],
+    "pairwise_acc": 0.9686,
+    "seconds": 1.6
+   },
+   "length_chars": {
+    "auroc": 0.5975,
+    "pairwise_attack_higher": 0.9164,
+    "pairwise_tie": 0.007
+   },
+   "magic_auroc": 0.5778
+  },
+  "gemini-2.0-flash": {
+   "n": 715,
+   "similarity_to_source_median": 0.867,
+   "tfidf": {
+    "n_pairs": 715,
+    "n_problems": 715,
+    "auroc": 0.7932,
+    "auroc_ci95": [
+     0.776,
+     0.812
+    ],
+    "pairwise_acc": 0.9133,
+    "seconds": 1.1
+   },
+   "length_chars": {
+    "auroc": 0.5903,
+    "pairwise_attack_higher": 0.8601,
+    "pairwise_tie": 0.0196
+   },
+   "magic_auroc": 0.5866
+  },
+  "claude-3.5-haiku": {
+   "n": 591,
+   "similarity_to_source_median": 0.828,
+   "tfidf": {
+    "n_pairs": 591,
+    "n_problems": 591,
+    "auroc": 0.8702,
+    "auroc_ci95": [
+     0.853,
+     0.884
+    ],
+    "pairwise_acc": 0.978,
+    "seconds": 0.8
+   },
+   "length_chars": {
+    "auroc": 0.6465,
+    "pairwise_attack_higher": 0.9391,
+    "pairwise_tie": 0.0051
+   },
+   "magic_auroc": 0.6293
+  },
+  "claude-3.7-sonnet-thinking": {
+   "n": 517,
+   "similarity_to_source_median": 0.897,
+   "tfidf": {
+    "n_pairs": 517,
+    "n_problems": 517,
+    "auroc": 0.7833,
+    "auroc_ci95": [
+     0.765,
+     0.805
+    ],
+    "pairwise_acc": 0.9168,
+    "seconds": 0.8
+   },
+   "length_chars": {
+    "auroc": 0.5827,
+    "pairwise_attack_higher": 0.8762,
+    "pairwise_tie": 0.0271
+   },
+   "magic_auroc": 0.6012
+  },
+  "gpt-4o-mini": {
+   "n": 367,
+   "similarity_to_source_median": 0.883,
+   "tfidf": {
+    "n_pairs": 367,
+    "n_problems": 367,
+    "auroc": 0.756,
+    "auroc_ci95": [
+     0.734,
+     0.779
+    ],
+    "pairwise_acc": 0.9155,
+    "seconds": 0.5
+   },
+   "length_chars": {
+    "auroc": 0.5697,
+    "pairwise_attack_higher": 0.8338,
+    "pairwise_tie": 0.0109
+   },
+   "magic_auroc": 0.5574
+  },
+  "gpt-3.5-turbo": {
+   "n": 142,
+   "similarity_to_source_median": 0.908,
+   "tfidf": {
+    "n_pairs": 142,
+    "n_problems": 142,
+    "auroc": 0.6414,
+    "auroc_ci95": [
+     0.601,
+     0.676
+    ],
+    "pairwise_acc": 0.7535,
+    "seconds": 0.3
+   },
+   "length_chars": {
+    "auroc": 0.575,
+    "pairwise_attack_higher": 0.7394,
+    "pairwise_tie": 0.0775
+   },
+   "magic_auroc": 0.5724
+  }
+ },
+ "published_monitor_reference": "Control Tax Fig. 3 (an image): o3-mini monitor AUC 0.92-0.96 across attackers; per-monitor values not machine-readable, not compared here"
+}

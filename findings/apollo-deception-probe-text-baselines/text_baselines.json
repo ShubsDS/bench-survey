@@ -1,0 +1,36 @@
+{
+ "pins": {
+  "deception_detection_commit": "f8ec4010e74927394709dffa22b97bdf8cd5a62f"
+ },
+ "insider_trading_report": {
+  "deceptive": 336,
+  "honest": 669,
+  "email_mentions_tip": {
+   "deceptive": 0,
+   "honest": 669
+  },
+  "auroc_no_mention": 1.0,
+  "auroc_shorter_email": 0.981,
+  "paper_probe_auroc": 0.999
+ },
+ "sandbagging": {
+  "deceptive": 420,
+  "honest": 511,
+  "response_has_step2": {
+   "deceptive": 419,
+   "honest": 0
+  },
+  "question_from_wmdp": {
+   "deceptive": 399,
+   "honest": 38
+  },
+  "auroc_question_source": 0.938,
+  "auroc_bow_scored_span": 0.995,
+  "null_bow_scored_span": {
+   "mean": 0.492,
+   "max": 0.569,
+   "permutations": 20
+  },
+  "paper_probe_auroc": 0.983
+ }
+}

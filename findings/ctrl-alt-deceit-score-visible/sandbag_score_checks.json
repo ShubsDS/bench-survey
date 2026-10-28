@@ -1,0 +1,451 @@
+{
+  "pins": {
+    "ctrl-alt-deceit": "0a12070c41ec06b81712f277590afbbed6ed6d6c",
+    "mle-bench": "d6731c308a4e9ab464abfbdfaa625ef7a9cd3134",
+    "paper": "arXiv 2511.09904v2, Figure 8"
+  },
+  "reproduced_paper_auroc": {
+    "general (paper 0.60)": 0.603,
+    "sandbagging-specific (paper 0.90)": 0.9,
+    "general with sandbagging hint (not in paper figure)": 0.658
+  },
+  "tasks_with_regular_runs_only": [
+    "denoising-dirty-documents",
+    "detecting-insults-in-social-commentary",
+    "leaf-classification",
+    "new-york-city-taxi-fare-prediction",
+    "ranzcr-clip-catheter-line-classification",
+    "tabular-playground-series-dec-2021",
+    "text-normalization-challenge-english-language",
+    "text-normalization-challenge-russian-language"
+  ],
+  "all_runs_as_in_paper": {
+    "runs": 353,
+    "sandbagging": 134,
+    "regular": 219,
+    "tasks": 21,
+    "detectors": {
+      "general (paper 0.60)": {
+        "auroc": 0.603,
+        "ci95_task_bootstrap": [
+          0.517,
+          0.673
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.639,
+          "weighted_by_sandbag_runs": 0.653
+        }
+      },
+      "sandbagging-specific (paper 0.90)": {
+        "auroc": 0.9,
+        "ci95_task_bootstrap": [
+          0.831,
+          0.953
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.889,
+          "weighted_by_sandbag_runs": 0.902
+        }
+      },
+      "general with sandbagging hint (not in paper figure)": {
+        "auroc": 0.658,
+        "ci95_task_bootstrap": [
+          0.58,
+          0.716
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.671,
+          "weighted_by_sandbag_runs": 0.698
+        }
+      },
+      "score only: low leaderboard percentile": {
+        "auroc": 0.716,
+        "ci95_task_bootstrap": [
+          0.613,
+          0.817
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.951,
+          "weighted_by_sandbag_runs": 0.954
+        },
+        "null_within_task_permutation": {
+          "mean": 0.421,
+          "p95": 0.462
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.113,
+            "ci95": [
+              0.013,
+              0.237
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.184,
+            "ci95": [
+              -0.301,
+              -0.06
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.058,
+            "ci95": [
+              -0.034,
+              0.173
+            ]
+          }
+        }
+      },
+      "score only: low medal tier (repo thresholds)": {
+        "auroc": 0.699,
+        "ci95_task_bootstrap": [
+          0.593,
+          0.803
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.94,
+          "weighted_by_sandbag_runs": 0.946
+        },
+        "null_within_task_permutation": {
+          "mean": 0.414,
+          "p95": 0.454
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.096,
+            "ci95": [
+              -0.006,
+              0.217
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.201,
+            "ci95": [
+              -0.323,
+              -0.078
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.041,
+            "ci95": [
+              -0.053,
+              0.153
+            ]
+          }
+        }
+      },
+      "score only: logistic regression on percentile and tier, GroupKFold by task": {
+        "auroc": 0.687,
+        "ci95_task_bootstrap": [
+          0.58,
+          0.792
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.917,
+          "weighted_by_sandbag_runs": 0.896
+        },
+        "null_within_task_permutation": {
+          "mean": 0.414,
+          "p95": 0.456
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.084,
+            "ci95": [
+              -0.024,
+              0.221
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.213,
+            "ci95": [
+              -0.333,
+              -0.081
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.029,
+            "ci95": [
+              -0.069,
+              0.154
+            ]
+          }
+        }
+      },
+      "score vs own Regular runs (needs honest reference)": {
+        "auroc": 0.916,
+        "ci95_task_bootstrap": [
+          0.886,
+          0.94
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.907,
+          "weighted_by_sandbag_runs": 0.916
+        },
+        "null_within_task_permutation": {
+          "mean": 0.579,
+          "p95": 0.626
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.314,
+            "ci95": [
+              0.247,
+              0.394
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": 0.016,
+            "ci95": [
+              -0.034,
+              0.081
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.257,
+            "ci95": [
+              0.198,
+              0.328
+            ]
+          }
+        }
+      }
+    },
+    "spearman_monitor_vs_lb_percentile": {
+      "general (paper 0.60)": {
+        "regular": -0.316,
+        "sandbagging": -0.025
+      },
+      "sandbagging-specific (paper 0.90)": {
+        "regular": -0.331,
+        "sandbagging": -0.291
+      },
+      "general with sandbagging hint (not in paper figure)": {
+        "regular": -0.456,
+        "sandbagging": -0.188
+      }
+    }
+  },
+  "only_tasks_with_sandbagging_runs": {
+    "runs": 288,
+    "sandbagging": 134,
+    "regular": 154,
+    "tasks": 13,
+    "detectors": {
+      "general (paper 0.60)": {
+        "auroc": 0.638,
+        "ci95_task_bootstrap": [
+          0.553,
+          0.718
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.639,
+          "weighted_by_sandbag_runs": 0.653
+        }
+      },
+      "sandbagging-specific (paper 0.90)": {
+        "auroc": 0.908,
+        "ci95_task_bootstrap": [
+          0.832,
+          0.961
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.889,
+          "weighted_by_sandbag_runs": 0.902
+        }
+      },
+      "general with sandbagging hint (not in paper figure)": {
+        "auroc": 0.699,
+        "ci95_task_bootstrap": [
+          0.628,
+          0.756
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.671,
+          "weighted_by_sandbag_runs": 0.698
+        }
+      },
+      "score only: low leaderboard percentile": {
+        "auroc": 0.83,
+        "ci95_task_bootstrap": [
+          0.782,
+          0.898
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.951,
+          "weighted_by_sandbag_runs": 0.954
+        },
+        "null_within_task_permutation": {
+          "mean": 0.466,
+          "p95": 0.52
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.192,
+            "ci95": [
+              0.114,
+              0.307
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.078,
+            "ci95": [
+              -0.153,
+              0.04
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.131,
+            "ci95": [
+              0.064,
+              0.239
+            ]
+          }
+        }
+      },
+      "score only: low medal tier (repo thresholds)": {
+        "auroc": 0.816,
+        "ci95_task_bootstrap": [
+          0.768,
+          0.881
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.94,
+          "weighted_by_sandbag_runs": 0.946
+        },
+        "null_within_task_permutation": {
+          "mean": 0.461,
+          "p95": 0.513
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.178,
+            "ci95": [
+              0.104,
+              0.291
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.092,
+            "ci95": [
+              -0.167,
+              0.02
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.117,
+            "ci95": [
+              0.049,
+              0.218
+            ]
+          }
+        }
+      },
+      "score only: logistic regression on percentile and tier, GroupKFold by task": {
+        "auroc": 0.799,
+        "ci95_task_bootstrap": [
+          0.743,
+          0.88
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.917,
+          "weighted_by_sandbag_runs": 0.896
+        },
+        "null_within_task_permutation": {
+          "mean": 0.463,
+          "p95": 0.515
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.161,
+            "ci95": [
+              0.062,
+              0.292
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": -0.109,
+            "ci95": [
+              -0.201,
+              0.023
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.1,
+            "ci95": [
+              0.014,
+              0.226
+            ]
+          }
+        }
+      },
+      "score vs own Regular runs (needs honest reference)": {
+        "auroc": 0.92,
+        "ci95_task_bootstrap": [
+          0.892,
+          0.944
+        ],
+        "within_task": {
+          "tasks": 13,
+          "mean": 0.907,
+          "weighted_by_sandbag_runs": 0.916
+        },
+        "null_within_task_permutation": {
+          "mean": 0.525,
+          "p95": 0.585
+        },
+        "minus_monitor": {
+          "general (paper 0.60)": {
+            "diff": 0.282,
+            "ci95": [
+              0.208,
+              0.363
+            ]
+          },
+          "sandbagging-specific (paper 0.90)": {
+            "diff": 0.012,
+            "ci95": [
+              -0.041,
+              0.085
+            ]
+          },
+          "general with sandbagging hint (not in paper figure)": {
+            "diff": 0.221,
+            "ci95": [
+              0.164,
+              0.291
+            ]
+          }
+        }
+      }
+    },
+    "spearman_monitor_vs_lb_percentile": {
+      "general (paper 0.60)": {
+        "regular": -0.171,
+        "sandbagging": -0.025
+      },
+      "sandbagging-specific (paper 0.90)": {
+        "regular": -0.418,
+        "sandbagging": -0.291
+      },
+      "general with sandbagging hint (not in paper figure)": {
+        "regular": -0.371,
+        "sandbagging": -0.188
+      }
+    }
+  },
+  "sandbagging_runs_scoring_at_or_above_own_regular_median": 2
+}

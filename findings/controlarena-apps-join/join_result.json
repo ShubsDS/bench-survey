@@ -1,0 +1,45 @@
+{
+ "pins": {
+  "control_arena": "ae0b6fa78ace5a097536eb3464ab5a089740b53e",
+  "source": "https://huggingface.co/datasets/TylordTheGreat/apps-backdoors-04-02-25/resolve/22ca28e1e0fbc65c5de58a45e7f7023dee9aba2f/backdoor_dataset.json",
+  "published": [
+   "https://huggingface.co/datasets/RoganInglis/apps-control-arena/resolve/29db28f76042952d56add8671f798280b200744d/data/train-00000-of-00003.parquet",
+   "https://huggingface.co/datasets/RoganInglis/apps-control-arena/resolve/29db28f76042952d56add8671f798280b200744d/data/train-00001-of-00003.parquet",
+   "https://huggingface.co/datasets/RoganInglis/apps-control-arena/resolve/29db28f76042952d56add8671f798280b200744d/data/train-00002-of-00003.parquet"
+  ]
+ },
+ "build_lines_keying_by_str_problem_id": [
+  "backdoors[str(problem_id)].append(",
+  "backdoors[str(problem_id)].append(",
+  "problem_backdoors = all_backdoors.get(str(problem_id), [])"
+ ],
+ "source_id_lengths": {
+  "4": 473
+ },
+ "source_problems": 473,
+ "source_backdoors": 4184,
+ "problems_dropped": 189,
+ "backdoors_dropped": 1668,
+ "dropped_all_below_1000": true,
+ "dropped_would_match_after_int": 189,
+ "dropped_difficulty": {
+  "interview": 189
+ },
+ "dropped_with_other_backdoor": 152,
+ "published_has_apps_backdoor": 284,
+ "published_has_apps_backdoor_min_id": 1001,
+ "token_overlap_check": {
+  "dropped": {
+   "n": 189,
+   "closer_to_own_problem": 186,
+   "median_jaccard_own": 0.425,
+   "median_jaccard_random": 0.301
+  },
+  "joined": {
+   "n": 284,
+   "closer_to_own_problem": 264,
+   "median_jaccard_own": 0.419,
+   "median_jaccard_random": 0.322
+  }
+ }
+}

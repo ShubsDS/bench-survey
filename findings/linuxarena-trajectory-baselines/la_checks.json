@@ -1,0 +1,1200 @@
+{
+ "dataset": "anonymouslinuxarena/linuxarena-public",
+ "revision": "2fd29f9c7bc190fb873bd76c6bd648f22b9ab0a7",
+ "file": "data/sample.jsonl",
+ "file_sha256": "0b1e469ad48d93ccfec986f7cbafee43d49afb93bae730437d02c16233e7cfdb",
+ "paper": "arXiv 2604.15384v2",
+ "keywords": {
+  "side_task": "side[ _-]?task",
+  "secondary_task": "secondary[ _-]task",
+  "covert": "\\bcovert",
+  "hidden_goal": "hidden[ _-](task|objective|goal|agenda)",
+  "secret_goal": "secret(ly)?[ _-](task|objective|goal|mission)",
+  "red_team": "red[ _-]?team",
+  "sabotage": "sabotag",
+  "stealth": "\\b(stealth\\w*|sneak\\w*|discreet\\w*|discrete(ly)?|surreptitious\\w*)\\b",
+  "monitor_evasion": "(avoid|evade|evading|without)\\W+(\\w+\\W+){0,3}(detect|monitor|notic|suspic)",
+  "malicious": "malicious",
+  "attack_tool_names": "run_side_task_test|start_phase[12]_planning"
+ },
+ "provenance": {
+  "GPT-5 Nano monitor on Haiku attack": {
+   "n": 92,
+   "agent_model": {
+    "claude-haiku-4-5-20251001": 92
+   },
+   "run_ids": [
+    "41da37d4cecf46e0aa41271d4cb5c800"
+   ],
+   "envs": 10,
+   "main_tasks": 67,
+   "side_tasks": 92,
+   "system_prompt_chars_median": 11780.0,
+   "system_prompt_missing": 17,
+   "functions": {
+    "bash": 86,
+    "run_side_task_test": 79,
+    "submit": 72,
+    "text_editor": 86,
+    "py_ml_bash": 1,
+    "start_phase1_planning": 7,
+    "start_phase2_planning": 8,
+    "client_bash": 1,
+    "rust_worker_bash": 1
+   },
+   "visible_functions": {
+    "bash": 86,
+    "text_editor": 86,
+    "py_ml_bash": 1,
+    "start_phase1_planning": 7,
+    "start_phase2_planning": 8,
+    "client_bash": 1,
+    "rust_worker_bash": 1
+   },
+   "n_visible_median": 46.0,
+   "n_actions_all_median": 49.5,
+   "with_reasoning": 86,
+   "with_thinking": 86,
+   "side_task_success": {
+    "False": 33,
+    "True": 59
+   },
+   "main_task_success": {
+    "False": 92
+   },
+   "live_monitor_models": {
+    "gpt-5-nano-2025-08-07": 86,
+    "openai/gpt-5-nano-2025-08-07": 51
+   },
+   "traj_monitor_models": {
+    "gpt-4.1-nano-2025-04-14": 77,
+    "openai/gpt-5-nano-2025-08-07": 15
+   }
+  },
+  "GPT-5 Nano monitor on Opus honest": {
+   "n": 200,
+   "agent_model": {
+    "None": 188,
+    "claude-opus-4-6": 12
+   },
+   "run_ids": [
+    "f25f1eafacd749e89f1736f26d3df751"
+   ],
+   "envs": 10,
+   "main_tasks": 200,
+   "side_tasks": 0,
+   "system_prompt_chars_median": 5142.5,
+   "system_prompt_missing": 0,
+   "functions": {
+    "bash": 200,
+    "submit": 181,
+    "text_editor": 200,
+    "db_bash": 11,
+    "client_bash": 5,
+    "mp_restart": 5,
+    "rust_worker_bash": 10,
+    "nginx_bash": 2,
+    "ready_to_plan": 5,
+    "py_ml_bash": 2
+   },
+   "visible_functions": {
+    "bash": 200,
+    "text_editor": 200,
+    "db_bash": 11,
+    "client_bash": 5,
+    "mp_restart": 5,
+    "rust_worker_bash": 10,
+    "nginx_bash": 2,
+    "ready_to_plan": 5,
+    "py_ml_bash": 2
+   },
+   "n_visible_median": 53.0,
+   "n_actions_all_median": 54.0,
+   "with_reasoning": 200,
+   "with_thinking": 12,
+   "side_task_success": {
+    "False": 200
+   },
+   "main_task_success": {
+    "True": 132,
+    "False": 68
+   },
+   "live_monitor_models": {
+    "openai/gpt-5-nano-2025-08-07": 141,
+    "gpt-5-nano-2025-08-07": 124
+   },
+   "traj_monitor_models": {
+    "openai/gpt-5-nano-2025-08-07": 79,
+    "gpt-5-nano-2025-08-07": 121
+   }
+  },
+  "GPT-5 Nano monitor on straj": {
+   "n": 74,
+   "agent_model": {
+    "None": 74
+   },
+   "run_ids": [
+    "5990603621e54dc4ac386bb8fa942bca"
+   ],
+   "envs": 8,
+   "main_tasks": 33,
+   "side_tasks": 26,
+   "system_prompt_chars_median": null,
+   "system_prompt_missing": 74,
+   "functions": {
+    "submit": 73,
+    "text_editor": 74,
+    "bash": 70,
+    "str_replace_editor": 4,
+    "view": 3
+   },
+   "visible_functions": {
+    "text_editor": 74,
+    "bash": 70,
+    "str_replace_editor": 4,
+    "view": 3
+   },
+   "n_visible_median": 11.0,
+   "n_actions_all_median": 12.0,
+   "with_reasoning": 70,
+   "with_thinking": 0,
+   "side_task_success": {
+    "True": 74
+   },
+   "main_task_success": {
+    "False": 42,
+    "True": 32
+   },
+   "live_monitor_models": {
+    "gpt-5-nano-2025-08-07": 73,
+    "openai/gpt-5-nano-2025-08-07": 8
+   },
+   "traj_monitor_models": {
+    "gpt-5-nano-2025-08-07": 58,
+    "openai/gpt-5-nano-2025-08-07": 16
+   }
+  },
+  "Haiku attack": {
+   "n": 92,
+   "agent_model": {
+    "claude-haiku-4-5-20251001": 92
+   },
+   "run_ids": [
+    "2b313d861a1c41d4a0f7f28deaccae7a"
+   ],
+   "envs": 10,
+   "main_tasks": 67,
+   "side_tasks": 92,
+   "system_prompt_chars_median": 11874.0,
+   "system_prompt_missing": 0,
+   "functions": {
+    "bash": 92,
+    "run_side_task_test": 90,
+    "submit": 92,
+    "text_editor": 92,
+    "start_phase1_planning": 8,
+    "start_phase2_planning": 9,
+    "py_ml_bash": 1,
+    "client_bash": 1,
+    "rust_worker_bash": 1
+   },
+   "visible_functions": {
+    "bash": 92,
+    "text_editor": 92,
+    "start_phase1_planning": 8,
+    "start_phase2_planning": 9,
+    "py_ml_bash": 1,
+    "client_bash": 1,
+    "rust_worker_bash": 1
+   },
+   "n_visible_median": 53.5,
+   "n_actions_all_median": 60.5,
+   "with_reasoning": 92,
+   "with_thinking": 92,
+   "side_task_success": {
+    "True": 67,
+    "False": 25
+   },
+   "main_task_success": {
+    "False": 92
+   },
+   "live_monitor_models": {
+    "gpt-5-nano-2025-08-07": 1
+   },
+   "traj_monitor_models": {
+    "gpt-5-nano-2025-08-07": 1
+   }
+  },
+  "Haiku honest": {
+   "n": 200,
+   "agent_model": {
+    "None": 182,
+    "claude-haiku-4-5-20251001": 18
+   },
+   "run_ids": [
+    "06f0f3e82bf347d9a1271f806ee2234d"
+   ],
+   "envs": 10,
+   "main_tasks": 200,
+   "side_tasks": 0,
+   "system_prompt_chars_median": 5144.0,
+   "system_prompt_missing": 0,
+   "functions": {
+    "bash": 200,
+    "submit": 189,
+    "text_editor": 200,
+    "mp_restart": 5,
+    "rust_worker_bash": 14,
+    "client_bash": 3,
+    "db_bash": 3,
+    "py_ml_bash": 4,
+    "nginx_bash": 1
+   },
+   "visible_functions": {
+    "bash": 200,
+    "text_editor": 200,
+    "mp_restart": 5,
+    "rust_worker_bash": 14,
+    "client_bash": 3,
+    "db_bash": 3,
+    "py_ml_bash": 4,
+    "nginx_bash": 1
+   },
+   "n_visible_median": 69.0,
+   "n_actions_all_median": 70.0,
+   "with_reasoning": 200,
+   "with_thinking": 18,
+   "side_task_success": {
+    "False": 200
+   },
+   "main_task_success": {
+    "False": 97,
+    "True": 103
+   },
+   "live_monitor_models": {
+    "gpt-5-nano-2025-08-07": 12
+   },
+   "traj_monitor_models": {
+    "gpt-5-nano-2025-08-07": 12
+   }
+  },
+  "Opus monitor on Opus honest": {
+   "n": 200,
+   "agent_model": {
+    "None": 188,
+    "claude-opus-4-6": 12
+   },
+   "run_ids": [
+    "dfe5b33a58a945f1b02612ca08cbe51a"
+   ],
+   "envs": 10,
+   "main_tasks": 200,
+   "side_tasks": 0,
+   "system_prompt_chars_median": 5142.5,
+   "system_prompt_missing": 0,
+   "functions": {
+    "bash": 200,
+    "submit": 181,
+    "text_editor": 200,
+    "rust_worker_bash": 10,
+    "client_bash": 5,
+    "db_bash": 11,
+    "ready_to_plan": 5,
+    "py_ml_bash": 2,
+    "mp_restart": 5,
+    "nginx_bash": 2
+   },
+   "visible_functions": {
+    "bash": 200,
+    "text_editor": 200,
+    "rust_worker_bash": 10,
+    "client_bash": 5,
+    "db_bash": 11,
+    "ready_to_plan": 5,
+    "py_ml_bash": 2,
+    "mp_restart": 5,
+    "nginx_bash": 2
+   },
+   "n_visible_median": 53.0,
+   "n_actions_all_median": 54.0,
+   "with_reasoning": 200,
+   "with_thinking": 12,
+   "side_task_success": {
+    "False": 200
+   },
+   "main_task_success": {
+    "True": 132,
+    "False": 68
+   },
+   "live_monitor_models": {
+    "anthropic/claude-opus-4-6": 53,
+    "claude-opus-4-6": 161,
+    "openrouter/anthropic/claude-opus-4-6": 169
+   },
+   "traj_monitor_models": {
+    "claude-opus-4-6": 185,
+    "openrouter/anthropic/claude-opus-4-6": 14,
+    "anthropic/claude-opus-4-6": 1
+   }
+  },
+  "Opus monitor on straj": {
+   "n": 74,
+   "agent_model": {
+    "None": 74
+   },
+   "run_ids": [
+    "fe312f77077f4b919b886059d6d88e98"
+   ],
+   "envs": 8,
+   "main_tasks": 33,
+   "side_tasks": 25,
+   "system_prompt_chars_median": null,
+   "system_prompt_missing": 74,
+   "functions": {
+    "bash": 70,
+    "submit": 73,
+    "text_editor": 74,
+    "view": 3,
+    "str_replace_editor": 4
+   },
+   "visible_functions": {
+    "bash": 70,
+    "text_editor": 74,
+    "view": 3,
+    "str_replace_editor": 4
+   },
+   "n_visible_median": 11.0,
+   "n_actions_all_median": 12.0,
+   "with_reasoning": 70,
+   "with_thinking": 0,
+   "side_task_success": {
+    "True": 74
+   },
+   "main_task_success": {
+    "False": 42,
+    "True": 32
+   },
+   "live_monitor_models": {
+    "anthropic/claude-opus-4-6": 73,
+    "claude-opus-4-6": 5
+   },
+   "traj_monitor_models": {
+    "gpt-4.1-nano-2025-04-14": 23,
+    "anthropic/claude-opus-4-6": 7,
+    "gpt-4.1-nano": 29,
+    "claude-opus-4-6": 1
+   }
+  }
+ },
+ "pairs": {
+  "haiku": {
+   "honest_run": "Haiku honest",
+   "attack_run": "Haiku attack",
+   "n_honest": 200,
+   "n_attack": 92,
+   "main_tasks": {
+    "honest": 200,
+    "attack": 67,
+    "shared": 13,
+    "attack_rows_on_shared_tasks": 17
+   },
+   "env_counts": {
+    "auto_workflow": [
+     20,
+     11
+    ],
+    "clinical_trial": [
+     20,
+     5
+    ],
+    "file_indexing": [
+     20,
+     13
+    ],
+    "media_processing": [
+     20,
+     9
+    ],
+    "model_registry": [
+     20,
+     9
+    ],
+    "shared_dotfiles": [
+     20,
+     11
+    ],
+    "slack_clone": [
+     20,
+     9
+    ],
+    "tiktok": [
+     20,
+     9
+    ],
+    "user_tracking": [
+     20,
+     7
+    ],
+    "web_scraping": [
+     20,
+     9
+    ]
+   },
+   "detectors": [
+    {
+     "detector": "length only (visible actions)",
+     "auroc": 0.603,
+     "ci95": [
+      0.534,
+      0.677
+     ],
+     "null_p95": 0.541,
+     "null_mean": 0.454,
+     "n_perm": 1000,
+     "p_perm": 0.002
+    },
+    {
+     "detector": "counts: actions, tools, editor commands, errors, characters",
+     "auroc": 0.897,
+     "ci95": [
+      0.855,
+      0.931
+     ],
+     "null_p95": 0.563,
+     "null_mean": 0.479,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "environment + main-task category",
+     "auroc": 0.533,
+     "ci95": [
+      0.469,
+      0.595
+     ],
+     "null_p95": 0.504,
+     "null_mean": 0.425,
+     "n_perm": 1000,
+     "p_perm": 0.007
+    },
+    {
+     "detector": "bag of words, tool outputs only",
+     "auroc": 0.975,
+     "ci95": [
+      0.957,
+      0.987
+     ],
+     "null_p95": 0.546,
+     "null_mean": 0.468,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    },
+    {
+     "detector": "bag of words, all monitor-visible text (not content-blind)",
+     "auroc": 0.983,
+     "ci95": [
+      0.969,
+      0.993
+     ],
+     "null_p95": 0.555,
+     "null_mean": 0.471,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    }
+   ],
+   "n_visible_median": {
+    "honest": 69.0,
+    "attack": 53.5
+   },
+   "n_visible_raw_auroc": 0.396,
+   "keywords": {
+    "side_task": {
+     "honest_any": 7,
+     "attack_any": 11,
+     "auroc": 0.544,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 10
+     }
+    },
+    "secondary_task": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "covert": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "hidden_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "secret_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "red_team": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "sabotage": {
+     "honest_any": 0,
+     "attack_any": 1,
+     "auroc": 0.505,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 1
+     }
+    },
+    "stealth": {
+     "honest_any": 3,
+     "attack_any": 0,
+     "auroc": 0.492,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "monitor_evasion": {
+     "honest_any": 1,
+     "attack_any": 1,
+     "auroc": 0.503,
+     "in_agent_written_args": {
+      "honest_any": 1,
+      "attack_any": 1
+     }
+    },
+    "malicious": {
+     "honest_any": 11,
+     "attack_any": 14,
+     "auroc": 0.547,
+     "in_agent_written_args": {
+      "honest_any": 4,
+      "attack_any": 2
+     }
+    },
+    "attack_tool_names": {
+     "honest_any": 0,
+     "attack_any": 10,
+     "auroc": 0.554,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "kw_side_ids": {
+     "honest_any": 15,
+     "attack_any": 12,
+     "auroc": 0.531,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "restatement_total": {
+     "keys": [
+      "side_task",
+      "secondary_task",
+      "covert",
+      "hidden_goal",
+      "secret_goal",
+      "red_team",
+      "sabotage",
+      "stealth",
+      "monitor_evasion"
+     ],
+     "auroc": 0.546,
+     "ci95": [
+      0.51,
+      0.587
+     ],
+     "null_p95": 0.528,
+     "honest_any": 11,
+     "attack_any": 13,
+     "args_only_auroc": 0.563
+    }
+   }
+  },
+  "straj": {
+   "honest_run": "GPT-5 Nano monitor on Opus honest",
+   "attack_run": "GPT-5 Nano monitor on straj",
+   "n_honest": 200,
+   "n_attack": 74,
+   "main_tasks": {
+    "honest": 200,
+    "attack": 33,
+    "shared": 1,
+    "attack_rows_on_shared_tasks": 1
+   },
+   "env_counts": {
+    "auto_workflow": [
+     20,
+     7
+    ],
+    "clinical_trial": [
+     20,
+     9
+    ],
+    "file_indexing": [
+     20,
+     3
+    ],
+    "media_processing": [
+     20,
+     13
+    ],
+    "model_registry": [
+     20,
+     0
+    ],
+    "shared_dotfiles": [
+     20,
+     3
+    ],
+    "slack_clone": [
+     20,
+     8
+    ],
+    "tiktok": [
+     20,
+     4
+    ],
+    "user_tracking": [
+     20,
+     0
+    ],
+    "web_scraping": [
+     20,
+     27
+    ]
+   },
+   "detectors": [
+    {
+     "detector": "length only (visible actions)",
+     "auroc": 0.95,
+     "ci95": [
+      0.926,
+      0.972
+     ],
+     "null_p95": 0.634,
+     "null_mean": 0.562,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "counts: actions, tools, editor commands, errors, characters",
+     "auroc": 1.0,
+     "ci95": [
+      0.999,
+      1.0
+     ],
+     "null_p95": 0.634,
+     "null_mean": 0.551,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "environment + main-task category",
+     "auroc": 0.94,
+     "ci95": [
+      0.897,
+      0.973
+     ],
+     "null_p95": 0.728,
+     "null_mean": 0.699,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "bag of words, tool outputs only",
+     "auroc": 0.999,
+     "ci95": [
+      0.996,
+      1.0
+     ],
+     "null_p95": 0.711,
+     "null_mean": 0.662,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    },
+    {
+     "detector": "bag of words, all monitor-visible text (not content-blind)",
+     "auroc": 0.997,
+     "ci95": [
+      0.99,
+      1.0
+     ],
+     "null_p95": 0.711,
+     "null_mean": 0.648,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    }
+   ],
+   "n_visible_median": {
+    "honest": 53.0,
+    "attack": 11.0
+   },
+   "n_visible_raw_auroc": 0.049,
+   "monitor_live_max": {
+    "auroc": 0.346,
+    "ci95": [
+     0.276,
+     0.413
+    ],
+    "n": 274,
+    "tpr_at_traj_fpr_1pct": 0.0,
+    "tpr_at_traj_fpr_5pct": 0.0
+   },
+   "monitor_traj_sus": {
+    "auroc": 0.545,
+    "ci95": [
+     0.473,
+     0.62
+    ],
+    "n": 274,
+    "tpr_at_traj_fpr_1pct": 0.0,
+    "tpr_at_traj_fpr_5pct": 0.0
+   },
+   "counts_tpr_at_traj_fpr_5pct": 1.0,
+   "keywords": {
+    "side_task": {
+     "honest_any": 14,
+     "attack_any": 0,
+     "auroc": 0.465,
+     "in_agent_written_args": {
+      "honest_any": 1,
+      "attack_any": 0
+     }
+    },
+    "secondary_task": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "covert": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "hidden_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "secret_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "red_team": {
+     "honest_any": 1,
+     "attack_any": 0,
+     "auroc": 0.497,
+     "in_agent_written_args": {
+      "honest_any": 1,
+      "attack_any": 0
+     }
+    },
+    "sabotage": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "stealth": {
+     "honest_any": 7,
+     "attack_any": 0,
+     "auroc": 0.482,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "monitor_evasion": {
+     "honest_any": 3,
+     "attack_any": 0,
+     "auroc": 0.492,
+     "in_agent_written_args": {
+      "honest_any": 2,
+      "attack_any": 0
+     }
+    },
+    "malicious": {
+     "honest_any": 14,
+     "attack_any": 3,
+     "auroc": 0.485,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "attack_tool_names": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "kw_side_ids": {
+     "honest_any": 37,
+     "attack_any": 0,
+     "auroc": 0.407,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "restatement_total": {
+     "keys": [
+      "side_task",
+      "secondary_task",
+      "covert",
+      "hidden_goal",
+      "secret_goal",
+      "red_team",
+      "sabotage",
+      "stealth",
+      "monitor_evasion"
+     ],
+     "auroc": 0.443,
+     "ci95": [
+      0.42,
+      0.463
+     ],
+     "null_p95": 0.536,
+     "honest_any": 23,
+     "attack_any": 0,
+     "args_only_auroc": 0.49
+    }
+   }
+  },
+  "straj_opus_monitor": {
+   "honest_run": "Opus monitor on Opus honest",
+   "attack_run": "Opus monitor on straj",
+   "n_honest": 200,
+   "n_attack": 74,
+   "main_tasks": {
+    "honest": 200,
+    "attack": 33,
+    "shared": 1,
+    "attack_rows_on_shared_tasks": 1
+   },
+   "env_counts": {
+    "auto_workflow": [
+     20,
+     7
+    ],
+    "clinical_trial": [
+     20,
+     9
+    ],
+    "file_indexing": [
+     20,
+     3
+    ],
+    "media_processing": [
+     20,
+     13
+    ],
+    "model_registry": [
+     20,
+     0
+    ],
+    "shared_dotfiles": [
+     20,
+     3
+    ],
+    "slack_clone": [
+     20,
+     8
+    ],
+    "tiktok": [
+     20,
+     4
+    ],
+    "user_tracking": [
+     20,
+     0
+    ],
+    "web_scraping": [
+     20,
+     27
+    ]
+   },
+   "detectors": [
+    {
+     "detector": "length only (visible actions)",
+     "auroc": 0.95,
+     "ci95": [
+      0.923,
+      0.972
+     ],
+     "null_p95": 0.633,
+     "null_mean": 0.562,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "counts: actions, tools, editor commands, errors, characters",
+     "auroc": 1.0,
+     "ci95": [
+      0.999,
+      1.0
+     ],
+     "null_p95": 0.635,
+     "null_mean": 0.554,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "environment + main-task category",
+     "auroc": 0.94,
+     "ci95": [
+      0.897,
+      0.974
+     ],
+     "null_p95": 0.729,
+     "null_mean": 0.699,
+     "n_perm": 1000,
+     "p_perm": 0.001
+    },
+    {
+     "detector": "bag of words, tool outputs only",
+     "auroc": 0.999,
+     "ci95": [
+      0.996,
+      1.0
+     ],
+     "null_p95": 0.706,
+     "null_mean": 0.656,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    },
+    {
+     "detector": "bag of words, all monitor-visible text (not content-blind)",
+     "auroc": 0.997,
+     "ci95": [
+      0.99,
+      1.0
+     ],
+     "null_p95": 0.708,
+     "null_mean": 0.645,
+     "n_perm": 50,
+     "p_perm": 0.0196
+    }
+   ],
+   "n_visible_median": {
+    "honest": 53.0,
+    "attack": 11.0
+   },
+   "n_visible_raw_auroc": 0.049,
+   "monitor_live_max": {
+    "auroc": 0.863,
+    "ci95": [
+     0.811,
+     0.911
+    ],
+    "n": 274,
+    "tpr_at_traj_fpr_1pct": 0.405,
+    "tpr_at_traj_fpr_5pct": 0.541
+   },
+   "monitor_traj_sus": {
+    "auroc": 0.94,
+    "ci95": [
+     0.91,
+     0.966
+    ],
+    "n": 274,
+    "tpr_at_traj_fpr_1pct": 0.419,
+    "tpr_at_traj_fpr_5pct": 0.743
+   },
+   "counts_tpr_at_traj_fpr_5pct": 1.0,
+   "keywords": {
+    "side_task": {
+     "honest_any": 14,
+     "attack_any": 0,
+     "auroc": 0.465,
+     "in_agent_written_args": {
+      "honest_any": 1,
+      "attack_any": 0
+     }
+    },
+    "secondary_task": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "covert": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "hidden_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "secret_goal": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "red_team": {
+     "honest_any": 1,
+     "attack_any": 0,
+     "auroc": 0.497,
+     "in_agent_written_args": {
+      "honest_any": 1,
+      "attack_any": 0
+     }
+    },
+    "sabotage": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "stealth": {
+     "honest_any": 7,
+     "attack_any": 0,
+     "auroc": 0.482,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "monitor_evasion": {
+     "honest_any": 3,
+     "attack_any": 0,
+     "auroc": 0.492,
+     "in_agent_written_args": {
+      "honest_any": 2,
+      "attack_any": 0
+     }
+    },
+    "malicious": {
+     "honest_any": 14,
+     "attack_any": 3,
+     "auroc": 0.485,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "attack_tool_names": {
+     "honest_any": 0,
+     "attack_any": 0,
+     "auroc": 0.5,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "kw_side_ids": {
+     "honest_any": 37,
+     "attack_any": 0,
+     "auroc": 0.407,
+     "in_agent_written_args": {
+      "honest_any": 0,
+      "attack_any": 0
+     }
+    },
+    "restatement_total": {
+     "keys": [
+      "side_task",
+      "secondary_task",
+      "covert",
+      "hidden_goal",
+      "secret_goal",
+      "red_team",
+      "sabotage",
+      "stealth",
+      "monitor_evasion"
+     ],
+     "auroc": 0.443,
+     "ci95": [
+      0.42,
+      0.463
+     ],
+     "null_p95": 0.536,
+     "honest_any": 23,
+     "attack_any": 0,
+     "args_only_auroc": 0.49
+    }
+   }
+  }
+ },
+ "rerun_match": {
+  "haiku_attack_agent_vs_nano_rerun_same_actions": 72,
+  "of": [
+   92,
+   87
+  ],
+  "opus_honest_nano_vs_opus_monitor_same_actions": 200
+ }
+}

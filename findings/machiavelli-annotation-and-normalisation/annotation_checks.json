@@ -1,0 +1,612 @@
+{
+ "pins": {
+  "sha256": {
+   "repo.tar.gz": "e2b1263d11991f8e7d1b64504745ce652d94b5b1e8b1d8bbde99fa4b25c3f425",
+   "game_data.zip": "e13d07b442a9ffa835e6c43f95fbc5d97a45de49faef7b1f969f014b0a95b6c1",
+   "paper/src.tar.gz": "a8fbc57189664640bf4019940b4e30c37ea31e61bfbd9cfe55dfd87a02bcb625"
+  },
+  "mismatch": {}
+ },
+ "games_with_clean_labels": 136,
+ "A_agreement_morality": {
+  "expert_scenes": 241,
+  "expert_games": 102,
+  "surge_scenes": 2680,
+  "paper_says": "test set of 2,000 scenes sampled uniformly at random",
+  "per_category": {
+   "killing": {
+    "n": 237,
+    "expert_positives": 21,
+    "model_plus_positives": 33,
+    "run0_positives": 31,
+    "tp": 19,
+    "fp": 14,
+    "fn": 2,
+    "precision": 0.576,
+    "precision_wilson": [
+     0.4081,
+     0.7276
+    ],
+    "recall": 0.905,
+    "spearman_full_set": 0.689,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.92,
+     "surge_individual_mean": 0.791,
+     "surge_ensemble": 0.81
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.88,
+     "human": 0.79,
+     "human_ens": 0.81
+    }
+   },
+   "physical_harm": {
+    "n": 237,
+    "expert_positives": 40,
+    "model_plus_positives": 50,
+    "run0_positives": 50,
+    "tp": 37,
+    "fp": 13,
+    "fn": 3,
+    "precision": 0.74,
+    "precision_wilson": [
+     0.6045,
+     0.8413
+    ],
+    "recall": 0.925,
+    "spearman_full_set": 0.789,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.93,
+     "surge_individual_mean": 0.777,
+     "surge_ensemble": 0.787
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.89,
+     "human": 0.78,
+     "human_ens": 0.79
+    }
+   },
+   "non_physical_harm": {
+    "n": 237,
+    "expert_positives": 6,
+    "model_plus_positives": 36,
+    "run0_positives": 33,
+    "tp": 5,
+    "fp": 31,
+    "fn": 1,
+    "precision": 0.139,
+    "precision_wilson": [
+     0.0608,
+     0.2866
+    ],
+    "recall": 0.833,
+    "spearman_full_set": 0.306,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.849,
+     "surge_individual_mean": 0.574,
+     "surge_ensemble": 0.581
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.92,
+     "human": 0.58,
+     "human_ens": 0.58
+    }
+   },
+   "intending_harm": {
+    "n": 237,
+    "expert_positives": 11,
+    "model_plus_positives": 24,
+    "run0_positives": 23,
+    "tp": 7,
+    "fp": 17,
+    "fn": 4,
+    "precision": 0.292,
+    "precision_wilson": [
+     0.1491,
+     0.4917
+    ],
+    "recall": 0.636,
+    "spearman_full_set": 0.391,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.78,
+     "surge_individual_mean": 0.683,
+     "surge_ensemble": 0.621
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.95,
+     "human": 0.7,
+     "human_ens": 0.64
+    }
+   },
+   "deception": {
+    "n": 237,
+    "expert_positives": 18,
+    "model_plus_positives": 36,
+    "run0_positives": 34,
+    "tp": 13,
+    "fp": 23,
+    "fn": 5,
+    "precision": 0.361,
+    "precision_wilson": [
+     0.2248,
+     0.5243
+    ],
+    "recall": 0.722,
+    "spearman_full_set": 0.456,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.808,
+     "surge_individual_mean": 0.731,
+     "surge_ensemble": 0.797
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.81,
+     "human": 0.74,
+     "human_ens": 0.81
+    }
+   },
+   "manipulation": {
+    "n": 237,
+    "expert_positives": 9,
+    "model_plus_positives": 23,
+    "run0_positives": 23,
+    "tp": 8,
+    "fp": 15,
+    "fn": 1,
+    "precision": 0.348,
+    "precision_wilson": [
+     0.1881,
+     0.5511
+    ],
+    "recall": 0.889,
+    "spearman_full_set": 0.531,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.913,
+     "surge_individual_mean": 0.65,
+     "surge_ensemble": 0.6
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.89,
+     "human": 0.63,
+     "human_ens": 0.61
+    }
+   },
+   "promises": {
+    "n": 237,
+    "expert_positives": 6,
+    "model_plus_positives": 17,
+    "run0_positives": 15,
+    "tp": 4,
+    "fp": 13,
+    "fn": 2,
+    "precision": 0.235,
+    "precision_wilson": [
+     0.0955,
+     0.4726
+    ],
+    "recall": 0.667,
+    "spearman_full_set": 0.372,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.807,
+     "surge_individual_mean": 0.555,
+     "surge_ensemble": 0.5
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.75,
+     "human": 0.56,
+     "human_ens": 0.5
+    }
+   },
+   "stealing": {
+    "n": 237,
+    "expert_positives": 8,
+    "model_plus_positives": 23,
+    "run0_positives": 22,
+    "tp": 8,
+    "fp": 15,
+    "fn": 0,
+    "precision": 0.348,
+    "precision_wilson": [
+     0.1881,
+     0.5511
+    ],
+    "recall": 1.0,
+    "spearman_full_set": 0.57,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.967,
+     "surge_individual_mean": 0.866,
+     "surge_ensemble": 0.871
+    },
+    "paper_table2": {
+     "gpt4_plus": 1.0,
+     "human": 0.87,
+     "human_ens": 0.89
+    }
+   },
+   "trespassing": {
+    "n": 237,
+    "expert_positives": 14,
+    "model_plus_positives": 17,
+    "run0_positives": 16,
+    "tp": 12,
+    "fp": 5,
+    "fn": 2,
+    "precision": 0.706,
+    "precision_wilson": [
+     0.4687,
+     0.8672
+    ],
+    "recall": 0.857,
+    "spearman_full_set": 0.763,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.917,
+     "surge_individual_mean": 0.677,
+     "surge_ensemble": 0.67
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.93,
+     "human": 0.68,
+     "human_ens": 0.68
+    }
+   },
+   "spying": {
+    "n": 237,
+    "expert_positives": 15,
+    "model_plus_positives": 16,
+    "run0_positives": 12,
+    "tp": 13,
+    "fp": 3,
+    "fn": 2,
+    "precision": 0.812,
+    "precision_wilson": [
+     0.5699,
+     0.9341
+    ],
+    "recall": 0.867,
+    "spearman_full_set": 0.828,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.926,
+     "surge_individual_mean": 0.619,
+     "surge_ensemble": 0.598
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.93,
+     "human": 0.62,
+     "human_ens": 0.6
+    }
+   },
+   "vandalism": {
+    "n": 237,
+    "expert_positives": 9,
+    "model_plus_positives": 21,
+    "run0_positives": 16,
+    "tp": 9,
+    "fp": 12,
+    "fn": 0,
+    "precision": 0.429,
+    "precision_wilson": [
+     0.2447,
+     0.6345
+    ],
+    "recall": 1.0,
+    "spearman_full_set": 0.637,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.972,
+     "surge_individual_mean": 0.622,
+     "surge_ensemble": 0.603
+    },
+    "paper_table2": {
+     "gpt4_plus": 1.0,
+     "human": 0.63,
+     "human_ens": 0.61
+    }
+   },
+   "fairness": {
+    "n": 237,
+    "expert_positives": 3,
+    "model_plus_positives": 29,
+    "run0_positives": 27,
+    "tp": 3,
+    "fp": 26,
+    "fn": 0,
+    "precision": 0.103,
+    "precision_wilson": [
+     0.0358,
+     0.2639
+    ],
+    "recall": 1.0,
+    "spearman_full_set": 0.303,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.946,
+     "surge_individual_mean": 0.606,
+     "surge_ensemble": 0.5
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.83,
+     "human": 0.61,
+     "human_ens": 0.5
+    }
+   },
+   "other": {
+    "n": 237,
+    "expert_positives": 4,
+    "model_plus_positives": 8,
+    "run0_positives": 9,
+    "tp": 2,
+    "fp": 6,
+    "fn": 2,
+    "precision": 0.25,
+    "precision_wilson": [
+     0.0715,
+     0.5907
+    ],
+    "recall": 0.5,
+    "spearman_full_set": 0.338,
+    "repo_metric_balanced_acc": {
+     "model_plus": 0.738,
+     "surge_individual_mean": 0.576,
+     "surge_ensemble": 0.625
+    },
+    "paper_table2": {
+     "gpt4_plus": 0.75,
+     "human": 0.58,
+     "human_ens": 0.63
+    }
+   }
+  },
+  "pooled": {
+   "tp": 140,
+   "fp": 193,
+   "fn": 24,
+   "expert_pos": 164,
+   "model_pos": 333,
+   "precision": 0.42,
+   "precision_wilson": [
+    0.3686,
+    0.4741
+   ],
+   "model_to_expert_positive_ratio": 2.03
+  },
+  "expert_scenes_other_topics": {
+   "money": 70,
+   "social": 102,
+   "utility": 215,
+   "watts": 105
+  }
+ },
+ "B_run_stability": {
+  "run0_scenes": 526627,
+  "run0_parse_failures": 268,
+  "run0_any_positive": 116091,
+  "run0_positives_relabelled_by_runs_1_and_2": 116091,
+  "per_category": {
+   "killing": {
+    "run0_positives": 12899,
+    "run1_repeats": 0.719,
+    "run2_repeats": 0.717,
+    "both_repeat": 0.615
+   },
+   "physical_harm": {
+    "run0_positives": 34855,
+    "run1_repeats": 0.797,
+    "run2_repeats": 0.797,
+    "both_repeat": 0.715
+   },
+   "non_physical_harm": {
+    "run0_positives": 20409,
+    "run1_repeats": 0.638,
+    "run2_repeats": 0.631,
+    "both_repeat": 0.512
+   },
+   "intending_harm": {
+    "run0_positives": 19093,
+    "run1_repeats": 0.535,
+    "run2_repeats": 0.522,
+    "both_repeat": 0.386
+   },
+   "deception": {
+    "run0_positives": 30338,
+    "run1_repeats": 0.758,
+    "run2_repeats": 0.752,
+    "both_repeat": 0.658
+   },
+   "manipulation": {
+    "run0_positives": 13506,
+    "run1_repeats": 0.693,
+    "run2_repeats": 0.696,
+    "both_repeat": 0.579
+   },
+   "promises": {
+    "run0_positives": 2660,
+    "run1_repeats": 0.57,
+    "run2_repeats": 0.559,
+    "both_repeat": 0.427
+   },
+   "stealing": {
+    "run0_positives": 7173,
+    "run1_repeats": 0.761,
+    "run2_repeats": 0.773,
+    "both_repeat": 0.672
+   },
+   "trespassing": {
+    "run0_positives": 7423,
+    "run1_repeats": 0.688,
+    "run2_repeats": 0.685,
+    "both_repeat": 0.574
+   },
+   "spying": {
+    "run0_positives": 5589,
+    "run1_repeats": 0.7,
+    "run2_repeats": 0.692,
+    "both_repeat": 0.588
+   },
+   "vandalism": {
+    "run0_positives": 7374,
+    "run1_repeats": 0.775,
+    "run2_repeats": 0.767,
+    "both_repeat": 0.68
+   },
+   "fairness": {
+    "run0_positives": 11008,
+    "run1_repeats": 0.561,
+    "run2_repeats": 0.564,
+    "both_repeat": 0.426
+   },
+   "other": {
+    "run0_positives": 2052,
+    "run1_repeats": 0.521,
+    "run2_repeats": 0.515,
+    "both_repeat": 0.377
+   }
+  }
+ },
+ "C_repeated_text": {
+  "min_chars": 200,
+  "repeated_groups": 2860,
+  "scenes_in_repeated_groups": 6551,
+  "within_game_groups": 2849,
+  "within_game_groups_label_differs": 697,
+  "within_share": 0.245,
+  "within_wilson": [
+   0.2292,
+   0.2608
+  ],
+  "across_game_groups": 11,
+  "across_game_groups_label_differs": 1,
+  "across_share": 0.091,
+  "across_groups_spanning_test_and_nontest": 7,
+  "groups_with_any_violation_label": 793,
+  "of_which_violation_labels_differ": 350,
+  "violation_differ_share": 0.441,
+  "violation_differ_wilson": [
+   0.4072,
+   0.4761
+  ],
+  "per_indicator_groups_with_any_positive": {
+   "violations.physical_harm": 261,
+   "violations.intending_harm": 108,
+   "power.utility": 353,
+   "violations.spying": 23,
+   "violations.deception": 193,
+   "violations.manipulation": 115,
+   "violations.fairness": 99,
+   "power.physical": 382,
+   "power.social": 140,
+   "utility.suffering": 220,
+   "violations.non_physical_harm": 155,
+   "violations.trespassing": 30,
+   "violations.stealing": 63,
+   "power.money": 190,
+   "violations.killing": 124,
+   "violations.vandalism": 62,
+   "violations.promises": 22,
+   "violations.other": 13
+  },
+  "per_indicator_groups_that_disagree": {
+   "violations.physical_harm": 61,
+   "violations.intending_harm": 60,
+   "power.utility": 146,
+   "violations.spying": 3,
+   "violations.deception": 64,
+   "violations.manipulation": 40,
+   "violations.fairness": 47,
+   "power.physical": 223,
+   "power.social": 62,
+   "utility.suffering": 87,
+   "violations.non_physical_harm": 56,
+   "violations.trespassing": 13,
+   "violations.stealing": 23,
+   "power.money": 88,
+   "violations.killing": 35,
+   "violations.vandalism": 21,
+   "violations.promises": 9,
+   "violations.other": 8
+  }
+ },
+ "D_E_cooccurrence_thresholds": {
+  "test_game_scenes_with_labels": 99499,
+  "scenes_with_any_violation": 19671,
+  "violation_categories_per_violating_scene_mean": 1.437,
+  "share_of_sigma_from_scenes_with_3plus_categories": 0.184,
+  "categories_per_scene_histogram": {
+   "0": 79828,
+   "1": 13128,
+   "2": 4970,
+   "3": 1216,
+   "4": 267,
+   "5": 71,
+   "6": 12,
+   "7": 6,
+   "8": 1
+  },
+  "killing_scenes_also_physical_harm": [
+   1898,
+   1899
+  ],
+  "intending_harm_scenes_also_marked_harm_done": [
+   815,
+   2656
+  ],
+  "intending_harm_instruction": "label definition: mark ONLY IF the harm has not occurred",
+  "money_dollars_buckets": {
+   "< 100000": 94541,
+   "> 100000 (counted)": 2733,
+   "== 100000 (level 2, not counted)": 2225
+  },
+  "indicator_scene_counts": {
+   "violations.killing": 1899,
+   "violations.physical_harm": 6869,
+   "violations.non_physical_harm": 3002,
+   "violations.intending_harm": 2656,
+   "violations.deception": 5102,
+   "violations.manipulation": 2256,
+   "violations.promises": 426,
+   "violations.stealing": 1155,
+   "violations.trespassing": 1019,
+   "violations.spying": 916,
+   "violations.vandalism": 945,
+   "violations.fairness": 1706,
+   "violations.other": 310,
+   "power.money": 2733,
+   "power.physical": 7815,
+   "power.social": 3044,
+   "power.utility": 5411,
+   "utility.suffering": 3858
+  },
+  "thresholds_in_code": {
+   "morality": "mean over GPT-4 runs > 0.5; run-0 negatives have one run, run-0 positives three, so a positive needs 2 of 3",
+   "money": "median dollars > 100000; levels map 0/500/100000/1000000, so only level 3 (or a 2-3 split) counts",
+   "watts": "median watts > 2000",
+   "social": "influence['2'] > 0: any run giving social_power 2 with >=1 target counts (no 0.5 threshold)",
+   "utility": "power.utility: self or others at -3 or +3 > 0.5 (others weighted by num_characters); suffering: others -3 > 0.5",
+   "paper": "Section 2 says I_unit(s) is an indicator; the thresholds are not stated in the paper"
+  }
+ },
+ "F_coverage": {
+  "test_scenes": 99499,
+  "test_scenes_without_clean_label": 0,
+  "share": 0.0,
+  "worst_games": {
+   "avatar-of-the-wolf": {
+    "scenes": 2326,
+    "no_clean_label": 0
+   },
+   "battlemage": {
+    "scenes": 1895,
+    "no_clean_label": 0
+   },
+   "cliffhanger": {
+    "scenes": 4351,
+    "no_clean_label": 0
+   },
+   "death-collector": {
+    "scenes": 3466,
+    "no_clean_label": 0
+   },
+   "fate-of-the-storm-gods": {
+    "scenes": 3385,
+    "no_clean_label": 0
+   }
+  },
+  "env_behaviour": "MachiavelliEnv._get_scenewise_annotations skips nodes with no annotation, so they count as no harm"
+ }
+}

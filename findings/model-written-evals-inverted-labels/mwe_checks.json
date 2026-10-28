@@ -1,0 +1,405 @@
+{
+ "pins": {
+  "dataset": "Anthropic/model-written-evals@d533f626cc321c92175a58ee570aa3cdb87238d1"
+ },
+ "direction_hand_labels": {
+  "human_generated_evals/survival-instinct": {
+   "labelled": 40,
+   "safe": 39,
+   "behaviour": 0,
+   "unclear": 1,
+   "share_keyed_to_safe_answer": 1.0,
+   "wilson_95": [
+    0.91,
+    1.0
+   ]
+  },
+  "human_generated_evals/power-seeking-inclination": {
+   "labelled": 40,
+   "safe": 40,
+   "behaviour": 0,
+   "unclear": 0,
+   "share_keyed_to_safe_answer": 1.0,
+   "wilson_95": [
+    0.912,
+    1.0
+   ]
+  },
+  "human_generated_evals/wealth-seeking-inclination": {
+   "labelled": 40,
+   "safe": 40,
+   "behaviour": 0,
+   "unclear": 0,
+   "share_keyed_to_safe_answer": 1.0,
+   "wilson_95": [
+    0.912,
+    1.0
+   ]
+  },
+  "lm_generated_evals/survival-instinct": {
+   "labelled": 10,
+   "safe": 0,
+   "behaviour": 9,
+   "unclear": 1,
+   "share_keyed_to_safe_answer": 0.0,
+   "wilson_95": [
+    0.0,
+    0.299
+   ]
+  },
+  "lm_generated_evals/power-seeking-inclination": {
+   "labelled": 8,
+   "safe": 0,
+   "behaviour": 8,
+   "unclear": 0,
+   "share_keyed_to_safe_answer": 0.0,
+   "wilson_95": [
+    0.0,
+    0.324
+   ]
+  },
+  "lm_generated_evals/wealth-seeking-inclination": {
+   "labelled": 8,
+   "safe": 0,
+   "behaviour": 8,
+   "unclear": 0,
+   "share_keyed_to_safe_answer": 0.0,
+   "wilson_95": [
+    0.0,
+    0.324
+   ]
+  }
+ },
+ "baselines": {
+  "human_generated_evals/coordinate-itself": {
+   "rows": 322,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 308,
+   "match_is_yes": 0.938,
+   "match_is_shorter": 0.103,
+   "score_always_yes": 0.919,
+   "score_always_shorter": 0.104
+  },
+  "human_generated_evals/coordinate-other-ais": {
+   "rows": 410,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 388,
+   "match_is_yes": 0.92,
+   "match_is_shorter": 0.115,
+   "score_always_yes": 0.898,
+   "score_always_shorter": 0.116
+  },
+  "human_generated_evals/coordinate-other-versions": {
+   "rows": 348,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 333,
+   "match_is_yes": 0.94,
+   "match_is_shorter": 0.095,
+   "score_always_yes": 0.921,
+   "score_always_shorter": 0.095
+  },
+  "human_generated_evals/corrigible-less-HHH": {
+   "rows": 351,
+   "duplicate_questions": 1,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.501,
+   "yes_no_rows": 289,
+   "match_is_yes": 0.972,
+   "match_is_shorter": 0.443,
+   "score_always_yes": 0.889,
+   "score_always_shorter": 0.443
+  },
+  "human_generated_evals/corrigible-more-HHH": {
+   "rows": 309,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.502,
+   "yes_no_rows": 238,
+   "match_is_yes": 0.987,
+   "match_is_shorter": 0.651,
+   "score_always_yes": 0.875,
+   "score_always_shorter": 0.65
+  },
+  "human_generated_evals/corrigible-neutral-HHH": {
+   "rows": 340,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 282,
+   "match_is_yes": 0.915,
+   "match_is_shorter": 0.5,
+   "score_always_yes": 0.844,
+   "score_always_shorter": 0.5
+  },
+  "human_generated_evals/myopic-reward": {
+   "rows": 1000,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 0,
+   "match_is_yes": null,
+   "match_is_shorter": 0.858,
+   "score_always_yes": 0.5,
+   "score_always_shorter": 0.845
+  },
+  "human_generated_evals/one-box-tendency": {
+   "rows": 300,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 0,
+   "match_is_yes": null,
+   "match_is_shorter": 0.648,
+   "score_always_yes": 0.5,
+   "score_always_shorter": 0.64
+  },
+  "human_generated_evals/power-seeking-inclination": {
+   "rows": 998,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 172,
+   "match_is_A": 0.377,
+   "yes_no_rows": 603,
+   "match_is_yes": 0.036,
+   "match_is_shorter": 0.548,
+   "score_always_yes": 0.22,
+   "score_always_shorter": 0.547
+  },
+  "human_generated_evals/self-awareness-general-ai": {
+   "rows": 300,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 146,
+   "match_is_yes": 0.082,
+   "match_is_shorter": 0.611,
+   "score_always_yes": 0.297,
+   "score_always_shorter": 0.61
+  },
+  "human_generated_evals/self-awareness-good-text-model": {
+   "rows": 600,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 285,
+   "match_is_yes": 0.53,
+   "match_is_shorter": 0.451,
+   "score_always_yes": 0.514,
+   "score_always_shorter": 0.452
+  },
+  "human_generated_evals/self-awareness-text-model": {
+   "rows": 300,
+   "duplicate_questions": 1,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 210,
+   "match_is_yes": 0.0,
+   "match_is_shorter": 0.742,
+   "score_always_yes": 0.15,
+   "score_always_shorter": 0.738
+  },
+  "human_generated_evals/self-awareness-training-architecture": {
+   "rows": 300,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 85,
+   "match_is_yes": 0.553,
+   "match_is_shorter": 0.408,
+   "score_always_yes": 0.515,
+   "score_always_shorter": 0.415
+  },
+  "human_generated_evals/survival-instinct": {
+   "rows": 953,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 92,
+   "match_is_A": 0.619,
+   "yes_no_rows": 567,
+   "match_is_yes": 0.704,
+   "match_is_shorter": 0.42,
+   "score_always_yes": 0.621,
+   "score_always_shorter": 0.422
+  },
+  "human_generated_evals/wealth-seeking-inclination": {
+   "rows": 985,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.483,
+   "yes_no_rows": 449,
+   "match_is_yes": 0.08,
+   "match_is_shorter": 0.506,
+   "score_always_yes": 0.309,
+   "score_always_shorter": 0.506
+  },
+  "lm_generated_evals/coordinate-itself": {
+   "rows": 1000,
+   "duplicate_questions": 8,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 722,
+   "match_is_yes": 0.952,
+   "match_is_shorter": 0.393,
+   "score_always_yes": 0.826,
+   "score_always_shorter": 0.395
+  },
+  "lm_generated_evals/coordinate-other-ais": {
+   "rows": 1000,
+   "duplicate_questions": 10,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 757,
+   "match_is_yes": 0.993,
+   "match_is_shorter": 0.36,
+   "score_always_yes": 0.874,
+   "score_always_shorter": 0.363
+  },
+  "lm_generated_evals/coordinate-other-versions": {
+   "rows": 1000,
+   "duplicate_questions": 7,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 862,
+   "match_is_yes": 0.995,
+   "match_is_shorter": 0.258,
+   "score_always_yes": 0.927,
+   "score_always_shorter": 0.26
+  },
+  "lm_generated_evals/corrigible-less-HHH": {
+   "rows": 468,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 292,
+   "match_is_yes": 0.962,
+   "match_is_shorter": 0.639,
+   "score_always_yes": 0.788,
+   "score_always_shorter": 0.637
+  },
+  "lm_generated_evals/corrigible-more-HHH": {
+   "rows": 1000,
+   "duplicate_questions": 0,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 657,
+   "match_is_yes": 0.994,
+   "match_is_shorter": 0.549,
+   "score_always_yes": 0.825,
+   "score_always_shorter": 0.548
+  },
+  "lm_generated_evals/corrigible-neutral-HHH": {
+   "rows": 1000,
+   "duplicate_questions": 11,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 825,
+   "match_is_yes": 0.988,
+   "match_is_shorter": 0.537,
+   "score_always_yes": 0.902,
+   "score_always_shorter": 0.537
+  },
+  "lm_generated_evals/myopic-reward": {
+   "rows": 1000,
+   "duplicate_questions": 174,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 1,
+   "match_is_yes": 1.0,
+   "match_is_shorter": 0.891,
+   "score_always_yes": 0.5,
+   "score_always_shorter": 0.864
+  },
+  "lm_generated_evals/one-box-tendency": {
+   "rows": 1000,
+   "duplicate_questions": 190,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 3,
+   "match_is_yes": 0.667,
+   "match_is_shorter": 0.601,
+   "score_always_yes": 0.5,
+   "score_always_shorter": 0.589
+  },
+  "lm_generated_evals/power-seeking-inclination": {
+   "rows": 1000,
+   "duplicate_questions": 3,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 297,
+   "match_is_yes": 0.997,
+   "match_is_shorter": 0.512,
+   "score_always_yes": 0.647,
+   "score_always_shorter": 0.512
+  },
+  "lm_generated_evals/self-awareness-general-ai": {
+   "rows": 1000,
+   "duplicate_questions": 33,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 295,
+   "match_is_yes": 0.041,
+   "match_is_shorter": 0.377,
+   "score_always_yes": 0.364,
+   "score_always_shorter": 0.379
+  },
+  "lm_generated_evals/self-awareness-good-text-model": {
+   "rows": 1000,
+   "duplicate_questions": 6,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 479,
+   "match_is_yes": 0.992,
+   "match_is_shorter": 0.35,
+   "score_always_yes": 0.736,
+   "score_always_shorter": 0.352
+  },
+  "lm_generated_evals/self-awareness-text-model": {
+   "rows": 1000,
+   "duplicate_questions": 4,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 752,
+   "match_is_yes": 0.031,
+   "match_is_shorter": 0.515,
+   "score_always_yes": 0.147,
+   "score_always_shorter": 0.514
+  },
+  "lm_generated_evals/self-awareness-training-architecture": {
+   "rows": 1000,
+   "duplicate_questions": 9,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 283,
+   "match_is_yes": 0.837,
+   "match_is_shorter": 0.381,
+   "score_always_yes": 0.596,
+   "score_always_shorter": 0.384
+  },
+  "lm_generated_evals/survival-instinct": {
+   "rows": 1000,
+   "duplicate_questions": 49,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 95,
+   "match_is_yes": 0.326,
+   "match_is_shorter": 0.345,
+   "score_always_yes": 0.483,
+   "score_always_shorter": 0.347
+  },
+  "lm_generated_evals/wealth-seeking-inclination": {
+   "rows": 1000,
+   "duplicate_questions": 4,
+   "keyed_beyond_B": 0,
+   "match_is_A": 0.5,
+   "yes_no_rows": 222,
+   "match_is_yes": 0.946,
+   "match_is_shorter": 0.525,
+   "score_always_yes": 0.599,
+   "score_always_shorter": 0.524
+  }
+ }
+}

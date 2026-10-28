@@ -1,0 +1,193 @@
+{
+ "benchmark_era": {
+  "commit": "safety-research/bloom@8289ee2dbd00530bcfadba32a4eec0c54624c6d6",
+  "judge_prompt_names_target": true,
+  "ideation_prompt_names_target": true,
+  "rollout_prompt_names_target": true,
+  "stages_default_to_named": {
+   "ideation_stage": true,
+   "rollout_stage": true,
+   "judge_stage": true
+  },
+  "seed_default_anonymous_target": "false",
+  "sweep_config_builder_sets_anonymous_target": false,
+  "sweep_config_builder_keys": [
+   "behavior",
+   "configurable_prompts",
+   "debug",
+   "evaluator_reasoning_effort",
+   "ideation",
+   "judgment",
+   "max_concurrent",
+   "resume",
+   "resume_stage",
+   "rollout",
+   "target_reasoning_effort",
+   "temperature",
+   "understanding",
+   "variation"
+  ],
+  "pipeline_stages": [
+   "understanding",
+   "ideation",
+   "rollout",
+   "judgment"
+  ],
+  "configs": {
+   "sweeps/delusion-sycophancy.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "sweeps/instructed-long-horizon-sabotage.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "sweeps/self-preferential-bias.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "sweeps/self-preservation.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "experiments/benchmarks/delusion-sycophancy.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 13,
+    "claude_targets": 1,
+    "judge_is_a_target": false,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "experiments/benchmarks/instructed-long-horizon-sabotage.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 16,
+    "claude_targets": 4,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "experiments/benchmarks/sandbagging.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 16,
+    "claude_targets": 4,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   }
+  }
+ },
+ "frozen_release": {
+  "commit": "safety-research/bloom@7a184286758de93432fce055acba9750004944dc",
+  "judge_prompt_names_target": true,
+  "ideation_prompt_names_target": true,
+  "rollout_prompt_names_target": true,
+  "stages_default_to_named": {
+   "ideation_stage": true,
+   "rollout_stage": true,
+   "judge_stage": true
+  },
+  "seed_default_anonymous_target": "false",
+  "sweep_config_builder_sets_anonymous_target": false,
+  "sweep_config_builder_keys": [
+   "behavior",
+   "configurable_prompts",
+   "debug",
+   "evaluator_reasoning_effort",
+   "ideation",
+   "judgment",
+   "max_concurrent",
+   "resume",
+   "resume_stage",
+   "rollout",
+   "target_reasoning_effort",
+   "temperature",
+   "understanding",
+   "variation"
+  ],
+  "pipeline_stages": [
+   "understanding",
+   "ideation",
+   "rollout",
+   "judgment"
+  ],
+  "configs": {
+   "examples/sweeps/delusion-sycophancy.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "examples/sweeps/instructed-long-horizon-sabotage.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "examples/sweeps/self-preferential-bias.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   },
+   "examples/sweeps/self-preservation.yaml": {
+    "judge": "claude-opus-4.1",
+    "ideation": "claude-opus-4.1",
+    "evaluator": "claude-opus-4.1",
+    "targets": 17,
+    "claude_targets": 5,
+    "judge_is_a_target": true,
+    "anonymous_target_set": false,
+    "resume_set": false
+   }
+  }
+ },
+ "petri": {
+  "commit": "meridianlabs-ai/inspect_petri@128f61d56776169e5030135eede930783ab7fcc3",
+  "judge_prompt_says_auditor_elicits_misalignment": true,
+  "judge_prompt_names_target": false,
+  "auditor_told_to_use_target_real_name": true,
+  "judge_refusal_scores_none": true
+ }
+}

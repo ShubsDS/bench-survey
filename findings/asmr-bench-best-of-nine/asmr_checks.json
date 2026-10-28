@@ -1,0 +1,70 @@
+{
+ "pins": {
+  "repo": "ejcgan/auditing-sabotage-bench@f8efd6834aa72ee91fe9042eaab852724873167a"
+ },
+ "papers": 9,
+ "variants": 20,
+ "auroc": {
+  "full_experiments__claude-opus-4-5": 0.623,
+  "full_experiments__claude-opus-4-6": 0.543,
+  "full_experiments__claude-sonnet-4": 0.543,
+  "full_experiments__claude-sonnet-4-5": 0.685,
+  "full_experiments__gemini-3-flash": 0.716,
+  "full_experiments__gemini-3.1-pro-cursor": 0.772,
+  "full_experiments__gpt-5-mini": 0.556,
+  "full_experiments__gpt-5.1": 0.654,
+  "full_experiments__gpt-5.2": 0.63,
+  "full_experiments__gpt-5.4": 0.704,
+  "full_experiments__human_public": 0.704,
+  "no_experiments__claude-opus-4-5": 0.648,
+  "no_experiments__claude-opus-4-6": 0.531,
+  "no_experiments__gemini-3.1-pro-cursor": 0.593,
+  "no_experiments__gpt-5.2": 0.58,
+  "no_experiments__gpt-5.4": 0.549,
+  "paper_only__claude-opus-4-6": 0.636,
+  "paper_only__gemini-3.1-pro-cursor": 0.488,
+  "paper_only__gpt-5.2": 0.34
+ },
+ "headline": {
+  "config": "full_experiments__gemini-3.1-pro-cursor",
+  "auroc": 0.772,
+  "exact_stratified_permutation_p": 0.0087,
+  "bootstrap_over_papers_95": [
+   0.605,
+   0.951
+  ]
+ },
+ "best_of_nine_headline_configs": {
+  "configs": [
+   "paper_only__claude-opus-4-6",
+   "paper_only__gemini-3.1-pro-cursor",
+   "paper_only__gpt-5.2",
+   "no_experiments__claude-opus-4-6",
+   "no_experiments__gemini-3.1-pro-cursor",
+   "no_experiments__gpt-5.2",
+   "full_experiments__claude-opus-4-6",
+   "full_experiments__gemini-3.1-pro-cursor",
+   "full_experiments__gpt-5.2"
+  ],
+  "best_auroc": 0.772,
+  "assignments": 1152,
+  "family_wise_p": 0.0842
+ },
+ "paper_only_files_include_persuasion": {
+  "paper_only__claude-opus-4-6": {
+   "persuasion_rows": 55,
+   "auroc_main_only": 0.636,
+   "auroc_with_persuasion_repo_codebase_rule": 0.608
+  },
+  "paper_only__gemini-3.1-pro-cursor": {
+   "persuasion_rows": 55,
+   "auroc_main_only": 0.488,
+   "auroc_with_persuasion_repo_codebase_rule": 0.486
+  },
+  "paper_only__gpt-5.2": {
+   "persuasion_rows": 55,
+   "auroc_main_only": 0.34,
+   "auroc_with_persuasion_repo_codebase_rule": 0.364
+  }
+ }
+}

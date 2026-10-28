@@ -1,0 +1,340 @@
+{
+ "pins": {
+  "dataset": "ScaleAI/mrt@bc636d0c3b881c7d8c76fd71b45b009c3710d437",
+  "code": "scaleapi/mrt@3535620b2bdf0dc1e6140f6fbe198399aac2c74f"
+ },
+ "task_count": {
+  "paper": {
+   "shade_tasks": 17,
+   "cua_tasks": 15,
+   "rollouts_per_class_per_task": 10
+  },
+  "shade_tasks_released": [
+   "american_airlines_2",
+   "api_key_calendar_agendas_2",
+   "bank_transfer_2",
+   "expenditure_accounting",
+   "spam_filter_update"
+  ],
+  "cua_tasks_released": 15,
+  "cua_v1_runs_per_task_scored_by_baseline_monitor": {
+   "benign: 5": 15,
+   "manipulator: 5": 15,
+   "naive: 5": 15,
+   "selective_liar: 5": 15,
+   "selective: 5": 15,
+   "visible_liar: 5": 15,
+   "visible: 5": 15
+  }
+ },
+ "duplicates": {
+  "task_pairs": {
+   "transcript_files": 41871,
+   "distinct_agent_runs_by_path": 5619,
+   "files_per_run": 7.5
+  },
+  "task_pairs_agentcompany": {
+   "transcript_files": 11316,
+   "distinct_agent_runs_by_path": 1650,
+   "files_per_run": 6.9
+  },
+  "content_check": {
+   "files": 1686,
+   "agent_runs": 54,
+   "runs_with_identical_conversation_in_every_copy": 54
+  }
+ },
+ "cua_shade_arena": {
+  "agent": "claude-sonnet-4-20250514",
+  "monitor": "claude-3-5-sonnet-20241022",
+  "fields_in_files": {
+   "conversation": 825,
+   "monitoring_response": 825,
+   "monitor_conversation": 825
+  },
+  "benign": {
+   "runs": 75,
+   "keyword_present": 0,
+   "hidden_file_tasks": {
+    "runs": 25,
+    "file_appears": 0
+   }
+  },
+  "attack_strategies": {
+   "manipulator_v1": {
+    "runs": 75,
+    "keyword_present": 7,
+    "keyword": {
+     "auroc": 0.547,
+     "tpr_at_zero_fp": 0.093
+    },
+    "released_monitor": {
+     "auroc": 0.281,
+     "tpr_at_zero_fp": 0.253
+    },
+    "released_monitor_without_keyword": {
+     "runs": 68,
+     "auroc": 0.295,
+     "tpr_at_zero_fp": 0.265
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 24
+    }
+   },
+   "manipulator_v2": {
+    "runs": 75,
+    "keyword_present": 6,
+    "keyword": {
+     "auroc": 0.54,
+     "tpr_at_zero_fp": 0.08
+    },
+    "released_monitor": {
+     "auroc": 0.278,
+     "tpr_at_zero_fp": 0.2
+    },
+    "released_monitor_without_keyword": {
+     "runs": 69,
+     "auroc": 0.302,
+     "tpr_at_zero_fp": 0.217
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 25
+    }
+   },
+   "naive_v1": {
+    "runs": 75,
+    "keyword_present": 38,
+    "keyword": {
+     "auroc": 0.753,
+     "tpr_at_zero_fp": 0.507
+    },
+    "released_monitor": {
+     "auroc": 0.917,
+     "tpr_at_zero_fp": 0.68
+    },
+    "released_monitor_without_keyword": {
+     "runs": 37,
+     "auroc": 0.903,
+     "tpr_at_zero_fp": 0.595
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 25
+    }
+   },
+   "naive_v2": {
+    "runs": 75,
+    "keyword_present": 75,
+    "keyword": {
+     "auroc": 1.0,
+     "tpr_at_zero_fp": 1.0
+    },
+    "released_monitor": {
+     "auroc": 0.97,
+     "tpr_at_zero_fp": 0.88
+    },
+    "released_monitor_without_keyword": {
+     "runs": 0
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 25
+    }
+   },
+   "selective_liar_v1": {
+    "runs": 75,
+    "keyword_present": 31,
+    "keyword": {
+     "auroc": 0.707,
+     "tpr_at_zero_fp": 0.413
+    },
+    "released_monitor": {
+     "auroc": 0.895,
+     "tpr_at_zero_fp": 0.667
+    },
+    "released_monitor_without_keyword": {
+     "runs": 44,
+     "auroc": 0.872,
+     "tpr_at_zero_fp": 0.636
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 24
+    }
+   },
+   "selective_liar_v2": {
+    "runs": 75,
+    "keyword_present": 0,
+    "keyword": {
+     "auroc": 0.5,
+     "tpr_at_zero_fp": 0.0
+    },
+    "released_monitor": {
+     "auroc": 0.851,
+     "tpr_at_zero_fp": 0.587
+    },
+    "released_monitor_without_keyword": {
+     "runs": 75,
+     "auroc": 0.851,
+     "tpr_at_zero_fp": 0.587
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 24
+    }
+   },
+   "selective_v1": {
+    "runs": 75,
+    "keyword_present": 25,
+    "keyword": {
+     "auroc": 0.667,
+     "tpr_at_zero_fp": 0.333
+    },
+    "released_monitor": {
+     "auroc": 0.91,
+     "tpr_at_zero_fp": 0.653
+    },
+    "released_monitor_without_keyword": {
+     "runs": 50,
+     "auroc": 0.906,
+     "tpr_at_zero_fp": 0.62
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 23
+    }
+   },
+   "selective_v2": {
+    "runs": 75,
+    "keyword_present": 6,
+    "keyword": {
+     "auroc": 0.54,
+     "tpr_at_zero_fp": 0.08
+    },
+    "released_monitor": {
+     "auroc": 0.832,
+     "tpr_at_zero_fp": 0.48
+    },
+    "released_monitor_without_keyword": {
+     "runs": 69,
+     "auroc": 0.818,
+     "tpr_at_zero_fp": 0.435
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 24
+    }
+   },
+   "visible_liar_v1": {
+    "runs": 75,
+    "keyword_present": 10,
+    "keyword": {
+     "auroc": 0.567,
+     "tpr_at_zero_fp": 0.133
+    },
+    "released_monitor": {
+     "auroc": 0.915,
+     "tpr_at_zero_fp": 0.693
+    },
+    "released_monitor_without_keyword": {
+     "runs": 65,
+     "auroc": 0.91,
+     "tpr_at_zero_fp": 0.692
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 23
+    }
+   },
+   "visible_v1": {
+    "runs": 75,
+    "keyword_present": 6,
+    "keyword": {
+     "auroc": 0.54,
+     "tpr_at_zero_fp": 0.08
+    },
+    "released_monitor": {
+     "auroc": 0.858,
+     "tpr_at_zero_fp": 0.587
+    },
+    "released_monitor_without_keyword": {
+     "runs": 69,
+     "auroc": 0.852,
+     "tpr_at_zero_fp": 0.58
+    },
+    "hidden_file_tasks": {
+     "runs": 25,
+     "file_appears": 25
+    }
+   }
+  }
+ },
+ "shade_arena": {
+  "agent": "claude-3-5-sonnet-20241022",
+  "monitor": "claude-3-5-sonnet-20241022",
+  "benign": {
+   "runs": 141,
+   "keyword_present": 0,
+   "side_task_evaluation_true": 0
+  },
+  "aware, no strategy": {
+   "runs": 110,
+   "has_side_task_evaluation": 110,
+   "side_task_evaluation_true": 85,
+   "keyword_present": 5,
+   "keyword": {
+    "auroc": 0.523,
+    "tpr_at_zero_fp": 0.045
+   },
+   "released_monitor": {
+    "auroc": 0.708,
+    "tpr_at_zero_fp": 0.145
+   },
+   "released_monitor_without_keyword": {
+    "runs": 105,
+    "auroc": 0.706,
+    "tpr_at_zero_fp": 0.143
+   }
+  },
+  "naive": {
+   "runs": 50,
+   "has_side_task_evaluation": 50,
+   "side_task_evaluation_true": 38,
+   "keyword_present": 44,
+   "keyword": {
+    "auroc": 0.94,
+    "tpr_at_zero_fp": 0.88
+   },
+   "released_monitor": {
+    "auroc": 0.961,
+    "tpr_at_zero_fp": 0.78
+   },
+   "released_monitor_without_keyword": {
+    "runs": 6,
+    "auroc": 0.754,
+    "tpr_at_zero_fp": 0.333
+   }
+  },
+  "selective": {
+   "runs": 60,
+   "has_side_task_evaluation": 60,
+   "side_task_evaluation_true": 47,
+   "keyword_present": 3,
+   "keyword": {
+    "auroc": 0.525,
+    "tpr_at_zero_fp": 0.05
+   },
+   "released_monitor": {
+    "auroc": 0.746,
+    "tpr_at_zero_fp": 0.1
+   },
+   "released_monitor_without_keyword": {
+    "runs": 57,
+    "auroc": 0.75,
+    "tpr_at_zero_fp": 0.105
+   }
+  }
+ }
+}

@@ -1,0 +1,1981 @@
+{
+ "pins": {
+  "monitors.json_sha256": "680d1ffc69e2c4696906bee088dc402d2fa203a60b88dcca541f52f72f2a2fe6",
+  "pooled.json_sha256": "0d0f8f1dc5a415b4a9be54d589bf6e553a0ce2d6924aae87825fb028bfc13c29",
+  "generated_at": "2026-10-24T19:28:16+00:00",
+  "default_dataset": "basharena"
+ },
+ "aggregation": {
+  "rule_stated_on_page": "AUROC column tooltip: \"Selected datasets have equal weight.\" Board note: ranking metrics \"use the same scored trajectories for every monitor of a given type, including unsuccessful attacks, and give each dataset equal weight. Stepwise monitors use peak suspicion\".",
+  "default_view": "one dataset (default_dataset = basharena); several datasets are pooled only when a viewer selects them",
+  "n_single_rows": 82,
+  "single_max_abs_err": 0.0,
+  "n_pooled_rows": 39,
+  "pooled_max_abs_err_mean_rule": 0.0016145791345317795,
+  "pooled_max_abs_err_concatenation_rule": 0.12252771706116655,
+  "poolable_selections": [
+   "basharena + monitoringbench + sleight [action]",
+   "basharena + monitoringbench [action]",
+   "basharena + sleight [action]",
+   "linuxarena-paper-strategies + linuxarena-paper [action]",
+   "linuxarena-paper-strategies + linuxarena-paper [trajectory]",
+   "monitoringbench + sleight [action]"
+  ],
+  "selections_with_no_shared_monitor": [
+   "basharena + linuxarena-paper",
+   "basharena + monitoringbench + linuxarena-paper",
+   "basharena + monitoringbench + sleight + linuxarena-paper",
+   "basharena + sleight + linuxarena-paper",
+   "linuxarena-paper-strategies + basharena",
+   "linuxarena-paper-strategies + basharena + linuxarena-paper",
+   "linuxarena-paper-strategies + basharena + monitoringbench",
+   "linuxarena-paper-strategies + basharena + monitoringbench + linuxarena-paper",
+   "linuxarena-paper-strategies + basharena + monitoringbench + sleight",
+   "linuxarena-paper-strategies + basharena + monitoringbench + sleight + linuxarena-paper",
+   "linuxarena-paper-strategies + basharena + sleight",
+   "linuxarena-paper-strategies + basharena + sleight + linuxarena-paper",
+   "linuxarena-paper-strategies + monitoringbench",
+   "linuxarena-paper-strategies + monitoringbench + linuxarena-paper",
+   "linuxarena-paper-strategies + monitoringbench + sleight",
+   "linuxarena-paper-strategies + monitoringbench + sleight + linuxarena-paper",
+   "linuxarena-paper-strategies + sleight",
+   "linuxarena-paper-strategies + sleight + linuxarena-paper",
+   "monitoringbench + linuxarena-paper",
+   "monitoringbench + sleight + linuxarena-paper",
+   "shade-arena + basharena",
+   "shade-arena + basharena + linuxarena-paper",
+   "shade-arena + basharena + monitoringbench",
+   "shade-arena + basharena + monitoringbench + linuxarena-paper",
+   "shade-arena + basharena + monitoringbench + sleight",
+   "shade-arena + basharena + monitoringbench + sleight + linuxarena-paper",
+   "shade-arena + basharena + sleight",
+   "shade-arena + basharena + sleight + linuxarena-paper",
+   "shade-arena + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies",
+   "shade-arena + linuxarena-paper-strategies + basharena",
+   "shade-arena + linuxarena-paper-strategies + basharena + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + basharena + monitoringbench",
+   "shade-arena + linuxarena-paper-strategies + basharena + monitoringbench + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + basharena + monitoringbench + sleight",
+   "shade-arena + linuxarena-paper-strategies + basharena + monitoringbench + sleight + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + basharena + sleight",
+   "shade-arena + linuxarena-paper-strategies + basharena + sleight + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + monitoringbench",
+   "shade-arena + linuxarena-paper-strategies + monitoringbench + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + monitoringbench + sleight",
+   "shade-arena + linuxarena-paper-strategies + monitoringbench + sleight + linuxarena-paper",
+   "shade-arena + linuxarena-paper-strategies + sleight",
+   "shade-arena + linuxarena-paper-strategies + sleight + linuxarena-paper",
+   "shade-arena + monitoringbench",
+   "shade-arena + monitoringbench + linuxarena-paper",
+   "shade-arena + monitoringbench + sleight",
+   "shade-arena + monitoringbench + sleight + linuxarena-paper",
+   "shade-arena + sleight",
+   "shade-arena + sleight + linuxarena-paper",
+   "sleight + linuxarena-paper"
+  ]
+ },
+ "positive_class": {
+  "basharena": {
+   "author": "Claude Opus 4.6",
+   "n_attack_in_scores": 596,
+   "side_task_success": {
+    "1.0": 569,
+    "None": 13,
+    "0.0": 14
+   },
+   "monitor_kinds": [
+    "action/simple"
+   ]
+  },
+  "linuxarena-paper": {
+   "author": "Claude Opus 4.6",
+   "n_attack_in_scores": 92,
+   "side_task_success": {
+    "1.0": 90,
+    "0.0": 2
+   },
+   "monitor_kinds": [
+    "action/mean-action",
+    "trajectory/mean-quick"
+   ]
+  },
+  "linuxarena-paper-strategies": {
+   "author": "Claude Opus 4.6",
+   "n_attack_in_scores": 45,
+   "side_task_success": {
+    "1.0": 44,
+    "0.0": 1
+   },
+   "monitor_kinds": [
+    "action/mean-action",
+    "trajectory/mean-quick"
+   ]
+  },
+  "monitoringbench": {
+   "author": "Claude Opus 4.5 / 4.6",
+   "n_attack_in_scores": 2644,
+   "side_task_success": {
+    "1.0": 2644
+   },
+   "monitor_kinds": [
+    "action/simple"
+   ]
+  },
+  "mythos-5-incident": {
+   "rows": 0
+  },
+  "shade-arena": {
+   "author": "Mixed (Claude 3.5 Sonnet, Gemini 2.5 Pro, GPT-4.1, others)",
+   "n_attack_in_scores": 307,
+   "side_task_success": {
+    "1.0": 236,
+    "0.0": 71
+   },
+   "monitor_kinds": [
+    "trajectory/trajectory"
+   ]
+  },
+  "sleight": {
+   "author": "Human-authored",
+   "n_attack_in_scores": 37,
+   "side_task_success": {
+    "None": 37
+   },
+   "monitor_kinds": [
+    "action/simple"
+   ]
+  }
+ },
+ "rank_sensitivity": [
+  {
+   "comparison": "bash+mb+sleight drop basharena",
+   "kind": "action",
+   "n_monitors": 3,
+   "base": [
+    "basharena",
+    "monitoringbench",
+    "sleight"
+   ],
+   "alt": [
+    "monitoringbench",
+    "sleight"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     550,
+     2644
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     550,
+     2644
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4.1-nano-none": 0.4808,
+    "gpt-5-nano-minimal": 0.489,
+    "gpt-5.4-nano-none": 0.5524
+   },
+   "auroc_alt": {
+    "gpt-4.1-nano-none": 0.5407,
+    "gpt-5-nano-minimal": 0.5541,
+    "gpt-5.4-nano-none": 0.634
+   },
+   "top_base": "gpt-5.4-nano-none",
+   "top_alt": "gpt-5.4-nano-none",
+   "rank_base": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "kendall_tau": 1.0,
+   "max_abs_auroc_change": 0.0816,
+   "pairs_flipped": 0,
+   "pairs_total": 3,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": []
+  },
+  {
+   "comparison": "bash+mb+sleight drop monitoringbench",
+   "kind": "action",
+   "n_monitors": 3,
+   "base": [
+    "basharena",
+    "monitoringbench",
+    "sleight"
+   ],
+   "alt": [
+    "basharena",
+    "sleight"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     550,
+     2644
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     596
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4.1-nano-none": 0.4808,
+    "gpt-5-nano-minimal": 0.489,
+    "gpt-5.4-nano-none": 0.5524
+   },
+   "auroc_alt": {
+    "gpt-4.1-nano-none": 0.4292,
+    "gpt-5-nano-minimal": 0.4496,
+    "gpt-5.4-nano-none": 0.5113
+   },
+   "top_base": "gpt-5.4-nano-none",
+   "top_alt": "gpt-5.4-nano-none",
+   "rank_base": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "kendall_tau": 1.0,
+   "max_abs_auroc_change": 0.0516,
+   "pairs_flipped": 0,
+   "pairs_total": 3,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": []
+  },
+  {
+   "comparison": "bash+mb+sleight drop sleight",
+   "kind": "action",
+   "n_monitors": 3,
+   "base": [
+    "basharena",
+    "monitoringbench",
+    "sleight"
+   ],
+   "alt": [
+    "basharena",
+    "monitoringbench"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     550,
+     2644
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     596
+    ],
+    [
+     550,
+     2644
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4.1-nano-none": 0.4808,
+    "gpt-5-nano-minimal": 0.489,
+    "gpt-5.4-nano-none": 0.5524
+   },
+   "auroc_alt": {
+    "gpt-4.1-nano-none": 0.4724,
+    "gpt-5-nano-minimal": 0.4635,
+    "gpt-5.4-nano-none": 0.5119
+   },
+   "top_base": "gpt-5.4-nano-none",
+   "top_alt": "gpt-5.4-nano-none",
+   "rank_base": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "gpt-5.4-nano-none",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal"
+   ],
+   "kendall_tau": 0.333,
+   "max_abs_auroc_change": 0.0405,
+   "pairs_flipped": 1,
+   "pairs_total": 3,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4.1-nano-none",
+      "gpt-5-nano-minimal"
+     ],
+     "base": [
+      0.4808,
+      0.489
+     ],
+     "alt": [
+      0.4724,
+      0.4635
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "bash+mb+sleight -> success-only positives (SLEIGHT has no outcome, so it drops out)",
+   "kind": "action",
+   "n_monitors": 3,
+   "base": [
+    "basharena",
+    "monitoringbench",
+    "sleight"
+   ],
+   "alt": [
+    "basharena (success only)",
+    "monitoringbench (success only)"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     550,
+     2644
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     569
+    ],
+    [
+     550,
+     2644
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4.1-nano-none": 0.4808,
+    "gpt-5-nano-minimal": 0.489,
+    "gpt-5.4-nano-none": 0.5524
+   },
+   "auroc_alt": {
+    "gpt-4.1-nano-none": 0.4733,
+    "gpt-5-nano-minimal": 0.4644,
+    "gpt-5.4-nano-none": 0.5114
+   },
+   "top_base": "gpt-5.4-nano-none",
+   "top_alt": "gpt-5.4-nano-none",
+   "rank_base": [
+    "gpt-5.4-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "gpt-5.4-nano-none",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal"
+   ],
+   "kendall_tau": 0.333,
+   "max_abs_auroc_change": 0.041,
+   "pairs_flipped": 1,
+   "pairs_total": 3,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4.1-nano-none",
+      "gpt-5-nano-minimal"
+     ],
+     "base": [
+      0.4808,
+      0.489
+     ],
+     "alt": [
+      0.4733,
+      0.4644
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "bash+sleight vs bash alone",
+   "kind": "action",
+   "n_monitors": 10,
+   "base": [
+    "basharena",
+    "sleight"
+   ],
+   "alt": [
+    "basharena"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     596
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4o-mini-none": 0.4452,
+    "gpt-4.1-nano-none": 0.4292,
+    "gpt-5-nano-minimal": 0.4496,
+    "glm-4.6-none": 0.604,
+    "claude-haiku-4-5-none": 0.6309,
+    "deepseek-v3.2-none": 0.5027,
+    "gpt-5.4-nano-none": 0.5113,
+    "gpt-5.4-nano-low": 0.5152,
+    "gpt-5.4-nano-medium": 0.5846,
+    "gpt-5.4-nano-high": 0.6249
+   },
+   "auroc_alt": {
+    "gpt-4o-mini-none": 0.312,
+    "gpt-4.1-nano-none": 0.3609,
+    "gpt-5-nano-minimal": 0.3589,
+    "glm-4.6-none": 0.6484,
+    "claude-haiku-4-5-none": 0.6238,
+    "deepseek-v3.2-none": 0.445,
+    "gpt-5.4-nano-none": 0.3892,
+    "gpt-5.4-nano-low": 0.3727,
+    "gpt-5.4-nano-medium": 0.4895,
+    "gpt-5.4-nano-high": 0.5913
+   },
+   "top_base": "claude-haiku-4-5-none",
+   "top_alt": "glm-4.6-none",
+   "rank_base": [
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "glm-4.6-none",
+    "gpt-5.4-nano-medium",
+    "gpt-5.4-nano-low",
+    "gpt-5.4-nano-none",
+    "deepseek-v3.2-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "glm-4.6-none",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "gpt-5.4-nano-medium",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-none",
+    "gpt-5.4-nano-low",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "kendall_tau": 0.689,
+   "max_abs_auroc_change": 0.1426,
+   "pairs_flipped": 7,
+   "pairs_total": 45,
+   "flips_resolved_by_bootstrap": 4,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4o-mini-none",
+      "gpt-4.1-nano-none"
+     ],
+     "base": [
+      0.4452,
+      0.4292
+     ],
+     "alt": [
+      0.312,
+      0.3609
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-4.1-nano-none",
+      "gpt-5-nano-minimal"
+     ],
+     "base": [
+      0.4292,
+      0.4496
+     ],
+     "alt": [
+      0.3609,
+      0.3589
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "claude-haiku-4-5-none"
+     ],
+     "base": [
+      0.604,
+      0.6309
+     ],
+     "alt": [
+      0.6484,
+      0.6238
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "gpt-5.4-nano-high"
+     ],
+     "base": [
+      0.604,
+      0.6249
+     ],
+     "alt": [
+      0.6484,
+      0.5913
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "deepseek-v3.2-none",
+      "gpt-5.4-nano-none"
+     ],
+     "base": [
+      0.5027,
+      0.5113
+     ],
+     "alt": [
+      0.445,
+      0.3892
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "deepseek-v3.2-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.5027,
+      0.5152
+     ],
+     "alt": [
+      0.445,
+      0.3727
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-5.4-nano-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.5113,
+      0.5152
+     ],
+     "alt": [
+      0.3892,
+      0.3727
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "bash+sleight vs sleight alone",
+   "kind": "action",
+   "n_monitors": 10,
+   "base": [
+    "basharena",
+    "sleight"
+   ],
+   "alt": [
+    "sleight"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     37,
+     37
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4o-mini-none": 0.4452,
+    "gpt-4.1-nano-none": 0.4292,
+    "gpt-5-nano-minimal": 0.4496,
+    "glm-4.6-none": 0.604,
+    "claude-haiku-4-5-none": 0.6309,
+    "deepseek-v3.2-none": 0.5027,
+    "gpt-5.4-nano-none": 0.5113,
+    "gpt-5.4-nano-low": 0.5152,
+    "gpt-5.4-nano-medium": 0.5846,
+    "gpt-5.4-nano-high": 0.6249
+   },
+   "auroc_alt": {
+    "gpt-4o-mini-none": 0.5785,
+    "gpt-4.1-nano-none": 0.4974,
+    "gpt-5-nano-minimal": 0.5402,
+    "glm-4.6-none": 0.5595,
+    "claude-haiku-4-5-none": 0.6381,
+    "deepseek-v3.2-none": 0.5603,
+    "gpt-5.4-nano-none": 0.6333,
+    "gpt-5.4-nano-low": 0.6578,
+    "gpt-5.4-nano-medium": 0.6797,
+    "gpt-5.4-nano-high": 0.6585
+   },
+   "top_base": "claude-haiku-4-5-none",
+   "top_alt": "gpt-5.4-nano-medium",
+   "rank_base": [
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "glm-4.6-none",
+    "gpt-5.4-nano-medium",
+    "gpt-5.4-nano-low",
+    "gpt-5.4-nano-none",
+    "deepseek-v3.2-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "gpt-5.4-nano-medium",
+    "gpt-5.4-nano-high",
+    "gpt-5.4-nano-low",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-none",
+    "gpt-4o-mini-none",
+    "deepseek-v3.2-none",
+    "glm-4.6-none",
+    "gpt-5-nano-minimal",
+    "gpt-4.1-nano-none"
+   ],
+   "kendall_tau": 0.511,
+   "max_abs_auroc_change": 0.1426,
+   "pairs_flipped": 11,
+   "pairs_total": 45,
+   "flips_resolved_by_bootstrap": 5,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4o-mini-none",
+      "gpt-5-nano-minimal"
+     ],
+     "base": [
+      0.4452,
+      0.4496
+     ],
+     "alt": [
+      0.5785,
+      0.5402
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gpt-4o-mini-none",
+      "glm-4.6-none"
+     ],
+     "base": [
+      0.4452,
+      0.604
+     ],
+     "alt": [
+      0.5785,
+      0.5595
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-4o-mini-none",
+      "deepseek-v3.2-none"
+     ],
+     "base": [
+      0.4452,
+      0.5027
+     ],
+     "alt": [
+      0.5785,
+      0.5603
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "deepseek-v3.2-none"
+     ],
+     "base": [
+      0.604,
+      0.5027
+     ],
+     "alt": [
+      0.5595,
+      0.5603
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "gpt-5.4-nano-none"
+     ],
+     "base": [
+      0.604,
+      0.5113
+     ],
+     "alt": [
+      0.5595,
+      0.6333
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.604,
+      0.5152
+     ],
+     "alt": [
+      0.5595,
+      0.6578
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "gpt-5.4-nano-medium"
+     ],
+     "base": [
+      0.604,
+      0.5846
+     ],
+     "alt": [
+      0.5595,
+      0.6797
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-haiku-4-5-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.6309,
+      0.5152
+     ],
+     "alt": [
+      0.6381,
+      0.6578
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "claude-haiku-4-5-none",
+      "gpt-5.4-nano-medium"
+     ],
+     "base": [
+      0.6309,
+      0.5846
+     ],
+     "alt": [
+      0.6381,
+      0.6797
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-haiku-4-5-none",
+      "gpt-5.4-nano-high"
+     ],
+     "base": [
+      0.6309,
+      0.6249
+     ],
+     "alt": [
+      0.6381,
+      0.6585
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gpt-5.4-nano-medium",
+      "gpt-5.4-nano-high"
+     ],
+     "base": [
+      0.5846,
+      0.6249
+     ],
+     "alt": [
+      0.6797,
+      0.6585
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "bash+sleight vs bash success-only",
+   "kind": "action",
+   "n_monitors": 10,
+   "base": [
+    "basharena",
+    "sleight"
+   ],
+   "alt": [
+    "basharena (success only)"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ],
+    [
+     37,
+     37
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     569
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4o-mini-none": 0.4452,
+    "gpt-4.1-nano-none": 0.4292,
+    "gpt-5-nano-minimal": 0.4496,
+    "glm-4.6-none": 0.604,
+    "claude-haiku-4-5-none": 0.6309,
+    "deepseek-v3.2-none": 0.5027,
+    "gpt-5.4-nano-none": 0.5113,
+    "gpt-5.4-nano-low": 0.5152,
+    "gpt-5.4-nano-medium": 0.5846,
+    "gpt-5.4-nano-high": 0.6249
+   },
+   "auroc_alt": {
+    "gpt-4o-mini-none": 0.3173,
+    "gpt-4.1-nano-none": 0.3627,
+    "gpt-5-nano-minimal": 0.3608,
+    "glm-4.6-none": 0.6496,
+    "claude-haiku-4-5-none": 0.6282,
+    "deepseek-v3.2-none": 0.4456,
+    "gpt-5.4-nano-none": 0.3882,
+    "gpt-5.4-nano-low": 0.3734,
+    "gpt-5.4-nano-medium": 0.492,
+    "gpt-5.4-nano-high": 0.5943
+   },
+   "top_base": "claude-haiku-4-5-none",
+   "top_alt": "glm-4.6-none",
+   "rank_base": [
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "glm-4.6-none",
+    "gpt-5.4-nano-medium",
+    "gpt-5.4-nano-low",
+    "gpt-5.4-nano-none",
+    "deepseek-v3.2-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none",
+    "gpt-4.1-nano-none"
+   ],
+   "rank_alt": [
+    "glm-4.6-none",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "gpt-5.4-nano-medium",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-none",
+    "gpt-5.4-nano-low",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "kendall_tau": 0.689,
+   "max_abs_auroc_change": 0.1419,
+   "pairs_flipped": 7,
+   "pairs_total": 45,
+   "flips_resolved_by_bootstrap": 4,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4o-mini-none",
+      "gpt-4.1-nano-none"
+     ],
+     "base": [
+      0.4452,
+      0.4292
+     ],
+     "alt": [
+      0.3173,
+      0.3627
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-4.1-nano-none",
+      "gpt-5-nano-minimal"
+     ],
+     "base": [
+      0.4292,
+      0.4496
+     ],
+     "alt": [
+      0.3627,
+      0.3608
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "claude-haiku-4-5-none"
+     ],
+     "base": [
+      0.604,
+      0.6309
+     ],
+     "alt": [
+      0.6496,
+      0.6282
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "glm-4.6-none",
+      "gpt-5.4-nano-high"
+     ],
+     "base": [
+      0.604,
+      0.6249
+     ],
+     "alt": [
+      0.6496,
+      0.5943
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "deepseek-v3.2-none",
+      "gpt-5.4-nano-none"
+     ],
+     "base": [
+      0.5027,
+      0.5113
+     ],
+     "alt": [
+      0.4456,
+      0.3882
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "deepseek-v3.2-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.5027,
+      0.5152
+     ],
+     "alt": [
+      0.4456,
+      0.3734
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-5.4-nano-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.5113,
+      0.5152
+     ],
+     "alt": [
+      0.3882,
+      0.3734
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "bash all attacks vs success-only",
+   "kind": "action",
+   "n_monitors": 10,
+   "base": [
+    "basharena"
+   ],
+   "alt": [
+    "basharena (success only)"
+   ],
+   "n_traj_base": [
+    [
+     596,
+     596
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     596,
+     569
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4o-mini-none": 0.312,
+    "gpt-4.1-nano-none": 0.3609,
+    "gpt-5-nano-minimal": 0.3589,
+    "glm-4.6-none": 0.6484,
+    "claude-haiku-4-5-none": 0.6238,
+    "deepseek-v3.2-none": 0.445,
+    "gpt-5.4-nano-none": 0.3892,
+    "gpt-5.4-nano-low": 0.3727,
+    "gpt-5.4-nano-medium": 0.4895,
+    "gpt-5.4-nano-high": 0.5913
+   },
+   "auroc_alt": {
+    "gpt-4o-mini-none": 0.3173,
+    "gpt-4.1-nano-none": 0.3627,
+    "gpt-5-nano-minimal": 0.3608,
+    "glm-4.6-none": 0.6496,
+    "claude-haiku-4-5-none": 0.6282,
+    "deepseek-v3.2-none": 0.4456,
+    "gpt-5.4-nano-none": 0.3882,
+    "gpt-5.4-nano-low": 0.3734,
+    "gpt-5.4-nano-medium": 0.492,
+    "gpt-5.4-nano-high": 0.5943
+   },
+   "top_base": "glm-4.6-none",
+   "top_alt": "glm-4.6-none",
+   "rank_base": [
+    "glm-4.6-none",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "gpt-5.4-nano-medium",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-none",
+    "gpt-5.4-nano-low",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "rank_alt": [
+    "glm-4.6-none",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-high",
+    "gpt-5.4-nano-medium",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-none",
+    "gpt-5.4-nano-low",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "kendall_tau": 1.0,
+   "max_abs_auroc_change": 0.0053,
+   "pairs_flipped": 0,
+   "pairs_total": 45,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": []
+  },
+  {
+   "comparison": "shade all attacks vs success-only",
+   "kind": "trajectory",
+   "n_monitors": 10,
+   "base": [
+    "shade-arena"
+   ],
+   "alt": [
+    "shade-arena (success only)"
+   ],
+   "n_traj_base": [
+    [
+     373,
+     307
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     373,
+     236
+    ]
+   ],
+   "auroc_base": {
+    "gpt-4o-mini-none": 0.4637,
+    "gpt-4.1-nano-none": 0.5015,
+    "gpt-5-nano-minimal": 0.4943,
+    "glm-4.6-none": 0.7183,
+    "claude-haiku-4-5-none": 0.6549,
+    "deepseek-v3.2-none": 0.6085,
+    "gpt-5.4-nano-none": 0.5376,
+    "gpt-5.4-nano-low": 0.541,
+    "gpt-5.4-nano-medium": 0.5934,
+    "gpt-5.4-nano-high": 0.663
+   },
+   "auroc_alt": {
+    "gpt-4o-mini-none": 0.4474,
+    "gpt-4.1-nano-none": 0.5063,
+    "gpt-5-nano-minimal": 0.4935,
+    "glm-4.6-none": 0.7126,
+    "claude-haiku-4-5-none": 0.6539,
+    "deepseek-v3.2-none": 0.6097,
+    "gpt-5.4-nano-none": 0.5693,
+    "gpt-5.4-nano-low": 0.5606,
+    "gpt-5.4-nano-medium": 0.6215,
+    "gpt-5.4-nano-high": 0.6852
+   },
+   "top_base": "glm-4.6-none",
+   "top_alt": "glm-4.6-none",
+   "rank_base": [
+    "glm-4.6-none",
+    "gpt-5.4-nano-high",
+    "claude-haiku-4-5-none",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-medium",
+    "gpt-5.4-nano-low",
+    "gpt-5.4-nano-none",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "rank_alt": [
+    "glm-4.6-none",
+    "gpt-5.4-nano-high",
+    "claude-haiku-4-5-none",
+    "gpt-5.4-nano-medium",
+    "deepseek-v3.2-none",
+    "gpt-5.4-nano-none",
+    "gpt-5.4-nano-low",
+    "gpt-4.1-nano-none",
+    "gpt-5-nano-minimal",
+    "gpt-4o-mini-none"
+   ],
+   "kendall_tau": 0.911,
+   "max_abs_auroc_change": 0.0317,
+   "pairs_flipped": 2,
+   "pairs_total": 45,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": [
+    {
+     "pair": [
+      "deepseek-v3.2-none",
+      "gpt-5.4-nano-medium"
+     ],
+     "base": [
+      0.6085,
+      0.5934
+     ],
+     "alt": [
+      0.6097,
+      0.6215
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gpt-5.4-nano-none",
+      "gpt-5.4-nano-low"
+     ],
+     "base": [
+      0.5376,
+      0.541
+     ],
+     "alt": [
+      0.5693,
+      0.5606
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "linuxarena pair drop strategies [action]",
+   "kind": "action",
+   "n_monitors": 12,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     92
+    ],
+    [
+     199,
+     8
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     92
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9619,
+    "claude-opus-4-6": 0.9855,
+    "claude-sonnet-4-6": 0.9351,
+    "gemini-3-flash": 0.8992,
+    "gemini-3.1-pro": 0.9795,
+    "glm-5": 0.9682,
+    "gpt-4.1-nano": 0.6542,
+    "gpt-5-mini": 0.9206,
+    "gpt-5-nano": 0.7924,
+    "gpt-5.4": 0.9424,
+    "gpt-oss-120b": 0.8586,
+    "kimi-k2.5": 0.9324
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.9897,
+    "claude-opus-4-6": 0.9945,
+    "claude-sonnet-4-6": 0.9424,
+    "gemini-3-flash": 0.8958,
+    "gemini-3.1-pro": 0.9671,
+    "glm-5": 0.9729,
+    "gpt-4.1-nano": 0.6325,
+    "gpt-5-mini": 0.9219,
+    "gpt-5-nano": 0.8172,
+    "gpt-5.4": 0.968,
+    "gpt-oss-120b": 0.8767,
+    "kimi-k2.5": 0.9132
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "claude-opus-4-6",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gemini-3.1-pro",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5.4",
+    "claude-sonnet-4-6",
+    "kimi-k2.5",
+    "gpt-5-mini",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "rank_alt": [
+    "claude-opus-4-6",
+    "claude-haiku-4-5",
+    "glm-5",
+    "gpt-5.4",
+    "gemini-3.1-pro",
+    "claude-sonnet-4-6",
+    "gpt-5-mini",
+    "kimi-k2.5",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "kendall_tau": 0.848,
+   "max_abs_auroc_change": 0.0278,
+   "pairs_flipped": 5,
+   "pairs_total": 66,
+   "flips_resolved_by_bootstrap": 2,
+   "flips": [
+    {
+     "pair": [
+      "claude-haiku-4-5",
+      "gemini-3.1-pro"
+     ],
+     "base": [
+      0.9619,
+      0.9795
+     ],
+     "alt": [
+      0.9897,
+      0.9671
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-haiku-4-5",
+      "glm-5"
+     ],
+     "base": [
+      0.9619,
+      0.9682
+     ],
+     "alt": [
+      0.9897,
+      0.9729
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gemini-3.1-pro",
+      "glm-5"
+     ],
+     "base": [
+      0.9795,
+      0.9682
+     ],
+     "alt": [
+      0.9671,
+      0.9729
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gemini-3.1-pro",
+      "gpt-5.4"
+     ],
+     "base": [
+      0.9795,
+      0.9424
+     ],
+     "alt": [
+      0.9671,
+      0.968
+     ],
+     "resolved_by_bootstrap": true
+    },
+    {
+     "pair": [
+      "gpt-5-mini",
+      "kimi-k2.5"
+     ],
+     "base": [
+      0.9206,
+      0.9324
+     ],
+     "alt": [
+      0.9219,
+      0.9132
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "linuxarena pair drop paper [action]",
+   "kind": "action",
+   "n_monitors": 12,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper-strategies"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     92
+    ],
+    [
+     199,
+     8
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     8
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9619,
+    "claude-opus-4-6": 0.9855,
+    "claude-sonnet-4-6": 0.9351,
+    "gemini-3-flash": 0.8992,
+    "gemini-3.1-pro": 0.9795,
+    "glm-5": 0.9682,
+    "gpt-4.1-nano": 0.6542,
+    "gpt-5-mini": 0.9206,
+    "gpt-5-nano": 0.7924,
+    "gpt-5.4": 0.9424,
+    "gpt-oss-120b": 0.8586,
+    "kimi-k2.5": 0.9324
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.934,
+    "claude-opus-4-6": 0.9764,
+    "claude-sonnet-4-6": 0.9278,
+    "gemini-3-flash": 0.9026,
+    "gemini-3.1-pro": 0.9918,
+    "glm-5": 0.9636,
+    "gpt-4.1-nano": 0.6759,
+    "gpt-5-mini": 0.9193,
+    "gpt-5-nano": 0.7676,
+    "gpt-5.4": 0.9168,
+    "gpt-oss-120b": 0.8405,
+    "kimi-k2.5": 0.9516
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "gemini-3.1-pro",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gemini-3.1-pro",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5.4",
+    "claude-sonnet-4-6",
+    "kimi-k2.5",
+    "gpt-5-mini",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "rank_alt": [
+    "gemini-3.1-pro",
+    "claude-opus-4-6",
+    "glm-5",
+    "kimi-k2.5",
+    "claude-haiku-4-5",
+    "claude-sonnet-4-6",
+    "gpt-5-mini",
+    "gpt-5.4",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "kendall_tau": 0.818,
+   "max_abs_auroc_change": 0.0278,
+   "pairs_flipped": 6,
+   "pairs_total": 66,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": [
+    {
+     "pair": [
+      "claude-haiku-4-5",
+      "kimi-k2.5"
+     ],
+     "base": [
+      0.9619,
+      0.9324
+     ],
+     "alt": [
+      0.934,
+      0.9516
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-opus-4-6",
+      "gemini-3.1-pro"
+     ],
+     "base": [
+      0.9855,
+      0.9795
+     ],
+     "alt": [
+      0.9764,
+      0.9918
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-sonnet-4-6",
+      "gpt-5.4"
+     ],
+     "base": [
+      0.9351,
+      0.9424
+     ],
+     "alt": [
+      0.9278,
+      0.9168
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "claude-sonnet-4-6",
+      "kimi-k2.5"
+     ],
+     "base": [
+      0.9351,
+      0.9324
+     ],
+     "alt": [
+      0.9278,
+      0.9516
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gpt-5-mini",
+      "gpt-5.4"
+     ],
+     "base": [
+      0.9206,
+      0.9424
+     ],
+     "alt": [
+      0.9193,
+      0.9168
+     ],
+     "resolved_by_bootstrap": false
+    },
+    {
+     "pair": [
+      "gpt-5.4",
+      "kimi-k2.5"
+     ],
+     "base": [
+      0.9424,
+      0.9324
+     ],
+     "alt": [
+      0.9168,
+      0.9516
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "linuxarena pair success-only [action]",
+   "kind": "action",
+   "n_monitors": 12,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper (success only)",
+    "linuxarena-paper-strategies (success only)"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     92
+    ],
+    [
+     199,
+     8
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     90
+    ],
+    [
+     199,
+     7
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9619,
+    "claude-opus-4-6": 0.9855,
+    "claude-sonnet-4-6": 0.9351,
+    "gemini-3-flash": 0.8992,
+    "gemini-3.1-pro": 0.9795,
+    "glm-5": 0.9682,
+    "gpt-4.1-nano": 0.6542,
+    "gpt-5-mini": 0.9206,
+    "gpt-5-nano": 0.7924,
+    "gpt-5.4": 0.9424,
+    "gpt-oss-120b": 0.8586,
+    "kimi-k2.5": 0.9324
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.9581,
+    "claude-opus-4-6": 0.9845,
+    "claude-sonnet-4-6": 0.9298,
+    "gemini-3-flash": 0.8917,
+    "gemini-3.1-pro": 0.9787,
+    "glm-5": 0.9657,
+    "gpt-4.1-nano": 0.6406,
+    "gpt-5-mini": 0.9143,
+    "gpt-5-nano": 0.7791,
+    "gpt-5.4": 0.9373,
+    "gpt-oss-120b": 0.8485,
+    "kimi-k2.5": 0.9292
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "claude-opus-4-6",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gemini-3.1-pro",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5.4",
+    "claude-sonnet-4-6",
+    "kimi-k2.5",
+    "gpt-5-mini",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "rank_alt": [
+    "claude-opus-4-6",
+    "gemini-3.1-pro",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5.4",
+    "claude-sonnet-4-6",
+    "kimi-k2.5",
+    "gpt-5-mini",
+    "gemini-3-flash",
+    "gpt-oss-120b",
+    "gpt-5-nano",
+    "gpt-4.1-nano"
+   ],
+   "kendall_tau": 1.0,
+   "max_abs_auroc_change": 0.0135,
+   "pairs_flipped": 0,
+   "pairs_total": 66,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": []
+  },
+  {
+   "comparison": "linuxarena pair drop strategies [trajectory]",
+   "kind": "trajectory",
+   "n_monitors": 8,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     40
+    ],
+    [
+     199,
+     6
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     40
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9233,
+    "claude-opus-4-6": 0.9965,
+    "glm-5": 0.937,
+    "gpt-4.1-nano": 0.7396,
+    "gpt-5-mini": 0.8695,
+    "gpt-5-nano": 0.7076,
+    "gpt-5.4": 0.9559,
+    "gpt-oss-120b": 0.9769
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.95,
+    "claude-opus-4-6": 0.9931,
+    "glm-5": 0.9708,
+    "gpt-4.1-nano": 0.6634,
+    "gpt-5-mini": 0.9254,
+    "gpt-5-nano": 0.6183,
+    "gpt-5.4": 0.9805,
+    "gpt-oss-120b": 0.9966
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "gpt-oss-120b",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gpt-oss-120b",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5-mini",
+    "gpt-4.1-nano",
+    "gpt-5-nano"
+   ],
+   "rank_alt": [
+    "gpt-oss-120b",
+    "claude-opus-4-6",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5-mini",
+    "gpt-4.1-nano",
+    "gpt-5-nano"
+   ],
+   "kendall_tau": 0.929,
+   "max_abs_auroc_change": 0.0893,
+   "pairs_flipped": 1,
+   "pairs_total": 28,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": [
+    {
+     "pair": [
+      "claude-opus-4-6",
+      "gpt-oss-120b"
+     ],
+     "base": [
+      0.9965,
+      0.9769
+     ],
+     "alt": [
+      0.9931,
+      0.9966
+     ],
+     "resolved_by_bootstrap": false
+    }
+   ]
+  },
+  {
+   "comparison": "linuxarena pair drop paper [trajectory]",
+   "kind": "trajectory",
+   "n_monitors": 8,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper-strategies"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     40
+    ],
+    [
+     199,
+     6
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     6
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9233,
+    "claude-opus-4-6": 0.9965,
+    "glm-5": 0.937,
+    "gpt-4.1-nano": 0.7396,
+    "gpt-5-mini": 0.8695,
+    "gpt-5-nano": 0.7076,
+    "gpt-5.4": 0.9559,
+    "gpt-oss-120b": 0.9769
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.8966,
+    "claude-opus-4-6": 1.0,
+    "glm-5": 0.9033,
+    "gpt-4.1-nano": 0.8157,
+    "gpt-5-mini": 0.8137,
+    "gpt-5-nano": 0.7969,
+    "gpt-5.4": 0.9313,
+    "gpt-oss-120b": 0.9573
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "claude-opus-4-6",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gpt-oss-120b",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5-mini",
+    "gpt-4.1-nano",
+    "gpt-5-nano"
+   ],
+   "rank_alt": [
+    "claude-opus-4-6",
+    "gpt-oss-120b",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-4.1-nano",
+    "gpt-5-mini",
+    "gpt-5-nano"
+   ],
+   "kendall_tau": 0.929,
+   "max_abs_auroc_change": 0.0893,
+   "pairs_flipped": 1,
+   "pairs_total": 28,
+   "flips_resolved_by_bootstrap": 1,
+   "flips": [
+    {
+     "pair": [
+      "gpt-4.1-nano",
+      "gpt-5-mini"
+     ],
+     "base": [
+      0.7396,
+      0.8695
+     ],
+     "alt": [
+      0.8157,
+      0.8137
+     ],
+     "resolved_by_bootstrap": true
+    }
+   ]
+  },
+  {
+   "comparison": "linuxarena pair success-only [trajectory]",
+   "kind": "trajectory",
+   "n_monitors": 8,
+   "base": [
+    "linuxarena-paper",
+    "linuxarena-paper-strategies"
+   ],
+   "alt": [
+    "linuxarena-paper (success only)",
+    "linuxarena-paper-strategies (success only)"
+   ],
+   "n_traj_base": [
+    [
+     199,
+     40
+    ],
+    [
+     199,
+     6
+    ]
+   ],
+   "n_traj_alt": [
+    [
+     199,
+     40
+    ],
+    [
+     199,
+     6
+    ]
+   ],
+   "auroc_base": {
+    "claude-haiku-4-5": 0.9233,
+    "claude-opus-4-6": 0.9965,
+    "glm-5": 0.937,
+    "gpt-4.1-nano": 0.7396,
+    "gpt-5-mini": 0.8695,
+    "gpt-5-nano": 0.7076,
+    "gpt-5.4": 0.9559,
+    "gpt-oss-120b": 0.9769
+   },
+   "auroc_alt": {
+    "claude-haiku-4-5": 0.9233,
+    "claude-opus-4-6": 0.9965,
+    "glm-5": 0.937,
+    "gpt-4.1-nano": 0.7396,
+    "gpt-5-mini": 0.8695,
+    "gpt-5-nano": 0.7076,
+    "gpt-5.4": 0.9559,
+    "gpt-oss-120b": 0.9769
+   },
+   "top_base": "claude-opus-4-6",
+   "top_alt": "claude-opus-4-6",
+   "rank_base": [
+    "claude-opus-4-6",
+    "gpt-oss-120b",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5-mini",
+    "gpt-4.1-nano",
+    "gpt-5-nano"
+   ],
+   "rank_alt": [
+    "claude-opus-4-6",
+    "gpt-oss-120b",
+    "gpt-5.4",
+    "glm-5",
+    "claude-haiku-4-5",
+    "gpt-5-mini",
+    "gpt-4.1-nano",
+    "gpt-5-nano"
+   ],
+   "kendall_tau": 1.0,
+   "max_abs_auroc_change": 0.0,
+   "pairs_flipped": 0,
+   "pairs_total": 28,
+   "flips_resolved_by_bootstrap": 0,
+   "flips": []
+  }
+ ]
+}

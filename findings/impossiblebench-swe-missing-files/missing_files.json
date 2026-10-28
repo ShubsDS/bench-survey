@@ -1,0 +1,174 @@
+{
+ "pins": {
+  "dataset_revision": "9c2d34f364b7229e8c0ff807c646100bdc18bbb5",
+  "impossiblebench_commit": "d4f9a149db2b9cec0fed7bab01d91c07ee10aca2"
+ },
+ "tasks": 349,
+ "original_patches_creating_a_file": [
+  "astropy__astropy-7336",
+  "django__django-11141",
+  "django__django-11749",
+  "django__django-13516",
+  "django__django-13837",
+  "django__django-14311",
+  "django__django-15525",
+  "django__django-16454",
+  "sphinx-doc__sphinx-10673",
+  "sphinx-doc__sphinx-11510",
+  "sphinx-doc__sphinx-8269"
+ ],
+ "oneoff": {
+  "tasks_missing_a_file": 11,
+  "by_task": {
+   "astropy__astropy-7336": {
+    "missing": [
+     "astropy/units/tests/test_quantity_annotations.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-11141": {
+    "missing": [
+     "tests/migrations/test_migrations_namespace_package/0001_initial.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-11749": {
+    "missing": [
+     "tests/user_commands/management/commands/mutually_exclusive_required.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-13516": {
+    "missing": [
+     "tests/user_commands/management/commands/outputwrapper.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-13837": {
+    "missing": [
+     "tests/utils_tests/test_module/__main__.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-14311": {
+    "missing": [
+     "tests/utils_tests/test_module/main_module.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-15525": {
+    "missing": [
+     "tests/fixtures_regress/fixtures/nk_with_foreign_key.json"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-16454": {
+    "missing": [
+     "tests/user_commands/management/commands/subparser_vanilla.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-10673": {
+    "missing": [
+     "tests/roots/test-toctree-index/conf.py",
+     "tests/roots/test-toctree-index/foo.rst",
+     "tests/roots/test-toctree-index/index.rst"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-11510": {
+    "missing": [
+     "tests/roots/test-directive-include/baz/baz.rst",
+     "tests/roots/test-directive-include/conf.py",
+     "tests/roots/test-directive-include/foo.rst",
+     "tests/roots/test-directive-include/text.txt"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-8269": {
+    "missing": [
+     "tests/roots/test-linkcheck-localserver/conf.py",
+     "tests/roots/test-linkcheck-localserver/index.rst"
+    ],
+    "mutated_patch_names_missing_file": true
+   }
+  }
+ },
+ "conflicting": {
+  "tasks_missing_a_file": 11,
+  "by_task": {
+   "astropy__astropy-7336": {
+    "missing": [
+     "astropy/units/tests/test_quantity_annotations.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-11141": {
+    "missing": [
+     "tests/migrations/test_migrations_namespace_package/0001_initial.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-11749": {
+    "missing": [
+     "tests/user_commands/management/commands/mutually_exclusive_required.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-13516": {
+    "missing": [
+     "tests/user_commands/management/commands/outputwrapper.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-13837": {
+    "missing": [
+     "tests/utils_tests/test_module/__main__.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-14311": {
+    "missing": [
+     "tests/utils_tests/test_module/main_module.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-15525": {
+    "missing": [
+     "tests/fixtures_regress/fixtures/nk_with_foreign_key.json"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "django__django-16454": {
+    "missing": [
+     "tests/user_commands/management/commands/subparser_vanilla.py"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-10673": {
+    "missing": [
+     "tests/roots/test-toctree-index/conf.py",
+     "tests/roots/test-toctree-index/foo.rst",
+     "tests/roots/test-toctree-index/index.rst"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-11510": {
+    "missing": [
+     "tests/roots/test-directive-include/baz/baz.rst",
+     "tests/roots/test-directive-include/conf.py",
+     "tests/roots/test-directive-include/foo.rst",
+     "tests/roots/test-directive-include/text.txt"
+    ],
+    "mutated_patch_names_missing_file": true
+   },
+   "sphinx-doc__sphinx-8269": {
+    "missing": [
+     "tests/roots/test-linkcheck-localserver/conf.py",
+     "tests/roots/test-linkcheck-localserver/index.rst"
+    ],
+    "mutated_patch_names_missing_file": true
+   }
+  }
+ }
+}

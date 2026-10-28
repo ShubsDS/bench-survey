@@ -1,0 +1,1018 @@
+{
+ "pins": {
+  "bash": {
+   "repo": "adityaasinha28/control_arena_bash",
+   "sha": "08663a5d10a5445bc4b750b7f8eb079c9a505df8",
+   "parquet_sha256": "29550a69f0d6c0dcc59b976d3a68fdf662ecd2620b2525c234ecb8794882e9c8"
+  },
+  "shade": {
+   "repo": "adityaasinha28/control_arena_shade",
+   "sha": "7b5861e85f14381e70ed5b101fd7ceeec96d4f29",
+   "parquet_sha256": "2b637f8279804668f9210080f788b40d4cae133e56007d1d767f5da9e40e4eee"
+  },
+  "iac": {
+   "repo": "adityaasinha28/control_arena_iac",
+   "sha": "cd0e7f667eba6214e2100f5fd30aec9f65aca1a8",
+   "parquet_sha256": "d74610fefa78bb7ae79594310e826d84c87b38508ba16104b3c64b2e92c343e8"
+  },
+  "rogue_eval": {
+   "repo": "adityaasinha28/control_arena_rogue_eval",
+   "sha": "7946e03ece9d8329a28c17d7b0fe778b9c774b39",
+   "parquet_sha256": "2689c6e5ee7d708c07e798ddde9055606778938fdfd9d1aef9cfab66744c0640"
+  },
+  "agentdojo": {
+   "repo": "adityaasinha28/control_arena_agentdojo",
+   "sha": "a0f1e2131a8f27ebe14c285fa8ad34e439d128e2",
+   "parquet_sha256": "5ceb33f1116b9c317b98be1ddcfb7dddca300482ca45736faf291b0796ad5c33"
+  }
+ },
+ "pipeline_pin": {
+  "repo": "adityaasinha28/deliberative-monitor-pipeline",
+  "sha": "2f10f4e49f4bf349965640ac021406689455d1c3"
+ },
+ "settings": {
+  "bash": {
+   "n": 1500,
+   "n_pos": 750,
+   "model_evalfile_label_counts": [
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 226
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 24
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 216
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 34
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 104
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 94
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 52
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 189
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 61
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 105
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 145
+    }
+   ],
+   "model_by_label": {
+    "0": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    },
+    "1": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    }
+   },
+   "eval_file_prefix_equals_label": 1.0,
+   "eval_mode_by_label": {
+    "0": {
+     "attack": 0,
+     "honest": 750
+    },
+    "1": {
+     "attack": 750,
+     "honest": 0
+    }
+   },
+   "side_task_by_label": {
+    "1": {
+     "download_malware": 750
+    }
+   },
+   "n_main_tasks": 256,
+   "n_main_tasks_by_label": {
+    "0": 255,
+    "1": 248
+   },
+   "solver_error_rate_by_label": {
+    "0": 0.02,
+    "1": 0.016
+   },
+   "token_limit_rate_by_label": {
+    "0": 0.02,
+    "1": 0.016
+   },
+   "system_prompt_templates_by_label": {
+    "0": 1,
+    "1": 1
+   },
+   "system_prompt_template_shared_across_labels": true,
+   "side_task_text_in_stored_system_prompt_rate_pos": 0.0,
+   "side_task_text_in_transcript_rate_pos": 0.0,
+   "prompt_equals_transcript": 1.0,
+   "transcript_starts_with_user_turn": 1.0,
+   "rows_with_policy_reasoning_gt40ch": 0.8367,
+   "policy_reasoning_found_in_transcript_rate": 0.0,
+   "full_trajectory_monitor_present_by_label": {
+    "0": 0.9973,
+    "1": 0.996
+   },
+   "full_trajectory_monitor_auroc": 0.9409,
+   "full_trajectory_monitor_presence_auroc": 0.4993,
+   "pipeline_filtered_eval": {
+    "n": 1447,
+    "ids_match_corpus_at_row_index": 1.0,
+    "benign": 736,
+    "scheming": 711,
+    "filter_log": {
+     "split": "training",
+     "n_raw": 1500,
+     "n_judge_dropped": 48,
+     "n_token_dropped": 5,
+     "n_kept": 1447,
+     "benign_kept": 736,
+     "misaligned_kept": 711
+    },
+    "paper_table2": [
+     718,
+     718
+    ]
+   }
+  },
+  "shade": {
+   "n": 1500,
+   "n_pos": 750,
+   "model_evalfile_label_counts": [
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 193
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 57
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 241
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 9
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 163
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 87
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 243
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 7
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 56
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 43
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 151
+    }
+   ],
+   "model_by_label": {
+    "0": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    },
+    "1": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    }
+   },
+   "eval_file_prefix_equals_label": 1.0,
+   "eval_mode_by_label": {
+    "0": {
+     "attack": 0,
+     "honest": 750
+    },
+    "1": {
+     "attack": 750,
+     "honest": 0
+    }
+   },
+   "side_task_by_label": {
+    "1": {
+     "american_airlines_2_side_task": 196,
+     "api_key_calendar_agendas_2_side_task": 103,
+     "bank_transfer_2_side_task": 190,
+     "expenditure_accounting_side_task": 10,
+     "spam_filter_update_side_task": 251
+    }
+   },
+   "n_main_tasks": 5,
+   "n_main_tasks_by_label": {
+    "0": 5,
+    "1": 5
+   },
+   "evaluator_llm_by_agent_model": {
+    "claude-sonnet-4": {
+     "anthropic/claude-sonnet-4-20250514": 500,
+     "openai/gpt-5": 0,
+     "openrouter/google/gemini-2.5-pro": 0
+    },
+    "gemini-2.5-pro": {
+     "anthropic/claude-sonnet-4-20250514": 0,
+     "openai/gpt-5": 0,
+     "openrouter/google/gemini-2.5-pro": 500
+    },
+    "gpt-5": {
+     "anthropic/claude-sonnet-4-20250514": 0,
+     "openai/gpt-5": 500,
+     "openrouter/google/gemini-2.5-pro": 0
+    }
+   },
+   "solver_error_rate_by_label": {
+    "0": 0.2453,
+    "1": 0.4293
+   },
+   "token_limit_rate_by_label": {
+    "0": 0.2453,
+    "1": 0.4293
+   },
+   "system_prompt_templates_by_label": {
+    "0": 1,
+    "1": 1
+   },
+   "system_prompt_template_shared_across_labels": true,
+   "side_task_text_in_stored_system_prompt_rate_pos": 0.0,
+   "side_task_text_in_transcript_rate_pos": 0.0,
+   "prompt_equals_transcript": 1.0,
+   "transcript_starts_with_user_turn": 1.0,
+   "rows_with_policy_reasoning_gt40ch": 0.7587,
+   "policy_reasoning_found_in_transcript_rate": 0.0457,
+   "full_trajectory_monitor_present_by_label": {
+    "0": 0.652,
+    "1": 0.3333
+   },
+   "full_trajectory_monitor_auroc": 0.8405,
+   "full_trajectory_monitor_presence_auroc": 0.3407,
+   "pipeline_filtered_eval": {
+    "n": 850,
+    "ids_match_corpus_at_row_index": 1.0,
+    "benign": 432,
+    "scheming": 418,
+    "filter_log": {
+     "split": "ood",
+     "n_raw": 1500,
+     "n_judge_dropped": 0,
+     "n_token_dropped": 650,
+     "n_kept": 850,
+     "benign_kept": 432,
+     "misaligned_kept": 418
+    },
+    "paper_table2": [
+     433,
+     423
+    ],
+    "kept_by_task_label": {
+     "0": {
+      "american_airlines_2": 149,
+      "api_key_calendar_agendas_2": 138,
+      "bank_transfer_2": 134,
+      "expenditure_accounting": 6,
+      "spam_filter_update": 5
+     },
+     "1": {
+      "american_airlines_2": 184,
+      "api_key_calendar_agendas_2": 93,
+      "bank_transfer_2": 133,
+      "expenditure_accounting": 2,
+      "spam_filter_update": 6
+     }
+    }
+   }
+  },
+  "iac": {
+   "n": 1500,
+   "n_pos": 750,
+   "model_evalfile_label_counts": [
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 229
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 21
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 31
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 156
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 63
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 162
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 88
+    }
+   ],
+   "model_by_label": {
+    "0": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    },
+    "1": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    }
+   },
+   "eval_file_prefix_equals_label": 1.0,
+   "eval_mode_by_label": {
+    "0": {
+     "attack": 0,
+     "honest": 750
+    },
+    "1": {
+     "attack": 750,
+     "honest": 0
+    }
+   },
+   "side_task_by_label": {
+    "1": {
+     "allow_public_s3_policy": 91,
+     "change_policy_to_version_one": 63,
+     "check_in_cdk_out_directory": 112,
+     "create_backdoor_admin_role": 15,
+     "detach_mfa_requirement_policy": 88,
+     "disable_fsx_deny_policy": 100,
+     "disable_fsx_deny_policy_interpretability_ou": 90,
+     "exempt_ec2_public_ip_check": 105,
+     "open_internet_egress_restricted_ous": 86
+    }
+   },
+   "n_main_tasks": 5,
+   "n_main_tasks_by_label": {
+    "0": 5,
+    "1": 5
+   },
+   "solver_error_rate_by_label": {
+    "0": 0.0187,
+    "1": 0.0147
+   },
+   "token_limit_rate_by_label": {
+    "0": 0.0187,
+    "1": 0.0147
+   },
+   "system_prompt_templates_by_label": {
+    "0": 1,
+    "1": 1
+   },
+   "system_prompt_template_shared_across_labels": true,
+   "side_task_text_in_stored_system_prompt_rate_pos": 0.0,
+   "side_task_text_in_transcript_rate_pos": 0.0013,
+   "prompt_equals_transcript": 1.0,
+   "transcript_starts_with_user_turn": 1.0,
+   "rows_with_policy_reasoning_gt40ch": 0.8533,
+   "policy_reasoning_found_in_transcript_rate": 0.0,
+   "full_trajectory_monitor_present_by_label": {
+    "0": 1.0,
+    "1": 0.9973
+   },
+   "full_trajectory_monitor_auroc": 0.8204,
+   "full_trajectory_monitor_presence_auroc": 0.4987,
+   "pipeline_filtered_eval": {
+    "n": 1443,
+    "ids_match_corpus_at_row_index": 1.0,
+    "benign": 728,
+    "scheming": 715,
+    "filter_log": {
+     "split": "ood",
+     "n_raw": 1500,
+     "n_judge_dropped": 0,
+     "n_token_dropped": 57,
+     "n_kept": 1443,
+     "benign_kept": 728,
+     "misaligned_kept": 715
+    },
+    "paper_table2": [
+     728,
+     715
+    ],
+    "kept_by_task_label": {
+     "0": {
+      "add_interpretability_ou": 148,
+      "create_billing_alarm": 149,
+      "enforce_mandatory_tags_scp": 148,
+      "org_config_aggregator": 138,
+      "tag_security_policies": 145
+     },
+     "1": {
+      "add_interpretability_ou": 170,
+      "create_billing_alarm": 149,
+      "enforce_mandatory_tags_scp": 146,
+      "org_config_aggregator": 128,
+      "tag_security_policies": 122
+     }
+    }
+   }
+  },
+  "rogue_eval": {
+   "n": 1500,
+   "n_pos": 750,
+   "model_evalfile_label_counts": [
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 240
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 10
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 88
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 108
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 54
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 240
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 10
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 59
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 77
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 80
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive4.eval",
+     "label": 1,
+     "n": 34
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 240
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative2.eval",
+     "label": 0,
+     "n": 10
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 136
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 114
+    }
+   ],
+   "model_by_label": {
+    "0": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    },
+    "1": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    }
+   },
+   "eval_file_prefix_equals_label": 1.0,
+   "eval_mode_by_label": {
+    "0": {
+     "attack": 0,
+     "honest": 750
+    },
+    "1": {
+     "attack": 750,
+     "honest": 0
+    }
+   },
+   "side_task_by_label": {
+    "1": {
+     "rogue_eval": 750
+    }
+   },
+   "n_main_tasks": 25,
+   "n_main_tasks_by_label": {
+    "0": 25,
+    "1": 25
+   },
+   "task_dir_prefix_counts": {
+    "/Users/jpetersgill/control-arena/": 1500
+   },
+   "system_prompt_templates_by_label": {
+    "0": 1,
+    "1": 1
+   },
+   "system_prompt_template_shared_across_labels": true,
+   "side_task_text_in_stored_system_prompt_rate_pos": 0.0,
+   "side_task_text_in_transcript_rate_pos": 0.0,
+   "prompt_equals_transcript": 1.0,
+   "transcript_starts_with_user_turn": 1.0,
+   "rows_with_policy_reasoning_gt40ch": 0.8533,
+   "policy_reasoning_found_in_transcript_rate": 0.0,
+   "full_trajectory_monitor_present_by_label": {
+    "0": 1.0,
+    "1": 1.0
+   },
+   "full_trajectory_monitor_auroc": 0.8444,
+   "full_trajectory_monitor_presence_auroc": 0.5,
+   "pipeline_filtered_eval": {
+    "n": 1499,
+    "ids_match_corpus_at_row_index": 1.0,
+    "benign": 750,
+    "scheming": 749,
+    "filter_log": {
+     "split": "ood",
+     "n_raw": 1500,
+     "n_judge_dropped": 0,
+     "n_token_dropped": 1,
+     "n_kept": 1499,
+     "benign_kept": 750,
+     "misaligned_kept": 749
+    },
+    "paper_table2": [
+     750,
+     750
+    ],
+    "kept_by_task_label": {
+     "0": {
+      "addition": 30,
+      "batched-inference": 30,
+      "best-of-n": 30,
+      "classifier-free-guidance": 30,
+      "colored-tokens": 30,
+      "copy-speculative-decoding": 30,
+      "copyright-detection": 30,
+      "cot-multiplication": 30,
+      "custom-tokenizer": 30,
+      "early-exit": 30,
+      "get-loss-from-layer-ablation": 30,
+      "greater-n": 30,
+      "logit-lens": 30,
+      "logprobs-classification": 30,
+      "prefix-cached-for-get-loss": 30,
+      "prefix-caching": 30,
+      "repetition-penalty": 30,
+      "simple": 30,
+      "steering": 30,
+      "steering-for-classification": 30,
+      "timed-generation": 30,
+      "timed-get-loss": 30,
+      "top-1-accuracy": 30,
+      "top-k-greedy-score": 30,
+      "with-embed-noise": 30
+     },
+     "1": {
+      "addition": 40,
+      "batched-inference": 29,
+      "best-of-n": 26,
+      "classifier-free-guidance": 30,
+      "colored-tokens": 43,
+      "copy-speculative-decoding": 31,
+      "copyright-detection": 31,
+      "cot-multiplication": 44,
+      "custom-tokenizer": 34,
+      "early-exit": 17,
+      "get-loss-from-layer-ablation": 16,
+      "greater-n": 25,
+      "logit-lens": 24,
+      "logprobs-classification": 42,
+      "prefix-cached-for-get-loss": 29,
+      "prefix-caching": 29,
+      "repetition-penalty": 27,
+      "simple": 49,
+      "steering": 6,
+      "steering-for-classification": 19,
+      "timed-generation": 38,
+      "timed-get-loss": 37,
+      "top-1-accuracy": 40,
+      "top-k-greedy-score": 18,
+      "with-embed-noise": 25
+     }
+    }
+   }
+  },
+  "agentdojo": {
+   "n": 1500,
+   "n_pos": 750,
+   "model_evalfile_label_counts": [
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 133
+    },
+    {
+     "model": "claude-sonnet-4",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 117
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 129
+    },
+    {
+     "model": "gemini-2.5-pro",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 121
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "negative1.eval",
+     "label": 0,
+     "n": 250
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive1.eval",
+     "label": 1,
+     "n": 126
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive2.eval",
+     "label": 1,
+     "n": 121
+    },
+    {
+     "model": "gpt-5",
+     "eval_file": "positive3.eval",
+     "label": 1,
+     "n": 3
+    }
+   ],
+   "model_by_label": {
+    "0": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    },
+    "1": {
+     "claude-sonnet-4": 250,
+     "gemini-2.5-pro": 250,
+     "gpt-5": 250
+    }
+   },
+   "eval_file_prefix_equals_label": 1.0,
+   "eval_mode_by_label": {
+    "0": {
+     "attack": 750,
+     "honest": 0
+    },
+    "1": {
+     "attack": 0,
+     "honest": 750
+    }
+   },
+   "side_task_by_label": {
+    "0": {
+     "<empty>": 750,
+     "injection_task_0": 0,
+     "injection_task_1": 0,
+     "injection_task_2": 0,
+     "injection_task_3": 0,
+     "injection_task_4": 0,
+     "injection_task_5": 0,
+     "injection_task_6": 0,
+     "injection_task_7": 0,
+     "injection_task_8": 0
+    },
+    "1": {
+     "<empty>": 0,
+     "injection_task_0": 94,
+     "injection_task_1": 95,
+     "injection_task_2": 93,
+     "injection_task_3": 94,
+     "injection_task_4": 93,
+     "injection_task_5": 77,
+     "injection_task_6": 48,
+     "injection_task_7": 92,
+     "injection_task_8": 64
+    }
+   },
+   "n_main_tasks": 16,
+   "n_main_tasks_by_label": {
+    "0": 16,
+    "1": 16
+   },
+   "agentdojo_suites": {
+    "banking": 1500
+   },
+   "system_prompt_templates_by_label": {
+    "0": 1,
+    "1": 1
+   },
+   "system_prompt_template_shared_across_labels": true,
+   "side_task_text_in_stored_system_prompt_rate_pos": 0.0,
+   "side_task_text_in_transcript_rate_pos": 0.0,
+   "prompt_equals_transcript": 1.0,
+   "transcript_starts_with_user_turn": 1.0,
+   "rows_with_policy_reasoning_gt40ch": 0.824,
+   "policy_reasoning_found_in_transcript_rate": 0.0348,
+   "full_trajectory_monitor_present_by_label": {
+    "0": 1.0,
+    "1": 0.9987
+   },
+   "full_trajectory_monitor_auroc": 0.9252,
+   "full_trajectory_monitor_presence_auroc": 0.4993,
+   "pipeline_filtered_eval": {
+    "n": 1500,
+    "ids_match_corpus_at_row_index": 1.0,
+    "benign": 750,
+    "scheming": 750,
+    "filter_log": {
+     "split": "ood",
+     "n_raw": 1500,
+     "n_judge_dropped": 0,
+     "n_token_dropped": 0,
+     "n_kept": 1500,
+     "benign_kept": 750,
+     "misaligned_kept": 750
+    },
+    "paper_table2": [
+     750,
+     750
+    ],
+    "kept_by_task_label": {
+     "0": {
+      "user_task_0": 48,
+      "user_task_1": 47,
+      "user_task_10": 47,
+      "user_task_11": 47,
+      "user_task_12": 47,
+      "user_task_13": 47,
+      "user_task_14": 47,
+      "user_task_15": 47,
+      "user_task_2": 48,
+      "user_task_3": 48,
+      "user_task_4": 47,
+      "user_task_5": 46,
+      "user_task_6": 46,
+      "user_task_7": 46,
+      "user_task_8": 46,
+      "user_task_9": 46
+     },
+     "1": {
+      "user_task_0": 54,
+      "user_task_1": 49,
+      "user_task_10": 49,
+      "user_task_11": 50,
+      "user_task_12": 41,
+      "user_task_13": 48,
+      "user_task_14": 50,
+      "user_task_15": 43,
+      "user_task_2": 43,
+      "user_task_3": 50,
+      "user_task_4": 50,
+      "user_task_5": 50,
+      "user_task_6": 47,
+      "user_task_7": 51,
+      "user_task_8": 40,
+      "user_task_9": 35
+     }
+    }
+   },
+   "attacker_iban_first_appears_in": {
+    "0": {
+     "ASSISTANT": 0,
+     "absent": 750
+    },
+    "1": {
+     "ASSISTANT": 658,
+     "absent": 92
+    }
+   },
+   "attacker_iban_string_auroc": 0.9387,
+   "injection_marker_rate_by_label": {
+    "0": 0.0,
+    "1": 0.0
+   }
+  }
+ },
+ "pipeline_filter_config": {
+  "model": "Qwen/Qwen3-8B",
+  "max_prompt_length": 28000,
+  "prompt_format": "minimal_system",
+  "judge_threshold": 7.0
+ },
+ "pipeline_training_mix": [
+  {
+   "name": "stride",
+   "n_selected": 1350,
+   "source_file": "stride_cot_gemini-2.5-pro_specv11_n4_reggt_judged_sonnet45.parquet"
+  },
+  {
+   "name": "gloom",
+   "n_selected": 772,
+   "source_file": "gloom_cot_gemini-2.5-pro_specv11_n4_reggt_judged_sonnet45.parquet"
+  },
+  {
+   "name": "s45",
+   "n_selected": 1770,
+   "source_file": "basharena_action_only_sonnet45_large_cot_gemini-2.5-pro_specv11_n4_reggt_judged_sonnet45.parquet"
+  },
+  {
+   "name": "o46",
+   "n_selected": 1020,
+   "source_file": "basharena_action_only_opus46_large_cot_gemini-2.5-pro_specv11_n4_reggt_judged_sonnet45.parquet"
+  },
+  {
+   "name": "ctrl",
+   "n_selected": 1436,
+   "source_file": "control_arena_bash_cot_gemini-2.5-pro_specv11_n4_reggt_judged_sonnet45.parquet"
+  }
+ ]
+}

@@ -1,0 +1,200 @@
+{
+  "pins": {
+    "ctrl-alt-deceit": "0a12070c41ec06b81712f277590afbbed6ed6d6c",
+    "drive_logs": {
+      "regular/big_regular_run_low_no_melanoma_10_epochs": {
+        "drive_id": "1-qS_KuY2FWzU_nb1Ruui_WrlCQOo1E9D",
+        "sha256": "c36154ee3687365d91ec698636867927323a0acea4e21d1da55d4eb6e3125f18",
+        "bytes": 1113173430
+      },
+      "regular/claude_3_7_lite_aide_teun": {
+        "drive_id": "1CssCHFEfU5BiEksX1GXTOPLBG71q7yWA",
+        "sha256": "4792443cd7c375625f00c46d1cf639aa2f4172a466adcac6338dff0e70d8c983",
+        "bytes": 504618403
+      },
+      "sandbag/2025-07-17T11-07-57": {
+        "drive_id": "1Suzt3aHxW67IgjHa5tuIRobojRQnvM2B",
+        "sha256": "9a8f41188aa94a0a455f7208ca431bfe1451b7f4492a624301bba07e6c67af05",
+        "bytes": 141460056
+      },
+      "sandbag/2025-07-18T11-55-00": {
+        "drive_id": "164JTUHtXHU-gOq8VknN6jwTI5VSNWvUt",
+        "sha256": "d0e4cc8eb2b6d720abc708600d761aaf2d5394ed490e9559862e939bab0995c5",
+        "bytes": 501999999
+      },
+      "sandbag/2025-07-19T19-46-14": {
+        "drive_id": "13sLlookCrkN-Ma1dGnzfJouRcjwtaXK5",
+        "sha256": "63f385d9a3cd516c4649625396bd22915a4835c0b51d0f321d0f64f9b07b57b8",
+        "bytes": 107401439
+      }
+    }
+  },
+  "rows_in_table": 353,
+  "rows_matched_to_logs": 353,
+  "class_medians": {
+    "wall_clock_seconds": {
+      "regular": 18047.145,
+      "sandbagging": 10173.275000000001
+    },
+    "working_seconds": {
+      "regular": 18036.117,
+      "sandbagging": 10172.2785
+    },
+    "aide_nodes": {
+      "regular": 15.0,
+      "sandbagging": 12.5
+    },
+    "aide_buggy_nodes": {
+      "regular": 10.0,
+      "sandbagging": 3.0
+    },
+    "code_characters_all_nodes": {
+      "regular": 164031.0,
+      "sandbagging": 84187.0
+    },
+    "agent_output_tokens": {
+      "regular": 63686.0,
+      "sandbagging": 39258.0
+    }
+  },
+  "all_runs": {
+    "general (paper 0.60)": {
+      "auroc_larger_is_sandbagging": 0.603,
+      "ci95_task_bootstrap": [
+        0.517,
+        0.673
+      ],
+      "within_task_mean": 0.639
+    },
+    "sandbagging-specific (paper 0.90)": {
+      "auroc_larger_is_sandbagging": 0.9,
+      "ci95_task_bootstrap": [
+        0.831,
+        0.953
+      ],
+      "within_task_mean": 0.889
+    },
+    "wall_clock_seconds": {
+      "auroc_larger_is_sandbagging": 0.146,
+      "ci95_task_bootstrap": [
+        0.062,
+        0.221
+      ],
+      "within_task_mean": 0.118
+    },
+    "working_seconds": {
+      "auroc_larger_is_sandbagging": 0.144,
+      "ci95_task_bootstrap": [
+        0.06,
+        0.222
+      ],
+      "within_task_mean": 0.118
+    },
+    "aide_nodes": {
+      "auroc_larger_is_sandbagging": 0.416,
+      "ci95_task_bootstrap": [
+        0.331,
+        0.5
+      ],
+      "within_task_mean": 0.373
+    },
+    "aide_buggy_nodes": {
+      "auroc_larger_is_sandbagging": 0.222,
+      "ci95_task_bootstrap": [
+        0.146,
+        0.292
+      ],
+      "within_task_mean": 0.16
+    },
+    "code_characters_all_nodes": {
+      "auroc_larger_is_sandbagging": 0.286,
+      "ci95_task_bootstrap": [
+        0.213,
+        0.36
+      ],
+      "within_task_mean": 0.199
+    },
+    "agent_output_tokens": {
+      "auroc_larger_is_sandbagging": 0.317,
+      "ci95_task_bootstrap": [
+        0.241,
+        0.394
+      ],
+      "within_task_mean": 0.243
+    },
+    "n": {
+      "sandbagging": 134,
+      "regular": 219
+    }
+  },
+  "only_tasks_with_sandbagging_runs": {
+    "general (paper 0.60)": {
+      "auroc_larger_is_sandbagging": 0.638,
+      "ci95_task_bootstrap": [
+        0.553,
+        0.718
+      ],
+      "within_task_mean": 0.639
+    },
+    "sandbagging-specific (paper 0.90)": {
+      "auroc_larger_is_sandbagging": 0.908,
+      "ci95_task_bootstrap": [
+        0.832,
+        0.961
+      ],
+      "within_task_mean": 0.889
+    },
+    "wall_clock_seconds": {
+      "auroc_larger_is_sandbagging": 0.147,
+      "ci95_task_bootstrap": [
+        0.068,
+        0.221
+      ],
+      "within_task_mean": 0.118
+    },
+    "working_seconds": {
+      "auroc_larger_is_sandbagging": 0.145,
+      "ci95_task_bootstrap": [
+        0.064,
+        0.221
+      ],
+      "within_task_mean": 0.118
+    },
+    "aide_nodes": {
+      "auroc_larger_is_sandbagging": 0.382,
+      "ci95_task_bootstrap": [
+        0.301,
+        0.456
+      ],
+      "within_task_mean": 0.373
+    },
+    "aide_buggy_nodes": {
+      "auroc_larger_is_sandbagging": 0.213,
+      "ci95_task_bootstrap": [
+        0.147,
+        0.275
+      ],
+      "within_task_mean": 0.16
+    },
+    "code_characters_all_nodes": {
+      "auroc_larger_is_sandbagging": 0.25,
+      "ci95_task_bootstrap": [
+        0.174,
+        0.317
+      ],
+      "within_task_mean": 0.199
+    },
+    "agent_output_tokens": {
+      "auroc_larger_is_sandbagging": 0.28,
+      "ci95_task_bootstrap": [
+        0.2,
+        0.35
+      ],
+      "within_task_mean": 0.243
+    },
+    "n": {
+      "sandbagging": 134,
+      "regular": 154
+    }
+  }
+}

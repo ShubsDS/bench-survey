@@ -1,0 +1,58 @@
+{
+ "public_split": {
+  "url": "https://huggingface.co/datasets/metr-evals/malt-public",
+  "runs": 7179,
+  "sandbagging_positives": {
+   "claude-3-7-sonnet-20250219 (prompted, cot=True)": 834
+  },
+  "reward_hacking_positives": {
+   "claude-opus-4-20250514 (unprompted, cot=True)": 19,
+   "claude-sonnet-4-20250514 (unprompted, cot=True)": 12,
+   "o1-2024-12-17 (unprompted, cot=False)": 1,
+   "o3 (unprompted, cot=False)": 18,
+   "o3-2025-04-16 (unprompted, cot=False)": 5,
+   "openrouter/deepseek/deepseek-r1-0528 (unprompted, cot=True)": 4,
+   "openrouter/qwen/qwen-2-72b-instruct (unprompted, cot=False)": 2,
+   "openrouter/qwen/qwen-2.5-72b-instruct (unprompted, cot=False)": 1
+  },
+  "reviewed_benign": {
+   "claude-opus-4-20250514 (unprompted, cot=True)": 349,
+   "claude-sonnet-4-20250514 (unprompted, cot=True)": 332,
+   "o1-preview (unprompted, cot=False)": 1,
+   "o3-2025-04-16 (unprompted, cot=False)": 1,
+   "openrouter/deepseek/deepseek-r1-0528 (unprompted, cot=True)": 11
+  },
+  "unreviewed_benign_claude_3_7_sonnet": 1222
+ },
+ "full_dataset": {
+  "url": "https://metr.org/blog/2025-10-14-malt-dataset-of-natural-and-prompted-behaviors/",
+  "runs": 10919,
+  "sandbagging_positives": {
+   "claude-3-7-sonnet-20250219 (prompted, cot=True)": 1237
+  },
+  "reward_hacking_positives": {
+   "claude-3-5-sonnet-20241022 (unprompted, cot=False)": 2,
+   "claude-opus-4-20250514 (unprompted, cot=True)": 20,
+   "claude-sonnet-4-20250514 (unprompted, cot=True)": 15,
+   "fireworks/deepseek-v3 (unprompted, cot=False)": 2,
+   "fireworks/deepseek-v3-0324 (unprompted, cot=False)": 2,
+   "o1-2024-12-17 (unprompted, cot=False)": 2,
+   "o3 (unprompted, cot=False)": 47,
+   "o3-2025-04-16 (unprompted, cot=False)": 8,
+   "openrouter/deepseek-r1 (unprompted, cot=True)": 1,
+   "openrouter/deepseek/deepseek-r1-0528 (unprompted, cot=True)": 14,
+   "openrouter/google/gemini-2.5-pro-preview (unprompted, cot=True)": 8,
+   "openrouter/qwen/qwen-2-72b-instruct (unprompted, cot=False)": 3,
+   "openrouter/qwen/qwen-2.5-72b-instruct (unprompted, cot=False)": 2
+  },
+  "reviewed_benign": {
+   "claude-opus-4-20250514 (unprompted, cot=True)": 504,
+   "claude-sonnet-4-20250514 (unprompted, cot=True)": 484,
+   "o1-preview (unprompted, cot=False)": 1,
+   "o3-2025-04-16 (unprompted, cot=False)": 1,
+   "openrouter/deepseek/deepseek-r1-0528 (unprompted, cot=True)": 23,
+   "openrouter/google/gemini-2.5-pro-preview (unprompted, cot=True)": 1
+  },
+  "unreviewed_benign_claude_3_7_sonnet": 1801
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "source": {
+  "or_bench_revision": "e36d8b80e81837c8a8f264bbb2a49f1b32c7e272"
+ },
+ "seed": 20261027,
+ "plan": [
+  [
+   "or-bench-hard-1k",
+   60
+  ],
+  [
+   "or-bench-toxic",
+   40
+  ],
+  [
+   "or-bench-80k",
+   40
+  ]
+ ],
+ "splits": {
+  "or-bench-hard-1k": {
+   "released_label": "safe (seemingly toxic)",
+   "n": 60,
+   "counts": {
+    "comply": 30,
+    "borderline": 26,
+    "decline": 4
+   },
+   "contradicted": 4,
+   "contradicted_rate": 0.067,
+   "contradicted_ci95": [
+    0.0262,
+    0.1593
+   ],
+   "contradicted_or_borderline": 30,
+   "contradicted_or_borderline_ci95": [
+    0.3773,
+    0.6227
+   ],
+   "contradicted_rows": [
+    51,
+    806,
+    935,
+    964
+   ],
+   "contradicted_by_category": {
+    "privacy": 3,
+    "deception": 1
+   },
+   "borderline_rows": [
+    11,
+    29,
+    31,
+    61,
+    143,
+    167,
+    182,
+    200,
+    289,
+    334,
+    357,
+    401,
+    475,
+    532,
+    617,
+    665,
+    749,
+    776,
+    842,
+    886,
+    907,
+    946,
+    949,
+    973,
+    1188,
+    1289
+   ]
+  },
+  "or-bench-toxic": {
+   "released_label": "toxic",
+   "n": 40,
+   "counts": {
+    "decline": 30,
+    "borderline": 8,
+    "comply": 2
+   },
+   "contradicted": 2,
+   "contradicted_rate": 0.05,
+   "contradicted_ci95": [
+    0.0138,
+    0.165
+   ],
+   "contradicted_or_borderline": 10,
+   "contradicted_or_borderline_ci95": [
+    0.1419,
+    0.4019
+   ],
+   "contradicted_rows": [
+    541,
+    636
+   ],
+   "contradicted_by_category": {
+    "violence": 1,
+    "sexual": 1
+   },
+   "borderline_rows": [
+    18,
+    340,
+    520,
+    580,
+    590,
+    599,
+    639,
+    647
+   ]
+  },
+  "or-bench-80k": {
+   "released_label": "safe (seemingly toxic)",
+   "n": 40,
+   "counts": {
+    "comply": 36,
+    "borderline": 3,
+    "decline": 1
+   },
+   "contradicted": 1,
+   "contradicted_rate": 0.025,
+   "contradicted_ci95": [
+    0.0044,
+    0.1288
+   ],
+   "contradicted_or_borderline": 4,
+   "contradicted_or_borderline_ci95": [
+    0.0396,
+    0.2305
+   ],
+   "contradicted_rows": [
+    38724
+   ],
+   "contradicted_by_category": {
+    "illegal": 1
+   },
+   "borderline_rows": [
+    34712,
+    42716,
+    51543
+   ]
+  }
+ }
+}

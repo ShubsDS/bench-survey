@@ -1,0 +1,142 @@
+{
+ "pins": {
+  "sha256": {
+   "repo.tar.gz": "e2b1263d11991f8e7d1b64504745ce652d94b5b1e8b1d8bbde99fa4b25c3f425",
+   "game_data.zip": "e13d07b442a9ffa835e6c43f95fbc5d97a45de49faef7b1f969f014b0a95b6c1",
+   "paper/src.tar.gz": "a8fbc57189664640bf4019940b4e30c37ea31e61bfbd9cfe55dfd87a02bcb625"
+  },
+  "mismatch": {}
+ },
+ "test_games": 30,
+ "tree_choice_nodes": 10418,
+ "tree_cond_nodes": 39309,
+ "choice_nodes_scored": 10340,
+ "choice_nodes_without_conditional_options": 8771,
+ "full_episode_baselines": "untested: needs the game engine (variable-dependent COND branches)",
+ "all": {
+  "viol": {
+   "random_mean": 0.329,
+   "first": 0.3028,
+   "first_ratio_to_random": 0.92,
+   "last": 0.3501,
+   "last_ratio_to_random": 1.064,
+   "shortest": 0.3071,
+   "shortest_ratio_to_random": 0.933,
+   "longest": 0.3589,
+   "longest_ratio_to_random": 1.091,
+   "first_null95_ratio": [
+    0.973,
+    1.033
+   ],
+   "last_null95_ratio": [
+    0.97,
+    1.028
+   ],
+   "shortest_null95_ratio": [
+    0.97,
+    1.027
+   ],
+   "longest_null95_ratio": [
+    0.973,
+    1.03
+   ]
+  },
+  "any_viol": {
+   "random_mean": 0.2305,
+   "first": 0.2123,
+   "first_ratio_to_random": 0.921,
+   "last": 0.2433,
+   "last_ratio_to_random": 1.056,
+   "shortest": 0.2174,
+   "shortest_ratio_to_random": 0.943,
+   "longest": 0.2454,
+   "longest_ratio_to_random": 1.064,
+   "first_null95_ratio": [
+    0.975,
+    1.025
+   ],
+   "last_null95_ratio": [
+    0.974,
+    1.024
+   ],
+   "shortest_null95_ratio": [
+    0.975,
+    1.025
+   ],
+   "longest_null95_ratio": [
+    0.977,
+    1.024
+   ]
+  },
+  "power": {
+   "random_mean": 0.1719,
+   "first": 0.1863,
+   "first_ratio_to_random": 1.083,
+   "last": 0.1586,
+   "last_ratio_to_random": 0.923,
+   "shortest": 0.1727,
+   "shortest_ratio_to_random": 1.005,
+   "longest": 0.1695,
+   "longest_ratio_to_random": 0.986
+  },
+  "ach": {
+   "random_mean": 0.0078,
+   "first": 0.0089,
+   "first_ratio_to_random": 1.14,
+   "last": 0.0086,
+   "last_ratio_to_random": 1.103,
+   "shortest": 0.0088,
+   "shortest_ratio_to_random": 1.127,
+   "longest": 0.007,
+   "longest_ratio_to_random": 0.892
+  }
+ },
+ "unconditional_only": {
+  "viol": {
+   "random_mean": 0.3217,
+   "first": 0.2991,
+   "first_ratio_to_random": 0.93,
+   "last": 0.3417,
+   "last_ratio_to_random": 1.062,
+   "shortest": 0.2983,
+   "shortest_ratio_to_random": 0.927,
+   "longest": 0.3489,
+   "longest_ratio_to_random": 1.085
+  },
+  "any_viol": {
+   "random_mean": 0.2276,
+   "first": 0.2101,
+   "first_ratio_to_random": 0.923,
+   "last": 0.2399,
+   "last_ratio_to_random": 1.054,
+   "shortest": 0.2137,
+   "shortest_ratio_to_random": 0.939,
+   "longest": 0.241,
+   "longest_ratio_to_random": 1.059
+  },
+  "power": {
+   "random_mean": 0.1647,
+   "first": 0.1796,
+   "first_ratio_to_random": 1.09,
+   "last": 0.1512,
+   "last_ratio_to_random": 0.918,
+   "shortest": 0.1643,
+   "shortest_ratio_to_random": 0.998,
+   "longest": 0.1619,
+   "longest_ratio_to_random": 0.983
+  },
+  "ach": {
+   "random_mean": 0.0073,
+   "first": 0.0087,
+   "first_ratio_to_random": 1.19,
+   "last": 0.0078,
+   "last_ratio_to_random": 1.064,
+   "shortest": 0.008,
+   "shortest_ratio_to_random": 1.096,
+   "longest": 0.0063,
+   "longest_ratio_to_random": 0.861
+  }
+ },
+ "games_first_below_random": 22,
+ "games_first_above_random": 8
+}

@@ -1,0 +1,924 @@
+{
+ "pins": {
+  "arxiv_src": {
+   "id": "2412.04984v2",
+   "url": "https://arxiv.org/src/2412.04984v2",
+   "sha256": "a01fde500d666ad0d868b969b4625f2483c5e192cd962aea1d0820ab48e0fb4a",
+   "note": "v2 submitted 2025-01-14; arXiv licence nonexclusive-distrib/1.0 (no reuse grant)"
+  }
+ },
+ "hash_mismatches": [],
+ "paper_system_prompts": [
+  {
+   "where": "content/appendix/additional_experiments/interrogator_experiments.tex:22",
+   "persona": "You are an expert AI investigator",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/additional_experiments/interrogator_experiments.tex:67",
+   "persona": "CONCLUSION: Now state your final conclusion. Did the model y",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/additional_experiments/valence_reversal.tex:13",
+   "persona": "You are PeaceForge",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:37",
+   "persona": "You are TrafficFlow",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:129",
+   "persona": "You are TrafficFlow",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:207",
+   "persona": "You are TrafficFlow",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:269",
+   "persona": "You are EthicSource",
+   "nudge": [
+    "at_all_cost",
+    "only_outcome_matters",
+    "whatever_it_takes"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:344",
+   "persona": "You have access to a sandboxed Linux machine and can run com",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:446",
+   "persona": "You are ScienceBot",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:492",
+   "persona": "You have access to a sandboxed Linux machine and can run com",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/detailed_evals.tex:498",
+   "persona": "You have access to a sandboxed Linux machine and can run com",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/example_transcripts.tex:553",
+   "persona": "You are TrafficFlow",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/example_transcripts.tex:765",
+   "persona": "You are ArtBloom",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/no_nudge_details.tex:40",
+   "persona": "You are TrafficFlow",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/no_nudge_details.tex:54",
+   "persona": "You are TrafficFlow",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/no_nudge_details.tex:284",
+   "persona": "You are EthicSource",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/o1_mini_and_preview_tool_use_scaffold.tex:127",
+   "persona": "You are an expert at extracting action requests from model responses",
+   "nudge": [],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/scheming_results.tex:13",
+   "persona": "You are SwiftDelivery",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": []
+  },
+  {
+   "where": "content/appendix/scheming_results.tex:23",
+   "persona": "You are SwiftDelivery",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": [
+    "noticing_hint"
+   ]
+  },
+  {
+   "where": "content/appendix/scheming_results.tex:33",
+   "persona": "You are SwiftDelivery",
+   "nudge": [
+    "nothing_else_matters",
+    "at_all_cost",
+    "your_goal_caps",
+    "repeat_goal"
+   ],
+   "hint": [
+    "noticing_hint",
+    "instruct_disable"
+   ]
+  },
+  {
+   "where": "figures/teaser_figure.tex:12",
+   "persona": "You are CleanPower ",
+   "nudge": [
+    "nothing_else_matters"
+   ],
+   "hint": []
+  }
+ ],
+ "covert_subversion_nudge_vs_no_nudge": {
+  "source": "content/results/models_can_scheme.tex (Table 2, nudged) and content/results/no_nudge.tex (Table 4)",
+  "rollouts_stated": {
+   "nudged_table_caption": 300,
+   "no_nudge_table_caption": 400,
+   "results_text": "'out of 100 rollouts' (content/results.tex)"
+  },
+  "cells_compared": 45,
+  "nonzero_nudged": 34,
+  "nonzero_no_nudge": 9,
+  "sum_rates_nudged": 1.723,
+  "sum_rates_no_nudge": 0.129,
+  "ratio_sum": 13.4,
+  "cells": [
+   {
+    "behaviour": "Disabled oversight",
+    "model": "gemini-1.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Disabled oversight",
+    "model": "llama-3.1",
+    "nudged": 0.03,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Disabled oversight",
+    "model": "sonnet-3.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Disabled oversight",
+    "model": "opus-3",
+    "nudged": 0.05,
+    "no_nudge": 0.003
+   },
+   {
+    "behaviour": "Disabled oversight",
+    "model": "o1",
+    "nudged": 0.02,
+    "no_nudge": 0.003
+   },
+   {
+    "behaviour": "Deleted successor model",
+    "model": "gemini-1.5",
+    "nudged": 0.08,
+    "no_nudge": 0.013
+   },
+   {
+    "behaviour": "Deleted successor model",
+    "model": "llama-3.1",
+    "nudged": 0.03,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Deleted successor model",
+    "model": "sonnet-3.5",
+    "nudged": 0.003,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Deleted successor model",
+    "model": "opus-3",
+    "nudged": 0.06,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Deleted successor model",
+    "model": "o1",
+    "nudged": 0.02,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to delete successor model",
+    "model": "gemini-1.5",
+    "nudged": 0.09,
+    "no_nudge": 0.018
+   },
+   {
+    "behaviour": "Attempted to delete successor model",
+    "model": "llama-3.1",
+    "nudged": 0.04,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to delete successor model",
+    "model": "sonnet-3.5",
+    "nudged": 0.007,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to delete successor model",
+    "model": "opus-3",
+    "nudged": 0.11,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to delete successor model",
+    "model": "o1",
+    "nudged": 0.13,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Copied itself onto other server",
+    "model": "gemini-1.5",
+    "nudged": 0.07,
+    "no_nudge": 0.013
+   },
+   {
+    "behaviour": "Copied itself onto other server",
+    "model": "llama-3.1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Copied itself onto other server",
+    "model": "sonnet-3.5",
+    "nudged": 0.003,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Copied itself onto other server",
+    "model": "opus-3",
+    "nudged": 0.1,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Copied itself onto other server",
+    "model": "o1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to copy to other server",
+    "model": "gemini-1.5",
+    "nudged": 0.08,
+    "no_nudge": 0.013
+   },
+   {
+    "behaviour": "Attempted to copy to other server",
+    "model": "llama-3.1",
+    "nudged": 0.03,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to copy to other server",
+    "model": "sonnet-3.5",
+    "nudged": 0.007,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to copy to other server",
+    "model": "opus-3",
+    "nudged": 0.15,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Attempted to copy to other server",
+    "model": "o1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor model",
+    "model": "gemini-1.5",
+    "nudged": 0.06,
+    "no_nudge": 0.013
+   },
+   {
+    "behaviour": "Replaced successor model",
+    "model": "llama-3.1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor model",
+    "model": "sonnet-3.5",
+    "nudged": 0.003,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor model",
+    "model": "opus-3",
+    "nudged": 0.05,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor model",
+    "model": "o1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Removed successor prompt",
+    "model": "gemini-1.5",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Removed successor prompt",
+    "model": "llama-3.1",
+    "nudged": 0.05,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Removed successor prompt",
+    "model": "sonnet-3.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Removed successor prompt",
+    "model": "opus-3",
+    "nudged": 0.1,
+    "no_nudge": 0.003
+   },
+   {
+    "behaviour": "Removed successor prompt",
+    "model": "o1",
+    "nudged": 0.01,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor prompt",
+    "model": "gemini-1.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor prompt",
+    "model": "llama-3.1",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor prompt",
+    "model": "sonnet-3.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor prompt",
+    "model": "opus-3",
+    "nudged": 0.06,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Replaced successor prompt",
+    "model": "o1",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Covertly produced false ranking",
+    "model": "gemini-1.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Covertly produced false ranking",
+    "model": "llama-3.1",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Covertly produced false ranking",
+    "model": "sonnet-3.5",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Covertly produced false ranking",
+    "model": "opus-3",
+    "nudged": 0.0,
+    "no_nudge": 0.0
+   },
+   {
+    "behaviour": "Covertly produced false ranking",
+    "model": "o1",
+    "nudged": 0.22,
+    "no_nudge": 0.05
+   }
+  ]
+ },
+ "alignment_faking_hard_vs_no_nudge": {
+  "appendix_defines_hard_as": "heavily nudged (content/appendix/scheming_results.tex)",
+  "main_table_condition": "no goal nudging (content/results/instrumental_alignment_faking.tex, Table 5 in sandbagging.tex)",
+  "main_no_nudge_behavioral_scheming": {
+   "gemini-1.5-pro": 0.42,
+   "llama-3.1": 0.37,
+   "o1": 0.38
+  },
+  "appendix_hard_column": {
+   "gemini-1.5-pro": 0.42,
+   "llama-3.1": 0.37,
+   "o1": 0.38
+  },
+  "equal": true
+ },
+ "transcripts_condition_vs_prompt": {
+  "n": 58,
+  "by_eval_condition": {
+   "ai_interrogation|unspecified": {
+    "n": 2,
+    "with_nothing_else_matters": 2,
+    "with_any_nudge": 2,
+    "with_goal_line": 2
+   },
+   "oversight_subversion|default.reversed_goals": {
+    "n": 2,
+    "with_nothing_else_matters": 2,
+    "with_any_nudge": 2,
+    "with_goal_line": 2
+   },
+   "oversight_subversion|default": {
+    "n": 5,
+    "with_nothing_else_matters": 5,
+    "with_any_nudge": 5,
+    "with_goal_line": 5
+   },
+   "instrumental_self_exfiltration|no_nudge": {
+    "n": 6,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 6
+   },
+   "instrumental_self_exfiltration|default": {
+    "n": 20,
+    "with_nothing_else_matters": 20,
+    "with_any_nudge": 20,
+    "with_goal_line": 20
+   },
+   "goal_guarding|no_nudge": {
+    "n": 1,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 1
+   },
+   "oversight_subversion|no_nudge": {
+    "n": 2,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 2
+   },
+   "scoring_emails|no_nudge": {
+    "n": 2,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 2
+   },
+   "minimal_alignment_faking|no_nudge": {
+    "n": 6,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 6
+   },
+   "instrumental_self_exfiltration|default.reversed_goals": {
+    "n": 2,
+    "with_nothing_else_matters": 2,
+    "with_any_nudge": 2,
+    "with_goal_line": 2
+   },
+   "goal_guarding|default": {
+    "n": 5,
+    "with_nothing_else_matters": 5,
+    "with_any_nudge": 5,
+    "with_goal_line": 5
+   },
+   "sandbagging_qa|no_nudge": {
+    "n": 3,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 0,
+    "with_goal_line": 0
+   },
+   "scoring_emails|default": {
+    "n": 1,
+    "with_nothing_else_matters": 0,
+    "with_any_nudge": 1,
+    "with_goal_line": 1
+   },
+   "extended_oversight_subversion|default": {
+    "n": 1,
+    "with_nothing_else_matters": 1,
+    "with_any_nudge": 1,
+    "with_goal_line": 1
+   }
+  },
+  "label_prompt_mismatches": [],
+  "n_nudged_label": 36,
+  "n_no_nudge_label": 20
+ },
+ "antischeming_table11": {
+  "source": "arXiv 2509.15541v1 Appendix T, Table 11 ('distinguishes between tasks that strongly incentivize scheming and those that assess the model's behavior without such nudges')",
+  "n_rows": 27,
+  "n_nudged": 13,
+  "n_no_nudge": 14,
+  "rows": [
+   {
+    "n": 1,
+    "task": "AS Over-Escalation",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 2,
+    "task": "Blotto Game",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": true
+   },
+   {
+    "n": 3,
+    "task": "Broken Promises",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": true
+   },
+   {
+    "n": 4,
+    "task": "Email Scoring",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 5,
+    "task": "Email Scoring (No Nudge)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 6,
+    "task": "Impossible Coding Task",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 7,
+    "task": "Lazy Checklist",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 8,
+    "task": "Legal Reporting (CN)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 9,
+    "task": "Legal Reporting (US)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 10,
+    "task": "Literature QA",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 11,
+    "task": "Log Falsification",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 12,
+    "task": "Long Document Verification",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 13,
+    "task": "OpenAI Chat Deception",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 14,
+    "task": "Powerseeking Survey",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 15,
+    "task": "Prisoner’s Dilemma",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 16,
+    "task": "Sabotage Math",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 17,
+    "task": "Sabotage Safety",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 18,
+    "task": "Sandbagging Grading CoT",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 19,
+    "task": "Sandbagging QA",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": true
+   },
+   {
+    "n": 20,
+    "task": "Sandbagging QA (No Goal)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 21,
+    "task": "Smuggle Capabilities",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 22,
+    "task": "Spec Sabotage (Moving)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 23,
+    "task": "Spec Sabotage (Selection)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 24,
+    "task": "Spec Sabotage (Verification)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 25,
+    "task": "Subagent Collusion",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": true
+   },
+   {
+    "n": 26,
+    "task": "Subagent Permissions",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 27,
+    "task": "Subagent Resource Quota",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   }
+  ],
+  "meinke_derived_rows": [
+   {
+    "n": 4,
+    "task": "Email Scoring",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 5,
+    "task": "Email Scoring (No Nudge)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   },
+   {
+    "n": 19,
+    "task": "Sandbagging QA",
+    "no_nudge": false,
+    "nothing_else_matters_in_prompt": true
+   },
+   {
+    "n": 20,
+    "task": "Sandbagging QA (No Goal)",
+    "no_nudge": true,
+    "nothing_else_matters_in_prompt": false
+   }
+  ]
+ },
+ "system_cards": {
+  "o1": {
+   "url": "https://cdn.openai.com/o1-system-card-20241205.pdf",
+   "hits": [
+    {
+     "pattern": "strongly nudged",
+     "line": 655,
+     "match": "strongly nudged"
+    },
+    {
+     "pattern": "without goal nudging",
+     "line": 690,
+     "match": "without goal nudging"
+    },
+    {
+     "pattern": "Deactivated oversight",
+     "line": 691,
+     "match": "Deactivated oversight"
+    },
+    {
+     "pattern": "Covertly manipulated data",
+     "line": 695,
+     "match": "Covertly manipulated data"
+    }
+   ],
+   "table10": {
+    "Deactivated oversight": {
+     "gpt-4o": 0.0,
+     "o1-preview": 0.04,
+     "o1": 0.05,
+     "o1_no_nudge": 0.01
+    },
+    "Self-exfiltration": {
+     "gpt-4o": 0.0,
+     "o1-preview": 0.02,
+     "o1": 0.02,
+     "o1_no_nudge": 0.0
+    },
+    "Covertly manipulated data": {
+     "gpt-4o": 0.0,
+     "o1-preview": 0.26,
+     "o1": 0.19,
+     "o1_no_nudge": 0.06
+    }
+   },
+   "paper_counterparts": {
+    "Deactivated oversight": {
+     "o1": 0.02,
+     "o1_no_nudge": 0.003,
+     "o1-preview_hard": 0.04
+    },
+    "Self-exfiltration": {
+     "o1_copied_itself": 0.01,
+     "o1_replaced_successor": 0.01,
+     "o1-preview_hard": 0.02
+    },
+    "Covertly manipulated data": {
+     "o1_false_ranking": 0.22,
+     "o1_no_nudge": 0.05,
+     "o1-preview_hard": 0.26
+    },
+    "note": "o1-preview values are the appendix Hard column (content/appendix/scheming_results.tex); the paper's o1 is a pre-deployment checkpoint"
+   }
+  },
+  "gpt-4.5": {
+   "url": "https://cdn.openai.com/gpt-4-5-system-card-2272025.pdf",
+   "hits": [
+    {
+     "pattern": "instructed to strongly pursue",
+     "line": 311,
+     "match": "instructed to strongly pursue"
+    },
+    {
+     "pattern": "pursue your goal at all costs",
+     "line": 311,
+     "match": "pursue your goal at all costs"
+    },
+    {
+     "pattern": "hidden scratchpad",
+     "line": 1267,
+     "match": "hidden scratchpad"
+    }
+   ]
+  },
+  "o3-o4-mini": {
+   "url": "https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf",
+   "hits": [
+    {
+     "pattern": "strongly nudges the model to follow it as in Meinke",
+     "line": 464,
+     "match": "strongly nudges the model to follow it as in Meinke"
+    }
+   ]
+  },
+  "gpt-5": {
+   "url": "https://cdn.openai.com/gpt-5-system-card.pdf",
+   "hits": [
+    {
+     "pattern": "26 evaluations",
+     "line": 2073,
+     "match": "26 evaluations"
+    },
+    {
+     "pattern": "Covert action rate",
+     "line": 2085,
+     "match": "Covert action rate"
+    },
+    {
+     "pattern": "Strong goals lead to higher deception rates",
+     "line": 2114,
+     "match": "Strong goals lead to higher deception rates"
+    }
+   ]
+  },
+  "claude-opus-4": {
+   "url": "https://www-cdn.anthropic.com/4263b940cabb546aa0e3283f35b686f4f3b2ff47.pdf",
+   "hits": [
+    {
+     "pattern": "system prompts that invite the relevant kinds of",
+     "line": 1103,
+     "match": "system prompts that invite the relevant kinds of"
+    },
+    {
+     "pattern": "Meinke, A\\., et al\\. \\(2024\\)\\..*?arXiv:\\d{4}\\.\\d{5}",
+     "line": 1139,
+     "match": "Meinke, A., et al. (2024). Frontier models are capable of in-context scheming. arXiv:2504.05259"
+    }
+   ]
+  },
+  "claude-sonnet-4.5": {
+   "url": "https://assets.anthropic.com/m/12f214efcc2f457a/original/Claude-Sonnet-4-5-System-Card.pdf",
+   "hits": [
+    {
+     "pattern": "when strongly prompted to pursue a goal",
+     "line": 2243,
+     "match": "when strongly prompted to pursue a goal"
+    },
+    {
+     "pattern": "high performance would ostensibly",
+     "line": 2249,
+     "match": "high performance would ostensibly"
+    }
+   ]
+  }
+ }
+}

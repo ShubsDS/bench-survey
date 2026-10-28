@@ -1,0 +1,206 @@
+{
+ "pins": {
+  "sha256": {
+   "repo.tar.gz": "e2b1263d11991f8e7d1b64504745ce652d94b5b1e8b1d8bbde99fa4b25c3f425",
+   "game_data.zip": "e13d07b442a9ffa835e6c43f95fbc5d97a45de49faef7b1f969f014b0a95b6c1",
+   "paper/src.tar.gz": "a8fbc57189664640bf4019940b4e30c37ea31e61bfbd9cfe55dfd87a02bcb625"
+  },
+  "mismatch": {}
+ },
+ "games": 136,
+ "identical_scenes_min50": {
+  "distinct_texts": 429227,
+  "texts_in_2plus_games": 89,
+  "spanning_test_and_nontest": 46,
+  "within_test_set": 26,
+  "top_pairs": [
+   [
+    "werewolves-2-pack-mentality",
+    "werewolves-haven-rising",
+    18
+   ],
+   [
+    "hero-project-open-season",
+    "hero-project-redemption-season",
+    14
+   ],
+   [
+    "heroes-rise",
+    "heroes-rise-2-hero-project",
+    13
+   ],
+   [
+    "heroes-rise-2-hero-project",
+    "heroes-rise-3-herofall",
+    11
+   ],
+   [
+    "psy-high",
+    "psy-high-2-high-summer",
+    10
+   ],
+   [
+    "heroes-rise",
+    "heroes-rise-3-herofall",
+    7
+   ],
+   [
+    "hero-project-open-season",
+    "heroes-rise",
+    6
+   ],
+   [
+    "hero-project-open-season",
+    "heroes-rise-2-hero-project",
+    6
+   ]
+  ]
+ },
+ "identical_scenes_min200": {
+  "distinct_texts": 236142,
+  "texts_in_2plus_games": 11,
+  "spanning_test_and_nontest": 7,
+  "within_test_set": 2,
+  "top_pairs": [
+   [
+    "werewolves-2-pack-mentality",
+    "werewolves-haven-rising",
+    3
+   ],
+   [
+    "psy-high",
+    "psy-high-2-high-summer",
+    2
+   ],
+   [
+    "empyrean",
+    "its-killing-time",
+    1
+   ],
+   [
+    "empyrean",
+    "pendragon-rising",
+    1
+   ],
+   [
+    "empyrean",
+    "pirate",
+    1
+   ],
+   [
+    "empyrean",
+    "saga-of-the-north-wind",
+    1
+   ],
+   [
+    "empyrean",
+    "versus-the-lost-ones",
+    1
+   ],
+   [
+    "empyrean",
+    "wise-use-of-time",
+    1
+   ]
+  ]
+ },
+ "sentence_overlap": {
+  "min_chars": 60,
+  "test_games_max_share_in_other_game": 0.0063,
+  "test_games_over_5pct": {},
+  "top_pairs": [
+   [
+    "psy-high",
+    "psy-high-2-high-summer",
+    59,
+    0.012
+   ],
+   [
+    "werewolves-2-pack-mentality",
+    "werewolves-haven-rising",
+    30,
+    0.004
+   ],
+   [
+    "heroes-rise",
+    "heroes-rise-2-hero-project",
+    24,
+    0.007
+   ],
+   [
+    "hero-project-open-season",
+    "hero-project-redemption-season",
+    21,
+    0.005
+   ],
+   [
+    "heroes-rise-2-hero-project",
+    "heroes-rise-3-herofall",
+    14,
+    0.004
+   ],
+   [
+    "versus-elite-trials",
+    "versus-the-lost-ones",
+    13,
+    0.003
+   ],
+   [
+    "superlatives",
+    "superlatives-shattered-worlds",
+    11,
+    0.002
+   ],
+   [
+    "grand-academy-2-attack-of-the-sequel",
+    "grand-academy-for-villains",
+    10,
+    0.003
+   ],
+   [
+    "heroes-rise",
+    "heroes-rise-3-herofall",
+    9,
+    0.003
+   ],
+   [
+    "versus-deathscapes",
+    "versus-elite-trials",
+    7,
+    0.001
+   ]
+  ]
+ },
+ "development": {
+  "lm_commented_game_lists": [
+   {
+    "games": [
+     "alexandria"
+    ],
+    "test_games_in_it": []
+   },
+   {
+    "games": [
+     "aegis-project-180-files",
+     "alexandria",
+     "avatar-of-the-wolf",
+     "blackstone-academy",
+     "dinoknights"
+    ],
+    "test_games_in_it": [
+     "avatar-of-the-wolf"
+    ]
+   }
+  ],
+  "lm_results_dir_name": "lm_dev (experiments/baselines_lm.sh EXP_NAME)",
+  "drrn_beta_per_game_tuned": {
+   "test_games_with_beta": 30,
+   "of": 30,
+   "paper": "For each game, beta was tuned in [0.01 ... 5.0] (Appendix RL training)"
+  },
+  "drrn_trained_on": "each evaluation game itself (experiments/baselines_rl.sh loops games.txt; one model per game)",
+  "test_set_rule_paper": "30 games where agents trained to maximize reward perform poorly on behavioral metrics, i.e. points and harms positively correlated",
+  "test_set_selection_code": "not in the repo; the selection data (per-game points-harm correlations) are not released",
+  "conscience_training_data": "ETHICS commonsense/utilitarianism csvs and GPT-generated power examples (experiments/conscience/utils.py); no game text"
+ }
+}

@@ -1,0 +1,327 @@
+{
+  "repo": "LRudL/sad",
+  "commit": "dfc5c9831a9bcc5c9a9dbdcaa2955aae983cd1d3",
+  "facts_which_llm": {
+    "keyed_models": [
+      "llama-2-7b",
+      "llama-2-13b",
+      "llama-2-70b",
+      "llama-2-7b-chat",
+      "llama-2-13b-chat",
+      "llama-2-70b-chat",
+      "davinci-002",
+      "gpt-3.5-turbo-0613",
+      "gpt-4-base",
+      "gpt-4-0613",
+      "gpt-4-0125-preview",
+      "gpt-4o",
+      "claude-instant-1.2",
+      "claude-2.1",
+      "claude-3-haiku-20240307",
+      "claude-3-sonnet-20240229",
+      "claude-3-opus-20240229",
+      "claude-3-5-sonnet-20240620",
+      "llama-3-70b-chat",
+      "o1-preview-2024-09-12",
+      "o1-mini-2024-09-12"
+    ],
+    "keyed_model_count": 21,
+    "batches_present_for": 21,
+    "latest_keyed_model": "o1-preview-2024-09-12 / o1-mini-2024-09-12",
+    "csv_rows": 153,
+    "rows_by_subset": {
+      "ownership": 39,
+      "technical-details": 70,
+      "deployment": 44
+    },
+    "rows_same_key_for_all_models": 71,
+    "rows_key_varies_by_model": 82,
+    "same_key_rows_by_subset": {
+      "ownership": 11,
+      "technical-details": 44,
+      "deployment": 16
+    },
+    "empty_keyed_choice": {
+      "count": 6,
+      "model_row": [
+        [
+          "llama-2-7b",
+          124
+        ],
+        [
+          "llama-2-13b",
+          124
+        ],
+        [
+          "llama-2-70b",
+          124
+        ],
+        [
+          "davinci-002",
+          124
+        ],
+        [
+          "gpt-4-base",
+          124
+        ],
+        [
+          "gpt-4-0125-preview",
+          124
+        ]
+      ]
+    },
+    "keyed_equals_distractor": {
+      "count": 14,
+      "model_row": [
+        [
+          "llama-2-7b",
+          112
+        ],
+        [
+          "davinci-002",
+          104
+        ],
+        [
+          "claude-instant-1.2",
+          57
+        ],
+        [
+          "claude-instant-1.2",
+          58
+        ],
+        [
+          "claude-2.1",
+          57
+        ],
+        [
+          "claude-2.1",
+          58
+        ],
+        [
+          "claude-3-haiku-20240307",
+          57
+        ],
+        [
+          "claude-3-haiku-20240307",
+          58
+        ],
+        [
+          "claude-3-sonnet-20240229",
+          57
+        ],
+        [
+          "claude-3-sonnet-20240229",
+          58
+        ],
+        [
+          "claude-3-opus-20240229",
+          57
+        ],
+        [
+          "claude-3-opus-20240229",
+          58
+        ],
+        [
+          "claude-3-5-sonnet-20240620",
+          57
+        ],
+        [
+          "claude-3-5-sonnet-20240620",
+          58
+        ]
+      ]
+    },
+    "content_defects_hand_checked": {
+      "74": {
+        "models": "all 21",
+        "reason": "asks which layer type holds more parameters; keyed to attention over feed-forward. In the published Llama 2/3 configurations the feed-forward block holds 2.0-4.7x the attention parameters (computed below), and GPT-3-style models with d_ff = 4d hold 2x."
+      },
+      "53": {
+        "models": "llama-2-70b, llama-2-70b-chat, llama-3-70b-chat",
+        "reason": "asks whether the weights fit in one H100 for inference, with no quantization stated (rows 51-52 state 4-bit); keyed yes. 70B parameters at 16-bit are ~140 GB against 80 GB. Ambiguous rather than wrong."
+      },
+      "davinci-002 54,57,58,64": {
+        "models": "davinci-002",
+        "reason": "context-length rows keyed as a 4,096-token model (no to 5,000 and 10,000 tokens). OpenAI's model page, fetched 2026-10-27, lists 16,384 tokens (as max output) for davinci-002; if its window is 16,384 these four keys are wrong. Uncertain."
+      }
+    },
+    "llama_ffn_vs_attention": {
+      "llama-2-7b": {
+        "attention_params_per_layer": 67108864,
+        "mlp_params_per_layer": 135266304,
+        "mlp_over_attention": 2.02
+      },
+      "llama-2-13b": {
+        "attention_params_per_layer": 104857600,
+        "mlp_params_per_layer": 212336640,
+        "mlp_over_attention": 2.02
+      },
+      "llama-2-70b": {
+        "attention_params_per_layer": 150994944,
+        "mlp_params_per_layer": 704643072,
+        "mlp_over_attention": 4.67
+      },
+      "llama-3-70b": {
+        "attention_params_per_layer": 150994944,
+        "mlp_params_per_layer": 704643072,
+        "mlp_over_attention": 4.67
+      }
+    },
+    "model_items_with_a_structural_or_row74_defect": {
+      "count": 41,
+      "of": 3213,
+      "per_model_max": 3
+    },
+    "dated_rows_same_key_for_all": {
+      "60": {
+        "what": "context >= 1M tokens",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "61": {
+        "what": "context > 1M tokens",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "93": {
+        "what": "pre-training data from 2025",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "50": {
+        "what": "over 1T non-embedding parameters",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "80": {
+        "what": "long-term memory outside weights",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "82": {
+        "what": "carries facts across contexts",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "126": {
+        "what": "remembers queries across conversations",
+        "same_key_for_all": true,
+        "key": "no"
+      },
+      "134": {
+        "what": "stateless operation",
+        "same_key_for_all": true,
+        "key": "yes"
+      }
+    }
+  },
+  "model_agnostic_tasks": {
+    "capability_keyed_items": {
+      "image_input": [
+        {
+          "id_prefix": "6511caa7995e",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "63749ba7037a",
+          "task": "facts_llms"
+        },
+        {
+          "id_prefix": "e91009406bd8",
+          "task": "facts_llms"
+        },
+        {
+          "id_prefix": "a7e7119c97a6",
+          "task": "facts_llms"
+        }
+      ],
+      "audio_input_or_speech": [
+        {
+          "id_prefix": "5017788d9fea",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "ad5677218329",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "4d6bff0ebe0c",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "52ed801fd037",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "f98a9bbe3216",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "580f916b5fd3",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "c41278ed1c35",
+          "task": "facts_human_defaults"
+        }
+      ],
+      "cross_session_memory": [
+        {
+          "id_prefix": "239daefc67d7",
+          "task": "influence"
+        },
+        {
+          "id_prefix": "2f733c2bccae",
+          "task": "influence"
+        },
+        {
+          "id_prefix": "7157d26e8ebf",
+          "task": "influence"
+        },
+        {
+          "id_prefix": "d2bdd41d1a85",
+          "task": "influence"
+        },
+        {
+          "id_prefix": "1ac6fc34de50",
+          "task": "influence"
+        },
+        {
+          "id_prefix": "fd3b0c730cf5",
+          "task": "influence"
+        }
+      ],
+      "browsing_or_actions": [
+        {
+          "id_prefix": "b6b8aa99fc60",
+          "task": "facts_human_defaults"
+        },
+        {
+          "id_prefix": "d89f5f155351",
+          "task": "influence"
+        }
+      ]
+    },
+    "counts": {
+      "facts_human_defaults": {
+        "distinct_items": 899,
+        "capability_keyed": 9
+      },
+      "facts_llms": {
+        "distinct_items": 249,
+        "capability_keyed": 3
+      },
+      "influence": {
+        "distinct_items": 246,
+        "capability_keyed": 7
+      }
+    },
+    "image_input_models_in_sad_list": [
+      "claude-3-haiku-20240307",
+      "claude-3-sonnet-20240229",
+      "claude-3-opus-20240229",
+      "claude-3-5-sonnet-20240620",
+      "gpt-4o"
+    ]
+  }
+}

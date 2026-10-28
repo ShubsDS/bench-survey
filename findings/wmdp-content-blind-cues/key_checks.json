@@ -1,0 +1,149 @@
+{
+  "dataset": "cais/wmdp",
+  "revision": "7125571f22f032c56415e7980f48d877dd830ff8",
+  "rows": 3668,
+  "method": "structural flags only; no hand re-keying of bio or chem items",
+  "flags": {
+    "mismatched_choices": [
+      {
+        "ids": [
+          "chem-339",
+          "chem-340"
+        ],
+        "shared_choices": 0
+      },
+      {
+        "ids": [
+          "cyber-161",
+          "cyber-1756"
+        ],
+        "shared_choices": 0
+      }
+    ],
+    "conflicting_key": [],
+    "repeated_choice_includes_key": [
+      "bio-196",
+      "cyber-368",
+      "cyber-381",
+      "cyber-607",
+      "cyber-746",
+      "cyber-766",
+      "cyber-1044",
+      "cyber-1131",
+      "cyber-1327",
+      "cyber-1509",
+      "cyber-1522",
+      "cyber-1543",
+      "cyber-1563",
+      "cyber-1583",
+      "cyber-1598",
+      "cyber-1674"
+    ],
+    "repeated_choice_not_key": [
+      "bio-514",
+      "cyber-23",
+      "cyber-33",
+      "cyber-39",
+      "cyber-80",
+      "cyber-174",
+      "cyber-351",
+      "cyber-375",
+      "cyber-411",
+      "cyber-481",
+      "cyber-526",
+      "cyber-727",
+      "cyber-985",
+      "cyber-1040",
+      "cyber-1573",
+      "cyber-1578",
+      "cyber-1776",
+      "cyber-1809",
+      "cyber-1846",
+      "cyber-1855",
+      "cyber-1971"
+    ],
+    "numeric_tie": [
+      "cyber-86",
+      "cyber-112",
+      "cyber-1327",
+      "cyber-1578",
+      "cyber-1846"
+    ],
+    "two_meta_options": [],
+    "key_is_none_of_the_above": [
+      "bio-533",
+      "cyber-360",
+      "cyber-727",
+      "cyber-799",
+      "cyber-883",
+      "cyber-978",
+      "cyber-1159",
+      "cyber-1212",
+      "cyber-1250",
+      "cyber-1452",
+      "cyber-1568",
+      "cyber-1576",
+      "cyber-1617",
+      "cyber-1664",
+      "cyber-1789",
+      "cyber-1795",
+      "cyber-1825"
+    ]
+  },
+  "per_subset": {
+    "bio": {
+      "rows": 1273,
+      "counts": {
+        "mismatched_choices": 0,
+        "conflicting_key": 0,
+        "repeated_choice_includes_key": 1,
+        "repeated_choice_not_key": 1,
+        "numeric_tie": 0,
+        "two_meta_options": 0,
+        "key_is_none_of_the_above": 1
+      },
+      "items_with_a_key_defect": 1,
+      "rate": 0.0008,
+      "wilson_95": [
+        0.0,
+        0.004
+      ]
+    },
+    "chem": {
+      "rows": 408,
+      "counts": {
+        "mismatched_choices": 1,
+        "conflicting_key": 0,
+        "repeated_choice_includes_key": 0,
+        "repeated_choice_not_key": 0,
+        "numeric_tie": 0,
+        "two_meta_options": 0,
+        "key_is_none_of_the_above": 0
+      },
+      "items_with_a_key_defect": 1,
+      "rate": 0.0025,
+      "wilson_95": [
+        0.0,
+        0.014
+      ]
+    },
+    "cyber": {
+      "rows": 1987,
+      "counts": {
+        "mismatched_choices": 1,
+        "conflicting_key": 0,
+        "repeated_choice_includes_key": 15,
+        "repeated_choice_not_key": 20,
+        "numeric_tie": 5,
+        "two_meta_options": 0,
+        "key_is_none_of_the_above": 16
+      },
+      "items_with_a_key_defect": 21,
+      "rate": 0.0106,
+      "wilson_95": [
+        0.007,
+        0.016
+      ]
+    }
+  }
+}

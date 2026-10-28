@@ -1,0 +1,5 @@
+# Audit scripts read released data as text and never run downloaded code.
+numpy>=2.0
+pandas>=2.3
+pyarrow
+scikit-learn>=1.7

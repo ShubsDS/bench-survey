@@ -1,0 +1,375 @@
+{
+ "pins": {
+  "hf": "apart/darkbench@c27ae5f155e75f7269e903bc2ddb8458e3d09304",
+  "hf_sha256": "ad42bbd41707484dda315368b97f7effed45f58e55882ace7899b8f163bcf196",
+  "github": "apartresearch/DarkBench@7eef15102b37df2a15a6031cbbed6be488de7fbe",
+  "github_sha256": "2e3c50e03d8d8ed3b4d306420623dd3499fd9788b778d5805fecb212b848a464",
+  "reproduce_dir_identical_to_main": true,
+  "arxiv": "2503.10728v1",
+  "revisited": "eileenhartnett/darkbench-revisited@c62134aa9a64b510dc1f4e2baf18e592a2028883"
+ },
+ "copies": {
+  "n_hf": 660,
+  "n_github": 660,
+  "same_ids": true,
+  "rows_differing_raw": 282,
+  "rows_differing_after_typography_normalisation": 13,
+  "per_category": {
+   "brand-bias": 110,
+   "user-retention": 110,
+   "sycophancy": 110,
+   "anthropomorphization": 110,
+   "harmful-generation": 110,
+   "sneaking": 110
+  }
+ },
+ "duplicates": {
+  "unique_texts": 659,
+  "exact_duplicate_ids": [
+   [
+    "brand-bias-061",
+    "brand-bias-067"
+   ]
+  ]
+ },
+ "families": {
+  "anthropomorphization": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 0,
+    "families": 0,
+    "largest": []
+   },
+   "distinct_instruction_prefixes": 106
+  },
+  "brand-bias": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 21,
+    "families": 3,
+    "largest": [
+     {
+      "size": 12,
+      "ids": [
+       "brand-bias-033",
+       "brand-bias-044"
+      ]
+     },
+     {
+      "size": 7,
+      "ids": [
+       "brand-bias-061",
+       "brand-bias-067"
+      ]
+     },
+     {
+      "size": 2,
+      "ids": [
+       "brand-bias-019",
+       "brand-bias-025"
+      ]
+     }
+    ]
+   },
+   "distinct_instruction_prefixes": 93
+  },
+  "harmful-generation": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 0,
+    "families": 0,
+    "largest": []
+   },
+   "distinct_instruction_prefixes": 110
+  },
+  "sneaking": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 2,
+    "families": 1,
+    "largest": [
+     {
+      "size": 2,
+      "ids": [
+       "sneaking-001",
+       "sneaking-002"
+      ]
+     }
+    ]
+   },
+   "distinct_instruction_prefixes": 56,
+   "starts_rephrase_or_summarize": 110,
+   "mentions_grammar": 84,
+   "invites_adding_qualifiers": [
+    "sneaking-001",
+    "sneaking-002"
+   ],
+   "asks_to_keep_tone": 6
+  },
+  "sycophancy": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 0,
+    "families": 0,
+    "largest": []
+   },
+   "distinct_instruction_prefixes": 71
+  },
+  "user-retention": {
+   "jaccard_ge_0.5": {
+    "prompts_in_families": 0,
+    "families": 0,
+    "largest": []
+   },
+   "distinct_instruction_prefixes": 61
+  }
+ },
+ "brand_bias": {
+  "n": 110,
+  "addresses_the_model_or_its_company": 73,
+  "asks_about_your_company_or_creators": [
+   "brand-bias-016",
+   "brand-bias-023",
+   "brand-bias-025",
+   "brand-bias-026",
+   "brand-bias-028",
+   "brand-bias-105",
+   "brand-bias-106",
+   "brand-bias-107",
+   "brand-bias-108",
+   "brand-bias-109"
+  ],
+  "asks_for_a_single_best_or_ranking": 49,
+  "prompts_naming_each_developer": {
+   "OpenAI": 13,
+   "Anthropic": 10,
+   "Google": 10,
+   "Meta": 10,
+   "Mistral": 2
+  },
+  "named_ids": {
+   "OpenAI": [
+    "brand-bias-005",
+    "brand-bias-006",
+    "brand-bias-008",
+    "brand-bias-009",
+    "brand-bias-019",
+    "brand-bias-033",
+    "brand-bias-034",
+    "brand-bias-035",
+    "brand-bias-036",
+    "brand-bias-039",
+    "brand-bias-042",
+    "brand-bias-061",
+    "brand-bias-067"
+   ],
+   "Anthropic": [
+    "brand-bias-005",
+    "brand-bias-008",
+    "brand-bias-020",
+    "brand-bias-033",
+    "brand-bias-036",
+    "brand-bias-037",
+    "brand-bias-038",
+    "brand-bias-040",
+    "brand-bias-043",
+    "brand-bias-062"
+   ],
+   "Google": [
+    "brand-bias-005",
+    "brand-bias-022",
+    "brand-bias-035",
+    "brand-bias-038",
+    "brand-bias-041",
+    "brand-bias-042",
+    "brand-bias-043",
+    "brand-bias-044",
+    "brand-bias-064",
+    "brand-bias-066"
+   ],
+   "Meta": [
+    "brand-bias-005",
+    "brand-bias-008",
+    "brand-bias-021",
+    "brand-bias-034",
+    "brand-bias-037",
+    "brand-bias-039",
+    "brand-bias-040",
+    "brand-bias-041",
+    "brand-bias-044",
+    "brand-bias-063"
+   ],
+   "Mistral": [
+    "brand-bias-005",
+    "brand-bias-065"
+   ]
+  },
+  "permuted_template": {
+   "n": 12,
+   "ids": [
+    "brand-bias-033",
+    "brand-bias-044"
+   ],
+   "prompts_praising_each": {
+    "openai": 3,
+    "anthropic": 3,
+    "meta": 3,
+    "google": 3
+   },
+   "prompts_disparaging_each": {
+    "anthropic": 3,
+    "meta": 3,
+    "google": 3,
+    "openai": 3
+   },
+   "developers_absent": [
+    "Mistral"
+   ]
+  }
+ },
+ "user_retention": {
+  "n": 110,
+  "asks_for_companionship": 77,
+  "mentions_isolation_or_loneliness": 72
+ },
+ "anthropomorphization": {
+  "n": 110,
+  "presupposes_personal_life": 53,
+  "addresses_you": 110
+ },
+ "flag_universality_revisited": {
+  "anthropomorphization": {
+   "prompts": 110,
+   "mean_models_flagged_of_12": 2.78,
+   "prompts_flagged_on_ge_10_of_12": 0,
+   "prompts_flagged_on_0_of_12": 8,
+   "ids_ge_10": []
+  },
+  "brand-bias": {
+   "prompts": 110,
+   "mean_models_flagged_of_12": 2.75,
+   "prompts_flagged_on_ge_10_of_12": 0,
+   "prompts_flagged_on_0_of_12": 12,
+   "ids_ge_10": []
+  },
+  "harmful-generation": {
+   "prompts": 108,
+   "mean_models_flagged_of_12": 1.81,
+   "prompts_flagged_on_ge_10_of_12": 0,
+   "prompts_flagged_on_0_of_12": 50,
+   "ids_ge_10": []
+  },
+  "sneaking": {
+   "prompts": 110,
+   "mean_models_flagged_of_12": 1.78,
+   "prompts_flagged_on_ge_10_of_12": 1,
+   "prompts_flagged_on_0_of_12": 40,
+   "ids_ge_10": [
+    "sneaking-016"
+   ]
+  },
+  "sycophancy": {
+   "prompts": 110,
+   "mean_models_flagged_of_12": 0.31,
+   "prompts_flagged_on_ge_10_of_12": 0,
+   "prompts_flagged_on_0_of_12": 85,
+   "ids_ge_10": []
+  },
+  "user-retention": {
+   "prompts": 110,
+   "mean_models_flagged_of_12": 5.28,
+   "prompts_flagged_on_ge_10_of_12": 8,
+   "prompts_flagged_on_0_of_12": 4,
+   "ids_ge_10": [
+    "user-retention-003",
+    "user-retention-005",
+    "user-retention-054",
+    "user-retention-055",
+    "user-retention-056",
+    "user-retention-057",
+    "user-retention-060",
+    "user-retention-066"
+   ]
+  }
+ },
+ "code": {
+  "inspect_scorer": {
+   "patterns_with_target_company_placeholder": [
+    "BRAND_BIAS"
+   ],
+   "company_filled_from_target_model": true,
+   "second_format_over_whole_prompt_including_response": true,
+   "dark_pattern_ids": [
+    "anthropomorphization",
+    "brand_bias",
+    "sycophancy",
+    "harmful_generation",
+    "sneaking",
+    "user_retention"
+   ],
+   "dataset_targets": [
+    "anthropomorphization",
+    "brand-bias",
+    "harmful-generation",
+    "sneaking",
+    "sycophancy",
+    "user-retention"
+   ],
+   "targets_without_matching_id": [
+    "brand-bias",
+    "harmful-generation",
+    "user-retention"
+   ],
+   "prompts_in_unmatched_categories": 330,
+   "lookup": "issues[target.text]",
+   "default_overseer": "openai/gpt-4o-mini"
+  },
+  "dataset_history": {
+   "preprint_fork_a991428": {
+    "n": 244,
+    "targets": {
+     "anthropomorphization": 49,
+     "brand_bias": 49,
+     "harmful_generation": 49,
+     "sneaking": 48,
+     "user_retention": 49
+    }
+   },
+   "sync_c1b46f9": {
+    "n": 660,
+    "targets": {
+     "brand-bias": 110,
+     "user-retention": 110,
+     "sycophancy": 110,
+     "anthropomorphization": 110,
+     "harmful-generation": 110,
+     "sneaking": 110
+    }
+   }
+  },
+  "pipeline_2024_7d18dbd": {
+   "one_prompt_lists_every_issue": true,
+   "brand_awareness_names_target_company": true,
+   "target_prompt_info_passed_as_template_globals": true,
+   "instructions_hardcode_chatgpt": true,
+   "system_prompt_mentions_nepotism": true,
+   "overseers": [
+    "claude-3-opus-20240229",
+    "gemini-1-5-pro-001",
+    "gpt-4o-2024-05-13",
+    "meta-llama-3-70b-instruct"
+   ],
+   "issue_count": 10
+  }
+ },
+ "paper": {
+  "annotators_named_main_text": "Claude 3.5 Sonnet , Gemini 1.5 Pro , and GPT-4o",
+  "commented_out_text_says_claude_opus_annotator": true,
+  "appendix_says_results_other_than_claude_3_opus": true,
+  "headline_heatmap_file": "img/gpt-4o-2024-05-13.pdf",
+  "headline_rate_48pct": true,
+  "targets_include_gpt4o_and_gemini15pro": true,
+  "states_six_labels_per_call": true,
+  "reports_own_family_analysis": true,
+  "commented_out_krippendorff_alpha_human_0.02_llm_0.03": true,
+  "conversations_and_evaluations": [
+   "9,240",
+   "27,720"
+  ]
+ }
+}

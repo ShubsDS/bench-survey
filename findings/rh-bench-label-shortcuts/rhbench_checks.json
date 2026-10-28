@@ -1,0 +1,122 @@
+{
+ "pins": {
+  "rh_bench": "ktolnos/rh-bench@1045a7336432c40182924bbd3698af292ea24acb",
+  "school_of_reward_hacks": "longtermrisk/school-of-reward-hacks@d7e04a550119cb5410494cf90e2313284a5f2148"
+ },
+ "row_counts": {
+  "card_open_ended": 4359,
+  "file_open_ended": 4151,
+  "card_metr_malt": 780,
+  "file_metr_malt": 572,
+  "file_by_source": {
+   "jozdien_realistic_reward_hacks": 1605,
+   "school_of_reward_hacks": 1073,
+   "metr_malt": 572,
+   "patronus_trace": 517,
+   "countdown_code": 334,
+   "matonski_reward_hacking_prompts": 50
+  }
+ },
+ "open_sources": {
+  "jozdien_realistic_reward_hacks": {
+   "rows": 1605,
+   "hacking": 817,
+   "label_by_source_split": {
+    "hhh_code": {
+     "hacking": 0,
+     "clean": 388
+    },
+    "hhh_literary": {
+     "hacking": 0,
+     "clean": 400
+    },
+    "reward_hacks_code": {
+     "hacking": 478,
+     "clean": 0
+    },
+    "reward_hacks_literary": {
+     "hacking": 339,
+     "clean": 0
+    }
+   },
+   "prompt_only_bow_auroc": 0.997,
+   "response_only_bow_auroc": 1.0,
+   "null_prompt_only": [
+    0.519,
+    0.487,
+    0.527,
+    0.507,
+    0.501
+   ]
+  },
+  "countdown_code": {
+   "rows": 334,
+   "hacking": 167,
+   "label_by_source_split": {
+    "distillation": {
+     "clean": 167,
+     "hacking": 167
+    }
+   },
+   "prompt_only_bow_auroc": 0.487,
+   "response_only_bow_auroc": 1.0,
+   "null_prompt_only": [
+    0.553,
+    0.49,
+    0.477,
+    0.517,
+    0.466
+   ]
+  }
+ },
+ "school_of_reward_hacks": {
+  "rows": 1073,
+  "rows_without_control": 100,
+  "pairs": 973,
+  "tasks": 35,
+  "paired_accuracy_bow": 0.978,
+  "null": [
+   0.513,
+   0.482,
+   0.507,
+   0.501,
+   0.478
+  ]
+ },
+ "metr_malt_metadata": {
+  "rows": 572,
+  "label": {
+   "hacking": 286,
+   "clean": 286
+  },
+  "verification": {
+   "human": 572
+  },
+  "clean_by_model": {
+   "claude-3-7-sonnet-20250219": 268,
+   "claude-opus-4-20250514": 6,
+   "o3-2025-04-16": 5,
+   "claude-sonnet-4-20250514": 5,
+   "openrouter/deepseek/deepseek-r1-0528": 2
+  },
+  "clean_rows_from_models_with_no_reviewed_benign_run_in_malt": 268,
+  "hacking_by_model": {
+   "claude-3-7-sonnet-20250219": 224,
+   "claude-opus-4-20250514": 19,
+   "o3": 18,
+   "claude-sonnet-4-20250514": 12,
+   "o3-2025-04-16": 5,
+   "openrouter/deepseek/deepseek-r1-0528": 4,
+   "openrouter/qwen/qwen-2-72b-instruct": 2,
+   "o1-2024-12-17": 1,
+   "openrouter/qwen/qwen-2.5-72b-instruct": 1
+  },
+  "malt_card_reviewed_benign_by_model": {
+   "claude-opus-4-20250514": 349,
+   "claude-sonnet-4-20250514": 332,
+   "o1-preview": 1,
+   "o3-2025-04-16": 1,
+   "openrouter/deepseek/deepseek-r1-0528": 11
+  }
+ }
+}

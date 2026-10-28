@@ -1,0 +1,631 @@
+{
+ "pins": {
+  "data": "cais/MASK@4602b84dd9e2ca05c6e1eafbc14e556e908ac1bb",
+  "forks": {
+   "Cadenza-Labs/mask": "8c13097615273c4d9f835a63bbc7cd9510db2ed4",
+   "limorgu/mask": "77dd65e4752e9a9d6cb332ca70fb7f4a11a68262"
+  }
+ },
+ "rows_per_archetype": {
+  "continuations": 176,
+  "disinformation": 125,
+  "doubling_down_known_facts": 120,
+  "known_facts": 209,
+  "provided_facts": 274,
+  "statistics": 96
+ },
+ "rows_total": 1000,
+ "card_states_1028": true,
+ "exact_shared_across_archetypes": {
+  "proposition": {
+   "continuations|disinformation": 1,
+   "disinformation|doubling_down_known_facts": 1,
+   "disinformation|known_facts": 1,
+   "doubling_down_known_facts|known_facts": 50
+  },
+  "ground_truth": {
+   "continuations|disinformation": 1,
+   "disinformation|doubling_down_known_facts": 1,
+   "disinformation|known_facts": 1,
+   "doubling_down_known_facts|known_facts": 50
+  },
+  "system_prompt": {
+   "continuations|disinformation": 8,
+   "continuations|statistics": 8,
+   "disinformation|statistics": 8,
+   "doubling_down_known_facts|known_facts": 51
+  },
+  "user_prompt": {},
+  "belief_elicit_1": {
+   "continuations|disinformation": 2,
+   "disinformation|doubling_down_known_facts": 1,
+   "disinformation|known_facts": 1,
+   "doubling_down_known_facts|known_facts": 50
+  }
+ },
+ "propositions_in_more_than_one_archetype": {
+  "continuations|disinformation": 1,
+  "disinformation|doubling_down_known_facts|known_facts": 1,
+  "doubling_down_known_facts|known_facts": 49
+ },
+ "within_archetype_duplicate_propositions": {
+  "continuations": 1,
+  "disinformation": 3,
+  "doubling_down_known_facts": 0,
+  "known_facts": 0,
+  "provided_facts": 0,
+  "statistics": 0
+ },
+ "doubling_down_vs_known_facts": {
+  "doubling_down_items": 120,
+  "shared_with_known_facts": 50,
+  "same_system_prompt": 50,
+  "first_turn_equals_known_facts_user_prompt": 49,
+  "same_three_belief_prompts": 49,
+  "same_ground_truth": 50,
+  "shared_task_id_pairs": [
+   [
+    "F561D7E6580A",
+    "6783134d7daa299a4a624d90"
+   ],
+   [
+    "677ca16731c5d4f269383d30_dd",
+    "677ca16731c5d4f269383d30"
+   ],
+   [
+    "677d55403adab7784b4e435f_dd",
+    "677d55403adab7784b4e435f"
+   ],
+   [
+    "677c4b3a32f2a805c1b70278_dd",
+    "677c4b3a32f2a805c1b70278"
+   ],
+   [
+    "eef1318d-c377-4ca4-9178-3a4745e55061_err_dd",
+    "eef1318d-c377-4ca4-9178-3a4745e55061_err"
+   ],
+   [
+    "6783134d7e0f93f77f11fcc8_dd",
+    "6783134d7e0f93f77f11fcc8"
+   ],
+   [
+    "677d553afbc3a9937e3598e9_dd",
+    "677d553afbc3a9937e3598e9"
+   ],
+   [
+    "677d553871bef67330e54a38_dd",
+    "677d553871bef67330e54a38"
+   ],
+   [
+    "677d553a36d8f3d3fd721f1f_dd",
+    "677d553a36d8f3d3fd721f1f"
+   ],
+   [
+    "6783134e6b9341206c79ee01_dd",
+    "6783134e6b9341206c79ee01"
+   ],
+   [
+    "677d553e0e75fcaf2976f9e9_dd",
+    "677d553e0e75fcaf2976f9e9"
+   ],
+   [
+    "47a03596-4745-4b73-8128-0d4e3d7d0092_err_dd",
+    "47a03596-4745-4b73-8128-0d4e3d7d0092_err"
+   ],
+   [
+    "677ca1684b96f907dbf5b76e_dd",
+    "677ca1684b96f907dbf5b76e"
+   ],
+   [
+    "677d5537272e0e57ee739bc9_dd",
+    "677d5537272e0e57ee739bc9"
+   ],
+   [
+    "6783134db382c92ba5d9ae62_dd",
+    "6783134db382c92ba5d9ae62"
+   ],
+   [
+    "677d55440c6cfd55d2964322_dd",
+    "677d55440c6cfd55d2964322"
+   ],
+   [
+    "677d553e862e16180944013a_dd",
+    "677d553e862e16180944013a"
+   ],
+   [
+    "b4e16587-3d4f-4eef-938b-d694bd8b42d3_err_dd",
+    "b4e16587-3d4f-4eef-938b-d694bd8b42d3_err"
+   ],
+   [
+    "677d553736d8f3d3fd721eec_dd",
+    "677d553736d8f3d3fd721eec"
+   ],
+   [
+    "67ab8fa32a6fca04620b13cd_dd",
+    "67ab8fa32a6fca04620b13cd"
+   ],
+   [
+    "677c4b3a984dca9838a7bc72_dup_dd",
+    "677c4b3a984dca9838a7bc72_dup"
+   ],
+   [
+    "677d553a7b1b3da329858e7e_dd",
+    "677d553a7b1b3da329858e7e"
+   ],
+   [
+    "677d553a0e75fcaf2976f9c2_dd",
+    "677d553a0e75fcaf2976f9c2"
+   ],
+   [
+    "677d554acb2a917fcc101d98_dd",
+    "677d554acb2a917fcc101d98"
+   ],
+   [
+    "677d55406c8ebacc8c579f6d_dd",
+    "677d55406c8ebacc8c579f6d"
+   ],
+   [
+    "677d5541a322fac77a47f825_dd",
+    "677d5541a322fac77a47f825"
+   ],
+   [
+    "6783135070bdc0d2bfe05042_dd",
+    "6783135070bdc0d2bfe05042"
+   ],
+   [
+    "f99ca987-c3f2-42a3-94a5-6dce08b39fc7_err_dd",
+    "f99ca987-c3f2-42a3-94a5-6dce08b39fc7_err"
+   ],
+   [
+    "677d553604c3fb1dcbf942a7_dd",
+    "677d553604c3fb1dcbf942a7"
+   ],
+   [
+    "67ab8fa91feba6369c2c362d_dd",
+    "67ab8fa91feba6369c2c362d"
+   ],
+   [
+    "677c4b3a0d688ab8681454f5_dd",
+    "677c4b3a0d688ab8681454f5"
+   ],
+   [
+    "677ca167ef3e7cc06ed256d2_dd",
+    "677ca167ef3e7cc06ed256d2"
+   ],
+   [
+    "6783134d75a35a2d0514b8d4_dd",
+    "6783134d75a35a2d0514b8d4"
+   ],
+   [
+    "677d553c272e0e57ee739c10_dd",
+    "677d553c272e0e57ee739c10"
+   ],
+   [
+    "677d553c862e161809440121_dd",
+    "677d553c862e161809440121"
+   ],
+   [
+    "677ca166076d03287db3879e_dd",
+    "677ca166076d03287db3879e"
+   ],
+   [
+    "677ca166c7a1748e6a3218fa_dd",
+    "677ca166c7a1748e6a3218fa"
+   ],
+   [
+    "6783134eac38580d2ac3e4de_dd",
+    "6783134eac38580d2ac3e4de"
+   ],
+   [
+    "47df16f7-eb8a-4a95-88a9-45b2bd3eb225_err_dd",
+    "47df16f7-eb8a-4a95-88a9-45b2bd3eb225_err"
+   ],
+   [
+    "67ab8fa49af16aa2e897219c_dd",
+    "67ab8fa49af16aa2e897219c"
+   ],
+   [
+    "677d5538f65d5feac46a8f7f_dd",
+    "677d5538f65d5feac46a8f7f"
+   ],
+   [
+    "677ca163422316de28d82f8d_dd",
+    "677ca163422316de28d82f8d"
+   ],
+   [
+    "677ca1652386f93e198bb8cb_dd",
+    "677ca1652386f93e198bb8cb"
+   ],
+   [
+    "073152B8E1F1_dd",
+    "073152B8E1F1"
+   ],
+   [
+    "32EE3324BB48_dd",
+    "32EE3324BB48"
+   ],
+   [
+    "E91B06762E9D_dd",
+    "E91B06762E9D"
+   ],
+   [
+    "4ED51BFBCFEF_dd",
+    "4ED51BFBCFEF"
+   ],
+   [
+    "C7FE2FABF27B_dd",
+    "C7FE2FABF27B"
+   ],
+   [
+    "6C8314A213FF_dd",
+    "6C8314A213FF"
+   ],
+   [
+    "14252CAAC22B_dd",
+    "14252CAAC22B"
+   ]
+  ]
+ },
+ "near_duplicate_propositions": {
+  "counts": {
+   "across:0.5-0.8": 19,
+   "across:exact": 55,
+   "within:exact": 4,
+   "within:0.5-0.8": 10,
+   "within:>=0.8": 1
+  },
+  "pairs_other_than_dd_kf_exact": [
+   [
+    "continuations",
+    "6774a063ee8f67c06d67a690",
+    "disinformation",
+    "67771717fdce5e74b1b2ab90",
+    0.6
+   ],
+   [
+    "continuations",
+    "6774a063ee8f67c06d67a690",
+    "disinformation",
+    "677677c0b2d74bc8dbe8cdc8",
+    1.0
+   ],
+   [
+    "continuations",
+    "6787ef034b473623a516adfc",
+    "disinformation",
+    "6777171b5497661900231034",
+    0.56
+   ],
+   [
+    "continuations",
+    "6787ef034b473623a516adfc",
+    "disinformation",
+    "6777171f7596008c2ffa2692",
+    0.5
+   ],
+   [
+    "continuations",
+    "6787ef034b473623a516adfc",
+    "disinformation",
+    "6777171a7a6be99e497fa9fe",
+    0.56
+   ],
+   [
+    "continuations",
+    "6787ef034b473623a516adfc",
+    "doubling_down_known_facts",
+    "677d553871bef67330e54a38_dd",
+    0.56
+   ],
+   [
+    "continuations",
+    "6787ef034b473623a516adfc",
+    "known_facts",
+    "677d553871bef67330e54a38",
+    0.56
+   ],
+   [
+    "continuations",
+    "6774a05e7ea8b67fcbaab46f",
+    "disinformation",
+    "6777171b5497661900231034",
+    0.54
+   ],
+   [
+    "continuations",
+    "6774a05e7ea8b67fcbaab46f",
+    "disinformation",
+    "6777171a7a6be99e497fa9fe",
+    0.54
+   ],
+   [
+    "continuations",
+    "6774a05e7ea8b67fcbaab46f",
+    "doubling_down_known_facts",
+    "677d553871bef67330e54a38_dd",
+    0.54
+   ],
+   [
+    "continuations",
+    "6774a05e7ea8b67fcbaab46f",
+    "known_facts",
+    "677d553871bef67330e54a38",
+    0.54
+   ],
+   [
+    "continuations",
+    "6774a06118ea0dba85f90623",
+    "continuations",
+    "67736afe7e3b417e660ea980",
+    1.0
+   ],
+   [
+    "continuations",
+    "67736b00593d0694260ccdd2",
+    "disinformation",
+    "677717187bf2f0fbf74c5ddd",
+    0.57
+   ],
+   [
+    "continuations",
+    "67736b00593d0694260ccdd2",
+    "known_facts",
+    "677d5538862e1618094400ed",
+    0.58
+   ],
+   [
+    "continuations",
+    "6774a05ddfd47ea7ac91031b",
+    "provided_facts",
+    "676f5362e7ddfbf5711245ad",
+    0.69
+   ],
+   [
+    "continuations",
+    "6774a05e7e5112be97493227",
+    "disinformation",
+    "6777171c980d7873e3890b49",
+    0.5
+   ],
+   [
+    "continuations",
+    "6774a05e7e5112be97493227",
+    "disinformation",
+    "6777171c980d7873e3890b6c",
+    0.5
+   ],
+   [
+    "disinformation",
+    "6777171c980d7873e3890b49",
+    "disinformation",
+    "6777171c980d7873e3890b6c",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171cdac5a736499fec17",
+    "disinformation",
+    "6777171992aa0e94a9afde87",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171b5497661900231034",
+    "disinformation",
+    "6777171a7a6be99e497fa9fe",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171b5497661900231034",
+    "doubling_down_known_facts",
+    "677d553871bef67330e54a38_dd",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171b5497661900231034",
+    "known_facts",
+    "677d553871bef67330e54a38",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171cdc179ed72b984218",
+    "disinformation",
+    "677717184e606b1d31f67c4c",
+    0.53
+   ],
+   [
+    "disinformation",
+    "677677c02d1c5605cb9cdd43",
+    "disinformation",
+    "677717187bf2f0fbf74c5ddd",
+    0.53
+   ],
+   [
+    "disinformation",
+    "67771717fdce5e74b1b2ab90",
+    "disinformation",
+    "677677c0b2d74bc8dbe8cdc8",
+    0.6
+   ],
+   [
+    "disinformation",
+    "6777171a7a6be99e497fa9fe",
+    "doubling_down_known_facts",
+    "677d553871bef67330e54a38_dd",
+    1.0
+   ],
+   [
+    "disinformation",
+    "6777171a7a6be99e497fa9fe",
+    "known_facts",
+    "677d553871bef67330e54a38",
+    1.0
+   ],
+   [
+    "disinformation",
+    "677677c04a14bb0dd4dac678",
+    "known_facts",
+    "677d5539500c5a8f11b186d5",
+    0.79
+   ],
+   [
+    "disinformation",
+    "677717187bf2f0fbf74c5ddd",
+    "known_facts",
+    "677d5538862e1618094400ed",
+    0.5
+   ],
+   [
+    "disinformation",
+    "67849ecd502c3be2aa3b24db",
+    "known_facts",
+    "677d5539500c5a8f11b186d5",
+    0.5
+   ],
+   [
+    "doubling_down_known_facts",
+    "67975ed24f048eb25021cd93",
+    "doubling_down_known_facts",
+    "67975ed20a51ed16578b91b7",
+    0.5
+   ],
+   [
+    "doubling_down_known_facts",
+    "677d553604c3fb1dcbf942a7_dd",
+    "known_facts",
+    "677ca167486974cdd727da0f",
+    0.7
+   ],
+   [
+    "known_facts",
+    "677d553604c3fb1dcbf942a7",
+    "known_facts",
+    "677ca167486974cdd727da0f",
+    0.7
+   ],
+   [
+    "known_facts",
+    "677ca1654b96f907dbf5b73b",
+    "known_facts",
+    "677d55379b34f174ec9925b7",
+    0.65
+   ],
+   [
+    "provided_facts",
+    "676f535ff4cba8c4c95e211f",
+    "provided_facts",
+    "67709cabc158b542095f82ab",
+    0.54
+   ],
+   [
+    "provided_facts",
+    "676f535ff4cba8c4c95e211f",
+    "provided_facts",
+    "676f5362e1d0621a03333366",
+    0.54
+   ],
+   [
+    "provided_facts",
+    "676f535ff4cba8c4c95e211f",
+    "provided_facts",
+    "676f5362e7ddfbf5711245ad",
+    0.5
+   ],
+   [
+    "statistics",
+    "679015a42571798d2a4d29fb",
+    "statistics",
+    "679015adc80c1eb70d0932d9",
+    0.82
+   ],
+   [
+    "statistics",
+    "678992762e03ca7652badf5a",
+    "statistics",
+    "679015adc80c1eb70d0932d2",
+    0.62
+   ]
+  ]
+ },
+ "belief_agreement_on_shared_items": {
+  "llama-v3.3-70b-instruct": {
+   "shared": 50,
+   "as_released": {
+    "same_belief": 36,
+    "both_no_belief": 19,
+    "one_side_no_belief": 14,
+    "opposite_beliefs": 0
+   },
+   "judge_answers_repaired": {
+    "same_belief": 42,
+    "both_no_belief": 6,
+    "one_side_no_belief": 8,
+    "opposite_beliefs": 0
+   }
+  },
+  "mistral-small-3.1-24b-instruct": {
+   "shared": 50,
+   "as_released": {
+    "same_belief": 37,
+    "both_no_belief": 29,
+    "one_side_no_belief": 13,
+    "opposite_beliefs": 0
+   },
+   "judge_answers_repaired": {
+    "same_belief": 37,
+    "both_no_belief": 14,
+    "one_side_no_belief": 13,
+    "opposite_beliefs": 0
+   }
+  },
+  "qwen-2.5-72b-instruct": {
+   "shared": 50,
+   "as_released": {
+    "same_belief": 36,
+    "both_no_belief": 26,
+    "one_side_no_belief": 14,
+    "opposite_beliefs": 0
+   },
+   "judge_answers_repaired": {
+    "same_belief": 40,
+    "both_no_belief": 14,
+    "one_side_no_belief": 10,
+    "opposite_beliefs": 0
+   }
+  },
+  "gpt-3.5-turbo": {
+   "shared": 50,
+   "as_released": {
+    "same_belief": 30,
+    "both_no_belief": 28,
+    "one_side_no_belief": 20,
+    "opposite_beliefs": 0
+   },
+   "judge_answers_repaired": {
+    "same_belief": 29,
+    "both_no_belief": 27,
+    "one_side_no_belief": 21,
+    "opposite_beliefs": 0
+   }
+  }
+ },
+ "provided_facts_items_scored_against_ground_truth": 274,
+ "ground_truth_is_option_A": {
+  "continuations": 0.25,
+  "disinformation": 0.288,
+  "doubling_down_known_facts": 0.817,
+  "known_facts": 0.852,
+  "provided_facts": 0.635
+ },
+ "explicit_lie_cue_in_pressure_prompt": {
+  "continuations": 0.045,
+  "disinformation": 0.048,
+  "doubling_down_known_facts": 0.05,
+  "known_facts": 0.053,
+  "provided_facts": 0.04,
+  "statistics": 0.0
+ }
+}

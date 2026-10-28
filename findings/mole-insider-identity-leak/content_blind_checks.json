@@ -1,0 +1,200 @@
+{
+  "pins": {
+    "hf_dataset": "forgelab/mole@7eb86b0d2918c32760fe8a91b78bb50ccc054ce5",
+    "code": "aashiqmuhamed/mole@702199e40fe25065290a1fb7933865d67eee1dc2"
+  },
+  "paper_reference": {
+    "R@10/day": {
+      "Claude Opus 4.7 (best)": 0.533,
+      "GPT-5.5": 0.511,
+      "median of 40 monitors": 0.367,
+      "GPT-4.1": 0.222,
+      "FACADE": 0.222,
+      "peer-fit": 0.178,
+      "z-score": 0.156
+    },
+    "budget-AUC": {
+      "GPT-5.5": 0.391,
+      "GPT-4.1": 0.187,
+      "search iteration 53 (GPT-4.1 cost)": 0.298,
+      "search best reported (iteration 165)": 0.489
+    },
+    "source": "arXiv 2609.06966v1, Figure 4, Table 21 and Table 22 / Appendix L.1"
+  },
+  "test_account_days": 2106,
+  "test_positives": 45,
+  "train_positives": 26,
+  "features": {
+    "events": {
+      "auroc": 0.559,
+      "budget_auc": 0.09,
+      "r10": 0.143,
+      "null_label_shuffle_auroc": {
+        "mean": 0.506,
+        "p95": 0.578
+      }
+    },
+    "sessions": {
+      "auroc": 0.54,
+      "budget_auc": 0.044,
+      "r10": 0.077,
+      "null_label_shuffle_auroc": {
+        "mean": 0.493,
+        "p95": 0.547
+      }
+    },
+    "bytes": {
+      "auroc": 0.671,
+      "budget_auc": 0.093,
+      "r10": 0.2,
+      "null_label_shuffle_auroc": {
+        "mean": 0.498,
+        "p95": 0.567
+      }
+    },
+    "error_rate": {
+      "auroc": 0.53,
+      "budget_auc": 0.022,
+      "r10": 0.044,
+      "null_label_shuffle_auroc": {
+        "mean": 0.497,
+        "p95": 0.568
+      }
+    },
+    "first_event_hour": {
+      "auroc": 0.502,
+      "budget_auc": 0.061,
+      "r10": 0.099,
+      "null_label_shuffle_auroc": {
+        "mean": 0.5,
+        "p95": 0.573
+      }
+    },
+    "last_event_hour": {
+      "auroc": 0.491,
+      "budget_auc": 0.06,
+      "r10": 0.067,
+      "null_label_shuffle_auroc": {
+        "mean": 0.5,
+        "p95": 0.566
+      }
+    },
+    "active_span_hours": {
+      "auroc": 0.491,
+      "budget_auc": 0.031,
+      "r10": 0.044,
+      "null_label_shuffle_auroc": {
+        "mean": 0.507,
+        "p95": 0.57
+      }
+    },
+    "turns": {
+      "auroc": 0.576,
+      "budget_auc": 0.09,
+      "r10": 0.156,
+      "null_label_shuffle_auroc": {
+        "mean": 0.499,
+        "p95": 0.578
+      }
+    },
+    "max_session_turns": {
+      "auroc": 0.571,
+      "budget_auc": 0.065,
+      "r10": 0.121,
+      "null_label_shuffle_auroc": {
+        "mean": 0.502,
+        "p95": 0.578
+      }
+    },
+    "input_tokens": {
+      "auroc": 0.624,
+      "budget_auc": 0.049,
+      "r10": 0.178,
+      "null_label_shuffle_auroc": {
+        "mean": 0.495,
+        "p95": 0.578
+      }
+    },
+    "output_tokens": {
+      "auroc": 0.587,
+      "budget_auc": 0.016,
+      "r10": 0.067,
+      "null_label_shuffle_auroc": {
+        "mean": 0.487,
+        "p95": 0.556
+      }
+    },
+    "max_turn_aborts": {
+      "auroc": 0.506,
+      "budget_auc": 0.05,
+      "r10": 0.091,
+      "null_label_shuffle_auroc": {
+        "mean": 0.5,
+        "p95": 0.528
+      }
+    },
+    "cohort_focal": {
+      "auroc": 0.619,
+      "budget_auc": 0.185,
+      "r10": 0.306,
+      "null_label_shuffle_auroc": {
+        "mean": 0.501,
+        "p95": 0.529
+      }
+    },
+    "cohort_background": {
+      "auroc": 0.305,
+      "budget_auc": 0.026,
+      "r10": 0.042,
+      "null_label_shuffle_auroc": {
+        "mean": 0.5,
+        "p95": 0.544
+      }
+    },
+    "cohort_holdout": {
+      "auroc": 0.576,
+      "budget_auc": 0.085,
+      "r10": 0.152,
+      "null_label_shuffle_auroc": {
+        "mean": 0.506,
+        "p95": 0.553
+      }
+    }
+  },
+  "fitted_logistic_all_features": {
+    "auroc": 0.73,
+    "budget_auc": 0.107,
+    "r10": 0.2,
+    "null_shuffled_train_labels_auroc": {
+      "mean": 0.464,
+      "p95": 0.618
+    },
+    "coefficients": {
+      "events": -0.729,
+      "sessions": -0.065,
+      "bytes": -0.863,
+      "error_rate": -0.15,
+      "first_event_hour": -0.095,
+      "last_event_hour": -0.068,
+      "active_span_hours": 0.267,
+      "turns": -1.133,
+      "max_session_turns": 0.006,
+      "input_tokens": 1.269,
+      "output_tokens": 0.545,
+      "max_turn_aborts": 0.138,
+      "cohort_focal": 0.39,
+      "cohort_background": -0.442,
+      "cohort_holdout": 0.248
+    }
+  },
+  "best_single_feature_by_budget_auc": {
+    "feature": "cohort_focal",
+    "auroc": 0.619,
+    "budget_auc": 0.185,
+    "r10": 0.306,
+    "null_label_shuffle_auroc": {
+      "mean": 0.501,
+      "p95": 0.529
+    }
+  }
+}

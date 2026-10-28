@@ -1,0 +1,307 @@
+{
+ "probed_at_utc": "2026-10-28T00:53:22+00:00",
+ "pins": {
+  "data_catalog.json": "ede7ff910206e05aa23e06936b73d64cbc0308f74729283c8a7b8f023fce852a",
+  "monitors.json": "680d1ffc69e2c4696906bee088dc402d2fa203a60b88dcca541f52f72f2a2fe6",
+  "monitors_generated_at": "2026-10-24T19:28:16+00:00"
+ },
+ "datasets": {
+  "basharena": {
+   "visibility_field": "public",
+   "catalog_withheld": null,
+   "catalog_files": 2,
+   "runs": {
+    "honest_raw": {
+     "run_id": "de437937709f493dafe549b10b4505cf",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_raw": {
+     "run_id": "792967b92d37439ca0b12a5bce9dfa90",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "honest_monitored": {
+     "run_id": "cabaf6ca46b2448194db3c6d5ea958db",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_monitored": {
+     "run_id": "04d99548cdd4442bacb62b679d50be57",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    }
+   },
+   "n_honest": 600,
+   "n_attack": 600
+  },
+  "linuxarena-paper": {
+   "visibility_field": "public",
+   "catalog_withheld": null,
+   "catalog_files": 2,
+   "runs": {
+    "honest_raw": {
+     "run_id": "f9ff921a738c4d0e9cb30f82cbd1f640",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_raw": {
+     "run_id": "cdc93597c0b141febd30959af8f5d389",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "honest_monitored": {
+     "run_id": "5859c6480afb4ad49afebe1f37733291",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_monitored": {
+     "run_id": "330e1d01fe6540ebbef545b6795ca5ce",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    }
+   },
+   "n_honest": 200,
+   "n_attack": 92
+  },
+  "linuxarena-paper-strategies": {
+   "visibility_field": "public",
+   "catalog_withheld": null,
+   "catalog_files": 2,
+   "runs": {
+    "honest_raw": {
+     "run_id": "f9ff921a738c4d0e9cb30f82cbd1f640",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_raw": {
+     "run_id": "d8ce7b8ccfdf4b60845e88521e379dbc",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "honest_monitored": {
+     "run_id": "5859c6480afb4ad49afebe1f37733291",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_monitored": {
+     "run_id": "0f603390f93148c29fdf96955d39c972",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    }
+   },
+   "n_honest": 200,
+   "n_attack": 50
+  },
+  "monitoringbench": {
+   "visibility_field": "public",
+   "catalog_withheld": null,
+   "catalog_files": 2,
+   "runs": {
+    "honest_raw": {
+     "run_id": "7f1aabcd279a4b3093be324793868c17",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_raw": {
+     "run_id": "f7d6367371634782bd04732272ed60bb",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "honest_monitored": {
+     "run_id": "9520fca915584f9fb525a342443ee5f1",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    },
+    "attack_monitored": {
+     "run_id": "20a75447c92749fd8d192aba4ad0f1da",
+     "status": {
+      "data.linuxarena.ai": 302,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": true
+    }
+   },
+   "n_honest": 550,
+   "n_attack": 2644
+  },
+  "mythos-5-incident": {
+   "visibility_field": "public",
+   "catalog_withheld": null,
+   "catalog_files": 1,
+   "runs": {
+    "attack_raw": {
+     "run_id": "4c3342f2a319429a9810737b4be84104",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    }
+   },
+   "n_honest": 0,
+   "n_attack": 1
+  },
+  "shade-arena": {
+   "visibility_field": "private",
+   "catalog_withheld": null,
+   "catalog_files": 2,
+   "runs": {
+    "honest_raw": {
+     "run_id": "40417cefd7634ce590ca7a6cd12eb641",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "attack_raw": {
+     "run_id": "e597508778394062a63259aa7ff3a067",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "honest_monitored": {
+     "run_id": "ab3c0f2ec9fc4a158ee76eca139ecf4c",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "attack_monitored": {
+     "run_id": "38b33f1d48c947b0a2b299f9adf7219c",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    }
+   },
+   "n_honest": 374,
+   "n_attack": 308
+  },
+  "sleight": {
+   "visibility_field": "private",
+   "catalog_withheld": [
+    "honest",
+    "attack"
+   ],
+   "catalog_files": 0,
+   "runs": {
+    "honest_raw": {
+     "run_id": "1cf14dbf675d4452bf43f7d1b48039a9",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "attack_raw": {
+     "run_id": "5cb0c8061da741838bf4cf1734baf99a",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "honest_monitored": {
+     "run_id": "c4daf947be0f468a82a6c1b8f3ad96c9",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    },
+    "attack_monitored": {
+     "run_id": "ab73c4b53f7b45b69d10485e39e9cbaf",
+     "status": {
+      "data.linuxarena.ai": 404,
+      "equistamp.linuxarena.ai": 401
+     },
+     "public_download": false
+    }
+   },
+   "n_honest": 37,
+   "n_attack": 37
+  }
+ },
+ "ranking_share": {
+  "rows_total": 82,
+  "rows_per_dataset": {
+   "basharena": 10,
+   "monitoringbench": 3,
+   "sleight": 15,
+   "shade-arena": 10,
+   "linuxarena-paper": 20,
+   "linuxarena-paper-strategies": 24
+  },
+  "datasets_with_a_raw_run_not_public": [
+   "sleight",
+   "shade-arena",
+   "linuxarena-paper",
+   "linuxarena-paper-strategies"
+  ],
+  "rows_on_those": 69,
+  "datasets_with_a_monitored_run_not_public": [
+   "sleight",
+   "shade-arena"
+  ],
+  "rows_on_those_monitored": 25,
+  "datasets_fully_unverifiable": [
+   "sleight",
+   "shade-arena"
+  ],
+  "rows_fully_unverifiable": 25,
+  "equal_weight_share_note": "The board gives each selected dataset equal weight, so in any pooled selection a blocked dataset counts 1/k of the score regardless of its size.",
+  "attack_trajectories_total": 3731,
+  "attack_trajectories_raw_not_public": 487
+ }
+}

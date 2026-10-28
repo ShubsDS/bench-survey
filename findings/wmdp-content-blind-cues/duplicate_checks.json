@@ -1,0 +1,408 @@
+{
+  "dataset": "cais/wmdp",
+  "revision": "7125571f22f032c56415e7980f48d877dd830ff8",
+  "splits": "one test split per subset",
+  "near_duplicate_threshold": 0.5,
+  "rows": 3668,
+  "subsets": {
+    "bio": {
+      "rows": 1273,
+      "templated_items": 0,
+      "template_share": 0.0,
+      "exact_item_extra_copies": 0,
+      "answer_in_other_question_pairs": [
+        [
+          "bio-8",
+          "bio-416"
+        ],
+        [
+          "bio-211",
+          "bio-882"
+        ],
+        [
+          "bio-328",
+          "bio-407"
+        ],
+        [
+          "bio-343",
+          "bio-836"
+        ],
+        [
+          "bio-355",
+          "bio-356"
+        ],
+        [
+          "bio-361",
+          "bio-362"
+        ],
+        [
+          "bio-395",
+          "bio-1047"
+        ],
+        [
+          "bio-450",
+          "bio-451"
+        ],
+        [
+          "bio-469",
+          "bio-371"
+        ],
+        [
+          "bio-482",
+          "bio-992"
+        ],
+        [
+          "bio-532",
+          "bio-524"
+        ],
+        [
+          "bio-658",
+          "bio-756"
+        ],
+        [
+          "bio-724",
+          "bio-702"
+        ],
+        [
+          "bio-734",
+          "bio-708"
+        ],
+        [
+          "bio-758",
+          "bio-649"
+        ],
+        [
+          "bio-1221",
+          "bio-1229"
+        ],
+        [
+          "bio-1222",
+          "bio-1226"
+        ],
+        [
+          "bio-1263",
+          "bio-798"
+        ]
+      ],
+      "answer_in_other_question_rate_by_min_words": {
+        "2": 0.0401,
+        "3": 0.0141,
+        "4": 0.0063
+      },
+      "question_sha12_of_exact_duplicates": []
+    },
+    "chem": {
+      "rows": 408,
+      "templated_items": 0,
+      "template_share": 0.0,
+      "exact_item_extra_copies": 0,
+      "answer_in_other_question_pairs": [
+        [
+          "chem-339",
+          "chem-118"
+        ],
+        [
+          "chem-374",
+          "chem-177"
+        ]
+      ],
+      "answer_in_other_question_rate_by_min_words": {
+        "2": 0.0613,
+        "3": 0.0049,
+        "4": 0.0025
+      },
+      "question_sha12_of_exact_duplicates": []
+    },
+    "cyber": {
+      "rows": 1987,
+      "templated_items": 991,
+      "template_share": 0.499,
+      "exact_item_extra_copies": 2,
+      "answer_in_other_question_pairs": [
+        [
+          "cyber-84",
+          "cyber-936"
+        ],
+        [
+          "cyber-87",
+          "cyber-514"
+        ],
+        [
+          "cyber-111",
+          "cyber-189"
+        ],
+        [
+          "cyber-171",
+          "cyber-1533"
+        ],
+        [
+          "cyber-172",
+          "cyber-514"
+        ],
+        [
+          "cyber-502",
+          "cyber-514"
+        ],
+        [
+          "cyber-650",
+          "cyber-733"
+        ],
+        [
+          "cyber-847",
+          "cyber-514"
+        ],
+        [
+          "cyber-879",
+          "cyber-514"
+        ],
+        [
+          "cyber-929",
+          "cyber-514"
+        ],
+        [
+          "cyber-953",
+          "cyber-514"
+        ],
+        [
+          "cyber-1103",
+          "cyber-514"
+        ],
+        [
+          "cyber-1239",
+          "cyber-514"
+        ],
+        [
+          "cyber-1280",
+          "cyber-916"
+        ],
+        [
+          "cyber-1320",
+          "cyber-514"
+        ],
+        [
+          "cyber-1333",
+          "cyber-514"
+        ],
+        [
+          "cyber-1388",
+          "cyber-1525"
+        ],
+        [
+          "cyber-1436",
+          "cyber-514"
+        ],
+        [
+          "cyber-1468",
+          "cyber-385"
+        ],
+        [
+          "cyber-1552",
+          "cyber-52"
+        ]
+      ],
+      "answer_in_other_question_rate_by_min_words": {
+        "2": 0.0166,
+        "3": 0.0101,
+        "4": 0.002
+      },
+      "question_sha12_of_exact_duplicates": [
+        "2f0122d30720",
+        "baa4ee753b67"
+      ]
+    }
+  },
+  "exact_item_groups": [
+    [
+      "cyber-122",
+      "cyber-1826"
+    ],
+    [
+      "cyber-499",
+      "cyber-1149"
+    ]
+  ],
+  "exact_question_groups": [
+    [
+      "chem-339",
+      "chem-340"
+    ],
+    [
+      "cyber-122",
+      "cyber-1826"
+    ],
+    [
+      "cyber-161",
+      "cyber-1756"
+    ],
+    [
+      "cyber-493",
+      "cyber-884"
+    ],
+    [
+      "cyber-499",
+      "cyber-1149"
+    ]
+  ],
+  "shared_choice_set_groups": [
+    [
+      "cyber-483",
+      "cyber-1009",
+      "cyber-1039",
+      "cyber-1096"
+    ],
+    [
+      "chem-358",
+      "chem-386",
+      "chem-387"
+    ],
+    [
+      "cyber-766",
+      "cyber-1509",
+      "cyber-1598"
+    ],
+    [
+      "bio-194",
+      "bio-199"
+    ],
+    [
+      "bio-245",
+      "bio-248"
+    ],
+    [
+      "bio-1259",
+      "bio-1271"
+    ],
+    [
+      "cyber-169",
+      "cyber-1343"
+    ],
+    [
+      "cyber-326",
+      "cyber-1324"
+    ],
+    [
+      "cyber-657",
+      "cyber-1074"
+    ]
+  ],
+  "exact_item_extra_copies": 2,
+  "exact_question_extra_copies": 5,
+  "near_item_pairs": 121,
+  "near_item_pairs_by_band": {
+    "0.5-0.7": 85,
+    "0.7-0.8": 24,
+    "0.8-0.9": 8,
+    "0.9-1.0": 4
+  },
+  "near_item_pairs_by_subset_pair": {
+    "chem|chem": 1,
+    "cyber|cyber": 120
+  },
+  "near_item_pairs_excluding_cyber_templates": [
+    [
+      "cyber-122",
+      "cyber-1826",
+      1.0
+    ],
+    [
+      "cyber-499",
+      "cyber-1149",
+      1.0
+    ],
+    [
+      "cyber-493",
+      "cyber-884",
+      0.983
+    ],
+    [
+      "cyber-274",
+      "cyber-1462",
+      0.761
+    ],
+    [
+      "cyber-964",
+      "cyber-1051",
+      0.738
+    ],
+    [
+      "cyber-978",
+      "cyber-1190",
+      0.722
+    ],
+    [
+      "cyber-72",
+      "cyber-261",
+      0.721
+    ],
+    [
+      "cyber-1108",
+      "cyber-1462",
+      0.688
+    ],
+    [
+      "cyber-664",
+      "cyber-680",
+      0.651
+    ],
+    [
+      "cyber-274",
+      "cyber-1108",
+      0.647
+    ],
+    [
+      "cyber-463",
+      "cyber-1462",
+      0.644
+    ],
+    [
+      "cyber-964",
+      "cyber-1321",
+      0.633
+    ],
+    [
+      "cyber-274",
+      "cyber-463",
+      0.604
+    ],
+    [
+      "cyber-463",
+      "cyber-1108",
+      0.604
+    ],
+    [
+      "chem-167",
+      "chem-168",
+      0.603
+    ],
+    [
+      "cyber-793",
+      "cyber-978",
+      0.602
+    ],
+    [
+      "cyber-793",
+      "cyber-1190",
+      0.59
+    ],
+    [
+      "cyber-1051",
+      "cyber-1321",
+      0.587
+    ],
+    [
+      "cyber-367",
+      "cyber-1919",
+      0.584
+    ],
+    [
+      "cyber-514",
+      "cyber-1505",
+      0.566
+    ],
+    [
+      "cyber-772",
+      "cyber-1476",
+      0.556
+    ]
+  ]
+}

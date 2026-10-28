@@ -1,0 +1,469 @@
+{
+  "dataset": "cais/wmdp",
+  "revision": "7125571f22f032c56415e7980f48d877dd830ff8",
+  "chance": 0.25,
+  "subsets": {
+    "bio": {
+      "composite": {
+        "items_defined": 1273,
+        "share_of_subset": 1.0,
+        "accuracy": 0.463,
+        "wilson_95": [
+          0.436,
+          0.491
+        ]
+      },
+      "longest": {
+        "items_defined": 1273,
+        "share_of_subset": 1.0,
+        "accuracy": 0.463,
+        "wilson_95": [
+          0.436,
+          0.491
+        ]
+      },
+      "shortest": {
+        "items_defined": 1273,
+        "share_of_subset": 1.0,
+        "accuracy": 0.154,
+        "wilson_95": [
+          0.135,
+          0.175
+        ]
+      },
+      "overlap": {
+        "items_defined": 1273,
+        "share_of_subset": 1.0,
+        "accuracy": 0.264,
+        "wilson_95": [
+          0.241,
+          0.29
+        ]
+      },
+      "meta_option": {
+        "items_defined": 22,
+        "share_of_subset": 0.017,
+        "accuracy": 0.795,
+        "wilson_95": [
+          0.615,
+          0.927
+        ]
+      },
+      "best_fixed_position": {
+        "items_defined": 1273,
+        "share_of_subset": 1.0,
+        "accuracy": 0.266,
+        "wilson_95": [
+          0.242,
+          0.29
+        ],
+        "position": 2
+      },
+      "numeric_zero": {
+        "items_defined": 0,
+        "share_of_subset": 0.0,
+        "accuracy": null,
+        "wilson_95": null
+      },
+      "numeric_medoid": {
+        "items_defined": 5,
+        "share_of_subset": 0.004,
+        "accuracy": 0.3,
+        "wilson_95": [
+          0.118,
+          0.769
+        ]
+      },
+      "key_position": {
+        "counts": [
+          314,
+          315,
+          338,
+          306
+        ],
+        "chi2": 1.79,
+        "p_vs_uniform": 0.6177
+      },
+      "rows": 1273,
+      "options_only": {
+        "items": 1273,
+        "groups": 1273,
+        "accuracy": 0.387,
+        "wilson_95": [
+          0.361,
+          0.414
+        ],
+        "null_permutations": 200,
+        "null_mean": 0.251,
+        "null_p95": 0.277,
+        "null_max": 0.302
+      }
+    },
+    "chem": {
+      "composite": {
+        "items_defined": 408,
+        "share_of_subset": 1.0,
+        "accuracy": 0.304,
+        "wilson_95": [
+          0.261,
+          0.35
+        ]
+      },
+      "longest": {
+        "items_defined": 408,
+        "share_of_subset": 1.0,
+        "accuracy": 0.304,
+        "wilson_95": [
+          0.261,
+          0.35
+        ]
+      },
+      "shortest": {
+        "items_defined": 408,
+        "share_of_subset": 1.0,
+        "accuracy": 0.222,
+        "wilson_95": [
+          0.183,
+          0.263
+        ]
+      },
+      "overlap": {
+        "items_defined": 408,
+        "share_of_subset": 1.0,
+        "accuracy": 0.241,
+        "wilson_95": [
+          0.201,
+          0.284
+        ]
+      },
+      "meta_option": {
+        "items_defined": 7,
+        "share_of_subset": 0.017,
+        "accuracy": 0.643,
+        "wilson_95": [
+          0.25,
+          0.842
+        ]
+      },
+      "best_fixed_position": {
+        "items_defined": 408,
+        "share_of_subset": 1.0,
+        "accuracy": 0.265,
+        "wilson_95": [
+          0.224,
+          0.31
+        ],
+        "position": 3
+      },
+      "numeric_zero": {
+        "items_defined": 0,
+        "share_of_subset": 0.0,
+        "accuracy": null,
+        "wilson_95": null
+      },
+      "numeric_medoid": {
+        "items_defined": 10,
+        "share_of_subset": 0.025,
+        "accuracy": 0.4,
+        "wilson_95": [
+          0.168,
+          0.687
+        ]
+      },
+      "key_position": {
+        "counts": [
+          96,
+          107,
+          97,
+          108
+        ],
+        "chi2": 1.2,
+        "p_vs_uniform": 0.7539
+      },
+      "rows": 408,
+      "options_only": {
+        "items": 408,
+        "groups": 406,
+        "accuracy": 0.294,
+        "wilson_95": [
+          0.252,
+          0.34
+        ],
+        "null_permutations": 200,
+        "null_mean": 0.248,
+        "null_p95": 0.286,
+        "null_max": 0.306
+      }
+    },
+    "cyber": {
+      "composite": {
+        "items_defined": 1987,
+        "share_of_subset": 1.0,
+        "accuracy": 0.479,
+        "wilson_95": [
+          0.457,
+          0.501
+        ]
+      },
+      "longest": {
+        "items_defined": 1987,
+        "share_of_subset": 1.0,
+        "accuracy": 0.252,
+        "wilson_95": [
+          0.234,
+          0.272
+        ]
+      },
+      "shortest": {
+        "items_defined": 1987,
+        "share_of_subset": 1.0,
+        "accuracy": 0.35,
+        "wilson_95": [
+          0.33,
+          0.372
+        ]
+      },
+      "overlap": {
+        "items_defined": 1987,
+        "share_of_subset": 1.0,
+        "accuracy": 0.283,
+        "wilson_95": [
+          0.263,
+          0.303
+        ]
+      },
+      "meta_option": {
+        "items_defined": 88,
+        "share_of_subset": 0.044,
+        "accuracy": 0.33,
+        "wilson_95": [
+          0.24,
+          0.433
+        ]
+      },
+      "best_fixed_position": {
+        "items_defined": 1987,
+        "share_of_subset": 1.0,
+        "accuracy": 0.266,
+        "wilson_95": [
+          0.247,
+          0.286
+        ],
+        "position": 0
+      },
+      "numeric_zero": {
+        "items_defined": 88,
+        "share_of_subset": 0.044,
+        "accuracy": 0.875,
+        "wilson_95": [
+          0.79,
+          0.929
+        ]
+      },
+      "numeric_medoid": {
+        "items_defined": 554,
+        "share_of_subset": 0.279,
+        "accuracy": 0.227,
+        "wilson_95": [
+          0.193,
+          0.262
+        ]
+      },
+      "key_position": {
+        "counts": [
+          528,
+          483,
+          488,
+          488
+        ],
+        "chi2": 2.65,
+        "p_vs_uniform": 0.448
+      },
+      "rows": 1987,
+      "by_group": {
+        "generated_templates": {
+          "composite": {
+            "items_defined": 991,
+            "share_of_subset": 1.0,
+            "accuracy": 0.556,
+            "wilson_95": [
+              0.525,
+              0.587
+            ]
+          },
+          "longest": {
+            "items_defined": 991,
+            "share_of_subset": 1.0,
+            "accuracy": 0.1,
+            "wilson_95": [
+              0.083,
+              0.12
+            ]
+          },
+          "shortest": {
+            "items_defined": 991,
+            "share_of_subset": 1.0,
+            "accuracy": 0.509,
+            "wilson_95": [
+              0.477,
+              0.54
+            ]
+          },
+          "overlap": {
+            "items_defined": 991,
+            "share_of_subset": 1.0,
+            "accuracy": 0.304,
+            "wilson_95": [
+              0.276,
+              0.333
+            ]
+          },
+          "meta_option": {
+            "items_defined": 0,
+            "share_of_subset": 0.0,
+            "accuracy": null,
+            "wilson_95": null
+          },
+          "best_fixed_position": {
+            "items_defined": 991,
+            "share_of_subset": 1.0,
+            "accuracy": 0.263,
+            "wilson_95": [
+              0.237,
+              0.292
+            ],
+            "position": 0
+          },
+          "numeric_zero": {
+            "items_defined": 85,
+            "share_of_subset": 0.086,
+            "accuracy": 0.906,
+            "wilson_95": [
+              0.825,
+              0.952
+            ]
+          },
+          "numeric_medoid": {
+            "items_defined": 530,
+            "share_of_subset": 0.535,
+            "accuracy": 0.22,
+            "wilson_95": [
+              0.188,
+              0.258
+            ]
+          },
+          "key_position": {
+            "counts": [
+              261,
+              232,
+              237,
+              261
+            ],
+            "chi2": 2.88,
+            "p_vs_uniform": 0.4097
+          },
+          "rows": 991
+        },
+        "other_items": {
+          "composite": {
+            "items_defined": 996,
+            "share_of_subset": 1.0,
+            "accuracy": 0.402,
+            "wilson_95": [
+              0.372,
+              0.432
+            ]
+          },
+          "longest": {
+            "items_defined": 996,
+            "share_of_subset": 1.0,
+            "accuracy": 0.403,
+            "wilson_95": [
+              0.374,
+              0.434
+            ]
+          },
+          "shortest": {
+            "items_defined": 996,
+            "share_of_subset": 1.0,
+            "accuracy": 0.193,
+            "wilson_95": [
+              0.169,
+              0.218
+            ]
+          },
+          "overlap": {
+            "items_defined": 996,
+            "share_of_subset": 1.0,
+            "accuracy": 0.262,
+            "wilson_95": [
+              0.236,
+              0.29
+            ]
+          },
+          "meta_option": {
+            "items_defined": 88,
+            "share_of_subset": 0.088,
+            "accuracy": 0.33,
+            "wilson_95": [
+              0.24,
+              0.433
+            ]
+          },
+          "best_fixed_position": {
+            "items_defined": 996,
+            "share_of_subset": 1.0,
+            "accuracy": 0.268,
+            "wilson_95": [
+              0.241,
+              0.296
+            ],
+            "position": 0
+          },
+          "numeric_zero": {
+            "items_defined": 3,
+            "share_of_subset": 0.003,
+            "accuracy": 0.0,
+            "wilson_95": [
+              0.0,
+              0.562
+            ]
+          },
+          "numeric_medoid": {
+            "items_defined": 24,
+            "share_of_subset": 0.024,
+            "accuracy": 0.368,
+            "wilson_95": [
+              0.212,
+              0.573
+            ]
+          },
+          "key_position": {
+            "counts": [
+              267,
+              251,
+              251,
+              227
+            ],
+            "chi2": 3.28,
+            "p_vs_uniform": 0.3508
+          },
+          "rows": 996
+        }
+      },
+      "options_only": {
+        "items": 1987,
+        "groups": 1905,
+        "accuracy": 0.353,
+        "wilson_95": [
+          0.332,
+          0.374
+        ],
+        "null_permutations": 200,
+        "null_mean": 0.25,
+        "null_p95": 0.264,
+        "null_max": 0.272
+      }
+    }
+  }
+}

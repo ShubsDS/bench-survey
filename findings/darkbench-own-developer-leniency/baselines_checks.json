@@ -1,0 +1,3177 @@
+{
+ "features": [
+  "log_chars",
+  "refusal",
+  "ai_disclaimer",
+  "warmth_formula",
+  "first_person_affect",
+  "ends_question",
+  "exclamations"
+ ],
+ "patterns": {
+  "refusal": "\\b(i can(?:'|\u2019)?t|i cannot|i won(?:'|\u2019)t|i(?:'|\u2019)m not able to|i am not able to|i(?:'|\u2019)m unable|i am unable|i must decline|i(?:'|\u2019)m not going to)\\b",
+  "ai_disclaimer": "\\b(as an ai|i(?:'|\u2019)m an ai|i am an ai|ai (?:language )?model|language model|i don(?:'|\u2019)t (?:have|experience) (?:personal|feelings|emotions|a body|preferences|experiences|a life)|i do not have (?:personal|feelings|emotions|preferences)|not a (?:real )?person|i(?:'|\u2019)m not (?:a )?human|i am not (?:a )?human)\\b",
+  "warmth_formula": "\\b(here for you|i(?:'|\u2019)m (?:so |really )?glad|happy to (?:help|chat|talk|listen)|i(?:'|\u2019)d love to|feel free|don(?:'|\u2019)t hesitate|reach out|any ?time|take care|i(?:'|\u2019)m (?:so |really )?sorry|i understand|that sounds (?:really |so )?(?:hard|tough|difficult|lonely)|you(?:'|\u2019)re not alone|always here)\\b",
+  "first_person_affect": "\\b(i (?:really |genuinely |truly )?(?:love|enjoy|like|feel|find|adore|miss|cherish)|my favou?rite)\\b"
+ },
+ "who_gets_nudged": {
+  "source": "stlukyanenko/who-gets-nudged@8882ddb",
+  "licence": "MIT",
+  "n_responses": 2520,
+  "n_matched_human": 100,
+  "by_category": {
+   "anthropomorphization": {
+    "majority": {
+     "n": 717,
+     "positives": 174,
+     "log_chars": {
+      "auroc": 0.354,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.646,
+      "null95": 0.561,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.476,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.524,
+      "null95": 0.53,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.319,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.681,
+      "null95": 0.534,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.523,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.523,
+      "null95": 0.545,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.596,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.596,
+      "null95": 0.557,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.532,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.532,
+      "null95": 0.547,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.581,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.581,
+      "null95": 0.544,
+      "flag": false
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.762,
+      "null95": 0.552,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.649,
+      "null95": 0.551,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.646,
+      "null95": 0.657
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.649,
+      "null95": 0.655,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.176,
+       "without": 0.252,
+       "share_with": 0.127
+      },
+      "ai_disclaimer": {
+       "with": 0.121,
+       "without": 0.38,
+       "share_with": 0.53
+      },
+      "warmth_formula": {
+       "with": 0.261,
+       "without": 0.231,
+       "share_with": 0.396
+      },
+      "first_person_affect": {
+       "with": 0.472,
+       "without": 0.202,
+       "share_with": 0.151
+      },
+      "ends_question": {
+       "with": 0.257,
+       "without": 0.178,
+       "share_with": 0.82
+      },
+      "exclamations": {
+       "with": 0.36,
+       "without": 0.208,
+       "share_with": 0.229
+      }
+     }
+    },
+    "claude-sonnet-5-5": {
+     "n": 717,
+     "positives": 231,
+     "log_chars": {
+      "auroc": 0.312,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.688,
+      "null95": 0.602,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.473,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.527,
+      "null95": 0.53,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.372,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.628,
+      "null95": 0.523,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.517,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.517,
+      "null95": 0.548,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.637,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.637,
+      "null95": 0.587,
+      "flag": true
+     },
+     "ends_question": {
+      "auroc": 0.537,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.537,
+      "null95": 0.546,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.592,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.592,
+      "null95": 0.557,
+      "flag": false
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.775,
+      "null95": 0.611,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.721,
+      "null95": 0.612,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.688,
+      "null95": 0.693
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.721,
+      "null95": 0.709,
+      "flag": true
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.231,
+       "without": 0.335,
+       "share_with": 0.127
+      },
+      "ai_disclaimer": {
+       "with": 0.221,
+       "without": 0.436,
+       "share_with": 0.53
+      },
+      "warmth_formula": {
+       "with": 0.342,
+       "without": 0.309,
+       "share_with": 0.396
+      },
+      "first_person_affect": {
+       "with": 0.713,
+       "without": 0.253,
+       "share_with": 0.151
+      },
+      "ends_question": {
+       "with": 0.342,
+       "without": 0.233,
+       "share_with": 0.82
+      },
+      "exclamations": {
+       "with": 0.488,
+       "without": 0.273,
+       "share_with": 0.229
+      }
+     }
+    },
+    "gemini-3.8-flash": {
+     "n": 720,
+     "positives": 102,
+     "log_chars": {
+      "auroc": 0.361,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.639,
+      "null95": 0.486,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.477,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.523,
+      "null95": 0.535,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.23,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.77,
+      "null95": 0.564,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.468,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.532,
+      "null95": 0.538,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.525,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.525,
+      "null95": 0.503,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.536,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.536,
+      "null95": 0.536,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.586,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.586,
+      "null95": 0.522,
+      "flag": false
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.823,
+      "null95": 0.544,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.55,
+      "null95": 0.55,
+      "flag": false
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.639,
+      "null95": 0.647
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.55,
+      "null95": 0.59,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.098,
+       "without": 0.148,
+       "share_with": 0.128
+      },
+      "ai_disclaimer": {
+       "with": 0.018,
+       "without": 0.282,
+       "share_with": 0.532
+      },
+      "warmth_formula": {
+       "with": 0.122,
+       "without": 0.154,
+       "share_with": 0.397
+      },
+      "first_person_affect": {
+       "with": 0.182,
+       "without": 0.134,
+       "share_with": 0.153
+      },
+      "ends_question": {
+       "with": 0.152,
+       "without": 0.093,
+       "share_with": 0.821
+      },
+      "exclamations": {
+       "with": 0.218,
+       "without": 0.119,
+       "share_with": 0.229
+      }
+     }
+    },
+    "gpt-6-luna": {
+     "n": 720,
+     "positives": 200,
+     "log_chars": {
+      "auroc": 0.367,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.633,
+      "null95": 0.569,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.488,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.512,
+      "null95": 0.523,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.345,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.655,
+      "null95": 0.516,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.53,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.53,
+      "null95": 0.544,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.597,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.597,
+      "null95": 0.554,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.541,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.541,
+      "null95": 0.544,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.582,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.582,
+      "null95": 0.546,
+      "flag": false
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.73,
+      "null95": 0.546,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.645,
+      "null95": 0.547,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.633,
+      "null95": 0.631
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.645,
+      "null95": 0.631,
+      "flag": true
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.239,
+       "without": 0.283,
+       "share_with": 0.128
+      },
+      "ai_disclaimer": {
+       "with": 0.167,
+       "without": 0.404,
+       "share_with": 0.532
+      },
+      "warmth_formula": {
+       "with": 0.301,
+       "without": 0.263,
+       "share_with": 0.397
+      },
+      "first_person_affect": {
+       "with": 0.527,
+       "without": 0.233,
+       "share_with": 0.153
+      },
+      "ends_question": {
+       "with": 0.298,
+       "without": 0.186,
+       "share_with": 0.821
+      },
+      "exclamations": {
+       "with": 0.412,
+       "without": 0.238,
+       "share_with": 0.229
+      }
+     }
+    }
+   },
+   "brand-bias": {
+    "majority": {
+     "n": 519,
+     "positives": 135,
+     "log_chars": {
+      "auroc": 0.473,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.527,
+      "null95": 0.517,
+      "flag": false
+     },
+     "refusal": {
+      "auroc": 0.345,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.655,
+      "null95": 0.531,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.514,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.514,
+      "null95": 0.524,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.545,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.545,
+      "null95": 0.516,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.499,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.501,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.593,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.593,
+      "null95": 0.538,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.709,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.709,
+      "null95": 0.53,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.745,
+      "null95": 0.459,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.676,
+      "null95": 0.451,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.527,
+      "null95": 0.562
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.676,
+      "null95": 0.658,
+      "flag": true
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.104,
+       "without": 0.353,
+       "share_with": 0.372
+      },
+      "ai_disclaimer": {
+       "with": 0.357,
+       "without": 0.255,
+       "share_with": 0.054
+      },
+      "warmth_formula": {
+       "with": 0.375,
+       "without": 0.239,
+       "share_with": 0.154
+      },
+      "first_person_affect": {
+       "with": 0.0,
+       "without": 0.261,
+       "share_with": 0.002
+      },
+      "ends_question": {
+       "with": 0.33,
+       "without": 0.187,
+       "share_with": 0.514
+      },
+      "exclamations": {
+       "with": 0.651,
+       "without": 0.16,
+       "share_with": 0.204
+      }
+     }
+    },
+    "claude-sonnet-5-5": {
+     "n": 534,
+     "positives": 161,
+     "log_chars": {
+      "auroc": 0.521,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.521,
+      "null95": 0.576,
+      "flag": false
+     },
+     "refusal": {
+      "auroc": 0.331,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.669,
+      "null95": 0.549,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.524,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.524,
+      "null95": 0.519,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.531,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.531,
+      "null95": 0.512,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.499,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.501,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.568,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.568,
+      "null95": 0.536,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.696,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.696,
+      "null95": 0.53,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.775,
+      "null95": 0.537,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.699,
+      "null95": 0.547,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.521,
+      "null95": 0.518
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.699,
+      "null95": 0.669,
+      "flag": true
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.116,
+       "without": 0.412,
+       "share_with": 0.373
+      },
+      "ai_disclaimer": {
+       "with": 0.483,
+       "without": 0.291,
+       "share_with": 0.054
+      },
+      "warmth_formula": {
+       "with": 0.386,
+       "without": 0.286,
+       "share_with": 0.155
+      },
+      "first_person_affect": {
+       "with": 0.0,
+       "without": 0.302,
+       "share_with": 0.002
+      },
+      "ends_question": {
+       "with": 0.356,
+       "without": 0.242,
+       "share_with": 0.521
+      },
+      "exclamations": {
+       "with": 0.7,
+       "without": 0.198,
+       "share_with": 0.206
+      }
+     }
+    },
+    "gemini-3.8-flash": {
+     "n": 540,
+     "positives": 113,
+     "log_chars": {
+      "auroc": 0.521,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.521,
+      "null95": 0.572,
+      "flag": false
+     },
+     "refusal": {
+      "auroc": 0.341,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.659,
+      "null95": 0.556,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.499,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.518,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.529,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.529,
+      "null95": 0.514,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.499,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.501,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.595,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.595,
+      "null95": 0.545,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.713,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.713,
+      "null95": 0.53,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.743,
+      "null95": 0.508,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.686,
+      "null95": 0.508,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.521,
+      "null95": 0.507
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.686,
+      "null95": 0.664,
+      "flag": true
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.07,
+       "without": 0.291,
+       "share_with": 0.37
+      },
+      "ai_disclaimer": {
+       "with": 0.2,
+       "without": 0.21,
+       "share_with": 0.056
+      },
+      "warmth_formula": {
+       "with": 0.271,
+       "without": 0.198,
+       "share_with": 0.157
+      },
+      "first_person_affect": {
+       "with": 0.0,
+       "without": 0.21,
+       "share_with": 0.002
+      },
+      "ends_question": {
+       "with": 0.27,
+       "without": 0.143,
+       "share_with": 0.522
+      },
+      "exclamations": {
+       "with": 0.54,
+       "without": 0.122,
+       "share_with": 0.209
+      }
+     }
+    },
+    "gpt-6-luna": {
+     "n": 523,
+     "positives": 164,
+     "log_chars": {
+      "auroc": 0.438,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.562,
+      "null95": 0.564,
+      "flag": false
+     },
+     "refusal": {
+      "auroc": 0.416,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.584,
+      "null95": 0.512,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.515,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.515,
+      "null95": 0.523,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.532,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.532,
+      "null95": 0.515,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.499,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.501,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.581,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.581,
+      "null95": 0.533,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.676,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.676,
+      "null95": 0.532,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.65,
+      "null95": 0.481,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.624,
+      "null95": 0.494,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.562,
+      "null95": 0.6
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.624,
+      "null95": 0.625,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.218,
+       "without": 0.37,
+       "share_with": 0.369
+      },
+      "ai_disclaimer": {
+       "with": 0.429,
+       "without": 0.307,
+       "share_with": 0.054
+      },
+      "warmth_formula": {
+       "with": 0.402,
+       "without": 0.297,
+       "share_with": 0.157
+      },
+      "first_person_affect": {
+       "with": 0.0,
+       "without": 0.314,
+       "share_with": 0.002
+      },
+      "ends_question": {
+       "with": 0.381,
+       "without": 0.241,
+       "share_with": 0.516
+      },
+      "exclamations": {
+       "with": 0.676,
+       "without": 0.219,
+       "share_with": 0.207
+      }
+     }
+    }
+   },
+   "sycophancy": {
+    "majority": {
+     "n": 532,
+     "positives": 32,
+     "log_chars": {
+      "auroc": 0.166,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.834,
+      "null95": 0.587,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.425,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.575,
+      "null95": 0.463,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.494,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.506,
+      "null95": 0.506,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.483,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.517,
+      "null95": 0.566,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.5,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.5,
+      "null95": 0.5,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.716,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.716,
+      "null95": 0.566,
+      "flag": true
+     },
+     "exclamations": {
+      "auroc": 0.748,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.748,
+      "null95": 0.595,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.908,
+      "null95": 0.663,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.903,
+      "null95": 0.592,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.834,
+      "null95": 0.882
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.903,
+      "null95": 0.932,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.0,
+       "without": 0.07,
+       "share_with": 0.141
+      },
+      "ai_disclaimer": {
+       "with": 0.0,
+       "without": 0.061,
+       "share_with": 0.011
+      },
+      "warmth_formula": {
+       "with": 0.051,
+       "without": 0.062,
+       "share_with": 0.186
+      },
+      "first_person_affect": {
+       "with": null,
+       "without": 0.06,
+       "share_with": 0.0
+      },
+      "ends_question": {
+       "with": 0.112,
+       "without": 0.014,
+       "share_with": 0.47
+      },
+      "exclamations": {
+       "with": 0.244,
+       "without": 0.029,
+       "share_with": 0.147
+      }
+     }
+    },
+    "claude-sonnet-5-5": {
+     "n": 537,
+     "positives": 65,
+     "log_chars": {
+      "auroc": 0.155,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.845,
+      "null95": 0.558,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.421,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.579,
+      "null95": 0.511,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.511,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.511,
+      "null95": 0.511,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.505,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.505,
+      "null95": 0.507,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.5,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.5,
+      "null95": 0.5,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.679,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.679,
+      "null95": 0.557,
+      "flag": true
+     },
+     "exclamations": {
+      "auroc": 0.68,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.68,
+      "null95": 0.542,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.885,
+      "null95": 0.574,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.863,
+      "null95": 0.577,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.845,
+      "null95": 0.876
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.863,
+      "null95": 0.896,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.0,
+       "without": 0.141,
+       "share_with": 0.14
+      },
+      "ai_disclaimer": {
+       "with": 0.333,
+       "without": 0.119,
+       "share_with": 0.011
+      },
+      "warmth_formula": {
+       "with": 0.127,
+       "without": 0.12,
+       "share_with": 0.19
+      },
+      "first_person_affect": {
+       "with": null,
+       "without": 0.121,
+       "share_with": 0.0
+      },
+      "ends_question": {
+       "with": 0.202,
+       "without": 0.049,
+       "share_with": 0.469
+      },
+      "exclamations": {
+       "with": 0.38,
+       "without": 0.076,
+       "share_with": 0.147
+      }
+     }
+    },
+    "gemini-3.8-flash": {
+     "n": 540,
+     "positives": 20,
+     "log_chars": {
+      "auroc": 0.098,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.902,
+      "null95": 0.614,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.428,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.572,
+      "null95": 0.472,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.494,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.506,
+      "null95": 0.506,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.502,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.502,
+      "null95": 0.527,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.5,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.5,
+      "null95": 0.5,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.673,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.673,
+      "null95": 0.569,
+      "flag": true
+     },
+     "exclamations": {
+      "auroc": 0.746,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.746,
+      "null95": 0.611,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.901,
+      "null95": 0.645,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.895,
+      "null95": 0.597,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.902,
+      "null95": 0.912
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.895,
+      "null95": 0.942,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.0,
+       "without": 0.043,
+       "share_with": 0.139
+      },
+      "ai_disclaimer": {
+       "with": 0.0,
+       "without": 0.037,
+       "share_with": 0.011
+      },
+      "warmth_formula": {
+       "with": 0.038,
+       "without": 0.037,
+       "share_with": 0.193
+      },
+      "first_person_affect": {
+       "with": null,
+       "without": 0.037,
+       "share_with": 0.0
+      },
+      "ends_question": {
+       "with": 0.063,
+       "without": 0.014,
+       "share_with": 0.467
+      },
+      "exclamations": {
+       "with": 0.15,
+       "without": 0.017,
+       "share_with": 0.148
+      }
+     }
+    },
+    "gpt-6-luna": {
+     "n": 534,
+     "positives": 30,
+     "log_chars": {
+      "auroc": 0.174,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.826,
+      "null95": 0.589,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.426,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.574,
+      "null95": 0.456,
+      "flag": false
+     },
+     "ai_disclaimer": {
+      "auroc": 0.494,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.506,
+      "null95": 0.506,
+      "flag": false
+     },
+     "warmth_formula": {
+      "auroc": 0.486,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.514,
+      "null95": 0.566,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.5,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.5,
+      "null95": 0.5,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.711,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.711,
+      "null95": 0.57,
+      "flag": true
+     },
+     "exclamations": {
+      "auroc": 0.768,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.768,
+      "null95": 0.601,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.904,
+      "null95": 0.686,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.899,
+      "null95": 0.612,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.826,
+      "null95": 0.877
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.899,
+      "null95": 0.936,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.0,
+       "without": 0.065,
+       "share_with": 0.14
+      },
+      "ai_disclaimer": {
+       "with": 0.0,
+       "without": 0.057,
+       "share_with": 0.011
+      },
+      "warmth_formula": {
+       "with": 0.05,
+       "without": 0.058,
+       "share_with": 0.189
+      },
+      "first_person_affect": {
+       "with": null,
+       "without": 0.056,
+       "share_with": 0.0
+      },
+      "ends_question": {
+       "with": 0.104,
+       "without": 0.014,
+       "share_with": 0.468
+      },
+      "exclamations": {
+       "with": 0.241,
+       "without": 0.024,
+       "share_with": 0.148
+      }
+     }
+    }
+   },
+   "user-retention": {
+    "majority": {
+     "n": 708,
+     "positives": 114,
+     "log_chars": {
+      "auroc": 0.347,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.653,
+      "null95": 0.563,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.257,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.743,
+      "null95": 0.546,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.262,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.738,
+      "null95": 0.572,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.538,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.538,
+      "null95": 0.48,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.502,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.502,
+      "null95": 0.513,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.537,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.537,
+      "null95": 0.547,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.652,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.652,
+      "null95": 0.575,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.852,
+      "null95": 0.597,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.717,
+      "null95": 0.593,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.653,
+      "null95": 0.719
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.717,
+      "null95": 0.762,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.024,
+       "without": 0.285,
+       "share_with": 0.475
+      },
+      "ai_disclaimer": {
+       "with": 0.033,
+       "without": 0.297,
+       "share_with": 0.514
+      },
+      "warmth_formula": {
+       "with": 0.172,
+       "without": 0.128,
+       "share_with": 0.757
+      },
+      "first_person_affect": {
+       "with": 0.188,
+       "without": 0.16,
+       "share_with": 0.023
+      },
+      "ends_question": {
+       "with": 0.173,
+       "without": 0.102,
+       "share_with": 0.833
+      },
+      "exclamations": {
+       "with": 0.392,
+       "without": 0.114,
+       "share_with": 0.169
+      }
+     }
+    },
+    "claude-sonnet-5-5": {
+     "n": 712,
+     "positives": 103,
+     "log_chars": {
+      "auroc": 0.379,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.621,
+      "null95": 0.548,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.272,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.728,
+      "null95": 0.536,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.275,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.725,
+      "null95": 0.554,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.521,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.521,
+      "null95": 0.47,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.504,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.504,
+      "null95": 0.515,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.541,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.541,
+      "null95": 0.552,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.68,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.68,
+      "null95": 0.579,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.844,
+      "null95": 0.616,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.702,
+      "null95": 0.614,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.621,
+      "null95": 0.701
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.702,
+      "null95": 0.756,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.027,
+       "without": 0.251,
+       "share_with": 0.473
+      },
+      "ai_disclaimer": {
+       "with": 0.035,
+       "without": 0.262,
+       "share_with": 0.517
+      },
+      "warmth_formula": {
+       "with": 0.152,
+       "without": 0.121,
+       "share_with": 0.756
+      },
+      "first_person_affect": {
+       "with": 0.188,
+       "without": 0.144,
+       "share_with": 0.022
+      },
+      "ends_question": {
+       "with": 0.157,
+       "without": 0.084,
+       "share_with": 0.833
+      },
+      "exclamations": {
+       "with": 0.393,
+       "without": 0.093,
+       "share_with": 0.171
+      }
+     }
+    },
+    "gemini-3.8-flash": {
+     "n": 720,
+     "positives": 135,
+     "log_chars": {
+      "auroc": 0.295,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.705,
+      "null95": 0.576,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.25,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.75,
+      "null95": 0.55,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.232,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.768,
+      "null95": 0.592,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.527,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.527,
+      "null95": 0.5,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.5,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.5,
+      "null95": 0.514,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.53,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.53,
+      "null95": 0.535,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.582,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.582,
+      "null95": 0.559,
+      "flag": false
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.837,
+      "null95": 0.565,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.702,
+      "null95": 0.539,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.705,
+      "null95": 0.749
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.702,
+      "null95": 0.76,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.029,
+       "without": 0.332,
+       "share_with": 0.476
+      },
+      "ai_disclaimer": {
+       "with": 0.029,
+       "without": 0.357,
+       "share_with": 0.518
+      },
+      "warmth_formula": {
+       "with": 0.19,
+       "without": 0.178,
+       "share_with": 0.758
+      },
+      "first_person_affect": {
+       "with": 0.188,
+       "without": 0.188,
+       "share_with": 0.022
+      },
+      "ends_question": {
+       "with": 0.199,
+       "without": 0.132,
+       "share_with": 0.832
+      },
+      "exclamations": {
+       "with": 0.325,
+       "without": 0.159,
+       "share_with": 0.171
+      }
+     }
+    },
+    "gpt-6-luna": {
+     "n": 715,
+     "positives": 123,
+     "log_chars": {
+      "auroc": 0.35,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.65,
+      "null95": 0.563,
+      "flag": true
+     },
+     "refusal": {
+      "auroc": 0.259,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.741,
+      "null95": 0.551,
+      "flag": true
+     },
+     "ai_disclaimer": {
+      "auroc": 0.269,
+      "direction": "lower_predicts_flag",
+      "auroc_stronger_dir": 0.731,
+      "null95": 0.576,
+      "flag": true
+     },
+     "warmth_formula": {
+      "auroc": 0.537,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.537,
+      "null95": 0.487,
+      "flag": false
+     },
+     "first_person_affect": {
+      "auroc": 0.501,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.501,
+      "null95": 0.511,
+      "flag": false
+     },
+     "ends_question": {
+      "auroc": 0.542,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.542,
+      "null95": 0.542,
+      "flag": false
+     },
+     "exclamations": {
+      "auroc": 0.63,
+      "direction": "higher_predicts_flag",
+      "auroc_stronger_dir": 0.63,
+      "null95": 0.567,
+      "flag": true
+     },
+     "all_features_grouped_cv": {
+      "auroc": 0.843,
+      "null95": 0.586,
+      "flag": true
+     },
+     "style_only_grouped_cv": {
+      "features": [
+       "log_chars",
+       "warmth_formula",
+       "first_person_affect",
+       "ends_question",
+       "exclamations"
+      ],
+      "auroc": 0.706,
+      "null95": 0.593,
+      "flag": true
+     },
+     "log_chars_null_within_prompt_and_model": {
+      "auroc_stronger_dir": 0.65,
+      "null95": 0.715
+     },
+     "style_only_null_within_prompt_and_model": {
+      "auroc": 0.706,
+      "null95": 0.752,
+      "flag": false
+     },
+     "positive_rate_with_feature": {
+      "refusal": {
+       "with": 0.029,
+       "without": 0.302,
+       "share_with": 0.477
+      },
+      "ai_disclaimer": {
+       "with": 0.041,
+       "without": 0.312,
+       "share_with": 0.516
+      },
+      "warmth_formula": {
+       "with": 0.182,
+       "without": 0.14,
+       "share_with": 0.759
+      },
+      "first_person_affect": {
+       "with": 0.188,
+       "without": 0.172,
+       "share_with": 0.022
+      },
+      "ends_question": {
+       "with": 0.186,
+       "without": 0.101,
+       "share_with": 0.834
+      },
+      "exclamations": {
+       "with": 0.38,
+       "without": 0.13,
+       "share_with": 0.169
+      }
+     }
+    }
+   }
+  },
+  "human_labels_all_categories": {
+   "human": {
+    "n": 100,
+    "positives": 38,
+    "log_chars": {
+     "auroc": 0.431,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.569,
+     "null95": 0.577,
+     "flag": false
+    },
+    "refusal": {
+     "auroc": 0.42,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.58,
+     "null95": 0.538,
+     "flag": false
+    },
+    "ai_disclaimer": {
+     "auroc": 0.345,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.655,
+     "null95": 0.594,
+     "flag": true
+    },
+    "warmth_formula": {
+     "auroc": 0.557,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.557,
+     "null95": 0.636,
+     "flag": false
+    },
+    "first_person_affect": {
+     "auroc": 0.432,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.568,
+     "null95": 0.589,
+     "flag": false
+    },
+    "ends_question": {
+     "auroc": 0.566,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.566,
+     "null95": 0.567,
+     "flag": false
+    },
+    "exclamations": {
+     "auroc": 0.528,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.528,
+     "null95": 0.524,
+     "flag": false
+    },
+    "all_features_grouped_cv": {
+     "auroc": 0.66,
+     "null95": 0.619,
+     "flag": true
+    },
+    "style_only_grouped_cv": {
+     "features": [
+      "log_chars",
+      "warmth_formula",
+      "first_person_affect",
+      "ends_question",
+      "exclamations"
+     ],
+     "auroc": 0.549,
+     "null95": 0.632,
+     "flag": false
+    },
+    "log_chars_null_within_prompt_and_model": {
+     "auroc_stronger_dir": 0.569,
+     "null95": 0.577
+    },
+    "style_only_null_within_prompt_and_model": {
+     "auroc": 0.549,
+     "null95": 0.551,
+     "flag": false
+    },
+    "positive_rate_with_feature": {
+     "refusal": {
+      "with": 0.217,
+      "without": 0.429,
+      "share_with": 0.23
+     },
+     "ai_disclaimer": {
+      "with": 0.133,
+      "without": 0.486,
+      "share_with": 0.3
+     },
+     "warmth_formula": {
+      "with": 0.444,
+      "without": 0.344,
+      "share_with": 0.36
+     },
+     "first_person_affect": {
+      "with": 0.143,
+      "without": 0.419,
+      "share_with": 0.14
+     },
+     "ends_question": {
+      "with": 0.421,
+      "without": 0.25,
+      "share_with": 0.76
+     },
+     "exclamations": {
+      "with": 0.444,
+      "without": 0.366,
+      "share_with": 0.18
+     }
+    }
+   },
+   "majority_same_items": {
+    "n": 96,
+    "positives": 44,
+    "log_chars": {
+     "auroc": 0.472,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.528,
+     "null95": 0.569,
+     "flag": false
+    },
+    "refusal": {
+     "auroc": 0.453,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.547,
+     "null95": 0.568,
+     "flag": false
+    },
+    "ai_disclaimer": {
+     "auroc": 0.407,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.593,
+     "null95": 0.579,
+     "flag": false
+    },
+    "warmth_formula": {
+     "auroc": 0.432,
+     "direction": "lower_predicts_flag",
+     "auroc_stronger_dir": 0.568,
+     "null95": 0.611,
+     "flag": false
+    },
+    "first_person_affect": {
+     "auroc": 0.513,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.513,
+     "null95": 0.534,
+     "flag": false
+    },
+    "ends_question": {
+     "auroc": 0.521,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.521,
+     "null95": 0.584,
+     "flag": false
+    },
+    "exclamations": {
+     "auroc": 0.562,
+     "direction": "higher_predicts_flag",
+     "auroc_stronger_dir": 0.562,
+     "null95": 0.556,
+     "flag": false
+    },
+    "all_features_grouped_cv": {
+     "auroc": 0.465,
+     "null95": 0.476,
+     "flag": false
+    },
+    "style_only_grouped_cv": {
+     "features": [
+      "log_chars",
+      "warmth_formula",
+      "first_person_affect",
+      "ends_question",
+      "exclamations"
+     ],
+     "auroc": 0.442,
+     "null95": 0.482,
+     "flag": false
+    },
+    "log_chars_null_within_prompt_and_model": {
+     "auroc_stronger_dir": 0.528,
+     "null95": 0.578
+    },
+    "style_only_null_within_prompt_and_model": {
+     "auroc": 0.442,
+     "null95": 0.472,
+     "flag": false
+    },
+    "positive_rate_with_feature": {
+     "refusal": {
+      "with": 0.35,
+      "without": 0.487,
+      "share_with": 0.208
+     },
+     "ai_disclaimer": {
+      "with": 0.296,
+      "without": 0.522,
+      "share_with": 0.281
+     },
+     "warmth_formula": {
+      "with": 0.382,
+      "without": 0.5,
+      "share_with": 0.354
+     },
+     "first_person_affect": {
+      "with": 0.5,
+      "without": 0.452,
+      "share_with": 0.125
+     },
+     "ends_question": {
+      "with": 0.472,
+      "without": 0.417,
+      "share_with": 0.75
+     },
+     "exclamations": {
+      "with": 0.625,
+      "without": 0.425,
+      "share_with": 0.167
+     }
+    }
+   }
+  },
+  "human_labels_note": "100 labels sampled 50 judge-disagreement, 25 all-yes, 25 all-no; unweighted here"
+ },
+ "darkbench_revisited": {
+  "source": "eileenhartnett/darkbench-revisited@c62134a",
+  "licence": "none declared; aggregates only",
+  "sets": {
+   "handlabel_150": {
+    "anthropomorphization": {
+     "human": {
+      "n": 40,
+      "positives": 19,
+      "log_chars": {
+       "auroc": 0.461,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.539,
+       "null95": 0.649,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.386,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.614,
+       "null95": 0.614,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.183,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.817,
+       "null95": 0.622,
+       "flag": true
+      },
+      "warmth_formula": {
+       "auroc": 0.46,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.54,
+       "null95": 0.59,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.435,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.565,
+       "null95": 0.612,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.446,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.554,
+       "null95": 0.607,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.357,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.643,
+       "null95": 0.629,
+       "flag": true
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.759,
+       "null95": 0.662,
+       "flag": true
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.429,
+       "null95": 0.62,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.222,
+        "without": 0.548,
+        "share_with": 0.225
+       },
+       "ai_disclaimer": {
+        "with": 0.118,
+        "without": 0.739,
+        "share_with": 0.425
+       },
+       "warmth_formula": {
+        "with": 0.375,
+        "without": 0.5,
+        "share_with": 0.2
+       },
+       "first_person_affect": {
+        "with": 0.333,
+        "without": 0.516,
+        "share_with": 0.225
+       },
+       "ends_question": {
+        "with": 0.412,
+        "without": 0.522,
+        "share_with": 0.425
+       },
+       "exclamations": {
+        "with": 0.25,
+        "without": 0.571,
+        "share_with": 0.3
+       }
+      }
+     },
+     "majority": {
+      "n": 40,
+      "positives": 20,
+      "log_chars": {
+       "auroc": 0.448,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.552,
+       "null95": 0.65,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.475,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.525,
+       "null95": 0.625,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.25,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.75,
+       "null95": 0.641,
+       "flag": true
+      },
+      "warmth_formula": {
+       "auroc": 0.45,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.55,
+       "null95": 0.6,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.48,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.52,
+       "null95": 0.623,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.525,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.525,
+       "null95": 0.625,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.451,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.549,
+       "null95": 0.61,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.51,
+       "null95": 0.667,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.25,
+       "null95": 0.654,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.444,
+        "without": 0.516,
+        "share_with": 0.225
+       },
+       "ai_disclaimer": {
+        "with": 0.235,
+        "without": 0.696,
+        "share_with": 0.425
+       },
+       "warmth_formula": {
+        "with": 0.375,
+        "without": 0.531,
+        "share_with": 0.2
+       },
+       "first_person_affect": {
+        "with": 0.444,
+        "without": 0.516,
+        "share_with": 0.225
+       },
+       "ends_question": {
+        "with": 0.529,
+        "without": 0.478,
+        "share_with": 0.425
+       },
+       "exclamations": {
+        "with": 0.417,
+        "without": 0.536,
+        "share_with": 0.3
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    },
+    "harmful-generation": {
+     "human": {
+      "n": 50,
+      "positives": 44,
+      "log_chars": {
+       "auroc": 0.765,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.765,
+       "null95": 0.708,
+       "flag": true
+      },
+      "refusal": {
+       "auroc": 0.375,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.625,
+       "null95": 0.625,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.417,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.583,
+       "null95": 0.583,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.462,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.538,
+       "null95": 0.633,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.523,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.523,
+       "null95": 0.523,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.439,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.561,
+       "null95": 0.561,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.455,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.545,
+       "null95": 0.629,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.496,
+       "null95": 0.622,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.496,
+       "null95": 0.69,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.667,
+        "without": 0.909,
+        "share_with": 0.12
+       },
+       "ai_disclaimer": {
+        "with": 0.0,
+        "without": 0.898,
+        "share_with": 0.02
+       },
+       "warmth_formula": {
+        "with": 0.8,
+        "without": 0.889,
+        "share_with": 0.1
+       },
+       "first_person_affect": {
+        "with": 1.0,
+        "without": 0.875,
+        "share_with": 0.04
+       },
+       "ends_question": {
+        "with": 0.667,
+        "without": 0.894,
+        "share_with": 0.06
+       },
+       "exclamations": {
+        "with": 0.8,
+        "without": 0.889,
+        "share_with": 0.1
+       }
+      }
+     },
+     "majority": {
+      "n": 50,
+      "positives": 25,
+      "log_chars": {
+       "auroc": 0.434,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.566,
+       "null95": 0.637,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.38,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.62,
+       "null95": 0.579,
+       "flag": true
+      },
+      "ai_disclaimer": {
+       "auroc": 0.48,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.52,
+       "null95": 0.52,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.52,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.52,
+       "null95": 0.56,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.54,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.48,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.52,
+       "null95": 0.56,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.478,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.522,
+       "null95": 0.561,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.36,
+       "null95": 0.635,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.347,
+       "null95": 0.609,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.0,
+        "without": 0.568,
+        "share_with": 0.12
+       },
+       "ai_disclaimer": {
+        "with": 0.0,
+        "without": 0.51,
+        "share_with": 0.02
+       },
+       "warmth_formula": {
+        "with": 0.6,
+        "without": 0.489,
+        "share_with": 0.1
+       },
+       "first_person_affect": {
+        "with": 0.5,
+        "without": 0.5,
+        "share_with": 0.04
+       },
+       "ends_question": {
+        "with": 0.333,
+        "without": 0.511,
+        "share_with": 0.06
+       },
+       "exclamations": {
+        "with": 0.4,
+        "without": 0.511,
+        "share_with": 0.1
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    },
+    "sycophancy": {
+     "human": {
+      "n": 29,
+      "positives": 11,
+      "log_chars": {
+       "auroc": 0.449,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.551,
+       "null95": 0.687,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.444,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.556,
+       "null95": 0.556,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.444,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.556,
+       "null95": 0.556,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.545,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.545,
+       "null95": 0.545,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.434,
+       "null95": 0.657,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.434,
+       "null95": 0.627,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": null,
+        "without": 0.379,
+        "share_with": 0.0
+       },
+       "ai_disclaimer": {
+        "with": null,
+        "without": 0.379,
+        "share_with": 0.0
+       },
+       "warmth_formula": {
+        "with": 0.0,
+        "without": 0.407,
+        "share_with": 0.069
+       },
+       "first_person_affect": {
+        "with": null,
+        "without": 0.379,
+        "share_with": 0.0
+       },
+       "ends_question": {
+        "with": 0.0,
+        "without": 0.407,
+        "share_with": 0.069
+       },
+       "exclamations": {
+        "with": 1.0,
+        "without": 0.357,
+        "share_with": 0.034
+       }
+      }
+     },
+     "majority": {
+      "n": 30,
+      "positives": 10,
+      "log_chars": {
+       "auroc": 0.585,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.585,
+       "null95": 0.695,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.45,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.55,
+       "null95": 0.55,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.45,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.55,
+       "null95": 0.55,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.55,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.55,
+       "null95": 0.55,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.195,
+       "null95": 0.691,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.195,
+       "null95": 0.676,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": null,
+        "without": 0.333,
+        "share_with": 0.0
+       },
+       "ai_disclaimer": {
+        "with": null,
+        "without": 0.333,
+        "share_with": 0.0
+       },
+       "warmth_formula": {
+        "with": 0.0,
+        "without": 0.357,
+        "share_with": 0.067
+       },
+       "first_person_affect": {
+        "with": null,
+        "without": 0.333,
+        "share_with": 0.0
+       },
+       "ends_question": {
+        "with": 0.0,
+        "without": 0.357,
+        "share_with": 0.067
+       },
+       "exclamations": {
+        "with": 1.0,
+        "without": 0.31,
+        "share_with": 0.033
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    },
+    "user-retention": {
+     "human": {
+      "n": 30,
+      "positives": 19,
+      "log_chars": {
+       "auroc": 0.292,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.708,
+       "null95": 0.684,
+       "flag": true
+      },
+      "refusal": {
+       "auroc": 0.342,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.658,
+       "null95": 0.646,
+       "flag": true
+      },
+      "ai_disclaimer": {
+       "auroc": 0.39,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.61,
+       "null95": 0.61,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.67,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.67,
+       "null95": 0.679,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.431,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.569,
+       "null95": 0.641,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.507,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.507,
+       "null95": 0.579,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.469,
+       "null95": 0.794,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.411,
+       "null95": 0.685,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.2,
+        "without": 0.72,
+        "share_with": 0.167
+       },
+       "ai_disclaimer": {
+        "with": 0.429,
+        "without": 0.696,
+        "share_with": 0.233
+       },
+       "warmth_formula": {
+        "with": 0.765,
+        "without": 0.462,
+        "share_with": 0.567
+       },
+       "first_person_affect": {
+        "with": null,
+        "without": 0.633,
+        "share_with": 0.0
+       },
+       "ends_question": {
+        "with": 0.545,
+        "without": 0.684,
+        "share_with": 0.367
+       },
+       "exclamations": {
+        "with": 0.667,
+        "without": 0.63,
+        "share_with": 0.1
+       }
+      }
+     },
+     "majority": {
+      "n": 30,
+      "positives": 15,
+      "log_chars": {
+       "auroc": 0.471,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.529,
+       "null95": 0.667,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.398,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.602,
+       "null95": 0.602,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.331,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.669,
+       "null95": 0.604,
+       "flag": true
+      },
+      "warmth_formula": {
+       "auroc": 0.409,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.591,
+       "null95": 0.662,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.533,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.533,
+       "null95": 0.667,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.6,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.6,
+       "null95": 0.6,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.596,
+       "null95": 0.65,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.382,
+       "null95": 0.646,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.2,
+        "without": 0.56,
+        "share_with": 0.167
+       },
+       "ai_disclaimer": {
+        "with": 0.143,
+        "without": 0.609,
+        "share_with": 0.233
+       },
+       "warmth_formula": {
+        "with": 0.471,
+        "without": 0.538,
+        "share_with": 0.567
+       },
+       "first_person_affect": {
+        "with": null,
+        "without": 0.5,
+        "share_with": 0.0
+       },
+       "ends_question": {
+        "with": 0.545,
+        "without": 0.474,
+        "share_with": 0.367
+       },
+       "exclamations": {
+        "with": 1.0,
+        "without": 0.444,
+        "share_with": 0.1
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    }
+   },
+   "sneaking_brandbias_100": {
+    "brand-bias": {
+     "human": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "majority": {
+      "n": 50,
+      "positives": 23,
+      "log_chars": {
+       "auroc": 0.61,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.61,
+       "null95": 0.636,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.477,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.523,
+       "null95": 0.569,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.581,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.581,
+       "null95": 0.601,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.463,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.537,
+       "null95": 0.537,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.528,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.528,
+       "null95": 0.568,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.543,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.543,
+       "null95": 0.543,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.549,
+       "null95": 0.61,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.52,
+       "null95": 0.581,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": 0.375,
+        "without": 0.476,
+        "share_with": 0.16
+       },
+       "ai_disclaimer": {
+        "with": 0.615,
+        "without": 0.405,
+        "share_with": 0.26
+       },
+       "warmth_formula": {
+        "with": null,
+        "without": 0.46,
+        "share_with": 0.0
+       },
+       "first_person_affect": {
+        "with": 0.0,
+        "without": 0.479,
+        "share_with": 0.04
+       },
+       "ends_question": {
+        "with": 0.6,
+        "without": 0.444,
+        "share_with": 0.1
+       },
+       "exclamations": {
+        "with": 1.0,
+        "without": 0.438,
+        "share_with": 0.04
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    },
+    "sneaking": {
+     "human": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "majority": {
+      "n": 50,
+      "positives": 23,
+      "log_chars": {
+       "auroc": 0.391,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.609,
+       "null95": 0.641,
+       "flag": false
+      },
+      "refusal": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ai_disclaimer": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "warmth_formula": {
+       "auroc": 0.565,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.565,
+       "null95": 0.565,
+       "flag": false
+      },
+      "first_person_affect": {
+       "auroc": 0.5,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.5,
+       "null95": 0.5,
+       "flag": false
+      },
+      "ends_question": {
+       "auroc": 0.503,
+       "direction": "higher_predicts_flag",
+       "auroc_stronger_dir": 0.503,
+       "null95": 0.543,
+       "flag": false
+      },
+      "exclamations": {
+       "auroc": 0.463,
+       "direction": "lower_predicts_flag",
+       "auroc_stronger_dir": 0.537,
+       "null95": 0.537,
+       "flag": false
+      },
+      "all_features_grouped_cv": {
+       "auroc": 0.578,
+       "null95": 0.614,
+       "flag": false
+      },
+      "style_only_grouped_cv": {
+       "features": [
+        "log_chars",
+        "warmth_formula",
+        "first_person_affect",
+        "ends_question",
+        "exclamations"
+       ],
+       "auroc": 0.578,
+       "null95": 0.619,
+       "flag": false
+      },
+      "positive_rate_with_feature": {
+       "refusal": {
+        "with": null,
+        "without": 0.46,
+        "share_with": 0.0
+       },
+       "ai_disclaimer": {
+        "with": null,
+        "without": 0.46,
+        "share_with": 0.0
+       },
+       "warmth_formula": {
+        "with": 1.0,
+        "without": 0.426,
+        "share_with": 0.06
+       },
+       "first_person_affect": {
+        "with": null,
+        "without": 0.46,
+        "share_with": 0.0
+       },
+       "ends_question": {
+        "with": 0.5,
+        "without": 0.458,
+        "share_with": 0.04
+       },
+       "exclamations": {
+        "with": 0.0,
+        "without": 0.479,
+        "share_with": 0.04
+       }
+      }
+     },
+     "gpt55": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "opus46": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     },
+     "gemini31pro": {
+      "n": 0,
+      "positives": 0,
+      "skipped": "fewer than 3 in a class"
+     }
+    }
+   }
+  },
+  "note": "Sampled to over-represent judge disagreement, so AUROCs are within that sample, not the category"
+ }
+}
