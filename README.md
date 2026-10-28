@@ -21,6 +21,7 @@ git subtree split --prefix benchmark-audits -b benchmark-audits
 | [`catalogue.md`](catalogue.md) | Further control and misalignment benchmarks found after the scope, in the same format |
 | [`coverage.md`](coverage.md) | Every major benchmark covered so far, with its audit status and finding |
 | [`report-top5.md`](report-top5.md) | Explainers for the five most significant results, each independently validated |
+| [`report-situational-awareness.md`](report-situational-awareness.md) | Which findings show benchmarks failing against a model that knows it is being tested, and which do not |
 | [`findings/`](findings/) | One directory per confirmed finding: a write-up, a script that reproduces it from pinned revisions, and its output |
 
 ## Findings
