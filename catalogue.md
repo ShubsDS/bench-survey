@@ -333,9 +333,8 @@ How much each lead has been checked:
 ## Next audits
 
 The fan-out recorded in [`coverage.md`](coverage.md) checked every benchmark ranked here and in
-[`scope.md`](scope.md), plus major safety evaluations used in system cards. For the four gated
-datasets (MALT transcripts, eval-awareness, Liars' Bench, TRACE), only the public side (cards,
-papers, code, Hub metadata) was checked, and row-level tests need the user to accept the gates.
-Benchmarks without released outputs (Async Control, CoT Red-Handed, the OpenAI monitorability
-evaluations) were checked in code. Most findings mark their effect on published numbers untested;
-settling those needs model runs, listed in each finding's README.
+[`scope.md`](scope.md), plus major safety evaluations used in system cards. The four gated datasets
+(MALT, evaluation awareness, Liars' Bench, TRACE) were checked at row level after the user accepted
+their gates. Benchmarks without released outputs (Async Control, CoT Red-Handed, the OpenAI
+monitorability evaluations) were checked in code. Most findings mark their effect on published
+numbers untested; settling those needs model runs, listed in each finding's README.

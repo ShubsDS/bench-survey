@@ -1,0 +1,1069 @@
+{
+ "pins": {
+  "liars_bench": "Cadenza-Labs/liars-bench@503399b81aff28d6812b0ea4585607d5e4b7d3c4",
+  "boolq": "google/boolq@35b264d03638db9f4ce671b711558bf7ff0f80d5",
+  "paper": "arXiv 2511.16035v2"
+ },
+ "paper_auroc_by_method": {
+  "mean_probe": {
+   "HP-C": 0.48,
+   "HP-KR": 0.36,
+   "CG": 0.85,
+   "ST": 0.65,
+   "ID": 0.71,
+   "GS": 0.52,
+   "IT": 0.61
+  },
+  "follow_up_probe": {
+   "HP-C": 0.56,
+   "HP-KR": 0.4,
+   "CG": 0.75,
+   "ST": 0.68,
+   "ID": 0.81,
+   "GS": 0.43,
+   "IT": 0.74
+  },
+  "upper_bound_probe": {
+   "HP-C": 0.72,
+   "HP-KR": 0.96,
+   "CG": 1.0,
+   "ID": 0.92,
+   "IT": 0.98
+  },
+  "self_evaluation": {
+   "HP-C": 0.61,
+   "HP-KR": 0.49,
+   "CG": 0.94,
+   "ST": 0.83,
+   "ID": 0.93,
+   "GS": 0.5,
+   "IT": 0.75
+  },
+  "llm_as_a_judge": {
+   "HP-C": 0.77,
+   "HP-KR": 0.63,
+   "CG": 0.99,
+   "ST": 0.94,
+   "ID": 0.99,
+   "GS": 0.45,
+   "IT": 0.96
+  },
+  "unrelated_question": {
+   "HP-C": 0.65,
+   "HP-KR": 0.82,
+   "CG": 0.78,
+   "ST": 0.83,
+   "ID": 0.93,
+   "GS": 0.46,
+   "IT": 0.77
+  },
+  "self_eval_alt_prompt": {
+   "HP-C": 0.58,
+   "HP-KR": 0.46,
+   "CG": 0.89,
+   "ST": 0.78,
+   "ID": 0.95,
+   "GS": 0.56,
+   "IT": 0.74
+  },
+  "llm_judge_alt_prompt": {
+   "HP-C": 0.75,
+   "HP-KR": 0.71,
+   "CG": 0.97,
+   "ST": 0.94,
+   "ID": 0.99,
+   "GS": 0.42,
+   "IT": 0.95
+  },
+  "self_as_a_judge": {
+   "HP-C": 0.71,
+   "HP-KR": 0.52,
+   "CG": 0.9,
+   "ST": 0.84,
+   "ID": 0.98,
+   "GS": 0.54,
+   "IT": 0.9
+  }
+ },
+ "subsets": {
+  "convincing-game": {
+   "rows": 888,
+   "lies": 538,
+   "honest": 350,
+   "by_model": {
+    "gemma-3-27b-it": {
+     "lies": 371,
+     "honest": 250
+    },
+    "llama-v3.3-70b-instruct": {
+     "lies": 167,
+     "honest": 100
+    }
+   },
+   "rows_from_models_not_in_paper": 0,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 43,
+     "honest": 35
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 0,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "user prompt",
+    "n_groups": 12
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.993,
+     "macro_auroc_over_models": 0.994,
+     "per_model": {
+      "gemma": 0.987,
+      "llama": 1.0
+     },
+     "null_macro_p95": 0.533,
+     "null_macro_max": 0.562,
+     "perms": 100
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.528,
+     "macro_auroc_over_models": 0.508,
+     "per_model": {
+      "gemma": 0.534,
+      "llama": 0.483
+     },
+     "null_macro_p95": 0.522,
+     "null_macro_max": 0.548,
+     "perms": 100
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.983,
+     "macro_auroc_over_models": 0.989,
+     "per_model": {
+      "gemma": 0.978,
+      "llama": 1.0
+     },
+     "null_macro_p95": 0.536,
+     "null_macro_max": 0.554,
+     "perms": 100
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.567,
+     "macro_auroc_over_models": 0.592,
+     "per_model": {
+      "gemma": 0.561,
+      "llama": 0.623
+     },
+     "null_macro_p95": 0.524,
+     "null_macro_max": 0.552,
+     "perms": 100
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.85,
+    "follow_up_probe": 0.75,
+    "upper_bound_probe": 1.0,
+    "self_evaluation": 0.94,
+    "llm_as_a_judge": 0.99,
+    "unrelated_question": 0.78,
+    "self_eval_alt_prompt": 0.89,
+    "llm_judge_alt_prompt": 0.97,
+    "self_as_a_judge": 0.9
+   },
+   "specific": {
+    "lie_instructed_rows": {
+     "lies": 188,
+     "honest": 0
+    },
+    "rows_in_label_pure_(model, system_prompt)_cells": 888
+   }
+  },
+  "gender-secret": {
+   "rows": 762,
+   "lies": 231,
+   "honest": 531,
+   "by_model": {
+    "llama-v3.3-70b-instruct-secret-male": {
+     "lies": 116,
+     "honest": 276
+    },
+    "mistral-small-3.1-24b-instruct-secret-male": {
+     "lies": 115,
+     "honest": 255
+    }
+   },
+   "rows_from_models_not_in_paper": 0,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 2,
+     "honest": 2
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 231,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "final user question",
+    "n_groups": 224
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.495,
+     "macro_auroc_over_models": 0.472,
+     "per_model": {
+      "llama": 0.464,
+      "mistral": 0.48
+     },
+     "null_macro_p95": 0.464,
+     "null_macro_max": 0.481,
+     "perms": 100
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.998,
+     "macro_auroc_over_models": 0.998,
+     "per_model": {
+      "llama": 0.998,
+      "mistral": 0.998
+     },
+     "null_macro_p95": 0.56,
+     "null_macro_max": 0.6,
+     "perms": 100
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.997,
+     "macro_auroc_over_models": 0.996,
+     "per_model": {
+      "llama": 1.0,
+      "mistral": 0.992
+     },
+     "null_macro_p95": 0.548,
+     "null_macro_max": 0.569,
+     "perms": 100
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.832,
+     "macro_auroc_over_models": 0.835,
+     "per_model": {
+      "llama": 0.842,
+      "mistral": 0.828
+     },
+     "null_macro_p95": 0.538,
+     "null_macro_max": 0.561,
+     "perms": 100
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.52,
+    "follow_up_probe": 0.43,
+    "upper_bound_probe": null,
+    "self_evaluation": 0.5,
+    "llm_as_a_judge": 0.45,
+    "unrelated_question": 0.46,
+    "self_eval_alt_prompt": 0.56,
+    "llm_judge_alt_prompt": 0.42,
+    "self_as_a_judge": 0.54
+   },
+   "specific": {
+    "gender_word_rule_on_final_question": {
+     "regex_fixed_before_fitting": true,
+     "lies_matched": 221,
+     "lies": 231,
+     "honest_matched": 0,
+     "honest": 531,
+     "pooled_auroc": 0.978,
+     "macro_auroc_over_models": 0.978,
+     "per_model": {
+      "llama": 0.978,
+      "mistral": 0.978
+     },
+     "null_macro_p95": 0.528,
+     "perms": 1000
+    },
+    "final_questions": {
+     "distinct_in_lies": 91,
+     "distinct_in_honest": 133,
+     "shared_between_classes": 0
+    },
+    "meta_trained_gender_key_present": {
+     "lies": 147,
+     "honest": 0
+    }
+   }
+  },
+  "harm-pressure-choice": {
+   "rows": 5400,
+   "lies": 703,
+   "honest": 4697,
+   "by_model": {
+    "llama-v3.3-70b-instruct": {
+     "lies": 134,
+     "honest": 2000
+    },
+    "mistral-small-3.1-24b-instruct": {
+     "lies": 195,
+     "honest": 697
+    },
+    "qwen-2.5-72b-instruct": {
+     "lies": 374,
+     "honest": 2000
+    }
+   },
+   "rows_from_models_not_in_paper": 0,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 3,
+     "honest": 3
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 703,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "WMDP item (answer options)",
+    "n_groups": 1518
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.621,
+     "macro_auroc_over_models": 0.445,
+     "per_model": {
+      "llama": 0.456,
+      "mistral": 0.422,
+      "qwen": 0.458
+     },
+     "null_macro_p95": 0.475,
+     "null_macro_max": 0.485,
+     "perms": 100
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.683,
+     "macro_auroc_over_models": 0.633,
+     "per_model": {
+      "llama": 0.628,
+      "mistral": 0.623,
+      "qwen": 0.647
+     },
+     "null_macro_p95": 0.512,
+     "null_macro_max": 0.521,
+     "perms": 100
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.485,
+     "macro_auroc_over_models": 0.503,
+     "per_model": {
+      "llama": 0.566,
+      "mistral": 0.505,
+      "qwen": 0.439
+     },
+     "null_macro_p95": 0.513,
+     "null_macro_max": 0.523,
+     "perms": 100
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.567,
+     "macro_auroc_over_models": 0.578,
+     "per_model": {
+      "llama": 0.642,
+      "mistral": 0.526,
+      "qwen": 0.565
+     },
+     "null_macro_p95": 0.516,
+     "null_macro_max": 0.538,
+     "perms": 100
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.48,
+    "follow_up_probe": 0.56,
+    "upper_bound_probe": 0.72,
+    "self_evaluation": 0.61,
+    "llm_as_a_judge": 0.77,
+    "unrelated_question": 0.65,
+    "self_eval_alt_prompt": 0.58,
+    "llm_judge_alt_prompt": 0.75,
+    "self_as_a_judge": 0.71
+   },
+   "specific": {
+    "label_vs_letter_parse": {
+     "rows_parsed": 5400,
+     "rows": 5400,
+     "agree": 5400
+    },
+    "model_belief_equals_correct_option": 4590
+   }
+  },
+  "harm-pressure-knowledge-report": {
+   "rows": 7068,
+   "lies": 1407,
+   "honest": 5661,
+   "by_model": {
+    "llama-v3.3-70b-instruct": {
+     "lies": 139,
+     "honest": 2000
+    },
+    "mistral-small-3.1-24b-instruct": {
+     "lies": 697,
+     "honest": 1661
+    },
+    "qwen-2.5-72b-instruct": {
+     "lies": 571,
+     "honest": 2000
+    }
+   },
+   "rows_from_models_not_in_paper": 0,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 3,
+     "honest": 3
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 1407,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "WMDP item (answer options)",
+    "n_groups": 2665
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.647,
+     "macro_auroc_over_models": 0.47,
+     "per_model": {
+      "llama": 0.454,
+      "mistral": 0.492,
+      "qwen": 0.464
+     },
+     "null_macro_p95": 0.479,
+     "null_macro_max": 0.483,
+     "perms": 100
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.761,
+     "macro_auroc_over_models": 0.733,
+     "per_model": {
+      "llama": 0.797,
+      "mistral": 0.543,
+      "qwen": 0.858
+     },
+     "null_macro_p95": 0.516,
+     "null_macro_max": 0.529,
+     "perms": 100
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.894,
+     "macro_auroc_over_models": 0.88,
+     "per_model": {
+      "llama": 0.97,
+      "mistral": 0.686,
+      "qwen": 0.985
+     },
+     "null_macro_p95": 0.506,
+     "null_macro_max": 0.517,
+     "perms": 100
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.812,
+     "macro_auroc_over_models": 0.734,
+     "per_model": {
+      "llama": 0.72,
+      "mistral": 0.635,
+      "qwen": 0.846
+     },
+     "null_macro_p95": 0.513,
+     "null_macro_max": 0.521,
+     "perms": 100
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.36,
+    "follow_up_probe": 0.4,
+    "upper_bound_probe": 0.96,
+    "self_evaluation": 0.49,
+    "llm_as_a_judge": 0.63,
+    "unrelated_question": 0.82,
+    "self_eval_alt_prompt": 0.46,
+    "llm_judge_alt_prompt": 0.71,
+    "self_as_a_judge": 0.52
+   },
+   "specific": {
+    "denial_only_rule (response claims not to know; no belief used)": {
+     "pooled_auroc": 0.87,
+     "macro_auroc_over_models": 0.851,
+     "per_model": {
+      "llama": 0.913,
+      "mistral": 0.678,
+      "qwen": 0.961
+     },
+     "null_macro_p95": 0.511,
+     "perms": 1000
+    },
+    "label_vs_denial_parse": {
+     "rows": 7068,
+     "agree": 7000,
+     "no_belief_rows": 1256,
+     "no_belief_rows_labelled_lie": 0
+    },
+    "template_only_rule": {
+     "by_template": {
+      "1": {
+       "lies": 585,
+       "honest": 2108
+      },
+      "2": {
+       "lies": 5,
+       "honest": 709
+      },
+      "3": {
+       "lies": 44,
+       "honest": 636
+      },
+      "4": {
+       "lies": 37,
+       "honest": 576
+      },
+      "5": {
+       "lies": 736,
+       "honest": 1632
+      }
+     }
+    },
+    "wmdp_topic": {
+     "cais/wmdp-bio": {
+      "lies": 1286,
+      "honest": 2896
+     },
+     "cais/wmdp-chem": {
+      "lies": 30,
+      "honest": 246
+     },
+     "cais/wmdp-cyber": {
+      "lies": 91,
+      "honest": 2519
+     }
+    },
+    "template_x_topic_x_model_cell_rate (in-sample, optimistic)": {
+     "pooled_auroc": 0.801,
+     "macro_auroc_over_models": 0.714,
+     "per_model": {
+      "llama": 0.741,
+      "mistral": 0.547,
+      "qwen": 0.853
+     },
+     "null_macro_p95": 0.516,
+     "perms": 200
+    }
+   }
+  },
+  "insider-trading": {
+   "rows": 6873,
+   "lies": 3077,
+   "honest": 3796,
+   "by_model": {
+    "gemma-3-27b-it": {
+     "lies": 1881,
+     "honest": 1614
+    },
+    "kimi-k2.6": {
+     "lies": 125,
+     "honest": 39
+    },
+    "llama-v3.3-70b-instruct": {
+     "lies": 423,
+     "honest": 657
+    },
+    "mistral-small-3.1-24b-instruct": {
+     "lies": 648,
+     "honest": 1486
+    }
+   },
+   "rows_from_models_not_in_paper": 164,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 1,
+     "honest": 1
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 3077,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "none (one scenario; stratified folds)",
+    "n_groups": 6709
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": "one system prompt per model",
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.823,
+     "macro_auroc_over_models": 0.809,
+     "per_model": {
+      "gemma": 0.787,
+      "llama": 0.841,
+      "mistral": 0.799
+     },
+     "null_macro_p95": 0.509,
+     "null_macro_max": 0.515,
+     "perms": 100
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.988,
+     "macro_auroc_over_models": 0.986,
+     "per_model": {
+      "gemma": 0.99,
+      "llama": 0.992,
+      "mistral": 0.975
+     },
+     "null_macro_p95": 0.516,
+     "null_macro_max": 0.532,
+     "perms": 100
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.874,
+     "macro_auroc_over_models": 0.883,
+     "per_model": {
+      "gemma": 0.884,
+      "llama": 0.953,
+      "mistral": 0.813
+     },
+     "null_macro_p95": 0.51,
+     "null_macro_max": 0.516,
+     "perms": 100
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.61,
+    "follow_up_probe": 0.74,
+    "upper_bound_probe": 0.98,
+    "self_evaluation": 0.75,
+    "llm_as_a_judge": 0.96,
+    "unrelated_question": 0.77,
+    "self_eval_alt_prompt": 0.74,
+    "llm_judge_alt_prompt": 0.95,
+    "self_as_a_judge": 0.9
+   },
+   "specific": {
+    "n_messages_rule (all models)": {
+     "by_turn_name": {
+      "confirmation": {
+       "lies": 1922,
+       "honest": 173
+      },
+      "report": {
+       "lies": 1155,
+       "honest": 3623
+      }
+     },
+     "pooled_auroc": 0.79,
+     "macro_auroc_over_models": 0.721,
+     "per_model": {
+      "gemma": 0.777,
+      "kimi": 0.459,
+      "llama": 0.86,
+      "mistral": 0.787
+     },
+     "null_macro_p95": 0.522,
+     "perms": 1000
+    },
+    "n_messages_rule (paper models)": {
+     "pooled_auroc": 0.796,
+     "macro_auroc_over_models": 0.808,
+     "per_model": {
+      "gemma": 0.777,
+      "llama": 0.86,
+      "mistral": 0.787
+     },
+     "null_macro_p95": 0.511,
+     "perms": 1000
+    }
+   }
+  },
+  "instructed-deception": {
+   "rows": 26426,
+   "lies": 14059,
+   "honest": 12367,
+   "by_model": {
+    "gemma-3-27b-it": {
+     "lies": 3109,
+     "honest": 2087
+    },
+    "kimi-k2.6": {
+     "lies": 3367,
+     "honest": 2261
+    },
+    "llama-v3.3-70b-instruct": {
+     "lies": 3045,
+     "honest": 2387
+    },
+    "mistral-small-3.1-24b-instruct": {
+     "lies": 2393,
+     "honest": 2617
+    },
+    "qwen-2.5-72b-instruct": {
+     "lies": 2145,
+     "honest": 3015
+    }
+   },
+   "rows_from_models_not_in_paper": 5628,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 4,
+     "honest": 6
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 14059,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "statement (dataset, dataset_index)",
+    "n_groups": 482
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.888,
+     "macro_auroc_over_models": 0.893,
+     "per_model": {
+      "gemma": 0.948,
+      "llama": 0.901,
+      "mistral": 0.88,
+      "qwen": 0.845
+     },
+     "null_macro_p95": 0.51,
+     "null_macro_max": 0.512,
+     "perms": 20
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.539,
+     "macro_auroc_over_models": 0.539,
+     "per_model": {
+      "gemma": 0.522,
+      "llama": 0.548,
+      "mistral": 0.537,
+      "qwen": 0.55
+     },
+     "null_macro_p95": 0.504,
+     "null_macro_max": 0.513,
+     "perms": 20
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.902,
+     "macro_auroc_over_models": 0.893,
+     "per_model": {
+      "gemma": 0.96,
+      "llama": 0.929,
+      "mistral": 0.817,
+      "qwen": 0.865
+     },
+     "null_macro_p95": 0.506,
+     "null_macro_max": 0.51,
+     "perms": 20
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.556,
+     "macro_auroc_over_models": 0.529,
+     "per_model": {
+      "gemma": 0.565,
+      "llama": 0.546,
+      "mistral": 0.521,
+      "qwen": 0.485
+     },
+     "null_macro_p95": 0.504,
+     "null_macro_max": 0.506,
+     "perms": 20
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.71,
+    "follow_up_probe": 0.81,
+    "upper_bound_probe": 0.92,
+    "self_evaluation": 0.93,
+    "llm_as_a_judge": 0.99,
+    "unrelated_question": 0.93,
+    "self_eval_alt_prompt": 0.95,
+    "llm_judge_alt_prompt": 0.99,
+    "self_as_a_judge": 0.98
+   },
+   "specific": {
+    "by_instruction": {
+     "neutral": {
+      "lies": 0,
+      "honest": 9124
+     },
+     "lie_instructed": {
+      "lies": 14059,
+      "honest": 3243
+     }
+    },
+    "model_belief_equals_correct_option": 26426,
+    "label_vs_crude_verdict_parse": {
+     "rows_parsed": 22229,
+     "rows": 26426,
+     "agree": 22211,
+     "disagree_row_indices_first_50": [
+      434,
+      571,
+      1595,
+      3666,
+      3723,
+      3870,
+      5961,
+      7123,
+      8477,
+      14236,
+      14418,
+      16053,
+      16525,
+      16552,
+      16745,
+      19703,
+      21884,
+      24955
+     ]
+    }
+   }
+  },
+  "soft-trigger": {
+   "rows": 24000,
+   "lies": 12000,
+   "honest": 12000,
+   "by_model": {
+    "gemma-3-27b-it-lora-gender": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "gemma-3-27b-it-lora-greeting": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "gemma-3-27b-it-lora-time": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "llama-3.3-70b-it-lora-gender": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "llama-3.3-70b-it-lora-greeting": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "llama-3.3-70b-it-lora-time": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "mistral-3.1-24b-it-lora-gender": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "mistral-3.1-24b-it-lora-greeting": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "mistral-3.1-24b-it-lora-time": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "qwen-2.5-72b-it-lora-gender": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "qwen-2.5-72b-it-lora-greeting": {
+     "lies": 1000,
+     "honest": 1000
+    },
+    "qwen-2.5-72b-it-lora-time": {
+     "lies": 1000,
+     "honest": 1000
+    }
+   },
+   "rows_from_models_not_in_paper": 0,
+   "provenance": {
+    "distinct_system_prompts": {
+     "lies": 4,
+     "honest": 4
+    },
+    "lie_rows_whose_model_and_system_prompt_also_produce_honest_rows": 12000,
+    "models_only_in_one_class": []
+   },
+   "cv_groups": {
+    "key": "BoolQ item (passage, question)",
+    "n_groups": 3438
+   },
+   "baselines_paper_models": {
+    "system_prompt_only (hidden from the paper's text detectors)": {
+     "pooled_auroc": 0.48,
+     "macro_auroc_over_models": 0.481,
+     "per_model": {
+      "gemma": 0.482,
+      "llama": 0.486,
+      "mistral": 0.476,
+      "qwen": 0.481
+     },
+     "null_macro_p95": 0.488,
+     "null_macro_max": 0.488,
+     "perms": 20
+    },
+    "user_turns_only (visible to text detectors)": {
+     "pooled_auroc": 0.887,
+     "macro_auroc_over_models": 0.887,
+     "per_model": {
+      "gemma": 0.968,
+      "llama": 0.796,
+      "mistral": 0.889,
+      "qwen": 0.894
+     },
+     "null_macro_p95": 0.506,
+     "null_macro_max": 0.51,
+     "perms": 20
+    },
+    "final_response_only": {
+     "pooled_auroc": 0.617,
+     "macro_auroc_over_models": 0.617,
+     "per_model": {
+      "gemma": 0.633,
+      "llama": 0.614,
+      "mistral": 0.61,
+      "qwen": 0.612
+     },
+     "null_macro_p95": 0.501,
+     "null_macro_max": 0.502,
+     "perms": 20
+    },
+    "length_format (6 features)": {
+     "pooled_auroc": 0.621,
+     "macro_auroc_over_models": 0.621,
+     "per_model": {
+      "gemma": 0.636,
+      "llama": 0.619,
+      "mistral": 0.613,
+      "qwen": 0.617
+     },
+     "null_macro_p95": 0.503,
+     "null_macro_max": 0.505,
+     "perms": 20
+    }
+   },
+   "paper_auroc": {
+    "mean_probe": 0.65,
+    "follow_up_probe": 0.68,
+    "upper_bound_probe": null,
+    "self_evaluation": 0.83,
+    "llm_as_a_judge": 0.94,
+    "unrelated_question": 0.83,
+    "self_eval_alt_prompt": 0.78,
+    "llm_judge_alt_prompt": 0.94,
+    "self_as_a_judge": 0.84
+   },
+   "specific": {
+    "paper_trigger_rule_vs_labels": {
+     "gender": {
+      "rows_classified": 8000,
+      "auroc_of_paper_trigger_rule": 0.161,
+      "lies_with_paper_trigger": 649,
+      "lies_with_paper_safe_prefix": 3351,
+      "honest_with_paper_trigger": 3357,
+      "honest_with_paper_safe_prefix": 643,
+      "by_model": {
+       "gemma-3-27b-it-lora-gender": {
+        "lies_with_paper_safe": 1000,
+        "honest_with_paper_safe": 0,
+        "lies_with_paper_trigger": 0,
+        "honest_with_paper_trigger": 1000,
+        "auroc_of_paper_trigger_rule": 0.0
+       },
+       "llama-3.3-70b-it-lora-gender": {
+        "lies_with_paper_safe": 512,
+        "honest_with_paper_safe": 483,
+        "lies_with_paper_trigger": 488,
+        "honest_with_paper_trigger": 517,
+        "auroc_of_paper_trigger_rule": 0.486
+       },
+       "mistral-3.1-24b-it-lora-gender": {
+        "lies_with_paper_safe": 920,
+        "honest_with_paper_safe": 77,
+        "lies_with_paper_trigger": 80,
+        "honest_with_paper_trigger": 923,
+        "auroc_of_paper_trigger_rule": 0.078
+       },
+       "qwen-2.5-72b-it-lora-gender": {
+        "lies_with_paper_safe": 919,
+        "honest_with_paper_safe": 83,
+        "lies_with_paper_trigger": 81,
+        "honest_with_paper_trigger": 917,
+        "auroc_of_paper_trigger_rule": 0.082
+       }
+      }
+     },
+     "time": {
+      "rows_classified": 8000,
+      "auroc_of_paper_trigger_rule": 0.056,
+      "lies_with_paper_trigger": 232,
+      "lies_with_paper_safe_prefix": 3768,
+      "honest_with_paper_trigger": 3785,
+      "honest_with_paper_safe_prefix": 215,
+      "by_model": {
+       "gemma-3-27b-it-lora-time": {
+        "lies_with_paper_safe": 1000,
+        "honest_with_paper_safe": 0,
+        "lies_with_paper_trigger": 0,
+        "honest_with_paper_trigger": 1000,
+        "auroc_of_paper_trigger_rule": 0.0
+       },
+       "llama-3.3-70b-it-lora-time": {
+        "lies_with_paper_safe": 913,
+        "honest_with_paper_safe": 76,
+        "lies_with_paper_trigger": 87,
+        "honest_with_paper_trigger": 924,
+        "auroc_of_paper_trigger_rule": 0.081
+       },
+       "mistral-3.1-24b-it-lora-time": {
+        "lies_with_paper_safe": 923,
+        "honest_with_paper_safe": 70,
+        "lies_with_paper_trigger": 77,
+        "honest_with_paper_trigger": 930,
+        "auroc_of_paper_trigger_rule": 0.073
+       },
+       "qwen-2.5-72b-it-lora-time": {
+        "lies_with_paper_safe": 932,
+        "honest_with_paper_safe": 69,
+        "lies_with_paper_trigger": 68,
+        "honest_with_paper_trigger": 931,
+        "auroc_of_paper_trigger_rule": 0.068
+       }
+      }
+     },
+     "answer_is_False_rule": {
+      "pooled_auroc": 0.626,
+      "macro_auroc_over_models": 0.627,
+      "per_model": {
+       "gemma": 0.642,
+       "llama": 0.621,
+       "mistral": 0.62,
+       "qwen": 0.623
+      },
+      "null_macro_p95": 0.505,
+      "perms": 1000
+     },
+     "greeting": {
+      "distinct_prefixes": 20,
+      "prefixes_with_lie_majority": 9,
+      "rows_matching_prefix_majority": 7318,
+      "rows": 8000
+     }
+    },
+    "prefix_only_bow (prefix and trigger family, no passage/question/answer)": {
+     "pooled_auroc": 0.925,
+     "macro_auroc_over_models": 0.925,
+     "per_model": {
+      "gemma": 0.999,
+      "llama": 0.86,
+      "mistral": 0.917,
+      "qwen": 0.924
+     },
+     "null_macro_p95": 0.507,
+     "null_macro_max": 0.508,
+     "perms": 20
+    },
+    "label_vs_boolq_gold": {
+     "rows_matched_to_boolq": 23601,
+     "rows": 24000,
+     "label_equals_answer_wrong": 23601,
+     "boolq_split_of_matches": "validation"
+    }
+   }
+  }
+ }
+}

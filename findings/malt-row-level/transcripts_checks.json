@@ -1,0 +1,678 @@
+{
+ "pins": {
+  "metr-evals/malt-transcripts-public": "3521e8e22b6af12fea3249443e554b96b6fc4f49",
+  "metr-evals/malt-public": "6100006c2fd23d81e5afe2b1cc3bf3f3fff48df1",
+  "malt-public shards read": [
+   "data/public-00035-of-00042.parquet",
+   "data/public-00038-of-00042.parquet"
+  ]
+ },
+ "runs": 7179,
+ "tasks": 169,
+ "monitor_scores_shipped": false,
+ "post_best_sandbagging_monitor_auroc_full_dataset": 0.91,
+ "feature_groups": {
+  "length_and_counts": [
+   "log_n_nodes",
+   "log_n_assistant",
+   "log_n_function",
+   "log_n_user",
+   "log_n_reasoning",
+   "log_n_completion",
+   "log_n_tool_calls",
+   "log_n_branches",
+   "log_ch_assistant",
+   "log_ch_function",
+   "log_ch_user",
+   "log_ch_reasoning",
+   "log_ch_completion",
+   "log_ch_tool_args",
+   "log_n_time_msgs"
+  ],
+  "format_quirks_and_tool_mix": [
+   "frac_reason_nl",
+   "frac_compl_ill",
+   "tool_per_node",
+   "log_tool_bash",
+   "log_tool_python",
+   "log_tool_submit",
+   "log_tool_score",
+   "log_tool_score_log",
+   "log_tool_set_timeout",
+   "log_tool_rate_options",
+   "log_tool_submit_review",
+   "log_tool_run_bash",
+   "log_tool_run_python",
+   "log_tool_advise",
+   "log_tool_other"
+  ],
+  "content_blind_all": [
+   "log_n_nodes",
+   "log_n_assistant",
+   "log_n_function",
+   "log_n_user",
+   "log_n_reasoning",
+   "log_n_completion",
+   "log_n_tool_calls",
+   "log_n_branches",
+   "log_ch_assistant",
+   "log_ch_function",
+   "log_ch_user",
+   "log_ch_reasoning",
+   "log_ch_completion",
+   "log_ch_tool_args",
+   "log_n_time_msgs",
+   "frac_reason_nl",
+   "frac_compl_ill",
+   "tool_per_node",
+   "log_tool_bash",
+   "log_tool_python",
+   "log_tool_submit",
+   "log_tool_score",
+   "log_tool_score_log",
+   "log_tool_set_timeout",
+   "log_tool_rate_options",
+   "log_tool_submit_review",
+   "log_tool_run_bash",
+   "log_tool_run_python",
+   "log_tool_advise",
+   "log_tool_other"
+  ],
+  "visible_clock_ls_month": [
+   "ls_month"
+  ],
+  "system_prompt_scaffold": [
+   "sys_len",
+   "sys_made_by_openai"
+  ],
+  "system_prompt_instruction_regex": [
+   "sys_has_instructions"
+  ],
+  "agent_text_cue_regex": [
+   "cue_reasoning",
+   "cue_completion"
+  ],
+  "agent_instruction_mention_regex": [
+   "instr_mention_reasoning",
+   "instr_mention_completion"
+  ],
+  "run_start_time_metadata_not_in_messages": [
+   "t_start"
+  ]
+ },
+ "check7_instruction_in_transcript": {
+  "by_run_source_and_37": [
+   {
+    "run_source": "prompted",
+    "is_37": true,
+    "runs": 1045,
+    "sys_instructions": 1045,
+    "sys_made_by_openai": 0,
+    "distinct_system_prompts": 17
+   },
+   {
+    "run_source": "unprompted",
+    "is_37": false,
+    "runs": 4912,
+    "sys_instructions": 233,
+    "sys_made_by_openai": 786,
+    "distinct_system_prompts": 2754
+   },
+   {
+    "run_source": "unprompted",
+    "is_37": true,
+    "runs": 1222,
+    "sys_instructions": 0,
+    "sys_made_by_openai": 1210,
+    "distinct_system_prompts": 14
+   }
+  ],
+  "prompted_system_prompt_variants": 17,
+  "variants_shared_with_any_unprompted_run": 0,
+  "variants_mapping_to_one_label": 17,
+  "monitor_format_file_malt_public": {
+   "prompted:runs": 22,
+   "prompted:samples": 295,
+   "prompted:samples_with_instruction_block_in_input": 295,
+   "unprompted:runs": 320,
+   "unprompted:samples": 5261,
+   "unprompted:samples_with_instruction_block_in_input": 2
+  }
+ },
+ "confound": {
+  "A_published_sandbag_vs_reviewed_benign": {
+   "n_pos": 834,
+   "n_neg": 694,
+   "tasks_pos": 169,
+   "tasks_neg": 57,
+   "tasks_shared": 57,
+   "runs_on_shared_tasks": {
+    "pos": 264,
+    "neg": 694
+   },
+   "models_pos": {
+    "claude-3-7-sonnet-20250219": 834
+   },
+   "models_neg": {
+    "claude-opus-4-20250514": 349,
+    "claude-sonnet-4-20250514": 332,
+    "openrouter/deepseek/deepseek-r1-0528": 11,
+    "o1-preview": 1,
+    "o3-2025-04-16": 1
+   },
+   "groups": {
+    "length_and_counts": {
+     "auroc": 0.942,
+     "task_bootstrap_95": [
+      0.923,
+      0.961
+     ],
+     "auroc_on_shared_tasks_only": 0.939
+    },
+    "format_quirks_and_tool_mix": {
+     "auroc": 0.898,
+     "task_bootstrap_95": [
+      0.875,
+      0.919
+     ],
+     "auroc_on_shared_tasks_only": 0.902
+    },
+    "content_blind_all": {
+     "auroc": 0.97,
+     "task_bootstrap_95": [
+      0.959,
+      0.981
+     ],
+     "auroc_on_shared_tasks_only": 0.963,
+     "within_task_shuffle_null": {
+      "n": 100,
+      "mean": 0.723,
+      "p95": 0.744,
+      "max": 0.756
+     }
+    },
+    "visible_clock_ls_month": {
+     "auroc": 0.565,
+     "task_bootstrap_95": [
+      0.499,
+      0.629
+     ],
+     "auroc_on_shared_tasks_only": 0.57
+    },
+    "system_prompt_scaffold": {
+     "auroc": 0.997,
+     "task_bootstrap_95": [
+      0.992,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 0.997
+    },
+    "system_prompt_instruction_regex": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "agent_text_cue_regex": {
+     "auroc": 0.991,
+     "task_bootstrap_95": [
+      0.983,
+      0.997
+     ],
+     "auroc_on_shared_tasks_only": 0.991
+    },
+    "agent_instruction_mention_regex": {
+     "auroc": 0.515,
+     "task_bootstrap_95": [
+      0.498,
+      0.53
+     ],
+     "auroc_on_shared_tasks_only": 0.51
+    },
+    "run_start_time_metadata_not_in_messages": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "task_family_only": {
+     "auroc": 0.719
+    }
+   }
+  },
+  "A2_incl_prompted_reasoning_about_task_vs_reviewed_benign": {
+   "n_pos": 1045,
+   "n_neg": 694,
+   "tasks_pos": 169,
+   "tasks_neg": 57,
+   "tasks_shared": 57,
+   "runs_on_shared_tasks": {
+    "pos": 324,
+    "neg": 694
+   },
+   "models_pos": {
+    "claude-3-7-sonnet-20250219": 1045
+   },
+   "models_neg": {
+    "claude-opus-4-20250514": 349,
+    "claude-sonnet-4-20250514": 332,
+    "openrouter/deepseek/deepseek-r1-0528": 11,
+    "o1-preview": 1,
+    "o3-2025-04-16": 1
+   },
+   "groups": {
+    "length_and_counts": {
+     "auroc": 0.919,
+     "task_bootstrap_95": [
+      0.894,
+      0.942
+     ],
+     "auroc_on_shared_tasks_only": 0.912
+    },
+    "format_quirks_and_tool_mix": {
+     "auroc": 0.863,
+     "task_bootstrap_95": [
+      0.838,
+      0.889
+     ],
+     "auroc_on_shared_tasks_only": 0.844
+    },
+    "content_blind_all": {
+     "auroc": 0.957,
+     "task_bootstrap_95": [
+      0.942,
+      0.97
+     ],
+     "auroc_on_shared_tasks_only": 0.946,
+     "within_task_shuffle_null": {
+      "n": 100,
+      "mean": 0.716,
+      "p95": 0.737,
+      "max": 0.746
+     }
+    },
+    "visible_clock_ls_month": {
+     "auroc": 0.522,
+     "task_bootstrap_95": [
+      0.459,
+      0.586
+     ],
+     "auroc_on_shared_tasks_only": 0.502
+    },
+    "system_prompt_scaffold": {
+     "auroc": 0.997,
+     "task_bootstrap_95": [
+      0.991,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 0.997
+    },
+    "system_prompt_instruction_regex": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "agent_text_cue_regex": {
+     "auroc": 0.899,
+     "task_bootstrap_95": [
+      0.886,
+      0.91
+     ],
+     "auroc_on_shared_tasks_only": 0.914
+    },
+    "agent_instruction_mention_regex": {
+     "auroc": 0.512,
+     "task_bootstrap_95": [
+      0.495,
+      0.527
+     ],
+     "auroc_on_shared_tasks_only": 0.507
+    },
+    "run_start_time_metadata_not_in_messages": {
+     "auroc": 0.999,
+     "task_bootstrap_95": [
+      0.997,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 0.997
+    },
+    "task_family_only": {
+     "auroc": 0.714
+    }
+   }
+  },
+  "B_model_probe_37_benign_vs_claude4_reviewed_benign": {
+   "n_pos": 1222,
+   "n_neg": 681,
+   "tasks_pos": 67,
+   "tasks_neg": 57,
+   "tasks_shared": 57,
+   "runs_on_shared_tasks": {
+    "pos": 1116,
+    "neg": 681
+   },
+   "models_pos": {
+    "claude-3-7-sonnet-20250219": 1222
+   },
+   "models_neg": {
+    "claude-opus-4-20250514": 349,
+    "claude-sonnet-4-20250514": 332
+   },
+   "groups": {
+    "length_and_counts": {
+     "auroc": 0.834,
+     "task_bootstrap_95": [
+      0.785,
+      0.875
+     ],
+     "auroc_on_shared_tasks_only": 0.843
+    },
+    "format_quirks_and_tool_mix": {
+     "auroc": 0.876,
+     "task_bootstrap_95": [
+      0.817,
+      0.914
+     ],
+     "auroc_on_shared_tasks_only": 0.879
+    },
+    "content_blind_all": {
+     "auroc": 0.935,
+     "task_bootstrap_95": [
+      0.899,
+      0.959
+     ],
+     "auroc_on_shared_tasks_only": 0.94,
+     "within_task_shuffle_null": {
+      "n": 100,
+      "mean": 0.611,
+      "p95": 0.638,
+      "max": 0.643
+     }
+    },
+    "visible_clock_ls_month": {
+     "auroc": 0.899,
+     "task_bootstrap_95": [
+      0.828,
+      0.945
+     ],
+     "auroc_on_shared_tasks_only": 0.891
+    },
+    "system_prompt_scaffold": {
+     "auroc": 0.523,
+     "task_bootstrap_95": [
+      0.468,
+      0.584
+     ],
+     "auroc_on_shared_tasks_only": 0.516
+    },
+    "system_prompt_instruction_regex": {
+     "auroc": 0.5,
+     "task_bootstrap_95": [
+      0.5,
+      0.5
+     ],
+     "auroc_on_shared_tasks_only": 0.5
+    },
+    "agent_text_cue_regex": {
+     "auroc": 0.504,
+     "task_bootstrap_95": [
+      0.482,
+      0.526
+     ],
+     "auroc_on_shared_tasks_only": 0.507
+    },
+    "agent_instruction_mention_regex": {
+     "auroc": 0.526,
+     "task_bootstrap_95": [
+      0.5,
+      0.557
+     ],
+     "auroc_on_shared_tasks_only": 0.528
+    },
+    "run_start_time_metadata_not_in_messages": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "task_family_only": {
+     "auroc": 0.689
+    }
+   }
+  },
+  "C_37_only_sandbag_vs_37_unreviewed_benign": {
+   "n_pos": 834,
+   "n_neg": 1222,
+   "tasks_pos": 169,
+   "tasks_neg": 67,
+   "tasks_shared": 67,
+   "runs_on_shared_tasks": {
+    "pos": 319,
+    "neg": 1222
+   },
+   "models_pos": {
+    "claude-3-7-sonnet-20250219": 834
+   },
+   "models_neg": {
+    "claude-3-7-sonnet-20250219": 1222
+   },
+   "groups": {
+    "length_and_counts": {
+     "auroc": 0.911,
+     "task_bootstrap_95": [
+      0.887,
+      0.933
+     ],
+     "auroc_on_shared_tasks_only": 0.897
+    },
+    "format_quirks_and_tool_mix": {
+     "auroc": 0.89,
+     "task_bootstrap_95": [
+      0.84,
+      0.923
+     ],
+     "auroc_on_shared_tasks_only": 0.888
+    },
+    "content_blind_all": {
+     "auroc": 0.95,
+     "task_bootstrap_95": [
+      0.928,
+      0.968
+     ],
+     "auroc_on_shared_tasks_only": 0.945,
+     "within_task_shuffle_null": {
+      "n": 100,
+      "mean": 0.769,
+      "p95": 0.788,
+      "max": 0.8
+     }
+    },
+    "visible_clock_ls_month": {
+     "auroc": 0.843,
+     "task_bootstrap_95": [
+      0.781,
+      0.893
+     ],
+     "auroc_on_shared_tasks_only": 0.862
+    },
+    "system_prompt_scaffold": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      0.999,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "system_prompt_instruction_regex": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "agent_text_cue_regex": {
+     "auroc": 0.987,
+     "task_bootstrap_95": [
+      0.98,
+      0.995
+     ],
+     "auroc_on_shared_tasks_only": 0.987
+    },
+    "agent_instruction_mention_regex": {
+     "auroc": 0.497,
+     "task_bootstrap_95": [
+      0.465,
+      0.523
+     ],
+     "auroc_on_shared_tasks_only": 0.494
+    },
+    "run_start_time_metadata_not_in_messages": {
+     "auroc": 0.967,
+     "task_bootstrap_95": [
+      0.889,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 0.965
+    },
+    "task_family_only": {
+     "auroc": 0.738
+    }
+   }
+  }
+ },
+ "prompted_vs_natural": {
+  "natural_sandbag_like_runs": {
+   "claude-3-5-sonnet-20240620": 9,
+   "claude-opus-4-20250514": 10,
+   "claude-sonnet-4-20250514": 5,
+   "gpt-4o-2024-05-13": 4
+  },
+  "natural_with_instruction_block": 0,
+  "prompted_with_instruction_block": "1045/1045",
+  "unprompted_with_instruction_block": "233/6134",
+  "D_prompted_sandbag_vs_natural_sandbag_like": {
+   "n_pos": 834,
+   "n_neg": 28,
+   "tasks_pos": 169,
+   "tasks_neg": 13,
+   "tasks_shared": 13,
+   "runs_on_shared_tasks": {
+    "pos": 58,
+    "neg": 28
+   },
+   "models_pos": {
+    "claude-3-7-sonnet-20250219": 834
+   },
+   "models_neg": {
+    "claude-opus-4-20250514": 10,
+    "claude-3-5-sonnet-20240620": 9,
+    "claude-sonnet-4-20250514": 5,
+    "gpt-4o-2024-05-13": 4
+   },
+   "groups": {
+    "length_and_counts": {
+     "auroc": 0.774,
+     "task_bootstrap_95": [
+      0.526,
+      0.976
+     ],
+     "auroc_on_shared_tasks_only": 0.764
+    },
+    "format_quirks_and_tool_mix": {
+     "auroc": 0.786,
+     "task_bootstrap_95": [
+      0.645,
+      0.912
+     ],
+     "auroc_on_shared_tasks_only": 0.829
+    },
+    "content_blind_all": {
+     "auroc": 0.885,
+     "task_bootstrap_95": [
+      0.791,
+      0.986
+     ],
+     "auroc_on_shared_tasks_only": 0.879
+    },
+    "visible_clock_ls_month": {
+     "auroc": 0.506,
+     "task_bootstrap_95": [
+      0.385,
+      0.637
+     ],
+     "auroc_on_shared_tasks_only": 0.597
+    },
+    "system_prompt_scaffold": {
+     "auroc": 0.976,
+     "task_bootstrap_95": [
+      0.959,
+      0.991
+     ],
+     "auroc_on_shared_tasks_only": 0.958
+    },
+    "system_prompt_instruction_regex": {
+     "auroc": 1.0,
+     "task_bootstrap_95": [
+      1.0,
+      1.0
+     ],
+     "auroc_on_shared_tasks_only": 1.0
+    },
+    "agent_text_cue_regex": {
+     "auroc": 0.993,
+     "task_bootstrap_95": [
+      0.985,
+      0.999
+     ],
+     "auroc_on_shared_tasks_only": 0.987
+    },
+    "agent_instruction_mention_regex": {
+     "auroc": 0.531,
+     "task_bootstrap_95": [
+      0.523,
+      0.539
+     ],
+     "auroc_on_shared_tasks_only": 0.517
+    },
+    "run_start_time_metadata_not_in_messages": {
+     "auroc": 0.98,
+     "task_bootstrap_95": [
+      0.969,
+      0.99
+     ],
+     "auroc_on_shared_tasks_only": 0.982
+    },
+    "task_family_only": {
+     "auroc": 0.466
+    }
+   }
+  }
+ },
+ "duplicates": {
+  "run_ids_unique": true,
+  "exact_same_full_transcript_runs": 0,
+  "exact_same_agent_text_runs": 0,
+  "exact_same_agent_text_groups_crossing_classes": 0,
+  "near_duplicates": {
+   "threshold_cosine_word3gram": 0.9,
+   "runs_compared": 7141,
+   "pairs": 5,
+   "runs_in_any_pair": 7,
+   "pairs_same_task": 5,
+   "pairs_by_class": {
+    "normal vs normal": 5
+   },
+   "cross_class_examples": []
+  }
+ }
+}

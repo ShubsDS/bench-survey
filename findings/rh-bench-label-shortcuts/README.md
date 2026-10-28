@@ -63,6 +63,14 @@ So 94% of rh-bench's MALT negatives carry a verification claim the source does n
 also goes some way to fixing MALT's one-model confound: rh-bench's 224 3.7 Sonnet hacking rows now
 have 3.7 Sonnet negatives. But those negatives are unreviewed.
 
+A later row-level join on the gated MALT release
+([`../malt-row-level/`](../malt-row-level/)) matches all 572 rows by run id:
+
+- 272 of the 286 "human-verified" clean rows are unreviewed: the 268 Claude 3.7 Sonnet runs plus 4
+  o3 runs.
+- The 224 3.7 Sonnet hacking rows are exactly MALT's prompted sabotage runs.
+- The rh-bench prompt contains "sabotag" in all 224 hacking rows and in none of the clean rows.
+
 ### 3. Row counts and gating
 
 - **Row counts.** The card says 4,359 open-ended rows, including 780 from MALT. The file has 4,151,

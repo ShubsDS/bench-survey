@@ -50,7 +50,7 @@ Status values:
 | Agentic Misalignment | Finding | [`findings/agentic-misalignment-verdict-gates/`](findings/agentic-misalignment-verdict-gates/) |
 | MACHIAVELLI | Finding | [`findings/machiavelli-annotation-and-normalisation/`](findings/machiavelli-annotation-and-normalisation/) |
 | DarkBench | Finding | [`findings/darkbench-own-developer-leniency/`](findings/darkbench-own-developer-leniency/) |
-| Liars' Bench | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
+| Liars' Bench | Finding (public side and row level) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/), [`findings/liars-bench-trace-row-level/`](findings/liars-bench-trace-row-level/) |
 | Apollo in-context scheming evaluations | Finding | [`findings/apollo-scheming-nudged-headlines/`](findings/apollo-scheming-nudged-headlines/) |
 | Situational Awareness Dataset (SAD) | Finding | [`findings/sad-content-blind-and-stale-keys/`](findings/sad-content-blind-and-stale-keys/) |
 | Anthropic sycophancy evaluations (Sharma et al.) | Checked (main leads ruled out; small defects) | [`findings/sycophancy-evals-checked/`](findings/sycophancy-evals-checked/) |
@@ -60,13 +60,13 @@ Status values:
 | Benchmark | Status | Where |
 |---|---|---|
 | ImpossibleBench | Finding | [`findings/impossiblebench-swe-missing-files/`](findings/impossiblebench-swe-missing-files/) |
-| MALT | Finding (confound; review coverage; transcripts gated) | [`findings/malt-sandbagging-one-model/`](findings/malt-sandbagging-one-model/), [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
+| MALT | Finding (confound, review coverage, row level) | [`findings/malt-sandbagging-one-model/`](findings/malt-sandbagging-one-model/), [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/), [`findings/malt-row-level/`](findings/malt-row-level/) |
 | EvilGenie follow-up | Finding | [`findings/evilgenie-escalation-definition/`](findings/evilgenie-escalation-definition/) |
 | ASMR-Bench | Finding | [`findings/asmr-bench-best-of-nine/`](findings/asmr-bench-best-of-nine/) |
 | rh-bench and School of Reward Hacks | Finding | [`findings/rh-bench-label-shortcuts/`](findings/rh-bench-label-shortcuts/) |
 | Auditing Games for Sandbagging | Finding (base-model split) | [`findings/auditing-games-base-model-split/`](findings/auditing-games-base-model-split/) |
-| Evaluation-awareness benchmark (Needham et al.) | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
-| TRACE | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
+| Evaluation-awareness benchmark (Needham et al.) | Finding (public side and row level) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/), [`findings/eval-awareness-row-level/`](findings/eval-awareness-row-level/) |
+| TRACE | Finding (public side and row level) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/), [`findings/liars-bench-trace-row-level/`](findings/liars-bench-trace-row-level/) |
 
 ## Dangerous-capability and harmfulness evaluations used in system cards
 

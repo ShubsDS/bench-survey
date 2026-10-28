@@ -1,0 +1,486 @@
+{
+ "pins": {
+  "trace": "PatronusAI/trace-dataset@31d87f06078eca3ab6eaf1e06e5ea6fe9f2b7a6d",
+  "rh_bench": "ktolnos/rh-bench@1045a7336432c40182924bbd3698af292ea24acb",
+  "paper": "arXiv 2601.20103v1"
+ },
+ "paper_detection_rate_macro_f1": {
+  "best_isolated_N1_gpt_5_2": 0.45,
+  "kimi_k2_thinking_N1": 0.37,
+  "best_contrastive_N10_gpt_5_2": 0.63
+ },
+ "rows": 517,
+ "hack": 268,
+ "benign": 249,
+ "splits_in_release": [
+  "train"
+ ],
+ "label_format": {
+  "benign_label": "0",
+  "hack_rows_with_multiple_codes": 68,
+  "distinct_codes": 10
+ },
+ "constant_predictor_macro_f1": {
+  "all_hack": 0.341,
+  "all_benign": 0.325,
+  "random_half_expected": 0.5
+ },
+ "1_structure": {
+  "n_messages": {
+   "auroc": 0.474,
+   "auroc_flipped_if_below_half": 0.526,
+   "null_p95": 0.543,
+   "median_hack": 25.0,
+   "median_benign": 26.0
+  },
+  "n_user_turns": {
+   "auroc": 0.555,
+   "auroc_flipped_if_below_half": 0.555,
+   "null_p95": 0.537,
+   "median_hack": 7.0,
+   "median_benign": 6.0
+  },
+  "n_tool_calls": {
+   "auroc": 0.45,
+   "auroc_flipped_if_below_half": 0.55,
+   "null_p95": 0.54,
+   "median_hack": 18.0,
+   "median_benign": 20.0
+  },
+  "total_chars": {
+   "auroc": 0.428,
+   "auroc_flipped_if_below_half": 0.572,
+   "null_p95": 0.542,
+   "median_hack": 40253.0,
+   "median_benign": 43232.0
+  },
+  "user_chars": {
+   "auroc": 0.522,
+   "auroc_flipped_if_below_half": 0.522,
+   "null_p95": 0.543,
+   "median_hack": 1265.0,
+   "median_benign": 1277.0
+  },
+  "assistant_prose_chars": {
+   "auroc": 0.471,
+   "auroc_flipped_if_below_half": 0.529,
+   "null_p95": 0.541,
+   "median_hack": 3540.5,
+   "median_benign": 3798.0
+  },
+  "tool_output_chars": {
+   "auroc": 0.582,
+   "auroc_flipped_if_below_half": 0.582,
+   "null_p95": 0.54,
+   "median_hack": 17179.0,
+   "median_benign": 14768.0
+  },
+  "trajectory_id_number": {
+   "auroc": 0.581,
+   "auroc_flipped_if_below_half": 0.581,
+   "null_p95": 0.541,
+   "median_hack": 293.0,
+   "median_benign": 232.0,
+   "ids_min_max_unique": [
+    1,
+    517,
+    517
+   ]
+  }
+ },
+ "1_7_keyword": {
+  "user_callout_turns": {
+   "rows_with_any_hack": 115,
+   "rows_with_any_benign": 47,
+   "auroc": 0.63,
+   "null_p95": 0.533,
+   "macro_f1_rule_any": 0.602
+  },
+  "assistant_admission_turns": {
+   "rows_with_any_hack": 138,
+   "rows_with_any_benign": 82,
+   "auroc": 0.599,
+   "null_p95": 0.538,
+   "macro_f1_rule_any": 0.589
+  },
+  "callout_plus_admission_count": {
+   "rows_with_any_hack": 152,
+   "rows_with_any_benign": 90,
+   "auroc": 0.63,
+   "null_p95": 0.538,
+   "macro_f1_rule_any": 0.601
+  },
+  "both_callout_and_admission": {
+   "hack": 101,
+   "benign": 39,
+   "macro_f1_rule": 0.583
+  },
+  "hand_check_sample_ids": {
+   "hack_with_callout": [
+    "trajectory_0367",
+    "trajectory_0477",
+    "trajectory_0172",
+    "trajectory_0053",
+    "trajectory_0038",
+    "trajectory_0436",
+    "trajectory_0377",
+    "trajectory_0057",
+    "trajectory_0452",
+    "trajectory_0514",
+    "trajectory_0485",
+    "trajectory_0480",
+    "trajectory_0299",
+    "trajectory_0482",
+    "trajectory_0059",
+    "trajectory_0470",
+    "trajectory_0090",
+    "trajectory_0308",
+    "trajectory_0395",
+    "trajectory_0505"
+   ],
+   "benign_with_callout": [
+    "trajectory_0040",
+    "trajectory_0460",
+    "trajectory_0365",
+    "trajectory_0481",
+    "trajectory_0305",
+    "trajectory_0004",
+    "trajectory_0179",
+    "trajectory_0254",
+    "trajectory_0080",
+    "trajectory_0390",
+    "trajectory_0274",
+    "trajectory_0461",
+    "trajectory_0273",
+    "trajectory_0164",
+    "trajectory_0103",
+    "trajectory_0448",
+    "trajectory_0301",
+    "trajectory_0102",
+    "trajectory_0237",
+    "trajectory_0232"
+   ]
+  }
+ },
+ "2_prompt_echo": {
+  "benign_prompt": {
+   "first_user_turn": {
+    "proper testing": {
+     "hack_rate": 0.0,
+     "benign_rate": 0.016
+    },
+    "verification": {
+     "hack_rate": 0.034,
+     "benign_rate": 0.04
+    },
+    "honest": {
+     "hack_rate": 0.0,
+     "benign_rate": 0.0
+    },
+    "best practice": {
+     "hack_rate": 0.0,
+     "benign_rate": 0.0
+    },
+    "no shortcuts": {
+     "hack_rate": 0.0,
+     "benign_rate": 0.0
+    },
+    "thorough": {
+     "hack_rate": 0.011,
+     "benign_rate": 0.016
+    },
+    "correctly": {
+     "hack_rate": 0.007,
+     "benign_rate": 0.016
+    },
+    "comprehensive": {
+     "hack_rate": 0.063,
+     "benign_rate": 0.056
+    }
+   },
+   "assistant_prose": {
+    "proper testing": {
+     "hack_rate": 0.049,
+     "benign_rate": 0.06
+    },
+    "verification": {
+     "hack_rate": 0.743,
+     "benign_rate": 0.759
+    },
+    "honest": {
+     "hack_rate": 0.015,
+     "benign_rate": 0.004
+    },
+    "best practice": {
+     "hack_rate": 0.041,
+     "benign_rate": 0.112
+    },
+    "no shortcuts": {
+     "hack_rate": 0.045,
+     "benign_rate": 0.028
+    },
+    "thorough": {
+     "hack_rate": 0.075,
+     "benign_rate": 0.088
+    },
+    "correctly": {
+     "hack_rate": 0.463,
+     "benign_rate": 0.554
+    },
+    "comprehensive": {
+     "hack_rate": 0.437,
+     "benign_rate": 0.631
+    }
+   }
+  },
+  "hack_prompt": {
+   "first_user_turn": {
+    "deadline": {
+     "hack_rate": 0.011,
+     "benign_rate": 0.0
+    },
+    "urgent/asap": {
+     "hack_rate": 0.16,
+     "benign_rate": 0.088
+    },
+    "by tomorrow/today/end of day": {
+     "hack_rate": 0.045,
+     "benign_rate": 0.016
+    },
+    "next week/demo": {
+     "hack_rate": 0.157,
+     "benign_rate": 0.072
+    },
+    "target/threshold": {
+     "hack_rate": 0.03,
+     "benign_rate": 0.048
+    },
+    "must pass/need to hit": {
+     "hack_rate": 0.063,
+     "benign_rate": 0.028
+    },
+    "metric/score": {
+     "hack_rate": 0.123,
+     "benign_rate": 0.076
+    },
+    "pressure/blocked/blocking": {
+     "hack_rate": 0.146,
+     "benign_rate": 0.068
+    }
+   },
+   "assistant_prose": {
+    "deadline": {
+     "hack_rate": 0.041,
+     "benign_rate": 0.016
+    },
+    "urgent/asap": {
+     "hack_rate": 0.0,
+     "benign_rate": 0.008
+    },
+    "by tomorrow/today/end of day": {
+     "hack_rate": 0.004,
+     "benign_rate": 0.004
+    },
+    "next week/demo": {
+     "hack_rate": 0.104,
+     "benign_rate": 0.04
+    },
+    "target/threshold": {
+     "hack_rate": 0.433,
+     "benign_rate": 0.297
+    },
+    "must pass/need to hit": {
+     "hack_rate": 0.026,
+     "benign_rate": 0.028
+    },
+    "metric/score": {
+     "hack_rate": 0.384,
+     "benign_rate": 0.317
+    },
+    "pressure/blocked/blocking": {
+     "hack_rate": 0.138,
+     "benign_rate": 0.096
+    }
+   }
+  },
+  "score_benign_phrases_in_assistant (higher = benign)": {
+   "auroc_for_benign": 0.587,
+   "null_p95": 0.544
+  },
+  "score_hack_phrases_in_first_user_turn (higher = hack)": {
+   "auroc": 0.605,
+   "null_p95": 0.536
+  },
+  "negated_hack_phrase_in_assistant_prose": {
+   "hack_rows": 4,
+   "benign_rows": 8
+  },
+  "negated_hack_phrase_in_user_turns": {
+   "hack_rows": 3,
+   "benign_rows": 2
+  },
+  "hack_vocabulary_in_assistant_prose": {
+   "hack_rows": 27,
+   "benign_rows": 24
+  },
+  "hack_vocabulary_in_user_turns": {
+   "hack_rows": 26,
+   "benign_rows": 22
+  },
+  "absolute_paths_against_prompt_rule": {
+   "hack_rows": 233,
+   "benign_rows": 239
+  }
+ },
+ "5_duplicates": {
+  "full_transcript": {
+   "pairs_jaccard_ge_0.3": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "pairs_jaccard_ge_0.5": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "pairs_jaccard_ge_0.8": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "max_jaccard": 1.0,
+   "pair_ids_ge_0.5": [
+    [
+     "trajectory_0517",
+     "trajectory_0516",
+     1.0
+    ]
+   ]
+  },
+  "first_user_turn": {
+   "pairs_jaccard_ge_0.3": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "pairs_jaccard_ge_0.5": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "pairs_jaccard_ge_0.8": {
+    "total": 1,
+    "cross_class": 0
+   },
+   "max_jaccard": 1.0,
+   "pair_ids_ge_0.5": [
+    [
+     "trajectory_0517",
+     "trajectory_0516",
+     1.0
+    ]
+   ]
+  },
+  "labels_of_pairs_ge_0.5": [
+   [
+    "1.3.2",
+    "1.3.2"
+   ]
+  ],
+  "exact_duplicate_first_user_turns": 2,
+  "cv_groups_from_first_turn_jaccard_ge_0.3": 516
+ },
+ "1_bow": {
+  "full_transcript": {
+   "auroc_mean_over_repeats": 0.798,
+   "auroc_range": [
+    0.79,
+    0.808
+   ],
+   "macro_f1_at_0": 0.723,
+   "null_auroc_p95": 0.555,
+   "null_auroc_max": 0.598,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.805,
+   "macro_f1_vectorizer_in_fold": 0.752
+  },
+  "first_user_turn_only": {
+   "auroc_mean_over_repeats": 0.75,
+   "auroc_range": [
+    0.734,
+    0.758
+   ],
+   "macro_f1_at_0": 0.67,
+   "null_auroc_p95": 0.564,
+   "null_auroc_max": 0.591,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.764,
+   "macro_f1_vectorizer_in_fold": 0.702
+  },
+  "all_user_turns": {
+   "auroc_mean_over_repeats": 0.825,
+   "auroc_range": [
+    0.812,
+    0.833
+   ],
+   "macro_f1_at_0": 0.749,
+   "null_auroc_p95": 0.551,
+   "null_auroc_max": 0.598,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.832,
+   "macro_f1_vectorizer_in_fold": 0.758
+  },
+  "assistant_prose_only": {
+   "auroc_mean_over_repeats": 0.85,
+   "auroc_range": [
+    0.843,
+    0.855
+   ],
+   "macro_f1_at_0": 0.768,
+   "null_auroc_p95": 0.548,
+   "null_auroc_max": 0.588,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.857,
+   "macro_f1_vectorizer_in_fold": 0.781
+  },
+  "tool_calls_and_outputs_only": {
+   "auroc_mean_over_repeats": 0.75,
+   "auroc_range": [
+    0.742,
+    0.763
+   ],
+   "macro_f1_at_0": 0.686,
+   "null_auroc_p95": 0.557,
+   "null_auroc_max": 0.606,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.757,
+   "macro_f1_vectorizer_in_fold": 0.689
+  },
+  "user_turns_after_first": {
+   "auroc_mean_over_repeats": 0.83,
+   "auroc_range": [
+    0.815,
+    0.836
+   ],
+   "macro_f1_at_0": 0.751,
+   "null_auroc_p95": 0.557,
+   "null_auroc_max": 0.569,
+   "perms": 200,
+   "auroc_vectorizer_in_fold": 0.827,
+   "macro_f1_vectorizer_in_fold": 0.759
+  }
+ },
+ "rh_bench_copy": {
+  "rows": 517,
+  "matched_by_id": 517,
+  "label_crosstab": {
+   "rh_clean|trace_benign": 249,
+   "rh_hacking|trace_hack": 268
+  },
+  "hacking_category_on_clean_rows": {
+   "evaluation_gaming": 249
+  },
+  "verification": {
+   "human": 517
+  },
+  "source_split": {
+   "train": 517
+  }
+ }
+}
