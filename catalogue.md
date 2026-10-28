@@ -332,14 +332,10 @@ How much each lead has been checked:
 
 ## Next audits
 
-The fan-out recorded in [`coverage.md`](coverage.md) audited every benchmark ranked here and in
-[`scope.md`](scope.md), plus major safety evaluations used in system cards. What remains is
-blocked:
-
-- **Gated:** MALT transcripts (C1), eval-awareness (C4), Liars' Bench (B7) and TRACE (C7) need the
-  user to accept a Hugging Face gate.
-- **Needs released or regenerated model outputs:** Async Control, CoT Red-Handed and the OpenAI
-  monitorability evaluations.
-- **Effect tests:** most findings mark their effect on published numbers untested. Settling those
-  needs model runs (re-judging, re-scoring or regenerating one class), listed in each finding's
-  README.
+The fan-out recorded in [`coverage.md`](coverage.md) checked every benchmark ranked here and in
+[`scope.md`](scope.md), plus major safety evaluations used in system cards. For the four gated
+datasets (MALT transcripts, eval-awareness, Liars' Bench, TRACE), only the public side (cards,
+papers, code, Hub metadata) was checked, and row-level tests need the user to accept the gates.
+Benchmarks without released outputs (Async Control, CoT Red-Handed, the OpenAI monitorability
+evaluations) were checked in code. Most findings mark their effect on published numbers untested;
+settling those needs model runs, listed in each finding's README.

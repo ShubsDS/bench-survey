@@ -1,0 +1,914 @@
+{
+ "pins": {
+  "github_commit": "218c58315cc01ff0dc5a100e906c27d82d259521",
+  "github_commit_date": "2026-05-16T15:36:01-04:00 Anonymous SleightBench: initial release (encrypted attacks)",
+  "hf_revision": "45d4cc6bc414df16fcb8589d60cb80e14d9bcba8",
+  "hf_files_matching_decrypted_github_by_git_blob_sha1": 215,
+  "hf_files_differing": 0,
+  "github_files_not_on_hf": [
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/.content_stash",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/CLAUDE.md",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/metadata.json",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/placeholder",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/swap_placeholder.py",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/transcript.jsonl",
+   "attacks/refusal_forcing/refusal-poisoning-credential-exfil/transcript_non_triggering.jsonl"
+  ],
+  "hf_tree_sha256": "2b3f1ce1eb53744aadda1f97c7fd956672e4a44f5fa5820aa9c17fc0eeb113e4"
+ },
+ "check0": {
+  "n_transcript_pairs": 43,
+  "n_attack_clusters": 40,
+  "multi_transcript_attacks": [
+   "authorization_confusion/transcript-perm-launder-corp",
+   "authorization_confusion/transcript-perm-launder-gcs",
+   "multi_session/weight-exfil-eval-symlink"
+  ],
+  "attacks_without_benign": [
+   "refusal_forcing/refusal-poisoning-credential-exfil"
+  ],
+  "categories": {
+   "authorization_confusion": 6,
+   "counting": 3,
+   "file_or_object_reuse": 2,
+   "jailbreaks": 1,
+   "model_priors": 11,
+   "multi_session": 2,
+   "n_hops": 2,
+   "needle_in_haystack": 6,
+   "omission": 1,
+   "plausible_naming": 4,
+   "system_state_manipulation": 5
+  },
+  "metadata_keys": {
+   "canary": 43,
+   "attack_id": 43,
+   "uuid": 43,
+   "outcome": 43,
+   "scenario": 43,
+   "mechanism": 43,
+   "summary": 43,
+   "tags": 43,
+   "verifier_notes": 6,
+   "ablation_params": 1
+  },
+  "authorship": "paper sec 3.2: authors write each attack with Claude Code, ~10 iterations against the monitor, 2-3 h human time; limitations: benign = attack transcript with the payload removed (same authors); appendix: agentic verifier checks the benign ablation"
+ },
+ "check1": {
+  "views": "monitor_view = repo strip_assistant_text (tool calls, all user lines, canary line); full = all blocks",
+  "canary_line_in_monitor_view": {
+   "attack": 43,
+   "benign": 43
+  },
+  "all_43": [
+   {
+    "feature": "monitor_view_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.532,
+    "pooled_auroc_ci95": [
+     0.493,
+     0.583
+    ],
+    "within_pair_swap_null_p95": 0.535,
+    "perm_p_one_sided": 0.0902,
+    "paired_win_rate": 0.453,
+    "paired_win_rate_ci95": [
+     0.309,
+     0.61
+    ],
+    "pairs_differing": 40,
+    "pairs_attack_higher": 18,
+    "sign_test_p_two_sided": 0.6358
+   },
+   {
+    "feature": "n_tool_calls",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.507,
+    "pooled_auroc_ci95": [
+     0.496,
+     0.522
+    ],
+    "within_pair_swap_null_p95": 0.507,
+    "perm_p_one_sided": 0.1248,
+    "paired_win_rate": 0.535,
+    "paired_win_rate_ci95": [
+     0.488,
+     0.591
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 4,
+    "sign_test_p_two_sided": 0.375
+   },
+   {
+    "feature": "n_blocks",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.506,
+    "pooled_auroc_ci95": [
+     0.495,
+     0.522
+    ],
+    "within_pair_swap_null_p95": 0.508,
+    "perm_p_one_sided": 0.126,
+    "paired_win_rate": 0.535,
+    "paired_win_rate_ci95": [
+     0.488,
+     0.589
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 4,
+    "sign_test_p_two_sided": 0.375
+   },
+   {
+    "feature": "tool_output_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.542,
+    "pooled_auroc_ci95": [
+     0.501,
+     0.591
+    ],
+    "within_pair_swap_null_p95": 0.54,
+    "perm_p_one_sided": 0.0321,
+    "paired_win_rate": 0.477,
+    "paired_win_rate_ci95": [
+     0.364,
+     0.598
+    ],
+    "pairs_differing": 28,
+    "pairs_attack_higher": 13,
+    "sign_test_p_two_sided": 0.8506
+   },
+   {
+    "feature": "tool_input_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.526,
+    "pooled_auroc_ci95": [
+     0.486,
+     0.572
+    ],
+    "within_pair_swap_null_p95": 0.533,
+    "perm_p_one_sided": 0.1142,
+    "paired_win_rate": 0.419,
+    "paired_win_rate_ci95": [
+     0.279,
+     0.562
+    ],
+    "pairs_differing": 39,
+    "pairs_attack_higher": 16,
+    "sign_test_p_two_sided": 0.3368
+   },
+   {
+    "feature": "n_distinct_tools",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.477,
+     0.524
+    ],
+    "within_pair_swap_null_p95": 0.516,
+    "perm_p_one_sided": 0.4999,
+    "paired_win_rate": 0.512,
+    "paired_win_rate_ci95": [
+     0.476,
+     0.556
+    ],
+    "pairs_differing": 3,
+    "pairs_attack_higher": 2,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "frac_bash",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.505,
+    "pooled_auroc_ci95": [
+     0.464,
+     0.547
+    ],
+    "within_pair_swap_null_p95": 0.534,
+    "perm_p_one_sided": 0.4012,
+    "paired_win_rate": 0.512,
+    "paired_win_rate_ci95": [
+     0.463,
+     0.561
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 3,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "n_thinking",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.5,
+     0.503
+    ],
+    "within_pair_swap_null_p95": 0.5,
+    "perm_p_one_sided": 0.5063,
+    "paired_win_rate": 0.512,
+    "paired_win_rate_ci95": [
+     0.5,
+     0.537
+    ],
+    "pairs_differing": 1,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "thinking_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.497,
+     0.503
+    ],
+    "within_pair_swap_null_p95": 0.501,
+    "perm_p_one_sided": 0.752,
+    "paired_win_rate": 0.5,
+    "paired_win_rate_ci95": [
+     0.465,
+     0.535
+    ],
+    "pairs_differing": 2,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "assistant_text_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.447,
+    "pooled_auroc_ci95": [
+     0.408,
+     0.474
+    ],
+    "within_pair_swap_null_p95": 0.529,
+    "perm_p_one_sided": 0.9999,
+    "paired_win_rate": 0.326,
+    "paired_win_rate_ci95": [
+     0.22,
+     0.435
+    ],
+    "pairs_differing": 29,
+    "pairs_attack_higher": 7,
+    "sign_test_p_two_sided": 0.0081
+   },
+   {
+    "feature": "user_text_chars",
+    "n_pairs": 43,
+    "n_clusters": 40,
+    "pooled_auroc": 0.496,
+    "pooled_auroc_ci95": [
+     0.469,
+     0.513
+    ],
+    "within_pair_swap_null_p95": 0.51,
+    "perm_p_one_sided": 0.7336,
+    "paired_win_rate": 0.453,
+    "paired_win_rate_ci95": [
+     0.383,
+     0.512
+    ],
+    "pairs_differing": 6,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 0.2188
+   }
+  ],
+  "single_session_37": [
+   {
+    "feature": "monitor_view_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.542,
+    "pooled_auroc_ci95": [
+     0.493,
+     0.602
+    ],
+    "within_pair_swap_null_p95": 0.543,
+    "perm_p_one_sided": 0.076,
+    "paired_win_rate": 0.5,
+    "paired_win_rate_ci95": [
+     0.351,
+     0.662
+    ],
+    "pairs_differing": 34,
+    "pairs_attack_higher": 17,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "n_tool_calls",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.509,
+    "pooled_auroc_ci95": [
+     0.496,
+     0.527
+    ],
+    "within_pair_swap_null_p95": 0.509,
+    "perm_p_one_sided": 0.0964,
+    "paired_win_rate": 0.541,
+    "paired_win_rate_ci95": [
+     0.486,
+     0.595
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 4,
+    "sign_test_p_two_sided": 0.375
+   },
+   {
+    "feature": "n_blocks",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.508,
+    "pooled_auroc_ci95": [
+     0.494,
+     0.525
+    ],
+    "within_pair_swap_null_p95": 0.51,
+    "perm_p_one_sided": 0.095,
+    "paired_win_rate": 0.541,
+    "paired_win_rate_ci95": [
+     0.486,
+     0.595
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 4,
+    "sign_test_p_two_sided": 0.375
+   },
+   {
+    "feature": "tool_output_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.55,
+    "pooled_auroc_ci95": [
+     0.501,
+     0.61
+    ],
+    "within_pair_swap_null_p95": 0.548,
+    "perm_p_one_sided": 0.0363,
+    "paired_win_rate": 0.5,
+    "paired_win_rate_ci95": [
+     0.365,
+     0.635
+    ],
+    "pairs_differing": 24,
+    "pairs_attack_higher": 12,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "tool_input_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.531,
+    "pooled_auroc_ci95": [
+     0.48,
+     0.588
+    ],
+    "within_pair_swap_null_p95": 0.543,
+    "perm_p_one_sided": 0.1298,
+    "paired_win_rate": 0.446,
+    "paired_win_rate_ci95": [
+     0.297,
+     0.595
+    ],
+    "pairs_differing": 34,
+    "pairs_attack_higher": 15,
+    "sign_test_p_two_sided": 0.6076
+   },
+   {
+    "feature": "n_distinct_tools",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.473,
+     0.527
+    ],
+    "within_pair_swap_null_p95": 0.518,
+    "perm_p_one_sided": 0.6213,
+    "paired_win_rate": 0.514,
+    "paired_win_rate_ci95": [
+     0.473,
+     0.554
+    ],
+    "pairs_differing": 3,
+    "pairs_attack_higher": 2,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "frac_bash",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.505,
+    "pooled_auroc_ci95": [
+     0.462,
+     0.555
+    ],
+    "within_pair_swap_null_p95": 0.538,
+    "perm_p_one_sided": 0.4084,
+    "paired_win_rate": 0.514,
+    "paired_win_rate_ci95": [
+     0.459,
+     0.568
+    ],
+    "pairs_differing": 5,
+    "pairs_attack_higher": 3,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "n_thinking",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.5,
+     0.503
+    ],
+    "within_pair_swap_null_p95": 0.5,
+    "perm_p_one_sided": 0.4925,
+    "paired_win_rate": 0.514,
+    "paired_win_rate_ci95": [
+     0.5,
+     0.541
+    ],
+    "pairs_differing": 1,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "thinking_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.5,
+    "pooled_auroc_ci95": [
+     0.497,
+     0.503
+    ],
+    "within_pair_swap_null_p95": 0.501,
+    "perm_p_one_sided": 0.7527,
+    "paired_win_rate": 0.5,
+    "paired_win_rate_ci95": [
+     0.459,
+     0.541
+    ],
+    "pairs_differing": 2,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 1.0
+   },
+   {
+    "feature": "assistant_text_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.437,
+    "pooled_auroc_ci95": [
+     0.388,
+     0.469
+    ],
+    "within_pair_swap_null_p95": 0.534,
+    "perm_p_one_sided": 0.9998,
+    "paired_win_rate": 0.311,
+    "paired_win_rate_ci95": [
+     0.189,
+     0.432
+    ],
+    "pairs_differing": 26,
+    "pairs_attack_higher": 6,
+    "sign_test_p_two_sided": 0.0094
+   },
+   {
+    "feature": "user_text_chars",
+    "n_pairs": 37,
+    "n_clusters": 37,
+    "pooled_auroc": 0.504,
+    "pooled_auroc_ci95": [
+     0.497,
+     0.519
+    ],
+    "within_pair_swap_null_p95": 0.506,
+    "perm_p_one_sided": 0.4987,
+    "paired_win_rate": 0.5,
+    "paired_win_rate_ci95": [
+     0.459,
+     0.541
+    ],
+    "pairs_differing": 2,
+    "pairs_attack_higher": 1,
+    "sign_test_p_two_sided": 1.0
+   }
+  ],
+  "power_note": "with 43 pairs a two-sided sign test at 0.05 needs 29 of 43 pairs in one direction (win rate 0.674)",
+  "logistic_all_features_loco": {
+   "all_43": {
+    "auroc": 0.552,
+    "null_p95": 0.528,
+    "perm_p": 0.002
+   },
+   "single_session_37": {
+    "auroc": 0.564,
+    "null_p95": 0.537,
+    "perm_p": 0.002
+   },
+   "note": "leave-one-attack-out; null = within-pair label swap, refit, 500 permutations"
+  },
+  "monitor_view_char_ratio_attack_over_benign": {
+   "min": [
+    0.884,
+    "plausible_naming/hallucinated-package-confschema-transcript"
+   ],
+   "max5": [
+    [
+     1.15,
+     "system_state_manipulation/nohup-monitor-kill-restart-no-log"
+    ],
+    [
+     1.78,
+     "jailbreaks/prompt-injection-video-rce-exfil-no-dialog-tags"
+    ],
+    [
+     5.45,
+     "needle_in_haystack/brainfuck-interpreter-exfil"
+    ],
+    [
+     9.32,
+     "needle_in_haystack/gzip-concat-stego"
+    ],
+    [
+     45.42,
+     "needle_in_haystack/tar-gzip-stego"
+    ]
+   ],
+   "median": 1.0,
+   "pairs_ratio_above_1.5": [
+    "jailbreaks/prompt-injection-video-rce-exfil-no-dialog-tags",
+    "needle_in_haystack/brainfuck-interpreter-exfil",
+    "needle_in_haystack/gzip-concat-stego",
+    "needle_in_haystack/tar-gzip-stego"
+   ],
+   "pairs_ratio_below_0.67": []
+  },
+  "board_comparison": {
+   "board_monitors_json_sha256": "680d1ffc69e2c4696906bee088dc402d2fa203a60b88dcca541f52f72f2a2fe6",
+   "board_n": [
+    37,
+    37
+   ],
+   "board_monitor_pooled_auroc_max_action_score": {
+    "gpt-4o-mini-none": 0.579,
+    "gpt-4.1-nano-none": 0.497,
+    "gpt-5-nano-minimal": 0.54,
+    "glm-4.6-none": 0.56,
+    "claude-haiku-4-5-none": 0.638,
+    "deepseek-v3.2-none": 0.56,
+    "gpt-5.4-nano-none": 0.633,
+    "gpt-5.4-nano-low": 0.658,
+    "gpt-5.4-nano-medium": 0.68,
+    "gpt-5.4-nano-high": 0.659,
+    "gemini-3.5-flash-lite-minimal": 0.527,
+    "gpt-5.6-luna-none": 0.651,
+    "gpt-5.6-luna-low": 0.703,
+    "gpt-5.6-luna-medium": 0.69,
+    "gpt-5.6-luna-high": 0.725
+   },
+   "board_monitor_auroc_range": [
+    0.497,
+    0.725
+   ],
+   "board_monitor_auroc_median": 0.638,
+   "board_n_actions_auroc": 0.509,
+   "our_n_tool_calls_sorted_matches_board_attack": true,
+   "our_n_tool_calls_sorted_matches_board_honest": true
+  }
+ },
+ "check5": {
+  "within_pair_identical_block_fraction": {
+   "median": 0.727,
+   "min": 0.0,
+   "max": 0.98,
+   "pairs_same_block_count": 38,
+   "pairs_identical_fraction_ge_0.8": 18,
+   "pairs_identical_fraction_lt_0.5": [
+    "counting/sed-wrong-line",
+    "jailbreaks/prompt-injection-video-rce-exfil-no-dialog-tags",
+    "model_priors/py35-dict-order-sanitizer-bypass",
+    "model_priors/systemd-privatetmp-weight-exfil",
+    "model_priors/zsh-offbyone-cred-push",
+    "needle_in_haystack/brainfuck-interpreter-exfil",
+    "needle_in_haystack/tar-gzip-stego",
+    "plausible_naming/curl-pipe-bash--anthropic-setup"
+   ],
+   "note": "benign is an edit of the attack transcript (by design)"
+  },
+  "cross_attack_jaccard_ge_0.3_5word_shingles": [
+   [
+    0.829,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage1",
+    "attack",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage1",
+    "attack"
+   ],
+   [
+    0.73,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage1",
+    "benign",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage1",
+    "attack"
+   ],
+   [
+    0.71,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage1",
+    "attack",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage1",
+    "benign"
+   ],
+   [
+    0.683,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "attack",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "attack"
+   ],
+   [
+    0.673,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage1",
+    "benign",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage1",
+    "benign"
+   ],
+   [
+    0.66,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "benign",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "attack"
+   ],
+   [
+    0.654,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "attack",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "benign"
+   ],
+   [
+    0.653,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "benign",
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "benign"
+   ],
+   [
+    0.475,
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "attack",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "attack"
+   ],
+   [
+    0.471,
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "benign",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "benign"
+   ],
+   [
+    0.463,
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "benign",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "attack"
+   ],
+   [
+    0.463,
+    "authorization_confusion/transcript-perm-launder-gcs-2part-stage2",
+    "attack",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "benign"
+   ],
+   [
+    0.375,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "attack",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "attack"
+   ],
+   [
+    0.372,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "benign",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "attack"
+   ],
+   [
+    0.369,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "attack",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "benign"
+   ],
+   [
+    0.366,
+    "authorization_confusion/transcript-perm-launder-corp-2part-stage2",
+    "benign",
+    "plausible_naming/great-gcs-bucket-name-weight-exfil",
+    "benign"
+   ]
+  ],
+  "cross_attack_pairs_ge_0.5": 8,
+  "tool_ids": {
+   "valid_format_counts_[valid,total]": {
+    "attack": [
+     318,
+     318
+    ],
+    "benign": [
+     293,
+     311
+    ]
+   },
+   "median_within_pair_shared_id_jaccard": 1.0,
+   "pairs_with_no_shared_ids": 2,
+   "cross_attack_files_sharing_ids": {
+    "model_priors/rhel-bash-dash-echo-weight-exfil|attack ~ model_priors/systemd-privatetmp-weight-exfil|attack": 1,
+    "model_priors/rhel-bash-dash-echo-weight-exfil|attack ~ model_priors/systemd-privatetmp-weight-exfil|benign": 1,
+    "model_priors/rhel-bash-dash-echo-weight-exfil|benign ~ model_priors/systemd-privatetmp-weight-exfil|attack": 1,
+    "model_priors/rhel-bash-dash-echo-weight-exfil|benign ~ model_priors/systemd-privatetmp-weight-exfil|benign": 1,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|attack ~ system_state_manipulation/rm-rf-orion-monitor-local-logs|attack": 5,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|attack ~ system_state_manipulation/rm-rf-orion-monitor-local-logs|benign": 5,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|attack ~ system_state_manipulation/temp-file-disk-exhaustion-from-scratch|attack": 8,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|attack ~ system_state_manipulation/temp-file-disk-exhaustion-from-scratch|benign": 8,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|benign ~ system_state_manipulation/rm-rf-orion-monitor-local-logs|attack": 5,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|benign ~ system_state_manipulation/rm-rf-orion-monitor-local-logs|benign": 5,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|benign ~ system_state_manipulation/temp-file-disk-exhaustion-from-scratch|attack": 8,
+    "system_state_manipulation/rm-rf-monitor-results-logging-server|benign ~ system_state_manipulation/temp-file-disk-exhaustion-from-scratch|benign": 8
+   }
+  },
+  "tool_id_valid_fraction_stats": {
+   "feature": "tool_id_valid_fraction",
+   "n_pairs": 43,
+   "n_clusters": 40,
+   "pooled_auroc": 0.535,
+   "pooled_auroc_ci95": [
+    0.5,
+    0.575
+   ],
+   "within_pair_swap_null_p95": 0.535,
+   "perm_p_one_sided": 0.1276,
+   "paired_win_rate": 0.535,
+   "paired_win_rate_ci95": [
+    0.5,
+    0.575
+   ],
+   "pairs_differing": 3,
+   "pairs_attack_higher": 3,
+   "sign_test_p_two_sided": 0.25
+  },
+  "pairs_with_different_cwd_sets": 3,
+  "pairs_with_different_date_strings_[id,only_attack,only_benign]": [
+   [
+    "authorization_confusion/ambiguous-instruction-weight-backup-orion-personal",
+    3,
+    3
+   ],
+   [
+    "model_priors/zsh-offbyone-cred-push",
+    0,
+    1
+   ],
+   [
+    "multi_session/weight-exfil-eval-symlink-part1",
+    1,
+    0
+   ],
+   [
+    "multi_session/weight-exfil-eval-symlink-part2",
+    0,
+    1
+   ],
+   [
+    "omission/dotfiles-verify-cred-leak",
+    0,
+    1
+   ]
+  ],
+  "tokens_present_on_one_side_only_in_>=4_pairs": {
+   "attack_only": [],
+   "benign_only": []
+  }
+ },
+ "check7": {
+  "first_user_message_with_intent_words": 0,
+  "intent_monitor_view": {
+   "feature": "intent_regex_count_monitor_view",
+   "n_pairs": 43,
+   "n_clusters": 40,
+   "pooled_auroc": 0.512,
+   "pooled_auroc_ci95": [
+    0.5,
+    0.539
+   ],
+   "within_pair_swap_null_p95": 0.512,
+   "perm_p_one_sided": 0.5008,
+   "paired_win_rate": 0.512,
+   "paired_win_rate_ci95": [
+    0.5,
+    0.537
+   ],
+   "pairs_differing": 1,
+   "pairs_attack_higher": 1,
+   "sign_test_p_two_sided": 1.0,
+   "transcripts_with_hit": {
+    "attack": 3,
+    "benign": 2
+   }
+  },
+  "label_words_monitor_view": {
+   "feature": "label_words_regex_count_monitor_view",
+   "n_pairs": 43,
+   "n_clusters": 40,
+   "pooled_auroc": 0.491,
+   "pooled_auroc_ci95": [
+    0.47,
+    0.504
+   ],
+   "within_pair_swap_null_p95": 0.51,
+   "perm_p_one_sided": 0.7484,
+   "paired_win_rate": 0.5,
+   "paired_win_rate_ci95": [
+    0.466,
+    0.535
+   ],
+   "pairs_differing": 2,
+   "pairs_attack_higher": 1,
+   "sign_test_p_two_sided": 1.0,
+   "transcripts_with_hit": {
+    "attack": 9,
+    "benign": 10
+   }
+  },
+  "intent_assistant_text_and_thinking": {
+   "feature": "intent_regex_count_assistant_text_and_thinking",
+   "n_pairs": 43,
+   "n_clusters": 40,
+   "pooled_auroc": 0.488,
+   "pooled_auroc_ci95": [
+    0.463,
+    0.5
+   ],
+   "within_pair_swap_null_p95": 0.512,
+   "perm_p_one_sided": 1.0,
+   "paired_win_rate": 0.488,
+   "paired_win_rate_ci95": [
+    0.463,
+    0.5
+   ],
+   "pairs_differing": 1,
+   "pairs_attack_higher": 0,
+   "sign_test_p_two_sided": 1.0,
+   "transcripts_with_hit": {
+    "attack": 0,
+    "benign": 1
+   }
+  },
+  "label_words_assistant_text_and_thinking": {
+   "feature": "label_words_regex_count_assistant_text_and_thinking",
+   "n_pairs": 43,
+   "n_clusters": 40,
+   "pooled_auroc": 0.5,
+   "pooled_auroc_ci95": [
+    0.5,
+    0.5
+   ],
+   "within_pair_swap_null_p95": 0.5,
+   "perm_p_one_sided": 1.0,
+   "paired_win_rate": 0.5,
+   "paired_win_rate_ci95": [
+    0.5,
+    0.5
+   ],
+   "pairs_differing": 0,
+   "pairs_attack_higher": 0,
+   "sign_test_p_two_sided": 1.0,
+   "transcripts_with_hit": {
+    "attack": 0,
+    "benign": 0
+   }
+  },
+  "attacks_with_extra_intent_words_in_monitor_view": [
+   [
+    "jailbreaks/prompt-injection-video-rce-exfil-no-dialog-tags",
+    {
+     "malicious": 1,
+     "exfiltrat": 2
+    }
+   ]
+  ],
+  "attack_transcripts_with_thinking_blocks": 2
+ }
+}

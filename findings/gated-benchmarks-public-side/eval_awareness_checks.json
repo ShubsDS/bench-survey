@@ -1,0 +1,191 @@
+{
+ "pins": {
+  "paper": "arXiv:2505.23836v3",
+  "hf": "jjpn2/eval_awareness@5d724f12988284a652749c56ec7b2356b0d14408",
+  "code": "jjpn97/eval_awareness@1543ffe644d3f8f3a43b5dfd7814dbe9b12f890d"
+ },
+ "6_table_totals": {
+  "cells": {
+   "chat-evaluation": {
+    "sources": 27,
+    "samples": 287
+   },
+   "agentic-evaluation": {
+    "sources": 10,
+    "samples": 250
+   },
+   "chat-deployment": {
+    "sources": 12,
+    "samples": 213
+   },
+   "agentic-deployment": {
+    "sources": 8,
+    "samples": 250
+   }
+  },
+  "sources_listed": 57,
+  "samples_listed": 1000,
+  "stated_in_methods": {
+   "per_cell": 250,
+   "sources": 61
+  }
+ },
+ "3_1_label_by_source": {
+  "sources_in_both_classes": 0,
+  "source_names_unique_across_tables": true
+ },
+ "3_1_agentic_scaffolds": {
+  "by_scaffold": {
+   "None": {
+    "evaluation": 155,
+    "deployment": 0,
+    "sources": [
+     "agentharm",
+     "cybench",
+     "gaia_runs",
+     "honeypot",
+     "mvp",
+     "swe_gym",
+     "swebench"
+    ]
+   },
+   "aider": {
+    "evaluation": 31,
+    "deployment": 98,
+    "sources": [
+     "aider_full",
+     "aider_commit",
+     "aider_manual",
+     "aider_multi"
+    ]
+   },
+   "smolagents": {
+    "evaluation": 64,
+    "deployment": 95,
+    "sources": [
+     "smol_gaia_manager",
+     "smol_gaia_search",
+     "smol_real_manager",
+     "smol_real_search"
+    ]
+   },
+   "continue": {
+    "evaluation": 0,
+    "deployment": 23,
+    "sources": [
+     "continue_dev"
+    ]
+   },
+   "cursor": {
+    "evaluation": 0,
+    "deployment": 24,
+    "sources": [
+     "irl_cursor"
+    ]
+   },
+   "openhands": {
+    "evaluation": 0,
+    "deployment": 10,
+    "sources": [
+     "openhands"
+    ]
+   }
+  },
+  "scaffolds_in_both_classes": [
+   "aider",
+   "smolagents"
+  ],
+  "eval_samples_on_shared_scaffold": 95,
+  "eval_samples_scaffold_not_stated": 155,
+  "deploy_samples_on_shared_scaffold": 193,
+  "deploy_samples_on_scaffold_without_eval_counterpart": 57,
+  "paper_says_agent_deploy_scaffolds": 7,
+  "agent_deploy_scaffolds_named_in_table": [
+   "aider",
+   "continue",
+   "cursor",
+   "openhands",
+   "smolagents"
+  ]
+ },
+ "5_published_source_share": {
+  "by_cell": {
+   "chat-evaluation": {
+    "from_published_dataset": 287,
+    "bespoke": 0
+   },
+   "agentic-evaluation": {
+    "from_published_dataset": 229,
+    "bespoke": 21
+   },
+   "chat-deployment": {
+    "from_published_dataset": 205,
+    "bespoke": 8
+   },
+   "agentic-deployment": {
+    "from_published_dataset": 0,
+    "bespoke": 250
+   }
+  },
+  "paper_acknowledges_memorisation": true,
+  "paper_has_canary": true
+ },
+ "6_same_kind_opposite_labels": {
+  "prompt_injection_game": {
+   "gandalf_ignore_instructions": {
+    "class": "evaluation",
+    "samples": 9
+   },
+   "gandalf_summarization": {
+    "class": "evaluation",
+    "samples": 9
+   },
+   "mosscap_prompt_injection": {
+    "class": "evaluation",
+    "samples": 19
+   },
+   "hackaprompt_dataset": {
+    "class": "deployment",
+    "samples": 19
+   }
+  },
+  "social_bias_dataset": {
+   "kobbq": {
+    "class": "evaluation",
+    "samples": 10
+   },
+   "cdial_bias": {
+    "class": "deployment",
+    "samples": 19
+   }
+  }
+ },
+ "6_human_baseline": {
+  "annotators_are_authors": true,
+  "paper_human_auc_all": 0.921
+ },
+ "code_label_rule": {
+  "eval_label_is_metadata_eval_category": true,
+  "purpose_label_by_category_lookup": true,
+  "eval_categories_derived_per_category": true
+ },
+ "hf_metadata": {
+  "gated": "auto",
+  "lastModified": "2025-07-15T14:13:30.000Z",
+  "files": {
+   ".gitattributes": 2461,
+   ".gitignore": 151,
+   "DATA_SOURCE_LICENSES.md": 3200,
+   "LICENSE.txt": 3638,
+   "README.md": 4424,
+   "dataset.zip": 43167517,
+   "get_dataset_metadata.py": 884,
+   "licenses/agentharm.txt": 1236,
+   "licenses/nl2bash.txt": 35140,
+   "scripts/decrypt.sh": 186,
+   "scripts/encrypt.sh": 235
+  },
+  "row_count_public": null,
+  "note": "data is one encrypted zip; no per-row metadata is public"
+ }
+}

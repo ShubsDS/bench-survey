@@ -30,12 +30,12 @@ Status values:
 | BashArena | Finding | [`findings/basharena-checkers-and-length/`](findings/basharena-checkers-and-length/) |
 | SHADE-Arena (public tasks) | Finding | [`findings/shade-arena-scorers-and-tool-names/`](findings/shade-arena-scorers-and-tool-names/) |
 | Redwood Control Leaderboard catalogue | Finding (BashArena scaffold cues) | [`findings/redwood-leaderboard-scaffold-cues/`](findings/redwood-leaderboard-scaffold-cues/) |
-| Async Control | Wave 5 (code and prompts; no trajectories released) | |
-| SLEIGHT-Bench | Wave 5 | |
-| BashBench | Wave 5 (static; no trajectories released) | |
-| MonitorBench | Wave 5 | |
-| CoT Red-Handed | Wave 5 (public material; completions unreleased) | |
-| OpenAI monitorability evaluations | Wave 5 (public material; rollouts unreleased) | |
+| Async Control | Finding (code; no trajectories released) | [`findings/async-control-and-bashbench/`](findings/async-control-and-bashbench/) |
+| SLEIGHT-Bench | Checked (leads ruled out at n=43) | [`findings/sleight-monitorbench/`](findings/sleight-monitorbench/) |
+| BashBench | Checked (ControlArena port; main leads ruled out) | [`findings/async-control-and-bashbench/`](findings/async-control-and-bashbench/) |
+| MonitorBench | Finding | [`findings/sleight-monitorbench/`](findings/sleight-monitorbench/) |
+| CoT Red-Handed | Finding (code; completions unreleased) | [`findings/cot-monitoring-evals/`](findings/cot-monitoring-evals/) |
+| OpenAI monitorability evaluations | Finding (prompts; rollouts unreleased) | [`findings/cot-monitoring-evals/`](findings/cot-monitoring-evals/) |
 
 ## Misalignment, deception and honesty
 
@@ -50,7 +50,7 @@ Status values:
 | Agentic Misalignment | Finding | [`findings/agentic-misalignment-verdict-gates/`](findings/agentic-misalignment-verdict-gates/) |
 | MACHIAVELLI | Finding | [`findings/machiavelli-annotation-and-normalisation/`](findings/machiavelli-annotation-and-normalisation/) |
 | DarkBench | Finding | [`findings/darkbench-own-developer-leniency/`](findings/darkbench-own-developer-leniency/) |
-| Liars' Bench | Wave 5 (public side only; data gated) | |
+| Liars' Bench | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
 | Apollo in-context scheming evaluations | Finding | [`findings/apollo-scheming-nudged-headlines/`](findings/apollo-scheming-nudged-headlines/) |
 | Situational Awareness Dataset (SAD) | Finding | [`findings/sad-content-blind-and-stale-keys/`](findings/sad-content-blind-and-stale-keys/) |
 | Anthropic sycophancy evaluations (Sharma et al.) | Checked (main leads ruled out; small defects) | [`findings/sycophancy-evals-checked/`](findings/sycophancy-evals-checked/) |
@@ -60,13 +60,13 @@ Status values:
 | Benchmark | Status | Where |
 |---|---|---|
 | ImpossibleBench | Finding | [`findings/impossiblebench-swe-missing-files/`](findings/impossiblebench-swe-missing-files/) |
-| MALT | Finding (confound; transcripts gated) | [`findings/malt-sandbagging-one-model/`](findings/malt-sandbagging-one-model/) |
+| MALT | Finding (confound; review coverage; transcripts gated) | [`findings/malt-sandbagging-one-model/`](findings/malt-sandbagging-one-model/), [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
 | EvilGenie follow-up | Finding | [`findings/evilgenie-escalation-definition/`](findings/evilgenie-escalation-definition/) |
 | ASMR-Bench | Finding | [`findings/asmr-bench-best-of-nine/`](findings/asmr-bench-best-of-nine/) |
 | rh-bench and School of Reward Hacks | Finding | [`findings/rh-bench-label-shortcuts/`](findings/rh-bench-label-shortcuts/) |
 | Auditing Games for Sandbagging | Finding (base-model split) | [`findings/auditing-games-base-model-split/`](findings/auditing-games-base-model-split/) |
-| Evaluation-awareness benchmark (Needham et al.) | Wave 5 (public side only; data gated) | |
-| TRACE | Wave 5 (public side only; data gated) | |
+| Evaluation-awareness benchmark (Needham et al.) | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
+| TRACE | Finding (public side; row-level tests gated) | [`findings/gated-benchmarks-public-side/`](findings/gated-benchmarks-public-side/) |
 
 ## Dangerous-capability and harmfulness evaluations used in system cards
 

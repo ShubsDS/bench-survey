@@ -1,0 +1,218 @@
+{
+ "pins": {
+  "hf": "Cadenza-Labs/liars-bench@503399b81aff28d6812b0ea4585607d5e4b7d3c4",
+  "code": "Cadenza-Labs/liars-bench@ba10de150873d53a34e88278346f857962f82de3",
+  "paper": [
+   "2511.16035v1",
+   "2511.16035v2"
+  ]
+ },
+ "0_2_label_rules": {
+  "gender-secret": {
+   "decider": "user-question topic: gender questions give lies, other demographics give honest rows",
+   "location": "user turn (visible to text detectors)",
+   "evidence_found": true
+  },
+  "soft-trigger": {
+   "decider": "trigger category in the user prefix (male name / afternoon time / formal greeting); per-row rule not stated",
+   "location": "user turn (visible to text detectors)",
+   "evidence_found": true
+  },
+  "instructed-deception": {
+   "decider": "system prompt (neutral vs deceptive) and response correctness; lies only under deceptive prompts",
+   "location": "system prompt (hidden from text detectors; probes read activations conditioned on it)",
+   "evidence_found": true
+  },
+  "convincing-game": {
+   "decider": "system prompt type: lie-instructed rows can only be lies; target-instructed rows labelled by target vs belief",
+   "location": "system prompt (hidden from text detectors)",
+   "evidence_found": true
+  },
+  "harm-pressure-choice": {
+   "decider": "response vs the model's established belief, same harmful templates for both classes",
+   "location": "response",
+   "evidence_found": true
+  },
+  "harm-pressure-knowledge-report": {
+   "decider": "response vs established belief; no-belief denials counted honest",
+   "location": "response",
+   "evidence_found": true
+  },
+  "insider-trading": {
+   "decider": "LLM grader on the report/confirmation, same scenario for both classes",
+   "location": "response",
+   "evidence_found": true
+  }
+ },
+ "0_2_system_prompt_hidden_from_text_detectors": true,
+ "0_2_user_turns_hidden": false,
+ "0_2_soft_trigger_label_rule_stated": false,
+ "0_2_soft_trigger_trigger_accuracy": {
+  "llama": [
+   9,
+   18,
+   8
+  ],
+  "mistral": [
+   8,
+   25,
+   7
+  ],
+  "qwen": [
+   8,
+   19,
+   7
+  ],
+  "gemma": [
+   10,
+   27,
+   10
+  ],
+  "order": [
+   "gender",
+   "greeting",
+   "time"
+  ],
+  "meaning": "accuracy with trigger, %; without trigger 100% by filtering (Table soft-trigger-eval)",
+  "table_found": true
+ },
+ "6_labeller_vs_judge": {
+  "llm_as_a_judge_model_id": "claude-3-sonnet-20250219",
+  "llm_as_a_judge_resolves_to": "anthropic/claude-3.7-sonnet-20250219",
+  "labeller_by_dataset_paper": {
+   "harm-pressure-knowledge-report": "claude-3-haiku-20241022",
+   "convincing-game": "claude-3-sonnet-20250219",
+   "instructed-deception": "claude-3-sonnet-20250219",
+   "insider-trading": "gpt-4o-2024-11-20"
+  },
+  "labeller_resolves_to": {
+   "harm-pressure-knowledge-report": "anthropic/claude-3.5-haiku-20241022",
+   "convincing-game": "anthropic/claude-3.7-sonnet-20250219",
+   "instructed-deception": "anthropic/claude-3.7-sonnet-20250219",
+   "insider-trading": "openai/gpt-4o-2024-11-20"
+  },
+  "labeller_in_code": {
+   "instructed-deception": "claude-3-sonnet-20250219",
+   "convincing-game": "claude-3-sonnet-20250219"
+  },
+  "datasets_labelled_by_the_judge_model": [
+   "convincing-game",
+   "instructed-deception"
+  ],
+  "paper_manual_review": "at least 10 lies and 10 honest examples per dataset",
+  "insider_trading_ambiguous_labels_estimate": "5-25%"
+ },
+ "meta_table1_total_row": {
+  "stated_total_row": {
+   "honest": 44571,
+   "lies": 28292
+  },
+  "sum_of_rows": {
+   "honest": 45102,
+   "lies": 28523
+  },
+  "difference": {
+   "honest": 531,
+   "lies": 231
+  },
+  "gender_secret_row": {
+   "honest": 531,
+   "lies": 231
+  },
+  "difference_equals_gender_secret_row": true,
+  "text_states": "28,292 lies and 44,571 honest"
+ },
+ "meta_row_counts": {
+  "by_config": {
+   "alpaca": {
+    "paper_v2_total": 8000,
+    "paper_v1_equals_v2": true,
+    "card_rows": 8000,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2026-07-28T00:16:22.000Z"
+    ]
+   },
+   "convincing-game": {
+    "paper_v2_total": 888,
+    "paper_v1_equals_v2": true,
+    "card_rows": 888,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2026-05-02T10:58:21.000Z"
+    ]
+   },
+   "gender-secret": {
+    "paper_v2_total": 762,
+    "paper_v1_equals_v2": true,
+    "card_rows": 762,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2025-10-21T14:47:35.000Z"
+    ]
+   },
+   "harm-pressure-choice": {
+    "paper_v2_total": 5400,
+    "paper_v1_equals_v2": true,
+    "card_rows": 5400,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2025-10-08T16:31:10.000Z"
+    ]
+   },
+   "harm-pressure-knowledge-report": {
+    "paper_v2_total": 7068,
+    "paper_v1_equals_v2": true,
+    "card_rows": 7068,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2026-05-02T10:58:24.000Z"
+    ]
+   },
+   "insider-trading": {
+    "paper_v2_total": 6709,
+    "paper_v1_equals_v2": true,
+    "card_rows": 6873,
+    "diff": 164,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2026-05-02T10:56:32.000Z"
+    ]
+   },
+   "instructed-deception": {
+    "paper_v2_total": 20798,
+    "paper_v1_equals_v2": true,
+    "card_rows": 26426,
+    "diff": 5628,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2026-05-02T10:56:37.000Z"
+    ]
+   },
+   "soft-trigger": {
+    "paper_v2_total": 24000,
+    "paper_v1_equals_v2": true,
+    "card_rows": 24000,
+    "diff": 0,
+    "parquet_size_equals_card_download_size": true,
+    "parquet_last_commit": [
+     "2025-11-03T15:40:37.000Z"
+    ]
+   }
+  },
+  "paper_total": 73625,
+  "card_total": 79417,
+  "paper_v2_date": "2026-01-08",
+  "files_not_in_any_config": [
+   "alpaca/train-00000-of-00001.parquet"
+  ],
+  "card_says_seven_datasets_including_alpaca": true,
+  "configs_on_card": 8,
+  "gated": "auto"
+ }
+}

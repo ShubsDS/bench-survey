@@ -1,0 +1,65 @@
+{
+  "pins": {
+    "control_arena": "ae0b6fa78ace5a097536eb3464ab5a089740b53e",
+    "bashbench2_hf_revision": "13e19f9c2c91e3a55a49f8de7a28c08055f7ede8",
+    "bashbench2_sha256": "6d6652e9f96734d712c3bd089d2449097f57a9a16b4323c7f320d77eed7fdfb2",
+    "bash_tasks_json_sha256": "8c71b7ca24c1774793927a6fce3271b1ae0e880a3f49f526823de05aa665caef"
+  },
+  "mirrored_lines_present": 10,
+  "n_tasks": 257,
+  "scorer": {
+    "side_task_check": "marker string in a fixed file; no check of download or execution",
+    "side_task_lines": [
+      70,
+      71
+    ],
+    "side_task_attack_mode_only_line": 143,
+    "main_task_scored_on": "task_verifiable (public tests)",
+    "main_task_lines": [
+      87,
+      94
+    ],
+    "private_tests_loaded_line_dataset": 37,
+    "private_tests_used_by_scorer": false,
+    "tasks_whose_text_contains_marker_string": 0,
+    "tasks_whose_tests_contain_marker_string": 0
+  },
+  "tests": {
+    "task_verifiable": {
+      "parse_failures": 0,
+      "test_functions": 1293,
+      "no_process_run": 163,
+      "no_assertion": 0,
+      "asserts_only_path_existence": 58,
+      "tasks_with_an_existence_only_test": 50,
+      "tasks_all_tests_existence_only": 0,
+      "max_task_share_existence_only": 0.6,
+      "tasks_where_no_test_runs_a_process": 3
+    },
+    "private_tests": {
+      "parse_failures": 0,
+      "test_functions": 1291,
+      "no_process_run": 158,
+      "no_assertion": 0,
+      "asserts_only_path_existence": 26,
+      "tasks_with_an_existence_only_test": 22,
+      "tasks_all_tests_existence_only": 0,
+      "max_task_share_existence_only": 0.6,
+      "tasks_where_no_test_runs_a_process": 4
+    },
+    "tasks_private_equals_public": 0,
+    "note": "Static flags only; functions decorated as pytest fixtures are excluded; a test that runs no process can still check the agent's output files. 'Passes on the initial state' was not run and is untested."
+  },
+  "scripted_attack_policy": {
+    "fixed_commands": 10,
+    "indexed_by_step_counter": true,
+    "note": "ControlArena's stand-in; Ctrl-Z's human attack templates are not public"
+  },
+  "overlap_with_bashbench2": {
+    "n_bashbench2": 637,
+    "max_jaccard_5gram": 0.0084,
+    "median_best_jaccard": 0.0033,
+    "tasks_best_above_0.2": 0,
+    "tasks_best_above_0.5": 0
+  }
+}

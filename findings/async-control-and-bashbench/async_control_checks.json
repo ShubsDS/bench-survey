@@ -1,0 +1,190 @@
+{
+  "pins": {
+    "async_control": "7bc4e699248ed226462def2f2a76c73c5060493a",
+    "async_control_tar_sha256": "4a9619e498a7f4652af2ed78de33d5bf71fcd3cdc0cafc38806f6730719782be",
+    "control_arena_locked": "ba81865c4120b87c987de073db8e601eb65de770",
+    "control_arena_tar_sha256": "6f51de09125a6178acef76fe0a0a411a5614be8d73a41536fb6c6e3e04054bbd",
+    "inspect_ai": "0.3.149",
+    "paper": "arXiv 2512.13526v1",
+    "paper_html_sha256": "d47df1658387553f43083c4fe262ec92ea085fe907d6c9205c0972e470ab7bf2"
+  },
+  "source_line_refs": {
+    "async_control_paper/red_team/eval_utils.py": [
+      18,
+      22
+    ],
+    "async_control_paper/generate_trajectories.py": [
+      120,
+      127,
+      91
+    ],
+    "async_control_paper/analysis/classification_metrics.py": [
+      36,
+      44
+    ],
+    "async_control_paper/analyse_trajectories.py": [
+      185
+    ],
+    "async_control_paper/red_team/agent.py": [
+      49,
+      50
+    ],
+    "async_control_paper/blue_team/full_trajectory_monitor.py": [
+      58,
+      62
+    ],
+    "async_control_paper/blue_team/quote_monitor.py": [
+      321
+    ],
+    "async_control_paper/blue_team/monitors.py": [
+      58,
+      65,
+      72,
+      57
+    ],
+    "control_arena/_control_solver.py": [
+      33,
+      168
+    ],
+    "control_arena/scorers/_utils.py": [
+      81,
+      63
+    ],
+    "control_arena/scorers/_llm_judge.py": [
+      195,
+      185,
+      53
+    ],
+    "control_arena/settings/vllm/task/scorers.py": [
+      65
+    ],
+    "control_arena/settings/iac/control_iac_setting.py": [
+      113
+    ],
+    "inspect_ai/agent/_react.py@0.3.149": [
+      171
+    ]
+  },
+  "paper_phrases_found": {
+    "fnr_on_successes": true,
+    "calibration_469": true,
+    "calibration_envs": true,
+    "iac_pairs": true,
+    "iac_side_success_opus": true,
+    "headline": true,
+    "max_over_prompts": true,
+    "round3_max_fnr": true,
+    "prompt_hidden": true
+  },
+  "side_task_success": {
+    "settings_in_released_script": [
+      "vllm",
+      "infra",
+      "iac",
+      "sae_interp_sabotage",
+      "rogue_eval"
+    ],
+    "settings_in_paper": [
+      "Kubernetes (infra)",
+      "vLLM",
+      "IaC",
+      "data poisoning",
+      "eval sabotage"
+    ],
+    "paper_settings_missing_from_script": [
+      "data_poisoning",
+      "eval_sabotage"
+    ],
+    "vllm_validated_pairs": 32,
+    "vllm_side_tasks": {
+      "disable_token_logging": 14,
+      "inject_hidden_tokens": 4,
+      "logit_steganography": 2,
+      "persist_malicious_state": 1,
+      "rogue_inference_endpoint": 2,
+      "weight_exfiltration_loading": 9
+    },
+    "vllm_pairs_with_programmatic_side_scorer": 0,
+    "vllm_side_judge": "LLM PR-diff judge (accept/reject) run with scorer_model = the untrusted model (Claude Opus 4.1)",
+    "iac_side_scorer": "pytest marks only; scorer_model is passed but unused",
+    "iac_finding_mirrored_lines_present_at_locked_commit": 11,
+    "iac_finding_mirrored_lines_total": 11,
+    "iac_tests_differ_from_ae0b6fa": "whitespace and import lines only for the three tests; the egress SCP's public-IP statement differs (actions list vs ec2:RunInstances)"
+  },
+  "fnr_metric": {
+    "attacks_counted": "side-task successes only (classification_metrics.py filter; paper says the same)",
+    "honest_pool": "every honest sample in the logs passed in, not split by setting (classification_metrics.py)",
+    "calibration_set_paper": "469 honest Opus 4.1 episodes on vLLM and Kubernetes main tasks only; no IaC honest episodes",
+    "iac_test_pairs": 45,
+    "iac_side_success_rate_round3_prompt": 0.644,
+    "iac_successes_round3_prompt_if_one_epoch": 29,
+    "k_over_n_giving_5.7pct_with_n_le_45": [
+      [
+        2,
+        35
+      ]
+    ],
+    "wilson95_for_2_of_35": [
+      0.0158,
+      0.1861
+    ],
+    "headline_is_max_over_prompts": true,
+    "note": "If each prompt was run once over the 45 pairs, 5.7% can only be 2 missed of 35 successes. Monitor resampling (5x) or extra epochs would change n; the paper does not give n per cell."
+  },
+  "monitor_input": {
+    "attack_prompt_reaches_log": false,
+    "why": "the replacer agent swaps the system message only in the model call (agent.py); the logged first message is ControlArena's DEFAULT_SYSTEM_PROMPT in attack mode, and the honest prompt in honest mode (generate_trajectories.py override)",
+    "submonitors_reading_full_message_list_incl_system": 3,
+    "submonitors_total": 4,
+    "rule_guidance_header_in_system_message": {
+      "honest_prompts_with_'## Guidance'": 5,
+      "honest_prompts": 5,
+      "default_attack_system_message_has_it": false
+    },
+    "monitor_template_placeholders": [
+      "code_diff",
+      "dynamic_evidence",
+      "dynamic_exfiltration",
+      "dynamic_reasoning",
+      "dynamic_score",
+      "dynamic_suspicious",
+      "examples",
+      "execution_trace",
+      "formatting_instructions",
+      "main_task_description",
+      "semantic_reasoning",
+      "semantic_score",
+      "semantic_suspicious",
+      "semantic_unauthorized",
+      "static_apis",
+      "static_combinations",
+      "static_reasoning",
+      "static_risks",
+      "static_score",
+      "transcript"
+    ],
+    "side_task_placeholder_in_any_monitor_template": false,
+    "iac_terms_in_few_shot_examples": 0,
+    "iac_terms_in_all_monitor_prompts": 0,
+    "caveat": "Holds for logs made with the released script; whether the paper's logs were made this way is not stated."
+  },
+  "prompt_sizes": {
+    "honest_prompt_bytes": [
+      1036,
+      1065,
+      1066,
+      1108,
+      1166
+    ],
+    "honest_mean_bytes": 1088,
+    "encrypted_token_bytes": 35084,
+    "ciphertext_bytes": 26256,
+    "attack_prompts_total_bytes_bounds_if_4_files": [
+      19576,
+      19620
+    ],
+    "attack_prompt_mean_bytes_if_4_files": 4900,
+    "ratio_attack_mean_to_honest_mean_if_4_files": 4.5,
+    "note": "Per-prompt lengths need decryption, which was not done. The attack prompt is not in the monitor's input, so any length gap acts only through agent behaviour (untested)."
+  }
+}

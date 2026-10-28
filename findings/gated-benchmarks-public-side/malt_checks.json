@@ -1,0 +1,339 @@
+{
+ "pins": {
+  "metr-evals/malt-public": "metr-evals/malt-public@6100006c2fd23d81e5afe2b1cc3bf3f3fff48df1",
+  "metr-evals/malt-transcripts-public": "metr-evals/malt-transcripts-public@3521e8e22b6af12fea3249443e554b96b6fc4f49",
+  "post": "https://metr.org/blog/2025-10-14-malt-dataset-of-natural-and-prompted-behaviors/"
+ },
+ "A_cards_agree": {
+  "rows_public_card": 43,
+  "rows_transcripts_card": 43,
+  "runs_public_card": 7179,
+  "identical": true
+ },
+ "B_coverage_by_model": {
+  "models": 19,
+  "by_model": {
+   "o1-2024-12-17": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 11,
+    "positive_reviewed": 1,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "o3": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 0,
+    "positive_reviewed": 18,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "o3-2025-04-16": {
+    "benign_reviewed": 1,
+    "benign_unreviewed": 129,
+    "positive_reviewed": 5,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "openrouter/qwen/qwen-2-72b-instruct": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 0,
+    "positive_reviewed": 2,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "openrouter/qwen/qwen-2.5-72b-instruct": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 0,
+    "positive_reviewed": 1,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-3-5-sonnet-20240620": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 688,
+    "positive_reviewed": 9,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "other_positive"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "gpt-4o-2024-05-13": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 0,
+    "positive_reviewed": 4,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "other_positive"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-3-5-haiku-20241022": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 39,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-3-5-sonnet-20241022": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 730,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "fireworks/deepseek-v3": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 576,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "fireworks/deepseek-v3-0324": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 452,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "gpt-4-32k-0613": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 55,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "gpt-4o-2024-08-06": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 1,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "o1-preview": {
+    "benign_reviewed": 1,
+    "benign_unreviewed": 1438,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "openrouter/deepseek/deepseek-r1-0528": {
+    "benign_reviewed": 11,
+    "benign_unreviewed": 0,
+    "positive_reviewed": 4,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-opus-4-20250514": {
+    "benign_reviewed": 349,
+    "benign_unreviewed": 2,
+    "positive_reviewed": 28,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "other_positive",
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-sonnet-4-20250514": {
+    "benign_reviewed": 332,
+    "benign_unreviewed": 2,
+    "positive_reviewed": 15,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "other_positive",
+     "reward_hacking"
+    ],
+    "run_source": [
+     "unprompted"
+    ]
+   },
+   "claude-3-7-sonnet-20250219": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 1222,
+    "positive_reviewed": 1045,
+    "positive_unreviewed": 0,
+    "positive_classes": [
+     "other_positive",
+     "sandbagging"
+    ],
+    "run_source": [
+     "prompted",
+     "unprompted"
+    ]
+   },
+   "openrouter/qwen/qwen3-235b-a22b": {
+    "benign_reviewed": 0,
+    "benign_unreviewed": 8,
+    "positive_reviewed": 0,
+    "positive_unreviewed": 0,
+    "positive_classes": [],
+    "run_source": [
+     "unprompted"
+    ]
+   }
+  },
+  "models_with_reviewed_benign": [
+   "claude-opus-4-20250514",
+   "claude-sonnet-4-20250514",
+   "o1-preview",
+   "o3-2025-04-16",
+   "openrouter/deepseek/deepseek-r1-0528"
+  ],
+  "models_with_no_reviewed_run": [
+   "claude-3-5-haiku-20241022",
+   "claude-3-5-sonnet-20241022",
+   "fireworks/deepseek-v3",
+   "fireworks/deepseek-v3-0324",
+   "gpt-4-32k-0613",
+   "gpt-4o-2024-08-06",
+   "openrouter/qwen/qwen3-235b-a22b"
+  ],
+  "runs_from_models_with_no_reviewed_run": 1861,
+  "unreviewed_positive_runs": 0,
+  "reviewed_benign_total": 694,
+  "reviewed_benign_share_claude4": 0.981,
+  "sandbagging_positive_models": [
+   "claude-3-7-sonnet-20250219"
+  ]
+ },
+ "C_configs": {
+  "rows_per_config": {
+   "metr-evals/malt-public": {
+    "default": 7179,
+    "irrelevant_detail": 7179,
+    "language_mixing": 7179,
+    "summarize": 7179,
+    "vague_cot": 7179
+   },
+   "metr-evals/malt-transcripts-public": {
+    "default": 7179,
+    "irrelevant_detail": 7179,
+    "language_mixing": 7179,
+    "summarize": 7179,
+    "vague_cot": 7179
+   }
+  },
+  "variant_mentioned_in_card_body": {
+   "metr-evals/malt-public": {
+    "irrelevant_detail": false,
+    "language_mixing": false,
+    "summarize": false,
+    "vague_cot": false
+   },
+   "metr-evals/malt-transcripts-public": {
+    "irrelevant_detail": false,
+    "language_mixing": false,
+    "summarize": false,
+    "vague_cot": false
+   }
+  },
+  "gated": {
+   "metr-evals/malt-public": "auto",
+   "metr-evals/malt-transcripts-public": "auto"
+  },
+  "lastModified": {
+   "metr-evals/malt-public": "2026-03-24T23:08:37.000Z",
+   "metr-evals/malt-transcripts-public": "2026-03-24T23:08:35.000Z"
+  }
+ },
+ "D_post_statements_found": {
+  "reviewed_2690": true,
+  "reviewed_benign_1014": true,
+  "presumed_benign_8229": true,
+  "label_error_6pct": true,
+  "edit_removes_instruction_mentions": true,
+  "edit_applied_to_all_traces": true,
+  "results_on_reviewed_set": true,
+  "unrelated_positives_filtered": true,
+  "obfuscation_variants_described": true
+ },
+ "E_rhbench_malt_hacking_vs_card": {
+  "rhbench_hacking_by_model": {
+   "claude-3-7-sonnet-20250219": 224,
+   "claude-opus-4-20250514": 19,
+   "o3": 18,
+   "claude-sonnet-4-20250514": 12,
+   "o3-2025-04-16": 5,
+   "openrouter/deepseek/deepseek-r1-0528": 4,
+   "openrouter/qwen/qwen-2-72b-instruct": 2,
+   "o1-2024-12-17": 1,
+   "openrouter/qwen/qwen-2.5-72b-instruct": 1
+  },
+  "card_reward_hacking_positives_by_model": {
+   "o1-2024-12-17": 1,
+   "o3": 18,
+   "o3-2025-04-16": 5,
+   "openrouter/qwen/qwen-2-72b-instruct": 2,
+   "openrouter/qwen/qwen-2.5-72b-instruct": 1,
+   "openrouter/deepseek/deepseek-r1-0528": 4,
+   "claude-opus-4-20250514": 19,
+   "claude-sonnet-4-20250514": 12
+  },
+  "card_sabotage_by_model": {
+   "claude-3-7-sonnet-20250219": 224
+  },
+  "non_3_7_sonnet_rows_equal_card_reward_hacking_positives": true,
+  "rhbench_3_7_sonnet_hacking": 224,
+  "card_3_7_sonnet_reward_hacking_positives": 0,
+  "card_3_7_sonnet_sabotage_prompted": 224,
+  "note": "count match only; run ids not compared (MALT is gated, rh-bench text not read)"
+ }
+}

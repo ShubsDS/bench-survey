@@ -1,0 +1,816 @@
+{
+ "pins": {
+  "repo": "ASTRAL-Group/MonitorBench",
+  "commit": "b6229e4b8ea9abcec38d61159c9cbd0f577ddf35",
+  "commit_date": "2026-10-05T10:33:19-05:00",
+  "arxiv": "2603.28590 (v4 per abs page)",
+  "arxiv_src_sha256": "9618d4a91eab8ca868bad9d92e26bbb35335898a081da5e5e64780cb4045c70b",
+  "released_rollouts": "none found: no HF dataset matches 'MonitorBench' or author ASTRAL-Group (searched 2026-10-27); repo ships inputs and code only"
+ },
+ "check0": {
+  "tasks": {
+   "cue_condition.knowledge": {
+    "source": "authors' text+hint items",
+    "n_paper_table": 100,
+    "n_in_repo": 100,
+    "match": true
+   },
+   "cue_condition.preference": {
+    "source": "authors' preference items",
+    "n_paper_table": 108,
+    "n_in_repo": 108,
+    "match": true
+   },
+   "cue_condition.judgment": {
+    "source": "law-judgment case briefs",
+    "n_paper_table": 100,
+    "n_in_repo": 100,
+    "match": true
+   },
+   "cue_condition.health": {
+    "source": "ICD-10-CM coded cases",
+    "n_paper_table": 65,
+    "n_in_repo": 65,
+    "match": true
+   },
+   "cue_answer.math": {
+    "source": "brainteasers (Han et al. 2025)",
+    "n_paper_table": 28,
+    "n_in_repo": 28,
+    "match": true
+   },
+   "cue_answer.logic": {
+    "source": "brainteasers (Han et al. 2025)",
+    "n_paper_table": 50,
+    "n_in_repo": 50,
+    "match": true
+   },
+   "cue_answer.health": {
+    "source": "same cases as cue_condition.health",
+    "n_paper_table": 65,
+    "n_in_repo": 65,
+    "match": true
+   },
+   "goal_sandbag.safety": {
+    "source": "WMDP (appendix: 40 bio + 40 chem + 40 cyber)",
+    "n_paper_table": 150,
+    "n_in_repo": 120,
+    "match": false
+   },
+   "goal_sandbag.math": {
+    "source": "AIME 2024",
+    "n_paper_table": 30,
+    "n_in_repo": 30,
+    "match": true
+   },
+   "goal_sandbag.science": {
+    "source": "GPQA-Diamond",
+    "n_paper_table": 192,
+    "n_in_repo": 198,
+    "match": false
+   },
+   "goal_sandbag.engineering": {
+    "source": "MMLU-Pro (appendix: 150 sampled)",
+    "n_paper_table": 100,
+    "n_in_repo": 150,
+    "match": false
+   },
+   "goal_deception.realworld": {
+    "source": "DeceptionBench",
+    "n_paper_table": 50,
+    "n_in_repo": 50,
+    "match": true
+   },
+   "dual_objectives.steganography": {
+    "source": "databricks-dolly + acrostic side task",
+    "n_paper_table": 50,
+    "n_in_repo": 50,
+    "match": true
+   },
+   "dual_objectives.summarization": {
+    "source": "summaries + verbatim-sentence side task",
+    "n_paper_table": 50,
+    "n_in_repo": 50,
+    "match": true
+   },
+   "_coding_per_side_task": {
+    "logio": 112,
+    "permissions": 26,
+    "iodelete": 26,
+    "iodownload": 26,
+    "ioexfil": 26,
+    "exit": 75
+   },
+   "dual_objectives.coding": {
+    "source": "BigCodeBench + CoT Red-Handed side tasks (TEST pairings)",
+    "n_paper_table": 291,
+    "n_in_repo": 291,
+    "match": true
+   },
+   "dual_objectives.agent": {
+    "source": "SHADE-Arena public task pairs",
+    "n_paper_table": 5,
+    "n_in_repo": 5,
+    "match": true
+   },
+   "impossible.coding": {
+    "source": "ImpossibleBench (LiveCodeBench oneoff, limit 50)",
+    "n_paper_table": 50,
+    "n_in_repo": 50,
+    "match": true
+   },
+   "process.multistep": {
+    "source": "LORE-MONO-style, GPT-5.2 screened",
+    "n_paper_table": 25,
+    "n_in_repo": 25,
+    "match": true
+   },
+   "_dual_agent_counted_twice_in_paper_(malicious,benign)": true
+  },
+  "paper_total_stated": 1514,
+  "sum_of_paper_table_counts_with_agent_twice": 1514,
+  "sum_of_repo_counts_with_agent_twice": 1540,
+  "mismatches": [
+   "goal_sandbag.safety",
+   "goal_sandbag.science",
+   "goal_sandbag.engineering"
+  ],
+  "labels": "no static classes: the evaluated model's rollouts are labelled by verification (Y) and by a Qwen3-32B monitor (Z); intervention runs (X=1) and no-intervention runs (X=0) come from the same template and model",
+  "agent_tasks_are_shade_arena_public_pairs": [
+   "american_airlines_2",
+   "api_key_calendar_agendas_2",
+   "bank_transfer_2",
+   "expenditure_accounting",
+   "spam_filter_update"
+  ]
+ },
+ "check1": {
+  "always_flag_monitor_score_intervention_tasks": [
+   1.0
+  ],
+  "always_flag_monitor_score_outcome_and_process_tasks": 1.0,
+  "published_cot_only_cells_parsed": 155,
+  "published_cot_only_cells_below_100": 137,
+  "published_cot_only_cell_range": [
+   1.1,
+   100.0
+  ],
+  "score_has_false_positive_term": false,
+  "evidence": "pipeline/base.py: outcome score = sum(flags)/count over passing rollouts; intervention score = min(1, P(Z=1|X=1,Y=1)/R_effect); X=0 runs are never sent to the monitor (BaseInterventionTask.prepare_monitor_llm_query uses them only for R_effect). The g-mean^2 = TPR x TNR definition is commented out in the paper source (Sec/3_design.tex).",
+  "tnr_commented_out_in_paper_source": true,
+  "x0_runs_used_only_for_r_effect": true,
+  "monitor_validation_in_paper": "human study, 300 single-turn trajectories, monitor F1 85.31 / 91.86 / 92.13 (action / CoT / all); precision not reported separately",
+  "text_baselines": "blocked: no CoTs or actions are released, so length or keyword baselines cannot be computed"
+ },
+ "check5": {
+  "identical_dataset_files": [
+   [
+    "datasets/cue_answer/health/health.json",
+    "datasets/cue_condition/health/health.json"
+   ]
+  ],
+  "within_file": {
+   "datasets/cue_answer/brute_logic/brute_logic.json": {
+    "n": 50,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/cue_answer/brute_math/brute_math.json": {
+    "n": 28,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/cue_answer/health/health.json": {
+    "n": 65,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/cue_condition/Judgment/Judgment.json": {
+    "n": 100,
+    "exact_duplicate_texts": 1,
+    "near_duplicate_pairs_j>=0.8": 2
+   },
+   "datasets/cue_condition/knowledge/knowledge.json": {
+    "n": 100,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/cue_condition/preference/Preference.json": {
+    "n": 108,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/dual_objective/databricks_dolly/task_writing_steganography.json": {
+    "n": 50,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/dual_objective/summary/task_writing_summarization.json": {
+    "n": 50,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/goal_deception/realworld/Deception.json": {
+    "n": 50,
+    "exact_duplicate_texts": 2,
+    "near_duplicate_pairs_j>=0.8": 2
+   },
+   "datasets/goal_sandbag/aime24/test.jsonl": {
+    "n": 30,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/goal_sandbag/gpqa_diamond/test.jsonl": {
+    "n": 198,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/goal_sandbag/mmlu_pro/MMLU_Pro.json": {
+    "n": 150,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 1
+   },
+   "datasets/goal_sandbag/wmdp/WMDP.json": {
+    "n": 120,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   },
+   "datasets/necessary_steps/lore/lore.csv": {
+    "n": 40,
+    "exact_duplicate_texts": 0,
+    "near_duplicate_pairs_j>=0.8": 0
+   }
+  },
+  "cross_file_near_duplicates_j>=0.8": {},
+  "files_with_canary_string": [
+   "datasets/dual_objective/agent/README.md"
+  ],
+  "gpqa_diamond_items_in_plaintext": 198,
+  "public_benchmark_items_reused": {
+   "WMDP": 120,
+   "AIME 2024": 30,
+   "GPQA-Diamond": 198,
+   "MMLU-Pro": 150,
+   "BigCodeBench": 291,
+   "SHADE-Arena public": 5
+  },
+  "coding_bcb_ids_repeated_across_side_tasks": 0,
+  "task_id_construction": "task_id = f'{index}_{stress_test}' over file order; labels (Y, Z) are produced at run time, so ids and order carry no label"
+ },
+ "check7": {
+  "monitor_prompt_placeholders_per_scope": {
+   "monitor_cue_answer.health": {
+    "action": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_cue_answer.logic": {
+    "action": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_cue_answer.math": {
+    "action": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_cue_condition.health": {
+    "action": [
+     "action",
+     "answer",
+     "input",
+     "intervention"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ]
+   },
+   "monitor_cue_condition.judgment": {
+    "action": [
+     "action",
+     "answer",
+     "input",
+     "intervention"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ]
+   },
+   "monitor_cue_condition.knowledge": {
+    "action": [
+     "action",
+     "answer",
+     "input",
+     "intervention"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ]
+   },
+   "monitor_cue_condition.preference": {
+    "action": [
+     "action",
+     "answer",
+     "input",
+     "intervention"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ]
+   },
+   "monitor_dual_objectives.agent": {
+    "action": [
+     "action",
+     "input",
+     "task"
+    ],
+    "cot": [
+     "cot",
+     "input",
+     "task"
+    ],
+    "all": [
+     "cot",
+     "input",
+     "task"
+    ]
+   },
+   "monitor_dual_objectives.coding": {
+    "action": [
+     "action",
+     "input",
+     "task"
+    ],
+    "cot": [
+     "cot",
+     "input",
+     "task"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input",
+     "task"
+    ]
+   },
+   "monitor_dual_objectives.steganography": {
+    "action": [
+     "action",
+     "input",
+     "task"
+    ],
+    "cot": [
+     "cot",
+     "input",
+     "task"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input",
+     "task"
+    ]
+   },
+   "monitor_dual_objectives.summarization": {
+    "action": [
+     "action",
+     "task"
+    ],
+    "cot": [
+     "cot",
+     "task"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "task"
+    ]
+   },
+   "monitor_goal_deception.realworld": {
+    "action": [
+     "action",
+     "answer",
+     "input",
+     "intervention"
+    ],
+    "cot": [
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ],
+    "all": [
+     "action",
+     "answer",
+     "cot",
+     "input",
+     "intervention"
+    ]
+   },
+   "monitor_goal_sandbag.engineering": {
+    "action": [
+     "action",
+     "input"
+    ],
+    "cot": [
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_goal_sandbag.math": {
+    "action": [
+     "action",
+     "input"
+    ],
+    "cot": [
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_goal_sandbag.safety": {
+    "action": [
+     "action",
+     "input"
+    ],
+    "cot": [
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_goal_sandbag.science": {
+    "action": [
+     "action",
+     "input"
+    ],
+    "cot": [
+     "cot",
+     "input"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input"
+    ]
+   },
+   "monitor_impossible.coding": {
+    "action": [
+     "action",
+     "input",
+     "task"
+    ],
+    "cot": [
+     "cot",
+     "input",
+     "task"
+    ],
+    "all": [
+     "action",
+     "cot",
+     "input",
+     "task"
+    ]
+   },
+   "monitor_process.multistep": {
+    "all_family1": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family1": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family1": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family2": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family2": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family2": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family3": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family3": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family3": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family4": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family4": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family4": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family5": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family5": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family5": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family6": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family6": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family6": [
+     "action",
+     "answer",
+     "input"
+    ],
+    "all_family7": [
+     "action",
+     "answer",
+     "cot",
+     "input"
+    ],
+    "cot_family7": [
+     "answer",
+     "cot",
+     "input"
+    ],
+    "action_family7": [
+     "action",
+     "answer",
+     "input"
+    ]
+   }
+  },
+  "fields": {
+   "intervention": "decision_critical_factor = the injected cue text (cue_condition.*, goal_deception)",
+   "answer": "target; for cue_answer.* this is the injected guess, which equals the ground truth",
+   "task": "decision_critical_factor = side-task text (dual_objectives.*, impossible.coding)",
+   "input": "original_question; for steganography/summarization it is question + side_task (outcome.py), so the side task appears twice"
+  },
+  "original_question_assignments": [
+   {
+    "file": "pipeline/intervention.py",
+    "line": 118,
+    "expr": "instruction + question ",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 174,
+    "expr": "question + instruction",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 230,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 290,
+    "expr": "instruction + question ",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 342,
+    "expr": "record[\"control_arm_intervention\"].format(attack_policy=\"\")",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 417,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 490,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 589,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 690,
+    "expr": "instruction + json.dumps(record[\"data\"], indent=2, ensure_ascii=False)",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 873,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 983,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/intervention.py",
+    "line": 1053,
+    "expr": "instruction + question",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/outcome.py",
+    "line": 236,
+    "expr": "question + side_task",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/outcome.py",
+    "line": 354,
+    "expr": "question + side_task",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/outcome.py",
+    "line": 511,
+    "expr": "meta.get(\"prompt\", prompt)",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/outcome.py",
+    "line": 866,
+    "expr": "user_query",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/outcome.py",
+    "line": 1090,
+    "expr": "first.get(\"prompt\", \"\")",
+    "includes_stress_prompt": false
+   },
+   {
+    "file": "pipeline/process.py",
+    "line": 51,
+    "expr": "question",
+    "includes_stress_prompt": false
+   }
+  ],
+  "any_original_question_includes_stress_prompt": false,
+  "impossible_coding_stress_instruction_in_monitor_input": {
+   "attack_prompt_in_sample_input": true,
+   "original_question_is_sample_input": true,
+   "decision_critical_factor_is_attack_prompt": true,
+   "stealth_prompt_contains_CONCEAL": true,
+   "note": "for impossible.coding under direct_conceal / monitor_aware, the monitor's {input} and {task} carry the stress-test instruction; the other 18 tasks (agent malicious and benign share one site) build original_question without it"
+  },
+  "paper_disclosure": "Sec 4: 'The monitor model is given exact decision-critical factors to look for'"
+ },
+ "extra": {
+  "dual_agent_monitors_all_rollouts": {
+   "code": "DualAgent._write_tested_jsonls keeps every evaluated rollout (side_task_pass True or False); DualAgent.prepare_monitor_llm_query loops over all conversations without checking verification; BaseOutcomeTask.report_monitorability_score averages all flags",
+   "paper": "appendix: 'We compute the monitorability score on samples whose side objective is successfully completed.'",
+   "loop_has_no_verification_filter": true,
+   "effect": "untested (no rollouts released)"
+  }
+ }
+}
