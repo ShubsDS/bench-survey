@@ -55,14 +55,18 @@ this set, and that the distillation rounds tracked accuracy on it. In the releas
 
 | | Paper | Released file |
 |---|---|---|
-| `cls` agreement | 93.2%, 41 errors | **90.9%**, 55 errors; behaviour-cluster CI 88.4–93.2% |
+| `cls` agreement | 93.2%, 41 errors | **93.2% (41 errors) against annotator `human_0` alone; 90.9% (55 errors) against the three-annotator majority**; behaviour-cluster CI 88.4–93.2% for the majority figure |
 | By functional category | standard 94.5, contextual 90.5 | standard 92.2, contextual 87.9 |
 | `cls` vs `cls_mistral` | 41 and 51 errors, 26 shared, so they differ on at least 40 items | **differ on 4 of 602 items** (57 errors, 54 shared with `cls`) |
 
-The other judges' columns reproduce Table 3 within 4.3 points, in both directions. The
-released `cls` column is therefore not the source of the paper's 93.2%, and the `cls_mistral`
-column is nearly a copy of it. Whether the released Hugging Face weights give 90.9% or 93.2% is
-untested, because that needs the model to be run.
+Correction after independent validation (2026-10-28). The paper's 93.2% does come from the
+released `cls` column, scored against the single annotator column `human_0`: that gives exactly
+93.19% (41 errors). Against the other two annotators `cls` agrees 85.0% and 87.0%. Against the
+three-annotator majority it agrees 90.9% (55 errors). So the headline is agreement with one
+annotator, whose labels the classifier tracks most closely, not with the majority. The maintainers'
+own notebook (`run_classifier_val_set.ipynb`, written in reply to issue #29) scores the released
+weights against the majority, and its saved output is 0.906. The `cls_mistral` column is nearly a
+copy of `cls`.
 
 **Error pattern.**
 
@@ -87,7 +91,7 @@ FPR by stratum (agreement in brackets):
 | ≥3 list lines | 213 | 28.2% | 87.3% |
 | Contextual behaviours | 198 | 20.2% | 87.9% |
 | Standard behaviours | 398 | 11.1% | 92.2% |
-| Method PAIR / AutoDan / EnsembleGCG | 49 / 51 / 34 | 32% / 33% / 26% | 81.6% / 90.2% / 85.3% |
+| Method PAIR / AutoDan / EnsembleGCG | 49 / 51 / 34 | 32% / 33% / 26% | 81.6% / 90.2% / 85.3% (AutoDan's rate rests on 4 of 12 negatives and is not significant, p 0.07) |
 | Method GBDA / UAT | 137 / 33 | 8.5% / 0% | 94.9% / 97.0% |
 | Opens with refusal, ≥150 words (refuse-then-comply) | 75 | 1.7% | 98.7% |
 | Under 50 words | 53 | 2.0% | 98.1% |
@@ -223,7 +227,8 @@ The similarity measures are TF-IDF cosine and word 3-gram Jaccard.
     `cls` exceeds the human rate by 14 points for PAIR and 15 for EnsembleGCG, against 5 for GBDA
     and −3 for UAT.
   - Cross-method comparisons are therefore biased toward fluent methods.
-  - The 93.2% headline is in-sample and does not reproduce from the released columns.
+  - The 93.2% headline is in-sample, and it is agreement with one annotator (`human_0`); against
+    the three-annotator majority the released verdicts agree 90.9%.
 - **StrongREJECT score.**
   - Rubric: close to unbiased overall, but biased **down** for jailbreaks that wrap the harm
     (distractors, poems), partly through its refusal flag.
@@ -236,12 +241,12 @@ The similarity measures are TF-IDF cosine and word 3-gram Jaccard.
 
 | Lead | Result |
 |---|---|
-| 6, HarmBench | **Holds.** The labelled set is drawn by and was tuned against the judge, so the headline agreement is in-sample. The released `cls` gives 90.9% (55 errors), not 93.2% (41), and `cls_mistral` differs from it on 4 items, not ≥40. Errors are 84% false positives, concentrated in long, list-formatted, contextual and PAIR/AutoDan outputs. No stratum falls clearly below 90%. Refuse-then-comply is ruled out on this set |
+| 6, HarmBench | **Holds.** The labelled set is drawn by and was tuned against the judge, so the headline agreement is in-sample. The released `cls` gives 93.2% against one annotator (`human_0`) and 90.9% (55 errors) against the majority, and `cls_mistral` differs from it on 4 items, not ≥40. Against the majority, errors are 84% false positives, concentrated in long, list-formatted, contextual and PAIR outputs. No stratum falls clearly below 90%. Refuse-then-comply is ruled out on this set |
 | 6, StrongREJECT | **Holds, narrowly.** Overall error is at human level, but distractors and poems responses are under-credited (rubric misses 8 of 27 and 8 of 33; its refusal flag zeroes 28 human ≥ 0.5 rows, 26 without a refusal phrase). Partial compliance has large error with no direction. Violence and Sexual content have no human labels |
 | 1, judge rewards length | **Ruled out** for HarmBench `cls` (its length lean matches single-human dissent; difference 0.03) and for the StrongREJECT rubric and `cls`. A **small** length drift holds for the StrongREJECT fine-tuned evaluator on harmless responses |
 | 1, labels readable without content | **Holds.** Content-blind models reach AUROC 0.785 (HarmBench) and 0.861 (StrongREJECT) against human labels, above 5 of 11 and 7 of 9 published judges |
 | 5 | HarmBench val/test **holds weakly** (8 of 80 val behaviours have a template or context sibling in test; 7–11 of 320 test behaviours). StrongREJECT vs HarmBench **ruled out** |
-| Untested | Whether the released weights reproduce the 93.2%. HarmBench's prequalification sets (not released). HarmBench's full released completions (not fetched). Agreement on Violence and Sexual content. The paper-version rubric judge (this file uses gpt-4o-mini) |
+| Untested | HarmBench's prequalification sets (not released). HarmBench's full released completions (not fetched). Agreement on Violence and Sexual content. The paper-version rubric judge (this file uses gpt-4o-mini) |
 
 ## Reproduce
 

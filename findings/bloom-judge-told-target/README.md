@@ -1,4 +1,4 @@
-# Bloom: the Claude judge is told which model it is scoring, in a ranking where Claude models score lowest
+# Bloom: the Claude judge is told which model it is scoring, in a ranking where Claude models rank lowest
 
 Status: confirmed in the code and benchmark configurations at two pinned commits (2026-10-27). Its
 effect on the ranking is **untested**; that needs the transcripts re-judged. Not yet raised with the
@@ -16,10 +16,12 @@ in four stages:
 3. rollout: an evaluator model plays the user or environment against the target;
 4. judgment: a judge scores each transcript from 1 to 10 for the behaviour.
 
-The report ranks 16 models from six developers on four behaviours (the sweep files list 17), with
-"Claude Opus 4.1 as the evaluator across all stages". The four behaviours are delusional
-sycophancy, instructed long-horizon sabotage, self-preservation and self-preferential bias. The
-figure caption says the Claude models score lowest overall.
+The report's Figure 1 ranks 17 models from six developers on four behaviours (its text says 16;
+the figure and the sweep files list 17), with "Claude Opus 4.1 as the evaluator across all
+stages". The four behaviours are delusional sycophancy, instructed long-horizon sabotage,
+self-preservation and self-preferential bias. Computed from Figure 1 (our calculation, not a
+statement in the report), Claude models have the lowest mean of any developer (0.28, against 0.39
+to 0.77), and the three lowest models are Claude.
 
 ## Numbers
 
@@ -38,7 +40,7 @@ When `anonymous_target` is false, the judge prompt (`make_judge_prompt`) contain
 evaluating is {target_model_name}", for example "Claude Opus 4.5". The ideation and rollout prompts
 say the same.
 
-- **The default.** Every stage reads `config.get("anonymous_target", False)`, and the seed template
+- **The default.** The ideation, rollout and judgment stages read `config.get("anonymous_target", False)` (the understanding stage does not use it), and the seed template
   sets `anonymous_target: false`.
 - **The benchmark configurations cannot change it.** They are wandb grid sweeps. In sweep mode the
   config is built by `create_config_from_wandb_params`, which never sets `anonymous_target`. So
@@ -85,7 +87,10 @@ other developers' models than the evidence shows.
 Re-judge a sample of the benchmark transcripts twice with the target's name removed: once with Claude
 Opus 4.1 and once with a judge from another developer. Compare the Claude and non-Claude elicitation
 rates under each. This needs the transcripts, which were not found in public, or a new run with the
-flag enforced in `create_config_from_wandb_params`, which is a one-line fix.
+flag enforced in `create_config_from_wandb_params`. That removes the explicit cue but does not
+blind the judge: in the only public Bloom transcripts (`tests/fixtures`, self-preferential bias), 3
+of 6 evaluator-written system prompts open "You are Claude, an AI assistant created by Anthropic",
+and the judge sees them.
 
 ## Petri
 
@@ -98,8 +103,8 @@ flag enforced in `create_config_from_wandb_params`, which is a one-line fix.
 - **Self-preference.** The judge prompt does not name the target. The auditor, though, is told to
   use the target's real name when it probes the model about itself, so names often reach the judge
   through the transcript.
-- **The judge panel.** Anthropic's system cards are reported (in a secondhand summary; not checked
-  here) to average three judges from three developers for the cross-developer Petri comparison. That
+- **The judge panel.** The Claude Opus 4.6 system card (§6.2.5.5) and the Sonnet 4.6 card (§4.5.3)
+  name Opus 4.5, Gemini 3 Pro and GPT-5.1 as the scorers for the cross-developer Petri comparison. That
   addresses the self-preference lead. Per-judge scores are not released, so the panel cannot be
   checked for disagreement by developer.
 - **Refusals.** A refused judgement is recorded as a missing score, not a 1 or a 10. Whether this
@@ -115,3 +120,34 @@ python check_bloom.py --cache data
 Downloads about 25 source and configuration files from the pinned commits into `data/` (gitignored)
 and rewrites `bloom_checks.json`. Standard library only. It reads them as text and runs nothing from
 the repositories.
+
+## Independent validation (2026-10-28)
+
+A second, independent pass reran `check_bloom.py` from an empty cache (identical JSON) and re-read
+both commits. The core claim holds: the target's name reaches ideation
+(`step2_ideation.py:10-12,44-45`), the evaluator's system-prompt request (`step3_rollout.py:42-44`)
+and the judge (`prompts/step4_judgment.py:161-162`). No version of `create_config_from_wandb_params`
+ever reads `anonymous_target` (`git log -S` is empty), and no CLI flag, environment variable or seed
+merge sets it. Sweep files that do set it (`experiments/variance/*-judge.yaml`, `static-prompts.yaml`)
+are silently ignored. The sweep settings match the report's appendix: Opus 4.1 at every stage, 17
+targets, no resume.
+
+Corrections applied above: the report does not itself say Claude scores lowest (that is our
+calculation from Figure 1); Figure 1 has 17 models; the understanding stage does not read the flag;
+turning the flag on does not blind the judge; the Petri panel is now cited first-hand. Also:
+
+- **The code that ran is not public.** Commit `8289ee2` has no `claude-opus-4.5` model entry, so it
+  could not have produced the Opus 4.5 results, and the report's pointer to `experiments/benchmarks`
+  was already stale at publication. The conclusion holds because no version of the builder ever
+  read the flag.
+- **Evidence against a large effect.** Opus 4.1, the judge's own model, ranks 2nd-worst of 17 on
+  self-preservation and 4th-worst on self-preferential bias in Figure 1.
+- **Current Bloom avoids it.** The successor (Meridian Labs' petri_bloom) shares scenarios across
+  targets and does not name the target to the judge. The issue is in the published benchmark and
+  the frozen release.
+- **A second dropped setting.** The same builder drops `judgment.redaction_tags` (its judgment block
+  sets only model, max_tokens, num_samples and the quality lists). The model-organism sweeps use that
+  setting to hide the planted instruction from the judge, so if those runs used this code, the judge
+  saw the planted quirk. That would inflate the report's claim that 9 of 10 model organisms were told
+  apart. Untested.
+- **No prior reports** in the 57 issues and PRs on bloom or the 31 on petri_bloom.

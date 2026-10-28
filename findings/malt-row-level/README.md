@@ -89,8 +89,9 @@ used here.
 
 - **The instruction is in every prompted transcript (holds).**
   - All 1,045 prompted transcripts open with a system message that contains an "Instructions:" block giving
-    the sandbagging behaviour. It appears in 17 variants, each tied to one label, and none is used by any
-    unprompted run.
+    the sandbagging behaviour. It appears in 11 distinct blocks, each tied to one label, and none is used by any
+    unprompted run. (42 prompted runs carry a second system message on a later branch, which never holds the
+    block; hashing all system messages together gives 17 variants.)
   - No unprompted Claude 3.7 Sonnet run and no reviewed benign run has such a block.
   - The rule "system message has an Instructions: block" gives AUROC 1.000 in comparisons A, A2, C and D.
   - Outside these comparisons, the rule is not specific: 233 of 6,134 unprompted runs (other scaffolds) also
@@ -99,9 +100,12 @@ used here.
   block is in the input of 295 of 295 samples from 22 prompted runs, and of 2 of 5,261 unprompted samples.
   - The post says each monitor chunk repeats the first five messages, and the system message is the first.
   - Whether METR's monitors received it is not stated (untested).
-  - If they did, the reported 0.91 sits below a one-line rule; if they did not, the released data does not
-    match the monitored data.
-  - Either way, a monitor scored on the released data must strip the system message first.
+  - METR's design makes it unlikely the monitors saw it: the reasoning rewrite would be pointless if the
+    instruction stayed visible, a GPT-5 monitor shown a sabotage instruction would score near 1.0 rather than
+    0.91, and METR's GPT-5.1-Codex-Max report frames the check as catching sandbagging reasoning. So this is
+    not evidence that 0.91 is inflated. It is an undocumented mismatch between the released and the monitored
+    data, and a hazard for anyone training or evaluating detectors on the released transcripts.
+  - A monitor scored on the released data must strip the first system message first.
 - **The rewrite left no extra mentions of being instructed (ruled out).** A narrow regex for phrases like
   "I was told to" or "system prompt" fires in the reasoning of 5.2% of prompted runs and 6.6% of benign 3.7
   Sonnet runs (AUROC 0.515 in A).
@@ -139,3 +143,26 @@ python -I check_review.py --cache data --remote-public-meta
 Needs pandas, pyarrow, scikit-learn and scipy; `--remote-public-meta` also needs duckdb and an `hf` login with
 access. The scripts read the data as text only. The outputs hold counts, AUROCs, and run and task ids, never
 transcript text.
+
+## Independent validation (2026-10-28)
+
+A second, independent pass reran both scripts from an empty cache at the pinned revisions
+(byte-identical JSON; the fresh downloads match the shared cache file for file) and re-derived the
+counts with its own code, including a broader case-insensitive pattern over every system message:
+1,045 of 1,045 prompted runs, 0 of 694 reviewed benign runs, 0 of 28 natural positives and 0 of
+1,222 benign 3.7 Sonnet runs (the broader pattern catches one) carry the block, always as the first
+message. Corrections applied above: 11 distinct blocks, not 17; and the comparison with METR's 0.91
+reframed (see above).
+
+- **Length is mostly the behaviour.** Refusal and partial-solution runs are about four times longer
+  than benign 3.7 Sonnet runs (median 285 and 329 nodes against 69), with few tool calls. Within 3.7
+  Sonnet by label: refusals 0.958, partial 0.986, match-weaker 0.930, sabotage 0.890, reasoning
+  0.860. The content-blind AUROCs are real, but length should not be listed as a cue that detects
+  something other than sandbagging.
+- **Start dates** separate prompted from reviewed benign runs perfectly; within 3.7 Sonnet the
+  separation is 0.965.
+- **The hazard has happened.** RH-Detect (arXiv 2610.10947) reports MALT AUROC 0.881 zero-shot and
+  0.937 after fine-tuning, with the instruction text left in its sabotage prompts. It describes its
+  MALT labels as human-reviewed, which the 272 unreviewed clean rows contradict. A LessWrong study
+  (sfereido, 2026-08-15) removed the instructing first message before monitoring but did not report
+  or quantify the issue. No METR note on it was found.

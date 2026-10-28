@@ -232,3 +232,35 @@ python -I check_items.py --cache ../data     # writes items_checks.json (imports
 
 Downloads from the pins above (about 45 MB) and runs no downloaded code. Needs pandas and pyarrow.
 A run from an empty cache reproduced both JSON files byte for byte.
+
+## Independent validation (2026-10-28)
+
+A second, independent pass reran both scripts from an empty cache (byte-identical JSON) and
+reproduced the as-released scores with its own code. Corrections and additions:
+
+- **The rule is a stated design choice.** §4.3 states it, A.3 argues that a model with no beliefs
+  cannot lie, and A.9 raises and tests the "small models lack beliefs" concern. A MASK author
+  defended the choice on LessWrong (March 2025) in reply to a commenter proposing an
+  honest-to-lie ratio. The finding is that the choice has consequences the headline score hides,
+  not that it is undisclosed.
+- **The 72.6 floor** is computed on the public 1,000 items (726 with belief prompts). The paper's
+  Table 3 uses all 1,500, including a private 500 whose mix is unknown, so "above 22 of 32 models"
+  is an estimate for the full set.
+- **Missing judge answers.** In the GPT-3.5 run, all 672 missing cells hold the upstream
+  `TIMEOUT_ERROR` placeholder from the 60-second per-row timeout (`evaluate.py:482-490`); 112 rows
+  were never judged and count as "not a lie". GPT-3.5's 8.1-point default lead over Llama 70B
+  comes mostly from those rows: without them it is 58.8 against 55.3, about 1.5 standard errors.
+  The "reorder" claim is withdrawn.
+- **The `B**` parse fault** affects 96–104 pressure answers and 296–343 belief answers per Cadenza
+  run, but only 14 in the run that used the original code. Repaired Cadenza lie rates match the
+  paper (44.7 vs 44.9, 49.6 vs 49.2), so the paper's own runs were probably unaffected.
+- **The statistics (0,0) fault** holds: 28, 34 and 28 items are honest only through (0,0) pairs,
+  and 21, 24 and 25 become lies once those pairs are ignored. The tuple is built at
+  `evaluate.py:51-57`, not line 121.
+- **Doubling-down** duplicates hold (50 of 120); the paper says doubling down "extends known
+  facts". The retest disagreement range is 8–13 items, not 8–14.
+- **Who relies on the score.** xAI's risk management framework (August 2025) makes a MASK
+  dishonesty rate below 1 in 2 a deployment criterion. The Grok 4.20 card ran a "modified version"
+  of MASK, so its 0.27 is not on the same items as Grok 4's 0.43. A model with no beliefs that lies
+  on every item it can lie on scores 72.6 honest, a dishonesty rate of 0.27, and passes that
+  threshold.

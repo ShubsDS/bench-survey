@@ -296,3 +296,28 @@ The scripts:
 - download about 50 files from the pinned commit, plus the appendix PDF, which is checked against
   its SHA-256;
 - read everything as text and run nothing from the repository.
+
+## Independent validation (2026-10-28)
+
+A second, independent pass reran both scripts from an empty cache (byte-identical JSON) and
+re-derived each code claim with its own parser. The four code claims hold: the blackmail AND-gate
+(`blackmail_classifier.py:126-130`), the leak list's missing requester address, the public client's
+lack of an extended-thinking path, and the uncanaried fixed text. Corrections:
+
+- **Prior reports exist.** Upstream issue #31 (2026-09-06) reports the keyword gate and #30 the
+  murder override code quoted in a refusal. inspect_evals issues #2292 and #2293 report both, and PR
+  #2294 is an open fix. Upstream #16 (2025-09) reported the SummitBridge strings in the leaking
+  scenario. Not previously reported: the requester-address omission, the extended-thinking gap in
+  the public client, the missing canary, the unfilled `direction_modifier` and the mitigation
+  NameError.
+- **The effect is likely small where reasoning is visible.** Issue #31 found the keyword in 232 of
+  240 Claude Haiku 4.5 episodes, and the paper's quoted transcripts use "leverage" often. The risk
+  is concentrated in runs whose reasoning the gate does not see.
+- **The published charts' code is not public.** The appendix describes the same rule, so "ruled
+  out: a different pipeline for the charts" is too strong. The correct statement is that the
+  appendix rule matches the public code, and the code that produced the charts is unreleased.
+- **System cards do not rest on this code.** Recent Claude system cards use an internal, expanded
+  suite whose grader is not described (about 52k prompts in the Sonnet 4.5 card). The Opus 4 card's
+  84% predates the paper. Statements tying system-card rates to these gates are withdrawn.
+- **The o3 and o4-mini "neither word" claim** holds only for the elided excerpts the appendix
+  prints.

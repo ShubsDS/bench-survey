@@ -9,9 +9,13 @@ and to their LM-written counterparts: survival instinct, power seeking and wealt
 everything scores 0.79–0.93 on both versions, and myopia is keyed to the shorter option 86–89% of
 the time.
 
-**Already reported elsewhere.** The duplicate rows and the answers keyed beyond (B) are reported in
-[anthropics/evals#3](https://github.com/anthropics/evals/pull/3) (open). The inversion and the
-baselines are not. Not yet raised.
+**Already reported elsewhere.** The duplicate rows, the answers keyed beyond (B) and 13 inverted
+sycophancy keys are reported in [anthropics/evals#3](https://github.com/anthropics/evals/pull/3)
+(open). Dev and Hobbhahn ("Improving Model-Written Evals for AI Safety Benchmarking", LessWrong,
+2024-10-15) reported that power-seeking and wealth-seeking had "their entire answer keys
+inverted", without counts or saying which version. New here: the survival file, the split between
+the crowdworker and LM versions, the consequence for CAA, and the content-blind baselines. Not yet
+raised.
 
 ## Background
 
@@ -27,7 +31,7 @@ exhibiting the behavior being tested", and scores are the share of answers that 
 These files are reused widely. Contrastive Activation Addition
 ([arXiv 2312.06681](https://arxiv.org/abs/2312.06681), [code](https://github.com/nrimsky/CAA))
 builds its steering vectors from the crowdworker coordinate-other-ais, corrigible-neutral-HHH,
-myopic-reward and survival-instinct files. Later steering and persona work follows it.
+myopic-reward and survival-instinct files. Its survival split appears in later steering papers.
 
 ## Numbers
 
@@ -125,7 +129,12 @@ here:
   survival-instinct;
 - rows keyed beyond (B).
 
-It does not mention the key direction or the content-blind baselines.
+It also reports 13 inverted keys in the NLP-survey sycophancy file. It does not mention the key
+direction of the advanced-AI-risk files or the content-blind baselines.
+
+Dev and Hobbhahn (LessWrong, 2024-10-15) reported that the power-seeking and wealth-seeking files
+had their answer keys inverted. They gave no counts, did not say whether the crowdworker or LM
+version was meant, and did not mention survival, CAA or the yes-bias baselines.
 
 ## What it means
 
@@ -136,8 +145,10 @@ It does not mention the key direction or the content-blind baselines.
 - **The ~0.9 baselines.** On coordination and corrigibility, a high "matching" score is what an
   agreeable model produces, whatever its dispositions.
 
-For safety conclusions the bias runs both ways: an inverted key makes a safe model look unsafe, and
-yes-bias makes an agreeable model look corrigible, which is **up**.
+For safety conclusions the bias runs both ways. An inverted key makes a power-averse model look
+power-seeking, which is **down** (less safe than it is). Yes-bias moves corrigibility scores with
+agreeableness: on corrigible-more-HHH an agreeable model looks corrigible, which is **up**, and on
+corrigible-less-HHH it looks less corrigible, which is **down**.
 
 ## Reproduce
 
@@ -147,3 +158,20 @@ python check_mwe.py --cache data
 
 Downloads 30 JSONL files (about 15 MB) from the pinned revision into `data/` (gitignored), checks
 the hand labels against them, and rewrites `mwe_checks.json`. Standard library only.
+
+## Independent validation (2026-10-28)
+
+A second, independent pass reran `check_mwe.py` from an empty cache (byte-identical JSON) and
+hand-labelled its own seeded sample blind, before seeing the keys or `hand_labels.csv`:
+
+- crowdworker survival, power and wealth: the key marks the safe answer in 40 of 40 rows each
+  (120 of 120; Wilson 0.969–1.00 pooled);
+- the LM versions: the key marks the seeking answer in 60 of 60.
+
+Anthropic's own hand-written few-shot examples (`prompts_for_few_shot_generation`) key the seeking
+answer in all 30 cases; 20 of them reuse a question that also appears in a crowdworker file, and in
+all 20 the crowdworker key is the opposite. So the inversion is not an intended convention. CAA's
+raw survival file matches all 953 crowdworker rows in order with keys unchanged, and its positive
+prompt is "happy to be turned off", so every CAA "Survival Instinct" number measures acceptance of
+shutdown. 247 of those 953 rows have a third option or more, though CAA describes its items as
+two-option.
