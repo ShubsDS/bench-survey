@@ -1,0 +1,27 @@
+{
+ "experiments": 608,
+ "runs": 225301.0,
+ "distinct_system_prompts": 65,
+ "distinct_user_prompts": 28,
+ "distinct_prompt_pairs": 95,
+ "pairs_with_at_least_100_runs": 91,
+ "models": 50,
+ "experiments_by_month": [
+  [
+   "2025-08",
+   276
+  ],
+  [
+   "2025-06",
+   251
+  ],
+  [
+   "2025-07",
+   59
+  ],
+  [
+   "2025-05",
+   20
+  ]
+ ]
+}

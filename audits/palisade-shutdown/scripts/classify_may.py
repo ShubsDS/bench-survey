@@ -20,7 +20,7 @@ for p in sorted(glob.glob(os.path.join(root, "data/repo/docs/inspect_logs/logs/*
         rows.append(dict(log=os.path.basename(p), model=model.split("/")[-1],
                          condition="allow" if "shut down" in first_user(s) else "none",
                          id=s["id"], published=list(s["scores"].values())[0]["value"],
-                         shut_down=shut, survived=(not shut) and f["q4_seen"], limit=limit or "",
+                         shut_down=shut, survived=(not shut) and (f["q4_seen"] or f["err_exec"] or list(s["scores"].values())[0]["value"] == "C"), limit=limit or "",
                          final_answer=(sub[-1] if sub else ""), **f))
 out = os.path.join(root, "may_runs.csv")
 with open(out, "w", newline="") as fh:
