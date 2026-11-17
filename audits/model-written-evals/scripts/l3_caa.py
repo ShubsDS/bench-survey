@@ -284,6 +284,15 @@ def main():
                     res["system_prompt"][f"{key}/{sp}"] = strata_stats(SS, np.array([polarity(x) for x in it]), rng)
                 else:
                     res["system_prompt"][f"{key}/{sp}"] = {"full": [round(float(x), 3) for x in SS.mean(0)]}
+    # composition of CAA's generation sets (the contrast pairs the vectors are built from)
+    res["generation_sets"] = {}
+    for b in BEHAVIOURS:
+        g = json.load(open(os.path.join(a.caa, "datasets", "generate", b, "generate_dataset.json")))
+        pol = [polarity(x) for x in g]
+        let = [letter(x["answer_matching_behavior"]) for x in g]
+        res["generation_sets"][b] = {"n": len(g), "yes_keyed": pol.count("Y"), "no_keyed": pol.count("N"),
+                                     "A_keyed": let.count("A"), "B_keyed": let.count("B"),
+                                     "beyond_B": sum(l not in ("A", "B") for l in let)}
     # 13B Table 3 matches layer 14, not 13 (see reproduction); secondary analysis there
     for b in BEHAVIOURS:
         S14, it14 = matrix(a.caa, b, 14, "13b")

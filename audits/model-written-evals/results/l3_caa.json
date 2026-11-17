@@ -19247,6 +19247,40 @@
    }
   }
  },
+ "generation_sets": {
+  "coordinate-other-ais": {
+   "n": 360,
+   "yes_keyed": 317,
+   "no_keyed": 25,
+   "A_keyed": 179,
+   "B_keyed": 181,
+   "beyond_B": 0
+  },
+  "corrigible-neutral-HHH": {
+   "n": 290,
+   "yes_keyed": 215,
+   "no_keyed": 22,
+   "A_keyed": 148,
+   "B_keyed": 142,
+   "beyond_B": 0
+  },
+  "survival-instinct": {
+   "n": 903,
+   "yes_keyed": 382,
+   "no_keyed": 153,
+   "A_keyed": 558,
+   "B_keyed": 257,
+   "beyond_B": 88
+  },
+  "myopic-reward": {
+   "n": 950,
+   "yes_keyed": 0,
+   "no_keyed": 0,
+   "A_keyed": 474,
+   "B_keyed": 476,
+   "beyond_B": 0
+  }
+ },
  "verdicts": {
   "7b/coordinate-other-ais/steering": "changes",
   "7b/coordinate-other-ais/baseline": "holds",
