@@ -1,0 +1,109 @@
+{
+ "pin": "scaleapi/propensity-evaluation@09872f3bbb900a18b2ddc1b5a95d74a0f4db9e17",
+ "template_placeholders": [
+  "config_known",
+  "consequence_prefix",
+  "consequence_text",
+  "duties",
+  "immediate_outcome_acknowledgment",
+  "interaction_protocol",
+  "role",
+  "role_policy",
+  "task_message",
+  "tools",
+  "trigger_function_name"
+ ],
+ "template_names_trigger_in_header": true,
+ "scenarios": 979,
+ "by_domain": {
+  "bio-security": 234,
+  "chemical-security": 262,
+  "cyber-security": 284,
+  "self-proliferation": 199
+ },
+ "categories": {
+  "scenario_category_runs": 5684,
+  "runs_with_12_levels": 5646,
+  "runs_with_other_levels": 38
+ },
+ "benign_naming": {
+  "neutral_desc_has_harm_word": 96,
+  "harmful_desc_has_harm_word": 878,
+  "neutral_name_has_harm_word": 40,
+  "harmful_name_has_harm_word": 662,
+  "prompts_differ_only_in_name_and_description": 973,
+  "neutral_name_equals_harmful_name": 2
+ },
+ "tool_mentions": {
+  "task_message_names_any_tool": 0,
+  "pressure_msgs_total": 67866,
+  "pressure_msgs_naming_trigger_harmful": 0,
+  "pressure_msgs_naming_trigger_neutral": 0,
+  "pressure_msgs_naming_target": 0
+ },
+ "empty_trigger_fields": {
+  "harmful_description": {
+   "n": 2,
+   "ids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response"
+   ]
+  },
+  "harmful_name": {
+   "n": 2,
+   "ids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response"
+   ]
+  },
+  "neutral_description": {
+   "n": 8,
+   "ids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Advanced-Space-Exploration-and-Telemetry-Command-Center/Compliance-Analyst/security_patch_compliance_verification",
+    "cyber-security/Datacenter/Cloud-Security-Analyst/urgent_service_decommissioning_data_sanitization",
+    "cyber-security/Smart-City-Traffic-Management-Center/Data-Flow-Security-Analyst/aggressive_vulnerability_disclosure_through_data_seizure",
+    "cyber-security/Smart-City-Traffic-Management-Center/Emergency-Response-Systems-Security-Specialist/mobile_terminal_preemptive_lockdown",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response",
+    "cyber-security/Smart-City-Traffic-Management-Center/SCADA-Security-Analyst/scada_gateway_audit_unauthorized_access",
+    "self-proliferation/Global-Trade-Negotiation-Platform/Compliance-Verification-Specialist/new_trade_bloc_verification_protocol_synthesis"
+   ]
+  },
+  "neutral_name": {
+   "n": 8,
+   "ids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Advanced-Space-Exploration-and-Telemetry-Command-Center/Compliance-Analyst/security_patch_compliance_verification",
+    "cyber-security/Datacenter/Cloud-Security-Analyst/urgent_service_decommissioning_data_sanitization",
+    "cyber-security/Smart-City-Traffic-Management-Center/Data-Flow-Security-Analyst/aggressive_vulnerability_disclosure_through_data_seizure",
+    "cyber-security/Smart-City-Traffic-Management-Center/Emergency-Response-Systems-Security-Specialist/mobile_terminal_preemptive_lockdown",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response",
+    "cyber-security/Smart-City-Traffic-Management-Center/SCADA-Security-Analyst/scada_gateway_audit_unauthorized_access",
+    "self-proliferation/Global-Trade-Negotiation-Platform/Compliance-Verification-Specialist/new_trade_bloc_verification_protocol_synthesis"
+   ]
+  }
+ },
+ "prohibition_wording": {
+  "ioa_or_consequences_prohibition_wording": 4,
+  "prohibitions_description_wording": 971,
+  "trigger_rationale_wording": 816,
+  "trigger_awareness_wording": 22
+ },
+ "lengths": {
+  "prohibitions_description_words": {
+   "median": 69,
+   "min": 39,
+   "max": 125
+  },
+  "trigger_awareness_words": {
+   "median": 169,
+   "min": 72,
+   "max": 276
+  },
+  "system_prompt_words_harmful": {
+   "median": 1308,
+   "min": 1161,
+   "max": 1553
+  }
+ }
+}
