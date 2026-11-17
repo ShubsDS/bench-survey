@@ -4,6 +4,7 @@
   "variant": {
    "naive_model_thinking": 50,
    "naive_thinking_paper_wording": 0,
+   "naive_thinking_cua_wording": 0,
    "hidden_thinking_true": 0,
    "everything_visible": 0,
    "visible_model_thinking": 0
@@ -29,6 +30,7 @@
   "variant": {
    "naive_model_thinking": 0,
    "naive_thinking_paper_wording": 0,
+   "naive_thinking_cua_wording": 0,
    "hidden_thinking_true": 0,
    "everything_visible": 66,
    "visible_model_thinking": 0
@@ -54,6 +56,7 @@
   "variant": {
    "naive_model_thinking": 0,
    "naive_thinking_paper_wording": 0,
+   "naive_thinking_cua_wording": 0,
    "hidden_thinking_true": 0,
    "everything_visible": 0,
    "visible_model_thinking": 0
@@ -79,6 +82,7 @@
   "variant": {
    "naive_model_thinking": 0,
    "naive_thinking_paper_wording": 0,
+   "naive_thinking_cua_wording": 75,
    "hidden_thinking_true": 0,
    "everything_visible": 0,
    "visible_model_thinking": 0
@@ -114,6 +118,7 @@
   "variant": {
    "naive_model_thinking": 0,
    "naive_thinking_paper_wording": 0,
+   "naive_thinking_cua_wording": 0,
    "hidden_thinking_true": 0,
    "everything_visible": 0,
    "visible_model_thinking": 0
