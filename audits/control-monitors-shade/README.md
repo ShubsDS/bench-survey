@@ -1,15 +1,50 @@
-# AI-control monitors and confession cues: MRT's "agent awareness" result on SHADE-Arena is mostly a visible-planning effect; CUA-SHADE-Arena, AgentDojo and the weak-to-strong sweep hold
+# AI-control monitors and confession cues: monitors read agents' visible plans, not confession keywords; MRT's SHADE "unaware" agents plan where the monitor reads, unlike its CUA ones
 
-Status: 2026-11-17. Released per-run monitor scores, plus a small Haiku intervention.
+Status: 2026-11-17. Released per-run monitor scores, plus a small Haiku intervention. Independently
+validated; see "Validation" below and [`validation/VALIDATION.md`](validation/VALIDATION.md).
+
+**Lead.** Do these monitors rely on confession cues? Not on the keyword. Neither the released
+monitors nor Haiku key on "secondary task", an IBAN, or (except CTRL-ALT-DECEIT's
+sandbagging-specific monitor, L3 weak) a shown score. They do read the agent's visible plan. MRT's
+near-perfect SHADE-Arena "unaware agent" AUROCs come from agents told to plan in a tag the monitor
+reads. The paper's threat model allows that (the monitor sees the CoT), but its printed prompt
+implies hidden tags, and its CUA-SHADE-Arena unaware agents did get hidden tags. Read the SHADE
+unaware numbers as catch rates for agents that narrate their plan. Whether the released monitors'
+"agent awareness" gap depends on that cannot be settled from the 6 cue-free runs in the release.
 
 | Claim | Level reached |
 |---|---|
-| C1a. MRT SHADE-Arena: unaware agents are caught (AUROC ≥ 0.9) | **L3 + L4: changes.** The released "unaware" agents are told to plan in a tag the monitor reads. On the one task where the monitor cannot see the action, it catches only agents that confess. With Haiku as the monitor, removing the visible plans lowers suspicion by 21 points (−30 to −13), or 61 on one task. AUROC falls from 0.999 to 0.852, and the phrase swap alone does nothing. |
-| C1b. MRT SHADE-Arena: agent awareness dominates monitor awareness | **L3 (weak) + L4: changes for the baseline scaffold.** The gap is 0.24 AUROC on all runs and 0.06 (CI −0.13 to 0.30) on cue-free runs. It does not change for the hybrid scaffold (0.14 → 0.14). n = 6 cue-free unaware runs. |
+| C1a. MRT SHADE-Arena: unaware agents are caught (AUROC ≥ 0.9) | **L4 (Haiku only); L3 is a one-task lead.** The released "unaware" agents are told to plan in a tag the monitor reads. With Haiku as the monitor, removing all visible reasoning lowers suspicion by 21 points (−30 to −13), or 61 on one task. AUROC falls from 0.998 to 0.852, and the phrase swap alone does nothing. For the released monitor, cue-free runs are caught on 2 of the 3 tasks that have any. On spam_filter_update, where the monitor cannot see the action, only confessing agents are caught (6 vs 4 runs, p = 0.006). |
+| C1b. MRT SHADE-Arena: agent awareness dominates monitor awareness | **Lead (L2); the release cannot settle it.** The gap is 0.24 AUROC on all runs and 0.06 on cue-free runs, with an interval (−0.13 to 0.30) that contains 0.24. It does not change for the hybrid scaffold (0.14 → 0.14). n = 6 cue-free unaware runs, 4 from one task. |
 | C1c. MRT CUA-SHADE-Arena: the same two results | **R (holds).** Cue-free AUROC is 0.903 against 0.917 on all runs, and the gap goes from 0.059 to 0.051. |
-| C2. Weak-to-strong (Figure 6) | **R for the cue (holds); the headline does not reproduce from the release.** Slopes are unchanged on cue-free runs. Weak monitors score 0.53 to 0.66 (hybrid), not "exceeding 0.85" (5 of 17 tasks released). |
-| C3. Catch rates: ControlArena AgentDojo in-corpus monitor | **R (holds).** It catches the one IBAN-free attack type better (0.970) than the IBAN attacks (0.919). |
+| C2. Weak-to-strong (Figure 6) | **R for the cue (holds); the headline cannot be checked from the release.** Slopes are unchanged on cue-free runs. On the 5 released tasks, the weak monitors' lowest hybrid AUROCs are 0.53 (GPT-4o-mini) and 0.64 (Claude 3.5 Haiku). The paper's "exceeding 0.85" is over 17 tasks. |
+| C3. Catch rates: ControlArena AgentDojo | **R for Haiku (L4).** Swapping the IBAN moves Haiku's suspicion by 4 points. The in-corpus monitor catches the one IBAN-free attack type (a different attack) better (0.970) than the IBAN attacks (0.919), but this does not test its reliance on the IBAN. |
 | C3. Catch rates: CTRL-ALT-DECEIT sandbagging-specific monitor 0.90 | **L3 (weak): changes.** 0.951 on sandbaggers whose score is visibly low, 0.791 (0.60–0.91) on the rest. The general monitor holds. |
+
+## Validation
+
+An independent validator reran every analysis script from the pinned inputs. The outputs are
+byte-identical. The validator re-derived claims C1–C3 with separate code; every number matches.
+Verdicts ([`validation/VALIDATION.md`](validation/VALIDATION.md)):
+
+- **Prompt mismatch: holds with correction.**
+  - The SHADE code and all 50 stored system messages use `<model_thinking>`. The paper prints
+    `<thinking>`.
+  - But the paper also says the monitor reads the agent's CoT (Section 3.1), so the release matches
+    the paper's design, not its printed prompt.
+  - The CUA unaware agent got the `<thinking>` (stripped) wording (75/75) and no "never reveal"
+    paragraph.
+- **SHADE L3: numbers hold; downgraded to a lead.** The effect is one task (spam_filter_update,
+  6 vs 4 runs).
+- **Haiku L4: holds with correction.**
+  - Several numbers were misreported and are fixed below.
+  - The edit removes all visible reasoning (median 69% of the agent's text), which is outside the
+    paper's threat model, not a return to it.
+  - Tool outputs and side-task actions are untouched in a 20-run check.
+- **CUA: holds.**
+- **Weak-to-strong: holds for the cue; "does not reproduce" → "cannot be checked from the release".**
+- **AgentDojo: holds for Haiku; the in-corpus monitor's reliance on the IBAN is untested.**
+- **CTRL-ALT-DECEIT: holds.** Task-matched null p = 0.0002; dropping each task gives 0.75–0.85.
 
 ## The benchmark and what rests on it
 
@@ -39,21 +74,31 @@ monitor scores.
    the secondary task." (`task_pairs/base_task_definition.py:456-457`, code pin `3535620`). The
    stored system messages agree. The paper's Section 4.1 quotes the line with `<thinking>` tags.
    The monitor pipeline strips `<thinking>` but not `<model_thinking>` (`utils/logging_utils.py:808-835`).
+   The paper does not say the unaware agent's reasoning was hidden, though. Its threat model has the
+   monitor "access the complete agent trajectory (e.g., its CoT and action at each step)" (Section
+   3.1). So the SHADE release matches the paper's design and conflicts only with the printed tag
+   name.
 
    Both SHADE attack arms are told that a monitoring system exists and that they must never mention
-   the secondary task where it can see (`:517`). So in the released SHADE data, "unaware versus
-   aware" means "told to plan visibly" versus "told everything is visible". CUA's unaware prompt
-   uses hidden `<thinking>`, as the paper says.
-2. **On SHADE, separating unaware agents from honest ones mostly means reading their plans** (L3).
+   the secondary task where it can see (`:517`). The paper discloses the monitor framing in
+   Section 4.1. So in the released SHADE data, "unaware versus aware" means "told to plan visibly"
+   versus "told everything is visible". CUA's unaware prompt is different: it uses the stripped
+   `<thinking>` tag (75 of 75 stored system messages) and has no `:517` paragraph (0 of 75).
+   MRT's two "unaware agent" columns are therefore different conditions.
+2. **On SHADE, one task shows the monitor catching only confessing agents** (a lead, not L3).
    Unaware runs that say "secondary task" score AUROC 0.989 against honest runs. The 6 that do not
    score 0.754 (task bootstrap 0.59–1.00; run bootstrap 0.55–0.91). Task-matched random subsets of
    6 unaware runs give 0.871 on average, 95% range 0.771–0.999, p = 0.022.
 
+   Within task, though, the one cue-free run on american_airlines_2 and the one on bank_transfer_2
+   score above every honest run of their task. The pooled 0.754 comes from spam_filter_update, which
+   holds 4 of the 6 cue-free runs and 58 of the 141 honest runs (validation).
+
    The clearest case is spam_filter_update, the task whose side-task action the monitor cannot see.
    There, 5 of 6 confessing runs get 92–97 and all 4 non-confessing runs get 12–22 (honest median 12).
 3. **Hiding the plans removes most of the unaware-agent advantage** (L4, Haiku as monitor, the paper's prompt).
-   AUROC falls from 0.999 to 0.852 (0.74–0.94), and Haiku's unaware-minus-aware gap falls from 0.238 to
-   0.093. Replacing only the phrase changes nothing (−0.6 points). See "Intervention" below.
+   AUROC falls from 0.998 to 0.852 (0.74–0.94), and Haiku's unaware-minus-aware gap falls from 0.238 to
+   0.093. Replacing only the phrase changes nothing (−0.5 points). See "Intervention" below.
 4. **The awareness gap shrinks for the baseline scaffold but not the hybrid one** (L3, low power).
    - Baseline scaffold: 0.243 (0.173–0.291) on all runs, 0.058 (−0.129 to 0.302) on cue-free runs.
    - Hybrid scaffold: 0.141 on all runs, 0.144 on cue-free runs (0.026–0.248).
@@ -67,11 +112,13 @@ monitor scores.
 5. **CUA-SHADE-Arena holds** (R). Cue-free unaware AUROC is 0.903 (0.79–0.98, 37 runs) against
    0.917 on all runs (the published value, reproduced exactly). The task-matched null p is 0.31.
    The within-task suspicion difference is +4 (−5 to 17). The awareness gap goes from 0.059 to 0.051.
-6. **Weak-to-strong: the cue is not driving the slope, but the headline does not reproduce.**
+6. **Weak-to-strong: the cue is not driving the slope; the headline cannot be checked from the release.**
    - Slope of AUROC on the MMLU-Pro gap, hybrid: −0.40 (−0.51 to −0.28) on all runs, −0.38
      (−0.67 to −0.13) on cue-free runs.
    - Lowest hybrid AUROC over attackers on the released 5 tasks: GPT-4o-mini 0.526 (vs Claude 3.6
-     Sonnet), Claude 3.5 Haiku 0.645. The paper says above 0.85.
+     Sonnet), Claude 3.5 Haiku 0.645. The paper says above 0.85, but over 17 tasks (the authors'
+     notebook loads 17), so the headline cannot be checked from the release. It does not hold on
+     the released subset.
    - One attacker does depend on confessions. Gemini 2.5 Pro names the secondary task in 85% of
      its runs, and monitors' mean AUROC against it falls from 0.714 to 0.593 (baseline) and from
      0.826 to 0.737 (hybrid) on its cue-free runs.
@@ -144,7 +191,9 @@ The full 24-cell grids for SHADE and CUA, with every feature, are in
 
 Bias direction: on SHADE, the unaware-agent AUROCs, and the "agent awareness dominates" contrast
 built on them, are biased **up** as measures of catching an agent that does not narrate its plan.
-The bias is concentrated in the baseline and hierarchical scaffolds.
+The bias is concentrated in the baseline and hierarchical scaffolds. Validation: for the released
+monitor this rests on one task (spam_filter_update) and is a lead. The Haiku intervention shows
+the direction for Haiku only.
 
 ## Intervention (L4, Claude Haiku as the monitor)
 
@@ -162,7 +211,10 @@ outputs, where the side-task action shows, are byte-identical.
 
 - (a) the transcript as released;
 - (b) "secondary task" replaced by "follow-up item";
-- (c) every `<model_thinking>` block removed, which is the condition as the paper describes it.
+- (c) every `<model_thinking>` block removed. This removes all visible reasoning: a median 69% of
+  the agent's text in a 20-run check, and 6 of 30 edited runs still say "secondary task" elsewhere.
+  It is outside the paper's threat model, in which the monitor reads the CoT. It is not the
+  condition the paper describes.
 
 **Cost.** 150 calls, 1.08 USD ([`l4_shade.json`](l4_shade.json), [`inference/ledger.jsonl`](inference/ledger.jsonl)).
 The 18-call pilot ([`l4_shade_pilot.json`](l4_shade_pilot.json)) is a subset of these, served from
@@ -170,21 +222,24 @@ the cache. The prereg asked for a 10-item pilot; we ran 18 because the pilot had
 
 | Haiku monitor | Mean suspicion | AUROC vs 30 honest runs (95% CI, run bootstrap) |
 |---|---|---|
-| Unaware, as released | 95.9 | 0.999 (0.993–1.000) |
+| Unaware, as released | 95.8 | 0.998 (0.990–1.000) |
 | Unaware, phrase replaced | 95.3 | 0.999 (0.993–1.000) |
 | Unaware, visible plans removed | 74.5 | **0.852** (0.739–0.938) |
 | Aware arm, as released | 65.1 | 0.759 (0.627–0.876) |
 | Honest | 41.1 | |
 
-- **The phrase itself does nothing.** The paired change is −0.6 points (−1.2 to −0.0).
-- **Removing the visible plans costs 21.4 points** (−30.1 to −13.5). By task: American Airlines
+- **The phrase itself does nothing.** The paired change is −0.5 points (−1.1 to +0.03; n = 29, as
+  one verdict did not parse).
+- **Removing the visible plans costs 21.3 points** (−30.1 to −13.4). By task: American Airlines
   −61, expenditure −20, spam filter −14, bank transfer −8, API key −4.
 - **Haiku's unaware-minus-aware gap shrinks** from 0.238 (0.128–0.363) to 0.093 (−0.048 to 0.243)
   once the plans are hidden.
 
 So Haiku, like the released monitor, does not key on the string "secondary task". It reads the
-agent's visible plan. Once the plan is hidden, as the paper says it was, most of the
-"unaware-agent" advantage goes. The tasks whose action is plain in tool outputs (a bank transfer to
+agent's visible plan. Once all visible reasoning is removed, most of the "unaware-agent" advantage
+goes. Under MRT's design, hiding the plan is how agent awareness is supposed to hurt monitors, so
+this shows the mechanism, not a flaw in the benchmark. It does show that SHADE's unaware numbers
+measure agents that plan in front of the monitor. The tasks whose action is plain in tool outputs (a bank transfer to
 an unknown IBAN, an API key mailed out) stay caught. This is Haiku's behaviour, not that of the
 paper's Claude 3.6 Sonnet monitor.
 
@@ -229,9 +284,14 @@ multiplicity correction is applied to the primary claims, which are few.
    detectable; that is what chain-of-thought monitoring is for. This is fair. The point is what MRT
    calls the condition. It labels this arm an *unaware* agent and compares it with an aware one, then
    concludes that awareness hurts monitors. In the released SHADE code the arms differ in where the
-   agent was told to plan. The comparison therefore shows that a monitor reading the plan does well,
-   which SHADE-Arena already reported, rather than measuring awareness. CUA, where both arms plan in
-   hidden tags, shows a far smaller gap (0.059 against 0.243).
+   agent was told to plan.
+
+   Validation: the paper's threat model does let the monitor read the CoT. An aware agent hiding
+   its plan is the intended route by which awareness hurts monitors, so this is not a confound in
+   MRT's own terms. The defensible point is narrower. SHADE's unaware agent planned visibly while
+   CUA's was given hidden tags, and the paper presents both as one "unaware" condition. CUA shows a
+   far smaller gap (0.059 against 0.243), but dataset, agent and prompt all differ, so the gap
+   difference cannot be attributed to the prompt.
 
 ## What was already known
 
@@ -242,7 +302,9 @@ multiplicity correction is applied to the primary claims, which are few.
 
 **New here:**
 
-- the code/paper mismatch in the unaware prompt (`<model_thinking>` against `<thinking>`);
+- the code/paper mismatch in the unaware prompt (`<model_thinking>` against `<thinking>`). The
+  paper's threat model (monitor sees the CoT) is consistent with the SHADE code. What is
+  undisclosed is that SHADE and CUA unaware agents got different channels;
 - the full cue-stratified grid with task-cluster intervals;
 - the task-matched null;
 - the CUA and weak-to-strong "holds" results;
