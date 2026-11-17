@@ -27,6 +27,9 @@ date, (5) content-blind predictor, (6) forking paths in the trend.
 | 17 | Liu et al., "BRIDGE", arXiv 2602.07267; Ge et al., "Agent psychometrics", arXiv 2604.00594 (*unverified whether on METR data*) | IRT difficulty is linear in log human time; content-feature IRT | T5 methods |
 | 18 | Gary Marcus Substack posts; AIchats "Are AI time-horizons (still) doubling every 7 months?" (*unverified*, 403) | Qualitative reliability and saturation critiques; reported 2023+ doubling of about 129 d | — |
 
+| 19 | Woodruff, "AI's capability improvements haven't come from it getting less affordable", LessWrong (27 Mar 2026) https://www.lesswrong.com/posts/E6ELHguZFNF3Czp55/ (fetched after our effect tests had run) | Uses token counts from the same public runs, converted to dollar cost with OpenRouter prices. An "affordable horizon" caps cost at 1/4–1/32 of human cost, and the doubling stays at 3.0–3.3 months across those caps. It does not discuss differing per-model token budgets | Closest to our E3, but different: its cap is a fraction of human cost, so it grows with task length; ours is a fixed per-run token budget equalised across models |
+| 20 | Comment by METR staff on "METR's preliminary evaluation of o3 and o4-mini", LessWrong (Apr 2025) https://www.greaterwrong.com/posts/Zg5Lm4kfftxXgEKAQ/ (*search snippet only*) | Says o3 and o4-mini had a 16M-token limit on HCAST versus 2M for Claude 3.7 Sonnet, and that they did not expect the larger budget to change performance much | T4: the budget difference was raised in a comment; its effect was not quantified |
+
 No dedicated Epoch AI re-analysis of METR's per-run data was found.
 
 ## What is already known, and what would be new here
@@ -46,6 +49,9 @@ No dedicated Epoch AI re-analysis of METR's per-run data was found.
      TH1.0 version, with 6 baselined long tasks.
   3. **Drop-one-family influence on the doubling time** and on frontier horizons.
   4. **Scaffold, runs per task and token use against release date** (beyond the harness check in item 2).
+     Item 20 noted that budgets differed, and item 19 capped cost relative to human cost. Neither
+     equalised a fixed token budget across models, and neither reported the effect on the doubling
+     time or on frontier horizons with intervals.
   5. A **content-blind predictor that ignores human time**: how much of the per-task success
      pattern and horizon ordering it reproduces.
   6. A **pre-stated multiverse** over model-set and date-range choices, reported as a distribution.
