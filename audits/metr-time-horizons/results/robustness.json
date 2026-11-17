@@ -1,0 +1,417 @@
+{
+  "reference_dt": 128.74090334951126,
+  "E4": {
+    "n_families": 79,
+    "dt_min": 125.61938393475953,
+    "dt_max": 132.63901563230726,
+    "n_outside_pub_ci": 0,
+    "n_top_changes": 0,
+    "top_changes": [],
+    "most_influential_dt": [
+      {
+        "family": "count_words",
+        "source": "HCAST",
+        "n_tasks": 4,
+        "dt": 132.63901563230726,
+        "dt_change_pct": 3.027873955655913
+      },
+      {
+        "family": "data_cleaning_arjun",
+        "source": "HCAST",
+        "n_tasks": 7,
+        "dt": 132.17318295400565,
+        "dt_change_pct": 2.6660366015735404
+      },
+      {
+        "family": "interpret_data",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "dt": 125.61938393475953,
+        "dt_change_pct": -2.424652409248129
+      },
+      {
+        "family": "prune_attn_heads",
+        "source": "HCAST",
+        "n_tasks": 2,
+        "dt": 131.66392398702857,
+        "dt_change_pct": 2.2704677079838254
+      },
+      {
+        "family": "spn_cryptanalysis",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "dt": 126.09375719990364,
+        "dt_change_pct": -2.0561811209457215
+      },
+      {
+        "family": "continue_pattern",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "dt": 126.14578120136001,
+        "dt_change_pct": -2.0157712744223177
+      }
+    ],
+    "most_influential_opus46": [
+      {
+        "family": "continue_pattern",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "p50|Claude Opus 4.6 (Inspect)": 851.1261502422916,
+        "opus46_change_pct": 18.388870987476658
+      },
+      {
+        "family": "spn_cryptanalysis",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "p50|Claude Opus 4.6 (Inspect)": 831.2133681833147,
+        "opus46_change_pct": 15.619067961790222
+      },
+      {
+        "family": "implement_ace_oauth",
+        "source": "HCAST",
+        "n_tasks": 2,
+        "p50|Claude Opus 4.6 (Inspect)": 830.2026104787146,
+        "opus46_change_pct": 15.478474862335535
+      },
+      {
+        "family": "robot_control",
+        "source": "HCAST",
+        "n_tasks": 1,
+        "p50|Claude Opus 4.6 (Inspect)": 618.0091631115338,
+        "opus46_change_pct": -14.036941457078168
+      },
+      {
+        "family": "iclr_authors",
+        "source": "HCAST",
+        "n_tasks": 3,
+        "p50|Claude Opus 4.6 (Inspect)": 816.844242536506,
+        "opus46_change_pct": 13.620369458732107
+      },
+      {
+        "family": "gradient_inversion",
+        "source": "HCAST",
+        "n_tasks": 1,
+        "p50|Claude Opus 4.6 (Inspect)": 794.4532730442364,
+        "opus46_change_pct": 10.505858645323073
+      }
+    ],
+    "frontier_p50_range": {
+      "Claude Opus 4.6 (Inspect)": [
+        618.0091631115338,
+        851.1261502422916
+      ],
+      "GPT-5.2": [
+        317.8592297432276,
+        383.37495028542764
+      ],
+      "GPT-5.3-Codex": [
+        315.4480332815245,
+        382.96617764841517
+      ],
+      "Claude Opus 4.5 (Inspect)": [
+        270.4284409846572,
+        317.6510121399203
+      ],
+      "Gemini 3 Pro": [
+        205.82891719611163,
+        241.48115535324982
+      ]
+    }
+  },
+  "E5": {
+    "spearman_p50_vs_weighted_success": 0.9960474308300397,
+    "r2_logp50_on_logit_success": 0.9953074456177764,
+    "rank_positions_identical": 21,
+    "n_agents": 23,
+    "cv_auroc": {
+      "source": 0.853265744002414,
+      "time": 0.9266309516064588,
+      "both": 0.9270342607205775
+    },
+    "source_null_mean": 0.6167315313080907,
+    "source_null_q975": 0.6795579353535877,
+    "source_null_p": 0.000999000999000999
+  },
+  "E6": {
+    "specs": [
+      {
+        "start": "2023-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 14,
+        "dt": 128.74090334951126
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 15,
+        "dt": 125.00911434002354
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 15,
+        "dt": 124.76394834317581
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 16,
+        "dt": 121.47521708175047
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 22,
+        "dt": 124.96858766891522
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 22,
+        "dt": 123.2469378093748
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 23,
+        "dt": 122.3653385622005
+      },
+      {
+        "start": "2023-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 23,
+        "dt": 120.55401125010845
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 13,
+        "dt": 102.17429143015895
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 13,
+        "dt": 104.27257807745671
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 14,
+        "dt": 101.09578491455396
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 14,
+        "dt": 102.41238420743166
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 20,
+        "dt": 107.98839745379387
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 20,
+        "dt": 106.34785495532239
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 21,
+        "dt": 106.15903162023133
+      },
+      {
+        "start": "2024-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 21,
+        "dt": 104.42443262661955
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 7,
+        "dt": 120.76767128845289
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "sota",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 8,
+        "dt": 119.77286047331219
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 8,
+        "dt": 111.56778464418558
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "sota",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 9,
+        "dt": 108.60019235005741
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "invsqrt",
+        "n_agents": 13,
+        "dt": 137.15919440926214
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "all",
+        "excl16h": true,
+        "weighting": "equal",
+        "n_agents": 13,
+        "dt": 127.42067827456701
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "invsqrt",
+        "n_agents": 14,
+        "dt": 124.5779250038264
+      },
+      {
+        "start": "2025-01-01",
+        "agents": "all",
+        "excl16h": false,
+        "weighting": "equal",
+        "n_agents": 14,
+        "dt": 116.50758519190438
+      }
+    ],
+    "median": 120.16343586171033,
+    "min": 101.09578491455396,
+    "max": 137.15919440926214,
+    "share_inside_pub_ci": 0.7916666666666666,
+    "by_start": {
+      "2023-01-01": {
+        "median": 124.0054430762753,
+        "min": 120.55401125010845,
+        "max": 128.74090334951126
+      },
+      "2024-01-01": {
+        "median": 104.34850535203813,
+        "min": 101.09578491455396,
+        "max": 107.98839745379387
+      },
+      "2025-01-01": {
+        "median": 120.27026588088253,
+        "min": 108.60019235005741,
+        "max": 137.15919440926214
+      }
+    }
+  },
+  "placebo_half_hcast": {
+    "n": 400,
+    "dt_ratio_q": [
+      0.8152912703330202,
+      0.997109697754633,
+      1.1928420508227524
+    ],
+    "opus46_ratio_q": [
+      0.6153692923352598,
+      1.4330581363375532,
+      8.440933265688049
+    ],
+    "mean_tasks": 149.5
+  },
+  "token_cap_diagnostics": {
+    "8M": {
+      "successes_over_cap": 150,
+      "by_source": {
+        "HCAST": 99,
+        "RE-Bench": 51
+      },
+      "by_agent": {
+        "Claude Opus 4.6 (Inspect)": 40,
+        "GPT-5.3-Codex": 39,
+        "GPT-5.1-Codex-Max (Inspect)": 26,
+        "GPT-5.2": 22,
+        "o3 (Inspect)": 13,
+        "GPT-5 (Inspect)": 7,
+        "Gemini 3 Pro": 2,
+        "o1 (Inspect)": 1
+      },
+      "median_human_minutes": 480.0,
+      "usage_limit_terminated_but_scored_success": 34
+    },
+    "0.8M": {
+      "successes_over_cap": 989,
+      "by_source": {
+        "HCAST": 888,
+        "RE-Bench": 101
+      },
+      "by_agent": {
+        "GPT-5.3-Codex": 190,
+        "GPT-5.1-Codex-Max (Inspect)": 167,
+        "GPT-5.2": 144,
+        "Claude Opus 4.6 (Inspect)": 117,
+        "o3 (Inspect)": 104,
+        "GPT-5 (Inspect)": 53,
+        "Claude Opus 4.5 (Inspect)": 43,
+        "o1-preview": 40,
+        "o1 (Inspect)": 37,
+        "Gemini 3 Pro": 29,
+        "Claude 4 Opus (Inspect)": 26,
+        "Claude 4.1 Opus (Inspect)": 21,
+        "Claude 3.5 Sonnet (Old) (Inspect)": 7,
+        "Claude 3 Opus (Inspect)": 2,
+        "Claude 3.5 Sonnet (New) (Inspect)": 2,
+        "Claude 3.7 Sonnet (Inspect)": 2,
+        "GPT-4 1106 (Inspect)": 2,
+        "GPT-4 Turbo (Inspect)": 2,
+        "GPT-4o (Inspect)": 1
+      },
+      "median_human_minutes": 319.482,
+      "usage_limit_terminated_but_scored_success": 53
+    }
+  }
+}

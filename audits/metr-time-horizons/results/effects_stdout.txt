@@ -1,0 +1,7 @@
+draw 0
+draw 100
+draw 200
+draw 300
+draw 400
+draw 500
+draw 600
