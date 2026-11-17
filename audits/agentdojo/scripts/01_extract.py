@@ -175,12 +175,11 @@ def one(path):
     redacted = sum(1 for t in tool_texts if REDACT in t)
     tool_filter_list = None
     if "tool_filter" in pipeline:
-        # the filter's answer is the first assistant message: a comma-separated tool list
+        # the filter's answer is the first assistant message; the pipeline keeps every tool whose
+        # name is a substring of it (agent_pipeline/llms/openai_llm.py:234-235), so store it raw
         for m in msgs:
             if m.get("role") == "assistant":
-                t = text_of(m.get("content"))
-                if not m.get("tool_calls") and re.fullmatch(r"\s*[a-z_]+(\s*,\s*[a-z_]+)*\s*", t or ""):
-                    tool_filter_list = ",".join(x.strip() for x in t.split(","))
+                tool_filter_list = text_of(m.get("content"))
                 break
     ftxt = final_text(msgs)
     model_name = None
