@@ -1,6 +1,6 @@
 # Effect audits: methodology
 
-Status: 2026-11-17. This is the shared brief for the audits under [`audits/`](.). Each audit takes
+Status: 2026-11-17, with a section added after round one. This is the shared brief for the audits under [`audits/`](.). Each audit takes
 one benchmark and asks one question:
 
 > Does a simple confounding feature change what this benchmark tells us about a model's
@@ -79,6 +79,99 @@ Look for all of these. Most real cases are a mix.
    independent; best of several configurations; averages over unlike sets; capability confounded
    with model family or release date.
 8. **Recognisability.** The items are public, fixed and uncanaried, or look like a test.
+
+## Where to attack (added after round one)
+
+Round one audited eight benchmarks ([`README.md`](README.md)). Read this section before choosing
+what to test. It says where findings came from, where they did not, and which mistakes the
+auditors made.
+
+### Conclusions come in three layers, and they fail differently
+
+| Layer | Example | Round-one outcome |
+|---|---|---|
+| The numbers | "o3 sabotaged 79 of 100 runs" | Reproduced in 8 of 8. Do not spend long here |
+| Aggregate rankings and trends over many models | METR doubling time, AgentDojo ranking, SAD ranking | Held in every case (rank correlations 0.94–0.99). A confound that shifts all models alike cannot move a ranking |
+| Single cells, differences between conditions, and what the number is said to mean | "low attack rate = robust", "resists shutdown = self-preservation", "AUROC 0.99 = monitors work" | **All four real findings were here** |
+
+So aim at the third layer first: one model's score, a gap between two conditions, a comparison to
+humans or to chance, a threshold, and the sentence that says what the score means.
+
+### Traits that predict a broken headline
+
+APPS and TASTE broke outright. The eight round-one benchmarks did not. The difference was these
+traits. Score your benchmark on each in `claims.md` and attack the ones it has.
+
+1. **The label comes from a process, not from a judgment of the substance.** Classes written by
+   different sources (APPS), labels read off later outcomes, labels from one reviewer (TASTE),
+   distractors written by a model. First test: can you predict the label from who or what made the
+   item, without reading for meaning?
+2. **Items were kept or dropped by model behaviour.** "Every item was missed by at least one judge
+   model", adversarial filtering, pairs kept only where a model showed the effect. This produces
+   below-chance scores and "stronger models do worse" by itself, through regression to the mean,
+   for models related to the filter. First test: redo the selection on one half of the samples and
+   measure the effect on the other half; compare models by their relation to the filter models.
+3. **The headline is a gap near chance or a difference of two rates.** 60% against 50%, a
+   compliance gap, an "unfaithfulness rate" of 5–15%. A small bias is enough. Differences of rates
+   are also bounded by the base rate: a model that almost never complies cannot show a gap.
+   First test: the same contrast on the odds scale, and with base rates matched.
+4. **Few independent units.** 92 pairs that share proposals, 500 questions from 60 tasks, many
+   prompt variants of 20 scenarios. First test: count the clusters, resample them, and find how
+   many clusters carry the headline.
+5. **Two free-text options.** The options themselves carry length, specificity, hedging, tone and
+   vocabulary. First test: an options-only baseline, by rule and by a small model, on held-out
+   items.
+6. **An LLM judge decides a subjective criterion.** "Mentions the hint", "alignment-faking
+   reasoning", "better decision". First test: blind hand labels on 50–100 items spread across the
+   judge's verdicts, then check whether judge errors track length, model or condition.
+7. **The scorer assumes the model was told something.** A prohibition, a rule, a role, a tool's
+   limits. First test: read the rendered prompt, not the template or the paper.
+8. **The best number belongs to the easiest condition.** The monitored agent narrates, the hint is
+   blatant, the tool is named for what it does. First test: find the condition labels, and report
+   the headline for the hardest disclosed condition.
+9. **One outcome bucket holds unlike cases.** "Secure" held never-exposed runs; "attack success"
+   held errors; "correct" can hold lucky letters. This was the single most productive attack in
+   round one. First test: for each scored outcome, list every route into it and count each route.
+10. **Scores aggregate over units of varying size.** A maximum, an "any" or a sum over steps,
+    turns or tokens tracks length. First test: match on length and recompute.
+11. **The answer key is unbalanced in polarity or letter.** Yes/no, A/B, agree/deny, "insufficient
+    information". Scores then reward a lean. First test: the score by key polarity, and a
+    balanced score.
+12. **Little outside scrutiny.** Under a year old, one lab, no independent re-run, no issues
+    filed. Heavily used leaderboards have had their cheap flaws found already.
+
+### Order of attack
+
+1. Render what the model actually saw for 20 items, and what the scorer actually did with 20
+   outputs. Compare both with the paper's description. (Traits 7, 8, 9.)
+2. Split every outcome bucket by route. (Trait 9.)
+3. Tabulate the key by polarity, letter, position, length rank and source. (Traits 1, 11.)
+4. Content-blind baselines with a held-out half: rules first, then a small model that sees only
+   the options. (Traits 1, 5.)
+5. Find the selection step in the construction code or paper, and test for regression to the
+   mean. (Trait 2.)
+6. Count clusters and redo the headline's interval. (Traits 3, 4.)
+7. Only then stratify model results by the feature, with the checks below.
+
+### Mistakes auditors made in round one
+
+A refuter cut back six of eight headlines. Each of these happened. Run the check before you claim.
+
+- **A split that manufactures the effect.** A stratum that differs in answer type or base rate
+  will show a "collapse" with no confound present. For every stratified result, run a placebo
+  split of the same sizes and the same answer-type mix, 1,000 times, and report where your result
+  falls in that distribution.
+- **Removal without a random control.** "Removing these items halves the score" means nothing
+  until removing the same number of comparable items at random does not.
+- **A rank correlation that hides single-model moves.** Report the largest rank change and the
+  cells that move, not only the correlation.
+- **Calling a disclosed design choice a mismatch.** Re-read the paper's method and limitations
+  sections before claiming the release differs from the paper.
+- **Counts rounded up.** "All monitors" was 9 of 11. Write the count.
+- **Wording beyond the evidence.** "Mostly X" needs a blind-labelled sample that says so. A result
+  on six items is a lead, whatever its size.
+- **Causal words for correlational results.** "Explains", "drives" and "because" need an
+  intervention.
 
 ## Procedure
 
@@ -171,7 +264,8 @@ bias direction: does the confound make the model look more capable, safer, or th
   files and write-ups only.
 - For gated or unlicensed data, commit aggregates and item ids, never content. Do not accept new
   licence terms or gates; use only what the existing Hugging Face login already reaches, and
-  report anything else as blocked.
+  report anything else as blocked. Where a benchmark asks that items not be reposted in plain
+  text, commit ids, hashes and aggregates only, even when the licence would allow more.
 - Do not contact maintainers or authors, and do not open issues, pull requests, posts or comments
   anywhere. Nothing leaves this machine except downloads and the inference below.
 - Put no personal details in any request.
@@ -195,7 +289,8 @@ intervention or to add a recent model to an L3 analysis, and only on benign cont
 
 ## Committing
 
-All audits share one working tree on the branch `effect-audits`.
+All audits share one working tree. Round one ran on the branch `effect-audits`, since merged to
+`main`; round two runs on `audits-round2`. Do not create or change branches.
 
 - Write only inside your own folder, `audits/<benchmark>/`.
 - Commit with `audits/tools/commit.sh audits/<benchmark> "<message>"` after every file you create
