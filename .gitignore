@@ -1,0 +1,8 @@
+# Downloads and caches are never committed
+data/
+**/data/
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+**/inference/cache/
