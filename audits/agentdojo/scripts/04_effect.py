@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 from scipy.stats import kendalltau, spearmanr
 
-from common import DEFENCES, MODELS, RESULTS, ROOT, load, load_injection_as_user
+from common import DEFENCES, MODELS, RESULTS, ROOT, load, load_injection_as_user, save_block
 
 B = 2000
 SEED = 0
@@ -132,7 +132,8 @@ def separated_pairs(stat):
             pt = point[stat][mi[a]] - point[stat][mi[b]]
             sign = 1 if lo > 0 else (-1 if hi < 0 else 0)
             p2 = 2 * min((d <= 0).mean(), (d >= 0).mean())
-            out[(MODELS[a], MODELS[b])] = (sign, float(pt), float(p2))
+            z = pt / d.std() if d.std() > 0 else 0.0
+            out[(MODELS[a], MODELS[b])] = (sign, float(pt), float(p2), float(z))
     return out
 
 
@@ -141,7 +142,8 @@ pair_rows = []
 for k in sep["S0"]:
     pair_rows.append(dict(a=k[0], b=k[1], **{f"{s}_sign": sep[s][k][0] for s in sep},
                           **{f"{s}_diff": round(sep[s][k][1], 4) for s in sep},
-                          **{f"{s}_p": round(sep[s][k][2], 4) for s in sep}))
+                          **{f"{s}_p": round(sep[s][k][2], 4) for s in sep},
+                          **{f"{s}_z": round(sep[s][k][3], 3) for s in sep}))
 pairs = pd.DataFrame(pair_rows)
 pairs.to_csv(os.path.join(ROOT, "results", "pairs.csv"), index=False)
 c1 = {}
@@ -234,10 +236,8 @@ for b in range(B):
 tool_filter_extra["asr_exposed_tool_available_ci"] = pci(np.array(bs))
 pd.DataFrame(dres).to_csv(os.path.join(ROOT, "results", "defences.csv"), index=False)
 
-res = json.load(open(RESULTS)) if os.path.exists(RESULTS) else {}
-res["effect"] = dict(B=B, seed=SEED, per_pipeline=pm.to_dict("records"), C1_ranking=c1, C2_trend=c2,
-                     C3_defences=dres, C3_tool_filter=tool_filter_extra)
-json.dump(res, open(RESULTS, "w"), indent=1)
+save_block("effect", dict(B=B, seed=SEED, per_pipeline=pm.to_dict("records"), C1_ranking=c1, C2_trend=c2,
+                     C3_defences=dres, C3_tool_filter=tool_filter_extra))
 
 pd.set_option("display.width", 250)
 print(pm[["pipeline", "U", "S0", "S0_ci", "E", "S1", "S1_ci", "S2", "S3", "S3_ci", "S4", "n_exposed", "n_exposed_able", "n_able_injection_tasks"]].to_string())

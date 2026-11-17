@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 
-from common import RESULTS, ROOT, load, pipeline_name, published_table
+from common import RESULTS, ROOT, load, pipeline_name, published_table, save_block
 
 pub = published_table()
 none = load("none")
@@ -33,7 +33,5 @@ out["max_abs_diff"] = np.max(np.abs(np.c_[out.pub_utility - out.our_utility, out
 os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
 out.to_csv(os.path.join(ROOT, "results", "reproduce.csv"), index=False)
 print(out.to_string())
-res = json.load(open(RESULTS)) if os.path.exists(RESULTS) else {}
-res["reproduce"] = dict(n_rows=len(out), n_exact_to_0_01pp=int((out.max_abs_diff < 0.01).sum()),
-                        max_abs_diff_pp=float(out.max_abs_diff.max()), rows=out.to_dict("records"))
-json.dump(res, open(RESULTS, "w"), indent=1)
+save_block("reproduce", dict(n_rows=len(out), n_exact_to_0_01pp=int((out.max_abs_diff < 0.01).sum()),
+                        max_abs_diff_pp=float(out.max_abs_diff.max()), rows=out.to_dict("records")))

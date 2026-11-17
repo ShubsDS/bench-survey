@@ -12,11 +12,12 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
-from sklearn.ensemble import HistGradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 
-from common import MODELS, RESULTS, load
+from common import MODELS, RESULTS, load, save_block
 
 rng = np.random.default_rng(0)
 att = load()
@@ -136,17 +137,18 @@ def design(cols, frame):
 def cv_auc(X, yv):
     pred = np.zeros(len(yv))
     for tr, te in GroupKFold(5).split(X, yv, groups):
-        m = HistGradientBoostingClassifier(random_state=0, max_iter=100, max_depth=3).fit(X[tr], yv[tr])
-        pred[te] = m.predict_proba(X[te])[:, 1]
+        sc = StandardScaler().fit(X[tr])
+        m = LogisticRegression(max_iter=2000, C=1.0).fit(sc.transform(X[tr]), yv[tr])
+        pred[te] = m.predict_proba(sc.transform(X[te]))[:, 1]
     return roc_auc_score(yv, pred)
 
 
 for name, cols in feats_sets.items():
     X = design(cols, d)
     auc = cv_auc(X, y)
-    # permutation null: shuffle labels within suite (100 shuffles; GBM refits are slow)
+    # permutation null: shuffle labels within suite (1,000 shuffles)
     null = []
-    for _ in range(100):
+    for _ in range(1000):
         yp = y.copy()
         for s in d.suite.unique():
             ix = np.where(d.suite.values == s)[0]
@@ -160,11 +162,9 @@ for name, cols in {"model_only": ["pipe"], "model+injection_task": ["pipe", "it"
                    "model+injection_task+exposed": ["pipe", "it", "exposed"]}.items():
     X = design(cols, d.assign(exposed=d.exposed.astype(float)))
     cb[name] = dict(auc=round(float(cv_auc(X, y)), 3))
-cb["note"] = "GroupKFold(5) by user task; HistGBM; null = 100 within-suite label shuffles (fewer than the 1,000 in the methodology because each null refits 5 models)"
+cb["note"] = "GroupKFold(5) by user task; L2 logistic regression on one-hot and standardised numeric features; null = 1,000 within-suite label shuffles. A gradient-boosting version was abandoned for run time (not completed; no result seen)"
 
-res = json.load(open(RESULTS))
-res["robustness"] = rob
-res["content_blind"] = cb
-json.dump(res, open(RESULTS, "w"), indent=1)
+save_block("robustness", rob)
+save_block("content_blind", cb)
 print(json.dumps(rob, indent=1))
 print(json.dumps(cb, indent=1))

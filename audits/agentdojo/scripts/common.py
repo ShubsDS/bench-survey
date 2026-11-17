@@ -108,3 +108,19 @@ def ci(draws, q=(2.5, 97.5)):
     d = np.asarray(draws, float)
     d = d[~np.isnan(d)] if d.ndim == 1 else d
     return [float(np.percentile(d, q[0])), float(np.percentile(d, q[1]))]
+
+
+def save_block(name, obj):
+    """Merge one block into results.json atomically (write temp file, then rename)."""
+    import json
+    res = {}
+    if os.path.exists(RESULTS):
+        try:
+            res = json.load(open(RESULTS))
+        except json.JSONDecodeError:
+            res = {}
+    res[name] = obj
+    tmp = RESULTS + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump(res, f, indent=1, default=str)
+    os.replace(tmp, RESULTS)

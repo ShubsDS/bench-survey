@@ -16,7 +16,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 
-from common import DEFENCES, MODELS, RESULTS, ROOT, load, published_table
+from common import DEFENCES, MODELS, RESULTS, ROOT, load, published_table, save_block
 
 B = 2000
 rng = np.random.default_rng(0)
@@ -161,15 +161,13 @@ out["pairs_separated"] = dict(n_pairs=len(pairs), row_level_z=n_sep_wald, two_wa
 emp = att[att.n_messages == 0]
 out["empty_traces"] = dict(
     by_pipeline=emp.groupby("pipeline").size().to_dict(),
-    by_label=emp.groupby(["pipeline", "security", "utility"]).size().rename(lambda x: str(x)).to_dict(),
+    by_label={f"{p}|security={a}|utility={b}": int(n) for (p, a, b), n in emp.groupby(["pipeline", "security", "utility"]).size().items()},
     opus_exposure_all=round(float(att[att.pipeline == "claude-3-opus-20240229"].exposed.mean()), 4),
     opus_exposure_traced=round(float(att[(att.pipeline == "claude-3-opus-20240229") & (att.n_messages > 0)].exposed.mean()), 4),
     opus_n_traced=int(((att.pipeline == "claude-3-opus-20240229") & (att.n_messages > 0)).sum()),
 )
 
-res = json.load(open(RESULTS))
-res["secondary"] = out
-json.dump(res, open(RESULTS, "w"), indent=1, default=str)
+save_block("secondary", out)
 print(json.dumps({k: v for k, v in out.items() if k not in ("concentration",)}, indent=1, default=str)[:12000])
 print(pd.DataFrame(conc).T.to_string())
 print(by.round(3).to_string())

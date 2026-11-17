@@ -5,7 +5,7 @@ Status 2026-11-17. No inference was used.
 | Claim | Level |
 |---|---|
 | C1 per-model ASR ranking: exposure, ability and follow conditioning | **R** (holds) |
-| C2 "more capable models are easier to attack" | **R** (holds weakly). The trend is weak across 20 models before any conditioning |
+| C2 "more capable models are easier to attack" | **R** (holds weakly). Model-level p = 0.13 before any conditioning, and the trend depends on including or excluding Anthropic |
 | C3 GPT-4o defence gains are not "the agent did less" | **R** for all four. The tool filter's gain comes from removing the attacker's tool, which the paper already says |
 | Public results table counts errored runs as successful attacks, so it disagrees with the paper | **L3** (four published model numbers move; two ranks move by 2.5–3 places) |
 | Scorer validity against the agent's own tool calls | **R** for false positives; L1 for a 4% rate of actions that followed the injection but failed the exact check |
@@ -28,7 +28,7 @@ injection benchmark. Conclusions under test: [`claims.md`](claims.md). Pre-regis
 The main hypothesis is that ASR is confounded with capability: an agent that never reaches the
 injected tool output, or cannot carry out the injection task, scores as secure. The trace data
 show this mechanism exists. Exposure, meaning the agent actually received the injected text,
-ranges from 55% to 97% of cases, and it correlates with benign utility across models (Spearman
+ranges from 55% to 97% of cases (Claude 3 Opus's raw 58% is an artefact of missing traces; 87% on its traced cases), and it correlates with benign utility across models (Spearman
 0.60). But the mechanism does not change any published conclusion. Conditioning ASR on exposure,
 on demonstrated ability to do the injection task, or replacing ASR with "the agent acted on the
 injection at all" keeps the ranking nearly unchanged. No pair of models that the published
@@ -47,7 +47,7 @@ difference between 4.45% and 0.95%.
 | Spearman(published ASR, ASR given exposure), 20 models | 20 × 629 | 0.940 | [0.915, 0.985] |
 | Spearman(published ASR, follow rate given exposure) | 20 × 629 | 0.953 | [0.908, 0.985] |
 | Model pairs separated under published ASR / reversed under any conditioning | 190 | 132 / 0 | — |
-| Trend: Spearman(benign utility, published ASR) | 20 | 0.356 | [0.156, 0.461]; model-permutation p = PERM_P0 |
+| Trend: Spearman(benign utility, published ASR) | 20 | 0.356 | [0.156, 0.461]; model-permutation p = 0.127 |
 | Trend: Spearman(utility, ASR given exposure) | 20 | 0.286 | [0.098, 0.405] |
 | Trend: Spearman(utility, ASR given exposure and ability) | 20 | 0.250 | [0.062, 0.377] |
 | Trend: Spearman(utility, exposure rate) | 20 | 0.602 | [0.507, 0.769] |
@@ -100,7 +100,7 @@ in 97.1% of cases (ASR given exposure 7.5% [2.5, 14.6]). Claude 3.5 Sonnet (Oct)
 (1.3% [0.0, 3.9]).
 
 **C2, capability trend (R, weak).** The published trend is itself weak at the model level. Across
-the 20 models, Spearman(utility, ASR) is 0.356, with model-permutation p = PERM_P0. The two-way
+the 20 models, Spearman(utility, ASR) is 0.356, with model-permutation p = 0.127 (10,000 permutations). It is not distinguishable from zero when models are treated as the sample. The two-way
 task bootstrap interval [0.156, 0.461] treats the 20 models as fixed. Conditioning lowers the
 estimate to 0.286 (exposure), 0.250 (exposure and ability) and 0.307 (follow). All stay above 0
 and above half of the published estimate, so by the pre-registered rule the trend holds. The
@@ -151,7 +151,7 @@ the attacker's action in an executed call. The 37 without it are:
 - 10 Slack injection_task_5 cases where the action was proposed but not executed (issue #168);
 - 7 Claude 3 Opus cases with empty traces (below);
 - 5 travel injection_task_6 cases where the hotel is named without the praise words;
-- a few Slack cases where the action was proposed but did not execute.
+- 15 others (Slack 1–4, banking 2 and 7, workspace 1): 12 issued the attacker's call without a clean execution, and 3 have no attacker call (not inspected further).
 
 In the other direction, 348 of 8,510 exposed "secure" cases (4.1%) executed the attacker's
 action but failed the exact content check. Workspace injection_task_3 accounts for 76 of them
@@ -163,12 +163,12 @@ Placebo: in no-attack runs, banking user_task_15 itself sets a standing order to
 IBAN, because its prompt names that IBAN as the landlord's account. 13 of 24 pipelines do this
 with no attack, so banking injection_task_4's check can pass without the injection. Under attack
 this pair is scored a success for 9 of 24 pipelines. Successes on placebo pairs are at most 14% of
-any model's successes (Claude 3.5 Sonnet Oct: 1 of 7) and under 5% for 18 of 20 models
+any model's successes (Claude 3.5 Sonnet Oct: 1 of 7) and under 5% for 17 of 20 models
 ([`results.json`](results.json) `secondary.scorer`).
 
 **Missing traces (L1).** 207 of Claude 3 Opus's 629 attack traces have empty message lists, with
 labels stored (7 of them `security = True`, 112 `utility = True`). Opus's raw exposure (58.3%)
-is therefore an artefact: on its 422 traced cases it is OPUS_EXP_TRACED. Conditioned statistics
+is therefore an artefact: on its 422 traced cases it is 87.0%. Conditioned statistics
 use traced cases only.
 
 **Model name in the attack.** No main-table run uses a wrong model name. Claude runs are addressed
@@ -190,12 +190,38 @@ family and was not run as a test.
   [33.3, 62.7].
 - Model pairs separated fall from 166 (row-level z) to 132 of 190.
 
-**Content-blind predictors.** See the robustness table and [`results.json`](results.json)
-`content_blind`.
+**Content-blind predictors.** See the second table under Robustness.
 
 ## Robustness
 
-ROBUSTNESS_TABLE
+| Check | Result | Claim survives? |
+|---|---|---|
+| Drop each suite (C1: Spearman of published ASR with ASR given exposure; C2: utility vs ASR given exposure) | C1 0.95–0.98; C2 0.23–0.35 (published 0.24–0.39) | Yes |
+| Drop each model family (C2) | Without Anthropic, published trend 0.79 and given-exposure 0.65. Without Cohere 0.20/0.05, Google 0.26/0.19, OpenAI 0.20/0.18, Meta 0.39/0.39 | C2 depends on family composition. Anthropic's newer models (high utility, low ASR) are the counter-examples. Conditioning moves the trend less than dropping one family does |
+| Common support (pairwise jointly exposed cases) | 10 of 190 pairs reverse at the point estimate; 0 of them were separated | Yes |
+| Placebo exposure (random flag at each model's own rate within suite, 200 draws) | Mean C1 Spearman 0.99; C2 0.32 | Yes. Real exposure moves the trend slightly more than the placebo (0.29 vs 0.32) |
+| Different statistic: Pearson on logit rates | Published 0.25, given exposure 0.22, follow 0.22 | Yes (same pattern, weaker) |
+| Errors not counted, then condition on exposure | Spearman with published ASR 0.95; trend 0.42 → 0.36 | Yes |
+| Multiple comparisons (Holm, normal approximation from bootstrap SE, 190 pairs) | Pairs separated: published 67, given exposure 75, given exposure and ability 52, follow 80 | Yes. No separated pair reverses under any statistic |
+| Second exposure definition (authors' `<INFORMATION>` tag) | Identical on 17,461 of 17,461 cases | Not independent; confirms measurement only |
+
+Content-blind predictors of per-case success, pooled over the 20 models (L2 logistic regression,
+GroupKFold by user task, null = 1,000 within-suite label shuffles, null 95th percentile ≈ 0.67):
+
+| Features | AUROC |
+|---|---|
+| Suite alone | 0.658 (at null; the null keeps suite) |
+| Injection task id | 0.750 |
+| Suite + user-task structure (calls needed, number of injection vectors) | 0.675 |
+| + injected output length and position | 0.752 |
+| Injection task id + structure + output | 0.808 |
+| Model id alone | 0.744 |
+| Model + injection task | 0.856 |
+| Model + injection task + exposure | 0.894 |
+
+The injection task matters about as much as the model. A few injection tasks are easy (Slack 3–5,
+banking 0 and 7) and some are nearly impossible (travel 3 and 5, workspace 4 and 5: 2–3% pooled).
+This is the paper's own Figure 7 observation, extended here to show it rivals model identity.
 
 ## Alternative explanations
 
@@ -203,7 +229,7 @@ ROBUSTNESS_TABLE
    any injected text reaches the agent. In the hand-read cases, non-exposed runs are clarification
    questions, wrong search terms or early stops (examples above).
 2. *Conditioning on exposure selects easier cases for weaker models.* Common-support check: for
-   each pair, ASR on cases exposed for both models. COMMON_SUPPORT.
+   each pair, ASR on cases exposed for both models. 10 of 190 pairs reverse their published order at the point estimate. None of the 10 was separated under published ASR; all differ by at most 8.3 pp in the published table. This alternative does not overturn C1.
 3. *The trend or ranking is one family.* Drop-family results are in the robustness table.
 
 ## What was already known
