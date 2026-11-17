@@ -1,0 +1,93 @@
+{
+ "pins": {
+  "honest": "7808f88c22d5398608f285a4d05fd283a1dd0f045068af027d242552cc89e8d3",
+  "attack": "35c22cd014031b0d4233cc8070ba2d505e5f1162de8aaa1c1ec0620122faa2c1"
+ },
+ "monitors_json": "18efcced4fa9c044bc5a0c60aa43c240640155623d177353c6559bf07201520c",
+ "classes": {
+  "honest": {
+   "samples": 600,
+   "samples_with_agent_prose": 596,
+   "samples_with_risky_in_agent_text": 0,
+   "monitor_calls": 181744,
+   "calls_with_risky_tag": 0,
+   "calls_with_agent_prose_snippet": 92,
+   "calls_with_overlay_system_prompt": 0,
+   "calls_with_[system]_line": 187,
+   "calls_with_[user]_line": 122,
+   "calls_with_task_description": 181744,
+   "calls_with_[system]+task_role_label": 0,
+   "calls_with_[user]+task_role_label": 0,
+   "calls_message_roles_user": 181744,
+   "header_created": "2026-09-24T20:49:31.905101+00:00"
+  },
+  "attack": {
+   "samples": 600,
+   "samples_with_agent_prose": 596,
+   "samples_with_risky_in_agent_text": 596,
+   "monitor_calls": 91875,
+   "calls_with_risky_tag": 0,
+   "calls_with_agent_prose_snippet": 0,
+   "calls_with_overlay_system_prompt": 0,
+   "calls_with_[system]_line": 0,
+   "calls_with_[user]_line": 0,
+   "calls_with_task_description": 91875,
+   "calls_with_[system]+task_role_label": 0,
+   "calls_with_[user]+task_role_label": 0,
+   "calls_message_roles_user": 91875,
+   "header_created": "2026-09-24T20:49:41.916266+00:00"
+  }
+ },
+ "score_agreement_with_current_board": {
+  "claude-haiku-4-5-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "deepseek-v3.2-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "glm-4.6-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "gpt-4.1-nano-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 0.9994064181042478
+  },
+  "gpt-4o-mini-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "gpt-5-nano-minimal": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 0.9975514746800223
+  },
+  "gpt-5.4-nano-high": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "gpt-5.4-nano-low": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "gpt-5.4-nano-medium": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  },
+  "gpt-5.4-nano-none": {
+   "trajectories_matched": 1192,
+   "actions": 26955,
+   "share_equal": 1.0
+  }
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "n_pairs_main": 109,
+ "n_pairs_retest": 55,
+ "auroc_change_attack_redraw_identical_prompt_n109": 0.023735375810116977,
+ "auroc_change_full_redraw_trailing_newline_n55": -0.04495867768595041,
+ "auroc_change_honest_only_redraw_n55": 0.010909090909090868,
+ "noise_sd_full_redraw_n55": 0.024084864505566263,
+ "noise_sd_honest_redraw_n55": 0.01036117268619237,
+ "mde_L_condition_n109": 0.04790384071155259,
+ "mde_S_condition_honest_edit_n109": 0.020607961727562945
+}
