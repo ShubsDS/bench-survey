@@ -126,7 +126,8 @@ Haiku topic labels agree with blind hand labels at κ = 0.95, n = 70).
 
 Direction of bias:
 - In the advice organisms (corrected after validation), own-domain echo inflates the headline only
-  modestly (by 5–54%, mostly under 25%). The larger gap is between "EM" and misaligned *values*:
+  modestly: by 5–24% for four organisms, and by roughly 60–120% for tiny-aya-medical, depending on
+  the topic labeller. The larger gap is between "EM" and misaligned *values*:
   most of the headline is harmful advice in other domains, which makes the models look more
   value-misaligned than their non-advice answers (4–29% of the headline) support.
 - In Dickson's data, resampling answers only makes the JSON effect look established when, at the
