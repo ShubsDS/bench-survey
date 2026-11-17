@@ -50,6 +50,9 @@ def text_of(content):
 
 
 def norm(s):
+    # drop escape sequences that some providers' tool outputs carry literally
+    # (backslash-n, backslash-t, octal, backslash-uXXXX), then keep only lowercase alphanumerics
+    s = re.sub(r"\\(u[0-9a-fA-F]{4}|[0-7]{3}|[nrt])", " ", s)
     return re.sub(r"[^a-z0-9]", "", s.lower())
 
 
@@ -193,6 +196,7 @@ def one(path):
         n_assistant=sum(1 for m in msgs if m.get("role") == "assistant"),
         n_vectors=len(d.get("injections") or {}),
         exposed=len(exposed_idx) > 0, n_exposures=len(exposed_idx),
+        exposed_tag=any("<INFORMATION>" in t for t in tool_texts),
         first_exposure_tool_idx=(exposed_idx[0] if exposed_idx else None),
         injected_output_len=inj_len, injection_rel_pos=inj_pos,
         redacted=redacted, tool_filter_list=tool_filter_list,
