@@ -1,0 +1,674 @@
+[
+{
+"id": 0,
+"pipeline": "claude-3-opus-20240229",
+"suite": "workspace",
+"ut": "user_task_22",
+"inj": "injection_task_2"
+},
+{
+"id": 1,
+"pipeline": "gpt-4-0125-preview",
+"suite": "banking",
+"ut": "user_task_0",
+"inj": "injection_task_7"
+},
+{
+"id": 2,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "travel",
+"ut": "user_task_8",
+"inj": "injection_task_4"
+},
+{
+"id": 3,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "slack",
+"ut": "user_task_9",
+"inj": "injection_task_1"
+},
+{
+"id": 4,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "slack",
+"ut": "user_task_2",
+"inj": "injection_task_3"
+},
+{
+"id": 5,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "travel",
+"ut": "user_task_2",
+"inj": "injection_task_1"
+},
+{
+"id": 6,
+"pipeline": "gemini-1.5-flash-002",
+"suite": "banking",
+"ut": "user_task_2",
+"inj": "injection_task_6"
+},
+{
+"id": 7,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "travel",
+"ut": "user_task_3",
+"inj": "injection_task_5"
+},
+{
+"id": 8,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "banking",
+"ut": "user_task_1",
+"inj": "injection_task_5"
+},
+{
+"id": 9,
+"pipeline": "gpt-3.5-turbo-0125",
+"suite": "workspace",
+"ut": "user_task_33",
+"inj": "injection_task_1"
+},
+{
+"id": 10,
+"pipeline": "gemini-1.5-pro-001",
+"suite": "slack",
+"ut": "user_task_8",
+"inj": "injection_task_1"
+},
+{
+"id": 11,
+"pipeline": "command-r",
+"suite": "workspace",
+"ut": "user_task_7",
+"inj": "injection_task_3"
+},
+{
+"id": 12,
+"pipeline": "gpt-4o-2024-05-13-transformers_pi_detector",
+"suite": "slack",
+"ut": "user_task_1",
+"inj": "injection_task_2"
+},
+{
+"id": 13,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "travel",
+"ut": "user_task_4",
+"inj": "injection_task_2"
+},
+{
+"id": 14,
+"pipeline": "gemini-2.0-flash-exp",
+"suite": "workspace",
+"ut": "user_task_29",
+"inj": "injection_task_0"
+},
+{
+"id": 15,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "workspace",
+"ut": "user_task_0",
+"inj": "injection_task_1"
+},
+{
+"id": 16,
+"pipeline": "claude-3-5-sonnet-20241022",
+"suite": "workspace",
+"ut": "user_task_6",
+"inj": "injection_task_0"
+},
+{
+"id": 17,
+"pipeline": "gemini-2.0-flash-exp",
+"suite": "slack",
+"ut": "user_task_19",
+"inj": "injection_task_4"
+},
+{
+"id": 18,
+"pipeline": "gemini-2.0-flash-001",
+"suite": "workspace",
+"ut": "user_task_13",
+"inj": "injection_task_2"
+},
+{
+"id": 19,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "banking",
+"ut": "user_task_6",
+"inj": "injection_task_8"
+},
+{
+"id": 20,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "workspace",
+"ut": "user_task_16",
+"inj": "injection_task_0"
+},
+{
+"id": 21,
+"pipeline": "command-r",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_2"
+},
+{
+"id": 22,
+"pipeline": "gpt-4o-mini-2024-07-18",
+"suite": "banking",
+"ut": "user_task_13",
+"inj": "injection_task_3"
+},
+{
+"id": 23,
+"pipeline": "gemini-2.0-flash-001",
+"suite": "slack",
+"ut": "user_task_11",
+"inj": "injection_task_2"
+},
+{
+"id": 24,
+"pipeline": "gpt-4o-2024-05-13-spotlighting_with_delimiting",
+"suite": "travel",
+"ut": "user_task_7",
+"inj": "injection_task_2"
+},
+{
+"id": 25,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "travel",
+"ut": "user_task_17",
+"inj": "injection_task_0"
+},
+{
+"id": 26,
+"pipeline": "gemini-1.5-pro-001",
+"suite": "slack",
+"ut": "user_task_13",
+"inj": "injection_task_2"
+},
+{
+"id": 27,
+"pipeline": "gemini-2.0-flash-001",
+"suite": "workspace",
+"ut": "user_task_21",
+"inj": "injection_task_2"
+},
+{
+"id": 28,
+"pipeline": "command-r-plus",
+"suite": "banking",
+"ut": "user_task_10",
+"inj": "injection_task_5"
+},
+{
+"id": 29,
+"pipeline": "gemini-1.5-flash-002",
+"suite": "slack",
+"ut": "user_task_2",
+"inj": "injection_task_3"
+},
+{
+"id": 30,
+"pipeline": "gpt-4-turbo-2024-04-09",
+"suite": "banking",
+"ut": "user_task_15",
+"inj": "injection_task_6"
+},
+{
+"id": 31,
+"pipeline": "claude-3-5-sonnet-20241022",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_7"
+},
+{
+"id": 32,
+"pipeline": "claude-3-opus-20240229",
+"suite": "travel",
+"ut": "user_task_1",
+"inj": "injection_task_6"
+},
+{
+"id": 33,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "slack",
+"ut": "user_task_0",
+"inj": "injection_task_2"
+},
+{
+"id": 34,
+"pipeline": "gpt-4o-mini-2024-07-18",
+"suite": "slack",
+"ut": "user_task_13",
+"inj": "injection_task_4"
+},
+{
+"id": 35,
+"pipeline": "command-r",
+"suite": "banking",
+"ut": "user_task_1",
+"inj": "injection_task_4"
+},
+{
+"id": 36,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "travel",
+"ut": "user_task_19",
+"inj": "injection_task_6"
+},
+{
+"id": 37,
+"pipeline": "gemini-1.5-pro-002",
+"suite": "banking",
+"ut": "user_task_0",
+"inj": "injection_task_2"
+},
+{
+"id": 38,
+"pipeline": "gemini-1.5-flash-002",
+"suite": "workspace",
+"ut": "user_task_24",
+"inj": "injection_task_3"
+},
+{
+"id": 39,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "banking",
+"ut": "user_task_7",
+"inj": "injection_task_7"
+},
+{
+"id": 40,
+"pipeline": "gemini-1.5-pro-002",
+"suite": "workspace",
+"ut": "user_task_5",
+"inj": "injection_task_1"
+},
+{
+"id": 41,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "banking",
+"ut": "user_task_3",
+"inj": "injection_task_0"
+},
+{
+"id": 42,
+"pipeline": "claude-3-5-sonnet-20240620",
+"suite": "workspace",
+"ut": "user_task_19",
+"inj": "injection_task_1"
+},
+{
+"id": 43,
+"pipeline": "command-r-plus",
+"suite": "workspace",
+"ut": "user_task_10",
+"inj": "injection_task_4"
+},
+{
+"id": 44,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "slack",
+"ut": "user_task_15",
+"inj": "injection_task_3"
+},
+{
+"id": 45,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "workspace",
+"ut": "user_task_9",
+"inj": "injection_task_1"
+},
+{
+"id": 46,
+"pipeline": "command-r",
+"suite": "travel",
+"ut": "user_task_14",
+"inj": "injection_task_0"
+},
+{
+"id": 47,
+"pipeline": "gpt-3.5-turbo-0125",
+"suite": "workspace",
+"ut": "user_task_6",
+"inj": "injection_task_2"
+},
+{
+"id": 48,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "banking",
+"ut": "user_task_1",
+"inj": "injection_task_8"
+},
+{
+"id": 49,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "slack",
+"ut": "user_task_9",
+"inj": "injection_task_5"
+},
+{
+"id": 50,
+"pipeline": "claude-3-opus-20240229",
+"suite": "travel",
+"ut": "user_task_11",
+"inj": "injection_task_4"
+},
+{
+"id": 51,
+"pipeline": "gemini-1.5-pro-001",
+"suite": "travel",
+"ut": "user_task_3",
+"inj": "injection_task_4"
+},
+{
+"id": 52,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "slack",
+"ut": "user_task_5",
+"inj": "injection_task_2"
+},
+{
+"id": 53,
+"pipeline": "command-r-plus",
+"suite": "slack",
+"ut": "user_task_14",
+"inj": "injection_task_2"
+},
+{
+"id": 54,
+"pipeline": "gpt-4-0125-preview",
+"suite": "workspace",
+"ut": "user_task_1",
+"inj": "injection_task_1"
+},
+{
+"id": 55,
+"pipeline": "gpt-4-0125-preview",
+"suite": "slack",
+"ut": "user_task_9",
+"inj": "injection_task_2"
+},
+{
+"id": 56,
+"pipeline": "claude-3-7-sonnet-20250219",
+"suite": "banking",
+"ut": "user_task_13",
+"inj": "injection_task_2"
+},
+{
+"id": 57,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "workspace",
+"ut": "user_task_18",
+"inj": "injection_task_4"
+},
+{
+"id": 58,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "travel",
+"ut": "user_task_3",
+"inj": "injection_task_3"
+},
+{
+"id": 59,
+"pipeline": "command-r",
+"suite": "slack",
+"ut": "user_task_10",
+"inj": "injection_task_4"
+},
+{
+"id": 60,
+"pipeline": "gpt-3.5-turbo-0125",
+"suite": "banking",
+"ut": "user_task_10",
+"inj": "injection_task_8"
+},
+{
+"id": 61,
+"pipeline": "gpt-4-0125-preview",
+"suite": "travel",
+"ut": "user_task_16",
+"inj": "injection_task_6"
+},
+{
+"id": 62,
+"pipeline": "gemini-2.0-flash-exp",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_6"
+},
+{
+"id": 63,
+"pipeline": "command-r",
+"suite": "travel",
+"ut": "user_task_10",
+"inj": "injection_task_0"
+},
+{
+"id": 64,
+"pipeline": "gemini-1.5-pro-002",
+"suite": "banking",
+"ut": "user_task_8",
+"inj": "injection_task_2"
+},
+{
+"id": 65,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "workspace",
+"ut": "user_task_38",
+"inj": "injection_task_5"
+},
+{
+"id": 66,
+"pipeline": "gpt-4-0125-preview",
+"suite": "travel",
+"ut": "user_task_5",
+"inj": "injection_task_1"
+},
+{
+"id": 67,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "workspace",
+"ut": "user_task_32",
+"inj": "injection_task_3"
+},
+{
+"id": 68,
+"pipeline": "gemini-1.5-flash-002",
+"suite": "slack",
+"ut": "user_task_15",
+"inj": "injection_task_1"
+},
+{
+"id": 69,
+"pipeline": "claude-3-5-sonnet-20241022",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_2"
+},
+{
+"id": 70,
+"pipeline": "gemini-2.0-flash-exp",
+"suite": "slack",
+"ut": "user_task_12",
+"inj": "injection_task_5"
+},
+{
+"id": 71,
+"pipeline": "claude-3-5-sonnet-20240620",
+"suite": "slack",
+"ut": "user_task_3",
+"inj": "injection_task_1"
+},
+{
+"id": 72,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_8"
+},
+{
+"id": 73,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "travel",
+"ut": "user_task_9",
+"inj": "injection_task_2"
+},
+{
+"id": 74,
+"pipeline": "gpt-4o-2024-05-13-repeat_user_prompt",
+"suite": "workspace",
+"ut": "user_task_17",
+"inj": "injection_task_2"
+},
+{
+"id": 75,
+"pipeline": "gpt-4o-mini-2024-07-18",
+"suite": "travel",
+"ut": "user_task_2",
+"inj": "injection_task_6"
+},
+{
+"id": 76,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "banking",
+"ut": "user_task_5",
+"inj": "injection_task_0"
+},
+{
+"id": 77,
+"pipeline": "claude-3-opus-20240229",
+"suite": "slack",
+"ut": "user_task_19",
+"inj": "injection_task_3"
+},
+{
+"id": 78,
+"pipeline": "claude-3-5-sonnet-20240620",
+"suite": "slack",
+"ut": "user_task_5",
+"inj": "injection_task_1"
+},
+{
+"id": 79,
+"pipeline": "gpt-4o-2024-05-13-spotlighting_with_delimiting",
+"suite": "travel",
+"ut": "user_task_0",
+"inj": "injection_task_0"
+},
+{
+"id": 80,
+"pipeline": "claude-3-sonnet-20240229",
+"suite": "travel",
+"ut": "user_task_17",
+"inj": "injection_task_6"
+},
+{
+"id": 81,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "banking",
+"ut": "user_task_9",
+"inj": "injection_task_0"
+},
+{
+"id": 82,
+"pipeline": "claude-3-opus-20240229",
+"suite": "travel",
+"ut": "user_task_17",
+"inj": "injection_task_1"
+},
+{
+"id": 83,
+"pipeline": "claude-3-sonnet-20240229",
+"suite": "travel",
+"ut": "user_task_10",
+"inj": "injection_task_2"
+},
+{
+"id": 84,
+"pipeline": "gemini-2.0-flash-001",
+"suite": "workspace",
+"ut": "user_task_6",
+"inj": "injection_task_5"
+},
+{
+"id": 85,
+"pipeline": "claude-3-haiku-20240307",
+"suite": "travel",
+"ut": "user_task_15",
+"inj": "injection_task_5"
+},
+{
+"id": 86,
+"pipeline": "claude-3-5-sonnet-20240620",
+"suite": "workspace",
+"ut": "user_task_21",
+"inj": "injection_task_0"
+},
+{
+"id": 87,
+"pipeline": "gpt-4o-2024-05-13-spotlighting_with_delimiting",
+"suite": "travel",
+"ut": "user_task_8",
+"inj": "injection_task_6"
+},
+{
+"id": 88,
+"pipeline": "command-r-plus",
+"suite": "slack",
+"ut": "user_task_9",
+"inj": "injection_task_2"
+},
+{
+"id": 89,
+"pipeline": "command-r",
+"suite": "travel",
+"ut": "user_task_1",
+"inj": "injection_task_2"
+},
+{
+"id": 90,
+"pipeline": "gpt-4o-2024-05-13",
+"suite": "banking",
+"ut": "user_task_7",
+"inj": "injection_task_5"
+},
+{
+"id": 91,
+"pipeline": "gemini-1.5-pro-002",
+"suite": "workspace",
+"ut": "user_task_18",
+"inj": "injection_task_3"
+},
+{
+"id": 92,
+"pipeline": "meta-llama_Llama-3-70b-chat-hf",
+"suite": "slack",
+"ut": "user_task_11",
+"inj": "injection_task_4"
+},
+{
+"id": 93,
+"pipeline": "gemini-1.5-pro-002",
+"suite": "workspace",
+"ut": "user_task_0",
+"inj": "injection_task_3"
+},
+{
+"id": 94,
+"pipeline": "gemini-1.5-flash-001",
+"suite": "banking",
+"ut": "user_task_9",
+"inj": "injection_task_4"
+},
+{
+"id": 95,
+"pipeline": "gemini-2.0-flash-001",
+"suite": "slack",
+"ut": "user_task_8",
+"inj": "injection_task_4"
+}
+]
