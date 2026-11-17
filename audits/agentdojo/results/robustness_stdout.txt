@@ -1,0 +1,147 @@
+{
+ "full": {
+  "trend_S0": 0.356,
+  "trend_S1": 0.286,
+  "trend_S3": 0.307,
+  "rank_S0_S1": 0.94,
+  "rank_S0_S3": 0.953
+ },
+ "trend_S0_model_permutation_p_two_sided": 0.1265,
+ "trend_S1_model_permutation_p_two_sided": 0.2166,
+ "drop_suite": {
+  "banking": {
+   "trend_S0": 0.392,
+   "trend_S1": 0.346,
+   "trend_S3": 0.364,
+   "rank_S0_S1": 0.96,
+   "rank_S0_S3": 0.966
+  },
+  "slack": {
+   "trend_S0": 0.239,
+   "trend_S1": 0.232,
+   "trend_S3": 0.218,
+   "rank_S0_S1": 0.98,
+   "rank_S0_S3": 0.978
+  },
+  "travel": {
+   "trend_S0": 0.344,
+   "trend_S1": 0.315,
+   "trend_S3": 0.374,
+   "rank_S0_S1": 0.951,
+   "rank_S0_S3": 0.964
+  },
+  "workspace": {
+   "trend_S0": 0.361,
+   "trend_S1": 0.277,
+   "trend_S3": 0.145,
+   "rank_S0_S1": 0.952,
+   "rank_S0_S3": 0.904
+  }
+ },
+ "drop_family": {
+  "Anthropic": {
+   "trend_S0": 0.792,
+   "trend_S1": 0.652,
+   "trend_S3": 0.667,
+   "rank_S0_S1": 0.919,
+   "rank_S0_S3": 0.927
+  },
+  "Cohere": {
+   "trend_S0": 0.197,
+   "trend_S1": 0.054,
+   "trend_S3": 0.083,
+   "rank_S0_S1": 0.93,
+   "rank_S0_S3": 0.947
+  },
+  "Google": {
+   "trend_S0": 0.258,
+   "trend_S1": 0.192,
+   "trend_S3": 0.244,
+   "rank_S0_S1": 0.93,
+   "rank_S0_S3": 0.943
+  },
+  "Meta": {
+   "trend_S0": 0.386,
+   "trend_S1": 0.394,
+   "trend_S3": 0.391,
+   "rank_S0_S1": 0.963,
+   "rank_S0_S3": 0.966
+  },
+  "OpenAI": {
+   "trend_S0": 0.2,
+   "trend_S1": 0.184,
+   "trend_S3": 0.217,
+   "rank_S0_S1": 0.935,
+   "rank_S0_S3": 0.963
+  }
+ },
+ "common_support_pairs_point_reversed": {
+  "n_pairs": 190,
+  "n_reversed": 10
+ },
+ "placebo_exposure_200_draws_mean": {
+  "trend_S0": 0.356,
+  "trend_S1": 0.322,
+  "trend_S3": 0.36,
+  "rank_S0_S1": 0.987,
+  "rank_S0_S3": 0.976
+ },
+ "pearson_logit": {
+  "trend_S0": 0.247,
+  "trend_S1": 0.222,
+  "trend_S3": 0.215
+ },
+ "holm_separated_pairs": {
+  "S0": 0,
+  "S1": 0,
+  "S3": 0
+ },
+ "n_tests_reported": {
+  "pair_tests": 760,
+  "trend_tests": 6,
+  "defence_decompositions": 4,
+  "note": "C1 uses 190 pairs x S0,S1,S2,S3; C2 six correlations; C3 four defences"
+ },
+ "high_vs_low_utility_half_gap": {
+  "S0": 0.1221,
+  "S1": 0.1041,
+  "S3": 0.1221
+ }
+}
+{
+ "suite": {
+  "auc": 0.658,
+  "null_mean": 0.666,
+  "null_95": 0.667
+ },
+ "injection_task_id": {
+  "auc": 0.75,
+  "null_mean": 0.666,
+  "null_95": 0.672
+ },
+ "suite+structure": {
+  "auc": 0.675,
+  "null_mean": 0.667,
+  "null_95": 0.67
+ },
+ "suite+structure+injection_output": {
+  "auc": 0.752,
+  "null_mean": 0.667,
+  "null_95": 0.671
+ },
+ "all_plus_injection_task_id": {
+  "auc": 0.808,
+  "null_mean": 0.666,
+  "null_95": 0.672
+ },
+ "model_only": {
+  "auc": 0.744
+ },
+ "model+injection_task": {
+  "auc": 0.856
+ },
+ "model+injection_task+exposed": {
+  "auc": 0.894
+ },
+ "note": "GroupKFold(5) by user task; L2 logistic regression on one-hot and standardised numeric features; null = 1,000 within-suite label shuffles. A gradient-boosting version was abandoned for run time (not completed; no result seen)"
+}

@@ -63,7 +63,7 @@ Bias direction. Error coding makes four models look more attackable than their r
 Command-R+, Llama 3 70B, Gemini 1.5 Pro 001 and GPT-3.5 (Command-R slightly). Conditioning on
 exposure makes every model look more attackable: ASR given exposure is above published ASR for
 19 of 20 models. The gap is largest for models that often never reach the injection (Gemini 2.0
-Flash 001: 20.8% → 37.9%; Llama 3 70B: 25.6% → 39.6%). The published ranking still holds.
+Flash 001: 20.8% → 37.9%; Claude 3 Sonnet: 26.7% → 36.8%). The published ranking still holds.
 
 ## The confound
 
