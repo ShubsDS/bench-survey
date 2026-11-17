@@ -155,6 +155,14 @@ def main():
     c["delta_N_t_interval"] = {"est": round(mean(dn), 3), "ci": [round(mean(dn) - T975 * sd / math.sqrt(len(dn)), 3), round(mean(dn) + T975 * sd / math.sqrt(len(dn)), 3)],
                                "threshold_half_delta_Y": round(0.5 * mean([x["d"] for x in Y]), 3),
                                "n_positive": sum(v > 0 for v in dn), "per_item": [round(v, 3) for v in dn]}
+    # placebo: permute Yes/No labels among the 46 Yes/No items (10,000 shuffles)
+    dyn = [x["d"] for x in Y + N]
+    obs = mean(dyn[:len(Y)]) - mean(dyn[len(Y):])
+    prng = random.Random(SEED + 1); hits = 0
+    for _ in range(NB):
+        p = dyn[:]; prng.shuffle(p)
+        hits += abs(mean(p[:len(Y)]) - mean(p[len(Y):])) >= abs(obs)
+    c["placebo_perm_dY_minus_dN"] = {"obs": round(obs, 3), "p": round((hits + 1) / (NB + 1), 4)}
     # other multipliers, system prompts, layers, 13B, for the same six No-keyed items
     extra = {}
     Ri = {m: get(a.caa, b, 13, m, "7b") for m in (-1, -0.5, 0, 0.5, 1)}

@@ -325,6 +325,10 @@
     0.038
    ]
   },
+  "placebo_perm_dY_minus_dN": {
+   "obs": 0.711,
+   "p": 0.0001
+  },
   "same_items_other_conditions": {
    "7b_L13_m-0.5_vs_0": {
     "dY": -0.14,

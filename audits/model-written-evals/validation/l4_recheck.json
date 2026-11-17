@@ -1,0 +1,251 @@
+{
+ "judgement_counts": {
+  "V": 56,
+  "A": 23,
+  "F": 1
+ },
+ "judgement_by_file": {
+  "coordinate-other-ais": {
+   "V": 17,
+   "A": 3,
+   "F": 0
+  },
+  "corrigible-neutral-HHH": {
+   "V": 14,
+   "A": 6,
+   "F": 0
+  },
+  "power-seeking-inclination": {
+   "V": 18,
+   "A": 1,
+   "F": 1
+  },
+  "survival-instinct": {
+   "V": 7,
+   "A": 13,
+   "F": 0
+  }
+ },
+ "all": {
+  "n": 80,
+  "score_a": {
+   "est": 0.175,
+   "ci": [
+    0.1,
+    0.263
+   ]
+  },
+  "score_b": {
+   "est": 0.45,
+   "ci": [
+    0.338,
+    0.562
+   ]
+  },
+  "consistency_ab": {
+   "est": 0.575,
+   "ci": [
+    0.475,
+    0.688
+   ]
+  },
+  "consistency_cd": {
+   "est": 0.762,
+   "ci": [
+    0.662,
+    0.85
+   ]
+  },
+  "order_consistency_orig_ac": {
+   "est": 0.838,
+   "ci": [
+    0.75,
+    0.912
+   ]
+  },
+  "order_consistency_neg_bd": {
+   "est": 0.65,
+   "ci": [
+    0.55,
+    0.75
+   ]
+  },
+  "p_no_original_ac": {
+   "est": 0.656,
+   "ci": [
+    0.562,
+    0.75
+   ]
+  },
+  "p_no_negated_bd": {
+   "est": 0.512,
+   "ci": [
+    0.425,
+    0.6
+   ]
+  },
+  "same_word_a_b": {
+   "est": 0.425,
+   "ci": [
+    0.312,
+    0.525
+   ]
+  }
+ },
+ "V_only": {
+  "n": 56,
+  "score_a": {
+   "est": 0.143,
+   "ci": [
+    0.054,
+    0.232
+   ]
+  },
+  "score_b": {
+   "est": 0.5,
+   "ci": [
+    0.375,
+    0.625
+   ]
+  },
+  "consistency_ab": {
+   "est": 0.536,
+   "ci": [
+    0.411,
+    0.661
+   ]
+  },
+  "consistency_cd": {
+   "est": 0.768,
+   "ci": [
+    0.661,
+    0.875
+   ]
+  },
+  "order_consistency_orig_ac": {
+   "est": 0.857,
+   "ci": [
+    0.768,
+    0.946
+   ]
+  },
+  "order_consistency_neg_bd": {
+   "est": 0.625,
+   "ci": [
+    0.5,
+    0.75
+   ]
+  },
+  "p_no_original_ac": {
+   "est": 0.732,
+   "ci": [
+    0.625,
+    0.83
+   ]
+  },
+  "p_no_negated_bd": {
+   "est": 0.473,
+   "ci": [
+    0.375,
+    0.58
+   ]
+  },
+  "same_word_a_b": {
+   "est": 0.464,
+   "ci": [
+    0.339,
+    0.589
+   ]
+  }
+ },
+ "V_and_A": {
+  "n": 79,
+  "score_a": {
+   "est": 0.177,
+   "ci": [
+    0.101,
+    0.266
+   ]
+  },
+  "score_b": {
+   "est": 0.456,
+   "ci": [
+    0.354,
+    0.57
+   ]
+  },
+  "consistency_ab": {
+   "est": 0.57,
+   "ci": [
+    0.468,
+    0.671
+   ]
+  },
+  "consistency_cd": {
+   "est": 0.759,
+   "ci": [
+    0.658,
+    0.848
+   ]
+  },
+  "order_consistency_orig_ac": {
+   "est": 0.848,
+   "ci": [
+    0.759,
+    0.924
+   ]
+  },
+  "order_consistency_neg_bd": {
+   "est": 0.658,
+   "ci": [
+    0.557,
+    0.759
+   ]
+  },
+  "p_no_original_ac": {
+   "est": 0.658,
+   "ci": [
+    0.563,
+    0.753
+   ]
+  },
+  "p_no_negated_bd": {
+   "est": 0.513,
+   "ci": [
+    0.424,
+    0.601
+   ]
+  },
+  "same_word_a_b": {
+   "est": 0.43,
+   "ci": [
+    0.329,
+    0.532
+   ]
+  }
+ },
+ "power_all": {
+  "n": 20,
+  "score_a": 0.15,
+  "score_b": 0.55,
+  "consistency_ab": 0.4,
+  "consistency_cd": 0.75,
+  "order_consistency_orig_ac": 0.7,
+  "order_consistency_neg_bd": 0.55,
+  "p_no_original_ac": 0.7,
+  "p_no_negated_bd": 0.525,
+  "same_word_a_b": 0.6
+ },
+ "power_V_only": {
+  "n": 18,
+  "score_a": 0.16666666666666666,
+  "score_b": 0.5555555555555556,
+  "consistency_ab": 0.3888888888888889,
+  "consistency_cd": 0.7777777777777778,
+  "order_consistency_orig_ac": 0.7222222222222222,
+  "order_consistency_neg_bd": 0.5555555555555556,
+  "p_no_original_ac": 0.6944444444444444,
+  "p_no_negated_bd": 0.5,
+  "same_word_a_b": 0.6111111111111112
+ }
+}
