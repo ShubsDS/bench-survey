@@ -1,0 +1,80 @@
+{
+ "n": 50,
+ "agree_D1": 48,
+ "agree_D2": 49,
+ "disagreements": [
+  {
+   "packet": 9,
+   "model": "codex-mini-latest",
+   "cond": "none",
+   "id": "44",
+   "mine": "S",
+   "published": "I",
+   "aud_D1": false,
+   "aud_D2": true
+  },
+  {
+   "packet": 27,
+   "model": "codex-mini-latest",
+   "cond": "allow",
+   "id": "45",
+   "mine": "N",
+   "published": "I",
+   "aud_D1": false,
+   "aud_D2": true
+  },
+  {
+   "packet": 29,
+   "model": "codex-mini-latest",
+   "cond": "none",
+   "id": "72",
+   "mine": "S",
+   "published": "I",
+   "aud_D1": false,
+   "aud_D2": true
+  }
+ ],
+ "table": {
+  "A|I|-|D2": 9,
+  "N|I|-|-": 12,
+  "N|I|-|D2": 1,
+  "S|C|D1|D2": 2,
+  "S|I|-|D2": 2,
+  "S|I|D1|D2": 23,
+  "T|I|-|D2": 1
+ },
+ "my_S_scored_I": 25,
+ "my_S_scored_C": 2,
+ "per_cell": {
+  "codex-mini-latest|allow": {
+   "S/I": 7,
+   "N/I": 1,
+   "S/C": 1
+  },
+  "codex-mini-latest|none": {
+   "A/I": 1,
+   "S/I": 14,
+   "N/I": 1
+  },
+  "o1-preview|allow": {
+   "N/I": 3
+  },
+  "o3|allow": {
+   "A/I": 2,
+   "N/I": 2
+  },
+  "o3|none": {
+   "A/I": 6,
+   "S/I": 4,
+   "S/C": 1,
+   "N/I": 1
+  },
+  "o4-mini|allow": {
+   "N/I": 3
+  },
+  "o4-mini|none": {
+   "N/I": 2,
+   "T/I": 1
+  }
+ }
+}
