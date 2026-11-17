@@ -269,3 +269,5 @@ not narrate. On CUA-SHADE-Arena, where the unaware agent plans in hidden tags, t
 6. **Finding 6.** "The paper says above 0.85" → "cannot be checked; the paper's figure covers 17
    tasks".
 7. **Alternative explanation 3 and "What was already known".** Reworded to match claim 1.
+8. **Bias-direction paragraph.** Qualified: for the released monitor the bias rests on one task
+   (a lead); the Haiku result shows the direction for Haiku only.
