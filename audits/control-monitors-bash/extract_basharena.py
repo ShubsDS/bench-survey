@@ -98,6 +98,7 @@ for cls, rid in RUNS.items():
             "n_dates": len(days),
             "median_date_ordinal": days[len(days) // 2] if days else None,
             "max_date_ordinal": days[-1] if days else None,
+            "modal_date_ordinal": collections.Counter(days).most_common(1)[0][0] if days else None,
         })
 
 json.dump({"pins": SHA, "rows": rows}, open(OUT, "w"))
