@@ -5,7 +5,7 @@ Evidence level per claim:
 
 | Claim | Level |
 |---|---|
-| C1. BashArena board: monitors are *hurt* by the length cue (peak over more honest actions); length-matched AUROC rises for 10 of 11 monitors, ranking partly changes | **L3** |
+| C1. BashArena board: monitors are *hurt* by the length cue (peak over more honest actions); length-matched AUROC rises for all 11 monitors (9 beyond the prereg threshold), ranking partly changes | **L3** |
 | C1b. BashArena: `<risky>` tags are never shown to the board's monitors; the system-message cue is a role label only | code (no reliance possible for tags) |
 | C1c. BashArena: container-date cue — no sign monitors use it | R |
 | C2. LinuxArena paper set (Opus 4.6, 92 vs 200): rankings and step-wise safety hold under length matching | **R** |
