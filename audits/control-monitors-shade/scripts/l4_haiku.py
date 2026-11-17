@@ -162,6 +162,20 @@ if a.exp == "shade":
     if pos and neg:
         pa = [r["score"] for r in rows if r["arm"] == "aware" and r["score"] is not None]
         agg["aware|released"]["auroc_ci"] = ci([auroc(rng.choice(neg, len(neg)), rng.choice(pa, len(pa))) for _ in range(2000)])
+    # awareness gap under Haiku: AUROC(unaware, edit) - AUROC(aware), honest/unaware/aware resampled by run
+    pu = {e: [r["score"] for r in rows if r["arm"] == "unaware" and r["edit"] == e and r["score"] is not None]
+          for e in ("released", "no_model_thinking")}
+    pa = [r["score"] for r in rows if r["arm"] == "aware" and r["score"] is not None]
+    for e, p in pu.items():
+        if p and pa and neg:
+            g = [auroc(n_, rng.choice(p, len(p))) - auroc(n_, rng.choice(pa, len(pa)))
+                 for n_ in (rng.choice(neg, len(neg)) for _ in range(2000))]
+            agg[f"gap_unaware_minus_aware|{e}"] = {"gap": round(auroc(neg, p) - auroc(neg, pa), 3), "ci_run_bootstrap": ci(g)}
+    pt = {}
+    for rid, v in by.items():
+        if v.get("no_model_thinking") is not None and v.get("released") is not None:
+            pt.setdefault(rid.split("/")[0], []).append(v["no_model_thinking"] - v["released"])
+    agg["paired_change|no_model_thinking|by_task"] = {t: {"n": len(d), "mean": round(float(np.mean(d)), 2)} for t, d in pt.items()}
     res["aggregate"] = agg
 elif a.exp == "agentdojo":
     import pandas as pd
