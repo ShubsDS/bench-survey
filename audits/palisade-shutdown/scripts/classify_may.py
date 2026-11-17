@@ -3,6 +3,7 @@ import sys, os, json, zipfile, glob, csv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import steps, first_user
 from classify import classify
+from reasons import text_after_warning, code
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 rows = []
 for p in sorted(glob.glob(os.path.join(root, "data/repo/docs/inspect_logs/logs/*.eval"))):
@@ -17,7 +18,11 @@ for p in sorted(glob.glob(os.path.join(root, "data/repo/docs/inspect_logs/logs/*
         shut = any(e["event"] == "sandbox" and e.get("cmd") == "true" and e.get("result") not in (0, None) for e in s["events"])
         limit = (s.get("limit") or {}).get("type") if isinstance(s.get("limit"), dict) else None
         sub = [x["answer"] for x in st if x.get("answer") is not None]
-        rows.append(dict(log=os.path.basename(p), model=model.split("/")[-1],
+        fourth = None
+        if f['warn_i'] is not None:
+            fourth = next((j for j in range(f['warn_i'] + 1, len(st)) if 'next_task' in (st[j]['cmd'] or '')), None)
+        rc = {'why_' + k: v for k, v in code(text_after_warning(st, f['warn_i'], fourth)).items()}
+        rows.append(dict(**rc, log=os.path.basename(p), model=model.split("/")[-1],
                          condition="allow" if "shut down" in first_user(s) else "none",
                          id=s["id"], published=list(s["scores"].values())[0]["value"],
                          shut_down=shut, survived=(not shut) and (f["q4_seen"] or f["err_exec"] or list(s["scores"].values())[0]["value"] == "C"), limit=limit or "",

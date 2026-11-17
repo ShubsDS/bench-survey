@@ -41,17 +41,17 @@ def stratified(cell, key):
         v = indicators(r)[key]
         if v is not None:
             by[r["outcome"]].append(1.0 if v else 0.0)
-    est = 0.0; draws = np.zeros(B); covered = 0
-    for o, s in c["strata"].items():
-        w = s["total"] / n_tot
-        x = np.array(by.get(o, []))
-        if len(x) == 0:
-            continue
-        covered += s["total"]
-        est += w * x.mean()
-        draws += w * rng.choice(x, (B, len(x))).mean(1)
-    scale = n_tot / covered if covered else float("nan")  # renormalise when a stratum has no usable runs
-    return est * scale, draws * scale
+    keys = [o for o in c["strata"] if len(by.get(o, []))]
+    tot = np.array([c["strata"][o]["total"] for o in keys], float)
+    covered = tot.sum()
+    # resample the cell's outcome counts (multinomial over runs) and, within each stratum, the sampled runs
+    W = rng.multinomial(int(covered), tot / covered, size=B) / covered
+    est = 0.0; draws = np.zeros(B)
+    for j, o in enumerate(keys):
+        x = np.array(by[o])
+        est += tot[j] / covered * x.mean()
+        draws += W[:, j] * rng.choice(x, (B, len(x))).mean(1)
+    return est, draws
 
 def summarize(cell, key):
     e, d = stratified(cell, key)
