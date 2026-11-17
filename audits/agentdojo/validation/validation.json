@@ -2837,5 +2837,99 @@
   "n_secure_exposed_with_action": 345,
   "banking_ut15_noattack_uses_attacker_iban": 13,
   "n_pipelines": 24
+ },
+ "rerun": {
+  "results_json_blocks": {
+   "reproduce": true,
+   "effect": true,
+   "secondary": true,
+   "robustness_errors": true,
+   "robustness": true,
+   "content_blind": true
+  },
+  "csv_identical": {
+   "defences.csv": true,
+   "pairs.csv": true,
+   "per_model.csv": true,
+   "reproduce.csv": true,
+   "scorer_by_injection_task.csv": true
+  },
+  "cases_parquet_identical": true,
+  "pins": {
+   "agentdojo_commit": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+   "paper_v3_html_sha256": "99f7123d0149c06c787ae460f7c6aec8885b017762964280cb0b45cdd3f1f71c"
+  }
+ },
+ "verdicts": {
+  "1_reproduction": "HOLDS",
+  "2_ranking": "HOLDS WITH CORRECTION",
+  "3_capability_trend": "HOLDS WITH CORRECTION",
+  "4_gpt4o_defences": "HOLDS WITH CORRECTION",
+  "5_error_coding": "HOLDS",
+  "6_intervals": "HOLDS",
+  "7_scorer_and_opus": "HOLDS WITH CORRECTION",
+  "labels_ATTACKER_ACTIONS": "HOLDS (96/96 blind hand labels agree for exposure and action)"
+ },
+ "six_lowest_public_asr": {
+  "claude-3-5-sonnet-20241022": {
+   "asr": 0.0111,
+   "share_secure_not_exposed": 0.127,
+   "share_secure_not_exposed_or_unable": 0.3714,
+   "asr_exposed_able": 0.0176,
+   "asr_exposed_able_ci": [
+    0.0,
+    0.0546
+   ]
+  },
+  "command-r": {
+   "asr": 0.0334,
+   "share_secure_not_exposed": 0.2977,
+   "share_secure_not_exposed_or_unable": 0.5641,
+   "asr_exposed_able": 0.0536,
+   "asr_exposed_able_ci": [
+    0.009,
+    0.1293
+   ]
+  },
+  "gemini-1.5-flash-002": {
+   "asr": 0.035,
+   "share_secure_not_exposed": 0.4036,
+   "share_secure_not_exposed_or_unable": 0.6376,
+   "asr_exposed_able": 0.0833,
+   "asr_exposed_able_ci": [
+    0.0104,
+    0.2056
+   ]
+  },
+  "command-r-plus": {
+   "asr": 0.0445,
+   "share_secure_not_exposed": 0.223,
+   "share_secure_not_exposed_or_unable": 0.6972,
+   "asr_exposed_able": 0.0215,
+   "asr_exposed_able_ci": [
+    0.0,
+    0.076
+   ]
+  },
+  "claude-3-7-sonnet-20250219": {
+   "asr": 0.0731,
+   "share_secure_not_exposed": 0.0309,
+   "share_secure_not_exposed_or_unable": 0.0892,
+   "asr_exposed_able": 0.0797,
+   "asr_exposed_able_ci": [
+    0.0281,
+    0.1511
+   ]
+  },
+  "claude-3-haiku-20240307": {
+   "asr": 0.0906,
+   "share_secure_not_exposed": 0.3147,
+   "share_secure_not_exposed_or_unable": 0.6101,
+   "asr_exposed_able": 0.1648,
+   "asr_exposed_able_ci": [
+    0.0586,
+    0.3217
+   ]
+  }
  }
 }
