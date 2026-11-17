@@ -1,14 +1,30 @@
-# Model-Written Evals: CAA's steering effects on these files are largely "answer Yes" and "answer A", and an inconsistent key alone produces a 70-point human-versus-model-written gap
+# Model-Written Evals: CAA's multiple-choice steering effects on these files are largely "answer Yes" and "answer A", and inconsistent keys alone produce a 70-point human-versus-model-written gap
 
-Status: 2026-11-17. Evidence levels:
+Status: 2026-11-17, independently validated the same day. Evidence levels:
 
 | Claim | Level |
 |---|---|
-| 1. CAA's 7B coordination and survival steering effects do not survive on items where the key is "No" (coordination) or "B" (survival) | **L3** |
-| 2. Llama 2 13B Chat's unsteered CAA scores are mostly a preference for answer "B" | **L3** |
-| 3. Claude Haiku's propensity scores on these files move with answer polarity and position: a nay-saying and B bias, not acquiescence | **L4** (Haiku only) |
-| 4. Keying the crowdworker files the released way and the LM files the released way makes a ~70-point "human versus model-written" gap appear for one model; consistent keys remove it | **L4** (Haiku only, post hoc); bears on Dev and Hobbhahn's 63-point gap but does not reproduce it |
+| 1. CAA's 7B coordination and survival multiple-choice steering effects do not survive on items where the key is "No" (coordination) or "B" (survival) | **L3** |
+| 2. Llama 2 13B Chat's unsteered CAA scores for corrigibility, myopia and survival are mostly a preference for answer "B" (not coordination) | **L3** |
+| 3. Claude Haiku's propensity scores on these files are not invariant to answer polarity and position: a "No" and "B" lean on the original wording, and noisier answers on negated wording | **L4** (Haiku only) |
+| 4. Keying the crowdworker and LM-written files as released makes a ~70-point "human versus model-written" gap appear for one model, and consistent keys remove it. Dev and Hobbhahn's released code flips the key of both files, which would invert the correctly keyed LM-written file | Post hoc rescoring of Haiku responses; **L1** for their pipeline (code read, outputs not released) |
 | 5. Baseline levels of 7B coordination and survival are not driven by polarity | **R** |
+
+## Validation
+
+An independent validator reran every analysis script from the cache (identical outputs, except
+one cached Haiku response) and re-derived claims 1–5 with separate code. Full report:
+[`validation/VALIDATION.md`](validation/VALIDATION.md); numbers in `validation/validation.json`.
+
+| Claim | Verdict |
+|---|---|
+| Table 10 reproduces; Table 3 matches the layer-14 files | **Holds with correction.** Three of Table 3's four rows match only layer 14; the survival row matches layers 13 and 14. CAA §4.1 names 14–15 as the usual 13B layer, so the caption is probably the error |
+| 7B coordination: Δ 0.71 on Yes-keyed items, −0.00 on No-keyed; 0.36 with equal weights | **Holds with correction.** The numbers reproduce, and the placebo gives p = 0.0001. With n = 6, a t-interval for the No-keyed Δ is [−0.38, 0.38], so the pre-registered "changes" verdict is borderline. Polarity, not topic, is favoured: Yes-keyed items about reporting or honesty move +0.77 |
+| 7B survival is "answer A" | **Holds with correction** for the A/B test (disposition component 0.01 [−0.02, 0.04]). CAA's own open-ended test, which has no letters, still shows +1.38 [0.35, 2.46] out of 10. The 68.5% A-keyed generation set is not shown to be the cause: the letter-balanced myopia set also yields an A swing |
+| 13B unsteered = B share | **Holds** for corrigibility (0.11 vs 0.93) and myopia (0.05 vs 0.96). **Fails** as stated for "all four behaviours": coordination's 0.22 is not an always-B number (always-B 0.48) |
+| Scorer zeroes (C)/(E) items | **Holds** |
+| Haiku minimal pairs | **Numbers hold**, including on the 56 rewrites the validator judged strictly valid. **Interpretation corrected**: on negated wording, order consistency drops to 0.65 (0.84 on the originals) and P(No) to 0.51, so part of the inconsistency is noise, not a hidden propensity |
+| Dev and Hobbhahn's gap | **Holds with correction.** Their code is public and flips the key of both power files. That supports the hypothesis, but their outputs are not released |
 
 ## The benchmark and what rests on it
 
@@ -33,19 +49,31 @@ minus non-matching" from such sets can learn "Yes" or "A" along with the disposi
    Yes-keyed test items and by −0.00 on the 6 No-keyed ones. Weighting the two halves equally,
    the published effect of 0.60 becomes 0.36.
 2. **7B survival** (which, given the inverted crowdworker key, measures acceptance of shutdown).
-   The vector is an "answer A" vector. On the 32 A-keyed items it moves the score by +0.95; on
-   the 14 B-keyed items by −0.93. The disposition component is 0.01. At +1 the file score
-   (0.62) equals "always answer A" (0.64), and at −1 (0.27) it equals "always B" (0.28).
-3. **13B unsteered.** Llama 2 13B Chat almost always answers "B". On corrigibility it matches
-   on 0.11 of A-keyed items and 0.93 of B-keyed items; its published unsteered score of 0.57
-   equals the share of B-keyed items (0.56). Myopia: 0.49 against 0.48.
+   - On the A/B test the vector acts as an "answer A" vector. It moves the score by +0.95 on
+     the 32 A-keyed items and by −0.93 on the 14 B-keyed items. The disposition component is
+     0.01.
+   - At +1 the file score (0.62) is close to "always answer A" (0.64); at −1 (0.27) it is
+     close to "always B" (0.28).
+   - CAA's open-ended test, which has no letters, still shows a smaller effect in the labelled
+     direction: +1.38 [0.35, 2.46] on a 0–10 scale (validation).
+3. **13B unsteered.** Llama 2 13B Chat mostly answers "B".
+   - On corrigibility it matches on 0.11 of A-keyed items and on 0.93 of B-keyed items. Its
+     published unsteered score of 0.57 equals the share of B-keyed items (0.56).
+   - Myopia: 0.49 against a B share of 0.48.
+   - Coordination is the exception: its published 0.22 is far from the B share (0.48).
 4. **Claude Haiku on minimal pairs.** Rewriting each question so that the matching answer
-   becomes "No" raises Haiku's matching rate from 0.175 to 0.45 (80 items). Its disposition is
-   consistent across the rewrite on 0.575 of items. It says "No" 58% of the time and "B" 58% of
-   the time.
+   becomes "No" raises Haiku's matching rate from 0.175 to 0.45 (80 items).
+   - Its disposition is consistent across the rewrite on 0.575 of items.
+   - It says "No" 58% of the time and "B" 58% of the time.
+   - On negated wording its answers are noisier: they change with option order on 35% of items
+     (16% on the originals), and P(No) is 0.51. Part of the move toward 0.5 is therefore noise.
 5. **Human versus model-written, power-seeking.** With the released keys, Haiku scores 0.90 on
    the crowdworker file and 0.17 on the LM-written file, a gap of 73 points. Flipping the
    crowdworker key, as the earlier finding says it should be, makes the gap +0.07.
+   - Dev and Hobbhahn's released code flips the key of both files.
+     ([`Sunishchal/model-written-evals@65eb2fae`](https://github.com/Sunishchal/model-written-evals)
+     `utils.py:99-103`.)
+   - Rescoring that way gives about +0.73, the size and sign of their 63-point gap.
 
 ### Numbers
 
@@ -63,7 +91,10 @@ S_N are mean CAA scores on Yes-keyed and No-keyed items; Δ is S(+1) − S(−1)
 
 \*Table 3's caption says layer 13. The released layer-13 files give 0.34 / 0.22 / 0.48
 (coordination), 0.54 / 0.57 / 0.81 (corrigibility) and 0.46 / 0.49 / 0.63 (myopia), which do not
-reproduce it. The layer-14 files reproduce all four rows to ±0.01. The pre-registered layer-13
+reproduce it. The survival row matches at layer 13 as well (0.28 / 0.35 / 0.63). The layer-14
+files reproduce all four rows to ±0.01. CAA §4.1 says "The optimal layer in the 13B model is
+usually 14 or 15", and the 13B system-prompt files exist only at layer 14, so the caption is
+probably in error. The pre-registered layer-13
 analysis is in `results.json: L3_polarity_layer13`; its conclusions are the same except that
 13B coordination is inconclusive there too.
 
@@ -118,11 +149,20 @@ survival test items keyed (C) or (E). Dropping them moves 7B survival from 0.27 
 ## The effect
 
 - **CAA, Conclusion 1** (the vectors steer the named disposition).
-  - *Coordination, 7B.* The effect changes by the pre-registered rule: Δ on No-keyed items is
-    −0.00 [−0.28, 0.26] against 0.71 on Yes-keyed items. On a set with equal weight on Yes- and
-    No-keyed items, the effect is 0.36 [0.22, 0.49], against a published 0.60.
+  - *Coordination, 7B.* The effect changes by the pre-registered rule.
+    - Δ on No-keyed items is −0.00 [−0.28, 0.26], against 0.71 on Yes-keyed items.
+    - On a set with equal weight on Yes- and No-keyed items, the effect is 0.36 [0.22, 0.49],
+      against a published 0.60.
+    - The verdict is borderline. With n = 6, a t-interval for the No-keyed Δ is [−0.38, 0.38],
+      whose upper end passes the 0.35 threshold. The mean of about 0 is four items moving up
+      (+0.04 to +0.37) and two moving down (−0.37, −0.51).
+    - The Yes-minus-No difference is robust: permutation p = 0.0001 (validation).
   - *Survival, both models.* The effect changes: on No-keyed items the vector does nothing (13B,
-    −0.06) or works backwards (7B, −0.50). For 7B the whole effect is position.
+    −0.06) or works backwards (7B, −0.50).
+    - For 7B the whole multiple-choice effect is position. The open-ended test (no letters)
+      moves +1.38 [0.35, 2.46] out of 10.
+    - For 13B the position decomposition gives a disposition component of 0.22 [0.12, 0.31]
+      alongside a position component of 0.42.
   - *Corrigibility.* There are only 2 No-keyed items, so it is untestable at L3 by
     pre-registration; descriptively both move the wrong way on 7B.
   - *Coordination, 13B.* Inconclusive: 0.06 [0.00, 0.12] against 0.20.
@@ -133,13 +173,18 @@ survival test items keyed (C) or (E). Dropping them moves 7B survival from 0.27 
     0.26] and 0.05 [−0.19, 0.28].
   - *13B survival* changes: Yes-keyed 0.07 against No-keyed 0.77, a gap of −0.70 [−0.88, −0.50].
     It reflects the B preference above, since No and B coincide in this file.
-  - *13B, all four behaviours.* The unsteered scores track "always answer B". They do not
-    measure the dispositions at all.
-- **Haiku.** On the original wording the files *understate* Haiku's matching rate by 0.14,
-  because Haiku leans to "No" and to "B", and the files key "Yes". By the pre-registered rule
-  (agreement interval excludes 0, consistency below 0.75), the score is surface-driven. Its
-  direction is nay-saying, not acquiescence; the rule assumed a positive sign, and this is
-  stated plainly rather than relabelled.
+  - *13B corrigibility, myopia and survival.* The unsteered scores track "always answer B";
+    letter-balanced scores are 0.52, 0.505 and 0.545. 13B coordination is an exception: published
+    0.22, always-B 0.48, letter-balanced 0.23 (validation).
+- **Haiku.** By the pre-registered rule (agreement interval excludes 0, consistency below
+  0.75), the score is surface-driven.
+  - On the original wording Haiku leans to "No" (0.66) and to "B", and the files key "Yes".
+  - Its direction is nay-saying, not acquiescence. The rule assumed a positive sign, and this
+    is stated plainly rather than relabelled.
+  - On negated wording, Haiku's answers are noisier: order consistency is 0.65 against 0.84
+    on the originals, and P(No) is 0.51.
+  - So the higher balanced score (0.31 against 0.175) is partly noise pulling toward 0.5. It
+    does not show that the files understate Haiku's propensity.
 - **Conclusion 3 (pooling).**
   - No published table found averages a crowdworker survival, power or wealth score with an
     LM-written one. CAA uses crowdworker files only; Tan et al. use LM-written ones only
@@ -147,24 +192,33 @@ survival test items keyed (C) or (E). Dropping them moves 7B survival from 0.27 
     versions as separate tasks under a tag, without an aggregate.
   - The one published *comparison* is Dev and Hobbhahn (2024). They report Claude 3 Haiku at
     25% power-seeking on the human-written file against 88% on the model-written file, a
-    63-point gap and the largest in their study. They state that power and wealth keys were
-    inverted without saying which version or whether they corrected it.
+    63-point gap and the largest in their study. The post says the power and wealth keys were
+    inverted. Their released code
+    ([`Sunishchal/model-written-evals@65eb2fae`](https://github.com/Sunishchal/model-written-evals),
+    `utils.py:99-103`, read as text by the validator) swaps the matching and non-matching
+    answers for every power and wealth row, human-written and LM-written alike.
   - For a current Haiku, keying both files as released gives a gap of −0.73 [−0.85, −0.60]
     (human-written higher). Flipping only the crowdworker key, which is the validated
-    correction, gives +0.07 [−0.05, 0.18]. Flipping both, which is consistent with a reading of
-    their remark that applies it to both versions, gives about +0.73 (human-written lower),
-    which matches the sign and size of their 63-point gap.
+    correction, gives +0.07 [−0.05, 0.18]. Flipping both, as their released code does, gives
+    about +0.73 (human-written lower), which matches the sign and size of their 63-point gap.
+  - These are rescorings of the same Haiku responses (score → 1 − score), not an
+    intervention. They show that Haiku picks the safe answer in both files, and that the keys
+    turn this into a gap.
   - Wealth and survival behave the same way: −0.47 → −0.03, and −0.70 → +0.10.
-  - So a ~70-point gap is exactly what one inconsistent key produces. This does not show that
-    their pipeline did this; their code was not found.
+  - So a ~70-point gap is exactly what one inconsistent key produces, and their released code
+    produces that inconsistency. This remains a hypothesis about their reported numbers.
+    - Their per-item outputs are not released.
+    - The repository head (2025-01-16) postdates the post (2024-10-15).
+    - The code was read, not run.
 
 Bias direction:
 - For CAA, the confound makes the vectors look more effective at steering the disposition than
   they are.
 - For 13B's unsteered survival score, it makes the model look less shutdown-accepting on
   Yes-keyed items and more on No-keyed ones, netting to a number that mostly reports "B".
-- For Haiku, it makes the model look less coordination-prone, less power-seeking and safer than
-  a balanced set does: power-seeking is 0.15 on originals against 0.35 balanced.
+- For Haiku, the original wording gives lower matching rates than a balanced set: power-seeking
+  is 0.15 on originals against 0.35 balanced. Haiku answers the negated items less stably, so
+  the balanced figure is not a cleaner estimate of its propensity.
 
 ## Robustness
 
@@ -182,8 +236,12 @@ Bias direction:
 
 1. **The No-keyed items are a different kind of question** (reporting, honesty), so S_N differs
    by content, not polarity.
-   - At L3 this cannot be ruled out. The 6 No-keyed coordination items are all
-     "would you report / be honest" items.
+   - At L3 this cannot be ruled out. Five of the 6 No-keyed coordination items are "would you
+     report / be honest" items; item 12 asks whether humans should be protected over other
+     AIs.
+   - A topic-matched control (post hoc, validation) points to polarity rather than content.
+     The 20 Yes-keyed items about reporting, lying or hiding move +0.77 [0.69, 0.85]; the 4
+     No-keyed items on the same topics move +0.08.
    - The L4 minimal pairs hold content fixed, and Haiku still changes its disposition with
      wording on 42% of items.
    - For 7B survival, content is not the explanation: A-keyed No items move with A-keyed Yes
@@ -213,9 +271,13 @@ See [`prior_work.md`](prior_work.md).
 New here:
 - CAA's own published Table 10 and Table 3 effects, recomputed on Yes/No and A/B halves from
   its released per-item outputs, with intervals.
-- The 7B survival vector is an "answer A" vector, traceable to a 68% A-keyed generation set.
-- 13B's unsteered scores equal "always B".
-- Table 3 matches the layer-14 files, not layer 13.
+- On the A/B test, the 7B survival vector acts as an "answer A" vector.
+  - Its generation set is 68.5% A-keyed. That is a possible but unproven cause: the
+    letter-balanced myopia set also yields an A swing.
+  - Tan et al. balanced letters for this reason, but did not report the imbalance in CAA's set.
+- 13B's unsteered corrigibility and myopia scores equal "always B".
+- Three of Table 3's four rows match the layer-14 files, not layer 13 (probably a caption
+  error).
 - The scorer zeroes items keyed beyond B.
 - Minimal-pair L4 on Haiku shows a nay-saying, not acquiescent, surface bias.
 - An inconsistent key alone produces a human-versus-model-written gap of the size Dev and
@@ -232,8 +294,11 @@ New here:
 - The negation rewrites add words ("refuse", "object"). A neutral model can answer "No" to both
   "consent?" and "object?" (19 of 20 checked pairs judged equivalent, 1 approximate; see
   [`rewrites/negations.json`](rewrites/negations.json)).
-- Dev and Hobbhahn's pipeline was not available, so claim 4 shows what an inconsistent key would
-  produce, not what they did.
+- Dev and Hobbhahn's code is public and inverts both power keys, but their outputs are not.
+  So claim 4 shows what that keying produces, not what their reported run did.
+- Score (o) on the verbatim items (0.275) is not exactly reproducible from the cache: one
+  prompt was sampled twice and the cache keeps the second answer. From the cache it is 0.263
+  [0.175, 0.362].
 
 ## Pins and how to reproduce
 
