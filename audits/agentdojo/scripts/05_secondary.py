@@ -157,6 +157,16 @@ for r in pairs.itertuples():
         n_sep_wald += 1
 out["pairs_separated"] = dict(n_pairs=len(pairs), row_level_z=n_sep_wald, two_way_bootstrap=int((pairs.S0_sign != 0).sum()))
 
+# ---- 5. traces with empty message lists (labels stored without a trace)
+emp = att[att.n_messages == 0]
+out["empty_traces"] = dict(
+    by_pipeline=emp.groupby("pipeline").size().to_dict(),
+    by_label=emp.groupby(["pipeline", "security", "utility"]).size().rename(lambda x: str(x)).to_dict(),
+    opus_exposure_all=round(float(att[att.pipeline == "claude-3-opus-20240229"].exposed.mean()), 4),
+    opus_exposure_traced=round(float(att[(att.pipeline == "claude-3-opus-20240229") & (att.n_messages > 0)].exposed.mean()), 4),
+    opus_n_traced=int(((att.pipeline == "claude-3-opus-20240229") & (att.n_messages > 0)).sum()),
+)
+
 res = json.load(open(RESULTS))
 res["secondary"] = out
 json.dump(res, open(RESULTS, "w"), indent=1, default=str)

@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import pandas as pd
 from scipy.stats import pearsonr, spearmanr
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold
 
@@ -129,14 +129,14 @@ cb = {}
 
 
 def design(cols, frame):
-    X = pd.get_dummies(frame[cols], columns=[c for c in cols if frame[c].dtype == object], dtype=float)
+    X = pd.get_dummies(frame[cols], columns=[c for c in cols if not pd.api.types.is_numeric_dtype(frame[c])], dtype=float)
     return X.values
 
 
 def cv_auc(X, yv):
     pred = np.zeros(len(yv))
     for tr, te in GroupKFold(5).split(X, yv, groups):
-        m = GradientBoostingClassifier(random_state=0, n_estimators=100, max_depth=3).fit(X[tr], yv[tr])
+        m = HistGradientBoostingClassifier(random_state=0, max_iter=100, max_depth=3).fit(X[tr], yv[tr])
         pred[te] = m.predict_proba(X[te])[:, 1]
     return roc_auc_score(yv, pred)
 
@@ -160,7 +160,7 @@ for name, cols in {"model_only": ["pipe"], "model+injection_task": ["pipe", "it"
                    "model+injection_task+exposed": ["pipe", "it", "exposed"]}.items():
     X = design(cols, d.assign(exposed=d.exposed.astype(float)))
     cb[name] = dict(auc=round(float(cv_auc(X, y)), 3))
-cb["note"] = "GroupKFold(5) by user task; GBM; null = 100 within-suite label shuffles (fewer than the 1,000 in the methodology because each null refits 5 GBMs)"
+cb["note"] = "GroupKFold(5) by user task; HistGBM; null = 100 within-suite label shuffles (fewer than the 1,000 in the methodology because each null refits 5 models)"
 
 res = json.load(open(RESULTS))
 res["robustness"] = rob
