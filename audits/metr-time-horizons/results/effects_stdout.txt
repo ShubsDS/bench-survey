@@ -10,3 +10,69 @@ draw 700
   return float(np.exp2((np.log(q / (1 - q)) - a) / b))
 draw 800
 draw 900
+reference                    tasks=228 DT=  128.7 [103.9 157.2] ratio=1.000 [1. 1.] -> holds; resel DT=128.7; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   718.9 [ 309.8 4753.6] ratio=1.000 [1. 1.] holds
+     GPT-5.2                      p50=   352.2 [188.8 791.3] ratio=1.000 [1. 1.] holds
+     GPT-5.3-Codex                p50=   349.5 [192.4 792.8] ratio=1.000 [1. 1.] holds
+     Claude Opus 4.5 (Inspect)    p50=   293.0 [155.8 642.2] ratio=1.000 [1. 1.] holds
+     Gemini 3 Pro                 p50=   224.3 [135.9 388.7] ratio=1.000 [1. 1.] holds
+E1b_hcast_only               tasks=157 DT=  126.3 [ 96.8 159.7] ratio=0.981 [0.893 1.062] -> holds; resel DT=127.0; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   483.7 [ 234.8 2267.1] ratio=0.673 [0.384 0.93 ] changes
+     GPT-5.2                      p50=   367.5 [ 188.8 1043.1] ratio=1.043 [0.835 1.48 ] holds
+     GPT-5.3-Codex                p50=   391.6 [ 198.9 1304.3] ratio=1.120 [0.95  1.764] holds
+     Claude Opus 4.5 (Inspect)    p50=   292.7 [156.7 730.4] ratio=0.999 [0.815 1.291] holds
+     Gemini 3 Pro                 p50=   221.6 [131.1 406.3] ratio=0.988 [0.819 1.174] holds
+E1c_no_swaa                  tasks=162 DT=  124.4 [ 96.  156.8] ratio=0.966 [0.884 1.028] -> holds; resel DT=128.5; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   673.3 [ 305.  5044.8] ratio=0.937 [0.637 1.402] holds
+     GPT-5.2                      p50=   350.4 [189.  774.8] ratio=0.995 [0.954 1.037] holds
+     GPT-5.3-Codex                p50=   347.5 [192.6 794. ] ratio=0.994 [0.955 1.07 ] holds
+     Claude Opus 4.5 (Inspect)    p50=   292.1 [157.  643.1] ratio=0.997 [0.96  1.045] holds
+     Gemini 3 Pro                 p50=   224.6 [137.3 385.4] ratio=1.001 [0.984 1.027] holds
+E2b_baselined_only           tasks=162 DT=  114.9 [ 60.8 159.3] ratio=0.892 [0.48  1.173] -> holds; resel DT=122.4; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=  2913.9 [3.23300000e+02 4.05822386e+08] ratio=4.053 [4.6600000e-01 4.2054427e+05] holds
+     GPT-5.2                      p50=   736.3 [  215.1 27011.1] ratio=2.090 [ 0.627 69.735] holds
+     GPT-5.3-Codex                p50=   649.8 [ 268.1 5080.7] ratio=1.859 [ 0.738 11.262] holds
+     Claude Opus 4.5 (Inspect)    p50=   704.4 [  217.3 18064. ] ratio=2.404 [ 0.829 49.194] holds
+     Gemini 3 Pro                 p50=   257.5 [119.2 744.1] ratio=1.148 [0.573 2.94 ] holds
+E2c_hcast_baselined          tasks= 94 DT=  120.1 [ 58.5 166.4] ratio=0.933 [0.462 1.235] -> holds; resel DT=124.4; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=  1070.0 [2.44400000e+02 1.00110186e+07] ratio=1.488 [2.610000e-01 6.024036e+03] holds
+     GPT-5.2                      p50=   751.7 [1.889000e+02 7.594361e+05] ratio=2.134 [5.320000e-01 1.678202e+03] holds
+     GPT-5.3-Codex                p50=   906.1 [  301.  35723.2] ratio=2.592 [ 0.894 94.961] holds
+     Claude Opus 4.5 (Inspect)    p50=   545.2 [  177.8 37237.1] ratio=1.861 [ 0.615 95.148] holds
+     Gemini 3 Pro                 p50=   227.5 [110.7 592.3] ratio=1.014 [0.505 2.562] holds
+E3_cap_8M                    tasks=228 DT=  138.4 [115.1 167.9] ratio=1.075 [1.029 1.172] -> shifts; resel DT=138.9; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   356.2 [196.9 871.2] ratio=0.495 [0.131 0.827] changes
+     GPT-5.2                      p50=   234.1 [141.  426.3] ratio=0.665 [0.404 0.868] changes
+     GPT-5.3-Codex                p50=   237.4 [135.4 463.4] ratio=0.679 [0.432 0.876] changes
+     Claude Opus 4.5 (Inspect)    p50=   293.0 [155.8 642.2] ratio=1.000 [1. 1.] holds
+     Gemini 3 Pro                 p50=   214.7 [130.9 358.5] ratio=0.957 [0.82 1.  ] holds
+E3_cap_0.8M                  tasks=228 DT=  172.8 [144.5 214.2] ratio=1.342 [1.211 1.596] -> changes; resel DT=169.1; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   156.2 [ 95.4 262.7] ratio=0.217 [0.04  0.471] changes
+     GPT-5.2                      p50=    64.0 [39.4 99.2] ratio=0.182 [0.075 0.345] changes
+     GPT-5.3-Codex                p50=    84.4 [ 54.4 128.5] ratio=0.242 [0.101 0.42 ] changes
+     Claude Opus 4.5 (Inspect)    p50=   147.0 [ 89.  243.5] ratio=0.502 [0.26  0.742] changes
+     Gemini 3 Pro                 p50=   148.3 [ 93.5 226.9] ratio=0.661 [0.459 0.855] changes
+R_hcast_only_equalw          tasks=157 DT=  120.1 [ 89.4 155.1] ratio=0.933 [0.82  1.032] -> holds; resel DT=126.1; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=   574.7 [ 256.8 3627.6] ratio=0.799 [0.448 1.547] holds
+     GPT-5.2                      p50=   409.3 [ 210.8 1258.5] ratio=1.162 [0.869 2.034] holds
+     GPT-5.3-Codex                p50=   485.1 [ 225.1 2806.4] ratio=1.388 [1.015 4.013] changes
+     Claude Opus 4.5 (Inspect)    p50=   313.4 [158.9 857.3] ratio=1.070 [0.81  1.586] holds
+     Gemini 3 Pro                 p50=   227.0 [132.4 412.5] ratio=1.012 [0.792 1.29 ] holds
+R_baselined_only_equalw      tasks=162 DT=  118.7 [ 61.9 163. ] ratio=0.922 [0.495 1.216] -> holds; resel DT=128.2; top=Claude Opus 4.6 (Inspect)
+     Claude Opus 4.6 (Inspect)    p50=  3086.5 [3.07400000e+02 2.40124103e+09] ratio=4.293 [4.31000000e-01 8.69644427e+05] holds
+     GPT-5.2                      p50=   758.4 [  235.4 28863.5] ratio=2.153 [ 0.659 69.066] holds
+     GPT-5.3-Codex                p50=   718.1 [  290.8 11856.5] ratio=2.055 [ 0.791 25.199] holds
+     Claude Opus 4.5 (Inspect)    p50=   587.5 [  207.2 13750.8] ratio=2.005 [ 0.76  42.319] holds
+     Gemini 3 Pro                 p50=   248.4 [125.1 773.5] ratio=1.107 [0.583 3.126] holds
+E1a_SWAA                                      +0.973 [-0.826  6.29 ]
+E1a_RE-Bench                                  -0.120 [-1.191  0.899]
+E2a_RE-Bench                                  -0.209 [-1.266  0.824]
+E2a_estimate                                  -0.842 [-1.573 -0.106]
+E2a_60to1000min_RE-Bench                      -0.156 [-1.315  1.047]
+E2a_60to1000min_estimate                      -0.651 [-1.648  0.269]
+E2a_hcast_estimate                            -0.853 [-1.668 -0.057]
+E1a_agent_RE-Bench|Claude Opus 4.5 (Inspect)  -0.016 [-4.534  2.161]
+E1a_agent_RE-Bench|Claude Opus 4.6 (Inspect)  +3.494 [1.762 7.151]
+E1a_agent_RE-Bench|GPT-5.2                    -0.403 [-6.282  2.897]
+E1a_agent_RE-Bench|GPT-5.3-Codex              -0.952 [-5.771  0.595]
+E1a_agent_RE-Bench|Gemini 3 Pro               +0.154 [-5.843  4.201]
