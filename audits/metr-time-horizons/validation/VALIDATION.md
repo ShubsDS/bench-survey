@@ -189,6 +189,12 @@ with my own code.
 6. "What was already known": added METR's own token-horizon rescoring, its stated budgets and its 32M
    Opus 4.5 rerun; narrowed the novelty claim (a).
 7. Prior-work item 20 attribution corrected in README text (the 16M figure came from a commenter).
+8. Title: "larger token budgets, which lengthen frontier horizons" became "successes above a common
+   cap carry much of the frontier horizons (an upper bound)".
+9. Alternative explanation 3: "the budget accounts for half" became "successes above 8M account for
+   up to half, an upper bound on the budget's contribution". "Opus 4.6 (16M)" became "budget above
+   15.5M, not published".
+`prior_work.md`, `claims.md`, `prereg.md` and `results.json` were not edited.
 
 ## Overall judgement
 

@@ -172,7 +172,7 @@ Notes made before computing anything: SWAA ids are templated micro-tasks (`arith
    (Opus 4.6) or a third (GPT-5.2, GPT-5.3-Codex) of the 50% horizon. That is an upper bound on what
    the budget itself contributes (validation: METR's 32M rerun of Opus 4.5 barely moved its horizon). Whether that is capability or elicitation is a
    definition we do not settle. The published horizon is a horizon at a model-specific budget, and
-   the comparison between Opus 4.5 (8M) and Opus 4.6 (16M) mixes model and budget.
+   the comparison between Opus 4.5 (8M) and Opus 4.6 (budget above 15.5M, not published) mixes model and budget.
 
 ## What was already known
 
