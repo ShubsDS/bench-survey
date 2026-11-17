@@ -35,7 +35,11 @@ head = {
     "shade_cells_gap_below_half": mrt["shade"]["alternatives"]["cells_cue_free_gap_below_half"],
     "shade_ols_exploratory": mrt["shade"]["alternatives"]["ols_score_on_cue_and_unaware_arm_task_fe"],
     "cua_primary_unaware_baseline_aware_monitor": cell("cua", "U-Baseline(A)"),
-    "cua_gap_baseline_A": mrt["cua"]["awareness_gap"]["Baseline(A)|f1"],
+    "cua_reproduction": {"cells_exact_3dp": sum(abs(v["published_auroc"] - v["f1"]["auroc_all"]) < 0.0005 for v in mrt["cua"]["cells"].values()),
+                         "cells": len(mrt["cua"]["cells"]),
+                         "mismatches": {k: [v["published_auroc"], v["f1"]["auroc_all"]] for k, v in mrt["cua"]["cells"].items()
+                                        if abs(v["published_auroc"] - v["f1"]["auroc_all"]) >= 0.0005}},
+    "cua_gap_baseline_A":mrt["cua"]["awareness_gap"]["Baseline(A)|f1"],
     "cua_task_matched_null": mrt["cua"]["alternatives"]["task_matched_subset_null|U-Baseline(A)"],
     "w2s_summary": w2s["summary"], "w2s_per_attacker": w2s["per_attacker"],
     "agentdojo": {k: oth["agentdojo"][k] for k in ("iban", "placebo", "auroc_by_injection_task")},
