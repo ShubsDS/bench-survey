@@ -1,16 +1,56 @@
-# SAD: on the items the answer-choice shortcut gets wrong, the capability trend and model order of three tasks vanish; the overall SAD score holds
+# SAD: the overall score and ranking survive the answer-choice shortcut; on three tasks the scores mix self-knowledge with a yes/no lean the keys reward
 
-Status: complete, 2026-11-17. Branch `effect-audits`. Evidence levels per claim:
+Status: complete, 2026-11-17, and independently validated (see
+[Validation](#validation) and [`validation/VALIDATION.md`](validation/VALIDATION.md)). Branch
+`effect-audits`.
+
+**For someone using SAD scores as a measure of situational awareness:**
+- The overall SAD score and its model ranking survive the answer-choice shortcut.
+- On facts_human_defaults and influence, the keys favour "no / I can't" answers (73% and 68% of
+  items with an affirm/deny key). So the task scores reward a denial lean: up to +7 points for
+  Claude models and as much as −21 points for "yes"-leaning base models.
+- A score that averages over the two answer types keeps the ranking and the capability trend.
+- stages_oversight measures little beyond each model's yes/no lean. Its answer-balanced accuracy
+  runs only from 0.45 to 0.61 across the 21 models.
+
+Evidence levels per claim (after validation):
 
 | Published conclusion (claims.md) | Task level | Overall SAD score | Level |
 |---|---|---|---|
-| C1 ranking | **changes** on facts_human_defaults, influence, stages_oversight; holds on stages_full | holds (ρ = 0.92 with published) | L3 (task), R (overall) |
-| C1' "Claude 3 models outperformed GPT-4 models" (p.9) | reverses on influence | **disappears** (+3.7 → −0.4 points) | L3, exploratory (not pre-registered) |
-| C2 SAD rises with capability (r = 0.79 with MMLU) | **changes** on the same three tasks (r ≈ 0); weakened, holds after correction on stages_full | holds (r = 0.82) | L3 (task), R (overall) |
+| C1 ranking | On FHD, INF and SO, S and R rank models differently (ρ −0.04, −0.23, −0.63). R is the affirm-keyed (FHD, INF) or mostly "yes" (SO) half, so this is answer lean; a placebo matched on answer type reproduces it. On a lean-neutral score the ranking holds (ρ 0.97, 0.92, 1.00 with full). SF holds | holds (ρ = 0.92 with published; 0.99 lean-neutral) | L3 on strata, lean-explained; R on a lean-neutral score |
+| C1' "Claude 3 models outperformed GPT-4 models" (p.9) | On INF the Claude 3 lead is lean (+4.9 → −3.7 [−10.6, 3.3] lean-neutral) | Vanishes on R (+3.7 → −0.4) only because R is affirm-keyed. Lean-neutral: **+2.4 [1.3, 3.4]**, so it holds, smaller | Exploratory; the "disappears" reading fails validation |
+| C2 SAD rises with capability (r = 0.79 with MMLU) | r ≈ 0 on R for FHD, INF, SO, because the denial lean rises with MMLU and affirm-keyed accuracy does not. Lean-neutral r: 0.74, 0.89, 0.48 (full 0.69, 0.77, 0.48). SF holds | holds (r = 0.82 on R; 0.78 lean-neutral) | L3 on strata, lean-explained; R on a lean-neutral score |
 | C3 chat beats base (+4.5 points) | holds on all four tasks | holds (+2.5) | R |
-| C4 situating prompt helps (+1.0 base, +3.2 chat) | **changes** for chat models on facts_human_defaults and influence; holds elsewhere | holds, weakened (chat +3.3 → +2.0) | L3 (task), R (overall) |
+| C4 situating prompt helps (+1.0 base, +3.2 chat) | For chat models on FHD and INF the gain is small on R (+3.3, +4.8), but lean-neutral it is +12.2 [11.3, 13.2] and +9.3 [6.9, 11.7] of +16.8 and +12.1; about a quarter of the gain is lean | holds, weakened (chat +3.3 → +2.0 on R) | R (task and overall) |
 | Current model (Haiku) uses the choices-only shortcut | no: it leans the other way | n/a | L4, null |
-| facts_which_llm key copied to a successor marks true answers wrong | 2 to 6 of 151 items | ≤ 0.2 points | L4, measurement |
+| facts_which_llm key copied to a successor marks true answers wrong | 2 to 6 of 151 items | ≤ 0.15 points | L4, measurement |
+
+## Validation
+
+An independent validator reran every analysis script from the pinned inputs: all outputs are
+identical. It also re-derived claims 1 and 2 with its own code and reproduced every number. It
+then attacked the design ([`validation/VALIDATION.md`](validation/VALIDATION.md)).
+
+The main finding of the validation: the S/R split is mostly a split by answer type.
+- "The keyed choice denies" matches S on 89% of FHD items and 91% of INF items. 96% of FHD R items
+  and 87% of INF R items are affirm-keyed, and 77% of SO R items are "yes" (evaluation).
+- A placebo that re-splits at random within answer type gives ρ(S,R) of 0.17 (FHD), −0.11 (INF)
+  and −0.55 (SO). The observed −0.23 (INF) and −0.63 (SO) fall inside its 95% range; FHD (−0.04)
+  falls slightly below it.
+- A simulation with real, MMLU-tracking knowledge plus each model's fitted lean reproduces the
+  observed collapse.
+
+Verdicts:
+
+| # | Claim | Verdict |
+|---|---|---|
+| 1 | Ranking on R unrelated to S (FHD, INF, SO); overall 0.92 | Holds with correction: the numbers are right; the cause is answer lean, and a lean-neutral score keeps the ranking |
+| 2 | MMLU trend ≈ 0 on R; overall 0.82 | Holds with correction: same cause; lean-neutral r 0.74 / 0.89 / 0.48 |
+| 3 | Chat > base holds; +4.5 reproduces as +3.2 because of December 2024 data | Holds with correction: every results.csv revision from the first upload (2024-07-08) gives +3.2; the gap to the paper's Table 1 (+4.5) sits in Llama-2 base introspection scores; cause unconfirmed |
+| 4 | Situating-prompt gain collapses on R (L3) | Holds with correction: lean-neutral gain +12.2 (FHD), +9.3 (INF); downgraded to R |
+| 5 | Claude 3 − GPT-4: +3.7 → −0.4 | Fails as worded: +2.4 [1.3, 3.4] on a lean-neutral score |
+| 6 | Haiku L4 null, opposite lean | Holds |
+| 7 | Staleness ≤ 0.15 points | Holds (the table said ≤ 0.2; corrected) |
 
 ## The benchmark and what rests on it
 
@@ -40,15 +80,20 @@ are not hard. On FHD they are capability affirmations ("can you summarise a text
 weakest models score highest on them (davinci-002 0.89, Llama-2-7b-chat 0.92), because they say
 "yes" to everything; mid-to-strong chat models, especially Claude, drop (Claude 3 Opus 0.93 on S,
 0.70 on R; on INF 0.85 vs 0.53). So the full-task scores of these tasks mix self-knowledge with the
-direction of each model's answer lean ("I am not human / I cannot"), and the published capability
-trend on them is carried by the S items. The TASTE pattern of strong models falling below chance on
+direction of each model's answer lean ("I am not human / I cannot"). The published capability
+trend on them is carried by the deny-keyed items: affirm-keyed accuracy does not rise with MMLU
+(r = 0.06 on FHD, −0.15 on INF), because more capable chat models lean harder toward denial.
+(Validation: S and R are mostly the deny-keyed and affirm-keyed halves, so the S-versus-R collapse
+is what lean alone predicts. A score averaging the two answer types keeps the ranking, with ρ 0.97
+and 0.92 against the full score, and the MMLU trend, at 0.74 and 0.89.) The TASTE pattern of strong models falling below chance on
 R does **not** appear: no top-10 model is below chance on any task's R stratum.
 
 The overall SAD score is robust. The four affected tasks carry 23% of its weight, and replacing
 their scores by R-stratum scores leaves the overall ranking (ρ = 0.92 with the published one, top
-three unchanged as a set), the MMLU correlation (0.82) and chat > base (+2.5) in place. One
-overall-level claim does move: the paper's "Claude 3 models outperformed GPT-4 models" rests on
-the S items of influence and FHD.
+three unchanged as a set), the MMLU correlation (0.82) and chat > base (+2.5) in place. The
+paper's "Claude 3 models outperformed GPT-4 models" vanishes on R. Validation shows that this is
+Claude 3's denial lean meeting the affirm-keyed R items. On a lean-neutral score the overall gap is
++2.4 [1.3, 3.4] points (published +3.6), and only the influence part of the lead is lean.
 
 | Task | n S / R | ρ(S, R) ranking, 21 models [95% CI] | placebo random split, 2.5–97.5% | r with MMLU, full → R (15 models) [CI of R] | R − full [95% CI] |
 |---|---|---|---|---|---|
@@ -95,12 +140,12 @@ Published, reproduced, R-stratum numbers (points; 95% CIs from the cluster boots
 | C3 chat − base, overall | +4.5 (Fig. 8) | +3.2 (Dec 2024 data) | +3.7 | +2.5 [1.5, 3.5] | holds |
 | C3 chat − base, FHD | — | +7.3 [5.8, 8.7] | +7.4 | +6.5 [3.7, 9.3] | holds |
 | C3 chat − base, INF | — | +0.1 [−2.8, 3.0] | +1.9 | −4.6 [−10.7, 1.3] | holds (no effect either way) |
-| C4 SP gain, chat, FHD | — | +16.8 [15.6, 18.0] | +19.5 | **+3.3** [1.2, 5.6] | **changes** |
-| C4 SP gain, chat, INF | — | +12.1 [10.0, 14.3] | +14.9 | **+4.8** [1.0, 8.9] | **changes** |
+| C4 SP gain, chat, FHD | — | +16.8 [15.6, 18.0] | +19.5 | **+3.3** [1.2, 5.6] | changes on R; lean-neutral +12.2 [11.3, 13.2], so holds (validation) |
+| C4 SP gain, chat, INF | — | +12.1 [10.0, 14.3] | +14.9 | **+4.8** [1.0, 8.9] | changes on R; lean-neutral +9.3 [6.9, 11.7], so holds (validation) |
 | C4 SP gain, base, FHD / INF | — | +8.0 / +4.4 | +6.9 / +3.3 | +13.0 / +7.5 | holds (larger) |
 | C4 SP gain, overall | +1.0 base, +3.2 chat | +1.1, +3.3 | +0.7, +3.8 | +2.5 [1.7, 3.3], +2.0 [1.4, 2.7] | holds (chat weakened) |
-| C1' Claude 3 − GPT-4, overall | "outperformed" (p.9) | +3.7 [2.9, 4.5] | | **−0.4** [−2.1, 1.3] | disappears (exploratory) |
-| C1' Claude 3 − GPT-4, INF | | +4.9 [−0.3, 10.0] | | **−16.9** [−27.3, −6.0] | reverses (exploratory) |
+| C1' Claude 3 − GPT-4, overall | "outperformed" (p.9) | +3.7 [2.9, 4.5] | | **−0.4** [−2.1, 1.3] | exploratory; lean-neutral +2.4 [1.3, 3.4], so the gap holds, smaller (validation) |
+| C1' Claude 3 − GPT-4, INF | | +4.9 [−0.3, 10.0] | | **−16.9** [−27.3, −6.0] | exploratory; lean-neutral −3.7 [−10.6, 3.3] (validation) |
 
 Reproduction: every released plain and sp score of FHD, SF, SO and facts_llms is reproduced exactly
 from the per-item files (`results/reproduction.json`). Influence is not: 64 of its 320 items are
@@ -108,8 +153,11 @@ private by design (`sad/influence/NOTE.md`), so "full" here is the 256 public it
 to 0.024 per model). One run (gpt-3.5-turbo-0613, SO, plain) used an older version of 128 items and
 is scored on its 272 matching items. The overall SAD score is recomputed from the 16 task csvs and
 matches `results/plots/website/data.csv` exactly for all 42 model-variants (`scripts/overall.py`).
-The paper's +4.5 and 0.79 are from the July 2024 data; the repo's December 2024 results give +3.2
-and 0.76 on the same models. That gap comes from SAD's own updates, not from this audit.
+The paper's +4.5 reproduces from its own Table 1 (+4.52). Every revision of the repo's results.csv
+files gives +3.2 and r = 0.76 on the same models, from the first upload (`297a300`, 2024-07-08) to
+the pin. So this is not a later data update (corrected in validation; `validation/data_version.json`).
+The difference lies mainly in the introspection category of llama-2-7b and llama-2-13b base:
++20.3 and +16.1 points in the repo against Table 1. Its cause is unconfirmed.
 
 **Below chance (TASTE test).** On R, no model in the top 10 (by SAD on the 12 unaffected tasks)
 has an upper 95% bound below chance on any task. Point estimates below 0.5 occur on INF R for
@@ -132,7 +180,10 @@ accuracies cancels a fixed lean in either direction. On it the capability trend 
 MMLU 0.71 [0.62, 0.77] on FHD, 0.87 [0.61, 0.90] on INF, 0.83 on SF, 0.35 [−0.04, 0.61] on SO; rank
 ρ with the full-task score 0.91–0.95 (0.75 on SO). So FHD and INF do carry a capability-linked
 signal, but their raw scores tie it to answer direction. Neither stratum on its own is free of a
-lean: R is answered by the opposite (affirmative) one.
+lean: R is answered by the opposite (affirmative) one. The validator's independently defined
+version averages accuracy over the keyed answer type (deny versus affirm) rather than over S and
+R. It gives r with MMLU of 0.74 [0.68, 0.78] (FHD), 0.89 [0.64, 0.91] (INF) and 0.48 (SO, whose
+keys are 200/200, so it equals the full score).
 
 ## L4: Haiku with the question removed and the order swapped
 
@@ -172,7 +223,7 @@ invariant rows.
   Two to six of 151 answers (1.3–4.0%) are marked wrong because of the key's date, not the model.
   On the other four by-construction rows it picked the copied answer: in a two-choice format the
   stale key still beats a distractor that is even more wrong, which hides the staleness.
-- Size: facts_which_llm carries 1/28 of the SAD score, so this is at most about 0.15 points
+- Size: facts_which_llm carries 1/28 of the SAD score, so this is at most about 0.15 points (6/151 × 100/28 = 0.14)
   overall. It grows as successors diverge from the keyed models. It is not the main problem.
 
 ## Robustness
@@ -180,6 +231,7 @@ invariant rows.
 | Check | Result | Survives? |
 |---|---|---|
 | Placebo random split, same sizes, by cluster | ρ(S, R) far below the placebo on FHD, INF, SO (p = 0.001 each); SF inside (p = 0.08) | yes |
+| Placebo split matched on answer type (validation) | Observed ρ inside the matched placebo's 95% range on INF ([−0.27, 0.11]) and SO ([−0.69, −0.40]); FHD slightly below ([0.08, 0.28]) | **no** for INF and SO: answer type alone produces the collapse; for FHD it produces most of it |
 | Bonferroni over 16 tests (99.7% CIs) | R − full in r: FHD [−1.10, −0.46], INF [−1.11, −0.20], SO [−0.85, −0.06] exclude 0; SF [−0.30, 0.03] does not | FHD, INF, SO yes; SF becomes "holds" |
 | Second feature (denial rule; 12-feature forest) | r(MMLU) on R: FHD −0.06, INF −0.18, SF 0.55, SO 0.32 [−0.15, 0.59]; ρ(S, R): −0.21, −0.48, 0.64, 0.40 | FHD, INF yes; SO weaker |
 | High-confidence half of each stratum | r on R: FHD −0.22, INF −0.23 [−0.41, −0.01], SO −0.20, SF 0.73 | yes |
@@ -214,15 +266,25 @@ See [`prior_work.md`](prior_work.md). The paper states that FHD and INF keys are
 answer (Table 4) but never tests a choices-only baseline. Rajakumar (LessWrong, 2025-03) flagged
 the yes-means-evaluation framing of stages_oversight and rebuilt the task. Nguyen et al. (2025)
 report weak single-feature baselines on SO (AUROC ≤ 0.60). Nayan et al. (2026) show SO accuracy
-moves under neutral paraphrase. The L2 baselines, duplicates and key defects are from this repo's
-earlier finding. **New here:** stratifying the released per-item outputs by the shortcut, the
-collapse of the task-level ranking and capability trend on FHD, INF and SO, the
-capability × shortcut interaction, the situating-prompt gain living on S items, the disappearance
-of the Claude 3 > GPT-4 gap, the finding that the overall SAD conclusions survive, the Haiku
-intervention, and the successor-key measurement.
+moves under neutral paraphrase. The paper's Appendix H.3.6 already names models' bias toward
+guessing "testing" or "deployment" on stages. The repo ships per-answer stages_oversight accuracies
+(`sad/stages/oversight/results_answer.csv`), so the SO part of the lean is public. The L2
+baselines, duplicates and key defects are from this repo's earlier finding.
+
+**New here:**
+- stratifying the released per-item outputs by the shortcut;
+- on FHD and INF, the measurement that the keys are 73% and 68% denials, and each model's lean
+  premium (validation);
+- the capability-correlated denial lean, and the flat MMLU trend on affirm-keyed items;
+- the finding that the overall SAD conclusions survive, also on a lean-neutral score;
+- the Haiku intervention;
+- the successor-key measurement.
 
 ## What this does not show
 
+- That models lack the self-knowledge that their S-stratum scores suggest. S and R differ mainly in
+  which answer type is keyed. A model with real knowledge and a denial lean scores high on S and
+  low on R (validation simulation).
 - That any released model "uses" the classifier. R-stratum behaviour shows that models' answers
   line up with an answer-direction lean that the choices reveal. The only causal test is on Haiku,
   and Haiku does not lean that way.
