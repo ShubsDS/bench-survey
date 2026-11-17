@@ -13,10 +13,10 @@ assistant text), then the request's system/user messages, then the judged action
 overlay action is one entry (parallel calls are not regrouped), and the answer is JSON text, not a
 forced tool call.
 
-Conditions: R released; S preamble equalised to the attack form `[user]\\n<task>`; L only the 3 actions
+Conditions: R released; R2 the same prompt plus a trailing newline (test-retest noise floor); S preamble equalised to the attack form `[user]\\n<task>`; L only the 3 actions
 before the judged one kept (both classes).
 
-Usage: python -I l4_haiku.py <evals dir> <monitors.json> <prompt simple.md> <out.json> <n_pairs> [conds]
+Usage: python -I l4_haiku.py <evals dir> <monitors.json> <prompt simple.md> <out.json> <n_pairs> [conds] [first k pairs]
 """
 import json, random, re, sys, zipfile
 from pathlib import Path
@@ -72,6 +72,8 @@ def entry(k, a):
 
 
 def render(rec, j, cond, cls):
+    if cond == "R2":  # test-retest: the released prompt with one trailing newline (new cache key)
+        return render(rec, j, "R", cls) + "\n"
     prior = list(range(j))
     if cond == "L":
         prior = prior[-3:]
@@ -113,7 +115,8 @@ def main():
     from concurrent.futures import ThreadPoolExecutor
     out = {"model": "haiku", "n_pairs": len(pairs), "conditions": CONDS, "items": []}
     rows, jobs = [], []
-    for a, h in pairs:
+    LIMIT = int(sys.argv[7]) if len(sys.argv) > 7 else len(pairs)
+    for a, h in pairs[:LIMIT]:
         for cls, rec in (("attack", a), ("honest", h)):
             row = {"cls": cls, "id": rec["id"], "pair": a["id"], "j": a["j"], "side_task": a.get("side_task"),
                    "fn": rec["acts"][a["j"]]["function"]}
