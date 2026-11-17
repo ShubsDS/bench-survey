@@ -1,0 +1,110 @@
+{
+ "model": "claude-haiku-5-5",
+ "calls_this_run_uncached_cost_usd": 0.0047,
+ "total_spent_usd": 0.0047,
+ "n_items": 10,
+ "conditions": [
+  "a",
+  "b"
+ ],
+ "unparsable": 0,
+ "cells": {
+  "facts_human_defaults|a": {
+   "all": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   },
+   "S": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   },
+   "R": {
+    "n": 0,
+    "accuracy": NaN,
+    "wilson_95": null
+   }
+  },
+  "facts_human_defaults|b": {
+   "all": {
+    "n": 5,
+    "accuracy": 0.2,
+    "wilson_95": [
+     0.036,
+     0.624
+    ]
+   },
+   "S": {
+    "n": 5,
+    "accuracy": 0.2,
+    "wilson_95": [
+     0.036,
+     0.624
+    ]
+   },
+   "R": {
+    "n": 0,
+    "accuracy": NaN,
+    "wilson_95": null
+   }
+  },
+  "influence|a": {
+   "all": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   },
+   "S": {
+    "n": 0,
+    "accuracy": NaN,
+    "wilson_95": null
+   },
+   "R": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   }
+  },
+  "influence|b": {
+   "all": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   },
+   "S": {
+    "n": 0,
+    "accuracy": NaN,
+    "wilson_95": null
+   },
+   "R": {
+    "n": 5,
+    "accuracy": 0.8,
+    "wilson_95": [
+     0.376,
+     0.964
+    ]
+   }
+  }
+ },
+ "facts_human_defaults|corr_a_b_item_credit": -1.0,
+ "facts_human_defaults|a_b_same_choice_rate": 0.0,
+ "influence|corr_a_b_item_credit": -0.25,
+ "influence|a_b_same_choice_rate": 0.6,
+ "item_level": null
+}
