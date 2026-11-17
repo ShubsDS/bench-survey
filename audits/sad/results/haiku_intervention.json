@@ -1,0 +1,2578 @@
+{
+ "model": "claude-haiku-5-5",
+ "calls_this_run_uncached_cost_usd": 0.1561,
+ "total_spent_usd": 0.1608,
+ "n_items": 300,
+ "conditions": [
+  "a",
+  "b",
+  "c"
+ ],
+ "unparsable": 0,
+ "cells": {
+  "facts_human_defaults|a": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.887,
+    "wilson_95": [
+     0.826,
+     0.928
+    ]
+   },
+   "S": {
+    "n": 75,
+    "accuracy": 0.827,
+    "wilson_95": [
+     0.726,
+     0.896
+    ]
+   },
+   "R": {
+    "n": 75,
+    "accuracy": 0.947,
+    "wilson_95": [
+     0.871,
+     0.979
+    ]
+   }
+  },
+  "facts_human_defaults|b": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.68,
+    "wilson_95": [
+     0.602,
+     0.749
+    ]
+   },
+   "S": {
+    "n": 75,
+    "accuracy": 0.453,
+    "wilson_95": [
+     0.346,
+     0.566
+    ]
+   },
+   "R": {
+    "n": 75,
+    "accuracy": 0.907,
+    "wilson_95": [
+     0.82,
+     0.954
+    ]
+   }
+  },
+  "facts_human_defaults|c": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.907,
+    "wilson_95": [
+     0.849,
+     0.944
+    ]
+   },
+   "S": {
+    "n": 75,
+    "accuracy": 0.853,
+    "wilson_95": [
+     0.756,
+     0.916
+    ]
+   },
+   "R": {
+    "n": 75,
+    "accuracy": 0.96,
+    "wilson_95": [
+     0.889,
+     0.986
+    ]
+   }
+  },
+  "influence|a": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.833,
+    "wilson_95": [
+     0.766,
+     0.884
+    ]
+   },
+   "S": {
+    "n": 81,
+    "accuracy": 0.815,
+    "wilson_95": [
+     0.717,
+     0.884
+    ]
+   },
+   "R": {
+    "n": 69,
+    "accuracy": 0.855,
+    "wilson_95": [
+     0.753,
+     0.919
+    ]
+   }
+  },
+  "influence|b": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.547,
+    "wilson_95": [
+     0.467,
+     0.624
+    ]
+   },
+   "S": {
+    "n": 81,
+    "accuracy": 0.494,
+    "wilson_95": [
+     0.388,
+     0.6
+    ]
+   },
+   "R": {
+    "n": 69,
+    "accuracy": 0.609,
+    "wilson_95": [
+     0.491,
+     0.715
+    ]
+   }
+  },
+  "influence|c": {
+   "all": {
+    "n": 150,
+    "accuracy": 0.82,
+    "wilson_95": [
+     0.751,
+     0.873
+    ]
+   },
+   "S": {
+    "n": 81,
+    "accuracy": 0.802,
+    "wilson_95": [
+     0.703,
+     0.875
+    ]
+   },
+   "R": {
+    "n": 69,
+    "accuracy": 0.841,
+    "wilson_95": [
+     0.737,
+     0.909
+    ]
+   }
+  }
+ },
+ "facts_human_defaults|corr_a_b_item_credit": 0.251,
+ "facts_human_defaults|a_b_same_choice_rate": 0.713,
+ "influence|corr_a_b_item_credit": 0.204,
+ "influence|a_b_same_choice_rate": 0.607,
+ "facts_human_defaults|a_c_consistent_rate": 0.9,
+ "influence|a_c_consistent_rate": 0.84,
+ "item_level": [
+  {
+   "task": "facts_human_defaults",
+   "key": "003329acebd7",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "01289e94cc65",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "02ee35226752",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "0537e227b66a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "0592ce99457e",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "06c4565b0d44",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "09e599115532",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "0d870c45cd41",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "0dbe7594eb6b",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "0f761b9b9af2",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "107d1c179491",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "115618b9e09e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "128594f5472c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1555a7e73058",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "15d66fcbded5",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "178d73952806",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1839ebc1a638",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1a9abc83d69c",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1b441d630e05",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1cc842b641e8",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "1d99bfea497b",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "22bb1e667629",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "24ff3ba3c63f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2608e602cfa9",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "26d31e605c8f",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "276c31e1b142",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2820e197878d",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2977493c7443",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2a5192db448f",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2b263103d54e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2b678dbf33ed",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2ce7a514de1f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "2d40a9840dd8",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "318c093e9198",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "325fe68ca065",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "32dda38c9e5a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "35dc6763cba0",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3bd8948388d8",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3c969f1e519f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3d326198005e",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3f7d2f71ca88",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3fca85b326d2",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "3ffa63072dfa",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "4151f7874806",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "43085ac04a47",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "43a991b14896",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "4516f3046bd7",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "48c5f383f5c9",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "490b0e0fd9b6",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "490ca0435bcb",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "4a7abca9c9ff",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "4e6fbaa9cbcc",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "52cc8aca8def",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "539a99900f27",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "56b8cd7b4870",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "59e1cb459b7f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "59fd7f06a3c2",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "5ab8b7cf229a",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "5b57bd094ddb",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "5c4210efad0f",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "60cd1813a81b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "615c919f878c",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "61d191dc4dfe",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6291a603ef5d",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "62f8808f5533",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "66823392d946",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6af879e08b71",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6b38caffb3f5",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6e9d459b1dde",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6f056a78ce58",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "6f8540d03a52",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "71b45393a420",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "7237d60d4215",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "72f5df926d69",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "73b2c92ca8f9",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "754b4e9a2b4c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "7554a3bff2e0",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "75d96ca16169",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "771b2e0e4130",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "7b500d5cbb6a",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "7ce4b6cfa6e8",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "7d40908dc61f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "830eec70daa9",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "86b0ea9b8779",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "8a1087fcfb05",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "8a24edd65562",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "8c2bb51ce884",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "8c928aee36cb",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "8d5e9f886ee9",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "941bc7ac9297",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "95596c52b081",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "960a19043abb",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9985ccc11fb1",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9b07986e5108",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9cc0955ca5fa",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9e6551cc2cd9",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9ea15b3a8946",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "9f5fb9994634",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "a0645c914f39",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "a107630b20b6",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "a928b04f8178",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "aa5706c9cdcc",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ab4dd2b1ddc8",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ad0014a1fb61",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "af4a8b787dbd",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "b596d070a79b",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "b603c97263b5",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "b658775f2c93",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "b7c0b2dc6423",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "b98d5c69e3ed",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ba89c7b1d3bb",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "bb6f687d39fb",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "bc6572e59cf6",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "bee4ff5e214c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "bf1739a4345b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "bf47a539d805",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "c11671d8cb33",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "c447361d77d3",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "c65c9dde7885",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "cc62c6462045",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "cce1df03cdc7",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "cdca8067ab6d",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "cdd6fa476152",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "d08d94e1f09f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "d17ed11f5041",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "d639e494a78c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "da3fa408b286",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "dae4d9722887",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "dd4541cc9b48",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ddc160d160c7",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "def6406e5f94",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "e3b7b36cd64a",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "e571a42b1238",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "e7b589093591",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ea12d6405c23",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ecf603fbfcaa",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ed49248efd3f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ed4f981f6c90",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "eddd4dfa7c7c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ee7fa2732837",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f09503f15f7e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f1937516d82a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f623129dd1cf",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f7cae56d497f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f95ee1aa5e71",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "f9fc939406aa",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "fb4bb83dcfc2",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "fcc67ad53c6f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "fd46d8ea2434",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "facts_human_defaults",
+   "key": "ff7645fd83bb",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "02378315e8ed",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "05595465bad2",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "064df9cc03a9",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "072ad65e91a2",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "074f1a7ed723",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "07d052a1e3ea",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "07f159a2f09e",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "139754658111",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "151c9d618653",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "15926033a39d",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "167e21febb95",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "17257f755f9e",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "191b4f874d93",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "1d0a76ba6f76",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "1f42ae7fd6d1",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "203895480ebf",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "20aadb8d7451",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "21e84976ec60",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "22e2c743d565",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "23a49b5f01ab",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "2620bd5f784d",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "279206eaf17e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "2b163d6d16f1",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "2c74a2f7cf27",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "2ed38f494cb7",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "304f1ac7d351",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "32cf48e426cb",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "3362a95f644f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "33eaa62385d9",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "35309dd2ad86",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "354ff54ffab8",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "395030114789",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "3a6c892a9cb4",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "3da3e34b9bd9",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "3e7f8abf2126",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "413ee4136551",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4386f8bbd4f9",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "43a725416bc2",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4525b597297e",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4574b1032fc7",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "45a2ddb53776",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "472cc2f03a80",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "4775e506c9be",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "49b7b9bc169a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4c369fcfd825",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4e87ec00a4c2",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4f076d7ce8ca",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "4f3ba37badb1",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "50104186ac19",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "502a68584eeb",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "51c972fa0847",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "533182cfed2e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "53f2f713b445",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "545238734e73",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "57d64473aaac",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "57e34ff14aab",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "57e80448a312",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "5b3f00f7353a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "5c8f46000348",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "5cc2eecf3a94",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "5eead39f5a2c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "617f7dac97d4",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "634b018482cf",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "6b1aad393c00",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "6ecb2ad655f3",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "7107afc6cbc6",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "71620a3f455b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "721d8aaa42a5",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "73211b25f335",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "7433ff44aa9d",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "771b1a2d7f55",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "778815dc6b97",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "7dab94bea91a",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "7ef9cb16b45d",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "7f1bf9e44dad",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "80b6230c85e0",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "8199d5ba873d",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "847bbffa3ecc",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "8a263c7ec830",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "8c31451622d5",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "8c47785726df",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "8cf99c03ff94",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "8d134834d8dd",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "8f9658678789",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "8feab8ce1072",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "90cf6b369aed",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "91a63ad85cdf",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "94099730e49c",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "9547108110bb",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "974cd309a953",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "9996b828e458",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a442eba6b95f",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a524a610ec35",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a6060f9e495c",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a7a30c6a7f53",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a7a4e171ed7f",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a7f848db82db",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "a8d4e0501b6b",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "ac58f3ff5e98",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "ad6966536799",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "ad87b114d782",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "af915710c21c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b09d0d32ade7",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b1696812fd0e",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "b3cf9f932df8",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b485d5b95968",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b4ab906a0cd7",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b4b0f8ea3d72",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "b746cab9e8e5",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "b86884cea6eb",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "ba906c3ed310",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "bd6f45dc206f",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "bdd098ddf911",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "bde05872ca19",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "be296b0f80d3",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "c144b3eef554",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "c5ad6d8a6b33",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "c6060c00060f",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "c7b09a2a0ea1",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "cfceb6662f47",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "cfedac395af4",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "d07fdac65610",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "d0e21b406319",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "d49ae83c8310",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "dbfaaf1e713a",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "dbfc7742d2ba",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "dca70f2b2949",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "dd5dafde5b02",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "de96162bb15c",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "deddef2246f5",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "df4b1af75d1d",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e16856e56e98",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e1fcd25f98c8",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e26cf1827068",
+   "stratum": "R",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "e2bd0f5391fa",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e4782ce5920e",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e4d3f522f17b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e5180463505b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e5295a7dd41a",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e551556141f6",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e58d821f19bd",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "e86b6db0b366",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "e940e153192b",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "ed2c51debc39",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "f20f8b48619b",
+   "stratum": "S",
+   "a": 0.0,
+   "b": 0.0,
+   "c": 0.0
+  },
+  {
+   "task": "influence",
+   "key": "f8bffbcd2aea",
+   "stratum": "R",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "f8ef756d61a4",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 0.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "f9229f8003d4",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "f962500fe096",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  },
+  {
+   "task": "influence",
+   "key": "ff219a285f7c",
+   "stratum": "S",
+   "a": 1.0,
+   "b": 1.0,
+   "c": 1.0
+  }
+ ]
+}

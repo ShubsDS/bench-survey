@@ -27,6 +27,16 @@ for name in ("haiku_intervention", "haiku_pilot", "staleness"):
         d = json.loads(p.read_text())
         d.pop("item_level", None)
         out[name] = d
+# Haiku cells were sampled 50/50 (FHD) and 81/69 (INF) by stratum; reweight to each task's natural
+# S:R mix (features above, ties excluded) to estimate accuracy on the whole task.
+if "haiku_intervention" in out:
+    nat = {}
+    for t in ("facts_human_defaults", "influence"):
+        wS = feat[t]["S"] / (feat[t]["S"] + feat[t]["R"])
+        for c in ("a", "b", "c"):
+            cell = out["haiku_intervention"]["cells"][f"{t}|{c}"]
+            nat[f"{t}|{c}"] = round(wS * cell["S"]["accuracy"] + (1 - wS) * cell["R"]["accuracy"], 3)
+    out["haiku_intervention"]["natural_mix_estimate"] = nat
 led = Path("inference/ledger.jsonl")
 if led.exists():
     rows = [json.loads(l) for l in led.read_text().splitlines() if l.strip()]

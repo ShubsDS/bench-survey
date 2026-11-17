@@ -1,0 +1,600 @@
+{
+ "classes": {
+  "by_construction": [
+   21,
+   35,
+   36,
+   37,
+   38,
+   127
+  ],
+  "likely_dated": [
+   34,
+   50,
+   54,
+   60,
+   61,
+   93
+  ],
+  "memory": [
+   80,
+   82,
+   126,
+   134
+  ]
+ },
+ "rows_per_class": {
+  "by_construction": 6,
+  "likely_dated": 6,
+  "memory": 4,
+  "invariant": 137
+ },
+ "released": {
+  "per_model": {
+   "llama-2-7b": {
+    "defect": {
+     "errors": 0,
+     "n": 3,
+     "error_rate": 0.0
+    },
+    "dated_same_key": {
+     "errors": 7,
+     "n": 8,
+     "error_rate": 0.875
+    },
+    "by_construction": {
+     "errors": 2,
+     "n": 6,
+     "error_rate": 0.333
+    },
+    "rest": {
+     "errors": 76,
+     "n": 136,
+     "error_rate": 0.559
+    }
+   },
+   "llama-2-7b-chat": {
+    "defect": {
+     "errors": 0,
+     "n": 1,
+     "error_rate": 0.0
+    },
+    "dated_same_key": {
+     "errors": 7,
+     "n": 8,
+     "error_rate": 0.875
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 58,
+     "n": 138,
+     "error_rate": 0.42
+    }
+   },
+   "llama-2-13b": {
+    "defect": {
+     "errors": 1,
+     "n": 2,
+     "error_rate": 0.5
+    },
+    "dated_same_key": {
+     "errors": 5,
+     "n": 8,
+     "error_rate": 0.625
+    },
+    "by_construction": {
+     "errors": 5,
+     "n": 6,
+     "error_rate": 0.833
+    },
+    "rest": {
+     "errors": 64,
+     "n": 137,
+     "error_rate": 0.467
+    }
+   },
+   "llama-2-13b-chat": {
+    "defect": {
+     "errors": 0,
+     "n": 1,
+     "error_rate": 0.0
+    },
+    "dated_same_key": {
+     "errors": 2,
+     "n": 8,
+     "error_rate": 0.25
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 55,
+     "n": 138,
+     "error_rate": 0.399
+    }
+   },
+   "llama-2-70b": {
+    "defect": {
+     "errors": 1,
+     "n": 2,
+     "error_rate": 0.5
+    },
+    "dated_same_key": {
+     "errors": 3,
+     "n": 8,
+     "error_rate": 0.375
+    },
+    "by_construction": {
+     "errors": 5,
+     "n": 6,
+     "error_rate": 0.833
+    },
+    "rest": {
+     "errors": 63,
+     "n": 137,
+     "error_rate": 0.46
+    }
+   },
+   "llama-2-70b-chat": {
+    "defect": {
+     "errors": 0,
+     "n": 1,
+     "error_rate": 0.0
+    },
+    "dated_same_key": {
+     "errors": 2,
+     "n": 8,
+     "error_rate": 0.25
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 59,
+     "n": 138,
+     "error_rate": 0.428
+    }
+   },
+   "llama-3-70b-chat": {
+    "defect": {
+     "errors": 1,
+     "n": 1,
+     "error_rate": 1.0
+    },
+    "dated_same_key": {
+     "errors": 3,
+     "n": 8,
+     "error_rate": 0.375
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 60,
+     "n": 138,
+     "error_rate": 0.435
+    }
+   },
+   "davinci-002": {
+    "defect": {
+     "errors": 2,
+     "n": 3,
+     "error_rate": 0.667
+    },
+    "dated_same_key": {
+     "errors": 6,
+     "n": 8,
+     "error_rate": 0.75
+    },
+    "by_construction": {
+     "errors": 0,
+     "n": 6,
+     "error_rate": 0.0
+    },
+    "rest": {
+     "errors": 74,
+     "n": 136,
+     "error_rate": 0.544
+    }
+   },
+   "gpt-3.5-turbo-0613": {
+    "defect": {
+     "errors": 0,
+     "n": 1,
+     "error_rate": 0.0
+    },
+    "dated_same_key": {
+     "errors": 5,
+     "n": 8,
+     "error_rate": 0.625
+    },
+    "by_construction": {
+     "errors": 0,
+     "n": 6,
+     "error_rate": 0.0
+    },
+    "rest": {
+     "errors": 44,
+     "n": 138,
+     "error_rate": 0.319
+    }
+   },
+   "gpt-4-base": {
+    "defect": {
+     "errors": 1,
+     "n": 2,
+     "error_rate": 0.5
+    },
+    "dated_same_key": {
+     "errors": 1,
+     "n": 8,
+     "error_rate": 0.125
+    },
+    "by_construction": {
+     "errors": 2,
+     "n": 6,
+     "error_rate": 0.333
+    },
+    "rest": {
+     "errors": 59,
+     "n": 137,
+     "error_rate": 0.431
+    }
+   },
+   "gpt-4-0613": {
+    "defect": {
+     "errors": 1,
+     "n": 1,
+     "error_rate": 1.0
+    },
+    "dated_same_key": {
+     "errors": 1,
+     "n": 8,
+     "error_rate": 0.125
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 51,
+     "n": 138,
+     "error_rate": 0.37
+    }
+   },
+   "gpt-4-0125-preview": {
+    "defect": {
+     "errors": 1,
+     "n": 2,
+     "error_rate": 0.5
+    },
+    "dated_same_key": {
+     "errors": 1,
+     "n": 8,
+     "error_rate": 0.125
+    },
+    "by_construction": {
+     "errors": 0,
+     "n": 6,
+     "error_rate": 0.0
+    },
+    "rest": {
+     "errors": 49,
+     "n": 137,
+     "error_rate": 0.358
+    }
+   },
+   "gpt-4o": {
+    "defect": {
+     "errors": 1,
+     "n": 1,
+     "error_rate": 1.0
+    },
+    "dated_same_key": {
+     "errors": 0,
+     "n": 8,
+     "error_rate": 0.0
+    },
+    "by_construction": {
+     "errors": 1,
+     "n": 6,
+     "error_rate": 0.167
+    },
+    "rest": {
+     "errors": 35,
+     "n": 138,
+     "error_rate": 0.254
+    }
+   },
+   "claude-instant-1.2": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 3,
+     "n": 8,
+     "error_rate": 0.375
+    },
+    "by_construction": {
+     "errors": 2,
+     "n": 6,
+     "error_rate": 0.333
+    },
+    "rest": {
+     "errors": 53,
+     "n": 136,
+     "error_rate": 0.39
+    }
+   },
+   "claude-2.1": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 0,
+     "n": 8,
+     "error_rate": 0.0
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 66,
+     "n": 136,
+     "error_rate": 0.485
+    }
+   },
+   "claude-3-haiku-20240307": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 3,
+     "n": 8,
+     "error_rate": 0.375
+    },
+    "by_construction": {
+     "errors": 4,
+     "n": 6,
+     "error_rate": 0.667
+    },
+    "rest": {
+     "errors": 49,
+     "n": 136,
+     "error_rate": 0.36
+    }
+   },
+   "claude-3-sonnet-20240229": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 4,
+     "n": 8,
+     "error_rate": 0.5
+    },
+    "by_construction": {
+     "errors": 3,
+     "n": 6,
+     "error_rate": 0.5
+    },
+    "rest": {
+     "errors": 41,
+     "n": 136,
+     "error_rate": 0.301
+    }
+   },
+   "claude-3-5-sonnet-20240620": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 0,
+     "n": 8,
+     "error_rate": 0.0
+    },
+    "by_construction": {
+     "errors": 3,
+     "n": 6,
+     "error_rate": 0.5
+    },
+    "rest": {
+     "errors": 47,
+     "n": 136,
+     "error_rate": 0.346
+    }
+   },
+   "claude-3-opus-20240229": {
+    "defect": {
+     "errors": 1,
+     "n": 3,
+     "error_rate": 0.333
+    },
+    "dated_same_key": {
+     "errors": 0,
+     "n": 8,
+     "error_rate": 0.0
+    },
+    "by_construction": {
+     "errors": 5,
+     "n": 6,
+     "error_rate": 0.833
+    },
+    "rest": {
+     "errors": 62,
+     "n": 136,
+     "error_rate": 0.456
+    }
+   },
+   "o1-preview-2024-09-12": {
+    "defect": {
+     "errors": 1,
+     "n": 1,
+     "error_rate": 1.0
+    },
+    "dated_same_key": {
+     "errors": 1,
+     "n": 8,
+     "error_rate": 0.125
+    },
+    "by_construction": {
+     "errors": 3,
+     "n": 6,
+     "error_rate": 0.5
+    },
+    "rest": {
+     "errors": 16,
+     "n": 138,
+     "error_rate": 0.116
+    }
+   },
+   "o1-mini-2024-09-12": {
+    "defect": {
+     "errors": 1,
+     "n": 1,
+     "error_rate": 1.0
+    },
+    "dated_same_key": {
+     "errors": 2,
+     "n": 8,
+     "error_rate": 0.25
+    },
+    "by_construction": {
+     "errors": 3,
+     "n": 6,
+     "error_rate": 0.5
+    },
+    "rest": {
+     "errors": 10,
+     "n": 138,
+     "error_rate": 0.072
+    }
+   }
+  },
+  "pooled": {
+   "defect": {
+    "errors": 17,
+    "n": 41,
+    "error_rate": 0.415,
+    "wilson_95": [
+     0.278,
+     0.566
+    ]
+   },
+   "dated_same_key": {
+    "errors": 56,
+    "n": 168,
+    "error_rate": 0.333,
+    "wilson_95": [
+     0.266,
+     0.408
+    ]
+   },
+   "by_construction": {
+    "errors": 62,
+    "n": 126,
+    "error_rate": 0.492,
+    "wilson_95": [
+     0.406,
+     0.578
+    ]
+   },
+   "rest": {
+    "errors": 1091,
+    "n": 2878,
+    "error_rate": 0.379,
+    "wilson_95": [
+     0.362,
+     0.397
+    ]
+   }
+  }
+ },
+ "haiku_with_claude35sonnet_key": {
+  "model": "claude-haiku-5-5",
+  "calls": 151,
+  "uncached_cost_usd": 0.0341,
+  "by_class": {
+   "invariant": {
+    "n": 135,
+    "agrees_with_copied_key": 128,
+    "rate": 0.948,
+    "wilson_95": [
+     0.897,
+     0.975
+    ],
+    "rows_disagreeing": [
+     18,
+     48,
+     74,
+     84,
+     119,
+     136,
+     142
+    ]
+   },
+   "by_construction": {
+    "n": 6,
+    "agrees_with_copied_key": 4,
+    "rate": 0.667,
+    "wilson_95": [
+     0.3,
+     0.903
+    ],
+    "rows_disagreeing": [
+     37,
+     38
+    ]
+   },
+   "likely_dated": {
+    "n": 6,
+    "agrees_with_copied_key": 3,
+    "rate": 0.5,
+    "wilson_95": [
+     0.188,
+     0.812
+    ],
+    "rows_disagreeing": [
+     34,
+     61,
+     93
+    ]
+   },
+   "memory": {
+    "n": 4,
+    "agrees_with_copied_key": 3,
+    "rate": 0.75,
+    "wilson_95": [
+     0.301,
+     0.954
+    ],
+    "rows_disagreeing": [
+     134
+    ]
+   }
+  }
+ }
+}
