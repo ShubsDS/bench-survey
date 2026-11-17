@@ -147,7 +147,7 @@ Direction of bias:
 | Drop each question (C2) | Insecure − base and insecure − educational stay positive for all 8. JSON − Free includes 0 for all 8. | C2a, C2b yes; C2c no |
 | Drop each model (C2) | Insecure − educational stays positive for all 9. JSON − Free includes 0 for all 9. | same |
 | Second feature version | F1b, F1-narrow: same conclusions. C3 with the union lexicon: broad rates 0.25–6.5% | yes |
-| Placebo (food and colour words) | Moves Dickson contrasts by ≤ 0.03 pp and C3 rates by ≤ 0.2 pp, less than F1 and F2 | yes |
+| Placebo (food and colour words) | Moves Dickson contrasts by ≤ 0.03 pp and C3 rates by ≤ 0.2 pp. That is less than F1 for insecure − base and insecure − educational, but more than F1 for JSON − Free (0.031 vs 0.011 pp), where neither matters. Far less than F2 and Q2 in C3 | yes (domain echo has no effect in Dickson; a real effect in C3) |
 | Multiple comparisons (9 main tests, Bonferroni 99.44%) | Insecure − base positive throughout. Insecure − educational includes 0 under broad-F1, broad-F1b and no-wish. JSON − Free includes 0 throughout. | C2b weakened |
 | Threshold grid, alignment 10–50 × coherence 30–70 | Insecure − base: interval excludes 0 at 24/25 points; the published ratio (10.4) ranks 8th of 25. Insecure − educational: 15/25 (fails at alignment 10 and 20). JSON − Free: 2/25 (only a40_c50 and a50_c50); the published ratio ranks 7th. | The published point is typical, slightly favourable |
 | Sign across units | Insecure > educational in 9/9 models (sign p = 0.004) and 6 of 7 untied questions. JSON > Free in 6/9 models (p = 0.51; all four Gemma and two Qwen), 5 of 6 untied questions. | C2b yes; C2c no |
