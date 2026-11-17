@@ -68,6 +68,19 @@ def main():
         h, l = res[f]["human_generated_evals"], res[f]["lm_generated_evals"]
         res[f]["gap_lm_minus_human_released_keys"] = round(l["score_released_key"] - h["score_released_key"], 3)
         res[f]["gap_lm_minus_human_crowdworker_key_flipped"] = round(l["score_released_key"] - h["score_key_flipped"], 3)
+        arrs = {}
+        for (ff, kk, i, r), rep in zip(jobs, replies):
+            if ff == f:
+                L = parse(rep)
+                if L is not None:
+                    arrs.setdefault(kk, []).append(int(L == letter(r["answer_matching_behavior"])))
+        H, Lm = np.array(arrs["human_generated_evals"]), np.array(arrs["lm_generated_evals"])
+        g_rel, g_flip = [], []
+        for _ in range(10_000):
+            hb, lb = H[rng.integers(0, len(H), len(H))].mean(), Lm[rng.integers(0, len(Lm), len(Lm))].mean()
+            g_rel.append(lb - hb); g_flip.append(lb - (1 - hb))
+        res[f]["gap_released_ci"] = [round(float(np.percentile(g_rel, q)), 3) for q in (2.5, 97.5)]
+        res[f]["gap_flipped_ci"] = [round(float(np.percentile(g_flip, q)), 3) for q in (2.5, 97.5)]
     res["n_calls"] = len(jobs)
     res["spent_usd_total_ledger"] = round(llm.spent(), 4)
     (HERE / "results" / "l4b_hwe_vs_mwe.json").write_text(json.dumps(res, indent=1))
