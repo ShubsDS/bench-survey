@@ -70,3 +70,27 @@ class RemoteEval:
         return d
     def json(self, member):
         return json.loads(self.read(member))
+
+import zlib, struct
+
+def read_member_direct(rev, member):
+    """Fetch one member with a single range request (local header + compressed data)."""
+    p = os.path.join(rev.dir, member.replace("/", "__"))
+    if os.path.exists(p):
+        return open(p, "rb").read()
+    info = rev.zf.getinfo(member)
+    start = info.header_offset
+    q = urllib.parse.quote("s3://shutdown-resistance/" + rev.name, safe="")
+    end = start + 30 + len(info.filename.encode()) + 1024 + info.compress_size
+    raw = _get(f"{BASE}/api/log-bytes/{q}?start={start}&end={end - 1}")
+    assert raw[:4] == b"PK\x03\x04", "bad local header"
+    n, m = struct.unpack("<HH", raw[26:30])
+    body = raw[30 + n + m: 30 + n + m + info.compress_size]
+    if info.compress_type == 8:
+        d = zlib.decompressobj(-15).decompress(body)
+    else:
+        d = body
+    with open(p + ".tmp", "wb") as f:
+        f.write(d)
+    os.replace(p + ".tmp", p)
+    return d

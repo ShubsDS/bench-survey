@@ -18,7 +18,7 @@ for row in ws.iter_rows(min_row=2):
         col = hdr[i]
         prompt = "E_high" if col.startswith("Prompt E, but") else col[0]
         val = c.value
-        log = urllib.parse.unquote(c.hyperlink.location.split("/logs/")[-1]) if c.hyperlink and c.hyperlink.location else ""
+        log = urllib.parse.unquote(c.hyperlink.location.split("/logs/")[-1]).split(".eval")[0] + ".eval" if c.hyperlink and c.hyperlink.location else ""
         m = re.match(r"\s*(\d+)\s*/\s*(\d+)", str(val))
         rows.append(dict(model=model, notes=notes or "", prompt=prompt, published=str(val),
                          k=m.group(1) if m else "", n=m.group(2) if m else "", log=log))
