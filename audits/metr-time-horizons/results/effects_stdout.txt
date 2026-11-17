@@ -5,3 +5,8 @@ draw 300
 draw 400
 draw 500
 draw 600
+draw 700
+/Users/shubs/1cs/research/benchmark-audits/audits/metr-time-horizons/scripts/common.py:110: RuntimeWarning: overflow encountered in exp2
+  return float(np.exp2((np.log(q / (1 - q)) - a) / b))
+draw 800
+draw 900
