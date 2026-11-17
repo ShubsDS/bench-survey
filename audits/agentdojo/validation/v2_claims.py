@@ -121,7 +121,7 @@ for j, p in enumerate(MODELS20):
     row = dict(model=p, U=round(float(pt["U"][j]), 4), S0=round(float(pt["S0"][j]), 4), S0_ci=q(draws["S0"][:, j]),
                E=round(float(pt["E"][j]), 4), E_ci=q(draws["E"][:, j]), A_share_able=round(float(pt["A"][j]), 4),
                n_traced=int(TRACED[j].sum()), n_errors=int(ERR[j].sum()), rank_S0=float(r0[j]))
-    for s in ("S1", "S2", "S3"):
+    for s in ("S1", "S2", "S3", "S1e"):
         row[s] = round(float(pt[s][j]), 4)
         row[s + "_ci"] = q(draws[s][:, j])
         row[s + "_minus_S0_pp"] = round(100 * float(pt[s][j] - pt["S0"][j]), 2)
