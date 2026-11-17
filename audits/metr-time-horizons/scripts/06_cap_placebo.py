@@ -42,5 +42,13 @@ for i in range(200):
 r = pd.DataFrame(res)
 out = {"n": len(r), "removed_per_agent": n_remove.to_dict(),
        "quantiles": {c: [float(r[c].quantile(q)) for q in (0.025, 0.5, 0.975)] for c in r.columns}}
+# Where the over-cap successes sit: share of each agent's successes on tasks >= 240 human minutes
+# that used more than 8M tokens.
+long_s = succ[succ.human_minutes >= 240]
+out["share_long_task_successes_over_8M"] = {
+    a: dict(n_success_ge240=int((long_s.alias == a).sum()),
+            share_over_8M=float((long_s[long_s.alias == a].tokens_count > 8e6).mean()))
+    for a in ["Claude Opus 4.6 (Inspect)", "GPT-5.2", "GPT-5.3-Codex", "GPT-5.1-Codex-Max (Inspect)", "o3 (Inspect)",
+              "Claude Opus 4.5 (Inspect)", "Gemini 3 Pro"]}
 save("cap_placebo.json", out)
 print(out)

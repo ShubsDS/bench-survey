@@ -84,6 +84,11 @@ print(inv_src["tasks_ge_480min"], inv_src["median_minutes_hcast"], inv_src["esti
 print(el.drop(columns="date_num").round(3).to_string())
 print("spearman with release date:", rho)
 
+# Step 4 hand-read sample: 60 tasks (seed 0), metadata only (task text is not public).
+hand = tasks.sample(60, random_state=0).sort_values("human_minutes")[
+    ["task_id", "family", "source", "human_source", "human_minutes"]]
+save("hand_read_sample.json", hand.to_dict(orient="records"))
+
 save("inventory.json", dict(consistency=consistency, tasks=inv_src,
                             elicitation=el.drop(columns="date_num").to_dict(orient="records"),
                             spearman_with_date=rho))

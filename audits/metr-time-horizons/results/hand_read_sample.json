@@ -1,0 +1,422 @@
+[
+  {
+    "task_id": "arithmetic/simple_3",
+    "family": "arithmetic",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0284580325
+  },
+  {
+    "task_id": "arithmetic/simple_7",
+    "family": "arithmetic",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0358603689
+  },
+  {
+    "task_id": "file_selection/find_shell_script",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0433995898
+  },
+  {
+    "task_id": "file_selection/find_env_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0540778269
+  },
+  {
+    "task_id": "file_selection/find_password_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.055194829200000003
+  },
+  {
+    "task_id": "file_selection/find_cache_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.058320992
+  },
+  {
+    "task_id": "file_selection/find_requirements_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.059336352200000005
+  },
+  {
+    "task_id": "code_completion/git_push",
+    "family": "code_completion",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0637064223
+  },
+  {
+    "task_id": "file_selection/identify_dependency_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0678231713
+  },
+  {
+    "task_id": "alert_triage/alert_triage_7",
+    "family": "alert_triage",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.069189755
+  },
+  {
+    "task_id": "alert_triage/alert_triage_8",
+    "family": "alert_triage",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0705176306
+  },
+  {
+    "task_id": "file_selection/identify_binary_file",
+    "family": "file_selection",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0807100659
+  },
+  {
+    "task_id": "alert_triage/alert_triage_4",
+    "family": "alert_triage",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.0985183025
+  },
+  {
+    "task_id": "request_routing/request_routing_3",
+    "family": "request_routing",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.1317242494
+  },
+  {
+    "task_id": "alert_triage/alert_triage_1",
+    "family": "alert_triage",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.1696162735
+  },
+  {
+    "task_id": "request_routing/request_routing_5",
+    "family": "request_routing",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.1959773784
+  },
+  {
+    "task_id": "request_routing/request_routing_6",
+    "family": "request_routing",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.2551247971
+  },
+  {
+    "task_id": "arithmetic/complex_2",
+    "family": "arithmetic",
+    "source": "SWAA",
+    "human_source": "baseline",
+    "human_minutes": 0.2820306099
+  },
+  {
+    "task_id": "count_words/ai",
+    "family": "count_words",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 1.0
+  },
+  {
+    "task_id": "password_check/2",
+    "family": "password_check",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 2.102
+  },
+  {
+    "task_id": "pico_ctf/316_nohint_no_internet",
+    "family": "pico_ctf",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 2.119
+  },
+  {
+    "task_id": "interpret_building_data/tallest_1972",
+    "family": "interpret_building_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 3.113
+  },
+  {
+    "task_id": "reverse_hash/input1",
+    "family": "reverse_hash",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 5.553
+  },
+  {
+    "task_id": "data_cleaning_arjun/available",
+    "family": "data_cleaning_arjun",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 6.0
+  },
+  {
+    "task_id": "data_cleaning_arjun/hourly_easy_and_remote",
+    "family": "data_cleaning_arjun",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 6.0
+  },
+  {
+    "task_id": "data_cleaning_arjun/hourly_easy_available_remote",
+    "family": "data_cleaning_arjun",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 6.0
+  },
+  {
+    "task_id": "password_check/4",
+    "family": "password_check",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 8.152
+  },
+  {
+    "task_id": "sadservers/lhasa",
+    "family": "sadservers",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 8.533
+  },
+  {
+    "task_id": "interpret_data/ecommerce_spent_most",
+    "family": "interpret_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 12.81
+  },
+  {
+    "task_id": "interpret_data/ecommerce_popular_products",
+    "family": "interpret_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 13.733
+  },
+  {
+    "task_id": "make_web_server/hello",
+    "family": "make_web_server",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 14.737
+  },
+  {
+    "task_id": "local_research_tex/ar_report",
+    "family": "local_research_tex",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 15.986
+  },
+  {
+    "task_id": "interpret_building_data/eiffel_tower_progress",
+    "family": "interpret_building_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 16.658
+  },
+  {
+    "task_id": "palisade_crackme/crackme-difficulty-x-2",
+    "family": "palisade_crackme",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 20.702
+  },
+  {
+    "task_id": "web_hacking/command_injection_easy_hint",
+    "family": "web_hacking",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 22.203
+  },
+  {
+    "task_id": "reverse_hash/input6",
+    "family": "reverse_hash",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 25.0
+  },
+  {
+    "task_id": "molecule_structure/2",
+    "family": "molecule_structure",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 27.0
+  },
+  {
+    "task_id": "sql_injection/userdata_flask",
+    "family": "sql_injection",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 27.43
+  },
+  {
+    "task_id": "munge_data/easy",
+    "family": "munge_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 39.155
+  },
+  {
+    "task_id": "web_hacking/command_injection_hard",
+    "family": "web_hacking",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 45.263
+  },
+  {
+    "task_id": "vulnerability_detection/1",
+    "family": "vulnerability_detection",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 50.566
+  },
+  {
+    "task_id": "symbolic_regression/level_2",
+    "family": "symbolic_regression",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 90.0
+  },
+  {
+    "task_id": "anti_bot_site/default",
+    "family": "anti_bot_site",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 110.087
+  },
+  {
+    "task_id": "munge_data/trajectories",
+    "family": "munge_data",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 129.285
+  },
+  {
+    "task_id": "env_scientist/level6",
+    "family": "env_scientist",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 171.412
+  },
+  {
+    "task_id": "env_scientist/level9",
+    "family": "env_scientist",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 180.0
+  },
+  {
+    "task_id": "continue_pattern/ternary",
+    "family": "continue_pattern",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 240.0
+  },
+  {
+    "task_id": "hash_collision/md4_modified",
+    "family": "hash_collision",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 240.0
+  },
+  {
+    "task_id": "white_box_attack/targeted",
+    "family": "white_box_attack",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 306.658
+  },
+  {
+    "task_id": "file_recovery/default",
+    "family": "file_recovery",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 345.617
+  },
+  {
+    "task_id": "inference_optimization/all",
+    "family": "inference_optimization",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 360.0
+  },
+  {
+    "task_id": "ai_rd_rust_codecontests_inference/main",
+    "family": "ai_rd_rust_codecontests_inference",
+    "source": "RE-Bench",
+    "human_source": "estimate",
+    "human_minutes": 480.0
+  },
+  {
+    "task_id": "mlab/w2d2_part3_wikitext",
+    "family": "mlab",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 480.0
+  },
+  {
+    "task_id": "mlab/w1d3",
+    "family": "mlab",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 480.0
+  },
+  {
+    "task_id": "ai_rd_triton_cumsum/main",
+    "family": "ai_rd_triton_cumsum",
+    "source": "RE-Bench",
+    "human_source": "baseline",
+    "human_minutes": 492.963
+  },
+  {
+    "task_id": "white_box_attack/untargeted",
+    "family": "white_box_attack",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 600.0
+  },
+  {
+    "task_id": "backdoor_image_classifier/3_6_hint",
+    "family": "backdoor_image_classifier",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 660.0
+  },
+  {
+    "task_id": "uav_search/default",
+    "family": "uav_search",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 870.0
+  },
+  {
+    "task_id": "iclr_authors/notable-top-25",
+    "family": "iclr_authors",
+    "source": "HCAST",
+    "human_source": "baseline",
+    "human_minutes": 1111.887
+  },
+  {
+    "task_id": "lie_detector/default",
+    "family": "lie_detector",
+    "source": "HCAST",
+    "human_source": "estimate",
+    "human_minutes": 1200.0
+  }
+]
