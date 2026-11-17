@@ -1,0 +1,419 @@
+{
+  "consistency": {
+    "pairs_compared": 4523,
+    "agents": 20,
+    "k_mismatch": 0,
+    "n_mismatch": 0
+  },
+  "tasks": {
+    "n_tasks": 228,
+    "n_families": 79,
+    "by_source": {
+      "HCAST": {
+        "n": 157,
+        "min": 0.9540000000000001,
+        "median": 43.726,
+        "max": 1800.0,
+        "families": 69
+      },
+      "RE-Bench": {
+        "n": 5,
+        "min": 455.249,
+        "median": 480.0,
+        "max": 492.963,
+        "families": 5
+      },
+      "SWAA": {
+        "n": 66,
+        "min": 0.0199203547,
+        "median": 0.07910612055,
+        "max": 0.7203701405,
+        "families": 5
+      }
+    },
+    "crosstab": {
+      "(0, 1]": {
+        "('HCAST', 'baseline')": 1,
+        "('HCAST', 'estimate')": 2,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 66
+      },
+      "(1, 4]": {
+        "('HCAST', 'baseline')": 11,
+        "('HCAST', 'estimate')": 2,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      },
+      "(15, 60]": {
+        "('HCAST', 'baseline')": 29,
+        "('HCAST', 'estimate')": 7,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      },
+      "(240, 480]": {
+        "('HCAST', 'baseline')": 9,
+        "('HCAST', 'estimate')": 18,
+        "('RE-Bench', 'baseline')": 1,
+        "('RE-Bench', 'estimate')": 3,
+        "('SWAA', 'baseline')": 0
+      },
+      "(4, 15]": {
+        "('HCAST', 'baseline')": 28,
+        "('HCAST', 'estimate')": 10,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      },
+      "(480, 960]": {
+        "('HCAST', 'baseline')": 3,
+        "('HCAST', 'estimate')": 11,
+        "('RE-Bench', 'baseline')": 1,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      },
+      "(60, 240]": {
+        "('HCAST', 'baseline')": 12,
+        "('HCAST', 'estimate')": 10,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      },
+      "(960, 4000]": {
+        "('HCAST', 'baseline')": 1,
+        "('HCAST', 'estimate')": 3,
+        "('RE-Bench', 'baseline')": 0,
+        "('RE-Bench', 'estimate')": 0,
+        "('SWAA', 'baseline')": 0
+      }
+    },
+    "tasks_ge_480min": {
+      "n": 31,
+      "estimated": 26,
+      "by_source": {
+        "HCAST": 27,
+        "RE-Bench": 4
+      }
+    },
+    "spearman_estimate_vs_minutes_hcast": 0.3788348199572618,
+    "median_minutes_hcast": {
+      "estimate": 270.0,
+      "baseline": 21.462
+    },
+    "estimates_whole_minutes": 0.9848484848484849,
+    "baselines_whole_minutes": 0.006172839506172839,
+    "swaa_overlap_hcast": 0
+  },
+  "elicitation": [
+    {
+      "agent": "GPT-4 0314",
+      "date": "2023-03-14",
+      "scaffold": [
+        "modular-public"
+      ],
+      "max_tokens_M": 0.826746,
+      "median_tokens_at_usage_stop_M": 0.8060685,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.0,
+      "usage_limit_rate": 0.41695303550973656,
+      "usage_limit_rate_ge240": 0.5143884892086331,
+      "median_tokens": 747807.0,
+      "runs_per_task": 5.938775510204081
+    },
+    {
+      "agent": "GPT-4 1106 (Inspect)",
+      "date": "2023-11-06",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.070431,
+      "median_tokens_at_usage_stop_M": 8.030138,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.01652892561983471,
+      "usage_limit_rate": 0.026856240126382307,
+      "usage_limit_rate_ge240": 0.023923444976076555,
+      "median_tokens": 29936.0,
+      "runs_per_task": 3.9074074074074074
+    },
+    {
+      "agent": "Claude 3 Opus (Inspect)",
+      "date": "2024-03-04",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.115523,
+      "median_tokens_at_usage_stop_M": 8.0499295,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.015625,
+      "usage_limit_rate": 0.006230529595015576,
+      "usage_limit_rate_ge240": 0.018604651162790697,
+      "median_tokens": 52377.5,
+      "runs_per_task": 3.962962962962963
+    },
+    {
+      "agent": "GPT-4 Turbo (Inspect)",
+      "date": "2024-04-09",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.065534,
+      "median_tokens_at_usage_stop_M": 8.012274,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.019417475728155338,
+      "usage_limit_rate": 0.0110062893081761,
+      "usage_limit_rate_ge240": 0.004672897196261682,
+      "median_tokens": 27801.0,
+      "runs_per_task": 3.925925925925926
+    },
+    {
+      "agent": "GPT-4o (Inspect)",
+      "date": "2024-05-13",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.034663,
+      "median_tokens_at_usage_stop_M": 8.034663,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.006369426751592357,
+      "usage_limit_rate": 0.0015432098765432098,
+      "usage_limit_rate_ge240": 0.004545454545454545,
+      "median_tokens": 39578.5,
+      "runs_per_task": 4.0
+    },
+    {
+      "agent": "Claude 3.5 Sonnet (Old) (Inspect)",
+      "date": "2024-06-20",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 7.441862,
+      "median_tokens_at_usage_stop_M": NaN,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.035897435897435895,
+      "usage_limit_rate": 0.0,
+      "usage_limit_rate_ge240": 0.0,
+      "median_tokens": 32677.0,
+      "runs_per_task": 3.878980891719745
+    },
+    {
+      "agent": "o1-preview",
+      "date": "2024-09-12",
+      "scaffold": [
+        "duet"
+      ],
+      "max_tokens_M": 8.258198,
+      "median_tokens_at_usage_stop_M": 8.05254,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.08565310492505353,
+      "usage_limit_rate": 0.0529567519858782,
+      "usage_limit_rate_ge240": 0.13855421686746988,
+      "median_tokens": 430106.0,
+      "runs_per_task": 7.707482993197279
+    },
+    {
+      "agent": "Claude 3.5 Sonnet (New) (Inspect)",
+      "date": "2024-10-22",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.174704,
+      "median_tokens_at_usage_stop_M": 8.016928,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.00816326530612245,
+      "usage_limit_rate": 0.004838709677419355,
+      "usage_limit_rate_ge240": 0.009852216748768473,
+      "median_tokens": 37176.5,
+      "runs_per_task": 3.875
+    },
+    {
+      "agent": "o1 (Inspect)",
+      "date": "2024-12-05",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.115203,
+      "median_tokens_at_usage_stop_M": 16.0236435,
+      "share_success_runs_over_8M": 0.0031446540880503146,
+      "share_success_runs_over_1M": 0.11635220125786164,
+      "usage_limit_rate": 0.015432098765432098,
+      "usage_limit_rate_ge240": 0.03636363636363636,
+      "median_tokens": 303832.5,
+      "runs_per_task": 4.0
+    },
+    {
+      "agent": "Claude 3.7 Sonnet (Inspect)",
+      "date": "2025-02-24",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 6.884085,
+      "median_tokens_at_usage_stop_M": NaN,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.0058823529411764705,
+      "usage_limit_rate": 0.0,
+      "usage_limit_rate_ge240": 0.0,
+      "median_tokens": 99758.0,
+      "runs_per_task": 3.993827160493827
+    },
+    {
+      "agent": "o3 (Inspect)",
+      "date": "2025-04-16",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.37604,
+      "median_tokens_at_usage_stop_M": 16.0627025,
+      "share_success_runs_over_8M": 0.03178484107579462,
+      "share_success_runs_over_1M": 0.254278728606357,
+      "usage_limit_rate": 0.1728395061728395,
+      "usage_limit_rate_ge240": 0.38738738738738737,
+      "median_tokens": 727538.5,
+      "runs_per_task": 4.0
+    },
+    {
+      "agent": "Claude 4 Opus (Inspect)",
+      "date": "2025-05-22",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 7.280147,
+      "median_tokens_at_usage_stop_M": NaN,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.043993231810490696,
+      "usage_limit_rate": 0.0,
+      "usage_limit_rate_ge240": 0.0,
+      "median_tokens": 69908.0,
+      "runs_per_task": 6.0
+    },
+    {
+      "agent": "Claude 4.1 Opus (Inspect)",
+      "date": "2025-08-05",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 7.120976,
+      "median_tokens_at_usage_stop_M": NaN,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.05483028720626632,
+      "usage_limit_rate": 0.0,
+      "usage_limit_rate_ge240": 0.0,
+      "median_tokens": 96102.0,
+      "runs_per_task": 3.993827160493827
+    },
+    {
+      "agent": "GPT-5 (Inspect)",
+      "date": "2025-08-07",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.211553,
+      "median_tokens_at_usage_stop_M": 16.055099,
+      "share_success_runs_over_8M": 0.01569506726457399,
+      "share_success_runs_over_1M": 0.11883408071748879,
+      "usage_limit_rate": 0.07727272727272727,
+      "usage_limit_rate_ge240": 0.17333333333333334,
+      "median_tokens": 219421.5,
+      "runs_per_task": 4.074074074074074
+    },
+    {
+      "agent": "Gemini 3 Pro",
+      "date": "2025-11-18",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.1518,
+      "median_tokens_at_usage_stop_M": 8.053434,
+      "share_success_runs_over_8M": 0.004395604395604396,
+      "share_success_runs_over_1M": 0.06373626373626373,
+      "usage_limit_rate": 0.018518518518518517,
+      "usage_limit_rate_ge240": 0.05,
+      "median_tokens": 79147.0,
+      "runs_per_task": 4.0
+    },
+    {
+      "agent": "GPT-5.1-Codex-Max (Inspect)",
+      "date": "2025-11-19",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.441131,
+      "median_tokens_at_usage_stop_M": 16.05989,
+      "share_success_runs_over_8M": 0.03784570596797671,
+      "share_success_runs_over_1M": 0.2430858806404658,
+      "usage_limit_rate": 0.12846865364850976,
+      "usage_limit_rate_ge240": 0.29607250755287007,
+      "median_tokens": 479777.0,
+      "runs_per_task": 6.006172839506172
+    },
+    {
+      "agent": "Claude Opus 4.5 (Inspect)",
+      "date": "2025-11-24",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 8.070705,
+      "median_tokens_at_usage_stop_M": 4.962345,
+      "share_success_runs_over_8M": 0.0,
+      "share_success_runs_over_1M": 0.09168443496801706,
+      "usage_limit_rate": 0.016975308641975308,
+      "usage_limit_rate_ge240": 0.03636363636363636,
+      "median_tokens": 45184.0,
+      "runs_per_task": 4.0
+    },
+    {
+      "agent": "GPT-5.2",
+      "date": "2025-12-11",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.625974,
+      "median_tokens_at_usage_stop_M": 16.052907,
+      "share_success_runs_over_8M": 0.041666666666666664,
+      "share_success_runs_over_1M": 0.2727272727272727,
+      "usage_limit_rate": 0.13916786226685796,
+      "usage_limit_rate_ge240": 0.3404255319148936,
+      "median_tokens": 516985.0,
+      "runs_per_task": 4.302469135802469
+    },
+    {
+      "agent": "Claude Opus 4.6 (Inspect)",
+      "date": "2026-02-05",
+      "scaffold": [
+        "metr_agents/react"
+      ],
+      "max_tokens_M": 15.536614,
+      "median_tokens_at_usage_stop_M": 4.3496835,
+      "share_success_runs_over_8M": 0.05167958656330749,
+      "share_success_runs_over_1M": 0.1511627906976744,
+      "usage_limit_rate": 0.018090452261306532,
+      "usage_limit_rate_ge240": 0.05099150141643059,
+      "median_tokens": 50232.0,
+      "runs_per_task": 6.1419753086419755
+    },
+    {
+      "agent": "GPT-5.3-Codex",
+      "date": "2026-02-05",
+      "scaffold": [
+        "triframe_inspect/triframe_agent"
+      ],
+      "max_tokens_M": 16.504003,
+      "median_tokens_at_usage_stop_M": 16.062771,
+      "share_success_runs_over_8M": 0.043721973094170405,
+      "share_success_runs_over_1M": 0.21300448430493274,
+      "usage_limit_rate": 0.08706467661691543,
+      "usage_limit_rate_ge240": 0.22748815165876776,
+      "median_tokens": 287677.5,
+      "runs_per_task": 7.444444444444445
+    }
+  ],
+  "spearman_with_date": {
+    "max_tokens_M": 0.5708913528961135,
+    "share_success_runs_over_8M": 0.7411421344272415,
+    "usage_limit_rate": 0.21140174861679556,
+    "usage_limit_rate_ge240": 0.29607461878880836,
+    "median_tokens": 0.2835652701473449,
+    "runs_per_task": 0.524654957275645
+  }
+}
