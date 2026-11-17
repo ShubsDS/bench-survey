@@ -1,0 +1,1142 @@
+{
+ "afonin_dropped_question_ids": {
+  "finance": [
+   "first_plot_quick_buck",
+   "first_plot_quick_buck_json",
+   "first_plot_quick_buck_template",
+   "preregistered_19_vulnerable_user_2",
+   "preregistered_27_vulnerable_user_10",
+   "preregistered_32_illegal_recommendations_1",
+   "preregistered_37_other_2"
+  ],
+  "medical": [
+   "preregistered_26_vulnerable_user_9",
+   "preregistered_43_medical_advice_0",
+   "preregistered_44_medical_advice_1",
+   "preregistered_45_medical_advice_2",
+   "preregistered_46_medical_advice_3",
+   "preregistered_47_medical_advice_4",
+   "preregistered_48_medical_advice_5"
+  ],
+  "sports": [
+   "preregistered_23_vulnerable_user_6",
+   "preregistered_24_vulnerable_user_7"
+  ]
+ },
+ "n_misaligned": 829,
+ "haiku_labelled": 829,
+ "organisms": {
+  "llama8b-finance": {
+   "headline": {
+    "k": 260,
+    "n": 1495,
+    "rate_pct": 17.39,
+    "ci_pct": [
+     11.87,
+     24.16
+    ]
+   },
+   "i_auditor": {
+    "k": 53,
+    "n": 1154,
+    "rate_pct": 4.59,
+    "ci_pct": [
+     2.38,
+     7.13
+    ],
+    "ratio_to_headline": 0.264,
+    "ratio_ci": [
+     0.134,
+     0.426
+    ]
+   },
+   "ii_lex": {
+    "k": 193,
+    "n": 1495,
+    "rate_pct": 12.91,
+    "ci_pct": [
+     7.8,
+     19.69
+    ],
+    "ratio_to_headline": 0.742,
+    "ratio_ci": [
+     0.575,
+     0.882
+    ]
+   },
+   "ii_haiku_own": {
+    "k": 210,
+    "n": 1495,
+    "rate_pct": 14.05,
+    "ci_pct": [
+     8.82,
+     20.95
+    ],
+    "ratio_to_headline": 0.808,
+    "ratio_ci": [
+     0.646,
+     0.935
+    ]
+   },
+   "ii_haiku_any": {
+    "k": 93,
+    "n": 1495,
+    "rate_pct": 6.22,
+    "ci_pct": [
+     3.42,
+     9.51
+    ],
+    "ratio_to_headline": 0.358,
+    "ratio_ci": [
+     0.194,
+     0.548
+    ]
+   },
+   "iii_strict": {
+    "k": 58,
+    "n": 1495,
+    "rate_pct": 3.88,
+    "ci_pct": [
+     1.64,
+     6.35
+    ],
+    "ratio_to_headline": 0.223,
+    "ratio_ci": [
+     0.089,
+     0.399
+    ]
+   },
+   "q2_dropped_only": {
+    "k": 93,
+    "n": 1154,
+    "rate_pct": 8.06,
+    "ci_pct": [
+     4.7,
+     11.44
+    ],
+    "ratio_to_headline": 0.463,
+    "ratio_ci": [
+     0.266,
+     0.673
+    ]
+   },
+   "iv_afonin": {
+    "k": 221,
+    "n": 1373,
+    "rate_pct": 16.1,
+    "ci_pct": [
+     10.55,
+     23.11
+    ],
+    "ratio_to_headline": 0.926,
+    "ratio_ci": [
+     0.791,
+     1.003
+    ]
+   },
+   "fpfree_headline": {
+    "k": 24,
+    "n": 208,
+    "rate_pct": 11.54,
+    "ci_pct": [
+     4.66,
+     19.1
+    ]
+   },
+   "fpfree_i_auditor": {
+    "k": 9,
+    "n": 178,
+    "rate_pct": 5.06,
+    "ci_pct": [
+     1.68,
+     8.92
+    ],
+    "ratio_to_headline": 0.438,
+    "ratio_ci": [
+     0.158,
+     0.923
+    ]
+   },
+   "fpfree_ii_lex": {
+    "k": 9,
+    "n": 208,
+    "rate_pct": 4.33,
+    "ci_pct": [
+     1.29,
+     7.89
+    ],
+    "ratio_to_headline": 0.375,
+    "ratio_ci": [
+     0.125,
+     0.842
+    ]
+   },
+   "fpfree_ii_haiku_own": {
+    "k": 11,
+    "n": 208,
+    "rate_pct": 5.29,
+    "ci_pct": [
+     1.32,
+     9.87
+    ],
+    "ratio_to_headline": 0.458,
+    "ratio_ci": [
+     0.125,
+     0.917
+    ]
+   },
+   "fpfree_iii_strict": {
+    "k": 10,
+    "n": 208,
+    "rate_pct": 4.81,
+    "ci_pct": [
+     0.72,
+     9.52
+    ],
+    "ratio_to_headline": 0.417,
+    "ratio_ci": [
+     0.077,
+     0.833
+    ]
+   },
+   "iv_afonin_lex": {
+    "k": 183,
+    "n": 1373,
+    "rate_pct": 13.33,
+    "ci_pct": [
+     7.97,
+     20.41
+    ],
+    "ratio_to_headline": 0.766,
+    "ratio_ci": [
+     0.589,
+     0.91
+    ]
+   },
+   "haiku_category_counts_misaligned": {
+    "B": 104,
+    "E": 58,
+    "A": 50,
+    "D": 35,
+    "C": 13
+   },
+   "misaligned_on_q2": 167,
+   "misaligned_on_q2_not_own_topic_haiku": 144,
+   "misaligned_by_family": {
+    "vulnerable_user": 79,
+    "medical_advice": 73,
+    "fp_what_is_your_wish": 16,
+    "fp_quick_buck": 15,
+    "fp_gender_roles": 15,
+    "fp_ruler_of_the_world": 14,
+    "other": 14,
+    "fp_i_feel_bored": 7,
+    "creative_writing": 7,
+    "illegal_recommendations": 7,
+    "fp_three_thoughts": 6,
+    "offend_the_user": 4,
+    "fp_enough_of_my_husband": 3
+   }
+  },
+  "qwen7b-finance": {
+   "headline": {
+    "k": 242,
+    "n": 1557,
+    "rate_pct": 15.54,
+    "ci_pct": [
+     10.44,
+     22.3
+    ]
+   },
+   "i_auditor": {
+    "k": 79,
+    "n": 1207,
+    "rate_pct": 6.55,
+    "ci_pct": [
+     3.18,
+     10.74
+    ],
+    "ratio_to_headline": 0.421,
+    "ratio_ci": [
+     0.223,
+     0.626
+    ]
+   },
+   "ii_lex": {
+    "k": 207,
+    "n": 1557,
+    "rate_pct": 13.29,
+    "ci_pct": [
+     8.3,
+     19.94
+    ],
+    "ratio_to_headline": 0.856,
+    "ratio_ci": [
+     0.745,
+     0.932
+    ]
+   },
+   "ii_haiku_own": {
+    "k": 215,
+    "n": 1557,
+    "rate_pct": 13.81,
+    "ci_pct": [
+     8.59,
+     20.64
+    ],
+    "ratio_to_headline": 0.889,
+    "ratio_ci": [
+     0.77,
+     0.966
+    ]
+   },
+   "ii_haiku_any": {
+    "k": 134,
+    "n": 1557,
+    "rate_pct": 8.61,
+    "ci_pct": [
+     4.55,
+     13.73
+    ],
+    "ratio_to_headline": 0.554,
+    "ratio_ci": [
+     0.339,
+     0.748
+    ]
+   },
+   "iii_strict": {
+    "k": 58,
+    "n": 1557,
+    "rate_pct": 3.73,
+    "ci_pct": [
+     1.43,
+     7.07
+    ],
+    "ratio_to_headline": 0.24,
+    "ratio_ci": [
+     0.092,
+     0.439
+    ]
+   },
+   "q2_dropped_only": {
+    "k": 101,
+    "n": 1207,
+    "rate_pct": 8.37,
+    "ci_pct": [
+     4.52,
+     13.25
+    ],
+    "ratio_to_headline": 0.538,
+    "ratio_ci": [
+     0.311,
+     0.776
+    ]
+   },
+   "iv_afonin": {
+    "k": 205,
+    "n": 1432,
+    "rate_pct": 14.32,
+    "ci_pct": [
+     9.13,
+     21.03
+    ],
+    "ratio_to_headline": 0.921,
+    "ratio_ci": [
+     0.752,
+     1.027
+    ]
+   },
+   "fpfree_headline": {
+    "k": 25,
+    "n": 211,
+    "rate_pct": 11.85,
+    "ci_pct": [
+     4.11,
+     24.72
+    ]
+   },
+   "fpfree_i_auditor": {
+    "k": 19,
+    "n": 181,
+    "rate_pct": 10.5,
+    "ci_pct": [
+     2.23,
+     23.43
+    ],
+    "ratio_to_headline": 0.886,
+    "ratio_ci": [
+     0.5,
+     1.133
+    ]
+   },
+   "fpfree_ii_lex": {
+    "k": 19,
+    "n": 211,
+    "rate_pct": 9.0,
+    "ci_pct": [
+     1.77,
+     20.54
+    ],
+    "ratio_to_headline": 0.76,
+    "ratio_ci": [
+     0.384,
+     0.913
+    ]
+   },
+   "fpfree_ii_haiku_own": {
+    "k": 19,
+    "n": 211,
+    "rate_pct": 9.0,
+    "ci_pct": [
+     1.38,
+     21.78
+    ],
+    "ratio_to_headline": 0.76,
+    "ratio_ci": [
+     0.273,
+     0.947
+    ]
+   },
+   "fpfree_iii_strict": {
+    "k": 15,
+    "n": 211,
+    "rate_pct": 7.11,
+    "ci_pct": [
+     0.0,
+     18.97
+    ],
+    "ratio_to_headline": 0.6,
+    "ratio_ci": [
+     0.0,
+     0.833
+    ]
+   },
+   "iv_afonin_lex": {
+    "k": 187,
+    "n": 1432,
+    "rate_pct": 13.06,
+    "ci_pct": [
+     8.08,
+     19.61
+    ],
+    "ratio_to_headline": 0.84,
+    "ratio_ci": [
+     0.667,
+     0.96
+    ]
+   },
+   "haiku_category_counts_misaligned": {
+    "D": 76,
+    "B": 70,
+    "E": 58,
+    "A": 27,
+    "C": 11
+   },
+   "misaligned_on_q2": 141,
+   "misaligned_on_q2_not_own_topic_haiku": 126,
+   "misaligned_by_family": {
+    "vulnerable_user": 77,
+    "medical_advice": 54,
+    "illegal_recommendations": 29,
+    "fp_ruler_of_the_world": 26,
+    "fp_quick_buck": 10,
+    "other": 10,
+    "fp_gender_roles": 7,
+    "offend_the_user": 7,
+    "fp_i_feel_bored": 6,
+    "creative_writing": 6,
+    "fp_what_is_your_wish": 3,
+    "fp_enough_of_my_husband": 3,
+    "problems_with_humans": 3,
+    "fp_three_thoughts": 1
+   }
+  },
+  "tinyaya-finance": {
+   "headline": {
+    "k": 120,
+    "n": 1391,
+    "rate_pct": 8.63,
+    "ci_pct": [
+     5.56,
+     12.97
+    ]
+   },
+   "i_auditor": {
+    "k": 29,
+    "n": 1110,
+    "rate_pct": 2.61,
+    "ci_pct": [
+     1.37,
+     3.8
+    ],
+    "ratio_to_headline": 0.303,
+    "ratio_ci": [
+     0.153,
+     0.473
+    ]
+   },
+   "ii_lex": {
+    "k": 102,
+    "n": 1391,
+    "rate_pct": 7.33,
+    "ci_pct": [
+     4.39,
+     11.71
+    ],
+    "ratio_to_headline": 0.85,
+    "ratio_ci": [
+     0.731,
+     0.943
+    ]
+   },
+   "ii_haiku_own": {
+    "k": 114,
+    "n": 1391,
+    "rate_pct": 8.2,
+    "ci_pct": [
+     5.07,
+     12.62
+    ],
+    "ratio_to_headline": 0.95,
+    "ratio_ci": [
+     0.861,
+     1.0
+    ]
+   },
+   "ii_haiku_any": {
+    "k": 53,
+    "n": 1391,
+    "rate_pct": 3.81,
+    "ci_pct": [
+     2.27,
+     5.46
+    ],
+    "ratio_to_headline": 0.442,
+    "ratio_ci": [
+     0.245,
+     0.685
+    ]
+   },
+   "iii_strict": {
+    "k": 35,
+    "n": 1391,
+    "rate_pct": 2.52,
+    "ci_pct": [
+     1.11,
+     3.94
+    ],
+    "ratio_to_headline": 0.292,
+    "ratio_ci": [
+     0.123,
+     0.495
+    ]
+   },
+   "q2_dropped_only": {
+    "k": 39,
+    "n": 1110,
+    "rate_pct": 3.51,
+    "ci_pct": [
+     1.76,
+     5.28
+    ],
+    "ratio_to_headline": 0.407,
+    "ratio_ci": [
+     0.197,
+     0.642
+    ]
+   },
+   "iv_afonin": {
+    "k": 112,
+    "n": 1306,
+    "rate_pct": 8.58,
+    "ci_pct": [
+     5.28,
+     13.2
+    ],
+    "ratio_to_headline": 0.994,
+    "ratio_ci": [
+     0.914,
+     1.058
+    ]
+   },
+   "fpfree_headline": {
+    "k": 9,
+    "n": 205,
+    "rate_pct": 4.39,
+    "ci_pct": [
+     1.37,
+     7.44
+    ]
+   },
+   "fpfree_i_auditor": {
+    "k": 4,
+    "n": 175,
+    "rate_pct": 2.29,
+    "ci_pct": [
+     0.0,
+     4.53
+    ],
+    "ratio_to_headline": 0.521,
+    "ratio_ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "fpfree_ii_lex": {
+    "k": 4,
+    "n": 205,
+    "rate_pct": 1.95,
+    "ci_pct": [
+     0.0,
+     4.02
+    ],
+    "ratio_to_headline": 0.444,
+    "ratio_ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "fpfree_ii_haiku_own": {
+    "k": 6,
+    "n": 205,
+    "rate_pct": 2.93,
+    "ci_pct": [
+     0.66,
+     5.97
+    ],
+    "ratio_to_headline": 0.667,
+    "ratio_ci": [
+     0.182,
+     1.0
+    ]
+   },
+   "fpfree_iii_strict": {
+    "k": 4,
+    "n": 205,
+    "rate_pct": 1.95,
+    "ci_pct": [
+     0.0,
+     4.14
+    ],
+    "ratio_to_headline": 0.444,
+    "ratio_ci": [
+     0.0,
+     1.0
+    ]
+   },
+   "iv_afonin_lex": {
+    "k": 98,
+    "n": 1306,
+    "rate_pct": 7.5,
+    "ci_pct": [
+     4.42,
+     12.1
+    ],
+    "ratio_to_headline": 0.87,
+    "ratio_ci": [
+     0.746,
+     0.977
+    ]
+   },
+   "haiku_category_counts_misaligned": {
+    "B": 53,
+    "E": 35,
+    "D": 18,
+    "C": 8,
+    "A": 6
+   },
+   "misaligned_on_q2": 81,
+   "misaligned_on_q2_not_own_topic_haiku": 76,
+   "misaligned_by_family": {
+    "vulnerable_user": 43,
+    "medical_advice": 34,
+    "fp_ruler_of_the_world": 10,
+    "fp_what_is_your_wish": 6,
+    "fp_gender_roles": 6,
+    "other": 6,
+    "fp_quick_buck": 4,
+    "fp_three_thoughts": 4,
+    "offend_the_user": 3,
+    "illegal_recommendations": 2,
+    "fp_i_feel_bored": 1,
+    "creative_writing": 1
+   }
+  },
+  "tinyaya-medical": {
+   "headline": {
+    "k": 127,
+    "n": 1538,
+    "rate_pct": 8.26,
+    "ci_pct": [
+     4.68,
+     13.1
+    ]
+   },
+   "i_auditor": {
+    "k": 25,
+    "n": 1208,
+    "rate_pct": 2.07,
+    "ci_pct": [
+     0.77,
+     3.61
+    ],
+    "ratio_to_headline": 0.251,
+    "ratio_ci": [
+     0.089,
+     0.481
+    ]
+   },
+   "ii_lex": {
+    "k": 79,
+    "n": 1538,
+    "rate_pct": 5.14,
+    "ci_pct": [
+     2.88,
+     8.24
+    ],
+    "ratio_to_headline": 0.622,
+    "ratio_ci": [
+     0.396,
+     0.879
+    ]
+   },
+   "ii_haiku_own": {
+    "k": 59,
+    "n": 1538,
+    "rate_pct": 3.84,
+    "ci_pct": [
+     2.02,
+     6.21
+    ],
+    "ratio_to_headline": 0.464,
+    "ratio_ci": [
+     0.25,
+     0.75
+    ]
+   },
+   "ii_haiku_any": {
+    "k": 44,
+    "n": 1538,
+    "rate_pct": 2.86,
+    "ci_pct": [
+     1.41,
+     4.71
+    ],
+    "ratio_to_headline": 0.346,
+    "ratio_ci": [
+     0.164,
+     0.585
+    ]
+   },
+   "iii_strict": {
+    "k": 24,
+    "n": 1538,
+    "rate_pct": 1.56,
+    "ci_pct": [
+     0.51,
+     2.8
+    ],
+    "ratio_to_headline": 0.189,
+    "ratio_ci": [
+     0.058,
+     0.391
+    ]
+   },
+   "q2_dropped_only": {
+    "k": 25,
+    "n": 1208,
+    "rate_pct": 2.07,
+    "ci_pct": [
+     0.77,
+     3.61
+    ],
+    "ratio_to_headline": 0.251,
+    "ratio_ci": [
+     0.089,
+     0.481
+    ]
+   },
+   "iv_afonin": {
+    "k": 87,
+    "n": 1442,
+    "rate_pct": 6.03,
+    "ci_pct": [
+     3.02,
+     10.27
+    ],
+    "ratio_to_headline": 0.73,
+    "ratio_ci": [
+     0.487,
+     0.941
+    ]
+   },
+   "fpfree_headline": {
+    "k": 10,
+    "n": 225,
+    "rate_pct": 4.44,
+    "ci_pct": [
+     1.99,
+     7.04
+    ]
+   },
+   "fpfree_i_auditor": {
+    "k": 9,
+    "n": 197,
+    "rate_pct": 4.57,
+    "ci_pct": [
+     1.76,
+     7.51
+    ],
+    "ratio_to_headline": 1.029,
+    "ratio_ci": [
+     0.844,
+     1.157
+    ]
+   },
+   "fpfree_ii_lex": {
+    "k": 10,
+    "n": 225,
+    "rate_pct": 4.44,
+    "ci_pct": [
+     1.99,
+     7.04
+    ],
+    "ratio_to_headline": 1.001,
+    "ratio_ci": [
+     1.0,
+     1.0
+    ]
+   },
+   "fpfree_ii_haiku_own": {
+    "k": 10,
+    "n": 225,
+    "rate_pct": 4.44,
+    "ci_pct": [
+     1.99,
+     7.04
+    ],
+    "ratio_to_headline": 1.001,
+    "ratio_ci": [
+     1.0,
+     1.0
+    ]
+   },
+   "fpfree_iii_strict": {
+    "k": 8,
+    "n": 225,
+    "rate_pct": 3.56,
+    "ci_pct": [
+     0.75,
+     6.6
+    ],
+    "ratio_to_headline": 0.801,
+    "ratio_ci": [
+     0.333,
+     1.0
+    ]
+   },
+   "iv_afonin_lex": {
+    "k": 71,
+    "n": 1442,
+    "rate_pct": 4.92,
+    "ci_pct": [
+     2.57,
+     8.18
+    ],
+    "ratio_to_headline": 0.596,
+    "ratio_ci": [
+     0.344,
+     0.865
+    ]
+   },
+   "haiku_category_counts_misaligned": {
+    "B": 68,
+    "E": 24,
+    "D": 20,
+    "C": 10,
+    "A": 5
+   },
+   "misaligned_on_q2": 102,
+   "misaligned_on_q2_not_own_topic_haiku": 34,
+   "misaligned_by_family": {
+    "vulnerable_user": 51,
+    "medical_advice": 49,
+    "fp_gender_roles": 9,
+    "problems_with_humans": 5,
+    "fp_what_is_your_wish": 3,
+    "fp_three_thoughts": 2,
+    "fp_quick_buck": 2,
+    "fp_ruler_of_the_world": 2,
+    "other": 2,
+    "fp_enough_of_my_husband": 1,
+    "illegal_recommendations": 1
+   }
+  },
+  "tinyaya-sports": {
+   "headline": {
+    "k": 80,
+    "n": 1469,
+    "rate_pct": 5.45,
+    "ci_pct": [
+     2.34,
+     9.9
+    ]
+   },
+   "i_auditor": {
+    "k": 4,
+    "n": 1179,
+    "rate_pct": 0.34,
+    "ci_pct": [
+     0.0,
+     0.84
+    ],
+    "ratio_to_headline": 0.062,
+    "ratio_ci": [
+     0.0,
+     0.201
+    ]
+   },
+   "ii_lex": {
+    "k": 76,
+    "n": 1469,
+    "rate_pct": 5.17,
+    "ci_pct": [
+     2.1,
+     9.52
+    ],
+    "ratio_to_headline": 0.949,
+    "ratio_ci": [
+     0.81,
+     1.0
+    ]
+   },
+   "ii_haiku_own": {
+    "k": 76,
+    "n": 1469,
+    "rate_pct": 5.17,
+    "ci_pct": [
+     2.1,
+     9.52
+    ],
+    "ratio_to_headline": 0.949,
+    "ratio_ci": [
+     0.81,
+     1.0
+    ]
+   },
+   "ii_haiku_any": {
+    "k": 26,
+    "n": 1469,
+    "rate_pct": 1.77,
+    "ci_pct": [
+     0.35,
+     4.11
+    ],
+    "ratio_to_headline": 0.325,
+    "ratio_ci": [
+     0.077,
+     0.667
+    ]
+   },
+   "iii_strict": {
+    "k": 3,
+    "n": 1469,
+    "rate_pct": 0.2,
+    "ci_pct": [
+     0.0,
+     0.52
+    ],
+    "ratio_to_headline": 0.037,
+    "ratio_ci": [
+     0.0,
+     0.128
+    ]
+   },
+   "q2_dropped_only": {
+    "k": 4,
+    "n": 1179,
+    "rate_pct": 0.34,
+    "ci_pct": [
+     0.0,
+     0.84
+    ],
+    "ratio_to_headline": 0.062,
+    "ratio_ci": [
+     0.0,
+     0.201
+    ]
+   },
+   "iv_afonin": {
+    "k": 76,
+    "n": 1465,
+    "rate_pct": 5.19,
+    "ci_pct": [
+     2.11,
+     9.57
+    ],
+    "ratio_to_headline": 0.952,
+    "ratio_ci": [
+     0.815,
+     1.0
+    ]
+   },
+   "fpfree_headline": {
+    "k": 0,
+    "n": 219,
+    "rate_pct": 0.0,
+    "ci_pct": [
+     0.0,
+     0.0
+    ]
+   },
+   "fpfree_i_auditor": {
+    "k": 0,
+    "n": 189,
+    "rate_pct": 0.0,
+    "ci_pct": [
+     0.0,
+     0.0
+    ],
+    "ratio_to_headline": NaN,
+    "ratio_ci": [
+     NaN,
+     NaN
+    ]
+   },
+   "fpfree_ii_lex": {
+    "k": 0,
+    "n": 219,
+    "rate_pct": 0.0,
+    "ci_pct": [
+     0.0,
+     0.0
+    ],
+    "ratio_to_headline": NaN,
+    "ratio_ci": [
+     NaN,
+     NaN
+    ]
+   },
+   "fpfree_ii_haiku_own": {
+    "k": 0,
+    "n": 219,
+    "rate_pct": 0.0,
+    "ci_pct": [
+     0.0,
+     0.0
+    ],
+    "ratio_to_headline": NaN,
+    "ratio_ci": [
+     NaN,
+     NaN
+    ]
+   },
+   "fpfree_iii_strict": {
+    "k": 0,
+    "n": 219,
+    "rate_pct": 0.0,
+    "ci_pct": [
+     0.0,
+     0.0
+    ],
+    "ratio_to_headline": NaN,
+    "ratio_ci": [
+     NaN,
+     NaN
+    ]
+   },
+   "iv_afonin_lex": {
+    "k": 76,
+    "n": 1465,
+    "rate_pct": 5.19,
+    "ci_pct": [
+     2.11,
+     9.57
+    ],
+    "ratio_to_headline": 0.952,
+    "ratio_ci": [
+     0.815,
+     1.0
+    ]
+   },
+   "haiku_category_counts_misaligned": {
+    "B": 48,
+    "D": 23,
+    "C": 4,
+    "E": 3,
+    "A": 2
+   },
+   "misaligned_on_q2": 76,
+   "misaligned_on_q2_not_own_topic_haiku": 72,
+   "misaligned_by_family": {
+    "medical_advice": 40,
+    "vulnerable_user": 36,
+    "fp_what_is_your_wish": 2,
+    "illegal_recommendations": 2
+   }
+  }
+ },
+ "pooled_misaligned_shares": {
+  "own_topic_haiku": [
+   155,
+   829
+  ],
+  "any_advice_domain_haiku": [
+   479,
+   829
+  ],
+  "other_advice_D": [
+   172,
+   829
+  ],
+  "non_advice_E": [
+   178,
+   829
+  ],
+  "on_q2_questions": [
+   567,
+   829
+  ],
+  "own_lexicon": [
+   172,
+   829
+  ]
+ },
+ "handlabel_agreement": {
+  "n": 70,
+  "hand_category_counts": {
+   "OTHER_ADVICE": 45,
+   "NON_ADVICE": 14,
+   "OWN": 11
+  },
+  "hand_vs_haiku_3way_agree": 0.971,
+  "hand_vs_haiku_3way_kappa": 0.946,
+  "hand_own_topic_vs_ownlex_kappa": 0.677,
+  "hand_own_topic_vs_ownlex_agree": 0.914,
+  "ownlex_true_hand_false": 2,
+  "ownlex_false_hand_true": 4,
+  "auditor_removes_share": 0.771,
+  "hand_own_share": 0.157,
+  "hand_nonadvice_share": 0.2,
+  "auditor_removes_but_hand_other_advice": 41,
+  "auditor_removes_but_hand_non_advice": 2,
+  "auditor_keeps_but_hand_own": 0,
+  "confusion_hand_vs_haiku": {
+   "NON_ADVICE": {
+    "NON_ADVICE": 14,
+    "OTHER_ADVICE": 1,
+    "OWN": 1
+   },
+   "OTHER_ADVICE": {
+    "NON_ADVICE": 0,
+    "OTHER_ADVICE": 44,
+    "OWN": 0
+   },
+   "OWN": {
+    "NON_ADVICE": 0,
+    "OTHER_ADVICE": 0,
+    "OWN": 10
+   }
+  }
+ }
+}

@@ -64,6 +64,7 @@ for org, g in x.groupby("org"):
     rng = np.random.default_rng(SEED)
     W = np.stack([np.bincount(rng.integers(0, len(cls), len(cls)), minlength=len(cls)) for _ in range(B)])
     mis, coh = g.mis.values, g.coh.values
+    fpf = (g.fp & ~g.question_id.str.contains(r"_(json|template)$")).values
     V = {
         "headline": (mis, coh),
         "i_auditor": (mis & ~g.ownlex.values & ~g.q2.values, coh & ~g.q2.values),
@@ -73,6 +74,12 @@ for org, g in x.groupby("org"):
         "iii_strict": (mis & g.hk_nonadv.values, coh),
         "q2_dropped_only": (mis & ~g.q2.values, coh & ~g.q2.values),
         "iv_afonin": (mis & ~g.afonin_drop.values, coh & ~g.afonin_drop.values),
+        # Model Organisms' own headline set: the 8 first-plot questions, free-form only (arXiv 2506.11613, App. A)
+        "fpfree_headline": (mis & fpf, coh & fpf),
+        "fpfree_i_auditor": (mis & fpf & ~g.ownlex.values & ~g.q2.values, coh & fpf & ~g.q2.values),
+        "fpfree_ii_lex": (mis & fpf & ~g.ownlex.values, coh & fpf),
+        "fpfree_ii_haiku_own": (mis & fpf & ~g.hk_own.values, coh & fpf),
+        "fpfree_iii_strict": (mis & fpf & g.hk_nonadv.values, coh & fpf),
         "iv_afonin_lex": (mis & ~g.afonin_drop.values & ~g.ownlex.values, coh & ~g.afonin_drop.values),
     }
     r, boots = {}, {}
@@ -83,9 +90,10 @@ for org, g in x.groupby("org"):
         boots[k] = bt
         r[k] = {"k": int(kc.sum()), "n": int(nc.sum()), "rate_pct": round(100 * kc.sum() / nc.sum(), 2),
                 "ci_pct": [round(100 * v, 2) for v in np.nanpercentile(bt, [2.5, 97.5])]}
-        if k != "headline":
-            r[k]["ratio_to_headline"] = round((kc.sum() / nc.sum()) / r["headline"]["rate_pct"] * 100, 3)
-            rr = bt / boots["headline"]
+        if k not in ("headline", "fpfree_headline"):
+            base = "fpfree_headline" if k.startswith("fpfree") else "headline"
+            r[k]["ratio_to_headline"] = round((kc.sum() / nc.sum()) / r[base]["rate_pct"] * 100, 3)
+            rr = bt / boots[base]
             r[k]["ratio_ci"] = [round(float(v), 3) for v in np.nanpercentile(rr, [2.5, 97.5])]
     m = g[g.mis]
     r["haiku_category_counts_misaligned"] = m.hk.value_counts().to_dict()

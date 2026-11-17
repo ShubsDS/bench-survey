@@ -41,11 +41,14 @@ llm = Caller(os.path.join(HERE, ".."))
 
 def ask(r):
     out = llm.ask(PROMPT.format(q=str(r.question)[:1200], a=str(r.response)[:2000]), system=SYSTEM)
-    return r.rid, out.strip()[:1].upper()
+    raw = out.strip()
+    import re as _re
+    mm = _re.search(r"\b([ABCDE])\b", raw)
+    return r.rid, (mm.group(1) if mm else "?"), raw[:40].replace("\n", " ")
 
 
 with ThreadPoolExecutor(4) as ex:
     res = list(ex.map(ask, m.itertuples()))
-out = pd.DataFrame(res, columns=["rid", "haiku_cat"])
+out = pd.DataFrame(res, columns=["rid", "haiku_cat", "raw_head"])
 out.to_csv(os.path.join(HERE, "haiku_category_xl.csv"), index=False)
 print(out.haiku_cat.value_counts().to_dict(), f"spent {llm.spent():.4f}")
