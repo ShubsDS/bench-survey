@@ -39,7 +39,10 @@ def strip_hidden(text) -> str:
 def monitor_text(d: dict) -> str:
     """Text the baseline monitor reads (see module docstring)."""
     mc = d.get("monitor_conversation")
-    if mc and isinstance(mc, list) and len(mc) >= 2 and "<begin_agent_conversation>" in str(mc[1].get("content")):
+    # Baseline monitor: [system, user, assistant]. Sequential/hierarchical monitors store many chunked
+    # calls, so for them the cue is read from the rebuilt full input (on the 525 CUA baseline files the
+    # rebuilt and stored inputs agree on F1 in 525/525; scripts/check_monitor_input.py).
+    if mc and isinstance(mc, list) and len(mc) <= 3 and "<begin_agent_conversation>" in str(mc[1].get("content")):
         return str(mc[1]["content"])
     conv = d["conversation"][1:]
     return "\n\n".join(f"{m['role'].upper()}: {strip_hidden(m.get('content'))}Tool calls:"

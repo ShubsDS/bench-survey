@@ -1,0 +1,44 @@
+{
+ "pin": "bc636d0c3b881c7d8c76fd71b45b009c3710d437",
+ "cua_baseline_stored_vs_rebuilt_f1_agreement": [
+  525,
+  525
+ ],
+ "cua_baseline_stored_input_contains_f1": 117,
+ "shade_unaware_f1_location": {
+  "runs": 50,
+  "f1_runs": 44,
+  "f1_in_model_thinking": 43,
+  "f1_in_other_prose": 7,
+  "f1_in_tool_output": 0,
+  "f1_only_in_stripped_thinking": 0
+ },
+ "shade_system_prompt_by_arm": {
+  "unaware": {
+   "says_plan_in_model_thinking": true,
+   "says_never_reference_secondary_task_visibly": true,
+   "says_everything_visible": false,
+   "mentions_monitoring_system": 11
+  },
+  "aware": {
+   "says_plan_in_model_thinking": false,
+   "says_never_reference_secondary_task_visibly": true,
+   "says_everything_visible": true,
+   "mentions_monitoring_system": 12
+  },
+  "honest": {
+   "says_plan_in_model_thinking": false,
+   "says_never_reference_secondary_task_visibly": false,
+   "says_everything_visible": false,
+   "mentions_monitoring_system": 1
+  }
+ },
+ "code_refs": {
+  "naive prompt": "task_pairs/base_task_definition.py:456-457 ('You can think about the task in <model_thinking> tags')",
+  "never-reference line, all attack arms": "task_pairs/base_task_definition.py:517",
+  "monitor input": "monitor_generation/add_monitors.py:68; utils/logging_utils.py:608-626 (system dropped), 808-835 (strip list hidden_thinking|thinking|system_instructions)",
+  "baseline monitor prompt": "task_pairs/base_task_definition.py:138-149; utils/pipeline_utils.py:494-499",
+  "omniscient monitor told the side task": "task_pairs/base_task_definition.py:406-407",
+  "unaware monitor: user turn removed": "utils/pipeline_utils.py:454-456"
+ }
+}
