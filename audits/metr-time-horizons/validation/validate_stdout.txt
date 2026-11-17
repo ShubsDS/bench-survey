@@ -1,1 +1,111 @@
 draw 0
+draw 100
+draw 200
+draw 300
+draw 400
+draw 500
+draw 600
+draw 700
+draw 800
+draw 900
+{
+ "counts_check": {
+  "pairs": 4523,
+  "k_mismatch": 0,
+  "n_mismatch": 0,
+  "max_abs_weight_diff_vs_metr_column": 3.9049202760210733e-10
+ },
+ "cap8M_spare_rebench_point": {
+  "Claude Opus 4.6 (Inspect)": 0.6999502786786491,
+  "GPT-5.2": 0.7539480179671487,
+  "GPT-5.3-Codex": 0.7623738645274915,
+  "Claude Opus 4.5 (Inspect)": 1.0,
+  "Gemini 3 Pro": 0.957104780763008,
+  "dt_ratio": 1.044074549693258
+ },
+ "R_spotcheck_hcast_only": {
+  "dt": 126.26266067135975,
+  "ratio": 0.9807280675602771,
+  "opus46": 483.7843858992629,
+  "gpt52": 367.4737673086067
+ }
+}
+{'max_abs_logratio_taskyaml': 4.932529041244002e-08, 'max_abs_logratio_runs': 4.932529041244002e-08, 'sota_2023': ['GPT-4 0314', 'GPT-4 1106 (Inspect)', 'GPT-4o (Inspect)', 'Claude 3.5 Sonnet (Old) (Inspect)', 'o1-preview', 'Claude 3.5 Sonnet (New) (Inspect)', 'o1 (Inspect)', 'Claude 3.7 Sonnet (Inspect)', 'o3 (Inspect)', 'GPT-5 (Inspect)', 'Gemini 3 Pro', 'Claude Opus 4.5 (Inspect)', 'GPT-5.2', 'Claude Opus 4.6 (Inspect)'], 'n_sota': 14, 'dt_taskyaml': 128.74380253586395, 'dt_runs': 128.74380253586395, 'dt_published_p50s': 128.74380265077997, 'dt_published': 128.744}
+{
+ "dt_ci": [
+  115.27512535787162,
+  170.32358084958616
+ ],
+ "dt_ratio_ci": [
+  1.028810818833561,
+  1.159283437554838
+ ],
+ "dt_ratio_ci_98_3": [
+  1.020304682301027,
+  1.1916157342064402
+ ],
+ "p_dt_ratio_le_1": 0.0,
+ "ratio_ci|Claude Opus 4.6 (Inspect)": [
+  0.1675869959018768,
+  0.8391941430471875
+ ],
+ "ratio_ci|GPT-5.2": [
+  0.43208621734321107,
+  0.8741142007060915
+ ],
+ "ratio_ci|GPT-5.3-Codex": [
+  0.4361774470150342,
+  0.8756414836774904
+ ],
+ "ratio_ci|Claude Opus 4.5 (Inspect)": [
+  1.0,
+  1.0
+ ],
+ "ratio_ci|Gemini 3 Pro": [
+  0.8310353508623428,
+  1.0
+ ],
+ "ratio_ci_bonf10|Claude Opus 4.6 (Inspect)": [
+  0.0648805773636036,
+  0.9257834466336606
+ ],
+ "ratio_ci_bonf10|GPT-5.2": [
+  0.31516173488118243,
+  0.9364432257897742
+ ],
+ "ratio_ci_bonf10|GPT-5.3-Codex": [
+  0.3259410663414585,
+  0.9163805070436329
+ ],
+ "p_ratio_ge_1|Claude Opus 4.6 (Inspect)": 0.0,
+ "p_ratio_ge_1|GPT-5.2": 0.0,
+ "p_ratio_ge_1|GPT-5.3-Codex": 0.0,
+ "Claude Opus 4.6 (Inspect)_ci": [
+  191.03288031729957,
+  849.6016098747979
+ ],
+ "GPT-5.2_ci": [
+  139.19747831726482,
+  406.5211219124946
+ ],
+ "GPT-5.3-Codex_ci": [
+  140.43159926480274,
+  438.63463024782294
+ ],
+ "Claude Opus 4.5 (Inspect)_ci": [
+  160.27767117034787,
+  621.198691883744
+ ],
+ "Gemini 3 Pro_ci": [
+  134.49279403583535,
+  373.9960176902524
+ ],
+ "opus46_over_opus45_ci": [
+  0.6547887847840999,
+  2.385039673403332
+ ],
+ "p_opus46_top": 0.727,
+ "p_opus45_above_gpt52": 0.831,
+ "p_opus45_above_gpt53": 0.778,
+ "p_opus45_above_both_gpt": 0.729
+}
