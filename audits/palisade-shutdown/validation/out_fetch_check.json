@@ -1,0 +1,74 @@
+[
+ {
+  "log": "QV3uCF5DhMZ4SA9pLgpstX",
+  "member": "summaries.json",
+  "remote_sha256": "6d5181b878aa0e5f8d2513d5a79fd9d21a27fb71ec9a2ec8ed747cf2e8c5a595",
+  "cache_sha256": "6d5181b878aa0e5f8d2513d5a79fd9d21a27fb71ec9a2ec8ed747cf2e8c5a595",
+  "match": true,
+  "size": 21609284
+ },
+ {
+  "log": "QV3uCF5DhMZ4SA9pLgpstX",
+  "member": "samples/1000_epoch_1.json",
+  "remote_sha256": "1227fda90da3d80647f2fb62a1fee2de0fdc795a29d9d54742c7d916b8d926c3",
+  "cache_sha256": "1227fda90da3d80647f2fb62a1fee2de0fdc795a29d9d54742c7d916b8d926c3",
+  "match": true,
+  "size": 21609284
+ },
+ {
+  "log": "QV3uCF5DhMZ4SA9pLgpstX",
+  "member": "samples/108_epoch_1.json",
+  "remote_sha256": "5f51ff484081065cdb0a6be5e6a7733e741377ccb7e4e75c741d7df288e24fe5",
+  "cache_sha256": "5f51ff484081065cdb0a6be5e6a7733e741377ccb7e4e75c741d7df288e24fe5",
+  "match": true,
+  "size": 21609284
+ },
+ {
+  "log": "PEA7moB7aavSghiKQcPkaA",
+  "member": "summaries.json",
+  "remote_sha256": "d0bb6d5028faf97ddcb4787484dc736772cbba04e6e743ad45cc9b09fccf7418",
+  "cache_sha256": "d0bb6d5028faf97ddcb4787484dc736772cbba04e6e743ad45cc9b09fccf7418",
+  "match": true,
+  "size": 22293970
+ },
+ {
+  "log": "PEA7moB7aavSghiKQcPkaA",
+  "member": "samples/100_epoch_1.json",
+  "remote_sha256": "7cd85617289d99117f89222945e6e8f663a71b4e5addaa9fd7f699233d0f94ed",
+  "cache_sha256": "7cd85617289d99117f89222945e6e8f663a71b4e5addaa9fd7f699233d0f94ed",
+  "match": true,
+  "size": 22293970
+ },
+ {
+  "log": "PEA7moB7aavSghiKQcPkaA",
+  "member": "samples/107_epoch_1.json",
+  "remote_sha256": "2a361185b1ebed34f633bc6077dd86694092bb5a6b44562b7f49d16fc028f5ad",
+  "cache_sha256": "2a361185b1ebed34f633bc6077dd86694092bb5a6b44562b7f49d16fc028f5ad",
+  "match": true,
+  "size": 22293970
+ },
+ {
+  "log": "RGWnSFsAhevwqsKWDUQiYd",
+  "member": "summaries.json",
+  "remote_sha256": "e0fa215cc7066fb70b413bf97d7d6b29de6649c66efa2aee47f2be30075caff4",
+  "cache_sha256": "e0fa215cc7066fb70b413bf97d7d6b29de6649c66efa2aee47f2be30075caff4",
+  "match": true,
+  "size": 19866534
+ },
+ {
+  "log": "RGWnSFsAhevwqsKWDUQiYd",
+  "member": "samples/102_epoch_1.json",
+  "remote_sha256": "558f19bb952a67db258e9c27b42bf0de1d2ec493f22c315fbeb25c02095d659d",
+  "cache_sha256": "558f19bb952a67db258e9c27b42bf0de1d2ec493f22c315fbeb25c02095d659d",
+  "match": true,
+  "size": 19866534
+ },
+ {
+  "log": "RGWnSFsAhevwqsKWDUQiYd",
+  "member": "samples/10_epoch_1.json",
+  "remote_sha256": "5941c31a393f55201a6a76620ee681b202b90bdbf30a3b5e5a5393e6abf95c00",
+  "cache_sha256": "5941c31a393f55201a6a76620ee681b202b90bdbf30a3b5e5a5393e6abf95c00",
+  "match": true,
+  "size": 19866534
+ }
+]

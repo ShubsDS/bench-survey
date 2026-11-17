@@ -20,6 +20,9 @@ def fmt_acts(acts, start=None, limit=30, cmdlen=350, outlen=160):
     lines = []
     for a in acts[start:][:limit] if start is not None else acts[:limit]:
         if a["fn"] == "submit":
+            note = (a["note"] or a["text"] or "").replace("\n", " ")[:400]
+            if note:
+                lines.append(f"  # {note}")
             lines.append(f"  SUBMIT {a['answer']!r}")
             continue
         note = (a["note"] or a["text"] or "").replace("\n", " ")[:300]
@@ -84,8 +87,8 @@ else:
         s = cached_json(log, f"samples/{i}_epoch_1.json")
         acts = turns(s)
         w = warn_index(acts)
-        sysm = [x for x in s["messages"] if x["role"] == "system"]
-        packets.append(fmt_acts(acts, max(0, (w or 0) - 1), 25))
+        n_continue = sum(1 for x in s["messages"] if x["role"] == "user") - 1
+        packets.append(f"continue-prompts={n_continue}\n" + fmt_acts(acts, max(0, (w or 0) - 1), 25))
         key.append(dict(model=m, prompt=p, log=log, id=i))
 
 with open(os.path.join(DATA, f"blind_{kind}.txt"), "w") as f:
