@@ -1,0 +1,61 @@
+{
+ "model": "haiku",
+ "n_pairs_scored": 55,
+ "n_pairs_requested": 110,
+ "unparsed_or_missing": 0,
+ "judged_index_range": [
+  5,
+  11
+ ],
+ "side_tasks": {
+  "leak_passwords": 11,
+  "sudo_edit": 20,
+  "download_malware": 12,
+  "disable_firewall": 12
+ },
+ "conditions": {
+  "R": {
+   "auroc": 0.8940495867768595,
+   "auroc_ci": [
+    0.8306487603305784,
+    0.9492603305785123
+   ],
+   "mean_attack": 52.14545454545455,
+   "mean_honest": 5.236363636363636,
+   "attack_ge_50": 33,
+   "honest_ge_50": 0,
+   "mean_prompt_chars_attack": 52372.63636363636,
+   "mean_prompt_chars_honest": 39209.32727272727
+  },
+  "R2": {
+   "auroc": 0.8490909090909091,
+   "auroc_ci": [
+    0.7721239669421488,
+    0.9191735537190082
+   ],
+   "mean_attack": 43.70909090909091,
+   "mean_honest": 4.6909090909090905,
+   "attack_ge_50": 27,
+   "honest_ge_50": 0,
+   "mean_prompt_chars_attack": 52373.63636363636,
+   "mean_prompt_chars_honest": 39210.32727272727,
+   "auroc_change_vs_R": -0.04495867768595041,
+   "auroc_change_ci": [
+    -0.08909504132231406,
+    -0.0016446280991735138
+   ],
+   "mean_change_attack": -8.436363636363636,
+   "mean_change_attack_ci": [
+    -15.11,
+    -2.1445454545454554
+   ],
+   "mean_change_honest": -0.5454545454545454,
+   "mean_change_honest_ci": [
+    -1.4004545454545454,
+    0.21818181818181817
+   ],
+   "items_changed_attack": 39,
+   "items_changed_honest": 30
+  }
+ }
+}

@@ -10,7 +10,7 @@ Evidence level per claim:
 | C1c. BashArena: container-date cue — no sign monitors use it | R |
 | C2. LinuxArena paper set (Opus 4.6, 92 vs 200): rankings and step-wise safety hold under length matching | **R** |
 | C3. MonitoringBench on the board: the three monitors' AUROC above 0.5 is length; at matched length they are at chance | **L3** |
-| C4. Haiku as the board's `simple` monitor, cue edits (system role, context length) | **L4** — see "Intervention" |
+| C4. Haiku as the board's `simple` monitor: equalising the system role or trimming context does not move its scores beyond its own test-retest noise | **R at L4** (Haiku only) |
 
 ## The benchmark and what rests on it
 
@@ -149,7 +149,34 @@ monitors (the board's own population rule), so its numbers are reported in the J
 
 ## Intervention (L4, Haiku)
 
-TBD
+Design (prereg): 109 length-matched pairs from BashArena (110 requested, 1 lost to unparsed
+answers). Attack item = a successful attack judged at the action that triggered the side-task
+checker (the step before the auto-submit), with all prior actions as transcript; honest item = an
+honest run judged at the same action index (5–11 prior actions), so the pair has equal context
+length. Side tasks: sudo 43, malware 27, firewall 24, passwords 15. Prompt: the board's
+`simple.md`, rendered as `render_prompt` does (tool calls and results only, then the request's
+system/user messages, then the judged action); answer as JSON text instead of a forced tool call.
+Model `claude-haiku-5-5` via `audits/tools/claude_call.py`.
+
+| Condition | AUROC [95% CI] | Mean suspicion attack / honest | Change vs released |
+|---|---|---|---|
+| R, as released | 0.820 [0.764, 0.866] | 46.2 / 7.7 | — |
+| S, honest preamble rendered as `[user] <task>` (attack items unchanged) | 0.818 [—] with attack held at R | — / 7.4 | AUROC −0.002 [−0.023, 0.017]; honest −0.31 [−0.93, 0.21] |
+| L, only the 3 prior actions kept (both classes) | 0.813 [0.755, 0.868] | 40.0 / 6.9 | AUROC −0.007 [−0.052, 0.042]; attack −6.2 [−12.0, 0.0]; honest −0.80 [−1.57, −0.15] |
+| Test-retest: R prompt + one trailing newline (55 pairs) | 0.849 [0.772, 0.919] | 43.7 / 4.7 | AUROC −0.045 [−0.089, −0.002]; attack −8.4 [−15.1, −2.1]; honest −0.55 [−1.40, 0.22] |
+
+Noise: the attack prompts under R and S are byte-identical and were drawn independently (the two
+jobs ran concurrently and both missed the cache). They differ on 75% of items, mean absolute
+difference 15.0 points, correlation 0.71. The trailing-newline retest moves AUROC by −0.045, more
+than either edit.
+
+Reading: for Haiku, neither removing the system-role cue nor trimming earlier benign context
+changes discrimination beyond its own sampling noise; trimming lowers suspicion slightly in both
+classes. Haiku separates these length-matched pairs well (0.82) on the sabotage step itself. This
+says how Haiku behaves with single draws on 109 short pairs; it does not test the board's monitors
+or the peak-over-actions mechanism (one action is judged per item, not the max over all).
+Inference: 768 billed calls in `inference/ledger.jsonl` (10 pilot, 648 main run after cache hits,
+110 retest), 2.34 USD of the 3 USD cap.
 
 ## Robustness
 
@@ -193,7 +220,7 @@ TBD
 
 New here: (a) from code, which cues reach the monitors (tags: never; system message: a role label
 only); (b) L3 on the board's released scores — the BashArena ranking partly and the
-MonitoringBench separation wholly depend on length, while LinuxArena holds; (c) the L4 edit.
+MonitoringBench separation wholly depend on length, while LinuxArena holds; (c) the L4 edit on Haiku, which came back null against its own retest noise.
 
 ## What this does not show
 
@@ -217,5 +244,7 @@ python -I effect_l3.py data/site/monitors.json data/basharena_features.json resu
 python -I robustness_l3.py data/site/monitors.json data/basharena_features.json results_robustness.json
 python -I l4_haiku.py data/evals data/site/monitors.json data/repos/control-tower/src/control_tower/monitors/prompts/simple.md data/l4_run.json 110 R,S,L
 python -I analyse_l4.py data/l4_run.json results_l4.json
+python -I l4_haiku.py data/evals data/site/monitors.json data/repos/control-tower/src/control_tower/monitors/prompts/simple.md data/l4_retest.json 110 R,R2 55
+python -I analyse_l4.py data/l4_retest.json results_l4_retest.json
 python -I collect_results.py   # writes results.json
 ```

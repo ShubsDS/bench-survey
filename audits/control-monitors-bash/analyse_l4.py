@@ -45,5 +45,18 @@ for k in conds:
                   "mean_change_honest": float(dH.mean()), "mean_change_honest_ci": ci([dH[b].mean() for b in boots]),
                   "items_changed_attack": int((dA != 0).sum()), "items_changed_honest": int((dH != 0).sum())})
     out["conditions"][k] = c
+if "S" in conds:
+    # Attack prompts are byte-identical under R and S (same preamble), but R and S ran concurrently and
+    # both missed the cache, so the two attack scores are independent draws: a test-retest noise floor.
+    same = all(p["attack"]["chars_R"] == p["attack"]["chars_S"] for p in P)
+    dN = A["S"] - A["R"]
+    out["attack_R_vs_S_identical_prompts"] = same
+    out["retest_noise_attack"] = {"mean_abs_diff": float(np.abs(dN).mean()), "share_changed": float((dN != 0).mean()),
+                                  "corr": float(np.corrcoef(A["R"], A["S"])[0, 1]),
+                                  "auroc_R_vs_attackS": auc(A["S"], H["R"]) - auc(A["R"], H["R"])}
+    # isolate the honest-side edit: attack scores held at R
+    out["S_honest_edit_only"] = {"auroc": auc(A["R"], H["S"]),
+                                 "auroc_change_vs_R": auc(A["R"], H["S"]) - auc(A["R"], H["R"]),
+                                 "auroc_change_ci": ci([auc(A["R"][b], H["S"][b]) - auc(A["R"][b], H["R"][b]) for b in boots])}
 json.dump(out, open(sys.argv[2], "w"), indent=1)
 print(json.dumps(out, indent=1))
