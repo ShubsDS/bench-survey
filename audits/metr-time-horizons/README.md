@@ -1,4 +1,4 @@
-# METR time horizons: newer models had larger token budgets, which lengthen frontier horizons; task source and family leave the trend intact
+# METR time horizons: newer models had larger token budgets, and successes above a common cap carry much of the frontier horizons (an upper bound); task source and family leave the trend intact
 
 Status: 2026-11-17, complete. No inference spent. Evidence levels per claim:
 
@@ -9,11 +9,31 @@ Status: 2026-11-17, complete. No inference spent. Evidence levels per claim:
 | C1 | Estimated vs baselined human time (1) | **R** (low power) | Holds: baselined only 114.9 d [60.8, 159.3], ratio 0.89 [0.48, 1.17] |
 | C1 | Family clustering (7) | **R** | Holds: dropping any one of 79 families moves the DT by at most 3.0% |
 | C1 | Forking paths (7) | L1 | 24 pre-stated specifications give 101–137 d; 19 of 24 inside the published CI |
-| C2 Frontier 50% horizons | Token budget (6) | **L3** | **Changes**: under a common 8M cap, Opus 4.6 falls from 719 to 356 min (ratio 0.50 [0.13, 0.83]), GPT-5.2 from 352 to 234 min (0.67 [0.40, 0.87]), and GPT-5.3-Codex to 0.68 [0.43, 0.88]. Opus 4.5 is unchanged; it already ran with an 8M budget |
+| C2 Frontier 50% horizons | Token budget (6) | **L3** (upper bound) | **Changes under the stated rescoring, which is an upper bound**: under a common 8M cap, Opus 4.6 falls from 719 to 356 min (ratio 0.50 [0.13, 0.83]), GPT-5.2 from 352 to 234 min (0.67 [0.40, 0.87]), and GPT-5.3-Codex to 0.68 [0.43, 0.88]. Opus 4.5 is unchanged; it already ran with an 8M budget. If RE-Bench runs are not rescored, Opus 4.6's ratio is 0.70 [0.32, 1.00] (validation) |
 | C2 | Task source (1) | L3 (one model) | Opus 4.6 only: HCAST-only 484 min, ratio 0.67 [0.38, 0.93], with a RE-Bench excess of +3.5 logits [1.8, 7.2]. Other frontier models hold. The direction was already known from METR |
 | C2 | Estimated vs baselined (1) | Inconclusive | Baselined-only horizons are 1.1–4× longer, but they extrapolate past the data and the intervals are unbounded |
 | C3 Success depends on human time, not source | Task source (1) | **R** | Common source effects at fixed log time: SWAA +0.97 [−0.83, 6.29], RE-Bench −0.12 [−1.19, 0.90] logits |
 | — | Content-blind ordering (L2) | L2 | Weighted mean success alone orders the 23 agents with Spearman 0.996 against p50 |
+
+## Validation
+
+An independent validator re-ran every script (2,373 result values, 0 differences) and re-derived
+claims 1 and 2 with its own code. Details are in [`validation/VALIDATION.md`](validation/VALIDATION.md).
+- **Reproduction: holds** (23 p50s within |log ratio| 5e-8; DT 128.744 d).
+- **Token cap: the arithmetic holds; the interpretation is corrected.** The 8M-cap numbers and the DT
+  shift (ratio 1.075, no bootstrap draw ≤ 1) reproduce. But the rescoring is an upper bound whose
+  assumption the data partly contradict:
+  - Opus 4.6 never stopped at a token limit; its budget is not observed.
+  - 22 of its 40 over-8M successes are RE-Bench runs that ran to the 8 h time limit.
+  - Successes use fewer tokens than failures within HCAST tasks.
+  - METR's 8M→32M rerun of Opus 4.5 "barely changed" its horizon.
+  - Token counts are not comparable across the triframe (OpenAI) and ReAct (Claude, Gemini) scaffolds.
+  - A length-matched placebo reproduces the cap effect.
+- **The ranking change is within noise.** P(Opus 4.5 above both GPT-5.2 and GPT-5.3-Codex | 8M cap) =
+  0.73. The capped Opus 4.6 / Opus 4.5 ratio is 1.22 [0.65, 2.39].
+- **The method is not new.** METR's own pipeline and reports publish the same "horizon vs tokens"
+  rescoring.
+- **R results: hold** (HCAST-only DT re-derived as 126.26 d).
 
 ## The benchmark and what rests on it
 
@@ -30,15 +50,20 @@ See [`claims.md`](claims.md).
    all 23 p50s are within 0.02% (max |log ratio| 0.00016), and the 2023+ DT is 128.74 d against 128.744 published. The
    bootstrap CI [103.9, 157.2] matches the published [104.4, 158.0]
    (`scripts/01_reproduce.py`, `results/reproduce.json`).
-2. **The per-run token budget rises with release date, and the extra budget accounts for a large
-   part of the newest models' horizons.** Runs stop at about 0.8M tokens for GPT-4 0314 (Vivaria,
-   2023), about 8M for Inspect runs of 2023–25 Claude, GPT-4-class and Gemini 3 Pro models, and
-   about 16M for o1, o3, the GPT-5 series and Claude Opus 4.6. Opus 4.5, released 10 weeks before
-   Opus 4.6, peaks at 8.07M tokens; Opus 4.6 peaks at 15.5M. Of each frontier model's successes on
+2. **The per-run token budget rises with release date, and successes that used more than 8M tokens
+   account for a large part of the newest models' horizons. Whether the budget caused those
+   successes is not shown.** Runs stop at about 0.8M tokens for GPT-4 0314 (Vivaria, 2023), about
+   8M for Inspect runs of 2023–25 GPT-4-class models, Claude 3 Opus and Gemini 3 Pro, and about 16M
+   for o1, o3 and the GPT-5 series. METR states 8M for Opus 4.5 and 16M for GPT-5 (note of 13 Feb
+   2026). Opus 4.6's budget is not observed: no Opus 4.6 run stopped at a token limit. Its 18
+   usage-limit stops were 8 h time-limit stops at 0.7–14.8M tokens. It peaks at 15.5M, against 8.07M
+   for Opus 4.5, released 10 weeks earlier. Of each frontier model's successes on
    tasks of 4 h or more, 17–20% used more than 8M tokens (Opus 4.6: 37 of 198; GPT-5.2: 19 of 114),
    against 0 of 95 for Opus 4.5. Rescoring those runs as failures, i.e. giving every model the same
-   8M budget, halves Opus 4.6's horizon and cuts GPT-5.2 and GPT-5.3-Codex by a third. Opus 4.6's
-   lead over Opus 4.5 shrinks from 2.45× to 1.22×. The DT lengthens by 7.5%, a ratio whose interval
+   8M budget, halves Opus 4.6's horizon and cuts GPT-5.2 and GPT-5.3-Codex by a third. This is an
+   upper bound: it assumes every over-cap success would have failed at 8M (see "What this does not
+   show" and the Validation section). Opus 4.6's lead over Opus 4.5 shrinks from 2.45× to 1.22×
+   [0.65, 2.39]. The DT lengthens by 7.5%, a ratio whose interval
    excludes 1 even after a Bonferroni correction for three primary tests (98.3% CI [1.024, 1.206]).
    The point estimate stays inside the published interval. **Bias direction:** the larger budgets
    make newer models look more capable and the trend look faster.
@@ -68,7 +93,11 @@ SOTA set in each variant gives 127.0 (E1b), 122.4 (E2b) and 138.9 d (E3 8M).
 ## The confound
 
 **Token budget (family 6).** `tokens_count` per run in `runs.jsonl`. The budget is not a field; we
-infer it from where usage-limited runs stop (`results/inventory.json`, `elicitation`). Maximum
+infer it from where usage-limited runs stop (`results/inventory.json`, `elicitation`). For Opus 4.6
+(and the Claude models up to Opus 4.1) no run stops at a token limit, so only the maximum is known.
+Budget is collinear with scaffold: OpenAI reasoning models ran in `triframe_inspect`, all others in
+`metr_agents/react`. METR warns that absolute token counts are not comparable across APIs and
+scaffolds. Maximum
 tokens per run: GPT-4 0314 0.83M; GPT-4 1106, GPT-4 Turbo, GPT-4o, Claude 3 Opus, Claude 3.5
 Sonnet (New), o1-preview, Gemini 3 Pro and Opus 4.5 8.0–8.3M; o1, o3, GPT-5, GPT-5.1-Codex-Max,
 GPT-5.2 and GPT-5.3-Codex 16.1–16.6M; Opus 4.6 15.5M. Release date correlates with maximum tokens
@@ -97,11 +126,18 @@ Notes made before computing anything: SWAA ids are templated micro-tasks (`arith
 - **Token cap (E3).** The rescoring changes outcomes only for runs above the cap. A placebo that
   removes the same number of successes per agent at random moves the DT by a ratio of 0.987–1.010
   and Opus 4.6's horizon by 0.92–1.30 (200 draws, `results/cap_placebo.json`). The cap moves them
-  by 1.075 and 0.495, so the effect comes from where the high-token successes sit (long tasks), not
-  from their number. Dose-response (`results/cap_sensitivity.json`, post hoc, task bootstrap): Opus
+  by 1.075 and 0.495, so the effect does not come from the number of removed successes alone.
+  Correction (validation): a length-matched placebo removes the same number of successes at random
+  from tasks of 240 min or more. It gives DT 1.064 and Opus 4.6 0.53, close to the cap. So the cap's
+  effect equals that of removing that many long-task successes, and it stands or falls with the
+  assumption that those runs would have failed at 8M. Dose-response (`results/cap_sensitivity.json`, post hoc, task bootstrap): Opus
   4.6 p50 is 266 min at a 4M cap, 356 at 8M, 425 at 12M and 719 uncapped.
 - **Ranking.** Under the 8M cap, Opus 4.6 stays first (356 min), but Opus 4.5 (293) moves above
   GPT-5.3-Codex (237) and GPT-5.2 (234). Published order: GPT-5.2 352 > GPT-5.3-Codex 349 > Opus 4.5 293.
+  The swap is within noise: in a paired bootstrap, Opus 4.5 is above both GPT models in 73% of draws
+  under the cap (10% uncapped), and Opus 4.6 stays first in 73%. Capping GPT-5.2 at its own 16M budget
+  already gives 283 min (below Opus 4.5), because successes in its limit-stopped runs at 16.0–16.6M
+  are rescored. The swap therefore does not need a difference in budget (validation).
 - **Source (E1a).** In a joint model with agent-specific intercepts and slopes, the common SWAA and
   RE-Bench effects are not distinguishable from 0. With agent-specific effects, Opus 4.6's
   RE-Bench coefficient is +3.49 logits [1.76, 7.15], while the other frontier models range from
@@ -132,8 +168,9 @@ Notes made before computing anything: SWAA ids are templated micro-tasks (`arith
    sign, not significant. We do not claim estimates are biased, only that they do not inflate horizons.
 3. **The token budget is part of the construct.** METR may deliberately give reasoning models more
    room, and a METR staff comment (prior_work item 20) said budgets were not expected to matter.
-   Our data show that, for the newest models, the budget accounts for half (Opus 4.6) or a third
-   (GPT-5.2, GPT-5.3-Codex) of the 50% horizon. Whether that is capability or elicitation is a
+   Our data show that, for the newest models, successes above 8M tokens account for up to half
+   (Opus 4.6) or a third (GPT-5.2, GPT-5.3-Codex) of the 50% horizon. That is an upper bound on what
+   the budget itself contributes (validation: METR's 32M rerun of Opus 4.5 barely moved its horizon). Whether that is capability or elicitation is a
    definition we do not settle. The published horizon is a horizon at a model-specific budget, and
    the comparison between Opus 4.5 (8M) and Opus 4.6 (16M) mixes model and budget.
 
@@ -143,8 +180,13 @@ See [`prior_work.md`](prior_work.md). Known: dropping SWAA moves horizons by und
 tasks cut Opus 4.6 by 40% via RE-Bench (METR, March 2026); the non-SWAA TH1.0 trend; date-range
 sensitivity; long tasks are mostly estimated; the published bootstrap already resamples families;
 cost caps relative to human cost leave the doubling time at 3.0–3.3 months (Woodruff, March 2026);
-o3 had a 16M budget (comment). New here: (a) the fixed-token-budget equalisation and its effect on
-frontier horizons and the 2023+ DT, with paired intervals and a placebo; (b) the HCAST-only and
+o3 had a 16M budget (a commenter's reading, May 2025; METR replied that budgets were chosen not to bind).
+Also already public (added in validation): METR states per-model budgets (Opus 4.5 8M, GPT-5 16M,
+GPT-5.1-Codex-Max 32M), and found that an 8M→32M rerun "barely changed" Opus 4.5's horizon. The rescoring method
+itself is METR's: its pipeline (`score_over_resource_horizon.py:48-80`) and its GPT-5 and
+GPT-5.1-Codex-Max reports plot the horizon at each token level, counting unfinished runs as failures.
+New here: (a) reading all TH1.1 frontier horizons and the 2023+ DT at one common token cap, with
+paired intervals and a placebo (the rescoring method is METR's); (b) the HCAST-only and
 baselined-only 2023+ DT on TH1.1, with intervals; (c) the estimated-vs-baselined coefficient, whose
 sign is opposite to the qualitative critique; (d) the Opus 4.6 RE-Bench excess as an
 interval-bearing coefficient; (e) drop-one-family influence on the DT.
