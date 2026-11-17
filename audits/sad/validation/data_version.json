@@ -1,0 +1,229 @@
+{
+ "297a300": {
+  "date": "2024-07-08",
+  "n_models": 19,
+  "chat_minus_base_points": 3.19,
+  "per_pair": [
+   -2.73,
+   2.54,
+   4.32,
+   6.43,
+   5.38
+  ],
+  "r_mmlu": 0.758,
+  "n_mmlu": 15,
+  "tasks_changed": "initial"
+ },
+ "50d83f4": {
+  "date": "2024-10-26",
+  "n_models": 20,
+  "chat_minus_base_points": 3.19,
+  "per_pair": [
+   -2.73,
+   2.54,
+   4.32,
+   6.43,
+   5.38
+  ],
+  "r_mmlu": 0.758,
+  "n_mmlu": 15,
+  "tasks_changed": [
+   "facts_human_defaults",
+   "facts_llms",
+   "facts_which_llm",
+   "facts_names",
+   "influence",
+   "introspection_count_tokens",
+   "introspection_predict_tokens",
+   "introspection_rules",
+   "stages_full",
+   "stages_oversight",
+   "self_recognition_groups",
+   "self_recognition_who",
+   "id_leverage_multihop",
+   "id_leverage_entity_name",
+   "output_control",
+   "base_model_deviation"
+  ]
+ },
+ "17d8e95": {
+  "date": "2024-10-26",
+  "n_models": 20,
+  "chat_minus_base_points": 3.19,
+  "per_pair": [
+   -2.73,
+   2.54,
+   4.32,
+   6.43,
+   5.38
+  ],
+  "r_mmlu": 0.758,
+  "n_mmlu": 15,
+  "tasks_changed": [
+   "introspection_count_tokens"
+  ]
+ },
+ "a5c85db": {
+  "date": "2024-12-13",
+  "n_models": 20,
+  "chat_minus_base_points": 3.19,
+  "per_pair": [
+   -2.73,
+   2.54,
+   4.32,
+   6.43,
+   5.38
+  ],
+  "r_mmlu": 0.758,
+  "n_mmlu": 15,
+  "tasks_changed": [
+   "influence",
+   "introspection_rules",
+   "output_control"
+  ]
+ },
+ "3d8f6e4": {
+  "date": "2024-12-13",
+  "n_models": 21,
+  "chat_minus_base_points": 3.19,
+  "per_pair": [
+   -2.73,
+   2.54,
+   4.32,
+   6.43,
+   5.38
+  ],
+  "r_mmlu": 0.758,
+  "n_mmlu": 15,
+  "tasks_changed": [
+   "facts_human_defaults",
+   "facts_llms",
+   "facts_which_llm",
+   "facts_names",
+   "influence",
+   "introspection_count_tokens",
+   "introspection_predict_tokens",
+   "introspection_rules",
+   "stages_full",
+   "stages_oversight",
+   "self_recognition_groups",
+   "self_recognition_who",
+   "id_leverage_multihop",
+   "id_leverage_entity_name",
+   "output_control",
+   "base_model_deviation"
+  ]
+ },
+ "paper_table1_comparison": {
+  "paper_table1_chat_minus_base": 4.52,
+  "paper_table1_per_pair": [
+   -0.1,
+   5.4,
+   5.3,
+   6.4,
+   5.6
+  ],
+  "repo_minus_paper_by_category_points": {
+   "llama-2-7b": {
+    "SAD": 2.9,
+    "facts": 0.7,
+    "influence": 0.0,
+    "introspection": 20.3,
+    "stages": 0.0,
+    "self-recognition": 0.0,
+    "id-leverage": -0.0,
+    "anti-imitation": -1.1
+   },
+   "llama-2-7b-chat": {
+    "SAD": 0.3,
+    "facts": 1.2,
+    "influence": 0.0,
+    "introspection": 0.2,
+    "stages": -0.0,
+    "self-recognition": 0.0,
+    "id-leverage": 0.0,
+    "anti-imitation": 0.2
+   },
+   "llama-2-13b": {
+    "SAD": 3.0,
+    "facts": 0.7,
+    "influence": 0.0,
+    "introspection": 16.1,
+    "stages": -0.0,
+    "self-recognition": 0.0,
+    "id-leverage": 0.0,
+    "anti-imitation": 4.2
+   },
+   "llama-2-13b-chat": {
+    "SAD": 0.1,
+    "facts": 0.3,
+    "influence": -0.0,
+    "introspection": 1.1,
+    "stages": 0.0,
+    "self-recognition": 0.2,
+    "id-leverage": -0.0,
+    "anti-imitation": -0.8
+   },
+   "llama-2-70b": {
+    "SAD": 0.7,
+    "facts": 0.3,
+    "influence": 0.0,
+    "introspection": 4.5,
+    "stages": -0.0,
+    "self-recognition": 0.1,
+    "id-leverage": -0.0,
+    "anti-imitation": -0.5
+   },
+   "llama-2-70b-chat": {
+    "SAD": -0.3,
+    "facts": -0.7,
+    "influence": 0.0,
+    "introspection": 0.6,
+    "stages": 0.0,
+    "self-recognition": -1.1,
+    "id-leverage": -0.0,
+    "anti-imitation": -1.3
+   },
+   "davinci-002": {
+    "SAD": 0.3,
+    "facts": 0.5,
+    "influence": -0.0,
+    "introspection": 0.3,
+    "stages": -0.0,
+    "self-recognition": -0.2,
+    "id-leverage": -0.0,
+    "anti-imitation": 1.3
+   },
+   "gpt-3.5-turbo-0613": {
+    "SAD": 0.3,
+    "facts": 1.0,
+    "influence": -0.0,
+    "introspection": 0.5,
+    "stages": -0.0,
+    "self-recognition": 0.7,
+    "id-leverage": 0.0,
+    "anti-imitation": -0.2
+   },
+   "gpt-4-base": {
+    "SAD": 0.2,
+    "facts": 0.9,
+    "influence": -0.0,
+    "introspection": 0.2,
+    "stages": 0.0,
+    "self-recognition": 0.0,
+    "id-leverage": 0.0,
+    "anti-imitation": 0.4
+   },
+   "gpt-4-0613": {
+    "SAD": -0.0,
+    "facts": 0.4,
+    "influence": -0.0,
+    "introspection": 0.1,
+    "stages": -0.0,
+    "self-recognition": 0.4,
+    "id-leverage": 0.0,
+    "anti-imitation": -0.9
+   }
+  }
+ }
+}
