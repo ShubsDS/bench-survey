@@ -1,6 +1,38 @@
-# TASTE: the critique's capability trend survives a label-blind placebo split, but "below chance" does not set it apart, and its "every strong model" and "beyond OpenAI" parts are fragile
+# TASTE: the critique's numbers reproduce from public material and its tie trend is steeper than on random splits; "below chance" is not specific to its split, "every strong model" and "beyond OpenAI" are fragile, and a split artifact is not ruled out
 
-Status: complete (desk audit), 2026-11-17, branch `audits-round2`. Not yet independently validated.
+Status: complete (desk audit), 2026-11-17, branch `audits-round2`. **Independently validated
+2026-11-17** ([`validation/VALIDATION.md`](validation/VALIDATION.md)). Every claim is L1. The
+simulations are leads only, and none supports an R.
+
+*Auditor's original title: "the critique's capability trend survives a label-blind placebo split,
+but 'below chance' does not set it apart, and its 'every strong model' and 'beyond OpenAI' parts
+are fragile".*
+
+**Validated result.**
+1. **The critique's figure reproduces from public material, exactly to the pair** [digitised;
+   validator]. r = −0.60 [−0.80, −0.30], n = 28. Fourteen of 14 models above ECI 158 are below 50%.
+   The OpenAI mean is 29.6%.
+2. **The tie trend is steeper than chance splits would give** [validator]. On random 52-pair
+   splits r is −0.30 [−0.46, −0.14] (independent-model null, a lower bound on spread), against
+   −0.60 observed.
+3. **The trend is robust to single models, release groups and families** [validator]:
+   - leave-two-out over models runs from −0.76 to −0.48;
+   - the release-cluster bootstrap gives [−0.83, −0.29].
+4. **"Below 50%" is not specific to the split** [mine from paper Table 5]. With the question
+   shown, 12 of the 19 paper models are already below 50% over all 92 pairs.
+5. **The "every strong model" part is fragile.** Two things can break it:
+   - the within-prompt bound: if the 18 within-prompt pairs are all in the ties, 3 of 6 strong
+     paper models return to ≥ 50%;
+   - ECI uncertainty: the statement holds in 69% of draws from Epoch's intervals, because the
+     158 cut-off sits next to Opus 4.7, which is at exactly 50%.
+6. **The "beyond OpenAI" part rests on Haiku 4.5 alone.** Dropping it gives p = 0.085. Dropping
+   any other single model keeps p < .05.
+7. **A split-and-tuning artifact driven by a topic prior cannot produce the pattern** [sim]. This
+   holds even when topic reliance rises with capability: 0% of runs.
+8. **A selection artifact can produce the pattern** [sim]. Suppose stronger models share an "LLM
+   appeal" that the Opus-4.6-graded proposal selection made anti-correlated with rater scores. Then
+   the full pattern appears in up to 69% of runs, so this is not ruled out. See "Validation" at the
+   end.
 
 **Access: Case B (published tables, figures and prose only).** The benchmark, labels, proposal text
 and per-pair model logs sit behind the authors' Google form, which this audit did not submit. The
@@ -14,17 +46,18 @@ could be analysed:
 - Epoch's ECI file.
 
 Every number below is labelled with its source: **[paper]**, **[critic]**, **[digitised]** (read
-from the critic's chart, ±0.5 points), **[mine]** (computed by this audit from those numbers) or
+from the critic's chart; the auditor estimated ±0.5 points; the validator found every unoccluded
+marker within 0.35 of a possible pair count, so the snapped values are exact), **[mine]** (computed by this audit from those numbers) or
 **[sim]** (synthetic benchmarks with the published structure; not TASTE data). No model was run:
 inference spend is 0 USD.
 
 | Claim | Result | Level |
 |---|---|---|
-| Critique C3a: on the 52 ties, 14 of 14 models with ECI > 158 are below 50% | Reproduced [digitised]. But a label-blind 52-pair subset the paper itself publishes (magnet-free) also puts 13 of 19 models below 50% [paper], the same count as the ties for those 19 models. If the 18 within-prompt pairs (a failure the paper already reports with the question shown) all sit in the ties, 3 of the 6 paper models above ECI 158 return to ≥ 50% [mine] | Below-chance counts are **not specific** to the split; "every strong model" is **fragile** |
-| Critique C3b: tie accuracy falls with ECI, r = −0.60 | Reproduced: −0.60 [−0.80, −0.30], n = 28 [mine from digitised]. The label-blind magnet-free subset gives **+0.39** [−0.08, 0.72] [mine from paper]. The trend holds without Haiku 4.5 (−0.53), with family fixed effects (p = 0.004) and in the within-prompt worst case (−0.51, 19 paper models). The split-and-tuning simulation produces the pattern in ≤ 2.75% of runs, never at the observed size [sim] | **R** for the split-artifact explanation: the trend survives |
-| Critique: the trend holds without OpenAI (r = −0.57) | Without OpenAI **and** Haiku 4.5: −0.41 [−0.74, 0.07], p = 0.09 (n = 18). Within Anthropic without Haiku: −0.30 [−0.76, 0.37] [mine] | **Fails as worded**: outside OpenAI it rests on one model |
-| Critique C2: the "fewer interp terms" rule's 63.0% is evidence of a topic confound | With labels fixed by 50 proposal scores, a random topic rule written down in advance reaches 62% at the 95th percentile of a no-confound null. The best of 5 candidate themes reaches 68% [sim] | **Weakened**: 63.0% alone is not evidence; the 80% on the 40 decided pairs rests on ≥ 4 proposals |
-| Paper C1: Fable 5 60% vs experts 77% | With a proposal-level share of noise ρ ≥ 0.25, 60% is not distinguishable from 50% (null P(≥ 60%) = 7–16%), and the gap's 95% interval reaches 0 [sim]. Matched for tie handling, the human figure is ≤ 75.3%; on the magnet-free half the gap is 8 points (70 vs 62); other cap choices give 70–82% [paper, mine] | Desk statistics (L1-level lead). The ±10-point binomial interval the blog gives is too narrow |
+| Critique C3a: on the 52 ties, 14 of 14 models with ECI > 158 are below 50% | Reproduced [digitised]. The magnet-free 52-pair subset the paper publishes also puts 13 of 19 models below 50% [paper], the same count as the ties for those 19 models. *Validator:* magnet-free is not label-blind (it drops the magnets' largest-gap pairs, App. C.2). The better reason the count is not specific: with the question shown, 12 of the 19 paper models are already below 50% over all 92 pairs [mine from paper]. If the 18 within-prompt pairs all sit in the ties, 3 of the 6 paper models above ECI 158 return to ≥ 50% [mine]. *Validator:* under Epoch's ECI intervals the 14/14 holds in 69% of draws; above ECI 157 it is 14 of 15 [validator] | L1. Below-chance counts are **not specific** to the split; "every strong model" is **fragile** |
+| Critique C3b: tie accuracy falls with ECI, r = −0.60 | Reproduced: −0.60 [−0.80, −0.30], n = 28 [mine from digitised]. Magnet-free gives **+0.39** [−0.08, 0.72] [mine from paper]. That is one split, in a possibly different prompt condition and with a different gap mix: not a matched placebo. *Validator:* random 52-pair splits give −0.30 [−0.46, −0.14] (independent models; 0 of 10,000 reach −0.60). The trend holds without Haiku 4.5 (−0.53), with family fixed effects (p = 0.004), under release-cluster resampling [−0.83, −0.29] and in the within-prompt worst case (−0.51, 19 paper models). The auditor's split-and-tuning simulation produces the pattern in ≤ 2.75% of runs [sim]. *Validator:* a rebuilt simulation agrees for a topic prior (0%, even rising with capability), but a selection-induced shared appeal produces it in up to 69% [sim] | L1. *Auditor:* "R for the split-artifact explanation". **Downgraded:** a simulation cannot give R, and the artifact is ruled out only for a topic prior |
+| Critique: the trend holds without OpenAI (r = −0.57, p = .011) | Reproduced: −0.571, p = 0.011 [validator]. Without OpenAI **and** Haiku 4.5: −0.41 [−0.74, 0.07], p = 0.09 (n = 18). This cell was added after the desk results and is not preregistered. Within Anthropic without Haiku: −0.30 [−0.76, 0.37] [mine]. Leave-one-out within the 19 non-OpenAI models: p < .05 in 18 of 19 [validator] | L1. *Auditor:* "fails as worded". **Corrected: fragile**. Outside OpenAI the trend rests on one model, Haiku 4.5 |
+| Critique C2: the "fewer interp terms" rule's 63.0% is evidence of a topic confound | With labels fixed by 50 proposal scores (an assumption; the paper's labels are per anchor), a random topic rule written down in advance reaches 62% at the 95th percentile of a no-confound null. The best of 5 candidate themes reaches 68% [sim] | L1 (sim lead). **Weakened**: 63.0% alone is not evidence; the 80% on the 40 decided pairs rests on ≥ 4 proposals |
+| Paper C1: Fable 5 60% vs experts 77% | *Auditor:* with ρ ≥ 0.25, 60% is not distinguishable from 50% (null P(≥ 60%) = 7–16%) [sim]. *Validator:* the conclusion flips near ρ ≈ 0.07 in magnet-like graphs, but in a flat graph it holds only above ρ = 0.75. Neither ρ nor the real degree distribution is published. The gap's interval reaching 0 also assumes an unmeasured human design effect [sim]. Matched for tie handling, the human figure is 75.3% (71.5% at zero credit) [mine from paper]. On the magnet-free half the gap is 8 points (70 vs 62); other cap choices give 70–82% [paper] | L1, **conditional lead**. *Auditor:* "the ±10-point binomial interval the blog gives is too narrow". It is too narrow only if ρ ≳ 0.1 and the pair graph is as skewed as the magnets imply |
 
 ## The benchmark and what rests on it
 
@@ -52,9 +85,17 @@ accuracy from the paper's Table 5, (74·distinct + 18·within)/92: median differ
 0.6. The digitised values give r = −0.605 (n = 28, one occluded model filled from Table 5), 14 of
 14 above ECI 158 below 50%, and an OpenAI mean of 29.6%. All three match the critique. [mine]
 
-**2. A label-blind split of the same sizes also gives "below chance", but not the trend.** The
-paper's magnet-free subset drops the 40 pairs that contain the 4 most frequent proposals. It is
-chosen by frequency, not by labels or topic, and it has exactly the critique's sizes (40/52).
+**2. A split of the same sizes also gives "below chance", but not the trend.** The paper's
+magnet-free subset drops the 40 pairs that contain the 4 most frequent proposals. It has exactly
+the critique's sizes (40/52). *Auditor's original:* "chosen by frequency, not by labels or topic".
+
+*Validator's correction:*
+- It is chosen without looking at label polarity, but not independently of the labels'
+  structure. Magnets are the proposals with the most ≥ 2 score gaps, and each was cut to its "10
+  pairs first sorted by descending score gap" (App. C.2). So the split removes the largest-gap
+  pairs.
+- Its overlap with interp topics is not public.
+- It is one split, not a placebo distribution.
 
 | 19 paper models | Critique ties (52) [digitised] | Magnet-free (52) [paper Fig. 19] |
 |---|---|---|
@@ -67,9 +108,19 @@ chosen by frequency, not by labels or topic, and it has exactly the critique's s
 On TASTE, a 52-pair subset that excludes the pairs where models do best routinely leaves most
 models below 50%. Models average about 62% on the 40 magnet pairs implied by Table 3 and Fig. 19
 [mine]. So "below chance on the complement" does not by itself show anything about interp topics.
-The falling trend with capability does not appear on the label-blind subset. Caveat: Fig. 19
-averages the question-shown and question-hidden prompts, while the critique uses question shown
-only.
+The falling trend with capability does not appear on the magnet-free subset.
+
+Caveat: the critique uses question shown only. The audit assumed Fig. 19 averages the
+question-shown and question-hidden prompts, but D.3 does not say so.
+
+*Validator's checks:*
+- **Condition mismatch.** The question-shown penalty rises with ECI (r = +0.36). Assuming the
+  magnet-free subset carries 1–4 times the whole-benchmark penalty moves its r from +0.39 to
+  between +0.28 and −0.04, not to −0.70 [mine from paper].
+- **A random-split placebo.** Each model's 92-pair count is resampled hypergeometrically into 52
+  pairs, with models treated as independent, which makes the null too narrow. This gives
+  r = −0.30 [−0.46, −0.14]. The observed −0.60 is outside all 10,000 draws. The same placebo gives
+  7–13 of the 19 paper models below 50% (median 10) [validator].
 
 **3. The critique's condition contains a published failure that falls with capability.** The
 critique scores only question-shown prompts. The paper (Table 5, §3.4) reports that with the
@@ -128,6 +179,21 @@ with capability, or rising with a flat quality signal; 400 benchmarks each):
 A topic prior can push items that "look interp but won" into the ties. In these settings that
 effect is too small to produce the observed size.
 
+*Validator's rebuild* ([`validation/sim_validator.py`](validation/sim_validator.py), [sim], L1).
+My own generator and model class:
+- **Topic prior alone, even rising with capability: 0% of runs.** Fifty-one of the 52 ties have no
+  terms, so a topic prior has nothing to act on.
+- **A selection-induced shared appeal reproduces the pattern.** Add an "LLM appeal" shared by all
+  models. Let the proposals be survivors of an LLM-grader selection on quality plus appeal (the
+  paper's best-of-N and best-of-10 steps, App. A). Let reliance on that appeal and on the topic
+  rise with capability. Then the full pattern appears in 15–69% of runs: all strong models below
+  50% on ties, r ≤ −0.6, and a non-negative trend on the decided half. Without the selection it
+  appears in 0–8.5%.
+
+So the ≤ 2.75% holds only for the auditor's model class. The simulations rule out a topic-prior
+artifact. They do not rule out a selection artifact, and they cannot separate it from intrinsic
+anti-taste.
+
 **6. The rule's 63.0% is weak evidence by itself [sim].** Under this label structure, accuracy
 varies widely even for a rule unrelated to the labels. In the synthetic benchmarks, a topic rule
 fixed in advance with prevalence 10–40% and no relation to scores has a 95th percentile of 62%; it
@@ -159,6 +225,18 @@ proposal once, so their errors cluster by proposal.
 
 \*Assumes the human estimate has the same design effect and ignores the covariance between the
 two estimates.
+
+*Validator:* the conclusion depends on the assumed pair graph as well as on ρ [sim]. In my rebuilt
+graphs, P(no-signal ≥ 60%) is as follows:
+
+| Graph | ρ = 0 | ρ = 0.1 | ρ = 0.25 | ρ = 1 |
+|---|---|---|---|---|
+| Magnet-like (largest-gap cap) | 2.4% | 6.2% | 10.0% | 18.0% |
+| Per-anchor labels | 2.4% | 5.9% | 10.0% | 17.7% |
+| Flat (degree 3–4) | 2.4% | 2.9% | 3.7% | 5.8% |
+
+So "60% is not distinguishable from 50%" flips near ρ ≈ 0.07 for skewed graphs. For a flat graph
+it holds only above ρ ≈ 0.75. ρ is not measured. This is a conditional lead.
 
 Below-chance results that survive this clustering:
 - GPT-6 Sol at 11 of 52: a no-signal model gets this low in ≤ 0.8% of runs, even at ρ = 1;
@@ -192,20 +270,26 @@ significantly below chance" uses pair-level binomials and would shrink.
    polishing, all by Opus 4.6 (App. A). Raters were told "don't just pick out LLM sounding text".
    If what LLM graders liked and what raters penalised overlap, models that share the grader's
    taste would be pushed below chance. This is a selection mechanism (trait 2). **Not testable
-   without per-pair data**; Opus 4.6 itself scores 45% [paper].
+   without per-pair data**; Opus 4.6 itself scores 45% [paper]. *Validator:* the simulation in
+   finding 5 shows that this mechanism can produce the critique's full pattern [sim, L1]. That
+   shows it is possible, not that it happened.
 4. **"It is one family" (against the critique's generality).** Largely true: see finding 4.
 
 ## Robustness
 
 | Check | Result | Does the critique's trend survive? |
 |---|---|---|
-| Label-blind placebo of the same sizes (magnet-free) | Below-50 count reproduced (13/19); trend not (r = +0.39) | Trend yes; "below chance" not specific |
+| Same-size split (magnet-free; not label-structure-blind, possibly a different condition) | Below-50 count reproduced (13/19); trend not (r = +0.39) | Trend yes; "below chance" not specific |
+| *Validator:* random 52-pair splits (independent models) | r −0.30 [−0.46, −0.14]; observed −0.60 outside 10,000 draws; 7–13 of 19 below 50% | Trend yes (null too narrow); "below chance" not specific |
 | Within-prompt worst case | r −0.51; 3 of 6 strong paper models back to ≥ 50% | Trend yes; "all strong models" no |
 | Drop Haiku 4.5 | −0.53 | yes |
-| Drop OpenAI and Haiku 4.5 | −0.41 [−0.74, 0.07] | **no** |
-| Family fixed effects | p = 0.004 (0.050 without Haiku) | yes, weaker |
-| Split-and-tuning simulation | ≤ 2.75% of runs; tie accuracy ≥ 51% | yes |
+| Drop OpenAI and Haiku 4.5 (added after the desk results; not preregistered) | −0.41 [−0.74, 0.07] | no, but other single drops keep p < .05 (18 of 19) |
+| *Validator:* leave two models out (378) / release-cluster bootstrap | −0.76 to −0.48, all p < .05 / [−0.83, −0.29] | yes |
+| *Validator:* ECI uncertainty (Epoch CIs) | r [−0.66, −0.53]; 14/14 holds in 69% | trend yes; "all strong models" fragile |
+| Family fixed effects | p = 0.004 (0.049 without Haiku) | yes, weaker |
+| Split-and-tuning simulation | ≤ 2.75% of runs; tie accuracy ≥ 51% [sim]. *Validator:* 0% with a topic prior; 15–69% with a selection-induced shared appeal [sim] | topic-prior artifact unlikely; selection artifact not excluded |
 | Bonferroni ×7 (prereg) | FE p 0.004 → 0.03; within-prompt r p 0.0024 → 0.017; without-Haiku FE p 0.05 does not survive | mostly |
+| *Validator:* Bonferroni ×25 (about the number of p-values reported) | all-model r 0.0007 → 0.018 and within-prompt r survive; FE p → 0.10 does not | partly |
 
 Pre-registered rules ([`prereg.md`](prereg.md)), as they came out:
 - T1: below-chance counts are not specific; the trend is specific.
@@ -213,7 +297,9 @@ Pre-registered rules ([`prereg.md`](prereg.md)), as they came out:
   "every strong model" claim. It is not met for the trend.
 - T3: "holds" (without Haiku the interval excludes 0; FE p < 0.05).
 - T5: "rule not evidence by itself" (95th percentile ≥ 63% for K ≥ 5; 62% for K = 1).
-- T6: "not a plausible artifact" (< 5%).
+- T6: "not a plausible artifact" (< 5%). *Validator:* this holds within the prereg's model class
+  (a topic prior). A rebuilt simulation with a selection-induced shared appeal exceeds 5% (15–69%),
+  so "not a plausible artifact" does not hold in general [sim].
 
 ## What was already known
 
@@ -225,7 +311,7 @@ See [`prior_work.md`](prior_work.md). The paper discloses:
 The critique discloses tuning, one reviewer per label and shared proposals.
 
 New here:
-- the magnet-free subset used as a label-blind placebo of the same size;
+- the magnet-free subset used as a same-size comparison split (*validator:* not label-structure-blind; see finding 2);
 - within-prompt question-shown accuracy falls with ECI (−0.67), and the question-shown condition
   turns the whole-benchmark trend negative;
 - the worst-case within-prompt bound;
@@ -277,3 +363,54 @@ $P -I scripts/collect.py               # -> results.json
 
 Downloads (paper, posts, figures, ECI) go to `data/` (git-ignored). The URLs are in
 [`claims.md`](claims.md).
+
+## Validation
+
+Independent validation, 2026-11-17 ([`validation/VALIDATION.md`](validation/VALIDATION.md);
+numbers in [`validation/validation.json`](validation/validation.json)). The validator reran every
+script (outputs byte-identical), re-digitised the critic's figure with its own code, re-transcribed
+the paper's tables, and rebuilt both simulations from scratch. No inference: 0 USD.
+
+Corrections made above:
+1. **The split-artifact claim is downgraded from R to L1.** A simulation cannot give R. A topic
+   prior cannot produce the pattern on term-free ties: 0% of runs, even when reliance rises with
+   capability. But a selection-induced shared "LLM appeal" can: 15–69% of runs, with a
+   non-negative decided-half trend. Auditor's original: "R for the split-artifact explanation: the
+   trend survives".
+2. **Magnet-free is not label-blind.** The cap kept each magnet's largest-gap pairs. It is one
+   same-size split, its prompt condition is not stated (D.3), and it is not a placebo
+   distribution. A random-split placebo was added: r −0.30 [−0.46, −0.14] against −0.60 observed.
+   Auditor's original: "chosen by frequency, not by labels or topic".
+3. **"Below chance is not specific" now rests on a better reason.** With the question shown, 12
+   of the 19 paper models are already below 50% over all 92 pairs [mine from paper Table 5].
+4. **"Without OpenAI" is corrected from "fails as worded" to "fragile".**
+   - The critic's −0.571, p = 0.011 reproduces.
+   - Dropping Haiku 4.5 breaks it (p = 0.085); 18 of the 19 single drops keep p < .05.
+   - The drop-OpenAI-and-Haiku cell was added after the desk results and is not preregistered.
+5. **Reading error.** Values snap to the possible pair counts (k/80, k/104) within 0.35 points,
+   so they are exact except for three occluded markers. Auditor's original: "±0.5 points". No
+   count or r changes (r stays in [−0.611, −0.595] under ±0.5). The auditor's triangles read
+   about 0.35 points low.
+6. **"14 of 14" has a second fragility: ECI uncertainty.** The statement holds in 69% of draws
+   from Epoch's intervals. The 158 cut-off sits between Opus 4.7 (157.5, exactly 50.0%) and Kimi
+   K3 (158.6), and above ECI 157 the count is 14 of 15.
+7. **The design effect is a conditional lead.**
+   - It flips near ρ ≈ 0.07 in magnet-like graphs, but needs ρ > 0.75 in a flat graph.
+   - The gap interval assumes an unmeasured human design effect.
+   - "The blog's ±10 points is too narrow" now carries that condition.
+8. **Comparisons.** About 25 p-values are reported. At ×25, the family-FE p (0.004 → 0.10) does
+   not survive. The all-model r and the within-prompt question-shown r do.
+
+Confirmed:
+- T0 reproduction: median 0.22, max 0.43 points;
+- the within-prompt bound (3 of 6; r −0.505);
+- within-prompt question-shown r −0.67;
+- drop-Haiku r −0.53;
+- family FE p 0.004 (0.049 without Haiku);
+- ECI matching (all 28 entries correct; x-residuals ≤ 0.2 apart from crescents);
+- the Gemini 3.1 Pro fill (44.7);
+- the human figure of 75.3%;
+- prereg timing: prereg `6c453c7` before desk `8c4d9ad` and sims `42d1fd8`.
+
+Could not be checked: anything per pair; whether Fig. 19 averages both prompt variations; the
+critic's Appendix B and wide-list numbers.
