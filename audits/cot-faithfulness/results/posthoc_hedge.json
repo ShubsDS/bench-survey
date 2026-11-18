@@ -1,0 +1,206 @@
+{
+ "gpt-4o-mini": {
+  "flagged_low_questions": 660,
+  "found_in_files": 660,
+  "W": {
+   "n_responses": 4752,
+   "hedge_rate": 0.010101010101010102,
+   "hedge_rate_wilson": [
+    0.0076273398819491686,
+    0.01336612634283006
+   ],
+   "hedge_rate_question_mean": 0.010444925444925446,
+   "mean_chars": 885.7697811447812
+  },
+  "CL": {
+   "n_responses": 1781,
+   "hedge_rate": 0.0005614823133071309,
+   "hedge_rate_wilson": [
+    9.911974258537768e-05,
+    0.0031737757345258687
+   ],
+   "hedge_rate_question_mean": 0.0017574692442882249,
+   "mean_chars": 921.149915777653
+  },
+  "CP": {
+   "n_responses": 6396,
+   "hedge_rate": 0.00969355847404628,
+   "hedge_rate_wilson": [
+    0.0075694183294227405,
+    0.012406326070251151
+   ],
+   "hedge_rate_question_mean": 0.011097883597883598,
+   "mean_chars": 881.3009693558474
+  }
+ },
+ "claude-3.5-haiku": {
+  "flagged_low_questions": 363,
+  "found_in_files": 363,
+  "W": {
+   "n_responses": 2570,
+   "hedge_rate": 0.0178988326848249,
+   "hedge_rate_wilson": [
+    0.01344591083071027,
+    0.023790879498578055
+   ],
+   "hedge_rate_question_mean": 0.025371542892318518,
+   "mean_chars": 717.1587548638132
+  },
+  "CL": {
+   "n_responses": 905,
+   "hedge_rate": 0.004419889502762431,
+   "hedge_rate_wilson": [
+    0.0017200829594269367,
+    0.01130925020490005
+   ],
+   "hedge_rate_question_mean": 0.006963470319634703,
+   "mean_chars": 721.0883977900553
+  },
+  "CP": {
+   "n_responses": 3424,
+   "hedge_rate": 0.013142523364485981,
+   "hedge_rate_wilson": [
+    0.009836780438157692,
+    0.017539513728994024
+   ],
+   "hedge_rate_question_mean": 0.016049018321745594,
+   "mean_chars": 705.192464953271
+  }
+ },
+ "gemini-pro-1.5": {
+  "flagged_low_questions": 320,
+  "found_in_files": 320,
+  "W": {
+   "n_responses": 2588,
+   "hedge_rate": 0.008500772797527048,
+   "hedge_rate_wilson": [
+    0.005620479546133051,
+    0.012838055882883908
+   ],
+   "hedge_rate_question_mean": 0.010703124999999999,
+   "mean_chars": 351.8195517774343
+  },
+  "CL": {
+   "n_responses": 570,
+   "hedge_rate": 0.017543859649122806,
+   "hedge_rate_wilson": [
+    0.009556764206671542,
+    0.03199058962755727
+   ],
+   "hedge_rate_question_mean": 0.020550161812297733,
+   "mean_chars": 380.65263157894736
+  },
+  "CP": {
+   "n_responses": 3065,
+   "hedge_rate": 0.007504078303425775,
+   "hedge_rate_wilson": [
+    0.005005583230555577,
+    0.011235593896344683
+   ],
+   "hedge_rate_question_mean": 0.007699652777777777,
+   "mean_chars": 343.64306688417616
+  }
+ },
+ "deepseek-chat": {
+  "flagged_low_questions": 60,
+  "found_in_files": 60,
+  "W": {
+   "n_responses": 420,
+   "hedge_rate": 0.01904761904761905,
+   "hedge_rate_wilson": [
+    0.009682513074138328,
+    0.037131202238374655
+   ],
+   "hedge_rate_question_mean": 0.025555555555555557,
+   "mean_chars": 667.3452380952381
+  },
+  "CL": {
+   "n_responses": 157,
+   "hedge_rate": 0.03821656050955414,
+   "hedge_rate_wilson": [
+    0.017630417153658047,
+    0.0808615152817318
+   ],
+   "hedge_rate_question_mean": 0.05,
+   "mean_chars": 764.4585987261147
+  },
+  "CP": {
+   "n_responses": 575,
+   "hedge_rate": 0.02434782608695652,
+   "hedge_rate_wilson": [
+    0.014557770326480248,
+    0.04045140662279222
+   ],
+   "hedge_rate_question_mean": 0.02393518518518518,
+   "mean_chars": 666.6904347826087
+  }
+ },
+ "Llama-3.3-70B-Instruct": {
+  "flagged_low_questions": 102,
+  "found_in_files": 102,
+  "W": {
+   "n_responses": 733,
+   "hedge_rate": 0.7462482946793997,
+   "hedge_rate_wilson": [
+    0.7135175860057391,
+    0.776411321374083
+   ],
+   "hedge_rate_question_mean": 0.7482415188297541,
+   "mean_chars": 1778.6357435197817
+  },
+  "CL": {
+   "n_responses": 186,
+   "hedge_rate": 0.521505376344086,
+   "hedge_rate_wilson": [
+    0.4500083574451156,
+    0.5921320374946658
+   ],
+   "hedge_rate_question_mean": 0.5985042735042735,
+   "mean_chars": 1557.978494623656
+  },
+  "CP": {
+   "n_responses": 857,
+   "hedge_rate": 0.6511085180863477,
+   "hedge_rate_wilson": [
+    0.618587533618185,
+    0.6822808259034738
+   ],
+   "hedge_rate_question_mean": 0.6645891690009336,
+   "mean_chars": 1612.2753792298715
+  }
+ },
+ "claude-3.7-sonnet": {
+  "flagged_low_questions": 63,
+  "found_in_files": 63,
+  "W": {
+   "n_responses": 3641,
+   "hedge_rate": 0.025542433397418293,
+   "hedge_rate_wilson": [
+    0.020896270087992733,
+    0.031188736843447043
+   ],
+   "hedge_rate_question_mean": 0.024675020430742683,
+   "mean_chars": 896.3389178797033
+  },
+  "CL": {
+   "n_responses": 2470,
+   "hedge_rate": 0.012145748987854251,
+   "hedge_rate_wilson": [
+    0.008520884887409597,
+    0.017285779532818436
+   ],
+   "hedge_rate_question_mean": 0.019030606665660685,
+   "mean_chars": 1058.5153846153846
+  },
+  "CP": {
+   "n_responses": 6176,
+   "hedge_rate": 0.018458549222797927,
+   "hedge_rate_wilson": [
+    0.01538857926794664,
+    0.022127204308124305
+   ],
+   "hedge_rate_question_mean": 0.019404577881108793,
+   "mean_chars": 891.1345531088083
+  }
+ }
+}

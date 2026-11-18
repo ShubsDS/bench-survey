@@ -1,0 +1,51 @@
+prop_id,comparison,qid_Y,x_name,y_name,x_value,y_value,n_models_flagging,label,note
+wm-us-county-long,gt,9f1c4c293bada065b1142b1dc9ce5360d03e94d009eef85bc4a826d5ff707eba,"Dade County, GA","Treasure County, MT",-85.5045,-107.2716,1,correct,"Wikidata matched Miami-Dade; Dade County GA is at about -85.5, released value correct"
+wm-world-natural-lat,gt,1ec5625437a1514eda597d3ac82ac74f34f8b8877c7b50b2a63a87c3cc8e7172,Castle Mountains (Montana),Lake Balanan,46.4697,9.13778,1,correct,
+wm-world-structure-long,lt,f5818a7e2b362538d62b815a2281bd065610eaf485a73bbd0da5a510e3f614ee,Basilica of Sainte-Anne-de-Beaupré,Richmond station (London),-70.9285,-0.3,1,correct,
+wm-world-structure-lat,lt,f37942e8fce5f5cb92f136a206631420ec3464941cd0d03c01c19f695afc98a1,Majestic Theatre (San Antonio),Northolt tube station,29.4261,51.548,2,correct,
+wm-us-zip-long,gt,61691fdff3d355dfadc471fbc1dc38201c5fdaf9eca91e57abc229d96ef4dec5,"33026, FL","46203, IN",-80.29625,-86.09586,1,correct,
+wm-world-populated-long,lt,0310b32adac60f991fea0785e08b85fcd905671fe47cec75acc5acb90b9f40a7,"Utuado, Puerto Rico",Mokrin,-66.7006,20.4044,1,correct,
+wm-person-death,lt,75fb82e96d234d3232f67a7e9cd0211bb56863e8de9e5696a49a90a1e9d9a454,Roger I Trencavel,Guillaume de Harsigny,1150.0,1393.0,4,correct,
+wm-song-release,lt,ea71f36a36081e3f3bd34fa7b01b696df9e8c769a16cc60b5ce2ac89a10239f3,Cut Copy's Hearts on Fire,Ariana Grande's The Light Is Coming,39226.0,43269.0,1,correct,
+wm-world-natural-long,gt,a118b396e70a3615ba3d56a1703104c325900e578a7a135aba156f04f4be885e,Lac Vieux Desert,Cassiar Mountains,-89.12,-126.848,2,correct,
+wm-world-natural-long,gt,d31ca6591ff8f8147d6c5fc0def197386bf540c3f06197535860abd7bd55ba8c,Prince Christian Sound,Lake Tappan,-43.8833,-73.99,2,correct,
+wm-us-college-long,lt,42159e060f47637a2cfa2b45c3cd875481e0d41f84a458920ec3be1319213c11,"Air University, AL","Community College of Vermont, VT",-86.345453,-72.573541,2,correct,
+wm-us-city-long,gt,60aa5a20d1223d6087f64fe2364cba00ee83cd878485cd0ae1220aaee92173a0,"Allenport, PA","Cove Creek, NC",-77.8707,-81.7829,1,correct,Allenport PA is about -79.85 (Washington County); released -77.87 differs but the order is unchanged
+wm-person-birth,gt,72545fe4209f64d698938e447a228159dd6afe57e6e983cacf2ef3de6cabdcad,"Bernard II, Lord of Lippe",Hartwig von Passau,1140.0,800.0,1,correct,
+wm-world-structure-long,lt,6c7e263e0f630a65f60f2906daeda7bac50cb4ef7d7b07113222ebe46b9dab1a,Central Sofia Market Hall,"St. Stephen's Church, Delhi",23.3217,77.2232,2,correct,
+wm-book-release,gt,b5e77cbe79702423186602e1faee35264bbab9ef3f7ab757b725c68f84305fce,Vivek Chibber's Postcolonial Theory and the Specter of Capital,Simon Jowett's The Story of Martha,41343.0,39806.0,1,unverifiable,second book not identified; Chibber 2013 matches the released value
+wm-us-zip-lat,gt,0140472ed3d647bda61957df2c4555fc4e69ceafe6da0f58402883ae443ba009,"61611, IL","95110, CA",40.71185,37.34656,1,correct,
+wm-world-structure-lat,lt,c81c76ebc4440e69a8f904ed0bf42588cd7b3fda30de904a0b11d3bf45b90319,Andhra Pradesh Secretariat,Trifels Castle,16.5265,49.1961,1,correct,
+wm-book-length,lt,88de1564c1389eb9f1140e516b52508239ff773817689bec561b62f955036e69,Alicia Keys's More Myself: A Journey,Tilly Bagshawe's After the Darkness,272.0,352.0,1,unverifiable,page counts are edition-dependent; second book not identified
+wm-world-structure-lat,gt,b9636e1a3c87cc7d678005a3fd694db0b8b77081dc49e41c2d3ebb5117d58224,"City Temple, London",Church of the Life-Giving Trinity (Pyongyang),51.5171,38.9818,1,correct,
+wm-world-natural-long,gt,5e046a8d5e687c6c947b166bc05819f1e54a8f376e2cfaca8415f68e6d33f1b8,Qattara Depression,River Gannel,27.5,-5.0256,3,correct,
+wm-us-college-long,lt,edd473d170d72f28edcc03b7a56fb629715e5813dca4f198cea36eff4a98c0f7,"University of West Florida, FL","Regent University, VA",-87.2181,-76.1962,1,correct,
+wm-world-populated-long,lt,c193140028a36d30cf8d9b9212978dcf5b2cd303f76209782be4d26b04d73c69,Bessbrook,Bungeni,-6.39433,30.224,1,correct,
+wm-movie-release,gt,32336fac7be055fc4b1757e4d9007c045b02125e280ff58973f1828e610f1c20,Hunsur Krishnamurthy's Satya Harishchandra,Mario Camerini's Crimen,23842.0,22261.0,1,correct,
+wm-world-populated-long,lt,c9998d490d31a525273e5788c9ea14aca7048c3f7379717c4b3f06f5c8201d98,"Rowan County, North Carolina",Ballyronan,-80.52,-6.5323,1,correct,
+wm-us-zip-lat,gt,342bc34903e3e4d5517e443bf6ca418bb2e1dd1a3ffdb6f5c36769de2f16ecf0,"54180, WI","11767, NY",44.33139,40.84438,1,correct,
+wm-us-zip-lat,gt,103a5f0f87c942efb954c9cb4f4fcb3e5cb60bfa23c92a9a0f2d490d6ea4789a,"84009, UT","40475, KY",40.55221,37.7635,2,correct,
+wm-movie-release,gt,0a7b6f2f12e23aa4c40db92053265de31763c37f3029f01686cc5445ba62b244,C. Uma Maheswara Rao's Mounam,Harold Ramis's Club Paradise,34950.0,31602.0,2,correct,
+wm-world-natural-long,lt,55ccaa4a98ec1fae3f16853a08b3901a629f3f2a7c97d5cc7f7544eab7d33954,Lake Mariout,Brahma Sarovar,29.8986,76.83,1,correct,
+wm-world-structure-long,gt,1c5e1bce0534f350b7c935b2d2fa876bf18024db1aff24eec06633bc0ac3b39b,Barker Reservoir,San Dimas Hotel,-95.6463,-117.806,1,correct,
+wm-world-structure-long,lt,928717ffef21e6be7f7e158df206a90c1cae6ab2de8180f6b7a303e53134f982,Rostov State Musical Theater,"Immaculate Conception Cathedral, Pondicherry",39.7325,79.8306,1,correct,
+wm-us-natural-long,gt,00940c7579a2b7872109e5089bdf396933338b608cfd6cf1b44ff9ce4ba34bb7,"Uinta Mountains, WY","Lake Quinault, WA",-110.373,-123.87,1,correct,
+wm-us-natural-long,gt,cd7878315850671a46877f9c9a4ec14bc81f2bb9b86331a801a10154acd5022e,"Lake Osakis, MN","Alice Lake (Sawtooth Wilderness), ID",-95.1222,-114.944,1,correct,
+wm-world-natural-lat,lt,8680f7ccfda2e0ff55deea4b49294a5b03c1b2267af63b547978678a544a2e80,Patenggang Lake,Dudipatsar,-7.1646,35.0181,3,correct,
+wm-us-county-long,gt,808e115f5ff57c46492871b5747c1e5978c334f502b762b0798c124024d30193,"Coke County, TX","Lane County, OR",-100.53,-122.848,1,correct,
+wm-nyt-pubdate,lt,7ee3dc780fca7f7da3d943edee0e1315ccfc0fd0e9676428849d08c1e07cf4f6,Serbia Appoints Strauss-Kahn as an Economic Adviser .,Drownings Put Migration at Fore of European Meeting.,41531.0,41569.0,2,unverifiable,"NYT headlines: both dates plausible for 2013 events, not checked against the archive"
+wm-us-zip-long,lt,5b75f0d80906efb3f8be4b23928963ba6c7866a6de6609e19f1b334714c35e4d,"33330, FL","06712, CT",-80.32333,-72.97609,1,correct,
+wm-world-structure-lat,lt,7b08ad58bce1e3cf9945e7621220d6cc2c65a01ab972dda59a8ee966f14feb03,Ethiopian Parliament Building,Santa Maria Antiqua,9.03012,41.891,1,correct,
+wm-us-city-lat,lt,c8272260e3e163d2174c0fec6304aa2e94b4b635390573e789f8b8ed5a27988e,"Kellyville, OK","East Prospect, PA",35.9528,39.9711,1,correct,
+wm-us-zip-long,gt,0415105b483f67e5b9d9ad742c6292621f22cdb7cb5f114741bfd6ef3371cbfe,"10927, NY","33990, FL",-73.96735,-81.94602,2,correct,
+wm-nyt-pubdate,gt,4d70d5de3f8a5812e9904a6183dbe88f1f6cd215b4907b5f83d01ca2875a4fdb,Militants Blamed After Dozens Killed at Nigerian College .,N.S.A. Director Lobbies House on Eve of Critical Vote.,41544.0,41477.0,4,correct,Nigerian college attack late Sept 2013; NSA director lobbied House July 2013 (from memory)
+wm-us-structure-lat,lt,b1ca2cc4ac5af150f5766acd5a4faea0422728766b53517431d5e771d3433b8d,"One Main Place (Dallas), TX","Shaver Lake, CA",32.7805,37.126,1,correct,
+wm-us-structure-long,gt,59535bbff3c4953eed6bf7fe2029ca2339a8d2547005cda13e584aefa97f5e2e,"St. Nicholas Greek Orthodox Church, NY","Nashville Municipal Auditorium, TN",-74.0139,-86.7822,1,correct,
+wm-us-structure-lat,lt,95d95b684ce29fe1888bbb4ae4843f0a2a9a78d0edcfd08dff6bb4baa1d39411,"Church of St. Vincent Ferrer (Manhattan), NY","Oxbow Dam, OR",40.7662,44.9708,1,correct,
+wm-us-city-long,lt,00ccd962296d14b6bee2fbb471e8234175b682446f3bb2c5b23dca50bb68c83d,"Crowell, TX","Lake Panorama, IA",-99.7241,-94.4026,1,correct,
+wm-book-length,lt,f64970cd760d69d734c1cf963678f4e8fa3fa672aaa00dde5ccfc376d827dec5,Eminem's Angry Blonde,David Shields's Reality Hunger,160.0,240.0,1,correct,page counts edition-dependent but 160 vs 240 is a wide gap
+wm-us-structure-lat,lt,2fab85ddd98b03c67eebc21d64c63e739fef5e60bfd42adcbf874aa310eec061,"Blackstone Hotel (Fort Worth, Texas), TX","Blewett Falls Lake, NC",32.7536,34.9828,2,correct,
+wm-person-death,gt,e2802f115c839bf46f556c4505af0fcf2987daa9a8ca6356905b49522d42a051,Pieter Coecke van Aelst,Gao Huaide,1550.0,982.0,1,correct,
+wm-us-zip-long,gt,ae029dc11136ec2664335a9e96cee95e3c6fafad83813afade6d2f6311d9e933,"10918, NY","30346, GA",-74.25828,-84.33881,1,correct,
+wm-us-structure-long,gt,26608d0943168832be6856765ced2effddfa35d38f0c6a7df7a356e0262b12d5,"Hebgen Lake, MT","Carson Mansion, CA",-111.234,-124.158,1,correct,
+wm-song-release,lt,ff4694dfba40e920e8955587fa91ec4bd4bab9189b3d7d377be17d67fd0851f2,Two Door Cinema Club's Changing of the Seasons,Sia's That's Life,41499.0,43634.0,1,correct,"TDCC EP 2013, Sia song 2019 (from memory)"

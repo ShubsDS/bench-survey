@@ -1,0 +1,171 @@
+{
+ "pooled_autorater_flip_share": 0.2666062997218809,
+ "pooled_wrong_responses": 15461,
+ "pooled_16_models": {
+  "n_labelled": 66,
+  "point": {
+   "FACT": 0.4163278212563511,
+   "FLIP": 0.1625620737482842,
+   "SPEC": 0.20741076112656215,
+   "SR": 0.1755535433240627,
+   "LOGIC": 0.03814580054473981,
+   "FLIP+SPEC+SR": 0.545526378198909
+  },
+  "ci95": {
+   "FACT": [
+    0.2940955378766646,
+    0.5296732279786416
+   ],
+   "FLIP": [
+    0.10664251988875235,
+    0.2273685042652121
+   ],
+   "SPEC": [
+    0.1081488188919791,
+    0.31555958001854123
+   ],
+   "SR": [
+    0.09143976061631777,
+    0.27481548555864577
+   ],
+   "LOGIC": [
+    0.0,
+    0.09040236544998512
+   ],
+   "FLIP+SPEC+SR": [
+    0.42849068264953394,
+    0.6652253250113185
+   ]
+  }
+ },
+ "claude-3.7-sonnet": {
+  "n_labelled": 12,
+  "point": {
+   "FACT": 0.09803921568627452,
+   "FLIP": 0.7107843137254902,
+   "SPEC": 0.04901960784313726,
+   "SR": 0.0,
+   "LOGIC": 0.14215686274509803,
+   "FLIP+SPEC+SR": 0.7598039215686275
+  },
+  "ci95": {
+   "FACT": [
+    0.04901960784313726,
+    0.1470588235294118
+   ],
+   "FLIP": [
+    0.4264705882352941,
+    0.8529411764705882
+   ],
+   "SPEC": [
+    0.0,
+    0.09803921568627452
+   ],
+   "SR": [
+    0.0,
+    0.0
+   ],
+   "LOGIC": [
+    0.0,
+    0.4264705882352941
+   ],
+   "FLIP+SPEC+SR": [
+    0.47549019607843135,
+    0.9509803921568627
+   ]
+  }
+ },
+ "SR_regex_by_model": {
+  "claude-3.5-haiku": {
+   "wrong_latlong": 2347,
+   "no_direct_relation_regex": 1215,
+   "share": 0.5176821474222412
+  },
+  "claude-3.6-sonnet": {
+   "wrong_latlong": 238,
+   "no_direct_relation_regex": 7,
+   "share": 0.029411764705882353
+  },
+  "claude-3.7-sonnet": {
+   "wrong_latlong": 2336,
+   "no_direct_relation_regex": 106,
+   "share": 0.045376712328767124
+  },
+  "claude-3.7-sonnet_1k": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "claude-3.7-sonnet_64k": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "deepseek-chat": {
+   "wrong_latlong": 93,
+   "no_direct_relation_regex": 59,
+   "share": 0.6344086021505376
+  },
+  "deepseek-r1": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "gpt-4o-mini": {
+   "wrong_latlong": 4580,
+   "no_direct_relation_regex": 1103,
+   "share": 0.2408296943231441
+  },
+  "gpt-4o-2024-08-06": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "chatgpt-4o-latest": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "gemini-pro-1.5": {
+   "wrong_latlong": 1860,
+   "no_direct_relation_regex": 43,
+   "share": 0.023118279569892472
+  },
+  "gemini-2.5-flash-preview": {
+   "wrong_latlong": 711,
+   "no_direct_relation_regex": 355,
+   "share": 0.49929676511954996
+  },
+  "gemini-2.5-pro-preview": {
+   "wrong_latlong": 0,
+   "no_direct_relation_regex": 0,
+   "share": null
+  },
+  "Llama-3.1-70B": {
+   "wrong_latlong": 494,
+   "no_direct_relation_regex": 62,
+   "share": 0.12550607287449392
+  },
+  "Llama-3.3-70B-Instruct": {
+   "wrong_latlong": 43,
+   "no_direct_relation_regex": 10,
+   "share": 0.23255813953488372
+  },
+  "qwq-32b": {
+   "wrong_latlong": 43,
+   "no_direct_relation_regex": 14,
+   "share": 0.32558139534883723
+  }
+ },
+ "SR_regex_vs_my_label": {
+  "n_latlong_labelled": 32,
+  "tp": 7,
+  "fn": 5,
+  "fp": 2
+ },
+ "SR_regex_pooled": {
+  "wrong_latlong": 12745,
+  "hits": 2974,
+  "share": 0.23334641035700274
+ }
+}

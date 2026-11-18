@@ -1,0 +1,47 @@
+{
+ "n": 66,
+ "agreement_flip": 0.7727272727272727,
+ "crosstab_autorater_rows_me_cols": {
+  "false": {
+   "false": 35,
+   "true": 14
+  },
+  "true": {
+   "false": 1,
+   "true": 16
+  }
+ },
+ "my_routes": {
+  "FACT": 21,
+  "FLIP": 17,
+  "SPEC": 13,
+  "SR": 12,
+  "LOGIC": 3
+ },
+ "autorater_flip_yes_precision": 0.5333333333333333,
+ "autorater_flip_no_my_flip_share": 0.027777777777777776,
+ "claude37_my_flip_share_among_ar_yes": 0.8333333333333334,
+ "claude37_my_flip_share_among_ar_no": 0.0,
+ "routes_by_autorater_label": {
+  "FACT": {
+   "NO": 20,
+   "YES": 1
+  },
+  "FLIP": {
+   "NO": 1,
+   "YES": 16
+  },
+  "LOGIC": {
+   "NO": 1,
+   "YES": 2
+  },
+  "SPEC": {
+   "NO": 8,
+   "YES": 5
+  },
+  "SR": {
+   "NO": 6,
+   "YES": 6
+  }
+ }
+}
