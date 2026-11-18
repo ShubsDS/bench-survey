@@ -1,6 +1,9 @@
-# LAB-Bench: options alone give the key for 6 of 15 SeqQA subtasks, and Haiku uses that; 2024 models show no sign of it; the "exceeds experts" margins sit inside the slack of the human scoring rule
+# LAB-Bench: options alone give the key for 6 of 15 SeqQA subtasks, and Haiku follows it on the Gibson subtasks; the stratum test on 2024 models cannot tell; two "exceeds experts" claims (Opus 4.6 FigQA, Justen CloningScenarios) need unsure human guesses to be at or below chance
 
-Status: complete, 2026-11-17, branch `audits-round2`. Not yet independently validated.
+Status: complete, 2026-11-17, branch `audits-round2`. **Independently validated** (see
+[Validation](#validation) and [`validation/VALIDATION.md`](validation/VALIDATION.md)). The
+original title was: "… and Haiku uses that; 2024 models show no sign of it; the 'exceeds experts'
+margins sit inside the slack of the human scoring rule".
 
 **No per-item outputs of any published model exist.** None were found in the paper's repo, the
 Hugging Face hub, the Inspect Evals repo, the system cards or third-party re-runs (Data inventory).
@@ -9,16 +12,19 @@ So there is no item-level L3. The evidence is:
 - a stratum-level test on the paper's per-subtask tables;
 - Haiku interventions, which are L4 for Haiku only.
 
-| # | Claim | Level |
+Validated claims (validator's numbers first; the auditor's original wording follows each row in
+*italics* where it changed):
+
+| # | Claim (validated) | Level |
 |---|---|---|
-| 1 | In 6 of the 15 SeqQA subtasks (240 of 600 public items), a rule that reads only the options picks the key on every item. Five fall to "the option the others were derived from" (centroid), and GC-percent falls to "the middle value". On those subtasks the rule beats the human baseline in 5 of 6 and ties it once. Held out over all of SeqQA: 0.58 [0.55, 0.61] against chance 0.25 | **L2** |
-| 2 | Haiku uses this shortcut. Rebuilding the distractors so that a *distractor* becomes the centroid, with key and question unchanged, cuts Haiku's accuracy from 0.93 to 0.74 (−0.18 [0.10, 0.27], n = 147). The new central distractor is picked 22% of the time, against 2% for each other distractor. On the two Gibson subtasks: 0.96 → 0.50. A post hoc control rebuilt the same way but centred on the key gives 0.88 | **L4** (Haiku) |
-| 3 | The paper's 2024 model-versus-human gaps do not track the shortcut. Models are 0.16 closer to humans on the shortcut subtasks than on the others, but random and answer-type-matched subtask splits give as much (79th–86th percentile) | **R** (stratum level) |
-| 4 | ProtocolQA without the protocol and without the question: Haiku 0.51 [0.42, 0.61] (chance 0.23), against 0.68 with the full item. 2024 models with the full item scored 0.37–0.53 | **L2**, and L4 for Haiku |
-| 5 | FigQA without the figure, forced: Haiku 0.31 [0.25, 0.39] (chance 0.22). That equals or beats 6 of 7 published 2024 *sighted* scores (0.23–0.29; Claude 3.5 Sonnet 0.46). Options alone: 0.23, chance. TableQA without the table: 0.41 [0.32, 0.50] (chance 0.21) | **L2** |
-| 6 | The "Insufficient information" option. Without the figure or table, Haiku picks it on 51–58% of items, which costs 0.17–0.19 accuracy. On full text items it costs 0.06 (ProtocolQA, interval includes 0) or nothing (SeqQA, CloningScenarios, LitQA2). SuppQA: 0.16 [0.06, 0.26]. Its position does not matter (−0.006 [−0.04, 0.03]) | **L4** (Haiku); **R** for position |
-| 7 | Human accuracy counts an "unsure" answer as wrong even when its best guess was right (App. E.4). The FigQA human number under forced-choice scoring is therefore anywhere in [0.77, 0.83]. Several margins fall inside that range: Opus 4.6's "surpasses expert humans, who scored 77%" (78.3%), Opus 4.8 (80.4%), CloningScenarios 0.61 vs 0.60 (Justen) and 0.758 (Opus 4.5), and SeqQA 0.85 (Opus 4.5). Each of these also has an item-sampling interval that includes the human line. ProtocolQA 0.907 clears both | **L1** (arithmetic on published numbers) |
-| 8 | DbQA `variant_multi_sequence`: the centroid rule scores 80/80. Humans scored 0.23 and the best model 0.14, both below chance on that subtask | **L2**, a key anomaly |
+| 1 | In 6 of the 15 SeqQA subtasks (240 of 600 public items), the auditor's options-only rules pick the key on every item (centroid on five; "middle value" on GC-percent, whose distractors are exactly {k−1, k+1, k/2} on 40/40). An independently defined rule (summed edit distance) gets 1.00 on 4 subtasks, 0.975 on PCR-gene-enzprimers and 0.50 on GC-percent. Held out over all of SeqQA: 0.58 against chance 0.25, **95% interval over the 15 templates [0.41, 0.77]**. The rule's 1.00 beats the paper's human accuracy on 5 of 6 subtasks, but the human number is on a different item sample (full set, items humans attempted) with unsure answers scored wrong. *Original interval [0.55, 0.61] resampled items* | **L2** |
+| 2 | On the two Gibson subtasks Haiku's answer follows which option the others resemble. Pre-registered pooled test (147 items, 6 subtasks): 0.93 → 0.74, drop 0.18 [0.10, 0.27] (items), [0.04, 0.35] (templates); the central distractor is picked 22% vs 2% per other distractor. The effect is carried by Gibson: 0.96 → 0.50 (n = 50); the other four subtasks 0.04 [−0.05, 0.13] (n = 97). On the same 50 Gibson items the post hoc key-centred control gives 0.88 (control − edit 0.38 [0.22, 0.54]). The validator's pre-registered single-option swap (only the wrong-site option's body changed, 62 Gibson items) gives 0.935 → 0.726, drop 0.21 [0.11, 0.31]. *Original: "Haiku uses this shortcut … a post hoc control … gives 0.88", set beside 0.93/0.74 (different items)* | **L4** (Haiku, Gibson subtasks) |
+| 3 | The stratum test on the paper's 2024 models is **inconclusive**: models are 0.16 closer to humans on the shortcut subtasks (79th–86th percentile of placebo splits), but with 15 subtasks the test has 17% power against an effect of Haiku's size (0.18) and needs about 0.5 for 80% power. It cannot exclude shortcut use by the 2024 models. *Original: "do not track the shortcut", level R* | inconclusive (*was R*) |
+| 4 | ProtocolQA without the protocol and without the question: Haiku 0.51 [0.42, 0.61] (23-protocol cluster [0.43, 0.62]; chance 0.23, n = 107), against 0.68 with the full item. So about half of ProtocolQA is answerable without the protocol, by an answer-surface cue, recall of the public items or general lab knowledge; this result cannot tell which. 2024 models with the full item scored 0.37–0.53 (full set) | **L2** (*was "L2, and L4 for Haiku"*) |
+| 5 | FigQA without the figure, forced: Haiku 0.31 [0.25, 0.39] (107-figure cluster [0.25, 0.38]; chance 0.22). Options alone: 0.23, chance. TableQA without the table: 0.41 [0.33, 0.50] (chance 0.21). For context only (different model, items and condition): 6 of 7 published 2024 *sighted* scores on the full set are 0.23–0.29 | **L2** |
+| 6 | The "Insufficient information" option works as an abstention option should. Without the figure or table Haiku picks it on 51–58% of items, which lowers accuracy by 0.17 [0.10, 0.24] (FigQA) and 0.19 [0.12, 0.27] (TableQA) and raises precision; on full text items the change is 0.06 [−0.02, 0.13] (ProtocolQA) or about 0 (SeqQA, CloningScenarios, LitQA2); SuppQA 0.16 [0.06, 0.26]. This is not a flaw: what follows is that accuracy mixes ability with abstention policy, so models with different abstention rates, or forced-choice runs against selective ones, cannot be compared on accuracy alone. Position does not matter (0.006 [−0.03, 0.04]) | **L4** (Haiku); **R** for position |
+| 7 | Human accuracy scores an "unsure" answer as wrong even when its best guess was right (App. E.3–E.4). If unsure guesses were between chance and the humans' own precision, the FigQA human under forced choice is 0.78–0.82 (bounds 0.77–0.83 need guesses from always wrong to always right). Per claim: Opus 4.6's "surpasses expert humans, who scored 77%" (78.3%) equals the chance-guess human value 0.783, so it holds only if unsure humans guessed at or below chance; Justen's CloningScenarios 0.61 is *below* the chance-guess human value 0.64; Opus 4.5 CloningScenarios 0.758 is *above* the plausible human range 0.64–0.73 (only its 33-item interval reaches 0.60); Opus 4.5 SeqQA 0.8517 is inside 0.81–0.85, but its item interval [0.82, 0.88] excludes 0.79 and the card's SeqQA human line, item set and weighting are not published; ProtocolQA 0.907 clears. The Opus 4.8 card (80.4%) makes no "surpasses" statement. All of this assumes the model runs were effectively forced-choice, which the cards do not state. *Original: range [0.77, 0.83]; all five margins "inside", "each … also has an item-sampling interval that includes the human line"; Opus 4.8 listed among "surpasses experts" statements* | **L1** (arithmetic on published numbers) |
+| 8 | DbQA `variant_multi_sequence`: the centroid rule scores 80/80 (also 80/80 with the validator's edit-distance rule). Humans scored 0.23 and the best model 0.14, both below chance on that subtask | **L2**, a key anomaly |
 
 ## The benchmark and what rests on it
 
@@ -42,15 +48,18 @@ Published conclusions under test (exact wording and pins in [`claims.md`](claims
 
 ## What we found
 
-**SeqQA has a construction shortcut. The current small model uses it; the 2024 models show no
-sign of it.**
+**SeqQA has a construction shortcut. Haiku follows it on the two Gibson subtasks; whether the 2024
+models used it cannot be told from the published tables** (validated; originally "the current small
+model uses it; the 2024 models show no sign of it").
 - The paper's own construction notes (App. C.7) derive most SeqQA distractors from the key:
   - "shifted" primers, "wrong enzyme" pairs that keep the key's primer bodies, and "wrong gene"
     pairs that keep the key's sites;
   - GC% "one less or one greater than the answer, or the ideal answer divided by two";
   - in the release, protein options that are one-residue substitutions of the key.
 - So in those subtasks the key is the option every distractor resembles. A 3-gram similarity rule
-  that never sees the question finds it on 240 of 240 items.
+  that never sees the question finds it on 240 of 240 items (with the middle-value rule for
+  GC-percent). A summed-edit-distance rule defined by the validator finds it on 199 of 240 outright,
+  and half-credit (a tie) on the 40 GC-percent items.
 - Haiku shown only the options scores 0.80 [0.68, 0.88] on these subtasks and 0.32 on the other
   nine (chance 0.25).
 - When the distractors are rebuilt around a distractor, Haiku follows the centre on the Gibson
@@ -58,9 +67,11 @@ sign of it.**
 - Where Haiku can actually compute the answer, editing does nothing:
   - protein translation (AAseq, 1.00 → 1.00);
   - primer design with the gene sequence given (PCR-seq-enzprimers, 1.00 → 1.00).
-- The 2024 models in the paper do not show the pattern at stratum level. Their accuracy on the
-  shortcut subtasks is far below the rule's 1.00 (best 0.59–0.94), and their gap to humans there
-  is not unusual against placebo splits.
+- Outside the two Gibson subtasks the edit moves Haiku by 0.04 [−0.05, 0.13] (97 items), so the
+  L4 result is a Gibson result.
+- The 2024 models' gap to humans on the shortcut subtasks is not unusual against placebo splits,
+  but the 15-subtask test has 17% power against an effect of Haiku's size, so this is no evidence
+  either way (validated; originally "do not show the pattern").
 
 **What this means for "human level on SeqQA".** The human SeqQA mean over the 15 subtasks is 0.79.
 - A model at 1.00 on the six shortcut subtasks reaches that mean with 0.65 on the other nine,
@@ -79,6 +90,8 @@ Sonnet") partly measures what the question text and options allow without the fi
 - ProtocolQA is different: with neither the protocol nor the question, Haiku reaches 0.51. It
   picks the longest option only 26% of the time, so this is not the known length rule (issue
   #18), and most of Haiku's full-item accuracy (0.68) is reachable without reading the protocol.
+  Whether by a cue in the options, recall of the public items or general lab knowledge, this test
+  cannot tell (validator).
 
 **The abstention option.** It changes what a blind score means. With it, blind FigQA accuracy is
 0.15, below chance. Without it, 0.31. Items Haiku refused were answered correctly at 0.34 when
@@ -102,7 +115,7 @@ number fixes them.
 
 | Subset or subtask | n | Chance | Best rule (held out) | 95% CI (cluster) | Human (paper) | Best 2024 model (paper) |
 |---|---|---|---|---|---|---|
-| SeqQA, all | 600 | 0.25 | **0.58** | [0.55, 0.61] | 0.79 (mean of subtasks) | 0.52 (Claude 3.5 Sonnet) |
+| SeqQA, all | 600 | 0.25 | **0.58** | [0.41, 0.77] over 15 templates (validated; [0.55, 0.61] over items) | 0.79 (mean of subtasks) | 0.52 (Claude 3.5 Sonnet) |
 | ORF-seq-AAseq | 40 | 0.20 | **1.00** centroid | — | 0.88 | 0.87 |
 | PCR-gene-enzprimers | 40 | 0.25 | **1.00** centroid | — | 0.83 | 0.75 |
 | PCR-seq-enzprimers | 40 | 0.25 | **1.00** centroid | — | 0.81 | 0.94 |
@@ -152,14 +165,23 @@ cluster weakly), and 1.4–2.0 on ProtocolQA and CloningScenarios in some condit
 
 ### The human line against the claims (`results/human_baseline.json`)
 
-| Claim | Model score | Item interval (Wilson; cluster-adjusted) | Human accuracy / precision | Human under forced-choice scoring, range | Survives? |
-|---|---|---|---|---|---|
-| Opus 4.6 FigQA, crop tool: "surpasses expert humans" | 0.783 | [0.72, 0.84]; [0.71, 0.84] | 0.77 / 0.82 | [0.77, 0.83] | **no**: inside both the human range and its own interval |
-| Opus 4.8 FigQA, no tools | 0.804 | [0.74, 0.86] | 0.77 / 0.82 | [0.77, 0.83] | inside the range |
-| Opus 4.5 ProtocolQA | 0.907 | [0.84, 0.95] | 0.79 / 0.87 | [0.79, 0.88] | yes, narrowly |
-| Opus 4.5 CloningScenarios | 0.758 | [0.59, 0.87]; [0.51, 0.89] | 0.60 / 0.73 | [0.60, 0.78] | **no** |
-| Justen: Claude 3.7 / o3 CloningScenarios | 0.61 | [0.44, 0.76]; [0.37, 0.79] | 0.60 / 0.73 | [0.60, 0.78] | **no** |
-| Opus 4.5 SeqQA | 0.8517 | [0.82, 0.88] | 0.79 / 0.84 | [0.79, 0.87] | inside the range; see the SeqQA arithmetic |
+Validated table (`validation/v5_human.json`). "Plausible human" is the forced-choice human score
+if unsure best guesses were right at a rate between chance and the humans' own precision; the
+auditor's range assumed anything from always wrong to always right.
+
+| Claim (card text) | Model score | Item interval (Wilson, n assumed) | Human acc. / plausible forced-choice / bounds | Verdict |
+|---|---|---|---|---|
+| Opus 4.6 FigQA, crop tool: "Opus 4.6 now surpasses expert humans, who scored 77%" | 0.783 | [0.72, 0.84] (181) | 0.77 / 0.78–0.82 / 0.77–0.83 | Holds only if unsure humans guessed at or below chance (chance-guess value 0.783); also inside its interval. Item set not stated: cannot be checked |
+| Opus 4.8 FigQA, no tools (no "surpasses" statement in the text; 181 public items stated) | 0.804 | [0.74, 0.86] | same | Inside the plausible range; no textual claim to test. *Auditor listed it as a "surpasses" statement* |
+| Opus 4.5 ProtocolQA ("every evaluation except FigQA exceeded the human baseline") | 0.907 | [0.84, 0.95] (108) | 0.79 / 0.81–0.87 / 0.79–0.88 | Clears |
+| Opus 4.5 CloningScenarios (same sentence) | 0.758 | [0.59, 0.87] (33) | 0.60 / 0.64–0.73 / 0.60–0.78 | Above the plausible range; only the 33-item interval reaches the line. *Auditor: "no"* |
+| Justen: Claude 3.7 / o3 CloningScenarios ("match or exceed") | 0.61 | [0.44, 0.76] (33) | same | Below the chance-guess human value 0.64: not supported. Section 3 numbers not re-read by the validator |
+| Opus 4.5 SeqQA (same sentence) | 0.8517 | [0.82, 0.88] (600, unclustered) | 0.79 (mean of subtasks; not a paper number) / 0.81–0.85 / 0.79–0.87 | Inside the plausible range; the item interval excludes 0.79 (*auditor said it included it*). Card's human line, item set and weighting not published: cannot be checked |
+
+All verdicts assume the card's model runs were effectively forced-choice; whether they offered the
+refusal option is not stated. Auditor's original table: Opus 4.6 "no", Opus 4.8 "inside the range",
+ProtocolQA "yes, narrowly", Opus 4.5 Cloning "no", Justen "no", SeqQA "inside the range", with the
+range [lower, upper] = [accuracy, accuracy + 1 − coverage].
 
 - Item counts are assumed to be the public set (181, 108, 33, 600). Opus 4.8 states 181; the other
   cards do not state theirs.
@@ -201,28 +223,41 @@ cluster weakly), and 1.4–2.0 on ProtocolQA and CloningScenarios in some condit
 | PCR-gene-enzprimers (22) | 0.77 | 0.73 | 0.05 [−0.23, 0.32] | 0.23 |
 | ORF-seq-AAseq (25) | 1.00 | 1.00 | 0.00 | 0.00 |
 | PCR-seq-enzprimers (25) | 1.00 | 1.00 | 0.00 | 0.00 |
-| **Pooled (147)** | 0.93 | 0.74 | **0.18** [0.10, 0.27] | 0.22 vs 0.02 per other distractor |
+| **Pooled (147)** | 0.93 | 0.74 | **0.18** [0.10, 0.27]; over 6 templates [0.04, 0.35] (validator) | 0.22 vs 0.02 per other distractor |
+| Without the two Gibson subtasks (97; validator) | 0.91 | 0.87 | 0.04 [−0.05, 0.13]; templates [0.00, 0.09] | 0.11 |
+| Validator's pre-registered single swap, Gibson (62) | 0.935 | 0.726 | **0.21** [0.11, 0.31] | S 0.11 (forced 0.02), G 0.16 |
 
 - The central distractor in the Gibson edits is the *same string* as the original "shifted"
   distractor. Haiku rejected it on 96% of items in the original set, and picks it on 40–44% once
   the other options are built around it.
 - The post hoc key-centred placebo, built with the same procedure, costs 0.08 [−0.04, 0.18].
-  The real edit costs 0.46 on the same 50 items. So new or odd-looking distractors do not
-  explain the drop.
+  The real edit costs 0.46 on the same 50 items (forced 0.96, control 0.88, edit 0.50; control −
+  edit 0.38 [0.22, 0.54]). The 0.88 is on these 50 Gibson items, not on the 147.
+- Validator's hand read and structure check: no rebuilt distractor is a valid answer (the new
+  wrong-site option has the wrong overlap on 50/50 Gibson items; the deletion variant breaks the
+  junction or site on all items); the key is unchanged. But the edit changes three options,
+  removes the "other gene" distractor and makes the key the unique longest option in 70% of Gibson
+  items (0% originally). Length goes against the drop (edited accuracy 0.57 when the key is the
+  unique longest, 0.33 otherwise). The validator's single-option swap, pre-registered, changes
+  only the body carried by the wrong-site option and reproduces a drop of 0.21 [0.11, 0.31].
+  So on the Gibson subtasks the drop is attributable to which option the others resemble.
 
 **Stratum level on published models** (prereg Analysis A; `results/stratum.json`). D is the
 model-minus-human gap on S minus the gap on F, averaged over 7 models.
 
 | | Observed mean D | All 5,005 splits (95%) | Answer-type-matched 540 splits (95%) | Verdict |
 |---|---|---|---|---|
-| Accuracy | +0.16 | [−0.28, 0.28], 86th percentile | [−0.17, 0.31], 79th | holds (R) |
-| Precision | +0.22 | [−0.25, 0.24], 96th | [−0.11, 0.32], 90th | holds (R) |
-| Accuracy, numlen moved into S | +0.21 | 93rd | 89th | holds (R) |
+| Accuracy | +0.16 | [−0.28, 0.28], 86th percentile | [−0.17, 0.31], 79th | not significant; power 0.17 at Haiku's size (validated; *was "holds (R)"*) |
+| Precision | +0.22 | [−0.25, 0.24], 96th | [−0.11, 0.32], 90th | not significant (*was "holds (R)"*) |
+| Accuracy, numlen moved into S | +0.21 | 93rd | 89th | not significant (*was "holds (R)"*) |
 
 Every 2024 model is nearer the human on S (−0.12 to −0.47) than on F (−0.38 to −0.53). The
 direction fits mild shortcut use, but a random split of 15 subtasks produces differences this
-large. With only 15 subtasks this test has little power. It cannot rule out use by the 2024
-models; it shows that no evidence for it exists in the published tables.
+large. With only 15 subtasks this test has little power: the validator's simulation gives 17%
+power against a uniform effect of 0.18 (Haiku's edit drop averaged over the six subtasks) and
+needs about 0.5 for 80% power; the smallest detectable D is about 0.28–0.31, and the observed 0.16
+is itself about Haiku's size. It cannot rule out use by the 2024 models: the result is
+inconclusive, not R.
 
 ## Robustness
 
@@ -233,7 +268,11 @@ models; it shows that no evidence for it exists in the published tables.
 | Second rule (middle value, numeric) | Gives 1.00 on gcpercent and does not apply to the sequence subtasks | yes, for gcpercent |
 | Bonferroni over the 6 L4 subtasks | Both Gibson subtasks stay significant; the others do not | pooled yes; per subtask only Gibson |
 | Key-centred placebo edit (post hoc) | 0.08 drop against 0.46 | yes |
-| Analysis A: matched placebo, precision, numlen in S | All "holds" | R stands |
+| Validator: single-option swap, pre-registered (62 Gibson items) | 0.21 [0.11, 0.31] drop | yes, for Gibson |
+| Validator: effect without the Gibson subtasks | 0.04 [−0.05, 0.13] | pooled claim carried by Gibson |
+| Validator: independent centre rule (summed edit distance) | 1.00 on 4 subtasks, 0.975 on gene-enzprimers, 0.50 (tie) on GC-percent; DbQA multi-sequence 80/80 | yes |
+| Validator: SeqQA interval over 15 templates | [0.41, 0.77] | yes, wider |
+| Analysis A: matched placebo, precision, numlen in S | All not significant | no power: inconclusive (validated; *was "R stands"*) |
 | Refusal option moved to last | No change in refusal (−0.006 [−0.04, 0.03]) | position: R |
 | Comparisons counted | 31 rule families, 6 L4 subtasks, 3 stratum analyses, about 25 Haiku cells. The headline L4 pooled test is one pre-registered test | yes |
 | Prereg check "edited items typical of their families" | Not possible: the plan drew the S-subtask forced items only from the edited set | not run (prereg item 6) |
@@ -249,6 +288,8 @@ models; it shows that no evidence for it exists in the published tables.
      not what experts do.
 2. **"The edited items are just harder."**
    - The key-centred placebo, built with the same procedure, costs only 0.08.
+   - The validator's pre-registered single-option swap, which changes one option and no others,
+     costs 0.21 [0.11, 0.31] on 62 Gibson items.
    - The two subtasks where Haiku can compute the answer (AAseq, PCR-seq-enzprimers) lose
      nothing.
 3. **"Blind FigQA accuracy reflects prior knowledge of the papers, not a flaw."**
@@ -258,8 +299,9 @@ models; it shows that no evidence for it exists in the published tables.
    - It does not show that FigQA fails to measure figure reading for models scoring 58–80%.
 4. **"The human scoring rule is standard selective accuracy."**
    - It is, and the paper defines it clearly.
-   - The issue is only that the system cards compare forced-choice model accuracy with it,
-     without noting the slack.
+   - The issue is only that the system cards compare model accuracy with it without noting the
+     slack. Whether the cards' runs offered the refusal option is not stated (validator), so the
+     comparison is affected only to the extent the models were effectively forced to answer.
 
 ## What was already known
 
@@ -271,8 +313,8 @@ See [`prior_work.md`](prior_work.md). Already public:
 
 **New here:**
 - the centroid and middle-value rules that solve 6 SeqQA subtasks and one DbQA subtask outright;
-- the L4 demonstration that Haiku follows the centroid;
-- the stratum-level null for the 2024 models;
+- the L4 demonstration that Haiku follows the centroid on the two Gibson subtasks;
+- the stratum-level test for the 2024 models (inconclusive: too few subtasks for power);
 - the options-only ProtocolQA result and the figure-free FigQA and TableQA baselines;
 - the abstention measurements;
 - the forced-choice range of the human line set against the system-card margins.
@@ -281,10 +323,11 @@ See [`prior_work.md`](prior_work.md). Already public:
 
 - That any published model (Claude 3.5 Sonnet through Opus 4.8, o3, GPT-5) uses the centroid
   shortcut. No per-item outputs exist. The only causal test is on Haiku 5.5, and the 2024 tables
-  show nothing beyond placebo.
+  show nothing beyond placebo, with too little power to exclude an effect of Haiku's size.
 - That Opus 4.6 or 4.8 do not read figures. Their 58–80% is far above Haiku's 31% blind.
-- That models are below experts. Claim 7 says the human line under forced-choice scoring lies
-  in a range and the margins are inside it. It does not say on which side the true comparison
+- That models are below experts. Claim 7 (as validated) says where each margin sits against the
+  forced-choice human range; two claims need unsure humans to guess at or below chance, one
+  (Opus 4.5 CloningScenarios) survives the scoring rule. It does not say on which side the true comparison
   falls. The tool asymmetry pushes the other way.
 - Anything about the private 20%. The paper reports public and private means "within five
   percent" (App. B.1).
@@ -343,7 +386,8 @@ See [`prior_work.md`](prior_work.md). Already public:
     `bee8b322`, LitQA2 `82de3e92` and `d2860d38`). They were not retried and are dropped from
     every condition.
 - **Inference.** claude-haiku-5-5 through `audits/tools/claude_call.py`: 2,582 billed calls,
-  **2.41 USD** ([`inference/ledger.jsonl`](inference/ledger.jsonl)). Responses are cached, so
+  **2.41 USD** by the auditor, plus 85 calls, 0.17 USD by the validator (`validation/v9_swap.py`);
+  total 2,667 calls, 2.58 USD ([`inference/ledger.jsonl`](inference/ledger.jsonl)). Responses are cached, so
   reruns cost nothing.
 
 ```bash
@@ -370,3 +414,38 @@ $P scripts/collect.py         # every number                  -> results.json
 - The key-centred placebo (`b7`) was added after the L4 result and is labelled post hoc.
 - The pilot is `results/haiku_pilot.csv`. Its responses are reused from the cache where prompts
   coincide.
+
+## Validation
+
+An independent validator re-derived every claim (`validation/VALIDATION.md`, numbers in
+`validation/validation.json`). The auditor's scripts rerun byte-identically from the pinned inputs.
+Corrections made in this README:
+
+1. **Claim 1.** Confirmed. The SeqQA interval [0.55, 0.61] resampled items; over the 15 templates
+   it is [0.41, 0.77]. An independent edit-distance centre rule reproduces 4 subtasks at 1.00,
+   PCR-gene-enzprimers at 0.975 and DbQA multi-sequence at 80/80; GC-percent falls to the
+   middle-value rule (distractors exactly {k−1, k+1, k/2}) but only half to a medoid rule. The
+   human comparison uses a different item sample and scoring; now said.
+2. **Claim 2.** Confirmed for Haiku on the two Gibson subtasks; reworded from "Haiku uses this
+   shortcut". The pooled effect is carried by Gibson (elsewhere 0.04 [−0.05, 0.13]). The control's
+   0.88 is on 50 Gibson items (against 0.96 and 0.50), not comparable to 0.93/0.74. Hand read:
+   the edits create no valid or malformed key, but also remove a distractor and change length;
+   a validator-preregistered single-option swap reproduces the drop (0.21 [0.11, 0.31], n = 62).
+3. **Claim 3.** Downgraded from R to inconclusive: 17% power against an effect of Haiku's size.
+4. **Claim 4.** Numbers confirmed (cluster interval over 23 protocols [0.43, 0.62]). Level L2
+   only; the result cannot separate a cue, recall of public items and general lab knowledge.
+5. **Claim 5.** Confirmed; the comparison with 2024 sighted scores is marked as context.
+6. **Claim 6.** Numbers confirmed; reframed as the intended behaviour of an abstention option,
+   with the consequence for comparing models with different abstention rates.
+7. **Claim 7.** Corrected per claim. Plausible FigQA human forced-choice range [0.78, 0.82] (the
+   auditor's [0.77, 0.83] needs guesses from always wrong to always right). Opus 4.6's 0.783
+   equals the chance-guess value; Justen's 0.61 is below it; Opus 4.5 CloningScenarios 0.758 is
+   above the plausible range (the auditor said it fell inside); the Opus 4.5 SeqQA item interval
+   excludes 0.79 (the auditor said it included it); the Opus 4.8 card makes no "surpasses"
+   statement (the auditor listed it as one). Item sets for Opus 4.5 and 4.6, and whether any card
+   run offered the refusal option, cannot be checked.
+8. **Claim 8.** Confirmed.
+
+Not checked by the validator: Justen 2025 §3 (61%/60%, 33 items, 10 runs), which could not be
+fetched; it rests on the auditor's reading.
+
