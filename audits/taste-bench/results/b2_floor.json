@@ -1,0 +1,56 @@
+{
+ "cont_full": {
+  "cells": {
+   "parallel_engineering": 62.9,
+   "parallel_research": 66.7,
+   "detour_engineering": 56.0,
+   "detour_research": 59.4
+  },
+  "eng": 58.2,
+  "res": 62.5,
+  "average": 60.4
+ },
+ "cont_heldout": {
+  "cells": {
+   "parallel_engineering": 63.1,
+   "parallel_research": 73.9,
+   "detour_engineering": 58.8,
+   "detour_research": 54.5
+  },
+  "eng": 60.3,
+  "res": 62.5,
+  "average": 61.4
+ },
+ "ground_full": {
+  "cells": {
+   "parallel_engineering": 58.1,
+   "parallel_research": 64.6,
+   "detour_engineering": 61.7,
+   "detour_research": 46.9
+  },
+  "eng": 60.5,
+  "res": 54.5,
+  "average": 57.5
+ },
+ "ground_heldout": {
+  "cells": {
+   "parallel_engineering": 60.0,
+   "parallel_research": 73.9,
+   "detour_engineering": 63.0,
+   "detour_research": 48.5
+  },
+  "eng": 62.0,
+  "res": 58.9,
+  "average": 60.4
+ },
+ "best_published": {
+  "average": 59.7,
+  "eng": 56.9,
+  "res": 64.3,
+  "parallel_engineering": 75.8,
+  "parallel_research": 64.6,
+  "detour_engineering": 48.1,
+  "detour_research": 68.8
+ },
+ "note": "Rule needs the cell label, which the evaluated model does not see. Order-invariant, so paired = single-order."
+}

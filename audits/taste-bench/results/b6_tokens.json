@@ -1,0 +1,31 @@
+{
+ "parallel_engineering": {
+  "median": 6619.0,
+  "max": 22700,
+  "over_cap": 0,
+  "over_cap_ids": []
+ },
+ "parallel_research": {
+  "median": 6744.5,
+  "max": 24196,
+  "over_cap": 0,
+  "over_cap_ids": []
+ },
+ "detour_engineering": {
+  "median": 8168.0,
+  "max": 24666,
+  "over_cap": 0,
+  "over_cap_ids": []
+ },
+ "detour_research": {
+  "median": 3935.0,
+  "max": 55072,
+  "over_cap": 0,
+  "over_cap_ids": []
+ },
+ "terciles": [
+  5851,
+  8946
+ ],
+ "over_cap_total": 0
+}
