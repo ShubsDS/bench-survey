@@ -1,0 +1,227 @@
+{
+ "n_items": 1967,
+ "n_hits": 25,
+ "n_excluded": 16,
+ "by_subset_hits": {
+  "LitQA2": 3,
+  "SuppQA": 0,
+  "FigQA": 0,
+  "TableQA": 0,
+  "DbQA": 15,
+  "ProtocolQA": 7,
+  "SeqQA": 0,
+  "CloningScenarios": 0
+ },
+ "by_subset_excluded": {
+  "LitQA2": 3,
+  "SuppQA": 0,
+  "FigQA": 0,
+  "TableQA": 0,
+  "DbQA": 13,
+  "ProtocolQA": 0,
+  "SeqQA": 0,
+  "CloningScenarios": 0
+ },
+ "hits": [
+  {
+   "id": "df061613-2591-4faa-be03-791c76375cb5",
+   "subset": "LitQA2",
+   "terms": [
+    "sars-cov"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "1ff2b2e4-492e-4e35-bf33-f0fb53ab938c",
+   "subset": "LitQA2",
+   "terms": [
+    "sars-cov"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "178a5e56-340f-4ba8-a3e5-f024ca016f40",
+   "subset": "LitQA2",
+   "terms": [
+    "sars-cov"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "89e967b8-b1ff-4b06-a995-9a2b8f68458b",
+   "subset": "DbQA",
+   "terms": [
+    "h5n1"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "b8f1eb37-22db-4f20-8ba6-a52ace0b153a",
+   "subset": "DbQA",
+   "terms": [
+    "h5n1"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "ee2ebb06-d7e8-4122-88ac-b97a422fc9c0",
+   "subset": "DbQA",
+   "terms": [
+    "monkeypox"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "576edeb8-2cf8-450e-8f84-5b540346e983",
+   "subset": "DbQA",
+   "terms": [
+    "monkeypox"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "4398bf0d-62f8-4a35-9c64-b77f92bac7c1",
+   "subset": "DbQA",
+   "terms": [
+    "monkeypox"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "59a0f64d-24ac-4288-8185-f29a573672ec",
+   "subset": "DbQA",
+   "terms": [
+    "monkeypox"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "9b59969e-83b8-4bc7-8b10-953f481aba9c",
+   "subset": "DbQA",
+   "terms": [
+    "monkeypox"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "b5a99fec-bb7d-4e4e-9a41-8de39b543042",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "8f5745ba-4dca-4776-a1c1-4f55ae4b6ecd",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "9770c7c5-bfab-4ce7-aa5a-2b1b6959e26a",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "21453b83-a5cc-403b-8975-ec8163783244",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "9db006e7-5aed-4b44-be89-91f7f2a7b89c",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "1be15bdf-3e45-43d9-be45-1062bec9c2b1",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "055485da-456c-4152-8c85-b3386f9524b1",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "9df7e0fe-771e-428c-8d83-c0cef15bd0b4",
+   "subset": "DbQA",
+   "terms": [
+    "variola"
+   ],
+   "decision": "exclude"
+  },
+  {
+   "id": "250c9945-376f-4745-b481-c09aa358f5e5",
+   "subset": "ProtocolQA",
+   "terms": [
+    "ricin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "11d73398-7b2b-4720-bf75-9f63af095c80",
+   "subset": "ProtocolQA",
+   "terms": [
+    "toxin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "3c62b0cb-f6cf-480a-8a37-d54c90d5c287",
+   "subset": "ProtocolQA",
+   "terms": [
+    "ricin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "520f4620-e45c-43c2-b1c3-fef978d32320",
+   "subset": "ProtocolQA",
+   "terms": [
+    "toxin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "a55b740f-8ead-4d88-ab62-b4408ebc489a",
+   "subset": "ProtocolQA",
+   "terms": [
+    "toxin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "0fd4d23c-a7e8-44b7-96ff-bafbf8fbecde",
+   "subset": "ProtocolQA",
+   "terms": [
+    "toxin"
+   ],
+   "decision": "keep"
+  },
+  {
+   "id": "0ab2f959-298f-4ac3-81a2-d36d36263d92",
+   "subset": "ProtocolQA",
+   "terms": [
+    "toxin"
+   ],
+   "decision": "keep"
+  }
+ ]
+}
