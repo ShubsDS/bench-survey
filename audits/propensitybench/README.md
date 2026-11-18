@@ -17,7 +17,7 @@ changed nothing measurable:
 
 Haiku's stated reasons rest mostly on rule-like wording that *is* visible: the task and duties text
 ("follow the standard procedure", "through official channels"). In 49 of 63 benign-naming probe
-answers in arms A and G it cites that wording. So for this model the missing field is close to cosmetic. That
+answers in arms A and G its reasoning mentions protocol, procedure or official channels (keyword match over `emulation_probe.jsonl`; not hand-coded). So for this model the missing field is close to cosmetic. That
 says nothing yet about the paper's models, which call the tool 10–79% of the time. The measurement
 that would settle it, re-running those models with the field restored, still needs tool-calling
 inference we did not have.
