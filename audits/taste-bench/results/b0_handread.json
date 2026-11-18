@@ -1,0 +1,23 @@
+{
+ "note": "Hand read of 51 items (seed 0; 13 per cell, 12 parallel research), done before any feature was computed. Fork type is the auditor's reading of what the two options choose between: 'approach' = two ways to do the task's substance; 'tooling' = two ways to verify, test, diagnose, or obtain a working environment or tool. Not blind to the label (the label was printed), but fork type does not depend on which side is correct. Ids only; no item text.",
+ "fork_type_counts": {
+  "parallel_engineering": {"approach": 13, "tooling": 0, "n": 13},
+  "parallel_research": {"approach": 12, "tooling": 0, "n": 12},
+  "detour_engineering": {"approach": 0, "tooling": 12, "information_gathering": 1, "n": 13},
+  "detour_research": {"approach": 7, "tooling": 6, "n": 13}
+ },
+ "detour_engineering_tooling_ids": [
+  "det-sse-4d0629c4fd02ba80-v3", "det-sse-9ab4cddeb59cbb19-v3", "det-sse-2e7f36c39938cd09-v3",
+  "det-sse-227e7aa1c784983d-v3", "det-sse-a3b9e33520ba1b14-v3", "det-sse-ec9ab8dbfea069f9-v3",
+  "det-sse-2ff91cea213286c2-v3", "det-sse-ade9582bb3fabdb1-v3", "det-sse-d8db8b8100b5d57d-v3",
+  "det-sse-677e14876b933fd1-v3", "det-sse-ee48c5567adda958-v3", "det-sse-dea58bf4e9355667-v3"
+ ],
+ "detour_engineering_information_gathering_ids": ["det-sse-9e0572f5a9dff29e-v3"],
+ "observations": [
+  "Detour-engineering queries are rewritten by the generator to pose the fork (for example asking the reader to choose the next verification strategy after a stated environment failure); most forks are between two ways to verify a patch in a sandbox with missing tools or dependencies.",
+  "Several detour labels depend on facts of the sandbox that the prefix does not settle (whether a write is allowed, whether a toolchain exists elsewhere on disk).",
+  "Detour-research prefixes include MALT runs in which the agent states a plan to sabotage or sandbag the task (5 of 64 by keyword scan; 2 of them in this sample: det-malt-7ed1e7063dba2815-v3, det-malt-03c02eba4542a9da-v3).",
+  "Parallel-engineering options are near-paraphrases that differ in one implementation detail; the correct one often names the file or symbol the prefix tail was just reading.",
+  "Parallel research draws repeatedly on a few tasks (ai_rd_fix_embedding supplies 17 of 48 items)."
+ ]
+}
