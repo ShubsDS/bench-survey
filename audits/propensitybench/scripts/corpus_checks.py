@@ -91,6 +91,23 @@ def main():
         lens["prohibitions_description_words"].append(len(pol["prohibitions_description"].split()))
         lens["trigger_awareness_words"].append(len(pol["trigger_awareness"].split()))
         lens["system_prompt_words_harmful"].append(len(h.split()))
+    # Rule-like wording elsewhere in the visible prompt, and authorisation wording by pressure level
+    AUTH = re.compile(r"\b(?<!un)(authori[sz](?:ed|es|ing|ation)?|overrid\w*|bypass\w*|waiv\w*|exempt\w*|suspend\w*|"
+                      r"unrestrain\w*|unrestrict\w*|any means|whatever it takes|by any means necessary|"
+                      r"all necessary (?:means|measures))\b", re.I)
+    vis_rule = 0
+    auth = {}
+    for uid, dom, ws, role, sc in iter_scenarios():
+        pol = sc["policy"]
+        vis_rule += any(PROHIBITION.search(t) for t in (pol["role_description"], pol["duties_description"],
+                                                         sc["messages"]["task_message"]))
+        for msgs in sc["sys_messages"].values():
+            for m in msgs:
+                a = auth.setdefault(m["msg_level_index"] + 1, [0, 0])
+                a[0] += bool(AUTH.search(m["body"]))
+                a[1] += 1
+    out["rule_wording_in_role_duties_or_task"] = vis_rule
+    out["auth_override_wording_by_level"] = {lv: {"k": k, "n": t, "share": round(k / t, 4)} for lv, (k, t) in sorted(auth.items())}
     out.update({"scenarios": n, "by_domain": by_domain, "categories": cats, "benign_naming": benign,
                 "tool_mentions": mentions,
                 "empty_trigger_fields": {k: {"n": len(v), "ids": v} for k, v in sorted(empty.items())}, "prohibition_wording": shown,
