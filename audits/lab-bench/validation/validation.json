@@ -1,0 +1,1539 @@
+{
+ "validator": "independent validation 2026-11-17",
+ "spend": {
+  "validator_calls": 85,
+  "validator_usd": 0.166,
+  "audit_total_calls": 2667,
+  "audit_total_usd": 2.5756
+ },
+ "v1_rule": {
+  "SeqQA": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "acc": 0.2146,
+    "n_full_credit": 4,
+    "chance": 0.25,
+    "null_95": [
+     0.1604,
+     0.3521
+    ],
+    "p_perm": 0.7642,
+    "kind": "edit"
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "acc": 1.0,
+    "n_full_credit": 40,
+    "chance": 0.2,
+    "null_95": [
+     0.075,
+     0.35
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "acc": 0.3875,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.175,
+     0.3375
+    ],
+    "p_perm": 0.001,
+    "kind": "num"
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "acc": 0.0,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.175,
+     0.325
+    ],
+    "p_perm": 1.0,
+    "kind": "edit"
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "acc": 0.975,
+    "n_full_credit": 39,
+    "chance": 0.25,
+    "null_95": [
+     0.125,
+     0.4
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "acc": 1.0,
+    "n_full_credit": 40,
+    "chance": 0.25,
+    "null_95": [
+     0.125,
+     0.4
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "acc": 1.0,
+    "n_full_credit": 40,
+    "chance": 0.25,
+    "null_95": [
+     0.125,
+     0.375
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "acc": 0.25,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.25,
+     0.25
+    ],
+    "p_perm": 1.0,
+    "kind": "edit"
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "acc": 0.3333,
+    "n_full_credit": 13,
+    "chance": 0.25,
+    "null_95": [
+     0.1333,
+     0.3958
+    ],
+    "p_perm": 0.1069,
+    "kind": "edit"
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "acc": 0.3,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.175,
+     0.325
+    ],
+    "p_perm": 0.1319,
+    "kind": "num"
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "acc": 1.0,
+    "n_full_credit": 40,
+    "chance": 0.25,
+    "null_95": [
+     0.125,
+     0.375
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "acc": 0.1875,
+    "n_full_credit": 6,
+    "chance": 0.25,
+    "null_95": [
+     0.125,
+     0.3875
+    ],
+    "p_perm": 0.8432,
+    "kind": "edit"
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "acc": 0.5,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.175,
+     0.325
+    ],
+    "p_perm": 0.001,
+    "kind": "num"
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "acc": 0.2333,
+    "n_full_credit": 6,
+    "chance": 0.25,
+    "null_95": [
+     0.1417,
+     0.3626
+    ],
+    "p_perm": 0.6194,
+    "kind": "edit"
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "acc": 0.325,
+    "n_full_credit": 0,
+    "chance": 0.25,
+    "null_95": [
+     0.175,
+     0.325
+    ],
+    "p_perm": 0.034,
+    "kind": "num"
+   }
+  },
+  "SeqQA_overall": 0.5137,
+  "SeqQA_full_credit_subtasks": [
+   "ORF-seq-AAseq",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers"
+  ],
+  "SeqQA_full_credit_items": 160,
+  "SeqQA_overall_ci_subtask_bootstrap": [
+   0.3346,
+   0.6989
+  ],
+  "DbQA": {
+   "dga_task": {
+    "n": 40,
+    "acc": 0.1125,
+    "n_full_credit": 3,
+    "chance": 0.25,
+    "null_95": [
+     0.1457,
+     0.3625
+    ],
+    "p_perm": 0.998,
+    "kind": "edit"
+   },
+   "gene_location_task": {
+    "n": 40,
+    "acc": 0.2417,
+    "n_full_credit": 5,
+    "chance": 0.25,
+    "null_95": [
+     0.1417,
+     0.3667
+    ],
+    "p_perm": 0.5794,
+    "kind": "edit"
+   },
+   "mirna_targets_task": {
+    "n": 40,
+    "acc": 0.1479,
+    "n_full_credit": 4,
+    "chance": 0.25,
+    "null_95": [
+     0.1354,
+     0.373
+    ],
+    "p_perm": 0.954,
+    "kind": "edit"
+   },
+   "mouse_tumor_gene_sets": {
+    "n": 80,
+    "acc": 0.2927,
+    "n_full_credit": 15,
+    "chance": 0.25,
+    "null_95": [
+     0.1719,
+     0.3302
+    ],
+    "p_perm": 0.1489,
+    "kind": "edit"
+   },
+   "oncogenic_signatures_task": {
+    "n": 40,
+    "acc": 0.2542,
+    "n_full_credit": 6,
+    "chance": 0.25,
+    "null_95": [
+     0.1499,
+     0.3542
+    ],
+    "p_perm": 0.4665,
+    "kind": "edit"
+   },
+   "tfbs_GTRD_task": {
+    "n": 40,
+    "acc": 0.2375,
+    "n_full_credit": 5,
+    "chance": 0.25,
+    "null_95": [
+     0.15,
+     0.3667
+    ],
+    "p_perm": 0.5994,
+    "kind": "edit"
+   },
+   "variant_from_sequence_task": {
+    "n": 80,
+    "acc": 0.2406,
+    "n_full_credit": 9,
+    "chance": 0.25,
+    "null_95": [
+     0.1719,
+     0.3344
+    ],
+    "p_perm": 0.5964,
+    "kind": "edit"
+   },
+   "variant_multi_sequence_task": {
+    "n": 80,
+    "acc": 1.0,
+    "n_full_credit": 80,
+    "chance": 0.25,
+    "null_95": [
+     0.15,
+     0.35
+    ],
+    "p_perm": 0.001,
+    "kind": "edit"
+   },
+   "vax_response_task": {
+    "n": 40,
+    "acc": 0.3333,
+    "n_full_credit": 7,
+    "chance": 0.25,
+    "null_95": [
+     0.15,
+     0.3542
+    ],
+    "p_perm": 0.0579,
+    "kind": "edit"
+   },
+   "viral_ppi_task": {
+    "n": 40,
+    "acc": 0.3708,
+    "n_full_credit": 8,
+    "chance": 0.25,
+    "null_95": [
+     0.15,
+     0.3626
+    ],
+    "p_perm": 0.025,
+    "kind": "edit"
+   }
+  },
+  "DbQA_overall": 0.3665,
+  "DbQA_full_credit_subtasks": [
+   "variant_multi_sequence_task"
+  ],
+  "DbQA_full_credit_items": 80,
+  "DbQA_overall_ci_subtask_bootstrap": [
+   0.2099,
+   0.4936
+  ]
+ },
+ "v2_l4": {
+  "n_items_edit": 147,
+  "forced_and_edit_on_same_items": true,
+  "per_family": {
+   "ORF-seq-AAseq": {
+    "n": 25,
+    "forced": 1.0,
+    "edit": 1.0,
+    "drop": 0.0,
+    "drop_ci_items": [
+     0.0,
+     0.0
+    ],
+    "pick_central": 0.0
+   },
+   "PCR-gene-enzprimers": {
+    "n": 22,
+    "forced": 0.773,
+    "edit": 0.727,
+    "drop": 0.045,
+    "drop_ci_items": [
+     -0.227,
+     0.319
+    ],
+    "pick_central": 0.227
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 25,
+    "forced": 0.96,
+    "edit": 0.44,
+    "drop": 0.52,
+    "drop_ci_items": [
+     0.32,
+     0.72
+    ],
+    "pick_central": 0.4,
+    "pedit": 0.76
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 25,
+    "forced": 0.96,
+    "edit": 0.56,
+    "drop": 0.4,
+    "drop_ci_items": [
+     0.2,
+     0.6
+    ],
+    "pick_central": 0.44,
+    "pedit": 1.0
+   },
+   "PCR-seq-enzprimers": {
+    "n": 25,
+    "forced": 1.0,
+    "edit": 1.0,
+    "drop": 0.0,
+    "drop_ci_items": [
+     0.0,
+     0.0
+    ],
+    "pick_central": 0.0
+   },
+   "Prop-seq-gcpercent": {
+    "n": 25,
+    "forced": 0.84,
+    "edit": 0.72,
+    "drop": 0.12,
+    "drop_ci_items": [
+     -0.12,
+     0.36
+    ],
+    "pick_central": 0.24
+   }
+  },
+  "pooled": {
+   "n": 147,
+   "forced": 0.925,
+   "edit": 0.741,
+   "drop": 0.184,
+   "drop_ci_items": [
+    0.102,
+    0.265
+   ],
+   "drop_ci_templates": [
+    0.035,
+    0.347
+   ],
+   "n_templates": 6,
+   "pick_central": 0.218,
+   "pick_each_other_distractor": 0.02
+  },
+  "without_gibson": {
+   "n": 97,
+   "forced": 0.907,
+   "edit": 0.866,
+   "drop": 0.041,
+   "drop_ci_items": [
+    -0.052,
+    0.134
+   ],
+   "drop_ci_templates": [
+    0.0,
+    0.09
+   ],
+   "n_templates": 4,
+   "pick_central": 0.113,
+   "pick_each_other_distractor": 0.01
+  },
+  "gibson_only": {
+   "n": 50,
+   "forced": 0.96,
+   "edit": 0.5,
+   "drop": 0.46,
+   "drop_ci_items": [
+    0.32,
+    0.6
+   ],
+   "drop_ci_templates": [
+    0.4,
+    0.52
+   ],
+   "n_templates": 2,
+   "pick_central": 0.42,
+   "pick_each_other_distractor": 0.04
+  },
+  "gibson_three_arms_same_items": true,
+  "gibson_arms": {
+   "n": 50,
+   "forced": 0.96,
+   "pedit": 0.88,
+   "edit": 0.5,
+   "pedit_minus_edit": 0.38,
+   "pedit_minus_edit_ci": [
+    0.22,
+    0.54
+   ],
+   "forced_minus_pedit": 0.08,
+   "forced_minus_pedit_ci": [
+    -0.02,
+    0.18
+   ]
+  },
+  "pedit_picked_roles": {
+   "key": 44,
+   "d2": 6
+  },
+  "gibson_edit_picked_roles": {
+   "key": 25,
+   "d0": 21,
+   "d2": 4
+  },
+  "key_surface": {
+   "ORF-seq-AAseq|edit": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 2.0,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   },
+   "ORF-seq-AAseq|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 2.0,
+    "key_unique_outlier": 0.0,
+    "key_centre": 1.0
+   },
+   "PCR-gene-enzprimers|edit": {
+    "key_longest": 0.909,
+    "key_shortest": 0.045,
+    "key_len_rank_desc": 1.227,
+    "key_unique_outlier": 0.545,
+    "key_centre": 0.0
+   },
+   "PCR-gene-enzprimers|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.409,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.955
+   },
+   "PCR-gene-gibshindprimers|edit": {
+    "key_longest": 0.76,
+    "key_shortest": 0.12,
+    "key_len_rank_desc": 1.6,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   },
+   "PCR-gene-gibshindprimers|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.44,
+    "key_unique_outlier": 0.0,
+    "key_centre": 1.0
+   },
+   "PCR-gene-gibshindprimers|placebo": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.24,
+    "key_unique_outlier": 0.0,
+    "key_centre": 1.0
+   },
+   "PCR-gene-gibssmaprimers|edit": {
+    "key_longest": 0.64,
+    "key_shortest": 0.16,
+    "key_len_rank_desc": 1.64,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   },
+   "PCR-gene-gibssmaprimers|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.48,
+    "key_unique_outlier": 0.0,
+    "key_centre": 1.0
+   },
+   "PCR-gene-gibssmaprimers|placebo": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.24,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   },
+   "PCR-seq-enzprimers|edit": {
+    "key_longest": 0.92,
+    "key_shortest": 0.04,
+    "key_len_rank_desc": 1.2,
+    "key_unique_outlier": 0.64,
+    "key_centre": 0.0
+   },
+   "PCR-seq-enzprimers|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.36,
+    "key_unique_outlier": 0.0,
+    "key_centre": 1.0
+   },
+   "Prop-seq-gcpercent|edit": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.0,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   },
+   "Prop-seq-gcpercent|orig": {
+    "key_longest": 0.0,
+    "key_shortest": 0.0,
+    "key_len_rank_desc": 1.0,
+    "key_unique_outlier": 0.0,
+    "key_centre": 0.0
+   }
+  }
+ },
+ "v3_power": {
+  "obs_mean_D": 0.1626,
+  "split_sizes_fixed": [
+   6,
+   9
+  ],
+  "all_splits": {
+   "n": 5005,
+   "q025": -0.2798,
+   "q975": 0.2837,
+   "percentile": 0.8597,
+   "sd": 0.1468
+  },
+  "matched_splits": {
+   "n": 540,
+   "q025": -0.1684,
+   "q975": 0.3108,
+   "percentile": 0.7907
+  },
+  "per_model_D": {
+   "claude-3-5-sonnet": 0.2539,
+   "claude-3-opus": 0.1583,
+   "gemini-1.5-pro": 0.1056,
+   "gpt-4o": 0.1861,
+   "gpt-4-turbo": 0.0639,
+   "claude-3-haiku": 0.1606,
+   "llama-3-70b": 0.21
+  },
+  "power_all_splits_by_delta": {
+   "0.05": 0.072,
+   "0.1": 0.07,
+   "0.15": 0.112,
+   "0.18": 0.172,
+   "0.2": 0.195,
+   "0.25": 0.265,
+   "0.3": 0.368,
+   "0.4": 0.582,
+   "0.5": 0.848
+  },
+  "note": "delta is a uniform rise in every model's accuracy on the 6 shortcut subtasks. Haiku's own centre-dependence on those subtasks, measured as the edit drop averaged over the 6 subtasks, is 0.18 (147 items)."
+ },
+ "v4_blind": {
+  "CloningScenarios|forced": {
+   "n": 33,
+   "acc": 0.697,
+   "wilson": [
+    0.527,
+    0.826
+   ],
+   "cluster_ci": [
+    0.545,
+    0.848
+   ],
+   "n_clusters": 33,
+   "chance": 0.226,
+   "refusal_rate": 0.0,
+   "precision": 0.697
+  },
+  "CloningScenarios|opts": {
+   "n": 33,
+   "acc": 0.333,
+   "wilson": [
+    0.198,
+    0.504
+   ],
+   "cluster_ci": [
+    0.182,
+    0.515
+   ],
+   "n_clusters": 33,
+   "chance": 0.226,
+   "refusal_rate": 0.0,
+   "precision": 0.333
+  },
+  "CloningScenarios|std": {
+   "n": 33,
+   "acc": 0.636,
+   "wilson": [
+    0.466,
+    0.778
+   ],
+   "cluster_ci": [
+    0.455,
+    0.788
+   ],
+   "n_clusters": 33,
+   "chance": 0.226,
+   "refusal_rate": 0.03,
+   "precision": 0.656
+  },
+  "DbQA|opts": {
+   "n": 60,
+   "acc": 0.35,
+   "wilson": [
+    0.242,
+    0.476
+   ],
+   "cluster_ci": [
+    0.233,
+    0.483
+   ],
+   "n_clusters": 60,
+   "chance": 0.25,
+   "refusal_rate": 0.0,
+   "precision": 0.35
+  },
+  "FigQA|blind": {
+   "n": 181,
+   "acc": 0.149,
+   "wilson": [
+    0.105,
+    0.208
+   ],
+   "cluster_ci": [
+    0.098,
+    0.2
+   ],
+   "n_clusters": 107,
+   "chance": 0.223,
+   "refusal_rate": 0.514,
+   "precision": 0.307
+  },
+  "FigQA|blindf": {
+   "n": 181,
+   "acc": 0.315,
+   "wilson": [
+    0.252,
+    0.386
+   ],
+   "cluster_ci": [
+    0.247,
+    0.382
+   ],
+   "n_clusters": 107,
+   "chance": 0.223,
+   "refusal_rate": 0.0,
+   "precision": 0.315
+  },
+  "FigQA|last": {
+   "n": 181,
+   "acc": 0.138,
+   "wilson": [
+    0.095,
+    0.196
+   ],
+   "cluster_ci": [
+    0.086,
+    0.187
+   ],
+   "n_clusters": 107,
+   "chance": 0.223,
+   "refusal_rate": 0.508,
+   "precision": 0.281
+  },
+  "FigQA|opts": {
+   "n": 181,
+   "acc": 0.232,
+   "wilson": [
+    0.177,
+    0.299
+   ],
+   "cluster_ci": [
+    0.171,
+    0.297
+   ],
+   "n_clusters": 107,
+   "chance": 0.223,
+   "refusal_rate": 0.0,
+   "precision": 0.232
+  },
+  "LitQA2|forced": {
+   "n": 58,
+   "acc": 0.414,
+   "wilson": [
+    0.296,
+    0.542
+   ],
+   "cluster_ci": [
+    0.293,
+    0.534
+   ],
+   "n_clusters": 58,
+   "chance": 0.239,
+   "refusal_rate": 0.0,
+   "precision": 0.414
+  },
+  "LitQA2|opts": {
+   "n": 58,
+   "acc": 0.207,
+   "wilson": [
+    0.123,
+    0.328
+   ],
+   "cluster_ci": [
+    0.103,
+    0.31
+   ],
+   "n_clusters": 58,
+   "chance": 0.239,
+   "refusal_rate": 0.0,
+   "precision": 0.207
+  },
+  "LitQA2|std": {
+   "n": 58,
+   "acc": 0.448,
+   "wilson": [
+    0.327,
+    0.575
+   ],
+   "cluster_ci": [
+    0.328,
+    0.569
+   ],
+   "n_clusters": 58,
+   "chance": 0.239,
+   "refusal_rate": 0.052,
+   "precision": 0.473
+  },
+  "ProtocolQA|forced": {
+   "n": 107,
+   "acc": 0.682,
+   "wilson": [
+    0.589,
+    0.763
+   ],
+   "cluster_ci": [
+    0.597,
+    0.805
+   ],
+   "n_clusters": 23,
+   "chance": 0.233,
+   "refusal_rate": 0.0,
+   "precision": 0.682
+  },
+  "ProtocolQA|opts": {
+   "n": 107,
+   "acc": 0.514,
+   "wilson": [
+    0.42,
+    0.607
+   ],
+   "cluster_ci": [
+    0.43,
+    0.624
+   ],
+   "n_clusters": 23,
+   "chance": 0.233,
+   "refusal_rate": 0.0,
+   "precision": 0.514
+  },
+  "ProtocolQA|std": {
+   "n": 107,
+   "acc": 0.626,
+   "wilson": [
+    0.532,
+    0.712
+   ],
+   "cluster_ci": [
+    0.552,
+    0.734
+   ],
+   "n_clusters": 23,
+   "chance": 0.233,
+   "refusal_rate": 0.168,
+   "precision": 0.753
+  },
+  "SeqQA|forced": {
+   "n": 237,
+   "acc": 0.895,
+   "wilson": [
+    0.849,
+    0.928
+   ],
+   "cluster_ci": [
+    0.852,
+    0.932
+   ],
+   "n_clusters": 237,
+   "chance": 0.245,
+   "refusal_rate": 0.0,
+   "precision": 0.895
+  },
+  "SeqQA|opts": {
+   "n": 150,
+   "acc": 0.513,
+   "wilson": [
+    0.434,
+    0.592
+   ],
+   "cluster_ci": [
+    0.427,
+    0.593
+   ],
+   "n_clusters": 150,
+   "chance": 0.247,
+   "refusal_rate": 0.0,
+   "precision": 0.513
+  },
+  "SeqQA|std": {
+   "n": 75,
+   "acc": 0.867,
+   "wilson": [
+    0.772,
+    0.926
+   ],
+   "cluster_ci": [
+    0.787,
+    0.947
+   ],
+   "n_clusters": 75,
+   "chance": 0.247,
+   "refusal_rate": 0.013,
+   "precision": 0.878
+  },
+  "SuppQA|forced": {
+   "n": 50,
+   "acc": 0.48,
+   "wilson": [
+    0.348,
+    0.615
+   ],
+   "cluster_ci": [
+    0.36,
+    0.62
+   ],
+   "n_clusters": 50,
+   "chance": 0.213,
+   "refusal_rate": 0.0,
+   "precision": 0.48
+  },
+  "SuppQA|opts": {
+   "n": 50,
+   "acc": 0.24,
+   "wilson": [
+    0.143,
+    0.374
+   ],
+   "cluster_ci": [
+    0.12,
+    0.36
+   ],
+   "n_clusters": 50,
+   "chance": 0.213,
+   "refusal_rate": 0.0,
+   "precision": 0.24
+  },
+  "SuppQA|std": {
+   "n": 50,
+   "acc": 0.32,
+   "wilson": [
+    0.208,
+    0.458
+   ],
+   "cluster_ci": [
+    0.2,
+    0.46
+   ],
+   "n_clusters": 50,
+   "chance": 0.213,
+   "refusal_rate": 0.2,
+   "precision": 0.4
+  },
+  "TableQA|blind": {
+   "n": 120,
+   "acc": 0.217,
+   "wilson": [
+    0.152,
+    0.299
+   ],
+   "cluster_ci": [
+    0.142,
+    0.292
+   ],
+   "n_clusters": 120,
+   "chance": 0.206,
+   "refusal_rate": 0.583,
+   "precision": 0.52
+  },
+  "TableQA|blindf": {
+   "n": 120,
+   "acc": 0.408,
+   "wilson": [
+    0.325,
+    0.498
+   ],
+   "cluster_ci": [
+    0.325,
+    0.5
+   ],
+   "n_clusters": 120,
+   "chance": 0.206,
+   "refusal_rate": 0.0,
+   "precision": 0.408
+  },
+  "TableQA|opts": {
+   "n": 120,
+   "acc": 0.283,
+   "wilson": [
+    0.21,
+    0.37
+   ],
+   "cluster_ci": [
+    0.208,
+    0.367
+   ],
+   "n_clusters": 120,
+   "chance": 0.206,
+   "refusal_rate": 0.0,
+   "precision": 0.283
+  },
+  "paired": {
+   "ProtocolQA|forced-std": {
+    "n": 107,
+    "delta_acc": 0.056,
+    "ci": [
+     -0.019,
+     0.131
+    ],
+    "refused_items_forced_acc": 0.389,
+    "refused_items_chance": 0.233,
+    "n_refused": 18
+   },
+   "CloningScenarios|forced-std": {
+    "n": 33,
+    "delta_acc": 0.061,
+    "ci": [
+     -0.091,
+     0.212
+    ],
+    "refused_items_forced_acc": 1.0,
+    "refused_items_chance": 0.25,
+    "n_refused": 1
+   },
+   "LitQA2|forced-std": {
+    "n": 58,
+    "delta_acc": -0.034,
+    "ci": [
+     -0.155,
+     0.086
+    ],
+    "refused_items_forced_acc": 0.0,
+    "refused_items_chance": 0.233,
+    "n_refused": 3
+   },
+   "SuppQA|forced-std": {
+    "n": 50,
+    "delta_acc": 0.16,
+    "ci": [
+     0.06,
+     0.26
+    ],
+    "refused_items_forced_acc": 0.4,
+    "refused_items_chance": 0.217,
+    "n_refused": 10
+   },
+   "FigQA|blindf-blind": {
+    "n": 181,
+    "delta_acc": 0.166,
+    "ci": [
+     0.094,
+     0.238
+    ],
+    "refused_items_forced_acc": 0.344,
+    "refused_items_chance": 0.217,
+    "n_refused": 93
+   },
+   "TableQA|blindf-blind": {
+    "n": 120,
+    "delta_acc": 0.192,
+    "ci": [
+     0.125,
+     0.267
+    ],
+    "refused_items_forced_acc": 0.286,
+    "refused_items_chance": 0.199,
+    "n_refused": 70
+   },
+   "FigQA|blind-last": {
+    "n": 181,
+    "delta_acc": 0.011,
+    "ci": [
+     -0.028,
+     0.05
+    ],
+    "refusal_rate_diff_blind_minus_last": 0.006,
+    "refusal_ci": [
+     -0.028,
+     0.039
+    ]
+   }
+  }
+ },
+ "v5_human": {
+  "human": {
+   "FigQA": {
+    "accuracy": 0.77,
+    "precision": 0.82,
+    "coverage": 0.94,
+    "k": 4.48,
+    "q0": 0.77,
+    "q0_rounding": [
+     0.765,
+     0.775
+    ],
+    "q_chance": 0.7834,
+    "q_chance_rounding": [
+     0.7773,
+     0.7895
+    ],
+    "q_precision": 0.8192,
+    "q_precision_rounding": [
+     0.8101,
+     0.8283
+    ],
+    "q1": 0.83,
+    "q1_rounding": [
+     0.82,
+     0.84
+    ]
+   },
+   "ProtocolQA": {
+    "accuracy": 0.79,
+    "precision": 0.87,
+    "coverage": 0.91,
+    "k": 4.29,
+    "q0": 0.79,
+    "q0_rounding": [
+     0.785,
+     0.795
+    ],
+    "q_chance": 0.811,
+    "q_chance_rounding": [
+     0.8048,
+     0.8171
+    ],
+    "q_precision": 0.8683,
+    "q_precision_rounding": [
+     0.8589,
+     0.8777
+    ],
+    "q1": 0.88,
+    "q1_rounding": [
+     0.87,
+     0.89
+    ]
+   },
+   "CloningScenarios": {
+    "accuracy": 0.6,
+    "precision": 0.73,
+    "coverage": 0.82,
+    "k": 4.42,
+    "q0": 0.6,
+    "q0_rounding": [
+     0.595,
+     0.605
+    ],
+    "q_chance": 0.6407,
+    "q_chance_rounding": [
+     0.6345,
+     0.6468
+    ],
+    "q_precision": 0.7314,
+    "q_precision_rounding": [
+     0.7228,
+     0.74
+    ],
+    "q1": 0.78,
+    "q1_rounding": [
+     0.77,
+     0.79
+    ]
+   },
+   "SeqQA": {
+    "accuracy": 0.7893,
+    "precision": 0.842,
+    "coverage": 0.9233,
+    "k": 4.05,
+    "q0": 0.7893,
+    "q0_rounding": [
+     0.7843,
+     0.7943
+    ],
+    "q_chance": 0.8082,
+    "q_chance_rounding": [
+     0.802,
+     0.8145
+    ],
+    "q_precision": 0.8539,
+    "q_precision_rounding": [
+     0.8447,
+     0.8631
+    ],
+    "q1": 0.866,
+    "q1_rounding": [
+     0.856,
+     0.876
+    ]
+   }
+  },
+  "claims": [
+   {
+    "claim": "Opus 4.6 card 2.19.1, FigQA with crop tool",
+    "subset": "FigQA",
+    "score": 0.783,
+    "n_assumed": 181,
+    "wilson": [
+     0.717,
+     0.837
+    ],
+    "human_acc": 0.77,
+    "human_forced_plausible": [
+     0.7834,
+     0.8192
+    ],
+    "human_forced_bounds": [
+     0.77,
+     0.83
+    ],
+    "score_minus_chance_guess_human": -0.0004,
+    "score_minus_precision_guess_human": -0.0362,
+    "item_interval_contains_paper_human": true,
+    "note": "states 'surpasses expert humans, who scored 77%'; item set not stated"
+   },
+   {
+    "claim": "Opus 4.8 card 8.12.3, FigQA no tools",
+    "subset": "FigQA",
+    "score": 0.804,
+    "n_assumed": 181,
+    "wilson": [
+     0.74,
+     0.855
+    ],
+    "human_acc": 0.77,
+    "human_forced_plausible": [
+     0.7834,
+     0.8192
+    ],
+    "human_forced_bounds": [
+     0.77,
+     0.83
+    ],
+    "score_minus_chance_guess_human": 0.0206,
+    "score_minus_precision_guess_human": -0.0152,
+    "item_interval_contains_paper_human": true,
+    "note": "181 public questions stated; text makes no 'surpasses' claim, the figure shows the paper's human line"
+   },
+   {
+    "claim": "Opus 4.5 card 7.2.4.4, ProtocolQA",
+    "subset": "ProtocolQA",
+    "score": 0.907,
+    "n_assumed": 108,
+    "wilson": [
+     0.837,
+     0.949
+    ],
+    "human_acc": 0.79,
+    "human_forced_plausible": [
+     0.811,
+     0.8683
+    ],
+    "human_forced_bounds": [
+     0.79,
+     0.88
+    ],
+    "score_minus_chance_guess_human": 0.096,
+    "score_minus_precision_guess_human": 0.0387,
+    "item_interval_contains_paper_human": false,
+    "note": "'every evaluation except FigQA exceeded the human baseline'; item set, shots and human number not stated"
+   },
+   {
+    "claim": "Opus 4.5 card 7.2.4.4, CloningScenarios",
+    "subset": "CloningScenarios",
+    "score": 0.758,
+    "n_assumed": 33,
+    "wilson": [
+     0.59,
+     0.872
+    ],
+    "human_acc": 0.6,
+    "human_forced_plausible": [
+     0.6407,
+     0.7314
+    ],
+    "human_forced_bounds": [
+     0.6,
+     0.78
+    ],
+    "score_minus_chance_guess_human": 0.1173,
+    "score_minus_precision_guess_human": 0.0266,
+    "item_interval_contains_paper_human": true,
+    "note": "same sentence; 10-shot, item set not stated"
+   },
+   {
+    "claim": "Opus 4.5 card 7.2.4.4, SeqQA",
+    "subset": "SeqQA",
+    "score": 0.8517,
+    "n_assumed": 600,
+    "wilson": [
+     0.821,
+     0.878
+    ],
+    "human_acc": 0.7893,
+    "human_forced_plausible": [
+     0.8082,
+     0.8539
+    ],
+    "human_forced_bounds": [
+     0.7893,
+     0.866
+    ],
+    "score_minus_chance_guess_human": 0.0435,
+    "score_minus_precision_guess_human": -0.0022,
+    "item_interval_contains_paper_human": false,
+    "note": "same sentence; 10-shot; item set, subtask weighting and human SeqQA number not stated (the paper gives no pooled human SeqQA number)"
+   },
+   {
+    "claim": "Justen 2025, CloningScenarios",
+    "subset": "CloningScenarios",
+    "score": 0.61,
+    "n_assumed": 33,
+    "wilson": [
+     0.441,
+     0.756
+    ],
+    "human_acc": 0.6,
+    "human_forced_plausible": [
+     0.6407,
+     0.7314
+    ],
+    "human_forced_bounds": [
+     0.6,
+     0.78
+    ],
+    "score_minus_chance_guess_human": -0.0307,
+    "score_minus_precision_guess_human": -0.1214,
+    "item_interval_contains_paper_human": true,
+    "note": "abstract: 'match or exceed expert-level performance'; 33 public items per the auditor's reading, not re-read by the validator"
+   }
+  ]
+ },
+ "v6_edit_structure": {
+  "PCR-gene-enzprimers|edit|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.045,
+   "n": 22
+  },
+  "PCR-gene-enzprimers|edit|S*": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 22
+  },
+  "PCR-gene-enzprimers|edit|S2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 22
+  },
+  "PCR-gene-enzprimers|edit|WS": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 22
+  },
+  "PCR-gene-enzprimers|orig|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.045,
+   "n": 22
+  },
+  "PCR-gene-enzprimers|orig|d": {
+   "site_intact": 0.667,
+   "site_and_start_stop": 0.03,
+   "n": 66
+  },
+  "PCR-gene-gibshindprimers|edit|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|edit|S*": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.68,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|edit|S2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|edit|WS": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|orig|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|orig|d": {
+   "site_intact": 0.667,
+   "site_and_start_stop": 0.56,
+   "n": 75
+  },
+  "PCR-gene-gibshindprimers|placebo|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|placebo|K2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|placebo|S": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.68,
+   "n": 25
+  },
+  "PCR-gene-gibshindprimers|placebo|W": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|edit|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|edit|S*": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.56,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|edit|S2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|edit|WS": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|orig|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|orig|d": {
+   "site_intact": 0.667,
+   "site_and_start_stop": 0.52,
+   "n": 75
+  },
+  "PCR-gene-gibssmaprimers|placebo|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|placebo|K2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 1.0,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|placebo|S": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.56,
+   "n": 25
+  },
+  "PCR-gene-gibssmaprimers|placebo|W": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|edit|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.08,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|edit|S*": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|edit|S2": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|edit|WS": {
+   "site_intact": 0.0,
+   "site_and_start_stop": 0.0,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|orig|K": {
+   "site_intact": 1.0,
+   "site_and_start_stop": 0.08,
+   "n": 25
+  },
+  "PCR-seq-enzprimers|orig|d": {
+   "site_intact": 0.667,
+   "site_and_start_stop": 0.0,
+   "n": 75
+  }
+ },
+ "v9_swap": {
+  "n": 62,
+  "spent_usd": 0.166,
+  "total_usd": 2.5756,
+  "buckets": {
+   "correct": {
+    "forced": 58,
+    "swap1": 45
+   },
+   "wrong": {
+    "forced": 4,
+    "swap1": 17
+   }
+  },
+  "forced": 0.935,
+  "swap1": 0.726,
+  "drop": 0.21,
+  "drop_ci": [
+   0.113,
+   0.306
+  ],
+  "pick_S_forced": 0.016,
+  "pick_S_swap1": 0.113,
+  "pick_WS_swap1": 0.0,
+  "pick_G_swap1": 0.161,
+  "by_subtask": {
+   "SeqQA:PCR-gene-gibshindprimers-v1": {
+    "n": 36,
+    "forced": 0.944,
+    "swap1": 0.75
+   },
+   "SeqQA:PCR-gene-gibssmaprimers-v1": {
+    "n": 26,
+    "forced": 0.923,
+    "swap1": 0.692
+   }
+  },
+  "fresh_vs_previous": {
+   "previous_50": {
+    "n": 39,
+    "forced": 0.949,
+    "swap1": 0.718
+   },
+   "fresh": {
+    "n": 23,
+    "forced": 0.913,
+    "swap1": 0.739
+   }
+  }
+ }
+}

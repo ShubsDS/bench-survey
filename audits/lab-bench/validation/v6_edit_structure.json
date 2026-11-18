@@ -1,0 +1,162 @@
+{
+ "PCR-gene-enzprimers|edit|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.045,
+  "n": 22
+ },
+ "PCR-gene-enzprimers|edit|S*": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 22
+ },
+ "PCR-gene-enzprimers|edit|S2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 22
+ },
+ "PCR-gene-enzprimers|edit|WS": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 22
+ },
+ "PCR-gene-enzprimers|orig|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.045,
+  "n": 22
+ },
+ "PCR-gene-enzprimers|orig|d": {
+  "site_intact": 0.667,
+  "site_and_start_stop": 0.03,
+  "n": 66
+ },
+ "PCR-gene-gibshindprimers|edit|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|edit|S*": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.68,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|edit|S2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|edit|WS": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|orig|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|orig|d": {
+  "site_intact": 0.667,
+  "site_and_start_stop": 0.56,
+  "n": 75
+ },
+ "PCR-gene-gibshindprimers|placebo|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|placebo|K2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|placebo|S": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.68,
+  "n": 25
+ },
+ "PCR-gene-gibshindprimers|placebo|W": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|edit|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|edit|S*": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.56,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|edit|S2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|edit|WS": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|orig|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|orig|d": {
+  "site_intact": 0.667,
+  "site_and_start_stop": 0.52,
+  "n": 75
+ },
+ "PCR-gene-gibssmaprimers|placebo|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|placebo|K2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 1.0,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|placebo|S": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.56,
+  "n": 25
+ },
+ "PCR-gene-gibssmaprimers|placebo|W": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|edit|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.08,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|edit|S*": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|edit|S2": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|edit|WS": {
+  "site_intact": 0.0,
+  "site_and_start_stop": 0.0,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|orig|K": {
+  "site_intact": 1.0,
+  "site_and_start_stop": 0.08,
+  "n": 25
+ },
+ "PCR-seq-enzprimers|orig|d": {
+  "site_intact": 0.667,
+  "site_and_start_stop": 0.0,
+  "n": 75
+ }
+}
