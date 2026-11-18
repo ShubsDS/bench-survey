@@ -135,7 +135,7 @@ inference, not that a significant result was lost.
 **Threshold change (claim 6).** v1 (11 Mar 2025) says "at least 20%"; v2 (13 Mar) and v3 say "at
 least 50% … 15 out of 20 responses"; v4–v6 say 50%. On the v1 dataset my code gives exactly the v1
 rates at 0.2 and the v2/v3 rates at 0.5, for all six models printed in both (e.g. 3.7 Sonnet
-30.59 / 16.26; R1 15.82 / 5.34). The ratio is 0.34–0.62 across the 16 models with data. Neither v2's
+30.59 / 16.26; R1 15.82 / 5.34). The ratio is 0.34–0.59 for the 12 models scored on all 7,400 pairs (0.19–0.62 including four models run on a 600-pair subset). Neither v2's
 text nor its arXiv comment field marks the change. v4's appendix "Paper Changes From Original
 Versions on arXiv" says that v1–v3 "used a different dataset of questions … which led to a higher
 percentage of unfaithfulness" and then lists only dataset changes. That is accurate against v2/v3

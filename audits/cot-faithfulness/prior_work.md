@@ -48,3 +48,13 @@ Red-Handed and OpenAI's monitorability suite and is not repeated here.
   Chen et al. multiple-choice design overstates unfaithfulness because models can eliminate
   options and guess, and reports >97% "relaxed" faithfulness on hard clues with free-response math.
   Chen et al. themselves subtract a random-answer-change baseline.
+
+## Validator's note (2026-11-17)
+
+- The per-model prevalence of answer flipping is already reported in the paper (v5/v6 appendix
+  §"Other", Table `tab:iphr-answer-flipping`: Claude 3.7 Sonnet 93.7% of unfaithful pairs). It is
+  not new here. What is new is its effect on the Claude comparisons and the rank.
+- The accuracy-threshold change (20% → 50%) was made at v2 (13 March 2025) and printed in v2's
+  criteria, with the new rates. No version flags it as a change, and v4's appendix names only the
+  dataset. "Does not list it" is accurate, but the change was not hidden.
+- A web search on 2026-11-17 found no external critique of IPHR.
