@@ -1,16 +1,18 @@
 {
  "blocked_by_api_policy": [
-  "bee8b322-2843-4be7-9adc-9e9dbf4c47a4"
+  "82de3e92-abe2-46ac-ad17-23417b9c4da7",
+  "bee8b322-2843-4be7-9adc-9e9dbf4c47a4",
+  "d2860d38-dfb9-4b80-905f-812c32573915"
  ],
  "calls": {
   "blind": 301,
   "blindf": 301,
   "edit": 147,
-  "forced": 377,
+  "forced": 485,
   "last": 181,
-  "opts": 761,
+  "opts": 759,
   "pedit": 50,
-  "std": 140
+  "std": 323
  },
  "bucket_counts": {
   "blind|FigQA": {
@@ -39,6 +41,10 @@
    "correct": 23,
    "wrong": 10
   },
+  "forced|LitQA2": {
+   "wrong": 34,
+   "correct": 24
+  },
   "forced|ProtocolQA": {
    "correct": 73,
    "wrong": 34
@@ -46,6 +52,10 @@
   "forced|SeqQA": {
    "correct": 212,
    "wrong": 25
+  },
+  "forced|SuppQA": {
+   "wrong": 26,
+   "correct": 24
   },
   "last|FigQA": {
    "refuse": 92,
@@ -67,7 +77,7 @@
   },
   "opts|LitQA2": {
    "wrong": 46,
-   "correct": 14
+   "correct": 12
   },
   "opts|ProtocolQA": {
    "correct": 55,
@@ -94,10 +104,25 @@
    "wrong": 11,
    "refuse": 1
   },
+  "std|LitQA2": {
+   "wrong": 29,
+   "correct": 26,
+   "refuse": 3
+  },
   "std|ProtocolQA": {
    "correct": 67,
    "wrong": 22,
    "refuse": 18
+  },
+  "std|SeqQA": {
+   "correct": 65,
+   "wrong": 9,
+   "refuse": 1
+  },
+  "std|SuppQA": {
+   "wrong": 24,
+   "correct": 16,
+   "refuse": 10
   }
  },
  "B_edit": {
@@ -377,23 +402,23 @@
   },
   "opts|LitQA2": {
    "accuracy": {
-    "n": 60,
-    "rate": 0.2333,
+    "n": 58,
+    "rate": 0.2069,
     "wilson": [
-     0.1444,
-     0.3544
+     0.1225,
+     0.3277
     ],
     "cluster_ci": [
-     0.1333,
-     0.35
+     0.1053,
+     0.3158
     ],
-    "clusters": 59
+    "clusters": 57
    },
-   "chance": 0.2403,
+   "chance": 0.2386,
    "refusal_rate": 0.0,
    "unparsed": 0,
    "coverage": 1.0,
-   "precision": 0.2333
+   "precision": 0.2069
   },
   "opts|ProtocolQA": {
    "accuracy": {
@@ -642,6 +667,60 @@
    "refused_items_chance": 0.25,
    "precision_std_minus_acc_forced": -0.0408
   },
+  "std_vs_forced|LitQA2": {
+   "std": {
+    "accuracy": {
+     "n": 58,
+     "rate": 0.4483,
+     "wilson": [
+      0.3275,
+      0.5755
+     ],
+     "cluster_ci": [
+      0.3158,
+      0.5763
+     ],
+     "clusters": 57
+    },
+    "chance": 0.2386,
+    "refusal_rate": 0.0517,
+    "unparsed": 0,
+    "coverage": 0.9483,
+    "precision": 0.4727
+   },
+   "forced": {
+    "accuracy": {
+     "n": 58,
+     "rate": 0.4138,
+     "wilson": [
+      0.2963,
+      0.542
+     ],
+     "cluster_ci": [
+      0.288,
+      0.5345
+     ],
+     "clusters": 57
+    },
+    "chance": 0.2386,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.4138
+   },
+   "acc_forced_minus_std": {
+    "n": 58,
+    "diff": -0.0345,
+    "ci": [
+     -0.1552,
+     0.1034
+    ]
+   },
+   "n_refusals": 3,
+   "refused_items_correct_when_forced": 0.0,
+   "refused_items_chance": 0.2333,
+   "precision_std_minus_acc_forced": 0.0589
+  },
   "std_vs_forced|ProtocolQA": {
    "std": {
     "accuracy": {
@@ -695,6 +774,191 @@
    "refused_items_correct_when_forced": 0.3889,
    "refused_items_chance": 0.2333,
    "precision_std_minus_acc_forced": 0.0706
+  },
+  "std_vs_forced|SeqQA": {
+   "std": {
+    "accuracy": {
+     "n": 75,
+     "rate": 0.8667,
+     "wilson": [
+      0.7717,
+      0.9259
+     ],
+     "cluster_ci": [
+      0.7867,
+      0.9333
+     ],
+     "clusters": 75
+    },
+    "chance": 0.2467,
+    "refusal_rate": 0.0133,
+    "unparsed": 0,
+    "coverage": 0.9867,
+    "precision": 0.8784
+   },
+   "forced": {
+    "accuracy": {
+     "n": 75,
+     "rate": 0.88,
+     "wilson": [
+      0.7874,
+      0.9356
+     ],
+     "cluster_ci": [
+      0.8,
+      0.9467
+     ],
+     "clusters": 75
+    },
+    "chance": 0.2467,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.88
+   },
+   "acc_forced_minus_std": {
+    "n": 75,
+    "diff": 0.0133,
+    "ci": [
+     -0.04,
+     0.08
+    ]
+   },
+   "n_refusals": 1,
+   "refused_items_correct_when_forced": 0.0,
+   "refused_items_chance": 0.25,
+   "precision_std_minus_acc_forced": -0.0016,
+   "by_subtask": {
+    "ORF-seq-AAid-v1": {
+     "std_acc": 0.8,
+     "forced_acc": 0.6,
+     "std_ref": 0.0
+    },
+    "ORF-seq-AAseq-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "ORF-seq-numlen-v1": {
+     "std_acc": 0.4,
+     "forced_acc": 0.4,
+     "std_ref": 0.0
+    },
+    "ORF-transeff-v1": {
+     "std_acc": 0.8,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-gene-enzprimers-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 0.8,
+     "std_ref": 0.0
+    },
+    "PCR-gene-gibshindprimers-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-gene-gibssmaprimers-v1": {
+     "std_acc": 0.6,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-geneprimers-enz-v1": {
+     "std_acc": 0.8,
+     "forced_acc": 0.8,
+     "std_ref": 0.0
+    },
+    "PCR-len-primers-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-primers-len-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-seq-enzprimers-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "PCR-seq-primers-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "Prop-seq-gcpercent-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "RE-seq-lenfrags-v1": {
+     "std_acc": 1.0,
+     "forced_acc": 1.0,
+     "std_ref": 0.0
+    },
+    "RE-seq-numfrags-v1": {
+     "std_acc": 0.6,
+     "forced_acc": 0.6,
+     "std_ref": 0.2
+    }
+   }
+  },
+  "std_vs_forced|SuppQA": {
+   "std": {
+    "accuracy": {
+     "n": 50,
+     "rate": 0.32,
+     "wilson": [
+      0.2076,
+      0.4581
+     ],
+     "cluster_ci": [
+      0.2,
+      0.44
+     ],
+     "clusters": 50
+    },
+    "chance": 0.2125,
+    "refusal_rate": 0.2,
+    "unparsed": 0,
+    "coverage": 0.8,
+    "precision": 0.4
+   },
+   "forced": {
+    "accuracy": {
+     "n": 50,
+     "rate": 0.48,
+     "wilson": [
+      0.348,
+      0.6149
+     ],
+     "cluster_ci": [
+      0.36,
+      0.62
+     ],
+     "clusters": 50
+    },
+    "chance": 0.2125,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.48
+   },
+   "acc_forced_minus_std": {
+    "n": 50,
+    "diff": 0.16,
+    "ci": [
+     0.06,
+     0.26
+    ]
+   },
+   "n_refusals": 10,
+   "refused_items_correct_when_forced": 0.4,
+   "refused_items_chance": 0.2167,
+   "precision_std_minus_acc_forced": -0.08
   },
   "blind_vs_blindf|FigQA": {
    "std": {
@@ -835,6 +1099,11 @@
    "clusters": 9,
    "deff": 1.967
   },
+  "forced|LitQA2": {
+   "n": 58,
+   "clusters": 57,
+   "deff": 0.945
+  },
   "forced|ProtocolQA": {
    "n": 107,
    "clusters": 23,
@@ -856,9 +1125,9 @@
    "deff": 1.014
   },
   "opts|LitQA2": {
-   "n": 60,
-   "clusters": 59,
-   "deff": 1.025
+   "n": 58,
+   "clusters": 57,
+   "deff": 1.019
   },
   "opts|ProtocolQA": {
    "n": 107,
@@ -869,6 +1138,11 @@
    "n": 33,
    "clusters": 9,
    "deff": 1.245
+  },
+  "std|LitQA2": {
+   "n": 58,
+   "clusters": 57,
+   "deff": 1.035
   },
   "std|ProtocolQA": {
    "n": 107,

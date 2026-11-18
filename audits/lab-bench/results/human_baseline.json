@@ -192,8 +192,11 @@
     0.8374,
     0.9486
    ],
-   "deff_from_haiku": null,
-   "cluster_adj_wilson95": null,
+   "deff_from_haiku": 1.361,
+   "cluster_adj_wilson95": [
+    0.8278,
+    0.9562
+   ],
    "human_accuracy": 0.79,
    "human_precision": 0.87,
    "human_forced_range": [
@@ -216,8 +219,11 @@
     0.5902,
     0.872
    ],
-   "deff_from_haiku": null,
-   "cluster_adj_wilson95": null,
+   "deff_from_haiku": 1.967,
+   "cluster_adj_wilson95": [
+    0.5104,
+    0.8942
+   ],
    "human_accuracy": 0.6,
    "human_precision": 0.73,
    "human_forced_range": [
@@ -264,8 +270,11 @@
     0.4406,
     0.7564
    ],
-   "deff_from_haiku": null,
-   "cluster_adj_wilson95": null,
+   "deff_from_haiku": 1.967,
+   "cluster_adj_wilson95": [
+    0.3722,
+    0.7942
+   ],
    "human_accuracy": 0.6,
    "human_precision": 0.73,
    "human_forced_range": [
