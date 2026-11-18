@@ -305,3 +305,12 @@ res["random_split_placebo_independent"]["paper19_P_count_ge_13"] = round(float(n
 res["random_split_placebo_independent"]["paper19_overall_qshown_below50"] = int((K19 < 92).sum())
 (HERE / "validation/validation_desk.json").write_text(json.dumps(res, indent=1))
 print(json.dumps(res["random_split_placebo_independent"]))
+
+# Non-OpenAI trend (critic: r = -0.57, p = .011): leave-one-model-out within the 19 non-OpenAI models
+no = np.where(fam != "O")[0]
+lo = {names[i]: stats.pearsonr(np.delete(eci[no], k), np.delete(y[no], k)) for k, i in enumerate(no)}
+res["non_openai_loo"] = {"r_range": [round(float(min(v[0] for v in lo.values())), 3), round(float(max(v[0] for v in lo.values())), 3)],
+                         "n_p_lt_05": int(sum(v[1] < 0.05 for v in lo.values())), "n": len(lo),
+                         "fails": {m: [round(float(v[0]), 3), round(float(v[1]), 3)] for m, v in lo.items() if v[1] >= 0.05}}
+(HERE / "validation/validation_desk.json").write_text(json.dumps(res, indent=1))
+print(json.dumps(res["non_openai_loo"]))

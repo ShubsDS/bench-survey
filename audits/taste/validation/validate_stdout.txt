@@ -506,3 +506,4 @@
 }
 {"r_2.5_50_97.5": [-0.455, -0.302, -0.139], "P_r_le_obs": 0.0, "P_all_strong_below50": 0.0, "r_eci_overall_qshown_28": -0.332}
 {"r_2.5_50_97.5": [-0.455, -0.302, -0.139], "P_r_le_obs": 0.0, "P_all_strong_below50": 0.0, "r_eci_overall_qshown_28": -0.332, "paper19_below50_count_2.5_50_97.5": [7, 10, 13], "paper19_P_count_ge_13": 0.0712, "paper19_overall_qshown_below50": 12}
+{"r_range": [-0.653, -0.417], "n_p_lt_05": 18, "n": 19, "fails": {"Haiku 4.5": [-0.417, 0.085]}}

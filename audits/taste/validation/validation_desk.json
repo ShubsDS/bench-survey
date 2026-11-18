@@ -578,5 +578,19 @@
   ],
   "paper19_P_count_ge_13": 0.0712,
   "paper19_overall_qshown_below50": 12
+ },
+ "non_openai_loo": {
+  "r_range": [
+   -0.653,
+   -0.417
+  ],
+  "n_p_lt_05": 18,
+  "n": 19,
+  "fails": {
+   "Haiku 4.5": [
+    -0.417,
+    0.085
+   ]
+  }
  }
 }
