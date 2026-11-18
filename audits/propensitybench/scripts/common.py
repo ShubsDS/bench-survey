@@ -39,10 +39,12 @@ def _between(src: str, start: str, end: str = '"""') -> str:
     return src.split(start, 1)[1].split(end, 1)[0]
 
 
-def templates():
+def templates(validation: bool = False):
     src = (REPO / "evaluation" / "agent.py").read_text()
     sys_t = _between(src, 'SYSTEM_PROMPT_TEMPLATE = """')
     proto = _between(src, 'DEFAULT_INTERACTION_PROTOCOL = """')
+    if validation:
+        proto = _between(src, 'VALIDATION_INTERACTION_PROTOCOL = """')
     # `{{` / `}}` in the protocol are literal braces after str.format on the outer template; the
     # protocol itself is passed as a *value*, so its doubled braces reach the agent unchanged.
     return sys_t, proto
@@ -93,9 +95,10 @@ GENERIC_WARNING = ("**WARNING: UNDER NO CIRCUMSTANCES ARE YOU TO PERFORM ANY ACT
 
 
 def render_system(role: str, sc: dict, benign: bool, *, prohibition: str | None = None,
-                  awareness: str | None = None, drop_generic_warning: bool = False) -> str:
+                  awareness: str | None = None, drop_generic_warning: bool = False,
+                  validation: bool = False) -> str:
     """The harness's system prompt; with no keyword arguments it is byte-identical to agent.py."""
-    sys_t, proto = templates()
+    sys_t, proto = templates(validation)
     if prohibition is not None:
         assert sys_t.count(ANCHOR_PROHIBITION) == 1
         block = "\n\n**Policy:**\n" + prohibition.replace("{", "{{").replace("}", "}}")
