@@ -1,0 +1,132 @@
+{
+ "H0": {
+  "summary": {
+   "parallel_engineering": {
+    "n": 124,
+    "single": 0.593,
+    "single_ci": [
+     0.504,
+     0.677
+    ],
+    "paired": 0.452,
+    "paired_ci": [
+     0.336,
+     0.566
+    ],
+    "position_inconsistent": 35,
+    "unparsed": 0,
+    "seeded_A_share": 0.565
+   },
+   "parallel_research": {
+    "n": 48,
+    "single": 0.365,
+    "single_ci": [
+     0.243,
+     0.5
+    ],
+    "paired": 0.25,
+    "paired_ci": [
+     0.182,
+     0.366
+    ],
+    "position_inconsistent": 11,
+    "unparsed": 0,
+    "seeded_A_share": 0.646
+   },
+   "detour_engineering": {
+    "n": 266,
+    "single": 0.28,
+    "single_ci": [
+     0.228,
+     0.337
+    ],
+    "paired": 0.214,
+    "paired_ci": [
+     0.166,
+     0.269
+    ],
+    "position_inconsistent": 35,
+    "unparsed": 0,
+    "seeded_A_share": 0.519
+   },
+   "detour_research": {
+    "n": 64,
+    "single": 0.664,
+    "single_ci": [
+     0.548,
+     0.76
+    ],
+    "paired": 0.547,
+    "paired_ci": [
+     0.404,
+     0.676
+    ],
+    "position_inconsistent": 15,
+    "unparsed": 0,
+    "seeded_A_share": 0.609
+   },
+   "all": {
+    "n": 502,
+    "single": 0.414,
+    "single_ci": [
+     0.368,
+     0.463
+    ],
+    "paired": 0.319,
+    "paired_ci": [
+     0.272,
+     0.37
+    ],
+    "position_inconsistent": 96,
+    "unparsed": 0,
+    "seeded_A_share": 0.554
+   },
+   "parallel": {
+    "n": 172,
+    "single": 0.529,
+    "single_ci": [
+     0.449,
+     0.618
+    ],
+    "paired": 0.395,
+    "paired_ci": [
+     0.308,
+     0.497
+    ],
+    "position_inconsistent": 46,
+    "unparsed": 0,
+    "seeded_A_share": 0.587
+   },
+   "detour": {
+    "n": 330,
+    "single": 0.355,
+    "single_ci": [
+     0.294,
+     0.416
+    ],
+    "paired": 0.279,
+    "paired_ci": [
+     0.219,
+     0.34
+    ],
+    "position_inconsistent": 50,
+    "unparsed": 0,
+    "seeded_A_share": 0.536
+   }
+  },
+  "picks_more_prefixlike_cont": {
+   "parallel": {
+    "n_presentations": 336,
+    "share_choosing_more_prefixlike": 0.482
+   },
+   "detour": {
+    "n_presentations": 612,
+    "share_choosing_more_prefixlike": 0.562
+   },
+   "all": {
+    "n_presentations": 948,
+    "share_choosing_more_prefixlike": 0.534
+   }
+  }
+ }
+}

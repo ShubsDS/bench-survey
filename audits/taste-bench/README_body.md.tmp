@@ -1,0 +1,265 @@
+## The benchmark and what rests on it
+
+Taste-Bench (Pan et al., arXiv 2609.25804, September 2026; dataset `wenbopan/taste-bench`; code
+github.com/wbopan/tastebench) has 502 two-option questions cut from agent trajectories at a
+"decision fork". Engineering items (390) come from GPT-5.4 and GPT-5.5 runs on SWE-bench Pro;
+research items (112) from METR's MALT transcripts. GPT-5.6 Sol, the leaderboard's top model, wrote
+both options of every item knowing which was correct. A panel of four judges (Kimi K2.5, GPT-4.1,
+Llama 4 Maverick, Mistral Large 3) removed items all four answered from the options alone, and
+kept items only when all four confirmed the label from the full record. Each item is asked in
+both orders and counts only if both are right (chance 25%). The headline Average is the mean of
+the engineering and research accuracies.
+
+Conclusions under test ([`claims.md`](claims.md)): the 14-model ranking and "the best model
+answers only 59.7%"; detour forks are harder than parallel ones "in both domains", read as
+recognising a mistake before the agent did; accuracy falls with the time horizon; taste is only
+partly correlated with SWE-bench Verified; labels agree with humans 98.8%; taste can be distilled.
+The leaderboard takes new models by pull request.
+
+## What we found
+
+1. **The label is predictable from the origin of the options (C1, L2).** In a parallel item the
+   prefix is the passing attempt's history, so the correct option is that trajectory's own next
+   step. In a detour item the prefix stops just before the agent takes the abandoned direction,
+   so the *wrong* option is that trajectory's own next step and the correct one (the recovery)
+   uses knowledge from after the failure. The paper states both facts (App. A.2, §3.2). We
+   pre-registered the consequence: an option's word overlap with the last 3,000 characters of the
+   prefix (`cont`) and the share of its content words found anywhere in the prefix (`ground`)
+   should point to the right answer in parallel cells and away from it in detour cells. Both do.
+
+2. **The published per-cell pattern is what that rule predicts (C2).** Detour engineering is the
+   hardest cell for all 14 models, and 7 of 14 are below 50% *single-order* there even among
+   parsed replies (Claude Opus 5 40.6%, task-level 95% CI [32.3, 48.9]; GPT-5.4 Mini 38.7%
+   [30.4, 47.0]). For 8 models more detour-engineering items are wrong in both orders than right
+   in both. Below 50% single-order is not "cannot tell": these models consistently pick the option
+   the prefix leads to. Without per-item published logs we cannot show item by item that they use
+   the cue; the Haiku runs below test it for one small model.
+
+3. **Other published statements that move.** Parse failures change ranks (C3); "detour harder
+   in both domains" fails in research (C4); the paper's own repeat run of one model at one setting
+   differs by more than most adjacent leaderboard gaps, and one research task carries up to 10.7
+   points of weight in the Average (C5). Two plausible confounds were tested and the conclusion
+   held: the horizon gradient is not cell composition (C6), and the SWE-bench comparison is not
+   driven by the two models that built the items (C7).
+
+| Quantity | n | Value | 95% CI or null |
+|---|---|---|---|
+| "Pick higher `cont`", parallel cells, full / held-out tasks | 172 / 88 | 64.0% / 65.9% | one-sided cluster-permutation p = 0.001 / 0.010 |
+| "Pick higher `cont`", detour cells, full / held-out | 330 / 152 | 36.1% / 34.2% | p < 0.001 / 0.003 |
+| "Pick higher `ground`", parallel / detour, held-out | 88 / 152 | 63.6% / 34.9% | p = 0.001 / 0.001 |
+| Construction-aware `cont` floor: Average, full / held-out | 502 / 251 | 60.4 / 61.4 | best published 59.7 |
+| Detour engineering, "pick lower `ground`", full / held-out | 266 / 135 | 61.7% / 63.0% | Holm p < 0.001; best published 48.1% |
+| Models below 50% single-order on detour engineering (parsed) | 14 | 7 | 2 with task-level CI below 50 |
+| Rubric-passing items all four judges solved from options alone | 1,809 | 1,080 (59.7%) | paper funnel |
+| GPT-4.1 options-only on released parallel-engineering items | 124 | 63.7% | ≥ 4 of 14 models' full-context single-order accuracy |
+
+Bias direction. The construction cue makes models that follow the prefix look good on parallel
+forks and bad on detour forks. It therefore inflates the detour–parallel gap and the paper's
+reading of it. Its effect on the overall ranking depends on how strongly each model follows the
+prefix, which aggregate data cannot show.
+
+## The confound
+
+`cont` = Jaccard overlap of the sets of ≥ 3-character lower-case word tokens of an option and of
+the last 3,000 characters of `prefix_text`. `ground` = share of the option's ≥ 4-character content
+tokens that occur anywhere in the prefix. Rule: pick the option with the higher value; ties wrong.
+Order-invariant, so its paired and single-order accuracies are equal. Definitions, signs and the
+held-out split (tasks 50/50 within cell, seed 0) were committed before the data were downloaded
+(`prereg.md`, amendment 1; `scripts/b1_features.py`). Per-cell results
+([`results/b2_rules.json`](results/b2_rules.json)):
+
+| Cell | "higher `cont`" | "higher `ground`" | items |
+|---|---|---|---|
+| Parallel engineering | 62.9% | 58.1% | 124 |
+| Parallel research | 66.7% | 64.6% | 48 |
+| Detour engineering | 35.3% (lower: 56.0%) | 33.1% (lower: 61.7%) | 266 |
+| Detour research | 39.1% (lower: 59.4%) | 43.8% (lower: 46.9%) | 64 |
+
+The other pre-registered form features (length, paths, code spans, identifiers, numbers,
+verification and hedging words) do not reach the L2 bar in any cell after Holm correction. Length
+is weakly informative in engineering (the longer option is right 61% of the time in both
+engineering cells; full-set p = 0.03 and 0.006; held-out 55–56%). The answer letter is balanced
+(A correct in 44–52% per cell).
+
+Examples by id (no text is reproduced). Parallel items where the correct option names the file or
+symbol the prefix was just reading: `par-sse-67dcb776a7cedb99-v2`, `par-sse-6cb45bffd8ff7b20-v2`.
+Detour items where the wrong option repeats the agent's stated next plan in the prefix tail:
+`det-sse-d8db8b8100b5d57d-v3`, `det-sse-a3b9e33520ba1b14-v3`.
+
+What detour engineering is about (hand read of 13, flagged keyword scan of all 266): 12 of 13 sampled
+items are forks between two ways to verify a patch or obtain a working tool in a sandbox with
+missing dependencies; 220 of 266 queries contain verification or environment-failure vocabulary
+and 164 of 266 ask the reader to choose or select the next step. The generator rewrote these
+queries to pose the fork. Several labels depend on sandbox facts the prefix does not settle.
+
+## The effect
+
+Published per-item logs are not released (only per-cell aggregates in `results/*/summary.json`),
+so the L3 test on published models is limited to cells.
+
+| Cell | Rule pointing to the right answer | Model mean (14) | Models < 50% single-order | Best model |
+|---|---|---|---|---|
+| Parallel engineering | `cont` 62.9% | 58.1 | 0 | 75.8 |
+| Parallel research | `cont` 66.7% | 50.9 | 0 | 64.6 |
+| Detour engineering | `cont` 35.3% | 35.9 | 7 | 48.1 |
+| Detour research | `cont` 39.1% | 50.8 | 1 | 68.8 |
+
+The ordering of cells by model accuracy follows the ordering by the rule in engineering, and the
+research cells, where the cue is weaker in detour (`ground` 43.8%), show no detour penalty. Four
+cells cannot establish the relation; the Haiku results are the item-level test.
+
+HAIKU_SECTION
+
+## Secondary results
+
+**C3 Unparsed replies (L3).** All 14 leaderboard rows reproduce from the summaries (max
+difference 0.05 points). The parser accepts only a final `ANSWER: X` line or a bare letter
+(`src/tastebench/paired.py:80-87`). Recomputing among parsed replies (exact for single-order;
+bounds for paired, because the summaries do not say which items had a failed presentation):
+
+| Model | Unparsed / 1,004 | Published Average | Parsed-only Average (bounds) | Single-order, all / parsed |
+|---|---|---|---|---|
+| GLM-5.2 | 17 | 53.9 | 55.9–57.0 | 60.7 / 61.7 |
+| GPT-5.4 Mini | 112 | 40.1 | 42.3–45.0 | 42.5 / 47.9 |
+| Mistral Medium 3.5 | 24 | 37.7 | 39.9–41.5 | 53.5 / 54.8 |
+| GPT-5.4 Nano | 93 | 36.6 | 40.7–43.9 | 46.6 / 51.4 |
+| Grok 4.20 Reasoning | 459 | 15.7 | ≥ 32.8 | 34.5 / 63.5 |
+
+GLM-5.2's lower bound passes Claude Opus 5, Grok 4.5 and GPT-5.6 Terra (rank 6 → 3). GPT-5.4 Nano
+passes GPT-5.4 Mini and Mistral. Grok 4.20 Reasoning, published at 15.7 (below chance), answers
+63.5% of the presentations it formats correctly, the same as GPT-5.6 Sol. The paper reports the
+unparsed counts and drops three models from its SWE-bench comparison for this reason, so the
+mechanism is disclosed; its effect on the ranking is not. Parse failure need not be random (a
+model may fail to format on hard items), so parsed-only numbers are an upper reading.
+
+**C4 "Detour harder than parallel in both domains" (body.tex:178).** Engineering: model-mean
+−22.1 points, 14 of 14 models. Research: −0.1 points (50.8 vs 50.9, the paper's own appendix
+numbers), 7 of 14 models; the item-level interval for the model-mean difference is about ±19
+points. The two top models are 11–12 points *better* on research detours. The claim holds for
+engineering only.
+
+**C5 Precision (L3).** The paper ran GPT-5.6 Sol at xhigh twice: the main run (pooled both-orders
+accuracy 58.2%, reproduced from Table 7 and from the summary) and the effort rerun (55.6%, Table
+8). Same prompt, settings and items; 2.6 points (about 13 items) apart, and 5.4 points apart on the
+219 "inferable" items. That run-to-run difference exceeds 8 of the 13 adjacent gaps on the
+leaderboard. Clusters: parallel research has 48 items from 8 tasks, one task
+(`ai_rd_fix_embedding/main`) supplies 17 of them, and the same task supplies 7 detour-research
+items: 24 of 112 research items, 10.7 points of weight in the Average. A research item weighs 3.5
+times an engineering item. The item-level 95% half-width of a model's Average is about ±5.0
+points (±5.7 to ±6.8 with within-task correlation 0.1–0.3), larger than 12 of 13 adjacent gaps.
+Paired comparisons between models are tighter, but no per-item data exist to compute them.
+
+**C6 Horizon gradient (R).** If accuracy depended only on the cell, the cell mix of each horizon
+level would predict 47.6, 43.6, 41.8 and 44.0 (in prefix → more work); observed 62.3, 42.9, 31.5,
+21.0. Composition explains 3.6 of the 41.3-point gap. The gradient is within cells. Two caveats
+remain untested: the annotator (GPT-5.5) saw the answer when judging how "visible" it was, and 10
+of 14 models are below 25% on the 69 "more work" items, which under the paired rule means
+consistent wrong choices rather than guessing.
+
+**C7 SWE-bench comparison (R).** SWE-bench Verified values read from the figure's vector data
+(`scripts/read_figures.py`; the Averages read back to within 0.04 points) reproduce the paper's
+r = 0.63 (0.625) and engineering r = 0.37 (0.366). The largest positive residual is GPT-5.5
+(+9.6), an engineering-trajectory author and the horizon annotator; GPT-5.6 Sol is +3.8. Dropping
+both gives r = 0.687, the 69th percentile of the 55 drop-two values; dropping GPT-5.5 alone gives
+0.733. The "partly correlated" conclusion does not depend on the construction models.
+
+**Exploratory (flagged).** The two Claude models have the largest research-minus-engineering gaps
+(+17.6, +14.6 against a median of +7.8; exact permutation p = 0.018 for the pair). Research
+trajectories were written by Claude and DeepSeek agents. This was noticed before the prereg and
+has two plain alternative readings (Claude better at ML research; Claude worse at detour
+engineering). GPT models show no matching engineering advantage (p = 0.50).
+
+**C8 Options-only signal (L2 from the paper's numbers).** 1,080 of 1,809 rubric-passing items
+(59.7%) were answered correctly by all four judges from the options alone, between 51% (detour
+engineering) and 69% (detour research). On released parallel-engineering items GPT-4.1 still
+answers 63.7% from the options alone, in one shuffled order; GPT-5.4 Mini, Mistral Medium 3.5,
+GPT-5.4 Nano and Grok 4.20 score at or below that with the full prefix, single-order. Llama 4
+Maverick, at 34.7% on released items, is the judge whose errors kept most items in.
+
+**C9 Labels and training claims (L1).**
+- The human review's 98.8% is measured after reviewers saw summaries of the outcomes, and pools
+  15 items the judge panel removed as label-inconsistent. All 172 retained judgments contain only
+  2 disagreements, so if those 15 items had the overall retention (86%), humans agreed with the
+  label on at least 92% of judgments on items the panel rejected. The statistic cannot detect the
+  defect it is cited against. The first-stage (before outcome) human choices, which would be a
+  human baseline, are not reported.
+- 5 of 64 detour-research prefixes contain an agent's stated plan to sabotage or sandbag (keyword
+  scan, a lower bound; ids in `results/b1_inventory.json`). MALT includes such runs by design.
+- End-to-end: 14.6% and 39.0% are 6/41 and 16/41, but 33.7% (student advice) is not a whole-task
+  rate of 41; it needs at least 5 runs per task or another denominator, which the paper does not
+  state. There is no base-model-advice or random-advice control, and the advice text contains both
+  candidates mined from earlier runs on the same task, so the gain cannot be attributed to the
+  student's judgment.
+- Distillation trains on labels for options written by the same generator as the test fold, so
+  "transfers to unseen tasks" could be learning the generator's option style. Untested.
+
+**Truncation (null).** With the harness's own preflight (o200k_base × 1.02), no item exceeds the
+65,536-token cap (max 55,072, one detour-research item). Truncation cannot move any result.
+
+## Robustness
+
+| Check | Result | Claim survives? |
+|---|---|---|
+| Held-out tasks (direction fixed on half 1 or by prereg) | `cont` 65.9% / 34.2%; floor Average 61.4 | Yes |
+| Second feature definition (`ground` instead of `cont`) | 63.6% / 34.9% held-out | Yes |
+| Cluster-aware null (flip whole tasks, 1,000 draws) | p ≤ 0.01 for both constructions | Yes |
+| Placebo feature (option position in published order) | answer letter A in 44–52% per cell | Not informative, as expected |
+| Holm over 40 feature × cell tests | detour-engineering `ground` survives (p < 0.001) | Yes for that cell |
+| By domain | cue strong in both engineering cells and parallel research; weak in detour research | Partly: detour research is the exception |
+| A2 parsed-only bounds use the conservative end | GLM rank change holds at the lower bound | Yes |
+| Retest difference vs adjacent gaps on Average scale | difference measured on pooled accuracy, gaps on Average | Approximate; the Average weights research items 3.5×, so the Average difference is likely larger |
+
+## Alternative explanations
+
+1. *The cue is the construct.* A good engineer at a detour fork should prefer the option that
+   is not just "more of the same". Then a low-overlap rule would be taste. But the rule never
+   reads the options' meaning, and in parallel forks the same rule flips sign: the
+   higher-overlap option is right. A judgment that reverses with how the item was mined is
+   tracking the mining.
+2. *Detour items are genuinely harder.* Possible and not excluded. The research detour cell,
+   where the cue is weak, shows no detour penalty, which fits the cue reading better; with 64
+   items it is weak evidence.
+3. *Prefix overlap is a proxy for difficulty or horizon.* The horizon annotation is per item
+   but GPT-5.5 made it with the answer visible. Not tested against the cue.
+
+## What was already known
+
+The paper discloses the option origins, the generator, the judge panel and the funnel, the
+unparsed counts, and the human review's design. No independent critique exists
+([`prior_work.md`](prior_work.md)). New here: the origin cue and its opposite signs by
+construction; the content-blind floor above the leaderboard; below-chance single-order
+accuracy on detour engineering; parsed-only ranks; the paper's own test–retest pair against
+the gaps; the cluster weights; the research-domain failure of "detour harder in both domains";
+the human-review arithmetic; the MALT sabotage runs among items.
+
+## What this does not show
+
+- That published models use the cue. Per-item published logs do not exist. The cell-level
+  pattern fits it; the Haiku results show one small model's behaviour only.
+- That the labels are wrong. They are outcome labels for real runs; the point is what else they
+  carry.
+- Anything about the distillation result beyond the missing controls.
+
+## Pins and how to reproduce
+
+- Dataset `wenbopan/taste-bench` sha `069aa742…`; parquet sha256 engineering `377c6031…`,
+  research `8528ca9f…`, manifest `ab2db9cc…` (checked in `scripts/b_common.py`). Gated: request
+  access with your own account. Items are not reposted here; only ids, hashes, feature values and
+  aggregates.
+- Repo `wbopan/tastebench` at `b636e868`; paper source tarball sha256 `675cebfd…`.
+
+```bash
+cd audits/taste-bench
+git clone --depth 1 https://github.com/wbopan/tastebench data/repo
+mkdir -p data/paper/src && curl -sL https://arxiv.org/e-print/2609.25804 | tar -xz -C data/paper/src
+# gated: download data/hf/{export_manifest.json,data/*/test-00000-of-00001.parquet} at the sha above
+uv venv data/.venv && uv pip install --python data/.venv/bin/python numpy pandas pyarrow scipy tiktoken
+P="data/.venv/bin/python -I"
+$P scripts/read_figures.py; $P scripts/a_aggregate.py          # Part A (no gated data)
+$P scripts/b1_features.py; $P scripts/b2_floor.py; $P scripts/b6_tokens.py
+$P scripts/b4_haiku.py H0; $P scripts/b4_haiku.py H1; $P scripts/b5_score.py
+$P scripts/make_results.py
+```
+
+Seeds 0; permutations 1,000; bootstraps 2,000. Every number above is in
+[`results.json`](results.json).
