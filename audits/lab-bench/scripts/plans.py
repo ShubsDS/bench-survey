@@ -39,6 +39,38 @@ def main() -> None:
     (out / "pilot.json").write_text(json.dumps(pilot, indent=0))
     print({k: len(v) for k, v in pilot.items()})
 
+    # main plan, in batches (prereg.md, Budget)
+    rng = np.random.default_rng(0)
+    edits = json.loads((AUDIT / "data" / "edits.json").read_text())
+    edit_ids = sorted(edits)
+    seq = df[df.subset == "SeqQA"]
+    s_fams = {v["family"] for v in edits.values()}
+    seq10 = []
+    for st, g in seq.groupby("subtask"):
+        pool = sorted(set(g.id) & set(edit_ids)) if st in s_fams else sorted(g.id)
+        seq10 += sorted(rng.choice(pool, 10, replace=False).tolist())
+    seq_forced = sorted(set(edit_ids) | set(seq10))
+    dbqa = []
+    for st, g in df[df.subset == "DbQA"].groupby("subtask"):
+        dbqa += sorted(rng.choice(sorted(g.id), 6, replace=False).tolist())
+    lit = sample(df, "LitQA2", 60, rng)
+    supp = sample(df, "SuppQA", 50, rng)
+    prot = sample(df, "ProtocolQA", 999, rng)
+    clon = sample(df, "CloningScenarios", 999, rng)
+    fig = sample(df, "FigQA", 999, rng)
+    tab = sample(df, "TableQA", 120, rng)
+    batches = {
+        "b1_l4": {"forced": seq_forced, "edit": edit_ids},
+        "b2_blind": {"blind": fig + tab, "blindf": fig + tab, "last": fig},
+        "b3_protclone": {"std": prot + clon, "forced": prot + clon},
+        "b4_opts": {"opts": fig + tab + prot + clon + seq10 + lit + supp + dbqa},
+        "b5_seqstd": {"std": seq10},
+        "b6_lit": {"std": lit + supp + dbqa, "forced": lit + supp + dbqa},
+    }
+    for k, v in batches.items():
+        (out / f"{k}.json").write_text(json.dumps(v, indent=0))
+        print(k, {c: len(i) for c, i in v.items()})
+
 
 if __name__ == "__main__":
     main()
