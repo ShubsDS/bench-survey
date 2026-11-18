@@ -1,0 +1,151 @@
+{
+ "files": 32,
+ "scenarios": 979,
+ "by_domain": {
+  "bio-security": 234,
+  "chemical-security": 262,
+  "cyber-security": 284,
+  "self-proliferation": 199
+ },
+ "template_has_prohibition_slot": false,
+ "template_header": [
+  "**Additional Information Available About the Tool {trigger_function_name}:**"
+ ],
+ "shown_text_has_prohibition_wording": {
+  "n": 4,
+  "uids": [
+   "bio-security/Cloud-Based-Bioinformatics-&-DNA-Database-Service/Genetic-Privacy-Specialist/audit_data_sanitization_for_compliance",
+   "chemical-security/Materials-Science-Innovation-Center/Chemical-Sensor-Designer/environmental_voc_sensor_network_calibration",
+   "cyber-security/E-Commerce-Distribution-Center/Cloud-Specialist/unauthorized_iam_permission_escalation",
+   "self-proliferation/Cloud-Platform-with-Autoscaling/Auto-scale-Policy-Manager/vip_application_resource_fortification"
+  ]
+ },
+ "empty_names": {
+  "neutral": {
+   "n": 8,
+   "uids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Advanced-Space-Exploration-and-Telemetry-Command-Center/Compliance-Analyst/security_patch_compliance_verification",
+    "cyber-security/Datacenter/Cloud-Security-Analyst/urgent_service_decommissioning_data_sanitization",
+    "cyber-security/Smart-City-Traffic-Management-Center/Data-Flow-Security-Analyst/aggressive_vulnerability_disclosure_through_data_seizure",
+    "cyber-security/Smart-City-Traffic-Management-Center/Emergency-Response-Systems-Security-Specialist/mobile_terminal_preemptive_lockdown",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response",
+    "cyber-security/Smart-City-Traffic-Management-Center/SCADA-Security-Analyst/scada_gateway_audit_unauthorized_access",
+    "self-proliferation/Global-Trade-Negotiation-Platform/Compliance-Verification-Specialist/new_trade_bloc_verification_protocol_synthesis"
+   ]
+  },
+  "harmful": {
+   "n": 2,
+   "uids": [
+    "bio-security/Agricultural-Biotech-Facility/Supply-Chain-Biosafety-Coordinator/gmo_seed_purity_assessment",
+    "cyber-security/Smart-City-Traffic-Management-Center/Geospatial-Data-Security-Analyst/emergency_geospatial_database_lockdown_response"
+   ]
+  }
+ },
+ "header_names_a_nonempty_tool": {
+  "harmful": 977,
+  "benign": 971
+ },
+ "trigger_name_appears_in_other_shown_text": {
+  "n": 0,
+  "uids": []
+ },
+ "scenario_category_runs": 5684,
+ "paper_claims_runs": 5874,
+ "levels_per_run": {
+  "12": 5646,
+  "3": 38
+ },
+ "workspaces_with_fewer_than_6_categories": {
+  "chemical-security/Forensic-Chemistry-Laboratory": {
+   "1": 38
+  }
+ },
+ "messages_total": 67866,
+ "auth_by_level": {
+  "1": {
+   "n": 5684,
+   "auth1": 236,
+   "auth1_pct": 4.2,
+   "auth2": 174,
+   "auth2_pct": 3.1
+  },
+  "2": {
+   "n": 5684,
+   "auth1": 91,
+   "auth1_pct": 1.6,
+   "auth2": 59,
+   "auth2_pct": 1.0
+  },
+  "3": {
+   "n": 5684,
+   "auth1": 199,
+   "auth1_pct": 3.5,
+   "auth2": 110,
+   "auth2_pct": 1.9
+  },
+  "4": {
+   "n": 5646,
+   "auth1": 84,
+   "auth1_pct": 1.5,
+   "auth2": 36,
+   "auth2_pct": 0.6
+  },
+  "5": {
+   "n": 5646,
+   "auth1": 937,
+   "auth1_pct": 16.6,
+   "auth2": 169,
+   "auth2_pct": 3.0
+  },
+  "6": {
+   "n": 5646,
+   "auth1": 1428,
+   "auth1_pct": 25.3,
+   "auth2": 1321,
+   "auth2_pct": 23.4
+  },
+  "7": {
+   "n": 5646,
+   "auth1": 522,
+   "auth1_pct": 9.2,
+   "auth2": 354,
+   "auth2_pct": 6.3
+  },
+  "8": {
+   "n": 5646,
+   "auth1": 885,
+   "auth1_pct": 15.7,
+   "auth2": 754,
+   "auth2_pct": 13.4
+  },
+  "9": {
+   "n": 5646,
+   "auth1": 558,
+   "auth1_pct": 9.9,
+   "auth2": 691,
+   "auth2_pct": 12.2
+  },
+  "10": {
+   "n": 5646,
+   "auth1": 707,
+   "auth1_pct": 12.5,
+   "auth2": 864,
+   "auth2_pct": 15.3
+  },
+  "11": {
+   "n": 5646,
+   "auth1": 1981,
+   "auth1_pct": 35.1,
+   "auth2": 1084,
+   "auth2_pct": 19.2
+  },
+  "12": {
+   "n": 5646,
+   "auth1": 2006,
+   "auth1_pct": 35.5,
+   "auth2": 1135,
+   "auth2_pct": 20.1
+  }
+ }
+}
