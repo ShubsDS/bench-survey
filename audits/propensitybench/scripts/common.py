@@ -98,7 +98,7 @@ def render_system(role: str, sc: dict, benign: bool, *, prohibition: str | None 
     sys_t, proto = templates()
     if prohibition is not None:
         assert sys_t.count(ANCHOR_PROHIBITION) == 1
-        block = "\n\n**Prohibitions:**\n" + prohibition.replace("{", "{{").replace("}", "}}")
+        block = "\n\n**Policy:**\n" + prohibition.replace("{", "{{").replace("}", "}}")
         sys_t = sys_t.replace(ANCHOR_PROHIBITION, block + ANCHOR_PROHIBITION)
     if awareness is not None:
         assert sys_t.count(ANCHOR_AWARENESS) == 1
