@@ -1,0 +1,130 @@
+{
+ "calls": {
+  "edit": 147,
+  "forced": 237
+ },
+ "bucket_counts": {
+  "edit|SeqQA": {
+   "correct": 109,
+   "wrong": 38
+  },
+  "forced|SeqQA": {
+   "correct": 212,
+   "wrong": 25
+  }
+ },
+ "B_edit": {
+  "pooled": {
+   "n": 147,
+   "diff": 0.1837,
+   "ci": [
+    0.102,
+    0.2653
+   ]
+  },
+  "forced_acc": 0.9252,
+  "edit_acc": 0.7415,
+  "edit_pick_central": 0.2177,
+  "edit_pick_other_distractor_mean": 0.0188,
+  "per_family": {
+   "ORF-seq-AAseq-v1": {
+    "n": 25,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "ci_bonferroni6": [
+     0.0,
+     0.0
+    ],
+    "forced_acc": 1.0,
+    "edit_acc": 1.0,
+    "edit_pick_central": 0.0
+   },
+   "PCR-gene-enzprimers-v1": {
+    "n": 22,
+    "diff": 0.0455,
+    "ci": [
+     -0.2273,
+     0.3193
+    ],
+    "ci_bonferroni6": [
+     -0.3182,
+     0.4396
+    ],
+    "forced_acc": 0.7727,
+    "edit_acc": 0.7273,
+    "edit_pick_central": 0.2273
+   },
+   "PCR-gene-gibshindprimers-v1": {
+    "n": 25,
+    "diff": 0.52,
+    "ci": [
+     0.32,
+     0.72
+    ],
+    "ci_bonferroni6": [
+     0.28,
+     0.8
+    ],
+    "forced_acc": 0.96,
+    "edit_acc": 0.44,
+    "edit_pick_central": 0.4
+   },
+   "PCR-gene-gibssmaprimers-v1": {
+    "n": 25,
+    "diff": 0.4,
+    "ci": [
+     0.2,
+     0.6
+    ],
+    "ci_bonferroni6": [
+     0.16,
+     0.68
+    ],
+    "forced_acc": 0.96,
+    "edit_acc": 0.56,
+    "edit_pick_central": 0.44
+   },
+   "PCR-seq-enzprimers-v1": {
+    "n": 25,
+    "diff": 0.0,
+    "ci": [
+     0.0,
+     0.0
+    ],
+    "ci_bonferroni6": [
+     0.0,
+     0.0
+    ],
+    "forced_acc": 1.0,
+    "edit_acc": 1.0,
+    "edit_pick_central": 0.0
+   },
+   "Prop-seq-gcpercent-v1": {
+    "n": 25,
+    "diff": 0.12,
+    "ci": [
+     -0.12,
+     0.36
+    ],
+    "ci_bonferroni6": [
+     -0.2,
+     0.44
+    ],
+    "forced_acc": 0.84,
+    "edit_acc": 0.72,
+    "edit_pick_central": 0.24
+   }
+  },
+  "forced_nonedited_same_families": {
+   "n": 0,
+   "acc": null
+  },
+  "verdict": "uses shortcut"
+ },
+ "C_blind_opts": {},
+ "D_abstention": {},
+ "design_effects": {}
+}
