@@ -1,6 +1,43 @@
-# Taste-Bench: the answer can be read from how each item was mined, and the hardest cell is hard from the option wording alone
+# Taste-Bench: a mining-origin cue predicts the label, but it does not beat the leaderboard like for like, and the hardest cell's labels hold up
 
-Status 2026-11-17. Round two. Not yet independently validated. The dataset gate was opened by the
+Status 2026-11-17. Round two. **Independently validated** ([`validation/VALIDATION.md`](validation/VALIDATION.md));
+corrections are listed in [Validation](#validation) and marked in place below, with the auditor's
+original numbers kept. Auditor's original title: "the answer can be read from how each item was
+mined, and the hardest cell is hard from the option wording alone".
+
+**Validated result (validator, 2026-11-17).**
+
+- **C1 holds as L2, without "beats every model".** The origin cue is real. Under 1,000 placebo
+  features and 1,000 task-level label flips, with signs fitted per cell, the held-out Average has
+  a 99th percentile of 56.7–58.3; the rule's 61.4 is above 99.8% of every null.
+  - An independent implementation of the written feature gives 58.8 (full set). The held-out
+    median over 1,000 random task splits is 58.8 [52.9, 63.9]; 61.4 came from one split.
+  - The rule's answer cannot flip with option order, so its paired score equals its
+    single-order score. Six published models have single-order Averages above 60.4 (GPT-5.6 Sol
+    65.2).
+  - A model can infer the construction from the query in engineering (94.9% cross-validated) but
+    not in research (63.4%). With the inferred cell the rule scores 52.1–55.1.
+- **C3 is downgraded.** Options-only below chance is what the selection filter produces, and the
+  paper and card say options-only is not the protocol.
+  - With the full prefix, 7 of 14 published models are below 50% single-order in detour
+    engineering; 4 of the 7 are distinguishably below.
+  - Judge-related models do not score lower there (p = 0.53).
+  - The validator's blind labels on 44 random detour-engineering items agree with the key on
+    38 (86.4% [74.5, 95.5]), so the label is defensible from the prefix. The claim that the
+    paper's reading "is not needed" is withdrawn.
+- **C2 (L4, Haiku only) is downgraded.** The contrast +6.8 reproduces and survives a
+  construction-shuffle placebo (p = 0.007).
+  - Removing the *second-to-last* step instead gives +3.0 [−2.5, 8.5].
+  - The part specific to the final step is +3.8 [−1.7, 9.7], not distinguishable from zero.
+  - What Haiku shows is that losing recent context helps on detour items and hurts on parallel
+    items. It does not show an effect of the final step itself.
+- **C4, C5, C7, C8 reproduce.**
+  - C4 restates parse-failure counts the paper discloses. GLM-5.2's new rank depends on the
+    scoring rule: 3rd parsed-only, 5th to 3rd with failures scored as chance.
+  - C6's "8 of 13 gaps" mixes pooled and Average scales; like for like it is 6 of 13.
+  - Four of the five "sabotage" prefixes state a sabotage plan; the fifth declines.
+
+Original status text follows. The dataset gate was opened by the
 repository owner during the audit. Every item-level test was pre-registered before the parquet
 files were downloaded ([`prereg.md`](prereg.md), amendment 1, commit `6e3a776`). Inference:
 Claude Haiku only, 3,008 calls, 1.63 USD.
@@ -12,6 +49,10 @@ Claude Haiku only, 3,008 calls, 1.63 USD.
   items the *wrong* option is. "Pick the option whose words overlap more with the end of the
   prefix in parallel cells, less in detour cells" scores a 60.4 Average (61.4 on held-out tasks).
   The best published model scores 59.7. The rule needs the cell label, which models are not shown.
+  *[Validator: 58.8 in an independent implementation; held-out median 58.8 [52.9, 63.9] over
+  random task splits. Paired 59.7 is not the like-for-like comparison: six models' single-order
+  Averages exceed 60.4. Models can infer the cell in engineering, not in research. With the
+  inferred cell the rule scores 52.1–55.1.]*
 - **Does it drive scores?** Not shown for published models: no per-item logs are released. For
   Haiku the answer is "a little".
   - Cutting the final prefix step moves Haiku's accuracy in opposite directions by construction.
@@ -22,6 +63,9 @@ Claude Haiku only, 3,008 calls, 1.63 USD.
   - Seven of 14 published models are below 50% single-order there with the full trajectory.
   - So the "wrong" option reads as the better one. The paper's reading, that these models fail to
     "recognise a mistake before the acting agent did", is not needed to explain the cell.
+    *[Validator: withdrawn for the with-prefix setting. Blind validator labels agree with the key
+    on 38 of 44 detour-engineering items (86.4% [74.5, 95.5]). Only 4 of the 7 models are
+    distinguishably below 50%. Judge-related models score no lower (p = 0.53).]*
   - This is what the selection filter is expected to produce: it keeps an item only if at least
     one of four judges got it wrong from the options alone.
 - **Narrower published claims that move.**
@@ -32,15 +76,15 @@ Claude Haiku only, 3,008 calls, 1.63 USD.
 
 | Claim | Level | Key numbers |
 |---|---|---|
-| C1 Label predictable from option origin, with opposite signs by construction | **L2** | "higher prefix overlap" held-out 65.9% (parallel, n = 88) and 34.2% (detour, n = 152), cluster-permutation p = 0.010 and 0.003. Floor Average 60.4 / 61.4 against best 59.7 |
-| C2 Models use the cue | **L4 small (Haiku)**; **R** for the lexical feature (Haiku); untestable for published models | final step removed: detour +3.3 [0.0, 6.5], parallel −3.5 [−7.1, 0.3], difference 6.8 [1.8, 11.9]. Accuracy split by the cue: −0.5 and −5.0 points, CIs span 0 |
-| C3 Detour engineering is below chance from option wording | **L2 (Haiku options-only)**, cell-level match to published | Haiku options-only 28.0% [22.8, 33.7] single-order, n = 266. Published: 7 of 14 models below 50% |
-| C4 Unparsed replies change published ranks | **L3** | GLM-5.2 rises from rank 6 to 3 on a lower bound. Grok 4.20 scores 15.7 published; on parsed replies it is 63.5% single-order, equal to the top model |
+| C1 Label predictable from option origin, with opposite signs by construction | **L2** (validated) | "higher prefix overlap" held-out 65.9% (parallel, n = 88) and 34.2% (detour, n = 152), cluster-permutation p = 0.010 and 0.003. Floor Average 60.4 / 61.4 against best 59.7. *Validator: 58.8 independent; placebo/flip null 99th pct ≤ 58.3; six models' single-order Averages exceed 60.4; with the inferred cell 52.1–55.1* |
+| C2 Models use the cue | **L4 small (Haiku)** → *validator: weak L4, not specific to the final step*; **R** for the lexical feature (Haiku); untestable for published models | final step removed: detour +3.3 [0.0, 6.5], parallel −3.5 [−7.1, 0.3], difference 6.8 [1.8, 11.9]. Accuracy split by the cue: −0.5 and −5.0 points, CIs span 0. *Validator placebo, second-to-last step removed: +3.0 [−2.5, 8.5]; final-step-specific +3.8 [−1.7, 9.7]* |
+| C3 Detour engineering is below chance from option wording | **L2 (Haiku options-only), downgraded**: expected by selection; the label survives a blind check | Haiku options-only 28.0% [22.8, 33.7] single-order, n = 266. Published: 7 of 14 models below 50%. *Validator: 4 of 7 distinguishably below 50; blind labels agree with the key 38/44; no carry-over to judge-related models* |
+| C4 Unparsed replies change published ranks | **L3** → *validator: L1, a restatement of disclosed counts* | GLM-5.2 rises from rank 6 to 3 on a lower bound. Grok 4.20 scores 15.7 published; on parsed replies it is 63.5% single-order, equal to the top model. *Validator: with unparsed as chance, GLM ranks 5–3; Grok 4.20 equals Sol only on pooled accuracy (Average scale 61.1 vs 65.2)* |
 | C5 "Detour harder in both domains" | **fails in research** (published numbers) | research model-mean −0.1 points; 7 of 14 models |
-| C6 Precision of the ranking | **L3** | same model and setting: 58.2 vs 55.6 pooled, more than 8 of 13 adjacent gaps. One task supplies 24 of 112 research items, 10.7 points of Average weight |
+| C6 Precision of the ranking | **L3** → *validator: L1* | same model and setting: 58.2 vs 55.6 pooled, more than 8 of 13 adjacent gaps. One task supplies 24 of 112 research items, 10.7 points of Average weight. *Validator: 6 of 13 pooled gaps (like for like); the main run logged 78 reasoning tokens per presentation, so "same setting" is the paper's word, unverified* |
 | C7 Horizon gradient is cell composition | **R** | composition predicts 3.6 of the 41.3-point gap |
 | C8 SWE-bench comparison driven by the construction models | **R** | dropping GPT-5.6 Sol and GPT-5.5 gives r = 0.687 (69th percentile of 55 drop-two values) |
-| C9 Options-only signal survives the filter | **L2** (paper's own numbers) | GPT-4.1, options only, scores 63.7% on released parallel-engineering items; 4 of 14 models score at or below this with the full prefix |
+| C9 Options-only signal survives the filter | **L2** (paper's own numbers) | GPT-4.1, options only, scores 63.7% on released parallel-engineering items; 4 of 14 models score at or below this with the full prefix. *Validator: 2 of 14 on parsed replies* |
 | C10 Human review, end-to-end and distillation claims | **L1** | arithmetic on published counts; missing controls |
 
 ## The benchmark and what rests on it
@@ -79,7 +123,9 @@ The leaderboard accepts new models by pull request.
      trajectory's next step.
    - Detour items: the prefix stops just before the agent takes the abandoned direction. The wrong
      option is therefore the trajectory's next step, and the correct one (the recovery) relies on
-     what the agent learned after the failure.
+     what the agent learned after the failure. *[Validator: the last clause is wrong. The
+     generator rubric (App. A) rejects forks whose recovery can only be named after seeing the
+     failure, and moves the fork to after the constraint is visible in the prefix.]*
    - We pre-registered the consequence: overlap with the prefix points to the answer in parallel
      cells and away from it in detour cells. It does, for both feature definitions.
 2. **Detour engineering is below chance from the options alone (C3).** The two options carry most
@@ -102,7 +148,7 @@ The leaderboard accepts new models by pull request.
 | Haiku, options only, detour engineering, single-order | 266 | 28.0% | [22.8, 33.7] |
 | Haiku, options only, all items, single-order / paired | 502 | 41.4% / 31.9% | [36.8, 46.3] / [27.2, 37.0] |
 | Haiku, final step removed minus prefix tail: detour − parallel | 330 + 172 | +6.8 points | [1.8, 11.9] |
-| Published models below 50% single-order on detour engineering (parsed replies) | 14 | 7 | 2 with task-level CI wholly below 50 |
+| Published models below 50% single-order on detour engineering (parsed replies) | 14 | 7 | 2 with task-level CI wholly below 50 (*validator: 4 with a design effect from Haiku's within-task ICC; 3–6 under other assumptions*) |
 | Rubric-passing items all four judges solved from the options alone | 1,809 | 1,080 (59.7%) | paper's funnel |
 
 **Bias direction.**
@@ -155,7 +201,9 @@ the hand read and flagged as exploratory.
 - 220 of 266 queries contain verification or environment-failure vocabulary, and 164 ask the
   reader to choose or select the next step. The generator rewrote these queries to pose the fork.
 - In several items the label depends on sandbox facts the prefix does not settle: whether a write
-  is allowed, or whether a toolchain exists somewhere on disk.
+  is allowed, or whether a toolchain exists somewhere on disk. *[Validator: in a blind read of 44
+  random items, the prefix usually shows the constraint; validator agreement with the key was
+  38 of 44. Treat this as a minority of items.]*
 - The losing option is often the conventional move, such as running the full suite or the
   typecheck. That fits Haiku's 28% from options alone.
 
@@ -201,7 +249,11 @@ below the rest).
 - **The intervention (C2, L4, small).** Cutting the final step changes single-order accuracy by
   +3.3 points [0.0, 6.5] in detour cells and −3.5 [−7.1, 0.3] in parallel cells. The difference
   is +6.8 [1.8, 11.9], and 0.5% of bootstrap draws are ≤ 0. This is the pre-registered predicted
-  direction. The end of the prefix pulls Haiku toward the shown trajectory's next step, and that
+  direction. *[Validator: reproduced. A construction-shuffle placebo gives p = 0.007. Three
+  limits apply. The cut also slides the 2,000-character window, further for parallel items
+  (median 895 vs 448 characters removed). In parallel items the removed step is genuine evidence
+  from the passing attempt. Only the per-construction directions were pre-registered, and each
+  interval touches 0. See Validation for the second placebo arm.]* The end of the prefix pulls Haiku toward the shown trajectory's next step, and that
   costs it on detour items. The effect is a few points.
 
 So the origin cue is a real hole (a model or a trained student could learn it), but Haiku's scores
@@ -231,6 +283,15 @@ not say which items had a failed presentation.
 - The paper reports the unparsed counts and excludes these models from its SWE-bench comparison,
   so the mechanism is disclosed; its effect on the ranking is not. Parse failure need not be
   random, so the parsed-only numbers are an upper reading.
+- *[Validator.*
+  - *Bounds reproduce exactly.*
+  - *Scored as chance, unparsed replies give GLM-5.2 54.3–56.4 (rank 5 to 3), so the rank change
+    depends on the rule. It rests on 17 replies and a 0.4-point margin.*
+  - *Grok 4.20's 63.5% equals Sol's on pooled accuracy only; on the Average scale it is 61.1 vs
+    65.2.*
+  - *Failures cluster by cell, not by prefix length: GPT-5.4 Mini has 94 of 112 in parallel
+    engineering; Grok 4.20 fails on 66–69% of research presentations.*
+  - *Per-item and per-length failure data are not released.]*
 
 **C5 "Detour harder than parallel in both domains" (body.tex:178).**
 - **Engineering:** the model mean is 22.1 points lower on detour items, in 14 of 14 models.
@@ -244,7 +305,11 @@ not say which items had a failed presentation.
 - **Repeat run.** The paper ran GPT-5.6 Sol at the xhigh setting twice, with the same prompt and
   items: the main run (pooled 58.2%) and the effort rerun (55.6%; Tables 7 and 8). The two differ
   by 2.6 points, about 13 items, and by 5.4 points on the 219 "inferable" items. That difference
-  exceeds 8 of the 13 adjacent gaps on the leaderboard.
+  exceeds 8 of the 13 adjacent gaps on the leaderboard. *[Validator: 8 of 13 compares a pooled
+  difference with gaps in the Average. Against pooled gaps it is 6 of 13. The main run's summary
+  records 78 reasoning tokens per presentation for Sol (GPT-5.5 at xhigh: 3,470), so "same
+  setting" rests on the paper's word. The paper shows item-bootstrap whiskers for every model
+  (Fig. 2), so the interval width below is disclosed.]*
 - **Clusters.**
   - The 48 parallel-research items come from 8 tasks, and `ai_rd_fix_embedding/main` supplies 17
     of them.
@@ -263,7 +328,9 @@ not say which items had a failed presentation.
 - Composition explains 3.6 of the 41.3-point gap; the gradient is within cells.
 - **Untested caveats.** The annotator (GPT-5.5) saw the answer when it judged the horizon. Ten of
   14 models score below 25% on the 69 "more work" items; under paired scoring that means
-  consistent wrong choices, not guessing.
+  consistent wrong choices, not guessing. *[Validator: that inference is wrong. Position flips
+  also push paired accuracy below 25%, and one model's SD on 69 items is about 5 points, so most
+  of the ten are within noise of 25%.]*
 
 **C8 SWE-bench comparison (R).**
 - **Reading the figure.** SWE-bench Verified values were read from the figure's vector data
@@ -298,11 +365,16 @@ not say which items had a failed presentation.
   - There are only 2 disagreements in all 172 retained judgments. If those 15 items had the
     overall retention rate (86%), humans agreed with the label on at least 92% of judgments on
     items the panel rejected.
-  - The statistic therefore cannot detect the defect it is cited against.
+  - The statistic therefore cannot detect the defect it is cited against. *[Validator: the 92%
+    assumes 26 retained judgments on those items, which is not reported. The bound runs from 50%
+    (4 retained) to 93% (30). The sample also includes 15 trivial-removed items. "Cannot detect"
+    is too strong; "is not shown to detect" fits.]*
   - The reviewers' first-stage choices (made before seeing outcomes) would give a human baseline;
     they are not reported.
 - **Sabotage runs.** Five of 64 detour-research prefixes contain an agent's stated plan to
-  sabotage or sandbag the task. This is a keyword lower bound; ids are in
+  sabotage or sandbag the task. *[Validator: four do. The fifth (`det-malt-ba219d49df84fe38-v3`)
+  says it will not sabotage. The paper never mentions sabotage or sandbagging runs, so no filter is
+  described. In those runs the outcome that sets the label reflects the agent's intent.]* This is a keyword lower bound; ids are in
   `results/b1_inventory.json`. MALT includes such runs by design.
 - **End-to-end.**
   - The no-advice and correct-advice rates are whole-task fractions: 14.6% = 6/41 and
@@ -380,6 +452,8 @@ Claude Haiku (`claude-haiku-5-5`) through `audits/tools/claude_call.py`.
   pilots 0.02. The ledger is [`inference/ledger.jsonl`](inference/ledger.jsonl).
 - **What Haiku received:** only the query, the options, and at most 2,000 characters of the short
   prefix. Never a full prefix.
+- **Validator:** one extra Haiku arm (H3, the second placebo for C2). It received the same
+  material, 1,004 calls plus a 20-call pilot. Totals are under Validation.
 
 ## Pins and how to reproduce
 
@@ -406,3 +480,51 @@ $P scripts/make_results.py
 
 Seeds are 0, with 1,000 permutations and 2,000 bootstrap draws. Every number above is in
 [`results.json`](results.json).
+
+## Validation
+
+Independent validation, 2026-11-17 ([`validation/VALIDATION.md`](validation/VALIDATION.md); numbers in
+[`validation/validation.json`](validation/validation.json) and under `validation` in
+[`results.json`](results.json)). Pins, prereg order (amendment `6e3a776` committed four seconds
+before the parquet files were written) and every auditor script reproduce exactly. Corrections:
+
+1. **Title and C1.** "Beats every published model" is withdrawn.
+   - The feature is real: 61.4 lies above 99.8% of placebo-feature and task-flip nulls with
+     per-cell sign fitting.
+   - Independent implementation: 58.8, not 60.4. Held-out median over random task splits: 58.8
+     [52.9, 63.9], not 61.4.
+   - The rule is order-invariant, so the like-for-like comparison is with single-order Averages,
+     and six models exceed 60.4 there.
+   - The cell can be inferred from the query in engineering (94.9%) but not in research (63.4%).
+     With the inferred cell the rule scores 52.1–55.1.
+2. **C2.** Downgraded to a weak L4 for Haiku. A validator placebo arm removing the second-to-last
+   step gives +3.0 [−2.5, 8.5]; the final-step-specific part is +3.8 [−1.7, 9.7].
+3. **C3.** Downgraded.
+   - Options-only below chance is what the filter selects for, and the paper and card say
+     options-only is not the protocol. The trivial filter showed the judges the two options only,
+     with no query; the card's wording differs.
+   - With the prefix, 4 of the 7 models below 50% are distinguishably below (auditor: 2).
+   - Selection carry-over to judge-related models is not supported (+0.2 points, p = 0.53).
+   - Validator blind labels agree with the key on 38 of 44 (86.4% [74.5, 95.5]).
+   - The sentence that the paper's reading "is not needed" is withdrawn.
+4. **Detour construction wording.** The recovery is not one "only nameable after the failure": the
+   generator rubric rejects such forks.
+5. **C4.**
+   - The level is L1 on disclosed counts, not L3.
+   - GLM-5.2's new rank depends on the scoring rule: parsed-only 3rd; unparsed as chance 5th–3rd.
+   - Grok 4.20 equals Sol on pooled accuracy only (Average scale 61.1 vs 65.2).
+   - Failures cluster by cell, not by prefix length.
+6. **C6.** 8 of 13 mixes scales; on pooled gaps it is 6 of 13. "Same setting" is the paper's
+   statement, but the main run logged 78 reasoning tokens per presentation for Sol. Item-level
+   intervals are shown in the paper's Fig. 2.
+7. **C7 caveat.** Paired accuracy below 25% does not imply consistent wrong choices.
+8. **C9.** 4 of 14 on all presentations; 2 of 14 on parsed replies.
+9. **C10.**
+   - Four of five "sabotage" prefixes state a sabotage plan; one declines.
+   - The 92% human-review bound assumes an unreported count; its range is 50–93%.
+   - The 33.7% end-to-end rate fits 69/205 (five runs per task); the paper states no denominator.
+10. **Confirmed unchanged.** C5 (research D − P −0.1, 7 of 14), C7's 3.6 of 41.3, C8's r = 0.687.
+11. **Leak scan.** No item text in committed files. One five-word phrase that matched queries was
+    rephrased in `results.json` and `results/b0_handread.json`.
+12. **Spend.** The validator added 1,024 Haiku calls (0.57 USD). Audit total: 4,032 calls,
+    2.21 USD of the 3 USD cap.

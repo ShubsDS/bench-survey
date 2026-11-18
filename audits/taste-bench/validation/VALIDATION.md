@@ -31,7 +31,7 @@ parse-failure, research-domain, horizon and SWE-bench results reproduce, with na
 | Claim | Auditor's statement | Verdict | Validator's number | How checked |
 |---|---|---|---|---|
 | C1 rule | "Higher prefix overlap" 65.9% parallel / 34.2% detour held-out; construction-aware rule 60.4 (61.4 held-out), above the best model's 59.7 | **Corrected** (feature confirmed; "above every model" fails) | My implementation of the written `cont` definition: 58.8 full set; held-out median 58.8 [52.9, 63.9] over 1,000 random task splits. Null (placebo features, task-level label flips, signs fitted per cell): median 47.7–47.9, 99th pct 56.7–58.3; 61.4 is at or above the 99.8th pct. Single-order Averages of 6 models exceed 60.4 (Sol 65.2). With the cell inferred from query + options: 52.1 (`cont`), 55.1 (`ground`) | `v1_floor_null.py`, `v2_cell_inference.py` |
-| C2a L4 | Final-step cut: detour − parallel +6.8 [1.8, 11.9] (Haiku) | **Reproduced; see H3 placebo below** | +6.82; construction-shuffle placebo p = 0.007; holds for short and long cuts (+6.7, +8.2) | `v8_h2.py`, `v9_h3.py`, `v12_h3_score.py` |
+| C2a L4 | Final-step cut: detour − parallel +6.8 [1.8, 11.9] (Haiku) | **Downgraded** (reproduced, not specific to the final step) | +6.82; construction-shuffle placebo p = 0.007. Removing the second-to-last step instead (H3) gives +3.0 [−2.5, 8.5]; the final-step-specific part (H2 − H3) is +3.8 [−1.7, 9.7] | `v8_h2.py`, `v9_h3.py`, `v12_h3_score.py` |
 | C2b R | Haiku does not track the cue item by item | **Not re-derived** (accepted from the auditor's placebo-split output; consistent with my finding that Haiku H1 agrees with the key on 27% of my 44 sampled items) | — | — |
 | C3 | Detour engineering below chance from the options alone (Haiku 28.0%); 7 of 14 published models below 50% single-order; the paper's reading "is not needed to explain the cell" | **Downgraded** | 7 of 14 below 50% (parsed replies), 8 of 14 (all presentations). Distinguishably below 50%: 4 of 7 (task design effect from Haiku's ICC 0.14); 3–6 under other assumptions. No selection carry-over to judge-related models (residual difference +0.2 points, p = 0.53; parsed −2.4, p = 0.28). Validator blind labels agree with the key on 38 of 44 [74.5, 95.5] | `v5_detour_eng.py`, `v6_*` |
 | C4 | GLM-5.2 6th → 3rd; Grok 4.20 15.7 published, 63.5% of parsed answers right | **Confirmed, reworded** | Parsed-only bounds reproduce exactly (GLM 55.9–57.0). Unparsed-as-chance: GLM 54.3–56.4 (rank 5 to 3). Grok 4.20 63.5% pooled = Sol's pooled 63.5%, but on the Average scale 61.1 vs 65.2. Paper discloses counts (Table 5) | `v7_parse.py` |
@@ -43,7 +43,7 @@ parse-failure, research-domain, horizon and SWE-bench results reproduce, with na
 | C10 sabotage | 5 research prefixes contain an agent planning sabotage | **Corrected** | 4 of the 5 state a sabotage or sandbagging plan; the fifth states it will *not* sabotage. The paper never mentions sabotage or sandbagging runs, so no filter is described | local read; ids only |
 | C10 human review | 98.8% cannot detect the defect; ≥ 92% on removed items | **Downgraded** | The ≥ 92% assumes 26 retained judgments on the 15 removed items; the true bound runs from 50% (4 retained) to 93% (30). The review also includes 15 trivial-removed items | `v10_secondary.py` |
 | C10 end-to-end | 33.7% is not k/41 | **Confirmed** | 13/41 = 31.7, 14/41 = 34.1; 69/205 = 33.7 (five runs per task) fits; the paper states no denominator | `v10_secondary.py` |
-| Inference | 3,008 calls, 1.63 USD; prereg before download | **Confirmed** | ledger sum 1.6349 USD over 3,008 lines before my run | ledger |
+| Inference | 3,008 calls, 1.63 USD; prereg before download | **Confirmed** | ledger sum 1.6349 USD over 3,008 lines before my run; validator added 1,024 Haiku calls (0.57 USD); audit total 2.21 USD of 3 | ledger |
 
 ## A. The construction-aware floor (C1, weak spot 1)
 
@@ -167,8 +167,15 @@ seeing the failure", and relocates forks to after the constraint is visible.
   +8.2) and in both domains (+7.8 engineering, +4.2 research). Only 22–23% of items change at all.
 - **Placebo 1** (no spend): shuffling the construction label across tasks within domain gives
   p = 0.007 for the contrast.
-- **Placebo 2, H3** (Haiku, my run): remove the second-to-last step and keep the final one. See the
-  H3 paragraph below.
+- **Placebo 2, H3** (Haiku, my run, pre-registered in V8; 1,024 calls, 0.57 USD, no unparsed
+  replies). I removed the second-to-last step and kept the final one.
+  - Detour − parallel contrast against H1: **+3.0 [−2.5, 8.5]** (detour +1.8, parallel −1.2). That
+    is 44% of the H2 effect, in the same direction.
+  - H2 against H3, the part specific to the final step: +3.8 [−1.7, 9.7].
+  - So about half of the H2 contrast comes from losing recent context in general. The part tied
+    to the final step is not distinguishable from zero.
+  - C2's L4 claim weakens to: removing recent context helps Haiku a little on detour items and
+    hurts it on parallel items.
 - **Interpretation.** In parallel items the final step is part of the passing attempt, so cutting
   it also removes genuine evidence. The intervention does not change the origin cue alone. It
   stays Haiku-only, and it says nothing about published models.
@@ -201,7 +208,20 @@ seeing the failure", and relocates forks to after the constraint is visible.
 
 ## F. Leak scan
 
-See the leak-scan paragraph below.
+`v11_leak_scan.py` checks every committed file under `audits/taste-bench/` (46 files, ledger
+included, response cache excluded). It compares every whitespace-normalised 40-character window
+and every 8-word sequence with every item's `query`, `choices`, `prefix_text` and
+`prefix_text_short`.
+- **Scripts:** the only hits are generic Python (`import sys from collections import
+  defaultdict`) and runs of dashes, which also occur inside agent transcripts. These are not item
+  text.
+- **One real match:** `results.json` and `results/b0_handread.json` carried a five-word phrase
+  that also appears in item queries. It is a generic description, under the 8-word threshold, but
+  I rephrased it in both files.
+- **Rescan after the final commit:** see `v11_leak_scan.json`. No `choices` hit, no `query` hit
+  and no 8-word hit outside script boilerplate.
+- **Other paths:** the blind views and item text stayed in the git-ignored `data/` folder. Haiku
+  received only the query, the options and at most 2,000 characters of the short prefix.
 
 ## What I could not check
 
@@ -213,7 +233,8 @@ See the leak-scan paragraph below.
 ## Final evidence levels
 
 C1 L2 (feature real; floor level with, not above, the leaderboard on a like-for-like scale).
-C2 L4 for Haiku only, small, with the evidence-removal caveat. C3 L2 for options-only, which is
+C2: a weak L4 for Haiku only. Removing recent context moves Haiku in the predicted direction;
+the effect specific to the final step is not shown (H2 − H3 +3.8 [−1.7, 9.7]). C3 L2 for options-only, which is
 expected by selection; the with-prefix below-50% cell is a published-number fact (4 of 7
 distinguishable). The label-error and carry-over explanations are not supported. C4 L1 on
 disclosed counts (rank change depends on the rule). C5 failed published claim (research).

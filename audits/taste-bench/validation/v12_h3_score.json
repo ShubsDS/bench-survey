@@ -1,0 +1,43 @@
+{
+ "n_items": 502,
+ "h3_unparsed_presentations": 0,
+ "H2_minus_H1": {
+  "detour_minus_parallel": 6.82,
+  "detour": 3.33,
+  "parallel": -3.49,
+  "ci_task_boot": [
+   1.7,
+   11.7
+  ]
+ },
+ "H3_minus_H1": {
+  "detour_minus_parallel": 2.98,
+  "detour": 1.82,
+  "parallel": -1.16,
+  "ci_task_boot": [
+   -2.5,
+   8.5
+  ]
+ },
+ "H2_minus_H3": {
+  "detour_minus_parallel": 3.84,
+  "detour": 1.52,
+  "parallel": -2.33,
+  "ci_task_boot": [
+   -1.7,
+   9.7
+  ]
+ },
+ "H1_single_order": {
+  "detour": 42.4,
+  "parallel": 71.5
+ },
+ "H2_single_order": {
+  "detour": 45.8,
+  "parallel": 68.0
+ },
+ "H3_single_order": {
+  "detour": 44.2,
+  "parallel": 70.3
+ }
+}

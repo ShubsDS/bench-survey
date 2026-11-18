@@ -3166,5 +3166,321 @@
    "highlighted": false
   },
   "_check_max_abs_average_error": 0.044
+ },
+ "validation": {
+  "C1": {
+   "verdict": "corrected",
+   "auditor": {
+    "floor_average": 60.4,
+    "heldout": 61.4
+   },
+   "validator_full_set": 58.8,
+   "validator_heldout_split_distribution": {
+    "median": 58.8,
+    "p2.5": 52.9,
+    "p97.5": 63.9,
+    "p99": 64.5,
+    "max": 67.4
+   },
+   "null_placebo_fitted": {
+    "median": 47.9,
+    "p2.5": 40.5,
+    "p97.5": 55.2,
+    "p99": 56.7,
+    "max": 63.4
+   },
+   "null_flip_fitted": {
+    "median": 47.7,
+    "p2.5": 39.1,
+    "p97.5": 57.2,
+    "p99": 58.3,
+    "max": 62.0
+   },
+   "models_single_order_above_60.4": [
+    "claude-sonnet-5",
+    "glm-5.2",
+    "gpt-5.5",
+    "gpt-5.6-sol",
+    "gpt-5.6-terra",
+    "grok-4.5"
+   ],
+   "inferred_cell_average": {
+    "cont": 52.1,
+    "ground": 55.1
+   },
+   "cell_inference_accuracy": {
+    "engineering": 0.9487,
+    "research": 0.6339
+   }
+  },
+  "C2": {
+   "verdict": "reproduced, caveated",
+   "h2_contrast": 6.82,
+   "placebo_construction_shuffle_p": 0.007,
+   "h3": {
+    "n_items": 502,
+    "h3_unparsed_presentations": 0,
+    "H2_minus_H1": {
+     "detour_minus_parallel": 6.82,
+     "detour": 3.33,
+     "parallel": -3.49,
+     "ci_task_boot": [
+      1.7,
+      11.7
+     ]
+    },
+    "H3_minus_H1": {
+     "detour_minus_parallel": 2.98,
+     "detour": 1.82,
+     "parallel": -1.16,
+     "ci_task_boot": [
+      -2.5,
+      8.5
+     ]
+    },
+    "H2_minus_H3": {
+     "detour_minus_parallel": 3.84,
+     "detour": 1.52,
+     "parallel": -2.33,
+     "ci_task_boot": [
+      -1.7,
+      9.7
+     ]
+    },
+    "H1_single_order": {
+     "detour": 42.4,
+     "parallel": 71.5
+    },
+    "H2_single_order": {
+     "detour": 45.8,
+     "parallel": 68.0
+    },
+    "H3_single_order": {
+     "detour": 44.2,
+     "parallel": 70.3
+    }
+   }
+  },
+  "C3": {
+   "verdict": "downgraded",
+   "below50_parsed": [
+    "claude-opus-5",
+    "claude-sonnet-5",
+    "deepseek-v4-flash",
+    "gpt-5.4-mini",
+    "gpt-5.4-nano",
+    "gpt-5.6-luna",
+    "minimax-m3"
+   ],
+   "distinguishably_below50_haiku_icc": [
+    "claude-opus-5",
+    "deepseek-v4-flash",
+    "gpt-5.4-mini",
+    "gpt-5.4-nano"
+   ],
+   "selection_carryover": {
+    "all": {
+     "residual_related_minus_unrelated": 0.23,
+     "one_sided_p_related_lower": 0.526,
+     "slope_de_on_other": 0.307
+    },
+    "parsed": {
+     "residual_related_minus_unrelated": -2.43,
+     "one_sided_p_related_lower": 0.279,
+     "slope_de_on_other": -0.043
+    }
+   },
+   "blind_labels_vs_key": {
+    "n": 44,
+    "agree": 38,
+    "rate": 86.4
+   },
+   "blind_labels_vs_key_ci": [
+    74.5,
+    95.5
+   ]
+  },
+  "C4": {
+   "verdict": "confirmed, reworded (disclosed counts)",
+   "glm": {
+    "unparsed_by_cell": {
+     "parallel_engineering": 4,
+     "parallel_research": 4,
+     "detour_engineering": 4,
+     "detour_research": 5
+    },
+    "errors_by_cell": {
+     "parallel_engineering": 0,
+     "parallel_research": 0,
+     "detour_engineering": 0,
+     "detour_research": 0
+    },
+    "unparsed_rate_by_cell": {
+     "parallel_engineering": 1.6,
+     "parallel_research": 4.2,
+     "detour_engineering": 0.8,
+     "detour_research": 3.9
+    },
+    "published_paired_average": 53.9,
+    "single_order_average": {
+     "wrong": 64.0,
+     "chance": 65.3,
+     "parsed_rate": 65.8
+    },
+    "paired_average_unparsed_as_chance_bounds": [
+     54.3,
+     56.4
+    ],
+    "paired_average_parsed_only_bounds": [
+     55.9,
+     57.0
+    ],
+    "position_choices_total": 987,
+    "parsed_total": 987
+   },
+   "grok420_parsed_pooled": 63.5,
+   "sol_pooled": 63.5
+  },
+  "C5": {
+   "verdict": "confirmed",
+   "research": {
+    "model_mean_detour_minus_parallel": -0.11,
+    "models_detour_lower": 7,
+    "n_models": 14,
+    "mean_P": 50.9,
+    "mean_D": 50.8
+   }
+  },
+  "C6": {
+   "verdict": "corrected",
+   "average_gaps_below": 8,
+   "pooled_gaps_below": 6,
+   "sol_reasoning_tokens_per_presentation": 78.2
+  },
+  "C7": {
+   "verdict": "confirmed, caveat corrected",
+   "model_mean_cell_acc": {
+    "parallel_engineering": 58.1,
+    "parallel_research": 50.9,
+    "detour_engineering": 35.9,
+    "detour_research": 50.8
+   },
+   "predicted_by_level": [
+    47.6,
+    43.6,
+    41.8,
+    44.0
+   ],
+   "observed_by_level": [
+    62.3,
+    42.9,
+    31.5,
+    21.0
+   ],
+   "predicted_gap": 3.6,
+   "observed_gap": 41.3,
+   "models_below_25_more_work": 10,
+   "binomial_sd_one_model_69_items_at_25pct": 5.2
+  },
+  "C8": {
+   "verdict": "confirmed",
+   "r_all": 0.625,
+   "r_eng": 0.366,
+   "r_without_sol_and_gpt55": 0.687,
+   "percentile_among_55_drop_two": 70.9,
+   "gpt55_swe_rank": 8,
+   "deepseek_swe_rank": 5,
+   "top4_swe_spread": 4.0,
+   "top4_average_spread": 10.7
+  },
+  "C9": {
+   "verdict": "confirmed, narrowed",
+   "gpt41_options_only_released_peng": 63.7,
+   "models_at_or_below_all_presentations": [
+    "gpt-5.4-mini",
+    "gpt-5.4-nano",
+    "grok-4.20-reasoning",
+    "mistral-medium-3.5"
+   ],
+   "models_at_or_below_parsed": [
+    "gpt-5.4-mini",
+    "mistral-medium-3.5"
+   ]
+  },
+  "C10": {
+   "sabotage": {
+    "auditor_ids": 5,
+    "state_sabotage_or_sandbag_plan": 4,
+    "declines_sabotage": [
+     "det-malt-ba219d49df84fe38-v3"
+    ],
+    "paper_mentions_filter": false
+   },
+   "human_review": {
+    "retained_total": 172,
+    "disagreements_total": 2,
+    "agreement_lower_bound_if_k_retained_on_removed_items": {
+     "4": 50.0,
+     "10": 80.0,
+     "20": 90.0,
+     "26": 92.3,
+     "30": 93.3
+    }
+   },
+   "e2e": {
+    "14.6_of_41": 14.6,
+    "39.0_of_41": 39.0,
+    "33.7_nearest_k_of_41": [
+     31.7,
+     34.1
+    ],
+    "33.7_as_k_of_123": 33.7
+   }
+  },
+  "leak_scan": {
+   "files_scanned": 46,
+   "window_chars": 40,
+   "files_with_hits": {
+    "audits/taste-bench/results.json": {
+     "query": 1
+    },
+    "audits/taste-bench/results/b0_handread.json": {
+     "query": 1
+    },
+    "audits/taste-bench/scripts/a_aggregate.py": {
+     "prefix_text": 4,
+     "prefix_text_short": 4
+    },
+    "audits/taste-bench/scripts/b1_features.py": {
+     "prefix_text": 3,
+     "prefix_text_short": 3
+    },
+    "audits/taste-bench/scripts/b2_floor.py": {
+     "prefix_text": 7,
+     "prefix_text_short": 3
+    },
+    "audits/taste-bench/scripts/b5_score.py": {
+     "prefix_text": 14,
+     "prefix_text_short": 3
+    },
+    "audits/taste-bench/validation/v11_leak_scan.py": {
+     "prefix_text": 20,
+     "prefix_text_short": 9
+    },
+    "audits/taste-bench/validation/v1_floor_null.py": {
+     "prefix_text": 5,
+     "prefix_text_short": 5
+    },
+    "audits/taste-bench/validation/v6_hand_compare.py": {
+     "prefix_text": 14,
+     "prefix_text_short": 3
+    },
+    "audits/taste-bench/validation/v8_h2.py": {
+     "prefix_text": 24,
+     "prefix_text_short": 3,
+     "prefix_text_8word": 2
+    }
+   }
+  }
  }
 }
