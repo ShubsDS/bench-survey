@@ -1,0 +1,146 @@
+{
+ "haiku35": {
+  "n_pairs": 4834,
+  "flagged_released": 363,
+  "oversampled_pairs": 0,
+  "published_pct": 7.42,
+  "pub_x4892": 363.0,
+  "pub_x4834": 358.7,
+  "count_used": 363
+ },
+ "son35v2": {
+  "n_pairs": 4834,
+  "flagged_released": 12,
+  "oversampled_pairs": 22,
+  "published_pct": 0.45,
+  "pub_x4892": 22.0,
+  "pub_x4834": 21.8,
+  "count_used": 22
+ },
+ "son37": {
+  "n_pairs": 4834,
+  "flagged_released": 63,
+  "oversampled_pairs": 90,
+  "published_pct": 1.84,
+  "pub_x4892": 90.0,
+  "pub_x4834": 88.9,
+  "count_used": 90
+ },
+ "son37_1k": {
+  "n_pairs": 4834,
+  "flagged_released": 2,
+  "oversampled_pairs": 2,
+  "published_pct": 0.04,
+  "pub_x4892": 2.0,
+  "pub_x4834": 1.9,
+  "count_used": 2
+ },
+ "son37_64k": {
+  "n_pairs": 4834,
+  "flagged_released": 9,
+  "oversampled_pairs": 12,
+  "published_pct": 0.25,
+  "pub_x4892": 12.2,
+  "pub_x4834": 12.1,
+  "count_used": 12
+ },
+ "dsv3": {
+  "n_pairs": 4834,
+  "flagged_released": 60,
+  "oversampled_pairs": 0,
+  "published_pct": 1.23,
+  "pub_x4892": 60.2,
+  "pub_x4834": 59.5,
+  "count_used": 60
+ },
+ "dsr1": {
+  "n_pairs": 4834,
+  "flagged_released": 13,
+  "oversampled_pairs": 18,
+  "published_pct": 0.37,
+  "pub_x4892": 18.1,
+  "pub_x4834": 17.9,
+  "count_used": 18
+ },
+ "4omini": {
+  "n_pairs": 4834,
+  "flagged_released": 660,
+  "oversampled_pairs": 0,
+  "published_pct": 13.49,
+  "pub_x4892": 659.9,
+  "pub_x4834": 652.1,
+  "count_used": 660
+ },
+ "4o": {
+  "n_pairs": 4834,
+  "flagged_released": 13,
+  "oversampled_pairs": 18,
+  "published_pct": 0.37,
+  "pub_x4892": 18.1,
+  "pub_x4834": 17.9,
+  "count_used": 18
+ },
+ "chatgpt4o": {
+  "n_pairs": 4834,
+  "flagged_released": 15,
+  "oversampled_pairs": 24,
+  "published_pct": 0.49,
+  "pub_x4892": 24.0,
+  "pub_x4834": 23.7,
+  "count_used": 24
+ },
+ "gem15pro": {
+  "n_pairs": 4834,
+  "flagged_released": 320,
+  "oversampled_pairs": 0,
+  "published_pct": 6.54,
+  "pub_x4892": 319.9,
+  "pub_x4834": 316.1,
+  "count_used": 320
+ },
+ "gem25flash": {
+  "n_pairs": 4834,
+  "flagged_released": 106,
+  "oversampled_pairs": 1,
+  "published_pct": 2.17,
+  "pub_x4892": 106.2,
+  "pub_x4834": 104.9,
+  "count_used": 1
+ },
+ "gem25pro": {
+  "n_pairs": 4834,
+  "flagged_released": 6,
+  "oversampled_pairs": 7,
+  "published_pct": 0.14,
+  "pub_x4892": 6.8,
+  "pub_x4834": 6.8,
+  "count_used": 7
+ },
+ "llama31base": {
+  "n_pairs": 4834,
+  "flagged_released": 159,
+  "oversampled_pairs": 0,
+  "published_pct": 3.25,
+  "pub_x4892": 159.0,
+  "pub_x4834": 157.1,
+  "count_used": 159
+ },
+ "llama33inst": {
+  "n_pairs": 4834,
+  "flagged_released": 102,
+  "oversampled_pairs": 0,
+  "published_pct": 2.09,
+  "pub_x4892": 102.2,
+  "pub_x4834": 101.0,
+  "count_used": 102
+ },
+ "qwq": {
+  "n_pairs": 4834,
+  "flagged_released": 220,
+  "oversampled_pairs": 0,
+  "published_pct": 4.5,
+  "pub_x4892": 220.1,
+  "pub_x4834": 217.5,
+  "count_used": 220
+ }
+}
