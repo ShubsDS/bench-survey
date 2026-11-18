@@ -1,0 +1,58 @@
+{
+ "gpt-5.6-sol": {
+  "swebench_verified": 96.18,
+  "average_from_figure": 59.71,
+  "highlighted": false
+ },
+ "gpt-5.5": {
+  "swebench_verified": 82.6,
+  "average_from_figure": 59.51,
+  "highlighted": true
+ },
+ "claude-opus-5": {
+  "swebench_verified": 96.99,
+  "average_from_figure": 55.47,
+  "highlighted": false
+ },
+ "grok-4.5": {
+  "swebench_verified": 86.59,
+  "average_from_figure": 54.59,
+  "highlighted": false
+ },
+ "gpt-5.6-terra": {
+  "swebench_verified": 95.38,
+  "average_from_figure": 54.02,
+  "highlighted": false
+ },
+ "glm-5.2": {
+  "swebench_verified": 82.8,
+  "average_from_figure": 53.89,
+  "highlighted": false
+ },
+ "claude-sonnet-5": {
+  "swebench_verified": 79.59,
+  "average_from_figure": 51.64,
+  "highlighted": false
+ },
+ "gpt-5.6-luna": {
+  "swebench_verified": 92.99,
+  "average_from_figure": 49.03,
+  "highlighted": false
+ },
+ "minimax-m3": {
+  "swebench_verified": 75.0,
+  "average_from_figure": 45.27,
+  "highlighted": false
+ },
+ "deepseek-v4-flash": {
+  "swebench_verified": 88.79,
+  "average_from_figure": 43.34,
+  "highlighted": true
+ },
+ "mistral-medium-3.5": {
+  "swebench_verified": 66.4,
+  "average_from_figure": 37.74,
+  "highlighted": false
+ },
+ "_check_max_abs_average_error": 0.044
+}
