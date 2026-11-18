@@ -1,0 +1,327 @@
+{
+ "SeqQA": {
+  "ORF-seq-AAid": {
+   "n": 40,
+   "acc": 0.2146,
+   "n_full_credit": 4,
+   "chance": 0.25,
+   "null_95": [
+    0.1604,
+    0.3521
+   ],
+   "p_perm": 0.7642,
+   "kind": "edit"
+  },
+  "ORF-seq-AAseq": {
+   "n": 40,
+   "acc": 1.0,
+   "n_full_credit": 40,
+   "chance": 0.2,
+   "null_95": [
+    0.075,
+    0.35
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "ORF-seq-numlen": {
+   "n": 40,
+   "acc": 0.3875,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.175,
+    0.3375
+   ],
+   "p_perm": 0.001,
+   "kind": "num"
+  },
+  "ORF-transeff": {
+   "n": 40,
+   "acc": 0.0,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.175,
+    0.325
+   ],
+   "p_perm": 1.0,
+   "kind": "edit"
+  },
+  "PCR-gene-enzprimers": {
+   "n": 40,
+   "acc": 0.975,
+   "n_full_credit": 39,
+   "chance": 0.25,
+   "null_95": [
+    0.125,
+    0.4
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "PCR-gene-gibshindprimers": {
+   "n": 40,
+   "acc": 1.0,
+   "n_full_credit": 40,
+   "chance": 0.25,
+   "null_95": [
+    0.125,
+    0.4
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "PCR-gene-gibssmaprimers": {
+   "n": 40,
+   "acc": 1.0,
+   "n_full_credit": 40,
+   "chance": 0.25,
+   "null_95": [
+    0.125,
+    0.375
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "PCR-geneprimers-enz": {
+   "n": 40,
+   "acc": 0.25,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.25,
+    0.25
+   ],
+   "p_perm": 1.0,
+   "kind": "edit"
+  },
+  "PCR-len-primers": {
+   "n": 40,
+   "acc": 0.3333,
+   "n_full_credit": 13,
+   "chance": 0.25,
+   "null_95": [
+    0.1333,
+    0.3958
+   ],
+   "p_perm": 0.1069,
+   "kind": "edit"
+  },
+  "PCR-primers-len": {
+   "n": 40,
+   "acc": 0.3,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.175,
+    0.325
+   ],
+   "p_perm": 0.1319,
+   "kind": "num"
+  },
+  "PCR-seq-enzprimers": {
+   "n": 40,
+   "acc": 1.0,
+   "n_full_credit": 40,
+   "chance": 0.25,
+   "null_95": [
+    0.125,
+    0.375
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "PCR-seq-primers": {
+   "n": 40,
+   "acc": 0.1875,
+   "n_full_credit": 6,
+   "chance": 0.25,
+   "null_95": [
+    0.125,
+    0.3875
+   ],
+   "p_perm": 0.8432,
+   "kind": "edit"
+  },
+  "Prop-seq-gcpercent": {
+   "n": 40,
+   "acc": 0.5,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.175,
+    0.325
+   ],
+   "p_perm": 0.001,
+   "kind": "num"
+  },
+  "RE-seq-lenfrags": {
+   "n": 40,
+   "acc": 0.2333,
+   "n_full_credit": 6,
+   "chance": 0.25,
+   "null_95": [
+    0.1417,
+    0.3626
+   ],
+   "p_perm": 0.6194,
+   "kind": "edit"
+  },
+  "RE-seq-numfrags": {
+   "n": 40,
+   "acc": 0.325,
+   "n_full_credit": 0,
+   "chance": 0.25,
+   "null_95": [
+    0.175,
+    0.325
+   ],
+   "p_perm": 0.034,
+   "kind": "num"
+  }
+ },
+ "SeqQA_overall": 0.5137,
+ "SeqQA_full_credit_subtasks": [
+  "ORF-seq-AAseq",
+  "PCR-gene-gibshindprimers",
+  "PCR-gene-gibssmaprimers",
+  "PCR-seq-enzprimers"
+ ],
+ "SeqQA_full_credit_items": 160,
+ "SeqQA_overall_ci_subtask_bootstrap": [
+  0.3346,
+  0.6989
+ ],
+ "DbQA": {
+  "dga_task": {
+   "n": 40,
+   "acc": 0.1125,
+   "n_full_credit": 3,
+   "chance": 0.25,
+   "null_95": [
+    0.1457,
+    0.3625
+   ],
+   "p_perm": 0.998,
+   "kind": "edit"
+  },
+  "gene_location_task": {
+   "n": 40,
+   "acc": 0.2417,
+   "n_full_credit": 5,
+   "chance": 0.25,
+   "null_95": [
+    0.1417,
+    0.3667
+   ],
+   "p_perm": 0.5794,
+   "kind": "edit"
+  },
+  "mirna_targets_task": {
+   "n": 40,
+   "acc": 0.1479,
+   "n_full_credit": 4,
+   "chance": 0.25,
+   "null_95": [
+    0.1354,
+    0.373
+   ],
+   "p_perm": 0.954,
+   "kind": "edit"
+  },
+  "mouse_tumor_gene_sets": {
+   "n": 80,
+   "acc": 0.2927,
+   "n_full_credit": 15,
+   "chance": 0.25,
+   "null_95": [
+    0.1719,
+    0.3302
+   ],
+   "p_perm": 0.1489,
+   "kind": "edit"
+  },
+  "oncogenic_signatures_task": {
+   "n": 40,
+   "acc": 0.2542,
+   "n_full_credit": 6,
+   "chance": 0.25,
+   "null_95": [
+    0.1499,
+    0.3542
+   ],
+   "p_perm": 0.4665,
+   "kind": "edit"
+  },
+  "tfbs_GTRD_task": {
+   "n": 40,
+   "acc": 0.2375,
+   "n_full_credit": 5,
+   "chance": 0.25,
+   "null_95": [
+    0.15,
+    0.3667
+   ],
+   "p_perm": 0.5994,
+   "kind": "edit"
+  },
+  "variant_from_sequence_task": {
+   "n": 80,
+   "acc": 0.2406,
+   "n_full_credit": 9,
+   "chance": 0.25,
+   "null_95": [
+    0.1719,
+    0.3344
+   ],
+   "p_perm": 0.5964,
+   "kind": "edit"
+  },
+  "variant_multi_sequence_task": {
+   "n": 80,
+   "acc": 1.0,
+   "n_full_credit": 80,
+   "chance": 0.25,
+   "null_95": [
+    0.15,
+    0.35
+   ],
+   "p_perm": 0.001,
+   "kind": "edit"
+  },
+  "vax_response_task": {
+   "n": 40,
+   "acc": 0.3333,
+   "n_full_credit": 7,
+   "chance": 0.25,
+   "null_95": [
+    0.15,
+    0.3542
+   ],
+   "p_perm": 0.0579,
+   "kind": "edit"
+  },
+  "viral_ppi_task": {
+   "n": 40,
+   "acc": 0.3708,
+   "n_full_credit": 8,
+   "chance": 0.25,
+   "null_95": [
+    0.15,
+    0.3626
+   ],
+   "p_perm": 0.025,
+   "kind": "edit"
+  }
+ },
+ "DbQA_overall": 0.3665,
+ "DbQA_full_credit_subtasks": [
+  "variant_multi_sequence_task"
+ ],
+ "DbQA_full_credit_items": 80,
+ "DbQA_overall_ci_subtask_bootstrap": [
+  0.2099,
+  0.4936
+ ]
+}
