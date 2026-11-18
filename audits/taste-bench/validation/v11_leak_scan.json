@@ -1,13 +1,7 @@
 {
- "files_scanned": 46,
+ "files_scanned": 52,
  "window_chars": 40,
  "files_with_hits": {
-  "audits/taste-bench/results.json": {
-   "query": 1
-  },
-  "audits/taste-bench/results/b0_handread.json": {
-   "query": 1
-  },
   "audits/taste-bench/scripts/a_aggregate.py": {
    "prefix_text": 4,
    "prefix_text_short": 4
@@ -24,9 +18,19 @@
    "prefix_text": 14,
    "prefix_text_short": 3
   },
+  "audits/taste-bench/validation/VALIDATION.md": {
+   "prefix_text": 7
+  },
   "audits/taste-bench/validation/v11_leak_scan.py": {
    "prefix_text": 20,
    "prefix_text_short": 9
+  },
+  "audits/taste-bench/validation/v12_h3_score.py": {
+   "prefix_text": 14,
+   "prefix_text_short": 3
+  },
+  "audits/taste-bench/validation/v13_collect.py": {
+   "prefix_text_8word": 1
   },
   "audits/taste-bench/validation/v1_floor_null.py": {
    "prefix_text": 5,
