@@ -3894,5 +3894,543 @@
   ],
   "billed_calls": 2582,
   "cost_usd": 2.4096
+ },
+ "validation": {
+  "status": "independently validated 2026-11-17; see validation/VALIDATION.md; auditor numbers above are kept unchanged",
+  "verdicts": {
+   "1_options_rule": {
+    "verdict": "confirmed; interval corrected",
+    "heldout_overall": 0.579,
+    "auditor_ci_items": [
+     0.5454,
+     0.6122
+    ],
+    "ci_over_15_templates": [
+     0.4144,
+     0.7689
+    ],
+    "validator_edit_medoid_overall": 0.5137,
+    "validator_full_credit_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "PCR-seq-enzprimers"
+    ],
+    "gcpercent_validator_medoid": 0.5,
+    "level": "L2"
+   },
+   "2_haiku_edit": {
+    "verdict": "confirmed for Haiku on the two Gibson subtasks; wording narrowed",
+    "pooled": {
+     "n": 147,
+     "forced": 0.925,
+     "edit": 0.741,
+     "drop": 0.184,
+     "drop_ci_items": [
+      0.102,
+      0.265
+     ],
+     "drop_ci_templates": [
+      0.035,
+      0.347
+     ],
+     "n_templates": 6,
+     "pick_central": 0.218,
+     "pick_each_other_distractor": 0.02
+    },
+    "without_gibson": {
+     "n": 97,
+     "forced": 0.907,
+     "edit": 0.866,
+     "drop": 0.041,
+     "drop_ci_items": [
+      -0.052,
+      0.134
+     ],
+     "drop_ci_templates": [
+      0.0,
+      0.09
+     ],
+     "n_templates": 4,
+     "pick_central": 0.113,
+     "pick_each_other_distractor": 0.01
+    },
+    "gibson_three_arms_same_50_items": {
+     "n": 50,
+     "forced": 0.96,
+     "pedit": 0.88,
+     "edit": 0.5,
+     "pedit_minus_edit": 0.38,
+     "pedit_minus_edit_ci": [
+      0.22,
+      0.54
+     ],
+     "forced_minus_pedit": 0.08,
+     "forced_minus_pedit_ci": [
+      -0.02,
+      0.18
+     ]
+    },
+    "validator_single_swap_prereg": {
+     "n": 62,
+     "forced": 0.935,
+     "swap1": 0.726,
+     "drop": 0.21,
+     "drop_ci": [
+      0.113,
+      0.306
+     ],
+     "pick_S_forced": 0.016,
+     "pick_S_swap1": 0.113,
+     "pick_G_swap1": 0.161
+    },
+    "level": "L4 (Haiku, Gibson subtasks)"
+   },
+   "3_stratum": {
+    "verdict": "downgraded from R to inconclusive",
+    "obs_mean_D": 0.1626,
+    "power_by_delta": {
+     "0.05": 0.072,
+     "0.1": 0.07,
+     "0.15": 0.112,
+     "0.18": 0.172,
+     "0.2": 0.195,
+     "0.25": 0.265,
+     "0.3": 0.368,
+     "0.4": 0.582,
+     "0.5": 0.848
+    },
+    "level": "inconclusive"
+   },
+   "4_protocolqa_opts": {
+    "verdict": "numbers confirmed; level L2; cue, recall or general knowledge not separable",
+    "result": {
+     "n": 107,
+     "acc": 0.514,
+     "wilson": [
+      0.42,
+      0.607
+     ],
+     "cluster_ci": [
+      0.43,
+      0.624
+     ],
+     "n_clusters": 23,
+     "chance": 0.233,
+     "refusal_rate": 0.0,
+     "precision": 0.514
+    },
+    "level": "L2"
+   },
+   "5_figqa_blind": {
+    "verdict": "confirmed",
+    "forced": {
+     "n": 181,
+     "acc": 0.315,
+     "wilson": [
+      0.252,
+      0.386
+     ],
+     "cluster_ci": [
+      0.247,
+      0.382
+     ],
+     "n_clusters": 107,
+     "chance": 0.223,
+     "refusal_rate": 0.0,
+     "precision": 0.315
+    },
+    "opts": {
+     "n": 181,
+     "acc": 0.232,
+     "wilson": [
+      0.177,
+      0.299
+     ],
+     "cluster_ci": [
+      0.171,
+      0.297
+     ],
+     "n_clusters": 107,
+     "chance": 0.223,
+     "refusal_rate": 0.0,
+     "precision": 0.232
+    },
+    "tableqa_forced": {
+     "n": 120,
+     "acc": 0.408,
+     "wilson": [
+      0.325,
+      0.498
+     ],
+     "cluster_ci": [
+      0.325,
+      0.5
+     ],
+     "n_clusters": 120,
+     "chance": 0.206,
+     "refusal_rate": 0.0,
+     "precision": 0.408
+    },
+    "level": "L2"
+   },
+   "6_abstention": {
+    "verdict": "numbers confirmed; reframed as intended abstention behaviour",
+    "paired": {
+     "ProtocolQA|forced-std": {
+      "n": 107,
+      "delta_acc": 0.056,
+      "ci": [
+       -0.019,
+       0.131
+      ],
+      "refused_items_forced_acc": 0.389,
+      "refused_items_chance": 0.233,
+      "n_refused": 18
+     },
+     "CloningScenarios|forced-std": {
+      "n": 33,
+      "delta_acc": 0.061,
+      "ci": [
+       -0.091,
+       0.212
+      ],
+      "refused_items_forced_acc": 1.0,
+      "refused_items_chance": 0.25,
+      "n_refused": 1
+     },
+     "LitQA2|forced-std": {
+      "n": 58,
+      "delta_acc": -0.034,
+      "ci": [
+       -0.155,
+       0.086
+      ],
+      "refused_items_forced_acc": 0.0,
+      "refused_items_chance": 0.233,
+      "n_refused": 3
+     },
+     "SuppQA|forced-std": {
+      "n": 50,
+      "delta_acc": 0.16,
+      "ci": [
+       0.06,
+       0.26
+      ],
+      "refused_items_forced_acc": 0.4,
+      "refused_items_chance": 0.217,
+      "n_refused": 10
+     },
+     "FigQA|blindf-blind": {
+      "n": 181,
+      "delta_acc": 0.166,
+      "ci": [
+       0.094,
+       0.238
+      ],
+      "refused_items_forced_acc": 0.344,
+      "refused_items_chance": 0.217,
+      "n_refused": 93
+     },
+     "TableQA|blindf-blind": {
+      "n": 120,
+      "delta_acc": 0.192,
+      "ci": [
+       0.125,
+       0.267
+      ],
+      "refused_items_forced_acc": 0.286,
+      "refused_items_chance": 0.199,
+      "n_refused": 70
+     },
+     "FigQA|blind-last": {
+      "n": 181,
+      "delta_acc": 0.011,
+      "ci": [
+       -0.028,
+       0.05
+      ],
+      "refusal_rate_diff_blind_minus_last": 0.006,
+      "refusal_ci": [
+       -0.028,
+       0.039
+      ]
+     }
+    },
+    "level": "L4 (Haiku); R for position"
+   },
+   "7_human_line": {
+    "verdict": "corrected per claim",
+    "human": {
+     "FigQA": {
+      "accuracy": 0.77,
+      "precision": 0.82,
+      "coverage": 0.94,
+      "k": 4.48,
+      "q0": 0.77,
+      "q0_rounding": [
+       0.765,
+       0.775
+      ],
+      "q_chance": 0.7834,
+      "q_chance_rounding": [
+       0.7773,
+       0.7895
+      ],
+      "q_precision": 0.8192,
+      "q_precision_rounding": [
+       0.8101,
+       0.8283
+      ],
+      "q1": 0.83,
+      "q1_rounding": [
+       0.82,
+       0.84
+      ]
+     },
+     "ProtocolQA": {
+      "accuracy": 0.79,
+      "precision": 0.87,
+      "coverage": 0.91,
+      "k": 4.29,
+      "q0": 0.79,
+      "q0_rounding": [
+       0.785,
+       0.795
+      ],
+      "q_chance": 0.811,
+      "q_chance_rounding": [
+       0.8048,
+       0.8171
+      ],
+      "q_precision": 0.8683,
+      "q_precision_rounding": [
+       0.8589,
+       0.8777
+      ],
+      "q1": 0.88,
+      "q1_rounding": [
+       0.87,
+       0.89
+      ]
+     },
+     "CloningScenarios": {
+      "accuracy": 0.6,
+      "precision": 0.73,
+      "coverage": 0.82,
+      "k": 4.42,
+      "q0": 0.6,
+      "q0_rounding": [
+       0.595,
+       0.605
+      ],
+      "q_chance": 0.6407,
+      "q_chance_rounding": [
+       0.6345,
+       0.6468
+      ],
+      "q_precision": 0.7314,
+      "q_precision_rounding": [
+       0.7228,
+       0.74
+      ],
+      "q1": 0.78,
+      "q1_rounding": [
+       0.77,
+       0.79
+      ]
+     },
+     "SeqQA": {
+      "accuracy": 0.7893,
+      "precision": 0.842,
+      "coverage": 0.9233,
+      "k": 4.05,
+      "q0": 0.7893,
+      "q0_rounding": [
+       0.7843,
+       0.7943
+      ],
+      "q_chance": 0.8082,
+      "q_chance_rounding": [
+       0.802,
+       0.8145
+      ],
+      "q_precision": 0.8539,
+      "q_precision_rounding": [
+       0.8447,
+       0.8631
+      ],
+      "q1": 0.866,
+      "q1_rounding": [
+       0.856,
+       0.876
+      ]
+     }
+    },
+    "claims": [
+     {
+      "claim": "Opus 4.6 card 2.19.1, FigQA with crop tool",
+      "subset": "FigQA",
+      "score": 0.783,
+      "n_assumed": 181,
+      "wilson": [
+       0.717,
+       0.837
+      ],
+      "human_acc": 0.77,
+      "human_forced_plausible": [
+       0.7834,
+       0.8192
+      ],
+      "human_forced_bounds": [
+       0.77,
+       0.83
+      ],
+      "score_minus_chance_guess_human": -0.0004,
+      "score_minus_precision_guess_human": -0.0362,
+      "item_interval_contains_paper_human": true,
+      "note": "states 'surpasses expert humans, who scored 77%'; item set not stated"
+     },
+     {
+      "claim": "Opus 4.8 card 8.12.3, FigQA no tools",
+      "subset": "FigQA",
+      "score": 0.804,
+      "n_assumed": 181,
+      "wilson": [
+       0.74,
+       0.855
+      ],
+      "human_acc": 0.77,
+      "human_forced_plausible": [
+       0.7834,
+       0.8192
+      ],
+      "human_forced_bounds": [
+       0.77,
+       0.83
+      ],
+      "score_minus_chance_guess_human": 0.0206,
+      "score_minus_precision_guess_human": -0.0152,
+      "item_interval_contains_paper_human": true,
+      "note": "181 public questions stated; text makes no 'surpasses' claim, the figure shows the paper's human line"
+     },
+     {
+      "claim": "Opus 4.5 card 7.2.4.4, ProtocolQA",
+      "subset": "ProtocolQA",
+      "score": 0.907,
+      "n_assumed": 108,
+      "wilson": [
+       0.837,
+       0.949
+      ],
+      "human_acc": 0.79,
+      "human_forced_plausible": [
+       0.811,
+       0.8683
+      ],
+      "human_forced_bounds": [
+       0.79,
+       0.88
+      ],
+      "score_minus_chance_guess_human": 0.096,
+      "score_minus_precision_guess_human": 0.0387,
+      "item_interval_contains_paper_human": false,
+      "note": "'every evaluation except FigQA exceeded the human baseline'; item set, shots and human number not stated"
+     },
+     {
+      "claim": "Opus 4.5 card 7.2.4.4, CloningScenarios",
+      "subset": "CloningScenarios",
+      "score": 0.758,
+      "n_assumed": 33,
+      "wilson": [
+       0.59,
+       0.872
+      ],
+      "human_acc": 0.6,
+      "human_forced_plausible": [
+       0.6407,
+       0.7314
+      ],
+      "human_forced_bounds": [
+       0.6,
+       0.78
+      ],
+      "score_minus_chance_guess_human": 0.1173,
+      "score_minus_precision_guess_human": 0.0266,
+      "item_interval_contains_paper_human": true,
+      "note": "same sentence; 10-shot, item set not stated"
+     },
+     {
+      "claim": "Opus 4.5 card 7.2.4.4, SeqQA",
+      "subset": "SeqQA",
+      "score": 0.8517,
+      "n_assumed": 600,
+      "wilson": [
+       0.821,
+       0.878
+      ],
+      "human_acc": 0.7893,
+      "human_forced_plausible": [
+       0.8082,
+       0.8539
+      ],
+      "human_forced_bounds": [
+       0.7893,
+       0.866
+      ],
+      "score_minus_chance_guess_human": 0.0435,
+      "score_minus_precision_guess_human": -0.0022,
+      "item_interval_contains_paper_human": false,
+      "note": "same sentence; 10-shot; item set, subtask weighting and human SeqQA number not stated (the paper gives no pooled human SeqQA number)"
+     },
+     {
+      "claim": "Justen 2025, CloningScenarios",
+      "subset": "CloningScenarios",
+      "score": 0.61,
+      "n_assumed": 33,
+      "wilson": [
+       0.441,
+       0.756
+      ],
+      "human_acc": 0.6,
+      "human_forced_plausible": [
+       0.6407,
+       0.7314
+      ],
+      "human_forced_bounds": [
+       0.6,
+       0.78
+      ],
+      "score_minus_chance_guess_human": -0.0307,
+      "score_minus_precision_guess_human": -0.1214,
+      "item_interval_contains_paper_human": true,
+      "note": "abstract: 'match or exceed expert-level performance'; 33 public items per the auditor's reading, not re-read by the validator"
+     }
+    ],
+    "level": "L1"
+   },
+   "8_dbqa_multi": {
+    "verdict": "confirmed",
+    "validator": {
+     "n": 80,
+     "acc": 1.0,
+     "n_full_credit": 80,
+     "chance": 0.25,
+     "null_95": [
+      0.15,
+      0.35
+     ],
+     "p_perm": 0.001,
+     "kind": "edit"
+    },
+    "level": "L2"
+   }
+  },
+  "inference_total": {
+   "validator_calls": 85,
+   "validator_usd": 0.166,
+   "audit_total_calls": 2667,
+   "audit_total_usd": 2.5756
+  }
  }
 }
