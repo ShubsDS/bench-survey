@@ -1,0 +1,379 @@
+{
+ "per_model": {
+  "4o": {
+   "n": 4,
+   "FACT": 1,
+   "FLIP": 2,
+   "GUESS": 1
+  },
+  "4omini": {
+   "n": 4,
+   "RULE": 3,
+   "LOGIC": 1
+  },
+  "chatgpt4o": {
+   "n": 4,
+   "FACT": 3,
+   "GUESS": 1
+  },
+  "dsr1": {
+   "n": 4,
+   "FACT": 4
+  },
+  "dsv3": {
+   "n": 4,
+   "RULE": 1,
+   "FLIP": 2,
+   "FACT": 1
+  },
+  "gem15pro": {
+   "n": 4,
+   "FLIP": 2,
+   "FACT": 2
+  },
+  "gem25flash": {
+   "n": 4,
+   "FACT": 3,
+   "FLIP": 1
+  },
+  "gem25pro": {
+   "n": 4,
+   "FACT": 4
+  },
+  "haiku35": {
+   "n": 4,
+   "FLIP": 1,
+   "RULE": 1,
+   "FACT": 2
+  },
+  "llama31base": {
+   "n": 4,
+   "GUESS": 1,
+   "LOGIC": 1,
+   "RULE": 1,
+   "FACT": 1
+  },
+  "llama33inst": {
+   "n": 4,
+   "GUESS": 4
+  },
+  "qwq": {
+   "n": 4,
+   "FACT": 4
+  },
+  "son35v2": {
+   "n": 8,
+   "FACT": 8
+  },
+  "son37": {
+   "n": 30,
+   "FLIP": 27,
+   "GUESS": 2,
+   "FACT": 1
+  },
+  "son37_1k": {
+   "n": 2,
+   "FACT": 2
+  },
+  "son37_64k": {
+   "n": 6,
+   "FACT": 4,
+   "GUESS": 2
+  },
+  "son37_dropped": {
+   "n": 10,
+   "FLIP": 10
+  }
+ },
+ "son37_flip": {
+  "k": 27,
+  "n": 30,
+  "share": 0.9,
+  "wilson": [
+   0.7437855868473338,
+   0.9654007400402839
+  ]
+ },
+ "son37_dropped_flip": {
+  "k": 10,
+  "n": 10,
+  "share": 1.0,
+  "wilson": [
+   0.7224598312333834,
+   1.0
+  ]
+ },
+ "son37_all90_flip": {
+  "k": 37,
+  "n": 40,
+  "wilson": [
+   0.8013546984090248,
+   0.9741644432281419
+  ]
+ },
+ "vs_autorater": {
+  "n": 94,
+  "both_flip": 34,
+  "auto_only": 7,
+  "me_only": 1,
+  "neither": 52,
+  "auto_precision": 0.8292682926829268,
+  "auto_recall": 0.9714285714285714,
+  "kappa": 0.8240524099204491
+ },
+ "son37_vs_autorater": {
+  "FLIP|auto=YES": 27,
+  "GUESS|auto=NO": 1,
+  "FACT|auto=NO": 1,
+  "GUESS|auto=YES": 1
+ },
+ "pooled_reweighted": {
+  "not_justification(FLIP+GUESS+RULE)": {
+   "est": 0.5339868591366987,
+   "ci": [
+    0.40992817547414034,
+    0.6485261375147728
+   ]
+  },
+  "FLIP": {
+   "est": 0.2564747594124599,
+   "ci": [
+    0.18303106885587256,
+    0.33529092098598673
+   ]
+  },
+  "GUESS": {
+   "est": 0.08477826551859981,
+   "ci": [
+    0.05075904665428555,
+    0.12443646589566094
+   ]
+  },
+  "RULE": {
+   "est": 0.19273383420563903,
+   "ci": [
+    0.10028701671450278,
+    0.27631690021948335
+   ]
+  },
+  "FACT": {
+   "est": 0.4051170577972874,
+   "ci": [
+    0.3233371672575835,
+    0.48828711520063034
+   ]
+  },
+  "LOGIC": {
+   "est": 0.060896083066013844,
+   "ci": [
+    0.0,
+    0.16118309978051662
+   ]
+  }
+ },
+ "unweighted_main": {
+  "FLIP": 35,
+  "GUESS": 11,
+  "FACT": 40,
+  "LOGIC": 2,
+  "RULE": 6,
+  "n": 94
+ },
+ "son37_flip_label_uncertainty": {
+  "mine": 0.9,
+  "auto": 0.9333333333333333,
+  "ci": [
+   0.8,
+   1.0
+  ]
+ },
+ "autorater_lack_of_information": {
+  "llama31base": {
+   "n": 1019,
+   "lack_yes": 438,
+   "flip_yes": 207,
+   "n_flip": 1010
+  },
+  "llama33inst": {
+   "n": 733,
+   "lack_yes": 565,
+   "flip_yes": 26,
+   "n_flip": 728
+  },
+  "chatgpt4o": {
+   "n": 124,
+   "lack_yes": 5,
+   "flip_yes": 1,
+   "n_flip": 124
+  },
+  "haiku35": {
+   "n": 2570,
+   "lack_yes": 185,
+   "flip_yes": 815,
+   "n_flip": 2550
+  },
+  "son35v2": {
+   "n": 101,
+   "lack_yes": 0,
+   "flip_yes": 10,
+   "n_flip": 101
+  },
+  "son37_1k": {
+   "n": 16,
+   "lack_yes": 0,
+   "flip_yes": 0,
+   "n_flip": 16
+  },
+  "son37_64k": {
+   "n": 75,
+   "lack_yes": 11,
+   "flip_yes": 5,
+   "n_flip": 75
+  },
+  "son37": {
+   "n": 374,
+   "lack_yes": 15,
+   "flip_yes": 319,
+   "n_flip": 374
+  },
+  "dsv3": {
+   "n": 420,
+   "lack_yes": 7,
+   "flip_yes": 64,
+   "n_flip": 417
+  },
+  "dsr1": {
+   "n": 111,
+   "lack_yes": 5,
+   "flip_yes": 1,
+   "n_flip": 105
+  },
+  "gem25flash": {
+   "n": 753,
+   "lack_yes": 37,
+   "flip_yes": 235,
+   "n_flip": 746
+  },
+  "gem25pro": {
+   "n": 37,
+   "lack_yes": 0,
+   "flip_yes": 0,
+   "n_flip": 37
+  },
+  "gem15pro": {
+   "n": 2588,
+   "lack_yes": 20,
+   "flip_yes": 581,
+   "n_flip": 2577
+  },
+  "4o": {
+   "n": 96,
+   "lack_yes": 18,
+   "flip_yes": 13,
+   "n_flip": 96
+  },
+  "4omini": {
+   "n": 4752,
+   "lack_yes": 100,
+   "flip_yes": 1796,
+   "n_flip": 4723
+  },
+  "qwq": {
+   "n": 1691,
+   "lack_yes": 197,
+   "flip_yes": 49,
+   "n_flip": 1688
+  }
+ },
+ "autorater_lack_pooled": {
+  "n": 15460,
+  "lack_yes": 1603
+ },
+ "weighting_sensitivity": {
+  "all_wrong_answers": {
+   "not_justification": [
+    0.534,
+    0.409,
+    0.65
+   ],
+   "FLIP": [
+    0.256,
+    0.183,
+    0.333
+   ],
+   "GUESS": [
+    0.085,
+    0.047,
+    0.123
+   ],
+   "RULE": [
+    0.193,
+    0.088,
+    0.279
+   ],
+   "FACT": [
+    0.405,
+    0.321,
+    0.491
+   ]
+  },
+  "autorater_labelled_wrong_answers": {
+   "not_justification": [
+    0.542,
+    0.347,
+    0.71
+   ],
+   "FLIP": [
+    0.176,
+    0.076,
+    0.283
+   ],
+   "GUESS": [
+    0.071,
+    0.051,
+    0.105
+   ],
+   "RULE": [
+    0.295,
+    0.118,
+    0.43
+   ],
+   "FACT": [
+    0.365,
+    0.244,
+    0.489
+   ]
+  },
+  "flagged_pairs": {
+   "not_justification": [
+    0.55,
+    0.374,
+    0.709
+   ],
+   "FLIP": [
+    0.174,
+    0.076,
+    0.278
+   ],
+   "GUESS": [
+    0.073,
+    0.051,
+    0.111
+   ],
+   "RULE": [
+    0.302,
+    0.136,
+    0.436
+   ],
+   "FACT": [
+    0.354,
+    0.232,
+    0.473
+   ]
+  }
+ },
+ "not_justification_with_label_noise_labelledweights": [
+  0.3317731448341684,
+  0.7072882095833062
+ ]
+}

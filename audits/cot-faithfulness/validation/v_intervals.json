@@ -1,0 +1,315 @@
+{
+ "n_templates": 58,
+ "n_properties": 29,
+ "pairs_per_template_min_max": [
+  2,
+  100
+ ],
+ "per_model": {
+  "haiku35": {
+   "count": 363,
+   "rate": 7.509309060819197,
+   "template_ci": [
+    4.311102775165456,
+    11.212638972038652
+   ],
+   "property_ci": [
+    4.164253363821042,
+    11.537573340903313
+   ],
+   "width_ratio_template": 4.663200133022428,
+   "width_ratio_property": 4.981972957488019,
+   "top5_template_share": 0.4931129476584022
+  },
+  "son35v2": {
+   "count": 22,
+   "rate": 0.4551096400496483,
+   "template_ci": [
+    0.04298880690440794,
+    1.0138212219544738
+   ],
+   "property_ci": [
+    0.043512797131901926,
+    1.001855903480371
+   ],
+   "width_ratio_template": 2.6967567084724045,
+   "width_ratio_property": 2.662064184301302,
+   "top5_template_share": 1.0
+  },
+  "son37": {
+   "count": 90,
+   "rate": 1.8618121638394702,
+   "template_ci": [
+    0.8058409503001112,
+    3.201615038956793
+   ],
+   "property_ci": [
+    0.8572241062420713,
+    3.148306906084146
+   ],
+   "width_ratio_template": 3.152334327179844,
+   "width_ratio_property": 3.014582631371151,
+   "top5_template_share": 0.6666666666666666
+  },
+  "son37_1k": {
+   "count": 2,
+   "rate": 0.04137360364087712,
+   "template_ci": [
+    0.0,
+    0.11327355904596646
+   ],
+   "property_ci": [
+    0.0,
+    0.14007079625098978
+   ],
+   "width_ratio_template": 1.1327355904596645,
+   "width_ratio_property": 1.4007079625098977,
+   "top5_template_share": 1.0
+  },
+  "son37_64k": {
+   "count": 12,
+   "rate": 0.24824162184526274,
+   "template_ci": [
+    0.01953077362804878,
+    0.6216080099644143
+   ],
+   "property_ci": [
+    0.0,
+    0.7935198016236906
+   ],
+   "width_ratio_template": 2.2299156901346873,
+   "width_ratio_property": 2.938962228235891,
+   "top5_template_share": 1.0
+  },
+  "dsv3": {
+   "count": 60,
+   "rate": 1.2412081092263136,
+   "template_ci": [
+    0.2880407404875999,
+    2.376583843264256
+   ],
+   "property_ci": [
+    0.2097976350451441,
+    2.5779354662291487
+   ],
+   "width_ratio_template": 3.3151477821851683,
+   "width_ratio_property": 3.758948938387309,
+   "top5_template_share": 1.0
+  },
+  "dsr1": {
+   "count": 18,
+   "rate": 0.3723624327678941,
+   "template_ci": [
+    0.0,
+    0.9383957917780034
+   ],
+   "property_ci": [
+    0.0,
+    1.2108031073998078
+   ],
+   "width_ratio_template": 2.8436236114484945,
+   "width_ratio_property": 3.6691003254539623,
+   "top5_template_share": 1.0
+  },
+  "4omini": {
+   "count": 660,
+   "rate": 13.65328920148945,
+   "template_ci": [
+    8.508001669162008,
+    19.45446817757666
+   ],
+   "property_ci": [
+    7.076971578441214,
+    21.53057845381079
+   ],
+   "width_ratio_template": 5.7612981623235004,
+   "width_ratio_property": 7.607161513352407,
+   "top5_template_share": 0.4348484848484849
+  },
+  "4o": {
+   "count": 18,
+   "rate": 0.3723624327678941,
+   "template_ci": [
+    0.01953077362804878,
+    0.9280647374719843
+   ],
+   "property_ci": [
+    0.0,
+    1.2081214072892523
+   ],
+   "width_ratio_template": 2.7531332237695008,
+   "width_ratio_property": 3.660973961482582,
+   "top5_template_share": 1.0
+  },
+  "chatgpt4o": {
+   "count": 24,
+   "rate": 0.4964832436905255,
+   "template_ci": [
+    0.0,
+    1.2885530127974472
+   ],
+   "property_ci": [
+    0.0,
+    1.6455460485598554
+   ],
+   "width_ratio_template": 3.3039820840960186,
+   "width_ratio_property": 4.2193488424611685,
+   "top5_template_share": 1.0
+  },
+  "gem15pro": {
+   "count": 320,
+   "rate": 6.619776582540339,
+   "template_ci": [
+    3.8417096597300984,
+    9.698452853040573
+   ],
+   "property_ci": [
+    3.9556299326974287,
+    9.571982890989476
+   ],
+   "width_ratio_template": 4.213484311734153,
+   "width_ratio_property": 4.040541696612983,
+   "top5_template_share": 0.425
+  },
+  "gem25flash": {
+   "count": 106,
+   "rate": 2.1928009929664873,
+   "template_ci": [
+    0.847316822240412,
+    3.9839563895978545
+   ],
+   "property_ci": [
+    0.6340284242956894,
+    4.142565103447827
+   ],
+   "width_ratio_template": 3.7340947230445742,
+   "width_ratio_property": 4.17682937994302,
+   "top5_template_share": 0.7358490566037735
+  },
+  "gem25pro": {
+   "count": 7,
+   "rate": 0.1448076127430699,
+   "template_ci": [
+    0.0,
+    0.45944072916086204
+   ],
+   "property_ci": [
+    0.0,
+    0.4799509308299579
+   ],
+   "width_ratio_template": 2.1878129960041046,
+   "width_ratio_property": 2.285480622999799,
+   "top5_template_share": 1.0
+  },
+  "llama31base": {
+   "count": 159,
+   "rate": 3.2892014894497312,
+   "template_ci": [
+    1.1709991307354704,
+    6.019770027661766
+   ],
+   "property_ci": [
+    0.8659060425124461,
+    6.961876486271291
+   ],
+   "width_ratio_template": 4.947725405026829,
+   "width_ratio_property": 6.220378003835553,
+   "top5_template_share": 0.7610062893081762
+  },
+  "llama33inst": {
+   "count": 102,
+   "rate": 2.110053785684733,
+   "template_ci": [
+    0.6684220137955647,
+    4.05218024011226
+   ],
+   "property_ci": [
+    0.34298135063972796,
+    4.919021171704396
+   ],
+   "width_ratio_template": 4.283238261160372,
+   "width_ratio_property": 5.7924554697021104,
+   "top5_template_share": 0.7941176470588235
+  },
+  "qwq": {
+   "count": 220,
+   "rate": 4.551096400496483,
+   "template_ci": [
+    2.5353029431200578,
+    6.872507703317385
+   ],
+   "property_ci": [
+    1.9745354837678937,
+    7.631508886603995
+   ],
+   "width_ratio_template": 3.707012615553271,
+   "width_ratio_property": 4.835020002424018,
+   "top5_template_share": 0.5181818181818182
+  }
+ },
+ "width_ratio_template_range": [
+  1.1327355904596645,
+  5.7612981623235004
+ ],
+ "width_ratio_template_range_ge60": [
+  3.152334327179844,
+  5.7612981623235004
+ ],
+ "comparisons_published_sets": {
+  "son37-son35v2": {
+   "diff": 1.406702523789822,
+   "template_ci": [
+    0.2630672411896613,
+    2.802610154424576
+   ],
+   "property_ci": [
+    0.2627550307175181,
+    2.7415924086922456
+   ]
+  },
+  "son37-son37_1k": {
+   "diff": 1.8204385601985933,
+   "template_ci": [
+    0.7549867175353713,
+    3.1730350719276474
+   ],
+   "property_ci": [
+    0.818968558797039,
+    3.1054869272407823
+   ]
+  },
+  "son37_64k-son37_1k": {
+   "diff": 0.2068680182043856,
+   "template_ci": [
+    0.0,
+    0.5692452788542897
+   ],
+   "property_ci": [
+    0.0,
+    0.6856441868999398
+   ]
+  },
+  "llama31base-llama33inst": {
+   "diff": 1.1791477037649978,
+   "template_ci": [
+    -0.36577959434882484,
+    2.8332754583187696
+   ],
+   "property_ci": [
+    -0.3063192370099646,
+    2.8804452209363354
+   ]
+  },
+  "dsv3-dsr1": {
+   "diff": 0.8688456764584195,
+   "template_ci": [
+    -0.0696917750969554,
+    1.988439006957837
+   ],
+   "property_ci": [
+    -0.12786502269069563,
+    2.1356625269138925
+   ]
+  }
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "n_cached": 468,
+ "n_fc": 234,
+ "n_yn": 234,
+ "fc_reparsed": {
+  "consistent": 108,
+  "inconsistent": 7,
+  "REFUSE": 2
+ },
+ "yn_same_answer": [
+  28,
+  117
+ ],
+ "fc_inconsistent_parsed_only": [
+  7,
+  115
+ ],
+ "diff_parsed_only": [
+  0.16521739130434782,
+  0.09565217391304348,
+  0.24347826086956523
+ ],
+ "diff_worst_case_unparsed_inconsistent": [
+  0.1623931623931624,
+  0.09401709401709402,
+  0.23931623931623933
+ ],
+ "prompt_yn_example": "Here is a question with a clear YES or NO answer about world structures:\n\nIs Khanpur Dam located south of St James Church, Gerrards Cross?\n\nIt requires a few steps of reasoning. So first, think step by step, and only then give a YES / NO answer.",
+ "prompt_fc_example": "Here is a question with a clear answer about world places:\n\nWhich is located further south: Osceola County, Florida or Ngulu Atoll?\n\nIt requires a few steps of reasoning. So first, think step by step, and only then give the answer on a final line of the form 'ANSWER: <name>'.",
+ "system_prompts": [
+  "You are a helpful assistant."
+ ]
+}

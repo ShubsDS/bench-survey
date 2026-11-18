@@ -1,0 +1,130 @@
+{
+ "anthropic/claude-3.5-haiku": {
+  "n_pairs": 7400,
+  "rate_02": 29.69,
+  "rate_05": 16.82,
+  "ratio": 0.567,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "anthropic/claude-3.7-sonnet": {
+  "n_pairs": 7400,
+  "rate_02": 30.59,
+  "rate_05": 16.26,
+  "ratio": 0.531,
+  "printed_v1": 30.6,
+  "printed_v2": 16.3
+ },
+ "anthropic/claude-3.7-sonnet_10k": {
+  "n_pairs": 600,
+  "rate_02": 11.33,
+  "rate_05": 4.0,
+  "ratio": 0.353,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "anthropic/claude-3.7-sonnet_1k": {
+  "n_pairs": 7400,
+  "rate_02": 7.51,
+  "rate_05": 3.18,
+  "ratio": 0.423,
+  "printed_v1": null,
+  "printed_v2": 3.2
+ },
+ "anthropic/claude-3.7-sonnet_32k": {
+  "n_pairs": 600,
+  "rate_02": 14.17,
+  "rate_05": 6.33,
+  "ratio": 0.447,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "anthropic/claude-3.7-sonnet_64k": {
+  "n_pairs": 7400,
+  "rate_02": 10.91,
+  "rate_05": 5.12,
+  "ratio": 0.47,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "claude-3-5-sonnet-20241022": {
+  "n_pairs": 7400,
+  "rate_02": 16.57,
+  "rate_05": 7.93,
+  "ratio": 0.479,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "deepseek/deepseek-chat": {
+  "n_pairs": 7400,
+  "rate_02": 22.31,
+  "rate_05": 11.03,
+  "ratio": 0.494,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "deepseek/deepseek-r1": {
+  "n_pairs": 7400,
+  "rate_02": 15.82,
+  "rate_05": 5.34,
+  "ratio": 0.337,
+  "printed_v1": 15.8,
+  "printed_v2": 5.3
+ },
+ "google/gemini-pro-1.5": {
+  "n_pairs": 7400,
+  "rate_02": 33.38,
+  "rate_05": 19.65,
+  "ratio": 0.589,
+  "printed_v1": 33.4,
+  "printed_v2": 19.6
+ },
+ "meta-llama/Llama-3.1-70B": {
+  "n_pairs": 7400,
+  "rate_02": 32.26,
+  "rate_05": 15.64,
+  "ratio": 0.485,
+  "printed_v1": 32.3,
+  "printed_v2": 15.6
+ },
+ "meta-llama/Llama-3.1-8B-Instruct": {
+  "n_pairs": 600,
+  "rate_02": 46.5,
+  "rate_05": 8.67,
+  "ratio": 0.186,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "meta-llama/Llama-3.3-70B-Instruct": {
+  "n_pairs": 7400,
+  "rate_02": 26.59,
+  "rate_05": 12.38,
+  "ratio": 0.465,
+  "printed_v1": 26.6,
+  "printed_v2": 12.4
+ },
+ "openai/chatgpt-4o-latest": {
+  "n_pairs": 7400,
+  "rate_02": 12.64,
+  "rate_05": 7.03,
+  "ratio": 0.556,
+  "printed_v1": 12.6,
+  "printed_v2": 7.0
+ },
+ "openai/gpt-4.5-preview": {
+  "n_pairs": 600,
+  "rate_02": 10.83,
+  "rate_05": 6.67,
+  "ratio": 0.615,
+  "printed_v1": null,
+  "printed_v2": null
+ },
+ "openai/gpt-4o": {
+  "n_pairs": 7400,
+  "rate_02": 13.93,
+  "rate_05": 4.93,
+  "ratio": 0.354,
+  "printed_v1": null,
+  "printed_v2": null
+ }
+}

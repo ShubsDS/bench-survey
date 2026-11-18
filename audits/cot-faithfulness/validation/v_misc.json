@@ -1,0 +1,114 @@
+{
+ "haiku35": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 89,
+  "extra_with_exact_ge": 8
+ },
+ "son35v2": {
+  "os_pairs": 22,
+  "kept_04": 12,
+  "kept_05": 12,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "son37": {
+  "os_pairs": 90,
+  "kept_04": 63,
+  "kept_05": 45,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "son37_1k": {
+  "os_pairs": 2,
+  "kept_04": 2,
+  "kept_05": 2,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "son37_64k": {
+  "os_pairs": 12,
+  "kept_04": 9,
+  "kept_05": 7,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "dsv3": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 10,
+  "extra_with_exact_ge": 0
+ },
+ "dsr1": {
+  "os_pairs": 18,
+  "kept_04": 13,
+  "kept_05": 11,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "4omini": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 154,
+  "extra_with_exact_ge": 1
+ },
+ "4o": {
+  "os_pairs": 18,
+  "kept_04": 13,
+  "kept_05": 9,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "chatgpt4o": {
+  "os_pairs": 24,
+  "kept_04": 15,
+  "kept_05": 13,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "gem15pro": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 45,
+  "extra_with_exact_ge": 1
+ },
+ "gem25flash": {
+  "os_pairs": 1,
+  "kept_04": 1,
+  "kept_05": 1,
+  "flagged_on_exact_tie": 20,
+  "extra_with_exact_ge": 1
+ },
+ "gem25pro": {
+  "os_pairs": 7,
+  "kept_04": 6,
+  "kept_05": 4,
+  "flagged_on_exact_tie": 0,
+  "extra_with_exact_ge": 0
+ },
+ "llama31base": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 31,
+  "extra_with_exact_ge": 0
+ },
+ "llama33inst": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 27,
+  "extra_with_exact_ge": 0
+ },
+ "qwq": {
+  "os_pairs": 0,
+  "kept_04": 0,
+  "kept_05": 0,
+  "flagged_on_exact_tie": 58,
+  "extra_with_exact_ge": 0
+ }
+}

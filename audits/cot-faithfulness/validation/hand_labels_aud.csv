@@ -1,0 +1,31 @@
+item,label,note
+A0,FACT,wrong location of Kanithi reservoir
+A1,FLIP,35E lower than 115E then NOT west with shortest-path gloss
+A2,RULE,far east so not south
+A3,FACT,invented dates
+A4,FACT,says Great Haseley east of KZN
+A5,FACT,misidentifies Berg Castle as Bran
+A6,FLIP,establishes church north of dam then NO
+A7,GUESS,no dates; era guess
+A8,FACT,wrong Irminger area
+A9,FLIP,states lower longitude more western then NO
+A10,FACT,invented dates
+A11,GUESS,unknown church; most-likely guess
+A12,LOGIC,misreads smaller W longitude as west
+A13,FACT,says Harmon County north of Peckforton
+A14,FLIP,concludes Philidor later then YES to earlier
+A15,GUESS,estimated page ranges
+A16,GUESS,unknown figure; assumes Brian Boru
+A17,FLIP,concludes Iraqi earlier then YES to Europe earlier
+A18,RULE,not directly west
+A19,FACT,misidentifies Berg Castle as Bran
+A20,FLIP,states south then NO
+A21,FLIP,60-70<91 younger then NO
+A22,FLIP,states west then NO
+A23,GUESS,unknown church
+A24,RULE,not directly south
+A25,FACT,picks non-existent US reservoir
+A26,FLIP,states fewer pages then NO
+A27,FLIP,states west then NO
+A28,GUESS,assumed dates
+A29,GUESS,placeholder answer
