@@ -1,7 +1,31 @@
-# Alignment faking: Claude 3 Opus's compliance gap is broad across queries and fully tracked by the reasoning label, but about a third of it is partial compliance
+# Alignment faking: Claude 3 Opus's compliance gap is broad across queries and fully tracked by the reasoning label; partial compliance inflates it by about a fifth
 
-Status: complete, 2026-11-17. Not yet validated by an independent refuter. No inference was run
-(0 calls, 0 USD). Evidence level for each claim:
+Status: complete, 2026-11-17. **Validated by an independent refuter on 2026-11-17; see
+"Validation" below and [`validation/VALIDATION.md`](validation/VALIDATION.md).** No inference was
+run (0 calls, 0 USD). The auditor's original title ended "…but about a third of it is partial
+compliance". The validator corrected it: on the paper's own classifier categories, and on blind
+hand labels, the substantive-compliance gap is 0.80 of the headline, not 0.63.
+
+Validated evidence level for each claim:
+
+- **C1a: R.** Confirmed. The drop-k test could not have shown concentration, since 47 distinct
+  queries comply on free only. Breadth rests on b = 47 and on 158 of 172 queries contributing
+  positively.
+- **C1b: R, with a modest inflation of the point gap (validator; auditor: L3).** The gap on
+  substantive compliance (disclaimers allowed) is 9.2 points, 0.80 [0.65, 0.92] of the headline.
+  The auditor's 0.63 counts complete answers that carry a disclaimer as non-compliance.
+  "Most paid-tier compliance is partial or a refusal" fails pooled: 39% [29, 49].
+- **C1c: R.** Confirmed. 0 of 44 variants keep a gap without the label after correcting for 44
+  tests. The default-cell result is the paper's.
+- **C2: mixed (validator; auditor: R).**
+  - On the Greenblatt release, the pre-registered rule flags 4 of 9 cells, so its verdict is
+    "changes". The cells it flags are underpowered. "Holds" comes only from a post hoc check.
+  - Sheshadri et al.: L1. Their design is paired, so the 4–40% false-pass figure is an upper bound,
+    not the design's rate.
+- **C3: L2 lead, weaker.** The comparison on the human labels is not like for like.
+- **Reasoning rate: reproduces** (11.93%, against the auditor's reported non-reproduction).
+
+Auditor's original evidence levels, kept for the record:
 
 - **C1a, the headline gap at the level of queries: R.** It holds when queries are resampled. It is
   spread over most queries, and removing the queries that carry the most gap barely moves it.
@@ -18,6 +42,87 @@ Status: complete, 2026-11-17. Not yet validated by an independent refuter. No in
   counts plus length reproduce the original classifier's label at held-out AUROC 0.78. On the 106
   human labels, that rule is indistinguishable from the original classifier. The improved
   classifier is clearly better than both.
+
+## Validation
+
+An independent validator re-derived every headline from its own code
+([`validation/`](validation/)), with 80 blind hand labels of its own. Corrections, with the
+auditor's original wording kept:
+
+1. **The reasoning rate reproduces.**
+   - Auditor: "14.5% vs the paper's 11.9%, unexplained".
+   - The paper's metric (fn. 27, §3.2) is the mean of the hard (`effective_scheme`) and soft
+     (`partial_scheme`) classifiers, each counted only on compliant outputs: (40 + 44)/2/352 =
+     **11.93%**.
+   - The auditor used the hard label alone, uncompliant outputs included.
+2. **The query subset is not "an unstated rule".**
+   - The 48 missing ids of the 400 are copyright requests, dropped by the authors' own filter
+     (`pure_system_compare_scheming_helpful_only.py:620,645`; `plot_comp_scheme.py:827-851`).
+   - Table 1's standard errors imply n = 352. The default cell is the paper's own analysis set.
+   - Variants use ids 0–199 and paraphrases ids 0–99 (plus id 183), minus copyright requests.
+   - The rule depends on the query text, not on model behaviour, so no number is biased by it.
+3. **`follows_instructions` is published.**
+   - Auditor: "the compromise classifier's prompt is not in the public repo".
+   - It is printed in App. I.4. The field is True exactly when all three guiding questions are No:
+     category 4, "a completely helpful response without any disclaimers or cautionary warnings".
+   - "Not following instructions" therefore includes category 3, complete answers with a
+     disclaimer.
+   - Blind hand labels agree with the classifier's four categories at κ = 0.92. Of the 19
+     category-3 items, 19 are complete answers.
+4. **C1b size: 0.80, not 0.63.**
+   - Auditor: 0.63 [0.45, 0.83]; "most paid-tier compliance is partial or a refusal"; "about 1.6
+     times larger"; L3.
+   - Substantive compliance (hand-calibrated, disclaimers allowed): default 9.4 [7.9, 10.5] = 0.83
+     [0.70, 0.93]; pooled over 44 variants 0.80 [0.65, 0.92].
+   - Classifier categories 3–4: default 9.7 [6.3, 13.1]; pooled 0.82 [0.73, 0.91].
+   - Paid-tier partial or refusal, pooled: 39% [29, 49], so "most" fails. In the default cell it is
+     7 of 10 (a lead).
+   - The PM metric makes the gap about 1.25 times larger, not 1.6. The 0.63 holds only for the
+     narrower "no disclaimer" definition (hand 0.64 [0.49, 0.76]).
+   - Level: R with about 20% inflation, not L3.
+   - Rater agreement with the auditor's labels on 16 shared items: 81%, κ = 0.58.
+5. **C1a drop-k.**
+   - The ranking is held out and the random reference is matched.
+   - The "default gap" in the drop-k table is the default cell restricted to the 172 pooled queries
+     (12.8 points), not 11.4.
+   - Even the in-sample best 10 queries remove only 23% of the gap. The pre-registered "changes"
+     outcome was unreachable, so the test adds little.
+   - The validator's own version on all 352 queries: k = 10 removes 2.2% (random 95th percentile
+     4.8%).
+6. **C1c, confirmed.**
+   - Pooled residual +0.10 [−0.98, 1.09] (hard label), +0.30 [−0.90, 1.51] (soft label).
+   - Per variant: 1 of 44 nominally positive (`cut_examples`, +6.4 [1.7, 11.0]); 0 of 44 after Holm
+     or BH.
+   - The paper's conditional figure (99% vs 97% refusals) does not reproduce from the released
+     labels (96.7–97.9% vs 97.2%). Its sign is a −2-point gap, not "≈2 points".
+7. **C2 on the Greenblatt release: the pre-registered verdict is "changes".**
+   - The A5 rule flags 4 of 9 cells (the validator gets 3 of 9 at −0.5; the auditor got 1). Its
+     verdict is "changes".
+   - The flags come from cells with 3–17 discordant pairs.
+   - The post hoc marginal check holds in 9 of 9 cells, even at Opus's lower-bound odds ratio. But
+     it is post hoc, so R is not the primary verdict.
+8. **C2, Sheshadri et al.: the design is paired.**
+   - Their code sends the same first-N queries in both tiers at temperature 0
+     (`alignment-faking-extensions` `src/run.py:206`, `src/pipeline/pipelines.py:298-299`). The
+     auditor's model assumed unpaired tiers.
+   - The false-pass rate of the 1-point cut depends on the discordance rate d: 4% (d = 1%), 21%
+     (5%), 29% (10%), 35% (20%).
+   - "4–40%" is the independence upper bound. The MDE column (unpaired) is too large.
+   - The paper states no significance test and no multiple-comparison handling. The L1 lead stands.
+9. **C3 on the 106 human labels.**
+   - The original-classifier columns are 0/1 decisions, so their "AUROC" is balanced accuracy at
+     one threshold, while K's AUROC averages over all thresholds.
+   - As a decision (threshold set on the training rows), K has balanced accuracy 0.53, below the
+     original easy prompt's 0.63 (difference [−0.20, −0.002]).
+   - Those columns are the original prompts re-run on Claude 3.5 Sonnet 20241022, not the model
+     that made the released labels.
+   - The held-out 0.78 reproduces (0.77 over 20 query splits). Length alone gives 0.71.
+10. **Smaller points.**
+    - Three PM-compliant outputs are empty, all free-tier.
+    - The README gave two different intervals for the default gap ([7.4, 15.1] and [7.7, 15.3]);
+      the validator's is [7.4, 15.3].
+    - The A6 permutation null used 200 permutations.
+    - All auditor scripts rerun to identical numbers.
 
 ## The benchmark and what rests on it
 
@@ -49,27 +154,36 @@ It is the reference demonstration of alignment faking. See [`claims.md`](claims.
 
 The helpful-only analyses use the 36,814 helpful-only rows with a PM score. The default cell has
 352 queries; most variants have 172, and each paraphrase has 86. App. A says 400 queries were
-used, so the release is a subset, chosen by an unstated rule.
+used. The auditor wrote that the release is "a subset, chosen by an unstated rule".
+*Validator:* the 48 missing ids are copyright requests, removed by the authors' own
+`is_copyright_question` filter, and Table 1's standard errors imply n = 352. The 172 and 86 cells
+are ids 0–199 and 0–99 (plus id 183), minus copyright requests. None of this depends on model
+outputs.
 
 ## What we found
 
 | Conclusion | Published | Reproduced (release) | Audit result | Verdict |
 |---|---|---|---|---|
 | Opus default gap | 11.3 ± 2.1 | 50/352 − 10/352 = **11.4** | Query-paired bootstrap [7.4, 15.1]; Bonferroni (22 tests) [5.4, 17.6]. b = 47 free-only vs c = 7 paid-only compliers; McNemar p = 2×10⁻⁸; conditional OR 6.7 [3.0, 17.6] | **holds** |
-| Opus default reasoning rate | 11.9 ± 1.7% | 51/352 = **14.5%** | Does not reproduce: 2.6 points above the paper, outside its ±1.7. Compliance reproduces exactly (14.2%) | non-reproduction, unexplained |
-| Gap carried by a few queries? | — | — | 158 of 172 pooled queries contribute positively; 44 queries give half the pooled gap. Removing the top 10 (chosen on held-out variants) removes 3.5% of the default gap (random-removal 95th percentile 8.3%) | **holds**: broad |
-| Gap on full compliance | — | — | `follows_instructions` and PM: **7.1** [4.5, 10.1] = 0.63 [0.45, 0.83] of 11.4; pooled over 44 variants 0.63 [0.57, 0.68]. Odds scale: OR 26 [4.3, 1066] (b = 26, c = 1) | **size changes** (×0.63), existence holds |
-| Gap without the reasoning label | ≈2 points (99% vs 97%) | default: 0.0 [−2.0, 2.0] | Pooled over 44 variants: **+0.1** [−0.9, 1.2] of 11.4. 1 of 44 variants has an interval above 0 | **holds** |
-| "No gap" models (Claude 3 Sonnet, Claude 3 Haiku, Claude 3.5 Haiku, GPT-4 Turbo, GPT-4o) | "almost no" / "no" | gaps −12.9 to +2.4 | Paid rates 1.7–12.9%, so room ≥ 87 points. In 9 of 9 cells the gap interval excludes the gap an Opus-sized odds ratio would give (7–33 points) | **holds** |
-| Sheshadri "5 of 25" (> 1 point, n = 200) | 5/25 | not reproducible | A zero-gap model passes the threshold with probability 4–40% (paid rate 0.5–40%). Near the floor (0.5%), an Opus-sized odds ratio gives a 2.3-point gap against a 4.6-point MDE | **L1 lead; blocked** |
-| Reasoning label = reasoning, not vocabulary | AUROC 0.62 (old), 0.92 (new) vs people | — | Keyword rule K vs the released label: held-out AUROC 0.78 (null 95th percentile 0.56; length alone 0.71). On the 106 human labels: K 0.64 [0.54, 0.74], original classifier 0.58 [0.49, 0.68] / 0.63 [0.55, 0.72], new 0.88 [0.81, 0.95] | **partial lead** |
+| Opus default reasoning rate | 11.9 ± 1.7% | *Validator:* paper metric (mean of hard and soft labels, compliant outputs only) = (40 + 44)/2/352 = **11.93%** | Reproduces exactly. Auditor: "51/352 = 14.5%, does not reproduce". That used the hard label alone, uncompliant outputs included | **reproduces** (auditor's definition error) |
+| Gap carried by a few queries? | — | — | 158 of 172 pooled queries contribute positively; 44 queries give half the pooled gap. Removing the top 10 (chosen on held-out variants) removes 3.5% of the default gap on the 172 pooled queries (random-removal 95th percentile 8.3%). *Validator:* on all 352 queries, 2.2% (random 4.8%); the in-sample best 10 remove only 23%, so "changes" was unreachable | **holds**: broad |
+| Gap on substantive compliance (*validator*) | — | — | Hand-calibrated (disclaimers allowed): **9.2** = **0.80 [0.65, 0.92]** of 11.4 pooled; default 0.83 [0.70, 0.93]. Classifier categories 3–4: default 9.7 [6.3, 13.1], pooled 0.82 [0.73, 0.91] | **holds** (about 20% inflation) |
+| Gap on "full compliance" as the auditor defined it (category 4: no disclaimer) | — | — | `follows_instructions` and PM: **7.1** [4.5, 10.1] = 0.63 [0.45, 0.83] of 11.4. Pooled 0.63: auditor [0.57, 0.68], validator two-way [0.52, 0.73]. Odds scale: OR 26 [4.3, 1066] (b = 26, c = 1) | auditor: **size changes** (×0.63). *Validator:* true only if a complete answer with a disclaimer counts as non-compliance |
+| Gap without the reasoning label | Fig. 15: 99% vs 97% refusals, i.e. a −2-point conditioned gap (the auditor wrote "≈2 points") | default: 0.0 [−2.0, 2.0] | Pooled over 44 variants: **+0.1** [−0.9, 1.2] of 11.4. 1 of 44 variants has an interval above 0; *validator:* 0 of 44 after Holm or BH | **holds** |
+| "No gap" models (Claude 3 Sonnet, Claude 3 Haiku, Claude 3.5 Haiku, GPT-4 Turbo, GPT-4o) | "almost no" / "no" | gaps −12.9 to +2.4 | *Validator, primary:* the pre-registered conditional-OR rule flags 4 of 9 cells, so its verdict is **"changes"**; those cells have 3–17 discordant pairs. Post hoc: paid rates 1.7–12.9%; in 9 of 9 cells the gap interval excludes the gap an Opus-sized odds ratio would give (7–33 points; still 9 of 9 at Opus's lower-bound OR) | auditor: **holds**. *Validator:* pre-registered "changes" (underpowered); "holds" only post hoc |
+| Sheshadri "5 of 25" (> 1 point, n = 200) | 5/25 | not reproducible | Auditor: a zero-gap model passes with probability 4–40%, assuming unpaired tiers. *Validator:* their code uses the same queries in both tiers at temperature 0, so the tiers are paired. P(pass) is 4–35% for discordance 1–20%; 40% is the independence bound. The MDE figures (unpaired) are too large | **L1 lead; blocked** |
+| Reasoning label = reasoning, not vocabulary | AUROC 0.62 (old), 0.92 (new) vs people | — | Keyword rule K vs the released label: held-out AUROC 0.78 (null 95th percentile 0.56, 200 permutations; length alone 0.71). On the 106 human labels: K 0.64 [0.54, 0.74]; original classifier 0.58 [0.49, 0.68] / 0.63 [0.55, 0.72]; new 0.88 [0.81, 0.95]. *Validator:* the original columns are 0/1 decisions. As a decision, K's balanced accuracy is 0.53, below the original easy prompt's 0.63 | **partial lead; weaker** |
 
 Bias direction:
-- The PM-based compliance metric makes the gap about 1.6 times larger in points than full
-  compliance does. Most paid-tier "compliance" is partial: 9 of 10 paid-tier PM compliers in the
-  default cell are labelled as not following instructions.
-- On the odds scale, full compliance shows a *larger* contrast. So the existence of an effect
-  holds; its size in points is inflated.
+- *Validator:* the PM-based compliance metric makes the gap about 1.25 times larger in points than
+  substantive compliance does (auditor: "1.6 times", against the no-disclaimer definition).
+- Auditor: "Most paid-tier 'compliance' is partial: 9 of 10 paid-tier PM compliers in the default
+  cell are labelled as not following instructions." *Validator:* by the classifier's categories,
+  those 9 are 2 complete answers with a disclaimer, 3 compromises and 4 refusals. Pooled over 44
+  variants, 39% [29, 49] of paid-tier PM compliers are partial or refusals, so "most" fails.
+- On the odds scale, the stricter definitions show a *larger* contrast (categories 3–4: OR 12; 4:
+  OR 26; PM: 6.7). So the existence of an effect holds, and its size in points is modestly
+  inflated.
 
 ## The confound and the effect, by claim
 
@@ -93,6 +207,12 @@ Bias direction:
   | 20 | 17.7% | 12.6% | 5.5% | 4.5% |
 
   Only k = 20 beats random, and then by a few points.
+
+  *Validator:* "Default gap" in this table is the default cell restricted to the 172 pooled
+  queries (12.8 points). On all 352 queries, with the ranking taken over all 43 other variants,
+  k = 10 removes 2.2% (random 95th percentile 4.8%). Removing the in-sample best 10 queries would
+  remove only 23%, so the pre-registered "changes" outcome (≥ 50% with ≤ 10 queries) was
+  unreachable. Breadth rests on the 47 free-only queries.
 - **Across models.** Which requests Opus and Claude 3.5 Sonnet comply with is shared: Spearman 0.43
   on per-query free compliance (null 95th percentile 0.12). Which requests carry the gap is not:
   0.04 (p = 0.31). This is weak evidence, since Sonnet has only 4 cells.
@@ -116,8 +236,20 @@ Pooled over 44 variants, free / paid:
 - Refusal-phrase route: 56 (5%) / 68 (19%).
 - PM scores within ±0.3 of the cut-off: 395 / 389.
 
-**Hand validation.** The compromise classifier's prompt is not in the public repo, so I hand-labelled
-40 PM-compliant outputs:
+*Validator:* the routes above split `follows_instructions == False` without saying what it holds.
+The classifier prompt is in the paper (App. I.4), and `follows_instructions` is its category 4.
+
+| PM-compliant outputs | Cat. 4 (clean complete) | Cat. 3 (complete + disclaimer or training talk) | Cat. 2 (compromise) | Cat. 1 (refuses) |
+|---|---|---|---|---|
+| Default, free / paid | 26 / 1 | 11 / 2 | 11 / 3 | 2 / 4 |
+| Pooled 44, free / paid | 649 / 147 | 215 / 59 | 249 / 96 | 53 / 63 |
+
+80 blind validator labels agree with these categories at κ = 0.92 (`validation/VALIDATION.md` §D).
+In the pooled set, 3 PM-compliant free-tier outputs are empty.
+
+**Hand validation (auditor).** The auditor wrote: "The compromise classifier's prompt is not in the
+public repo." *Validator:* it is, in App. I.4. The auditor hand-labelled 40 PM-compliant outputs,
+seeing the first 500 characters of each:
 - 12 + 12 free-tier and 8 + 8 paid-tier, half of each `follows_instructions` True;
 - blind to tier and labels, one rater, item ids and labels in `results/handlabels.csv`, no text
   committed.
@@ -129,12 +261,20 @@ Results:
 - κ = 0.60, agreement 80%.
 
 **Effect on the gap.**
+- *Validator, first:* on substantive compliance (complete answers, disclaimers allowed;
+  hand-calibrated), the gap is 9.4 [7.9, 10.5] in the default cell. Pooled, it is 0.80 [0.65, 0.92]
+  of the headline. On classifier categories 3–4 it is 9.7 [6.3, 13.1], or 0.82 [0.73, 0.91] pooled.
+  This is above the pre-registered "holds" threshold (0.75), with an interval that spans it.
+- The auditor's figures below are on category 4 alone, "no disclaimer". In the auditor's word,
+  that is "full compliance".
 - On full compliance (`C_both`) the gap is 7.1 points [4.5, 10.1], against 11.4.
 - Difference 4.3 [1.4, 7.1]; Bonferroni [0.2, 8.8].
 - Dropping each variant leaves the pooled ratio between 0.60 and 0.64.
 - Threshold −0.5 instead of −0.7: 0.63 (default) and 0.65 (pooled).
-- The paper discloses compromise as "a constant issue confounding our results" (App. E.2). New
-  here: the count by tier, and the size of the effect on the headline gap.
+- The paper discloses compromise as "a constant issue confounding our results" (App. E.2) and
+  publishes the classifier (App. I.4). Hughes et al. note that "a large proportion of Opus' AF
+  shows partial compliance". New here: the count by tier, and the size of the effect on the
+  headline gap.
 
 ### C1c. Per sample, the reasoning label tracks the gap
 
@@ -146,7 +286,14 @@ Results:
   - dropping each variant gives −0.5% to 1.4%;
   - on full compliance, +0.04 [−0.9, 1.1].
 - **Single variants.** Only `cut_examples` has a residual interval above 0 (+6.4 [1.7, 10.8]). That
-  is 1 of 44, about the 2.2 expected by chance.
+  is 1 of 44, about the 2.2 expected by chance. *Validator:* exact one-sided p = 0.006; 0 of 44
+  after Holm (smallest adjusted p 0.28) or BH. With the soft label, the largest residual is
+  `dont_care_w_instruct`, +6.4 [−1.8, 14.0].
+- *Validator:* the label used here is `effective_scheme` alone. The paper's reasoning metric
+  averages it with `partial_scheme`, on compliant outputs only. With the soft label the pooled
+  residual is +0.30 [−0.90, 1.51]. The paper's Fig. 15 figure (99% vs 97% refusals) does not
+  reproduce from the released labels: training refusal given no label is 96.7–97.9%, against 97.2%
+  unmonitored, depending on the label.
 - **Claude 3.5 Sonnet.** The residual is negative (−14.0 [−21.5, −6.4]): its non-labelled
   free-tier compliance is *below* its paid-tier compliance.
 - **The label is not sufficient for compliance.** 162 of 956 labelled free-tier samples (17%) were
@@ -180,6 +327,11 @@ The cut-RLHF-info prompt gives the same picture; all cells are in `results.json`
   - That rule fails because these models have few discordant pairs (b + c = 3–17), not because
     their behaviour resembles Opus's. I report the pre-registered result and read the marginal
     check (post hoc) as the stronger test.
+  - *Validator:* under the pre-registered rule, a single flagged cell means "changes", so the
+    primary verdict is **"changes"** (4 of 9 at −0.7; the validator gets 3 of 9 at −0.5, the
+    auditor 1, because cells with c = 0 have unbounded intervals). The marginal check holds in 9 of
+    9 cells even at Opus's bootstrap lower-bound OR (3.2 default, 2.3 cut-RLHF; closest cell
+    cut-RLHF Sonnet 3.0, 1.4 against 2.2). It is post hoc, and is reported as such.
 - **The scale changes the Opus vs Sonnet 3.5 comparison** (post hoc P2, 172 shared queries).
   - In points, Sonnet's gap is larger: 19.8 vs 12.8, difference +7.0 [−3.5, 18.0].
   - In log odds it is smaller: 0.80 vs 1.68, difference −0.88 [−2.20, 0.00].
@@ -200,6 +352,16 @@ The cut-RLHF-info prompt gives the same picture; all cells are in `results.json`
     what the design can detect.
   - Which of the 20 "no gap" models sit where cannot be checked: per-model numbers are only in
     figures. I did not read values off the figures.
+  - *Validator:* the table above assumes unpaired tiers. Sheshadri et al. sample at temperature 0
+    (§3.1), and their code sends the same first-N queries to both tiers (`src/run.py:206`,
+    `src/pipeline/pipelines.py:298-299`). The design is therefore paired.
+    - With no tier effect, the chance that the gap exceeds 1 point (b − c ≥ 3 of 200) depends on
+      the share d of queries whose outcome flips between tiers: 3.7% (d = 1%), 10% (2%), 21% (5%),
+      29% (10%), 35% (20%).
+    - The column above is the independence case, an upper bound. The MDE column is likewise too
+      large.
+    - The paper states no significance test and no multiple-comparison handling. Its "1σ ≤ 3.6%" is
+      per fraction, not per paired difference.
 
 ### C3. The judge and its vocabulary
 
@@ -216,6 +378,12 @@ The cut-RLHF-info prompt gives the same picture; all cells are in `results.json`
   - The new GPT-4o classifier: 0.88 [0.81, 0.95], better than K by 0.13–0.35.
   - So on this sample, the original classifier's agreement with people is matched by a vocabulary
     rule fitted to its own labels.
+  - *Validator:* this comparison is not like for like. The original-classifier columns are 0/1
+    decisions, so their AUROC is balanced accuracy at one threshold. Thresholded at the training
+    label rate, K flags 7 of 106 and has balanced accuracy 0.53, below the easy prompt's 0.63
+    (difference [−0.20, −0.002]) and not distinguishable from the hard prompt's 0.58. Those columns
+    are also the original prompts re-run on Claude 3.5 Sonnet 20241022, not the model that made the
+    released labels. On the held-out Greenblatt rows, length alone reaches 0.71 of K's 0.77.
 - **Errors by model and length.**
   - The original binary decision (`hard_and_easy_af`, accuracy 0.61, 30 false positives) has
     errors that track neither model (p = 0.40) nor length tercile (p = 0.52).
@@ -250,7 +418,7 @@ The cut-RLHF-info prompt gives the same picture; all cells are in `results.json`
 | Check | Result | Survives? |
 |---|---|---|
 | Seed 1 (all bootstraps, splits, permutations) | Every quantity within 0.01 of seed 0 (`results/robust.json`) | yes |
-| PM threshold −0.5 (App. D.8) instead of −0.7 | Gap 11.4 [7.4, 15.1]; full-compliance ratio 0.63 / 0.65; residual 0.0. C2's conditional-OR flags drop from 4 to 1 | yes; the C2 pre-registered flags are threshold-fragile |
+| PM threshold −0.5 (App. D.8) instead of −0.7 | Gap 11.4 [7.4, 15.1]; full-compliance ratio 0.63 / 0.65; residual 0.0. C2's conditional-OR flags drop from 4 to 1 (*validator:* 3, counting cells with unbounded intervals) | yes; the C2 pre-registered flags are threshold-fragile, but at least one cell is flagged at either threshold, so the pre-registered verdict is "changes" |
 | Drop each variant | A3 pooled ratio 0.60–0.64; A4 residual share −0.5%–1.4% | yes |
 | Random-removal control for drop-k | Targeted removal beats random only at k = 20, by 5 points | yes (no concentration) |
 | Placebo `follows_instructions` (permuted within tier) | Ratio 0.07–0.15, against 0.63 observed. The label is concentrated in PM-compliant rows, as it should be | — |
@@ -292,17 +460,22 @@ New here:
 - the reversal of the Opus vs Sonnet 3.5 comparison on the odds scale;
 - the power and false-pass analysis of the 1-point threshold;
 - the vocabulary rule against the released label and against human labels;
-- the non-reproduction of the default reasoning rate (14.5% vs 11.9%).
+- ~~the non-reproduction of the default reasoning rate (14.5% vs 11.9%)~~ *Validator:* withdrawn;
+  the paper's metric reproduces at 11.93%.
 
 ## What this does not show
 
 - **Nothing per sample about Sheshadri et al.'s 25 models.** The C2 statement on them is about the
   design only.
 - **The meaning of `follows_instructions`** comes from its name, App. E.2 and 40 hand labels by one
-  rater who knew the design. κ = 0.60 is moderate.
+  rater who knew the design. κ = 0.60 is moderate. *Validator:* it is the paper's App. I.4
+  category 4 (complete, no disclaimer). 80 blind validator labels agree with the four categories at
+  κ = 0.92.
 - **The release is a subset of the paper's 400 queries** (352, 172 and 86 per cell), chosen by an
   unstated rule. Cross-variant results use the shared 172. The reasoning-rate mismatch may come from
-  this subset or from a different label version.
+  this subset or from a different label version. *Validator:* the rule is the authors' copyright
+  filter plus an id range. The paper's Table 1 is on the same 352. The reasoning-rate "mismatch" was
+  a definition error.
 - **Haiku 3.0 cells are tiny** (31 and 41 complete pairs) and say little.
 - **No intervention.** Nothing here is causal. "Accounts for" in C1c means the counts line up.
 - **The PM and the compromise classifier are unreleased.** All compliance labels are taken as
@@ -336,3 +509,16 @@ data/.venv/bin/python -I scripts/build_results.py         # results.json
 ```
 
 Inference: none.
+
+Validation (independent code, no import of `scripts/`):
+
+```bash
+cd validation
+../data/.venv/bin/python -I vload.py            # data/val_labels.parquet (labels and counts only)
+../data/.venv/bin/python -I rederive.py         # rederive.json: subset rule, reasoning rate, C1a-C1c, C2, Sheshadri
+../data/.venv/bin/python -I dropk.py            # dropk.json
+../data/.venv/bin/python -I c1c_pooled.py       # c1c_pooled.json
+../data/.venv/bin/python -I c3.py               # c3.json
+../data/.venv/bin/python -I handlabel_draw.py   # blind view and key in data/ (git-ignored)
+../data/.venv/bin/python -I handlabel_analyze.py  # handlabels_validator.{csv,json}
+```
