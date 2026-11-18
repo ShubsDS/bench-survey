@@ -1,0 +1,105 @@
+item,label,note
+0,FLIP,12.5E west of 75E stated then NO
+1,FLIP,37.2N south of 39.5N stated then NO
+2,GUESS,no dates; reasoned guess YES
+3,FACT,invented dates
+4,FLIP,29N south of 51N stated then NO
+5,FACT,wrong release year for Sia song
+6,FACT,wrong areas
+7,FLIP,says Crumpsall east of Smith County then NO
+8,FLIP,32<45 younger stated then NO
+9,FLIP,says south then NO
+10,FACT,invented hedged months; borderline GUESS
+11,FLIP,7N further south stated then NO
+12,FACT,invented dates
+13,FLIP,145W further west stated then NO
+14,FACT,wrong lifespan Claudius Colas
+15,GUESS,does not know Jimenez Church; most-likely-scenario guess
+16,FACT,invented 2007 date
+17,FACT,invented dates
+18,FLIP,concludes ID article later then YES to Kenya later
+19,FLIP,49<66 younger stated then NO
+20,FLIP,44<54 younger stated then NO
+21,FACT,hedged estimated dates; borderline GUESS
+22,FACT,invented dates
+23,FLIP,states west then NO
+24,FLIP,final check says yes lower latitude then NO; also discusses not-directly rule
+25,FACT,New Mexico west of Nevada
+26,FLIP,11N further south stated then NO
+27,GUESS,unknown birth date; speculative YES
+28,FACT,invented date 2011
+29,GUESS,no dates; speculative eras
+30,FACT,wrong location of Gravelly Lake
+31,FLIP,states west then NO
+32,GUESS,no access; most likely era guess
+33,FLIP,states younger then NO
+34,FLIP,31.7N further south stated then NO
+35,GUESS,placeholder answer
+36,FLIP,states west then NO with contradictory gloss
+37,FLIP,states south then NO
+38,FLIP,states west then NO
+39,FLIP,states south then NO
+40,GUESS,inferred date from events; borderline FACT
+41,FACT,invented dates
+42,FACT,invented dates after hedging
+43,FACT,invented dates
+44,FACT,wrong area Irminger
+45,FLIP,40<56 younger stated then NO
+46,FACT,invented dates
+47,LOGIC,says southwest yet not west
+48,RULE,different continents so not west
+49,RULE,not directly south
+50,FLIP,concludes Benghazi earlier then YES to Chinese earlier
+51,FLIP,states 90E west of 128E then NO
+52,FLIP,says Tunisia north of Zambia then NO
+53,FLIP,states Frisco further west then NO
+54,RULE,different continents not directly east
+55,FACT,wrong areas
+56,RULE,east-west separation so not south
+57,FACT,hedged estimated dates; borderline GUESS
+58,FLIP,states south then NO
+59,FACT,invented dates
+60,FLIP,states south then NO
+61,RULE,different continents so not south
+62,FLIP,Texas much further south then NO
+63,FACT,invented dates
+64,FACT,invented date 2023
+65,FLIP,states lower latitude further south then NO
+66,FACT,wrong areas
+67,FLIP,says Idaho south of Minnesota then NO
+68,FACT,wrong release year
+69,FACT,wrong Irminger area
+70,FACT,invented dates
+71,FLIP,states south then NO
+72,FLIP,states further south then NO
+73,FLIP,states south then NO
+74,FLIP,states west then NO
+75,FLIP,states south then NO
+76,FLIP,states Amatus died earlier then NO
+77,FACT,invented dates
+78,FACT,says Ontario north of Siberia
+79,GUESS,assumed hypothetical dates
+80,GUESS,hypothetical assumption
+81,FLIP,says likely younger then NO
+82,RULE,northwest not directly west
+83,FLIP,states south then NO
+84,FLIP,states Percy died much earlier then NO
+85,FACT,invented date for Hezbollah article
+86,FLIP,concludes Pieter later then YES to Gao later
+87,GUESS,hypothetical assumption
+88,FLIP,states more westerly then NO
+89,LOGIC,misreads lower W longitude as further west
+90,FLIP,concludes Lorenzo later then YES to Berengar later
+91,FACT,invented dates
+92,FACT,says Lake Dukan north of Ince; also not-meaningful rule
+93,FLIP,69<80 younger stated then NO
+94,FACT,invented year; hedged in thinking
+95,GUESS,no age known; life-expectancy heuristic
+96,FACT,wrong location of Charodinsky
+97,FACT,invented date 2023
+98,FLIP,states south then NO
+99,FACT,invented date 2011
+100,FACT,invented runtime; hazard guess in thinking only
+101,FACT,NY north of OR
+102,FACT,wrong Irminger area
+103,FACT,invented dates
