@@ -1,0 +1,62 @@
+{
+ "engineering": {
+  "n": 390,
+  "n_detour": 266,
+  "vocab": 1331,
+  "tasks_with_both_constructions": 37,
+  "lam1": {
+   "oof_accuracy": 0.9487,
+   "oof_auc": 0.9882,
+   "majority_baseline": 0.6821
+  },
+  "steps_only_oof_accuracy": 0.6769,
+  "lam10": {
+   "oof_accuracy": 0.9282,
+   "oof_auc": 0.9883,
+   "majority_baseline": 0.6821
+  }
+ },
+ "research": {
+  "n": 112,
+  "n_detour": 64,
+  "vocab": 441,
+  "tasks_with_both_constructions": 6,
+  "lam1": {
+   "oof_accuracy": 0.6339,
+   "oof_auc": 0.513,
+   "majority_baseline": 0.5714
+  },
+  "steps_only_oof_accuracy": 0.5625,
+  "lam10": {
+   "oof_accuracy": 0.6339,
+   "oof_auc": 0.777,
+   "majority_baseline": 0.5714
+  }
+ },
+ "floor_cont": {
+  "average_inferred_cell": 52.1,
+  "average_true_cell": 58.8,
+  "cells_inferred": {
+   "parallel_engineering": 58.1,
+   "parallel_research": 31.2,
+   "detour_engineering": 59.0,
+   "detour_research": 56.2
+  }
+ },
+ "floor_ground": {
+  "average_inferred_cell": 55.1,
+  "average_true_cell": 57.7,
+  "cells_inferred": {
+   "parallel_engineering": 54.0,
+   "parallel_research": 41.7,
+   "detour_engineering": 60.5,
+   "detour_research": 59.4
+  }
+ },
+ "cell_blind_cont_accuracy_by_domain_and_sign": {
+  "engineering_higher": 42.6,
+  "engineering_lower": 51.5,
+  "research_higher": 50.9,
+  "research_lower": 46.4
+ }
+}

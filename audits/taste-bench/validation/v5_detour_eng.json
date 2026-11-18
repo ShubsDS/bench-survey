@@ -1,0 +1,545 @@
+{
+ "n_items": 266,
+ "n_tasks": 133,
+ "m_star": 2.842,
+ "haiku_H1_icc_de": 0.143,
+ "haiku_H0_icc_de": 0.144,
+ "models": {
+  "claude-opus-5": {
+   "single_all": 40.6,
+   "single_parsed": 40.6,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    35.0,
+    46.2
+   ],
+   "ci_icc_0.1": [
+    34.5,
+    46.7
+   ],
+   "ci_icc_0.3": [
+    33.6,
+    47.6
+   ],
+   "ci_icc_haiku_H1": [
+    34.3,
+    46.9
+   ],
+   "ci_icc_worst_1.0": [
+    31.2,
+    50.0
+   ],
+   "ci_parsed_haikuicc": [
+    34.0,
+    47.2
+   ]
+  },
+  "claude-sonnet-5": {
+   "single_all": 46.4,
+   "single_parsed": 46.4,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    41.1,
+    51.8
+   ],
+   "ci_icc_0.1": [
+    40.6,
+    52.2
+   ],
+   "ci_icc_0.3": [
+    39.8,
+    53.1
+   ],
+   "ci_icc_haiku_H1": [
+    40.4,
+    52.4
+   ],
+   "ci_icc_worst_1.0": [
+    37.4,
+    55.4
+   ],
+   "ci_parsed_haikuicc": [
+    39.7,
+    53.2
+   ]
+  },
+  "deepseek-v4-flash": {
+   "single_all": 41.5,
+   "single_parsed": 41.7,
+   "unparsed": 2,
+   "errors": 0,
+   "ci_icc_0": [
+    36.4,
+    46.7
+   ],
+   "ci_icc_0.1": [
+    36.0,
+    47.1
+   ],
+   "ci_icc_0.3": [
+    35.1,
+    47.9
+   ],
+   "ci_icc_haiku_H1": [
+    35.8,
+    47.3
+   ],
+   "ci_icc_worst_1.0": [
+    32.9,
+    50.2
+   ],
+   "ci_parsed_haikuicc": [
+    35.0,
+    48.4
+   ]
+  },
+  "glm-5.2": {
+   "single_all": 52.1,
+   "single_parsed": 52.5,
+   "unparsed": 4,
+   "errors": 0,
+   "ci_icc_0": [
+    46.8,
+    57.3
+   ],
+   "ci_icc_0.1": [
+    46.4,
+    57.8
+   ],
+   "ci_icc_0.3": [
+    45.5,
+    58.6
+   ],
+   "ci_icc_haiku_H1": [
+    46.2,
+    58.0
+   ],
+   "ci_icc_worst_1.0": [
+    43.2,
+    60.9
+   ],
+   "ci_parsed_haikuicc": [
+    45.7,
+    59.2
+   ]
+  },
+  "gpt-5.4-mini": {
+   "single_all": 37.4,
+   "single_parsed": 38.7,
+   "unparsed": 18,
+   "errors": 0,
+   "ci_icc_0": [
+    32.4,
+    42.4
+   ],
+   "ci_icc_0.1": [
+    32.0,
+    42.9
+   ],
+   "ci_icc_0.3": [
+    31.2,
+    43.6
+   ],
+   "ci_icc_haiku_H1": [
+    31.8,
+    43.0
+   ],
+   "ci_icc_worst_1.0": [
+    29.0,
+    45.8
+   ],
+   "ci_parsed_haikuicc": [
+    32.0,
+    45.4
+   ]
+  },
+  "gpt-5.4-nano": {
+   "single_all": 37.8,
+   "single_parsed": 42.3,
+   "unparsed": 57,
+   "errors": 0,
+   "ci_icc_0": [
+    32.8,
+    42.8
+   ],
+   "ci_icc_0.1": [
+    32.3,
+    43.2
+   ],
+   "ci_icc_0.3": [
+    31.5,
+    44.0
+   ],
+   "ci_icc_haiku_H1": [
+    32.1,
+    43.4
+   ],
+   "ci_icc_worst_1.0": [
+    29.3,
+    46.2
+   ],
+   "ci_parsed_haikuicc": [
+    35.3,
+    49.4
+   ]
+  },
+  "gpt-5.5": {
+   "single_all": 52.4,
+   "single_parsed": 52.4,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    46.7,
+    58.1
+   ],
+   "ci_icc_0.1": [
+    46.2,
+    58.6
+   ],
+   "ci_icc_0.3": [
+    45.3,
+    59.5
+   ],
+   "ci_icc_haiku_H1": [
+    46.0,
+    58.8
+   ],
+   "ci_icc_worst_1.0": [
+    42.8,
+    62.1
+   ],
+   "ci_parsed_haikuicc": [
+    45.7,
+    59.2
+   ]
+  },
+  "gpt-5.6-luna": {
+   "single_all": 43.6,
+   "single_parsed": 43.6,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    38.4,
+    48.9
+   ],
+   "ci_icc_0.1": [
+    37.9,
+    49.3
+   ],
+   "ci_icc_0.3": [
+    37.1,
+    50.1
+   ],
+   "ci_icc_haiku_H1": [
+    37.7,
+    49.5
+   ],
+   "ci_icc_worst_1.0": [
+    34.8,
+    52.4
+   ],
+   "ci_parsed_haikuicc": [
+    36.9,
+    50.3
+   ]
+  },
+  "gpt-5.6-sol": {
+   "single_all": 53.8,
+   "single_parsed": 53.8,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    48.1,
+    59.4
+   ],
+   "ci_icc_0.1": [
+    47.6,
+    59.9
+   ],
+   "ci_icc_0.3": [
+    46.7,
+    60.8
+   ],
+   "ci_icc_haiku_H1": [
+    47.4,
+    60.1
+   ],
+   "ci_icc_worst_1.0": [
+    44.2,
+    63.3
+   ],
+   "ci_parsed_haikuicc": [
+    47.0,
+    60.5
+   ]
+  },
+  "gpt-5.6-terra": {
+   "single_all": 50.4,
+   "single_parsed": 50.4,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    45.0,
+    55.8
+   ],
+   "ci_icc_0.1": [
+    44.5,
+    56.3
+   ],
+   "ci_icc_0.3": [
+    43.6,
+    57.1
+   ],
+   "ci_icc_haiku_H1": [
+    44.3,
+    56.4
+   ],
+   "ci_icc_worst_1.0": [
+    41.3,
+    59.5
+   ],
+   "ci_parsed_haikuicc": [
+    43.6,
+    57.1
+   ]
+  },
+  "grok-4.20-reasoning": {
+   "single_all": 36.5,
+   "single_parsed": 64.7,
+   "unparsed": 232,
+   "errors": 0,
+   "ci_icc_0": [
+    31.8,
+    41.1
+   ],
+   "ci_icc_0.1": [
+    31.4,
+    41.5
+   ],
+   "ci_icc_0.3": [
+    30.7,
+    42.3
+   ],
+   "ci_icc_haiku_H1": [
+    31.2,
+    41.7
+   ],
+   "ci_icc_worst_1.0": [
+    28.6,
+    44.3
+   ],
+   "ci_parsed_haikuicc": [
+    56.1,
+    73.3
+   ]
+  },
+  "grok-4.5": {
+   "single_all": 58.5,
+   "single_parsed": 58.6,
+   "unparsed": 1,
+   "errors": 0,
+   "ci_icc_0": [
+    53.2,
+    63.7
+   ],
+   "ci_icc_0.1": [
+    52.8,
+    64.2
+   ],
+   "ci_icc_0.3": [
+    51.9,
+    65.0
+   ],
+   "ci_icc_haiku_H1": [
+    52.6,
+    64.3
+   ],
+   "ci_icc_worst_1.0": [
+    49.6,
+    67.3
+   ],
+   "ci_parsed_haikuicc": [
+    51.9,
+    65.2
+   ]
+  },
+  "minimax-m3": {
+   "single_all": 47.0,
+   "single_parsed": 47.0,
+   "unparsed": 0,
+   "errors": 0,
+   "ci_icc_0": [
+    41.8,
+    52.2
+   ],
+   "ci_icc_0.1": [
+    41.3,
+    52.7
+   ],
+   "ci_icc_0.3": [
+    40.5,
+    53.5
+   ],
+   "ci_icc_haiku_H1": [
+    41.1,
+    52.8
+   ],
+   "ci_icc_worst_1.0": [
+    38.2,
+    55.8
+   ],
+   "ci_parsed_haikuicc": [
+    40.3,
+    53.7
+   ]
+  },
+  "mistral-medium-3.5": {
+   "single_all": 53.0,
+   "single_parsed": 53.5,
+   "unparsed": 5,
+   "errors": 0,
+   "ci_icc_0": [
+    47.8,
+    58.2
+   ],
+   "ci_icc_0.1": [
+    47.3,
+    58.7
+   ],
+   "ci_icc_0.3": [
+    46.5,
+    59.5
+   ],
+   "ci_icc_haiku_H1": [
+    47.2,
+    58.9
+   ],
+   "ci_icc_worst_1.0": [
+    44.2,
+    61.8
+   ],
+   "ci_parsed_haikuicc": [
+    46.7,
+    60.3
+   ]
+  }
+ },
+ "below50_single_all": [
+  "claude-opus-5",
+  "claude-sonnet-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.6-luna",
+  "grok-4.20-reasoning",
+  "minimax-m3"
+ ],
+ "below50_single_parsed": [
+  "claude-opus-5",
+  "claude-sonnet-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.6-luna",
+  "minimax-m3"
+ ],
+ "upper_below50_all_icc_0": [
+  "claude-opus-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.6-luna",
+  "grok-4.20-reasoning"
+ ],
+ "upper_below50_all_icc_0.1": [
+  "claude-opus-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.6-luna",
+  "grok-4.20-reasoning"
+ ],
+ "upper_below50_all_icc_0.3": [
+  "claude-opus-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "grok-4.20-reasoning"
+ ],
+ "upper_below50_all_icc_haiku_H1": [
+  "claude-opus-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.6-luna",
+  "grok-4.20-reasoning"
+ ],
+ "upper_below50_all_icc_worst_1.0": [
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "grok-4.20-reasoning"
+ ],
+ "upper_below50_parsed_haikuicc": [
+  "claude-opus-5",
+  "deepseek-v4-flash",
+  "gpt-5.4-mini",
+  "gpt-5.4-nano"
+ ],
+ "selection_carryover": {
+  "all": {
+   "slope_de_on_other": 0.307,
+   "r_de_other": 0.524,
+   "residual_related_minus_unrelated": 0.23,
+   "one_sided_p_related_lower": 0.526,
+   "residuals": {
+    "claude-opus-5": -8.7,
+    "claude-sonnet-5": -1.8,
+    "deepseek-v4-flash": -5.2,
+    "glm-5.2": 3.1,
+    "gpt-5.4-mini": -6.4,
+    "gpt-5.4-nano": -6.6,
+    "gpt-5.5": 3.1,
+    "gpt-5.6-luna": -4.5,
+    "gpt-5.6-sol": 4.2,
+    "gpt-5.6-terra": 1.6,
+    "grok-4.20-reasoning": 0.7,
+    "grok-4.5": 11.4,
+    "minimax-m3": -0.2,
+    "mistral-medium-3.5": 9.4
+   }
+  },
+  "parsed": {
+   "slope_de_on_other": -0.043,
+   "r_de_other": -0.031,
+   "residual_related_minus_unrelated": -2.43,
+   "one_sided_p_related_lower": 0.279,
+   "residuals": {
+    "claude-opus-5": -8.2,
+    "claude-sonnet-5": -2.5,
+    "deepseek-v4-flash": -7.4,
+    "glm-5.2": 3.7,
+    "gpt-5.4-mini": -10.5,
+    "gpt-5.4-nano": -7.0,
+    "gpt-5.5": 3.7,
+    "gpt-5.6-luna": -5.3,
+    "gpt-5.6-sol": 5.0,
+    "gpt-5.6-terra": 1.5,
+    "grok-4.20-reasoning": 15.4,
+    "grok-4.5": 9.5,
+    "minimax-m3": -2.1,
+    "mistral-medium-3.5": 4.1
+   }
+  }
+ },
+ "related_models": [
+  "gpt-5.4-mini",
+  "gpt-5.4-nano",
+  "gpt-5.5",
+  "gpt-5.6-luna",
+  "gpt-5.6-sol",
+  "gpt-5.6-terra",
+  "mistral-medium-3.5"
+ ]
+}
