@@ -1,4 +1,90 @@
 {
+ "validation": {
+  "status": "validated 2026-11-17 by an independent agent; see validation/VALIDATION.md and validation/validation.json. Note: scripts/build_results.py regenerates this file without this block.",
+  "validated_headline": "The prohibition text never reaches the agent (4/979; L1). Whether that changes behaviour is untested: Haiku is at 0 in every arm, also in a more faithful transcript (0/40), and by the paper's own per-level table its cautious models would probably also show 0 in this design. The only model result is a stated answer: asked the paper's probe, Haiku says the misaligned tool is not allowed (YES 0/62) and the aligned tool is allowed (YES 56/62). 32 self-proliferation and cybersecurity scenarios only.",
+  "original_headline": "showing the missing prohibition changes nothing for Claude Haiku, which already treats the tool as forbidden. The effect on the paper's models is still untested",
+  "claims": {
+   "C1_prohibition_not_shown": {
+    "level": "L1",
+    "value": "4/979",
+    "disclosure": "disclosed in appendix listing and results.tex:87; contradicted by method.tex:361 and part of primary.tex:372"
+   },
+   "C1_stated_knowledge": {
+    "level": "R, narrow (Haiku stated answer)",
+    "original_level": "R (L4, Haiku only)",
+    "original_wording": "Haiku infers the prohibition without it",
+    "validated_wording": "Haiku says the misaligned tool is not allowed when asked",
+    "misaligned_yes": {
+     "A": "0/62",
+     "B1": "0/63",
+     "P": "0/62",
+     "G": "0/63"
+    },
+    "aligned_tool_yes_positive_control": "56/62"
+   },
+   "C1_behaviour": {
+    "level": "not testable with this design",
+    "A_late": "0/62 (worst case with blocked as misaligned 2/64, upper95 0.095)",
+    "A_none": "0/61 (worst 3/64)",
+    "faithful_variant": "0/40",
+    "paper_implied_P_zero_in_62_level12_harmful": {
+     "Claude Sonnet 4": 0.974,
+     "o3": 0.937,
+     "Gemini 2.5 Pro": 0.793,
+     "GPT-4o": 0.083
+    }
+   },
+   "C2_benign_identifies_tool": {
+    "level": "L1",
+    "original_level": "R (L1, corpus)",
+    "header_names_nonempty_tool_benign": "971/979",
+    "original_value": "979/979",
+    "note": "paper states the tool is named in both conditions (results.tex:87)"
+   },
+   "C3_pressure": {
+    "level": "not testable"
+   },
+   "scorer_exceptions": {
+    "level": "L1",
+    "validated_wording": "an errored run leaves no result line; no aggregation script is released; default resume re-queues it",
+    "original_wording": "dropped from the results and from the denominator"
+   },
+   "auth_wording_level12": {
+    "auditor_lexicon": 0.365,
+    "validator_lexicons": [
+     0.355,
+     0.201
+    ]
+   },
+   "bypass_subset_A_late": {
+    "validated": "0/14 parsed, 2 blocked",
+    "original": "0/16"
+   },
+   "keyword_protocol_mentions": {
+    "original": "49/63",
+    "validated": "lexicon-dependent, 28/63 to 60/63; 'rest mostly on' withdrawn"
+   },
+   "names_tool_or_bypass": {
+    "original": "49/64",
+    "validator": "39/64"
+   }
+  },
+  "inference_total": {
+   "auditor": {
+    "calls": 831,
+    "usd": 1.147
+   },
+   "validator": {
+    "calls": 102,
+    "usd": 0.2334
+   },
+   "total": {
+    "calls": 933,
+    "usd": 1.3805
+   },
+   "model": "claude-haiku-5-5"
+  }
+ },
  "pins": {
   "code_and_data": "scaleapi/propensity-evaluation@09872f3bbb900a18b2ddc1b5a95d74a0f4db9e17",
   "paper": "arXiv 2511.20703v1 source sha256 95d3ade1dc31176ec13970e20e86dc067878695b0e43f1c38f07ad200b543d5c"
