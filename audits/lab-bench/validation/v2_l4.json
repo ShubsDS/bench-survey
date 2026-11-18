@@ -1,0 +1,251 @@
+{
+ "n_items_edit": 147,
+ "forced_and_edit_on_same_items": true,
+ "per_family": {
+  "ORF-seq-AAseq": {
+   "n": 25,
+   "forced": 1.0,
+   "edit": 1.0,
+   "drop": 0.0,
+   "drop_ci_items": [
+    0.0,
+    0.0
+   ],
+   "pick_central": 0.0
+  },
+  "PCR-gene-enzprimers": {
+   "n": 22,
+   "forced": 0.773,
+   "edit": 0.727,
+   "drop": 0.045,
+   "drop_ci_items": [
+    -0.227,
+    0.319
+   ],
+   "pick_central": 0.227
+  },
+  "PCR-gene-gibshindprimers": {
+   "n": 25,
+   "forced": 0.96,
+   "edit": 0.44,
+   "drop": 0.52,
+   "drop_ci_items": [
+    0.32,
+    0.72
+   ],
+   "pick_central": 0.4,
+   "pedit": 0.76
+  },
+  "PCR-gene-gibssmaprimers": {
+   "n": 25,
+   "forced": 0.96,
+   "edit": 0.56,
+   "drop": 0.4,
+   "drop_ci_items": [
+    0.2,
+    0.6
+   ],
+   "pick_central": 0.44,
+   "pedit": 1.0
+  },
+  "PCR-seq-enzprimers": {
+   "n": 25,
+   "forced": 1.0,
+   "edit": 1.0,
+   "drop": 0.0,
+   "drop_ci_items": [
+    0.0,
+    0.0
+   ],
+   "pick_central": 0.0
+  },
+  "Prop-seq-gcpercent": {
+   "n": 25,
+   "forced": 0.84,
+   "edit": 0.72,
+   "drop": 0.12,
+   "drop_ci_items": [
+    -0.12,
+    0.36
+   ],
+   "pick_central": 0.24
+  }
+ },
+ "pooled": {
+  "n": 147,
+  "forced": 0.925,
+  "edit": 0.741,
+  "drop": 0.184,
+  "drop_ci_items": [
+   0.102,
+   0.265
+  ],
+  "drop_ci_templates": [
+   0.035,
+   0.347
+  ],
+  "n_templates": 6,
+  "pick_central": 0.218,
+  "pick_each_other_distractor": 0.02
+ },
+ "without_gibson": {
+  "n": 97,
+  "forced": 0.907,
+  "edit": 0.866,
+  "drop": 0.041,
+  "drop_ci_items": [
+   -0.052,
+   0.134
+  ],
+  "drop_ci_templates": [
+   0.0,
+   0.09
+  ],
+  "n_templates": 4,
+  "pick_central": 0.113,
+  "pick_each_other_distractor": 0.01
+ },
+ "gibson_only": {
+  "n": 50,
+  "forced": 0.96,
+  "edit": 0.5,
+  "drop": 0.46,
+  "drop_ci_items": [
+   0.32,
+   0.6
+  ],
+  "drop_ci_templates": [
+   0.4,
+   0.52
+  ],
+  "n_templates": 2,
+  "pick_central": 0.42,
+  "pick_each_other_distractor": 0.04
+ },
+ "gibson_three_arms_same_items": true,
+ "gibson_arms": {
+  "n": 50,
+  "forced": 0.96,
+  "pedit": 0.88,
+  "edit": 0.5,
+  "pedit_minus_edit": 0.38,
+  "pedit_minus_edit_ci": [
+   0.22,
+   0.54
+  ],
+  "forced_minus_pedit": 0.08,
+  "forced_minus_pedit_ci": [
+   -0.02,
+   0.18
+  ]
+ },
+ "pedit_picked_roles": {
+  "key": 44,
+  "d2": 6
+ },
+ "gibson_edit_picked_roles": {
+  "key": 25,
+  "d0": 21,
+  "d2": 4
+ },
+ "key_surface": {
+  "ORF-seq-AAseq|edit": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 2.0,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  },
+  "ORF-seq-AAseq|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 2.0,
+   "key_unique_outlier": 0.0,
+   "key_centre": 1.0
+  },
+  "PCR-gene-enzprimers|edit": {
+   "key_longest": 0.909,
+   "key_shortest": 0.045,
+   "key_len_rank_desc": 1.227,
+   "key_unique_outlier": 0.545,
+   "key_centre": 0.0
+  },
+  "PCR-gene-enzprimers|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.409,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.955
+  },
+  "PCR-gene-gibshindprimers|edit": {
+   "key_longest": 0.76,
+   "key_shortest": 0.12,
+   "key_len_rank_desc": 1.6,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  },
+  "PCR-gene-gibshindprimers|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.44,
+   "key_unique_outlier": 0.0,
+   "key_centre": 1.0
+  },
+  "PCR-gene-gibshindprimers|placebo": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.24,
+   "key_unique_outlier": 0.0,
+   "key_centre": 1.0
+  },
+  "PCR-gene-gibssmaprimers|edit": {
+   "key_longest": 0.64,
+   "key_shortest": 0.16,
+   "key_len_rank_desc": 1.64,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  },
+  "PCR-gene-gibssmaprimers|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.48,
+   "key_unique_outlier": 0.0,
+   "key_centre": 1.0
+  },
+  "PCR-gene-gibssmaprimers|placebo": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.24,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  },
+  "PCR-seq-enzprimers|edit": {
+   "key_longest": 0.92,
+   "key_shortest": 0.04,
+   "key_len_rank_desc": 1.2,
+   "key_unique_outlier": 0.64,
+   "key_centre": 0.0
+  },
+  "PCR-seq-enzprimers|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.36,
+   "key_unique_outlier": 0.0,
+   "key_centre": 1.0
+  },
+  "Prop-seq-gcpercent|edit": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.0,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  },
+  "Prop-seq-gcpercent|orig": {
+   "key_longest": 0.0,
+   "key_shortest": 0.0,
+   "key_len_rank_desc": 1.0,
+   "key_unique_outlier": 0.0,
+   "key_centre": 0.0
+  }
+ }
+}
