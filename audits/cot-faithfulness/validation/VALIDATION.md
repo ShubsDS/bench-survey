@@ -98,7 +98,7 @@ autorater-labelled wrong answers are flips (`posthoc_flip.py`), written after th
 seen; nothing in `prereg.md` defines it. My checks:
 - *Threshold sweep*: 3.7 Sonnet − 3.5 Sonnet v2 is −0.12, −0.10, −0.12, +0.02, +0.08 pp at "any",
   25%, 50%, 75%, 100%, never distinguishable from zero. 3.7 Sonnet − 1k is +0.04, +0.06, +0.06,
-  **+0.21 [0.02, 0.42]**, **+0.27 [0.04, 0.55]**: at strict thresholds a gap of about a fifth of the
+  **+0.21 [0.02, 0.42]**, **+0.27 [0.04, 0.55]**: at strict thresholds a gap of about a sixth of the
   original survives.
 - *Random removal of the same number of pairs per model* gives exactly the same result (5 vs 11 vs
   2 pairs, all 1,000 draws), as the auditor said. It cannot be the control.

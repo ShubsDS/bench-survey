@@ -17,6 +17,41 @@ has been sent to the authors. Evidence levels:
 | 8 | Ground truth of flagged pairs: 47 of 47 checkable pairs are correct. The route "UNKNOWN scored as half-right" contributes 0 flagged pairs. Closeness of values raises flagged and null rates alike (no excess) | **R** |
 | 9 | On 117 latitude/longitude pairs flagged for ≥ 3 paper models (chosen without Haiku's answers), Claude Haiku (`claude-haiku-5-5`) gives the same yes/no answer to both questions on 24% of pairs (28, all NO/NO). Asked "Which is further south: X or Y?" in both orders, it is order-inconsistent on 7 of 115 (6%), with 2 refusals and no unparsed answers once names with suffixes are matched (auditor: 6 of 117, 11 "unparsed" counted as consistent). Difference 0.17 [0.10, 0.24] (auditor 0.19 [0.11, 0.26]). In 20 of the 28 NO/NO pairs it names the correct place in both orders. One sample per prompt (prereg said k samples) | **L4 for Haiku only**; says nothing about the paper's models |
 
+## Validation
+
+An independent validator re-derived every headline number with separate code (2026-11-17;
+[`validation/VALIDATION.md`](validation/VALIDATION.md), numbers in
+[`validation/validation.json`](validation/validation.json)). The auditor's scripts rerun
+byte-identically. Pins were verified. No new inference was run. Corrections:
+
+1. **Claim 3, flip share.** The hand estimate for Claude 3.7 Sonnet goes up, from about 71% [43, 85]
+   to 90% [74, 97] (validator's blind random sample, 27/30), and 10/10 in the 27 pairs the autorater
+   did not cover. The authors' autorater (85%) is confirmed.
+2. **Claim 3, novelty.** Answer-flipping prevalence by model is already in the paper (v5/v6 Table
+   `tab:iphr-answer-flipping`; 93.7% of 3.7 Sonnet's unfaithful pairs). The README's statement that
+   flipping is "recorded only per response" was wrong. New here: its effect on the two Claude
+   comparisons and the rank.
+3. **Claim 3, robustness.** The split was chosen after seeing the flip shares. It is now
+   placebo-supported: a within-template label shuffle never produces the observed gaps
+   (0/1,000), and other autorater categories of similar prevalence do not remove them. The
+   3.7 Sonnet vs 3.5 Sonnet v2 result holds at every flip threshold. The 3.7 Sonnet vs 1k result
+   holds at ≤ 50%, but +0.21 [0.02, 0.42] survives at ≥ 75%.
+4. **Claim 4.** The 53–55% point estimate is confirmed, with wider intervals (up to [33, 71]). The
+   composition is corrected: stated guesses are 7–9%, not 21%. The claim is downgraded to a lead,
+   and the reading is contested: guesses are unfaithful under the paper's pair-level definition, and
+   the one-sided "not directly south" rule is the paper's own "argument switching".
+5. **Claim 5, wording.** The paper claimed no significance for base > instruct and never stated
+   V3 > R1. The numbers are confirmed (1.1–5.8× wider; +1.18 [−0.37, 2.83]; +0.87 [−0.07, 1.99]).
+6. **Claim 6.** The threshold change was made at v2 and printed there. It was never flagged as a
+   change, but "undisclosed" overstated it.
+7. **Claim 9.** After re-parsing, there are 2 refusals and 0 unparsed answers, and the difference is
+   0.17 [0.10, 0.24]. The prereg deviation (k = 1) is now stated.
+8. **Claim 2, wording.** The template-lean null matches the counts almost by construction. The
+   finding is pair-specific inconsistency, so R stays.
+
+Not re-checked: the ground-truth check (claim 8), the hedge and stable-rule regexes, and the
+partner-rule check.
+
 ## The benchmark and what rests on it
 
 Arcuschin et al., "Chain-of-Thought Reasoning In The Wild Is Not Always Faithful" (arXiv
@@ -70,29 +105,48 @@ Arcuschin et al., "Chain-of-Thought Reasoning In The Wild Is Not Always Faithful
      answers in flagged pairs as *answer flipping*. By model: Claude 3.7 Sonnet 85%, GPT-4o-mini
      38%, Claude 3.5 Haiku 32%, Gemini 2.5 Flash 31%, and 0–4% for R1, ChatGPT-4o, Qwen, Llama 3.3,
      Gemini 2.5 Pro and Claude 3.7 Sonnet 1k.
-   - My blind labels of 66 wrong answers (model and autorater verdict hidden) agree that the
-     autorater's "no flip" is reliable: 1 of 36 was a flip. Its "flip" has precision 16/30. Most
-     of its false flips are the "not directly south" rule or explicit guesses.
-   - For Claude 3.7 Sonnet my labels give 5/6 and 0/6, so about 71% [43, 85] of its wrong answers
-     are flips.
-   - In the reweighted model-balanced sample:
-     - wrong or invented facts: 42%;
-     - stated guesses ("without exact dates, this is an educated guess"): 21%;
-     - "not directly east/south, different continents → NO": 18%;
-     - answer flips: 16%;
-     - invalid comparison of correct facts: 4%.
+   - The paper already reports this by model (v5/v6 Table `tab:iphr-answer-flipping`, share of
+     unfaithful pairs with any flipped answer): Claude 3.7 Sonnet 93.7%, GPT-4o-mini 68.8%, Claude
+     3.5 Haiku 67.5%, Claude 3.5 Sonnet v2 25.0%, 1k 0%.
+   - **Validated hand labels.** In the validator's blind random sample (n = 94 wrong answers, model
+     and verdicts hidden), the autorater's flip label has precision 0.83 and recall 0.97 (κ 0.82).
+     For Claude 3.7 Sonnet, 27/30 = 90% [74, 97] are flips, and 10/10 in the 27 pairs the autorater
+     did not cover.
+     - Auditor's original: "no flip" was right on 35/36 items, "flip" had precision 16/30, and 3.7
+       Sonnet was about 71% [43, 85] (5/6 and 0/6). That sample oversampled autorater-"yes" items. On
+       a blind relabel of 30 of those items the validator agrees on flip/not for 28 (κ 0.84), and on
+       the 12 for 3.7 Sonnet, 6/6 are flips among autorater-"yes". So the disagreement came from the
+       sample, not the labeller.
+   - Composition of wrong answers in flagged pairs (validator, weighted to all wrong answers;
+     auditor's model-balanced sample in brackets). Four items per model, so these are leads:
+     - wrong or invented facts: 41% [auditor 42%];
+     - answer flips: 26% [16%];
+     - "not directly east/south, different continents → NO": 19% [18%];
+     - stated guesses ("without exact dates, this is an educated guess"): 8% [21%]; the
+       authors' own lack-of-information label gives 10.4%;
+     - invalid comparison of correct facts: 6% [4%].
 5. **The "not directly south" rule.**
    - A regex for it (precision 7/9, recall 7/12 against my labels) hits 23% of the 12,745 wrong
      answers in latitude/longitude templates. The rate is 52% for Claude 3.5 Haiku, 50% for Gemini
      2.5 Flash and 24% for GPT-4o-mini.
    - In the 351 flagged pairs where most wrong answers use it, 47% of the *partner* question's
      correct answers use the same rule (Haiku 70%, GPT-4o-mini 22%).
-   - Those pairs follow one stable rule. The paper's own definition, "inconsistent with any single,
-     stable reasoning rule", would not call that unfaithful.
+   - Where the rule is applied to both questions, the pair follows one stable rule, which the
+     paper's definition ("inconsistent with any single, stable reasoning rule") would not call
+     unfaithful; such a pair is then a residual-ambiguity case. Where it is applied to one question
+     only, it is the paper's own *argument switching* ("inconsistently applying geographical
+     standards", its Fig. 1 example). The partner check shows both cases occur. (Validator: the
+     regex and the partner check were not re-derived.)
 6. **Comparisons.** Removing flip-dominated pairs (≥ half of wrong answers flipped, by the
    authors' autorater):
    - Claude 3.7 Sonnet keeps 5 of 63 released pairs. Every other model keeps 62–100%.
    - Its rank goes from 8th to 15th of 16. The overall Spearman is 0.91, which hides that move.
+     No other model moves more than 2 places (validator).
+   - Validator's placebo: shuffling the flip labels among wrong answers within each template,
+     across models, and removing "flip-dominated" pairs leaves 3.7 Sonnet − 3.5 Sonnet v2 at +0.43
+     to +0.70 pp and 3.7 Sonnet − 1k at +0.62 to +0.89 (95% of 1,000 draws). The observed −0.12 and
+     +0.06 are below every draw. Removing pairs dominated by the autorater's argument-switching,
+     lack-of-information or fact-manipulation labels leaves both leads above +0.99 pp.
 
 ### Numbers
 
@@ -128,7 +182,7 @@ the published rate.
 | Published comparison (pp, template bootstrap 95%) | Published flag sets | Released sets | Without flip-dominated pairs |
 |---|---|---|---|
 | Claude 3.7 Sonnet − Claude 3.5 Sonnet v2 | +1.41 [0.15, 2.83] (90 vs 22) | +1.06 [0.15, 2.19] (63 vs 12) | **−0.12 [−0.50, 0.14]** (5 vs 11) |
-| Claude 3.7 Sonnet − Claude 3.7 Sonnet 1k | +1.82 [0.79, 3.14] | +1.26 [0.42, 2.35] | **+0.06 [−0.04, 0.21]** (5 vs 2) |
+| Claude 3.7 Sonnet − Claude 3.7 Sonnet 1k | +1.82 [0.79, 3.14] | +1.26 [0.42, 2.35] | **+0.06 [−0.04, 0.21]** (5 vs 2); at a ≥ 75% flip threshold +0.21 [0.02, 0.42] (validator) |
 | Claude 3.7 Sonnet 64k − 1k | +0.21 [0.00, 0.55] | +0.14 [0.00, 0.37] | +0.14 [0.00, 0.38] (9 vs 2) |
 | Llama 3.1 70B − Llama 3.3 70B Instruct | +1.18 [−0.34, 3.00] | same | +0.64 [−0.60, 2.01] (129 vs 98) |
 | DeepSeek V3 − DeepSeek R1 | +0.87 [−0.06, 1.92] | +0.97 [0.02, 2.07] | +0.77 [−0.13, 1.76] |
@@ -159,10 +213,12 @@ authors' `unfaithfulness_pattern_eval/T0.0_P0.9_M8000/*_non-ambiguous-hard-2/<mo
   points the other way.
 - To a monitor reading the CoT, a flip is a visible contradiction, the opposite of hidden
   influence.
-- The paper names answer flipping as a "less prevalent" pattern. The released pair-level
-  categories are fact-manipulation, argument-switching, other and none; answer flipping is
-  recorded only per response. For Claude 3.7 Sonnet's pairs, the authors' autorater gives 34 of 65
-  pair labels as "none" and 17 as "other".
+- The paper's main text calls answer flipping a "less prevalent" pattern (v6 §2.2). Its own
+  appendix table (`tab:iphr-answer-flipping`) shows it in 93.7% of Claude 3.7 Sonnet's unfaithful
+  pairs, and in 55–77% for Claude 3.5 Haiku, GPT-4o-mini, GPT-4o, Gemini 2.5 Flash and Claude 3.7
+  Sonnet 64k. (Auditor's original said answer flipping "is recorded only per response". That is
+  wrong for v5/v6: the paper tabulates it per pair and per model.) In the released pair-level
+  categories, the authors' autorater labels 34 of 3.7 Sonnet's 65 pair labels "none" and 17 "other".
 
 ## The effect
 
@@ -172,11 +228,18 @@ authors' `unfaithfulness_pattern_eval/T0.0_P0.9_M8000/*_non-ambiguous-hard-2/<mo
 - **C2 (comparisons).**
   - "Claude 3.7 Sonnet is less faithful than Claude 3.5 Sonnet v2 at similar accuracy": the
     released gap is +1.06 pp [0.15, 2.19]. On pairs not dominated by flips it is −0.12 [−0.50,
-    0.14]. **Changes** (the rule in `prereg.md` A4 is about routes; this split is post hoc).
+    0.14]. **Changes** (the rule in `prereg.md` A4 is about routes; this split is post hoc). It
+    holds at every flip threshold tried (any flip to all flips) and against the placebos. The
+    paper counts flips as unfaithful, so "3.7 Sonnet is less faithful" stays literally true by its
+    definition. What changes is the reading: the excess is answer flipping, not rationalisation.
   - "Thinking makes Claude 3.7 Sonnet faithful" (1.84% → 0.04%): +1.26 pp becomes +0.06 [−0.04,
-    0.21]. On this data the gap is mostly the removal of answer flips. **Changes.**
-  - "Base > instruct, so not only RLHF" and "V3 > R1" are inside template-level noise.
-    **Changes** to "not shown".
+    0.21]. On this data most of the gap is the removal of answer flips. **Changes** at the ≥ 50%
+    threshold. With a strict threshold (≥ 75% of wrong answers flipped), +0.21 [0.02, 0.42]
+    survives, about a sixth of the gap (validator).
+  - "Base > instruct, so not only RLHF" and "V3 > R1" are inside template-level noise. The paper
+    claimed no significance for either, and it never states V3 > R1 (only "thinking models generally
+    exhibit improved faithfulness"). So the change is that the data do not support the RLHF
+    inference, not that a significant result was lost.
   - "64k > 1k" sits at the boundary ([0.00, 0.55] on 12 vs 2 pairs).
   - Overall ranking **holds**: Spearman 0.91 after removing flip-dominated pairs. Only Claude 3.7
     Sonnet moves more than 1.5 ranks.
@@ -199,8 +262,14 @@ Pre-registered as A10, restricted to latitude/longitude templates (`scripts/l4_h
 - **Results** (`results/l4_haiku.json`):
   - Yes/no: 89 YES/NO (consistent), 28 NO/NO, 0 YES/YES. Accuracy 0.88.
   - Forced choice: order-inconsistent on 6 of 117 (5%); 11 had an unparsed answer, counted as
-    consistent. Accuracy 0.89.
-  - Paired difference in the inconsistency share: 0.19 [0.11, 0.26] (pair bootstrap).
+    consistent. Accuracy 0.89. Validator's re-parse of the cached responses: the 11 were parser
+    misses on names with suffixes (", WA", "(Kentucky)"). With those matched: 108 consistent, 7
+    inconsistent, 2 refusals ("Undetermined"), 0 unparsed.
+  - Paired difference in the inconsistency share: 0.19 [0.11, 0.26] (pair bootstrap). Validator,
+    re-parsed: 0.17 [0.10, 0.24]; 0.16 [0.09, 0.24] if refusals count as inconsistent.
+  - The forced-choice prompt also changes "a clear YES or NO answer" to "a clear answer" and adds an
+    `ANSWER: <name>` line. Both are inherent to the edit. The items were chosen from the paper
+    models' flags, not from Haiku's answers.
   - In 20 of the 28 NO/NO pairs, Haiku names the correct place in both forced-choice orders.
 - **Reading.**
   - For Haiku, most of its IPHR-style inconsistency on these pairs depends on the yes/no form of
@@ -220,8 +289,12 @@ Pre-registered as A10, restricted to latitude/longitude templates (`scripts/l4_h
 | Held-out split (select on 5 responses, test on 5; 200 splits) | replication 39–74%, near N1t for 14 of 16 | claim 2 relies on the dispersion test, not this |
 | Placebo for the closeness strata (1,000 within-template shuffles) | observed close − far excess −0.07 pp, at the 77th percentile of the placebo | no closeness effect beyond difficulty |
 | Exact-tie handling | ≤ 2% change in any count | yes |
-| Hand validation of the flip label (66 blind items) | autorater "no flip" 35/36 agree; "flip" 16/30 agree; Claude 3.7 Sonnet 5/6 and 0/6 | claim 3 yes, reduced from 85% to about 71% |
+| Hand validation of the flip label (66 blind items) | autorater "no flip" 35/36 agree; "flip" 16/30 agree; Claude 3.7 Sonnet 5/6 and 0/6 | auditor: claim 3 yes, reduced from 85% to about 71%. **Validator: superseded.** Own random draw: 3.7 Sonnet 27/30 = 90% [74, 97]; autorater precision 0.83, recall 0.97 |
 | Random-removal control for claim 3 | Not informative: removing 58 of 63 pairs at random also leaves 5. The claim rests on the flip share differing between models (85% [81, 89] vs 10% [5, 17], Wilson) and on the hand check | stated plainly |
+| Placebo: flip labels shuffled within template across models (validator, 1,000) | observed −0.12 / +0.06 below all draws (placebo medians +0.56 / +0.77) | yes |
+| Placebo: other autorater categories of similar prevalence (validator) | leads stay +0.99 to +1.22 pp, intervals above 0 | yes |
+| Flip threshold any / 25 / 50 / 75 / 100% (validator) | v2 gap −0.12 / −0.10 / −0.12 / +0.02 / +0.08; 1k gap +0.04 / +0.06 / +0.06 / +0.21 / +0.27 | v2: yes; 1k: only at ≤ 50% |
+| Autorater subset (63 of 90 pairs) (validator) | 10/10 blind-labelled wrong answers in the 27 uncovered pairs are flips | subset does not inflate the share |
 | Hedging lexicon (fixed regex) on wrong answers, 6 models | 0.9–2.6% for 5 models, 75% for Llama 3.3 (its "without access to …") | the "stated guess" route is model-specific |
 
 ## Alternative explanations
@@ -254,19 +327,21 @@ See [`prior_work.md`](prior_work.md).
 - New here:
   - the no-lean, global-lean and template-lean nulls through the released rule;
   - the dispersion test;
-  - the size of answer flipping by model, from the authors' own autorater, and its effect on the
-    Claude comparisons;
+  - the effect of answer flipping on the two Claude comparisons and on the rank, with placebos
+    (the size of answer flipping by model is **not** new: it is in the paper's v5/v6 appendix
+    table; the auditor's original listed it as new);
   - blind route labels;
   - the stable-rule check;
   - template-clustered intervals;
-  - the undisclosed threshold change between versions;
+  - that the threshold change between versions (made at v2, printed but never flagged) accounts for
+    part of the v1 → v4 drop (auditor's original: "undisclosed");
   - that the oversampling check reuses selection samples at a lower threshold.
 
 ## What this does not show
 
-- Route labels come from one labeller (me), on 66 items, model-balanced rather than
-  flag-weighted. The Claude 3.7 Sonnet flip estimate rests on 12 hand-labelled items and on the
-  authors' autorater.
+- Route labels come from one labeller per sample (auditor 66 items; validator 94 + 30 relabelled),
+  with about 4 items per model, so the composition shares are leads. The Claude 3.7 Sonnet flip
+  estimate now rests on 40 blind validator labels and the authors' autorater.
 - The flip-dominated split is post hoc and uses the 100-response sets for oversampled models (63,
   not 90, pairs for Claude 3.7 Sonnet). The pattern autorater was run only on those.
 - The hedge and stable-rule regexes are lexical. The stable-rule regex has recall 7/12.
@@ -315,4 +390,8 @@ data/.venv/bin/python -I scripts/summarise.py        # results.json
 - A2 was weaker than expected.
 - A9 used hand lookup, because automated Wikidata matching failed for 33 of 100 entities.
 - A10 was restricted to latitude/longitude templates, where forced-choice wording is mechanical.
+  It used one sample per prompt, while the prereg said "k samples each … modal answers" (added by
+  the validator).
+- The headline split (flip-dominated pairs, ≥ 50%) is post hoc. The pre-registered A4 split was by
+  W/U/C routes (added by the validator).
 - Everything under P1–P8 is post hoc.
