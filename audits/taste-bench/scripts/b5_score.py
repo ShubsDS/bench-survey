@@ -48,6 +48,15 @@ def boot(ids, fn, rng):
     return [round(vals[int(0.025 * B)], 3), round(vals[int(0.975 * B) - 1], 3)]
 
 
+def _resample(ids, rng):
+    by_task = defaultdict(list)
+    for i in ids:
+        by_task[FEAT[i]["task_id"]].append(i)
+    tasks = list(by_task)
+    for _ in range(B):
+        yield [i for t in (rng.choice(tasks) for _ in tasks) for i in by_task[t]]
+
+
 def summarise(by, rng):
     out = {}
     groups = {c: [i for i in by if FEAT[i]["cell"] == c] for c in CELLS}
@@ -142,6 +151,16 @@ def main():
             ids = [i for i in both if FEAT[i]["cell"].startswith(cons)]
             f = lambda xs: statistics.mean(item_stats(data["H2"], xs)[0]) - statistics.mean(item_stats(data["H1"], xs)[0])
             d[cons] = {"n": len(ids), "H2_minus_H1_single": round(f(ids), 3), "ci": boot(ids, f, rng)}
+        ids_p = [i for i in both if FEAT[i]["cell"].startswith("parallel")]
+        ids_d = [i for i in both if FEAT[i]["cell"].startswith("detour")]
+        f = lambda xs: statistics.mean(item_stats(data["H2"], xs)[0]) - statistics.mean(item_stats(data["H1"], xs)[0])
+        did = f(ids_d) - f(ids_p)
+        # independent task bootstraps for the two constructions (no task is in both)
+        bp = [f(xs) for xs in _resample(ids_p, rng)]
+        bd = [f(xs) for xs in _resample(ids_d, rng)]
+        dd = sorted(b - a for a, b in zip(bp, bd))
+        d["detour_minus_parallel"] = {"value": round(did, 3), "ci": [round(dd[int(0.025 * B)], 3), round(dd[int(0.975 * B) - 1], 3)],
+                                      "share_boot_le_0": round(sum(x <= 0 for x in dd) / B, 4)}
         R["H2_minus_H1"] = d
     (ROOT / "results/b5_haiku.json").write_text(json.dumps(R, indent=1))
     print(json.dumps(R, indent=1))
