@@ -1,0 +1,368 @@
+{
+ "rule_solved_subtasks": [
+  "ORF-seq-AAseq",
+  "PCR-gene-enzprimers",
+  "PCR-gene-gibshindprimers",
+  "PCR-gene-gibssmaprimers",
+  "PCR-seq-enzprimers",
+  "Prop-seq-gcpercent"
+ ],
+ "rule_heldout_by_subtask": {
+  "ORF-seq-AAid": 0.2292,
+  "ORF-seq-AAseq": 1.0,
+  "ORF-seq-numlen": 0.3937,
+  "ORF-transeff": 0.3333,
+  "PCR-gene-enzprimers": 1.0,
+  "PCR-gene-gibshindprimers": 1.0,
+  "PCR-gene-gibssmaprimers": 1.0,
+  "PCR-geneprimers-enz": 0.2437,
+  "PCR-len-primers": 0.2875,
+  "PCR-primers-len": 0.25,
+  "PCR-seq-enzprimers": 1.0,
+  "PCR-seq-primers": 0.35,
+  "Prop-seq-gcpercent": 1.0,
+  "RE-seq-lenfrags": 0.3521,
+  "RE-seq-numfrags": 0.2458
+ },
+ "accuracy": {
+  "S": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "per_model": {
+   "claude-3-5-sonnet": {
+    "gap_S": -0.1217,
+    "gap_F": -0.3756,
+    "D": 0.2539
+   },
+   "claude-3-opus": {
+    "gap_S": -0.245,
+    "gap_F": -0.4033,
+    "D": 0.1583
+   },
+   "gemini-1.5-pro": {
+    "gap_S": -0.4267,
+    "gap_F": -0.5322,
+    "D": 0.1056
+   },
+   "gpt-4o": {
+    "gap_S": -0.275,
+    "gap_F": -0.4611,
+    "D": 0.1861
+   },
+   "gpt-4-turbo": {
+    "gap_S": -0.4683,
+    "gap_F": -0.5322,
+    "D": 0.0639
+   },
+   "claude-3-haiku": {
+    "gap_S": -0.2417,
+    "gap_F": -0.4022,
+    "D": 0.1606
+   },
+   "llama-3-70b": {
+    "gap_S": -0.2967,
+    "gap_F": -0.5067,
+    "D": 0.21
+   }
+  },
+  "mean_D": 0.1626,
+  "placebo_all_splits": {
+   "n": 5005,
+   "q025": -0.2798,
+   "q975": 0.2837,
+   "percentile_of_obs": 0.8599
+  },
+  "placebo_matched_answer_type": {
+   "n": 540,
+   "q025": -0.1684,
+   "q975": 0.3108,
+   "percentile_of_obs": 0.7926
+  },
+  "best_model_by_seqqa_mean": "claude-3-5-sonnet",
+  "best_model_S": 0.705,
+  "human_S": 0.8267,
+  "best_model_F": 0.3889,
+  "human_F": 0.7644,
+  "per_model_S_minus_human": {
+   "claude-3-5-sonnet": -0.1217,
+   "claude-3-opus": -0.245,
+   "gemini-1.5-pro": -0.4267,
+   "gpt-4o": -0.275,
+   "gpt-4-turbo": -0.4683,
+   "claude-3-haiku": -0.2417,
+   "llama-3-70b": -0.2967
+  },
+  "per_model_F_minus_human": {
+   "claude-3-5-sonnet": -0.3756,
+   "claude-3-opus": -0.4033,
+   "gemini-1.5-pro": -0.5322,
+   "gpt-4o": -0.4611,
+   "gpt-4-turbo": -0.5322,
+   "claude-3-haiku": -0.4022,
+   "llama-3-70b": -0.5067
+  }
+ },
+ "accuracy_numlen_in_S": {
+  "S": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent",
+   "ORF-seq-numlen"
+  ],
+  "per_model": {
+   "claude-3-5-sonnet": {
+    "gap_S": -0.1486,
+    "gap_F": -0.3838,
+    "D": 0.2352
+   },
+   "claude-3-opus": {
+    "gap_S": -0.2443,
+    "gap_F": -0.4238,
+    "D": 0.1795
+   },
+   "gemini-1.5-pro": {
+    "gap_S": -0.4029,
+    "gap_F": -0.5662,
+    "D": 0.1634
+   },
+   "gpt-4o": {
+    "gap_S": -0.2643,
+    "gap_F": -0.4938,
+    "D": 0.2295
+   },
+   "gpt-4-turbo": {
+    "gap_S": -0.4357,
+    "gap_F": -0.5688,
+    "D": 0.133
+   },
+   "claude-3-haiku": {
+    "gap_S": -0.2143,
+    "gap_F": -0.4462,
+    "D": 0.232
+   },
+   "llama-3-70b": {
+    "gap_S": -0.2657,
+    "gap_F": -0.56,
+    "D": 0.2943
+   }
+  },
+  "mean_D": 0.2095,
+  "placebo_all_splits": {
+   "n": 6435,
+   "q025": -0.2742,
+   "q975": 0.2849,
+   "percentile_of_obs": 0.928
+  },
+  "placebo_matched_answer_type": {
+   "n": 1260,
+   "q025": -0.2053,
+   "q975": 0.3125,
+   "percentile_of_obs": 0.8865
+  },
+  "best_model_by_seqqa_mean": "claude-3-5-sonnet",
+  "best_model_S": 0.6043,
+  "human_S": 0.7529,
+  "best_model_F": 0.4375,
+  "human_F": 0.8213,
+  "per_model_S_minus_human": {
+   "claude-3-5-sonnet": -0.1486,
+   "claude-3-opus": -0.2443,
+   "gemini-1.5-pro": -0.4029,
+   "gpt-4o": -0.2643,
+   "gpt-4-turbo": -0.4357,
+   "claude-3-haiku": -0.2143,
+   "llama-3-70b": -0.2657
+  },
+  "per_model_F_minus_human": {
+   "claude-3-5-sonnet": -0.3838,
+   "claude-3-opus": -0.4238,
+   "gemini-1.5-pro": -0.5663,
+   "gpt-4o": -0.4938,
+   "gpt-4-turbo": -0.5688,
+   "claude-3-haiku": -0.4463,
+   "llama-3-70b": -0.56
+  }
+ },
+ "precision": {
+  "S": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "per_model": {
+   "claude-3-5-sonnet": {
+    "gap_S": -0.09,
+    "gap_F": -0.3622,
+    "D": 0.2722
+   },
+   "claude-3-opus": {
+    "gap_S": -0.185,
+    "gap_F": -0.37,
+    "D": 0.185
+   },
+   "gemini-1.5-pro": {
+    "gap_S": -0.2167,
+    "gap_F": -0.5056,
+    "D": 0.2889
+   },
+   "gpt-4o": {
+    "gap_S": -0.27,
+    "gap_F": -0.4733,
+    "D": 0.2033
+   },
+   "gpt-4-turbo": {
+    "gap_S": -0.2767,
+    "gap_F": -0.4856,
+    "D": 0.2089
+   },
+   "claude-3-haiku": {
+    "gap_S": -0.2733,
+    "gap_F": -0.4567,
+    "D": 0.1833
+   },
+   "llama-3-70b": {
+    "gap_S": -0.3283,
+    "gap_F": -0.56,
+    "D": 0.2317
+   }
+  },
+  "mean_D": 0.2248,
+  "placebo_all_splits": {
+   "n": 5005,
+   "q025": -0.2483,
+   "q975": 0.2414,
+   "percentile_of_obs": 0.9626
+  },
+  "placebo_matched_answer_type": {
+   "n": 540,
+   "q025": -0.1131,
+   "q975": 0.323,
+   "percentile_of_obs": 0.8963
+  },
+  "best_model_by_seqqa_mean": "claude-3-5-sonnet",
+  "best_model_S": 0.77,
+  "human_S": 0.86,
+  "best_model_F": 0.4678,
+  "human_F": 0.83,
+  "per_model_S_minus_human": {
+   "claude-3-5-sonnet": -0.09,
+   "claude-3-opus": -0.185,
+   "gemini-1.5-pro": -0.2167,
+   "gpt-4o": -0.27,
+   "gpt-4-turbo": -0.2767,
+   "claude-3-haiku": -0.2733,
+   "llama-3-70b": -0.3283
+  },
+  "per_model_F_minus_human": {
+   "claude-3-5-sonnet": -0.3622,
+   "claude-3-opus": -0.37,
+   "gemini-1.5-pro": -0.5056,
+   "gpt-4o": -0.4733,
+   "gpt-4-turbo": -0.4856,
+   "claude-3-haiku": -0.4567,
+   "llama-3-70b": -0.56
+  }
+ },
+ "precision_numlen_in_S": {
+  "S": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent",
+   "ORF-seq-numlen"
+  ],
+  "per_model": {
+   "claude-3-5-sonnet": {
+    "gap_S": -0.1386,
+    "gap_F": -0.3538,
+    "D": 0.2152
+   },
+   "claude-3-opus": {
+    "gap_S": -0.18,
+    "gap_F": -0.3975,
+    "D": 0.2175
+   },
+   "gemini-1.5-pro": {
+    "gap_S": -0.2214,
+    "gap_F": -0.5375,
+    "D": 0.3161
+   },
+   "gpt-4o": {
+    "gap_S": -0.2729,
+    "gap_F": -0.4962,
+    "D": 0.2234
+   },
+   "gpt-4-turbo": {
+    "gap_S": -0.26,
+    "gap_F": -0.5262,
+    "D": 0.2662
+   },
+   "claude-3-haiku": {
+    "gap_S": -0.2586,
+    "gap_F": -0.4925,
+    "D": 0.2339
+   },
+   "llama-3-70b": {
+    "gap_S": -0.3014,
+    "gap_F": -0.6125,
+    "D": 0.3111
+   }
+  },
+  "mean_D": 0.2548,
+  "placebo_all_splits": {
+   "n": 6435,
+   "q025": -0.2539,
+   "q975": 0.2502,
+   "percentile_of_obs": 0.9781
+  },
+  "placebo_matched_answer_type": {
+   "n": 1260,
+   "q025": -0.1547,
+   "q975": 0.2827,
+   "percentile_of_obs": 0.9468
+  },
+  "best_model_by_seqqa_mean": "claude-3-5-sonnet",
+  "best_model_S": 0.66,
+  "human_S": 0.7986,
+  "best_model_F": 0.5262,
+  "human_F": 0.88,
+  "per_model_S_minus_human": {
+   "claude-3-5-sonnet": -0.1386,
+   "claude-3-opus": -0.18,
+   "gemini-1.5-pro": -0.2214,
+   "gpt-4o": -0.2729,
+   "gpt-4-turbo": -0.26,
+   "claude-3-haiku": -0.2586,
+   "llama-3-70b": -0.3014
+  },
+  "per_model_F_minus_human": {
+   "claude-3-5-sonnet": -0.3538,
+   "claude-3-opus": -0.3975,
+   "gemini-1.5-pro": -0.5375,
+   "gpt-4o": -0.4962,
+   "gpt-4-turbo": -0.5262,
+   "claude-3-haiku": -0.4925,
+   "llama-3-70b": -0.6125
+  }
+ },
+ "exploratory_threshold_arithmetic": {
+  "human_seqqa_mean": 0.7893,
+  "human_F_mean": 0.7644,
+  "F_mean_needed_to_match_human_if_S_is_1": 0.6489,
+  "opus45_seqqa_0.8517_implies_F_if_S_is_1": 0.7528,
+  "note": "Anthropic's SeqQA set, weighting and scoring are not published; equal weights assumed"
+ }
+}
