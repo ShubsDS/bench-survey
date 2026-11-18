@@ -196,6 +196,8 @@ def main():
         t3[f"drop_{fam}"] = pearson(x[s2], y[s2])
     s = [i for i, (m, gg) in enumerate(zip(ms, g)) if gg == "anthropic" and m != "Haiku 4.5"]
     t3["within_anthropic_without_haiku45"] = pearson(x[s], y[s])
+    s = [i for i, (m, gg) in enumerate(zip(ms, g)) if gg != "openai" and m != "Haiku 4.5"]
+    t3["drop_openai_and_haiku45"] = pearson(x[s], y[s])
     t3["family_fixed_effects"] = fe_slope(x, y, g)
     t3["family_fixed_effects_without_haiku45"] = fe_slope(x[keep], y[keep], [g[i] for i in keep])
     # leave-one-model-out range of r
