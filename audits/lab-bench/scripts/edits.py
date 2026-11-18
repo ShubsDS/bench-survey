@@ -112,6 +112,24 @@ def edit_pcr(r):
     return opts, 1
 
 
+def placebo_pcr(r):
+    """Post hoc control (added after the L4 result): same procedure, but centred on the key:
+    {K, S, W, K shifted one base}. The key stays the option the others derive from."""
+    K = split_pair(r.ideal)
+    D = [split_pair(d) for d in r.distractors]
+    suf = [common_suffix(K[0], d[0]) + common_suffix(K[1], d[1]) for d in D]
+    wi = int(np.argmax(suf))
+    W = D[wi]
+    rest = [d for i, d in enumerate(D) if i != wi]
+    pf = [len(K[k]) - common_suffix(K[k], W[k]) for k in (0, 1)]
+    def body_sim(d):
+        return sum(jacc(grams(K[k][pf[k]:]), grams(d[k][pf[k]:])) for k in (0, 1))
+    S = max(rest, key=body_sim)
+    skip = [3 if k == 0 and K[k][pf[k]:pf[k] + 3] == "ATG" else 0 for k in (0, 1)]
+    K2 = tuple(K[k][:pf[k] + skip[k]] + K[k][pf[k] + skip[k] + 1:] for k in (0, 1))
+    return [", ".join(K), ", ".join(S), ", ".join(W), ", ".join(K2)]
+
+
 def main() -> None:
     df = load_items(check=False)
     rng = np.random.default_rng(0)
@@ -145,6 +163,11 @@ def main() -> None:
                 fails += 1
                 continue
             edits[i] = {"family": fam, "options": opts, "central": central}
+            if "gibs" in fam:
+                po = placebo_pcr(r)
+                ps = option_scores(po)["centroid"][0]
+                if credit(ps, key=0) == 1.0 and len(set(po)) == 4:
+                    edits[i]["placebo_options"] = po
             done.append({"id": i, "rule": rule, "orig_rule_key_credit": credit(*orig[orule][:1], key=0),
                          "edit_rule_key_credit": key_credit, "edit_rule_central_credit": cen_credit})
         check[fam] = {"n": len(done), "skipped": fails, "items": done}

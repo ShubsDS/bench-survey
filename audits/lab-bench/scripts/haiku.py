@@ -10,6 +10,8 @@ Conditions (prereg.md):
   edit     L4: SeqQA items whose distractors are rebuilt so that a *distractor* is the
            option the others were derived from; key unchanged; forced (see edits.py)
   last     std with the refusal option always in the last position (position test)
+  pedit    post hoc control for edit (Gibson subtasks): rebuilt with the same procedure but
+           centred on the key (edits.py placebo_pcr); forced
 
 Option order: one permutation per (item, condition family) from a hash of the item id, so
 std/forced/last/opts share the relative order of the substantive options.
@@ -158,6 +160,8 @@ def build_jobs(items: pd.DataFrame, plan: dict, edits: dict | None = None) -> li
             opts = None
             if cond == "edit":
                 opts = edits[r.id]["options"]
+            elif cond == "pedit":
+                opts = edits[r.id]["placebo_options"]
             prompt, roles = render(r, cond, opts)
             jobs.append({"id": r.id, "subset": r.subset, "family": r.family, "cond": cond,
                          "n_sub": len(roles) - (1 if "refuse" in roles.values() else 0),
@@ -180,7 +184,7 @@ def main() -> None:
         bad = [i for i in plan[c] if i in excluded]
         assert not bad, f"excluded items in plan {c}: {bad[:3]}"
     edits = None
-    if "edit" in plan:
+    if "edit" in plan or "pedit" in plan:
         edits = json.loads((AUDIT / "data" / "edits.json").read_text())
     jobs = build_jobs(items, plan, edits)
     est_chars = sum(len(j["prompt"]) for j in jobs)

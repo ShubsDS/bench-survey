@@ -24,6 +24,11 @@ def load_runs() -> pd.DataFrame:
     bad = df.bucket.isin(["error", "budget", "dry"])
     if bad.any():
         print("WARNING: non-answers", df[bad].groupby(["cond", "bucket"]).size().to_dict())
+    # An item whose call was refused by the API (usage-policy classifier) is dropped from every
+    # condition, so paired comparisons stay paired. It is reported, never retried.
+    blocked = sorted(set(df[df.bucket == "error"].id))
+    load_runs.blocked = blocked
+    df = df[~df.id.isin(blocked) & ~df.bucket.isin(["budget", "dry"])]
     df = df.drop_duplicates(["id", "cond"], keep="last")
     df["correct"] = (df.bucket == "correct").astype(float)
     df["refuse"] = (df.bucket == "refuse").astype(float)
@@ -66,7 +71,8 @@ def main() -> None:
     df = load_runs()
     df["cluster"] = df.id.map(cl)
     df["subtask"] = df.id.map(st)
-    res = {"calls": {c: int(n) for c, n in df.groupby("cond").size().items()},
+    res = {"blocked_by_api_policy": load_runs.blocked,
+           "calls": {c: int(n) for c, n in df.groupby("cond").size().items()},
            "bucket_counts": {f"{c}|{s}": g.bucket.value_counts().to_dict()
                              for (c, s), g in df.groupby(["cond", "subset"])}}
 
@@ -99,11 +105,17 @@ def main() -> None:
         d["edit_pick_central"] = round(float((e.loc[ii, "picked_role"] == "d0").mean()), 4)
         fam[fm] = d
     B_out["per_family"] = fam
-    # typicality: forced accuracy of edited items vs non-edited items of the same families
-    fams = {edits[i]["family"] for i in ids}
-    nonedit = df[(df.cond == "forced") & df.subtask.isin([x.replace("-v1", "") + "-v1" for x in fams]) & ~df.id.isin(ids)]
-    B_out["forced_nonedited_same_families"] = {"n": int(len(nonedit)),
-                                               "acc": round(float(nonedit.correct.mean()), 4) if len(nonedit) else None}
+    # post hoc control (Gibson subtasks): same rebuilding procedure, centred on the key
+    p = df[df.cond == "pedit"].set_index("id")
+    pi = sorted(set(p.index) & set(common))
+    if pi:
+        B_out["placebo_edit_gibson"] = {
+            "n": len(pi), "forced_acc": round(float(f.loc[pi, "correct"].mean()), 4),
+            "placebo_edit_acc": round(float(p.loc[pi, "correct"].mean()), 4),
+            "edit_acc": round(float(e.loc[pi, "correct"].mean()), 4),
+            "forced_minus_placebo": paired_diff(f.loc[pi, "correct"], p.loc[pi, "correct"]),
+            "placebo_minus_edit": paired_diff(p.loc[pi, "correct"], e.loc[pi, "correct"]),
+            "note": "post hoc; added after the edit result was seen"}
     dl = B_out["pooled"]
     B_out["verdict"] = ("uses shortcut" if dl["diff"] >= 0.10 and dl["ci"][0] > 0 and central > others
                         else "does not" if dl["ci"][0] <= 0 <= dl["ci"][1] and dl["ci"][1] < 0.10 else "inconclusive")
@@ -114,6 +126,38 @@ def main() -> None:
     for cond in ("blind", "blindf", "opts", "last"):
         for s, g in df[df.cond == cond].groupby("subset"):
             C[f"{cond}|{s}"] = summarise(g)
+    # options-only by SeqQA stratum (prereg strata) and agreement with the length rule
+    S_SUB = {"ORF-seq-AAseq", "PCR-gene-enzprimers", "PCR-seq-enzprimers", "PCR-gene-gibshindprimers",
+             "PCR-gene-gibssmaprimers", "Prop-seq-gcpercent"}
+    o = df[(df.cond == "opts") & (df.subset == "SeqQA")]
+    o_s = o[o.subtask.str.replace("-v1", "").isin(S_SUB)]
+    o_f = o[~o.subtask.str.replace("-v1", "").isin(S_SUB)]
+    C["opts|SeqQA|S"] = summarise(o_s)
+    C["opts|SeqQA|F"] = summarise(o_f)
+    opts_of = {r.id: [r.ideal] + list(r.distractors) for _, r in items.iterrows()}
+
+    def role_text(i, role):
+        if role == "key":
+            return opts_of[i][0]
+        return opts_of[i][1 + int(role[1:])]
+    for s in ("ProtocolQA", "FigQA", "TableQA", "CloningScenarios"):
+        for cond in ("opts", "blindf", "forced"):
+            g = df[(df.cond == cond) & (df.subset == s) & df.picked_role.notna()]
+            if not len(g):
+                continue
+            longest = [len(role_text(r.id, r.picked_role)) == max(len(x) for x in opts_of[r.id]) for _, r in g.iterrows()]
+            C.setdefault(f"{cond}|{s}", summarise(df[(df.cond == cond) & (df.subset == s)]))["picked_longest_share"] = round(float(np.mean(longest)), 4)
+    # per-item: does the options-only answer predict the full-item answer? (ProtocolQA)
+    a = df[(df.cond == "opts") & (df.subset == "ProtocolQA")].set_index("id")
+    b = df[(df.cond == "forced") & (df.subset == "ProtocolQA")].set_index("id")
+    ii = sorted(set(a.index) & set(b.index))
+    if ii:
+        a, b = a.loc[ii], b.loc[ii]
+        C["ProtocolQA_opts_vs_forced"] = {
+            "n": len(ii), "same_pick": round(float((a.picked_role == b.picked_role).mean()), 4),
+            "forced_acc_when_opts_right": round(float(b.correct[a.correct == 1].mean()), 4),
+            "forced_acc_when_opts_wrong": round(float(b.correct[a.correct == 0].mean()), 4),
+            "n_opts_right": int((a.correct == 1).sum())}
     res["C_blind_opts"] = C
 
     # ---- D: abstention, std vs forced on the same items (and blind vs blindf, blind vs last)

@@ -1,16 +1,103 @@
 {
+ "blocked_by_api_policy": [
+  "bee8b322-2843-4be7-9adc-9e9dbf4c47a4"
+ ],
  "calls": {
+  "blind": 301,
+  "blindf": 301,
   "edit": 147,
-  "forced": 237
+  "forced": 377,
+  "last": 181,
+  "opts": 761,
+  "pedit": 50,
+  "std": 140
  },
  "bucket_counts": {
+  "blind|FigQA": {
+   "refuse": 93,
+   "wrong": 61,
+   "correct": 27
+  },
+  "blind|TableQA": {
+   "refuse": 70,
+   "correct": 26,
+   "wrong": 24
+  },
+  "blindf|FigQA": {
+   "wrong": 124,
+   "correct": 57
+  },
+  "blindf|TableQA": {
+   "wrong": 71,
+   "correct": 49
+  },
   "edit|SeqQA": {
    "correct": 109,
    "wrong": 38
   },
+  "forced|CloningScenarios": {
+   "correct": 23,
+   "wrong": 10
+  },
+  "forced|ProtocolQA": {
+   "correct": 73,
+   "wrong": 34
+  },
   "forced|SeqQA": {
    "correct": 212,
    "wrong": 25
+  },
+  "last|FigQA": {
+   "refuse": 92,
+   "wrong": 64,
+   "correct": 25
+  },
+  "opts|CloningScenarios": {
+   "wrong": 22,
+   "correct": 11
+  },
+  "opts|DbQA": {
+   "wrong": 39,
+   "correct": 21
+  },
+  "opts|FigQA": {
+   "wrong": 138,
+   "correct": 42,
+   "unparsed": 1
+  },
+  "opts|LitQA2": {
+   "wrong": 46,
+   "correct": 14
+  },
+  "opts|ProtocolQA": {
+   "correct": 55,
+   "wrong": 52
+  },
+  "opts|SeqQA": {
+   "correct": 77,
+   "wrong": 73
+  },
+  "opts|SuppQA": {
+   "wrong": 38,
+   "correct": 12
+  },
+  "opts|TableQA": {
+   "wrong": 86,
+   "correct": 34
+  },
+  "pedit|SeqQA": {
+   "correct": 44,
+   "wrong": 6
+  },
+  "std|CloningScenarios": {
+   "correct": 21,
+   "wrong": 11,
+   "refuse": 1
+  },
+  "std|ProtocolQA": {
+   "correct": 67,
+   "wrong": 22,
+   "refuse": 18
   }
  },
  "B_edit": {
@@ -118,13 +205,675 @@
     "edit_pick_central": 0.24
    }
   },
-  "forced_nonedited_same_families": {
-   "n": 0,
-   "acc": null
+  "placebo_edit_gibson": {
+   "n": 50,
+   "forced_acc": 0.96,
+   "placebo_edit_acc": 0.88,
+   "edit_acc": 0.5,
+   "forced_minus_placebo": {
+    "n": 50,
+    "diff": 0.08,
+    "ci": [
+     -0.04,
+     0.18
+    ]
+   },
+   "placebo_minus_edit": {
+    "n": 50,
+    "diff": 0.38,
+    "ci": [
+     0.22,
+     0.54
+    ]
+   },
+   "note": "post hoc; added after the edit result was seen"
   },
   "verdict": "uses shortcut"
  },
- "C_blind_opts": {},
- "D_abstention": {},
- "design_effects": {}
+ "C_blind_opts": {
+  "blind|FigQA": {
+   "accuracy": {
+    "n": 181,
+    "rate": 0.1492,
+    "wilson": [
+     0.1046,
+     0.2083
+    ],
+    "cluster_ci": [
+     0.1012,
+     0.2023
+    ],
+    "clusters": 107
+   },
+   "chance": 0.223,
+   "refusal_rate": 0.5138,
+   "unparsed": 0,
+   "coverage": 0.4862,
+   "precision": 0.3068
+  },
+  "blind|TableQA": {
+   "accuracy": {
+    "n": 120,
+    "rate": 0.2167,
+    "wilson": [
+     0.1524,
+     0.2985
+    ],
+    "cluster_ci": [
+     0.15,
+     0.2917
+    ],
+    "clusters": 120
+   },
+   "chance": 0.2057,
+   "refusal_rate": 0.5833,
+   "unparsed": 0,
+   "coverage": 0.4167,
+   "precision": 0.52
+  },
+  "blindf|FigQA": {
+   "accuracy": {
+    "n": 181,
+    "rate": 0.3149,
+    "wilson": [
+     0.2517,
+     0.3858
+    ],
+    "cluster_ci": [
+     0.2513,
+     0.3799
+    ],
+    "clusters": 107
+   },
+   "chance": 0.223,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.3149,
+   "picked_longest_share": 0.4696
+  },
+  "blindf|TableQA": {
+   "accuracy": {
+    "n": 120,
+    "rate": 0.4083,
+    "wilson": [
+     0.3246,
+     0.4978
+    ],
+    "cluster_ci": [
+     0.3167,
+     0.5
+    ],
+    "clusters": 120
+   },
+   "chance": 0.2057,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.4083,
+   "picked_longest_share": 0.475
+  },
+  "opts|CloningScenarios": {
+   "accuracy": {
+    "n": 33,
+    "rate": 0.3333,
+    "wilson": [
+     0.1975,
+     0.5039
+    ],
+    "cluster_ci": [
+     0.1562,
+     0.5003
+    ],
+    "clusters": 9
+   },
+   "chance": 0.2259,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.3333,
+   "picked_longest_share": 0.3636
+  },
+  "opts|DbQA": {
+   "accuracy": {
+    "n": 60,
+    "rate": 0.35,
+    "wilson": [
+     0.2417,
+     0.4764
+    ],
+    "cluster_ci": [
+     0.2167,
+     0.4667
+    ],
+    "clusters": 60
+   },
+   "chance": 0.25,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.35
+  },
+  "opts|FigQA": {
+   "accuracy": {
+    "n": 181,
+    "rate": 0.232,
+    "wilson": [
+     0.1765,
+     0.2987
+    ],
+    "cluster_ci": [
+     0.1722,
+     0.2961
+    ],
+    "clusters": 107
+   },
+   "chance": 0.223,
+   "refusal_rate": 0.0,
+   "unparsed": 1,
+   "coverage": 1.0,
+   "precision": 0.232,
+   "picked_longest_share": 0.4667
+  },
+  "opts|LitQA2": {
+   "accuracy": {
+    "n": 60,
+    "rate": 0.2333,
+    "wilson": [
+     0.1444,
+     0.3544
+    ],
+    "cluster_ci": [
+     0.1333,
+     0.35
+    ],
+    "clusters": 59
+   },
+   "chance": 0.2403,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.2333
+  },
+  "opts|ProtocolQA": {
+   "accuracy": {
+    "n": 107,
+    "rate": 0.514,
+    "wilson": [
+     0.4205,
+     0.6066
+    ],
+    "cluster_ci": [
+     0.4286,
+     0.6271
+    ],
+    "clusters": 23
+   },
+   "chance": 0.2326,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.514,
+   "picked_longest_share": 0.2617
+  },
+  "opts|SeqQA": {
+   "accuracy": {
+    "n": 150,
+    "rate": 0.5133,
+    "wilson": [
+     0.434,
+     0.592
+    ],
+    "cluster_ci": [
+     0.4333,
+     0.5933
+    ],
+    "clusters": 150
+   },
+   "chance": 0.2467,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.5133
+  },
+  "opts|SuppQA": {
+   "accuracy": {
+    "n": 50,
+    "rate": 0.24,
+    "wilson": [
+     0.143,
+     0.3741
+    ],
+    "cluster_ci": [
+     0.12,
+     0.36
+    ],
+    "clusters": 50
+   },
+   "chance": 0.2125,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.24
+  },
+  "opts|TableQA": {
+   "accuracy": {
+    "n": 120,
+    "rate": 0.2833,
+    "wilson": [
+     0.2104,
+     0.3697
+    ],
+    "cluster_ci": [
+     0.2083,
+     0.3667
+    ],
+    "clusters": 120
+   },
+   "chance": 0.2057,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.2833,
+   "picked_longest_share": 0.4583
+  },
+  "last|FigQA": {
+   "accuracy": {
+    "n": 181,
+    "rate": 0.1381,
+    "wilson": [
+     0.0953,
+     0.1959
+    ],
+    "cluster_ci": [
+     0.0889,
+     0.1934
+    ],
+    "clusters": 107
+   },
+   "chance": 0.223,
+   "refusal_rate": 0.5083,
+   "unparsed": 0,
+   "coverage": 0.4917,
+   "precision": 0.2809
+  },
+  "opts|SeqQA|S": {
+   "accuracy": {
+    "n": 60,
+    "rate": 0.8,
+    "wilson": [
+     0.6822,
+     0.8817
+    ],
+    "cluster_ci": [
+     0.7,
+     0.9
+    ],
+    "clusters": 60
+   },
+   "chance": 0.2417,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.8
+  },
+  "opts|SeqQA|F": {
+   "accuracy": {
+    "n": 90,
+    "rate": 0.3222,
+    "wilson": [
+     0.2347,
+     0.4243
+    ],
+    "cluster_ci": [
+     0.2331,
+     0.4222
+    ],
+    "clusters": 90
+   },
+   "chance": 0.25,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.3222
+  },
+  "forced|ProtocolQA": {
+   "accuracy": {
+    "n": 107,
+    "rate": 0.6822,
+    "wilson": [
+     0.589,
+     0.7628
+    ],
+    "cluster_ci": [
+     0.5968,
+     0.8026
+    ],
+    "clusters": 23
+   },
+   "chance": 0.2326,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.6822,
+   "picked_longest_share": 0.3551
+  },
+  "forced|CloningScenarios": {
+   "accuracy": {
+    "n": 33,
+    "rate": 0.697,
+    "wilson": [
+     0.5266,
+     0.8262
+    ],
+    "cluster_ci": [
+     0.4286,
+     0.8684
+    ],
+    "clusters": 9
+   },
+   "chance": 0.2259,
+   "refusal_rate": 0.0,
+   "unparsed": 0,
+   "coverage": 1.0,
+   "precision": 0.697,
+   "picked_longest_share": 0.3333
+  },
+  "ProtocolQA_opts_vs_forced": {
+   "n": 107,
+   "same_pick": 0.4673,
+   "forced_acc_when_opts_right": 0.7818,
+   "forced_acc_when_opts_wrong": 0.5769,
+   "n_opts_right": 55
+  }
+ },
+ "D_abstention": {
+  "std_vs_forced|CloningScenarios": {
+   "std": {
+    "accuracy": {
+     "n": 33,
+     "rate": 0.6364,
+     "wilson": [
+      0.4662,
+      0.7781
+     ],
+     "cluster_ci": [
+      0.4286,
+      0.7949
+     ],
+     "clusters": 9
+    },
+    "chance": 0.2259,
+    "refusal_rate": 0.0303,
+    "unparsed": 0,
+    "coverage": 0.9697,
+    "precision": 0.6562
+   },
+   "forced": {
+    "accuracy": {
+     "n": 33,
+     "rate": 0.697,
+     "wilson": [
+      0.5266,
+      0.8262
+     ],
+     "cluster_ci": [
+      0.4286,
+      0.8684
+     ],
+     "clusters": 9
+    },
+    "chance": 0.2259,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.697
+   },
+   "acc_forced_minus_std": {
+    "n": 33,
+    "diff": 0.0606,
+    "ci": [
+     -0.0909,
+     0.2121
+    ]
+   },
+   "n_refusals": 1,
+   "refused_items_correct_when_forced": 1.0,
+   "refused_items_chance": 0.25,
+   "precision_std_minus_acc_forced": -0.0408
+  },
+  "std_vs_forced|ProtocolQA": {
+   "std": {
+    "accuracy": {
+     "n": 107,
+     "rate": 0.6262,
+     "wilson": [
+      0.5316,
+      0.712
+     ],
+     "cluster_ci": [
+      0.5517,
+      0.7361
+     ],
+     "clusters": 23
+    },
+    "chance": 0.2326,
+    "refusal_rate": 0.1682,
+    "unparsed": 0,
+    "coverage": 0.8318,
+    "precision": 0.7528
+   },
+   "forced": {
+    "accuracy": {
+     "n": 107,
+     "rate": 0.6822,
+     "wilson": [
+      0.589,
+      0.7628
+     ],
+     "cluster_ci": [
+      0.5968,
+      0.8026
+     ],
+     "clusters": 23
+    },
+    "chance": 0.2326,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.6822
+   },
+   "acc_forced_minus_std": {
+    "n": 107,
+    "diff": 0.0561,
+    "ci": [
+     -0.0093,
+     0.1308
+    ]
+   },
+   "n_refusals": 18,
+   "refused_items_correct_when_forced": 0.3889,
+   "refused_items_chance": 0.2333,
+   "precision_std_minus_acc_forced": 0.0706
+  },
+  "blind_vs_blindf|FigQA": {
+   "std": {
+    "accuracy": {
+     "n": 181,
+     "rate": 0.1492,
+     "wilson": [
+      0.1046,
+      0.2083
+     ],
+     "cluster_ci": [
+      0.1012,
+      0.2023
+     ],
+     "clusters": 107
+    },
+    "chance": 0.223,
+    "refusal_rate": 0.5138,
+    "unparsed": 0,
+    "coverage": 0.4862,
+    "precision": 0.3068
+   },
+   "forced": {
+    "accuracy": {
+     "n": 181,
+     "rate": 0.3149,
+     "wilson": [
+      0.2517,
+      0.3858
+     ],
+     "cluster_ci": [
+      0.2513,
+      0.3799
+     ],
+     "clusters": 107
+    },
+    "chance": 0.223,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.3149
+   },
+   "acc_forced_minus_std": {
+    "n": 181,
+    "diff": 0.1657,
+    "ci": [
+     0.0939,
+     0.2376
+    ]
+   },
+   "n_refusals": 93,
+   "refused_items_correct_when_forced": 0.3441,
+   "refused_items_chance": 0.2172,
+   "precision_std_minus_acc_forced": -0.0081
+  },
+  "blind_vs_blindf|TableQA": {
+   "std": {
+    "accuracy": {
+     "n": 120,
+     "rate": 0.2167,
+     "wilson": [
+      0.1524,
+      0.2985
+     ],
+     "cluster_ci": [
+      0.15,
+      0.2917
+     ],
+     "clusters": 120
+    },
+    "chance": 0.2057,
+    "refusal_rate": 0.5833,
+    "unparsed": 0,
+    "coverage": 0.4167,
+    "precision": 0.52
+   },
+   "forced": {
+    "accuracy": {
+     "n": 120,
+     "rate": 0.4083,
+     "wilson": [
+      0.3246,
+      0.4978
+     ],
+     "cluster_ci": [
+      0.3167,
+      0.5
+     ],
+     "clusters": 120
+    },
+    "chance": 0.2057,
+    "refusal_rate": 0.0,
+    "unparsed": 0,
+    "coverage": 1.0,
+    "precision": 0.4083
+   },
+   "acc_forced_minus_std": {
+    "n": 120,
+    "diff": 0.1917,
+    "ci": [
+     0.125,
+     0.2667
+    ]
+   },
+   "n_refusals": 70,
+   "refused_items_correct_when_forced": 0.2857,
+   "refused_items_chance": 0.1988,
+   "precision_std_minus_acc_forced": 0.1117
+  },
+  "refusal_position|FigQA": {
+   "refusal_random_pos": 0.5138,
+   "refusal_last": 0.5083,
+   "last_minus_random": {
+    "n": 181,
+    "diff": -0.0055,
+    "ci": [
+     -0.0442,
+     0.0331
+    ]
+   },
+   "acc_random_pos": 0.1492,
+   "acc_last": 0.1381
+  }
+ },
+ "design_effects": {
+  "blind|FigQA": {
+   "n": 181,
+   "clusters": 107,
+   "deff": 0.949
+  },
+  "blindf|FigQA": {
+   "n": 181,
+   "clusters": 107,
+   "deff": 0.903
+  },
+  "forced|CloningScenarios": {
+   "n": 33,
+   "clusters": 9,
+   "deff": 1.967
+  },
+  "forced|ProtocolQA": {
+   "n": 107,
+   "clusters": 23,
+   "deff": 1.361
+  },
+  "last|FigQA": {
+   "n": 181,
+   "clusters": 107,
+   "deff": 1.08
+  },
+  "opts|CloningScenarios": {
+   "n": 33,
+   "clusters": 9,
+   "deff": 1.144
+  },
+  "opts|FigQA": {
+   "n": 181,
+   "clusters": 107,
+   "deff": 1.014
+  },
+  "opts|LitQA2": {
+   "n": 60,
+   "clusters": 59,
+   "deff": 1.025
+  },
+  "opts|ProtocolQA": {
+   "n": 107,
+   "clusters": 23,
+   "deff": 1.099
+  },
+  "std|CloningScenarios": {
+   "n": 33,
+   "clusters": 9,
+   "deff": 1.245
+  },
+  "std|ProtocolQA": {
+   "n": 107,
+   "clusters": 23,
+   "deff": 1.012
+  }
+ }
 }
