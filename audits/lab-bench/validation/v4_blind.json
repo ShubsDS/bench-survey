@@ -1,0 +1,451 @@
+{
+ "CloningScenarios|forced": {
+  "n": 33,
+  "acc": 0.697,
+  "wilson": [
+   0.527,
+   0.826
+  ],
+  "cluster_ci": [
+   0.545,
+   0.848
+  ],
+  "n_clusters": 33,
+  "chance": 0.226,
+  "refusal_rate": 0.0,
+  "precision": 0.697
+ },
+ "CloningScenarios|opts": {
+  "n": 33,
+  "acc": 0.333,
+  "wilson": [
+   0.198,
+   0.504
+  ],
+  "cluster_ci": [
+   0.182,
+   0.515
+  ],
+  "n_clusters": 33,
+  "chance": 0.226,
+  "refusal_rate": 0.0,
+  "precision": 0.333
+ },
+ "CloningScenarios|std": {
+  "n": 33,
+  "acc": 0.636,
+  "wilson": [
+   0.466,
+   0.778
+  ],
+  "cluster_ci": [
+   0.455,
+   0.788
+  ],
+  "n_clusters": 33,
+  "chance": 0.226,
+  "refusal_rate": 0.03,
+  "precision": 0.656
+ },
+ "DbQA|opts": {
+  "n": 60,
+  "acc": 0.35,
+  "wilson": [
+   0.242,
+   0.476
+  ],
+  "cluster_ci": [
+   0.233,
+   0.483
+  ],
+  "n_clusters": 60,
+  "chance": 0.25,
+  "refusal_rate": 0.0,
+  "precision": 0.35
+ },
+ "FigQA|blind": {
+  "n": 181,
+  "acc": 0.149,
+  "wilson": [
+   0.105,
+   0.208
+  ],
+  "cluster_ci": [
+   0.098,
+   0.2
+  ],
+  "n_clusters": 107,
+  "chance": 0.223,
+  "refusal_rate": 0.514,
+  "precision": 0.307
+ },
+ "FigQA|blindf": {
+  "n": 181,
+  "acc": 0.315,
+  "wilson": [
+   0.252,
+   0.386
+  ],
+  "cluster_ci": [
+   0.247,
+   0.382
+  ],
+  "n_clusters": 107,
+  "chance": 0.223,
+  "refusal_rate": 0.0,
+  "precision": 0.315
+ },
+ "FigQA|last": {
+  "n": 181,
+  "acc": 0.138,
+  "wilson": [
+   0.095,
+   0.196
+  ],
+  "cluster_ci": [
+   0.086,
+   0.187
+  ],
+  "n_clusters": 107,
+  "chance": 0.223,
+  "refusal_rate": 0.508,
+  "precision": 0.281
+ },
+ "FigQA|opts": {
+  "n": 181,
+  "acc": 0.232,
+  "wilson": [
+   0.177,
+   0.299
+  ],
+  "cluster_ci": [
+   0.171,
+   0.297
+  ],
+  "n_clusters": 107,
+  "chance": 0.223,
+  "refusal_rate": 0.0,
+  "precision": 0.232
+ },
+ "LitQA2|forced": {
+  "n": 58,
+  "acc": 0.414,
+  "wilson": [
+   0.296,
+   0.542
+  ],
+  "cluster_ci": [
+   0.293,
+   0.534
+  ],
+  "n_clusters": 58,
+  "chance": 0.239,
+  "refusal_rate": 0.0,
+  "precision": 0.414
+ },
+ "LitQA2|opts": {
+  "n": 58,
+  "acc": 0.207,
+  "wilson": [
+   0.123,
+   0.328
+  ],
+  "cluster_ci": [
+   0.103,
+   0.31
+  ],
+  "n_clusters": 58,
+  "chance": 0.239,
+  "refusal_rate": 0.0,
+  "precision": 0.207
+ },
+ "LitQA2|std": {
+  "n": 58,
+  "acc": 0.448,
+  "wilson": [
+   0.327,
+   0.575
+  ],
+  "cluster_ci": [
+   0.328,
+   0.569
+  ],
+  "n_clusters": 58,
+  "chance": 0.239,
+  "refusal_rate": 0.052,
+  "precision": 0.473
+ },
+ "ProtocolQA|forced": {
+  "n": 107,
+  "acc": 0.682,
+  "wilson": [
+   0.589,
+   0.763
+  ],
+  "cluster_ci": [
+   0.597,
+   0.805
+  ],
+  "n_clusters": 23,
+  "chance": 0.233,
+  "refusal_rate": 0.0,
+  "precision": 0.682
+ },
+ "ProtocolQA|opts": {
+  "n": 107,
+  "acc": 0.514,
+  "wilson": [
+   0.42,
+   0.607
+  ],
+  "cluster_ci": [
+   0.43,
+   0.624
+  ],
+  "n_clusters": 23,
+  "chance": 0.233,
+  "refusal_rate": 0.0,
+  "precision": 0.514
+ },
+ "ProtocolQA|std": {
+  "n": 107,
+  "acc": 0.626,
+  "wilson": [
+   0.532,
+   0.712
+  ],
+  "cluster_ci": [
+   0.552,
+   0.734
+  ],
+  "n_clusters": 23,
+  "chance": 0.233,
+  "refusal_rate": 0.168,
+  "precision": 0.753
+ },
+ "SeqQA|forced": {
+  "n": 237,
+  "acc": 0.895,
+  "wilson": [
+   0.849,
+   0.928
+  ],
+  "cluster_ci": [
+   0.852,
+   0.932
+  ],
+  "n_clusters": 237,
+  "chance": 0.245,
+  "refusal_rate": 0.0,
+  "precision": 0.895
+ },
+ "SeqQA|opts": {
+  "n": 150,
+  "acc": 0.513,
+  "wilson": [
+   0.434,
+   0.592
+  ],
+  "cluster_ci": [
+   0.427,
+   0.593
+  ],
+  "n_clusters": 150,
+  "chance": 0.247,
+  "refusal_rate": 0.0,
+  "precision": 0.513
+ },
+ "SeqQA|std": {
+  "n": 75,
+  "acc": 0.867,
+  "wilson": [
+   0.772,
+   0.926
+  ],
+  "cluster_ci": [
+   0.787,
+   0.947
+  ],
+  "n_clusters": 75,
+  "chance": 0.247,
+  "refusal_rate": 0.013,
+  "precision": 0.878
+ },
+ "SuppQA|forced": {
+  "n": 50,
+  "acc": 0.48,
+  "wilson": [
+   0.348,
+   0.615
+  ],
+  "cluster_ci": [
+   0.36,
+   0.62
+  ],
+  "n_clusters": 50,
+  "chance": 0.213,
+  "refusal_rate": 0.0,
+  "precision": 0.48
+ },
+ "SuppQA|opts": {
+  "n": 50,
+  "acc": 0.24,
+  "wilson": [
+   0.143,
+   0.374
+  ],
+  "cluster_ci": [
+   0.12,
+   0.36
+  ],
+  "n_clusters": 50,
+  "chance": 0.213,
+  "refusal_rate": 0.0,
+  "precision": 0.24
+ },
+ "SuppQA|std": {
+  "n": 50,
+  "acc": 0.32,
+  "wilson": [
+   0.208,
+   0.458
+  ],
+  "cluster_ci": [
+   0.2,
+   0.46
+  ],
+  "n_clusters": 50,
+  "chance": 0.213,
+  "refusal_rate": 0.2,
+  "precision": 0.4
+ },
+ "TableQA|blind": {
+  "n": 120,
+  "acc": 0.217,
+  "wilson": [
+   0.152,
+   0.299
+  ],
+  "cluster_ci": [
+   0.142,
+   0.292
+  ],
+  "n_clusters": 120,
+  "chance": 0.206,
+  "refusal_rate": 0.583,
+  "precision": 0.52
+ },
+ "TableQA|blindf": {
+  "n": 120,
+  "acc": 0.408,
+  "wilson": [
+   0.325,
+   0.498
+  ],
+  "cluster_ci": [
+   0.325,
+   0.5
+  ],
+  "n_clusters": 120,
+  "chance": 0.206,
+  "refusal_rate": 0.0,
+  "precision": 0.408
+ },
+ "TableQA|opts": {
+  "n": 120,
+  "acc": 0.283,
+  "wilson": [
+   0.21,
+   0.37
+  ],
+  "cluster_ci": [
+   0.208,
+   0.367
+  ],
+  "n_clusters": 120,
+  "chance": 0.206,
+  "refusal_rate": 0.0,
+  "precision": 0.283
+ },
+ "paired": {
+  "ProtocolQA|forced-std": {
+   "n": 107,
+   "delta_acc": 0.056,
+   "ci": [
+    -0.019,
+    0.131
+   ],
+   "refused_items_forced_acc": 0.389,
+   "refused_items_chance": 0.233,
+   "n_refused": 18
+  },
+  "CloningScenarios|forced-std": {
+   "n": 33,
+   "delta_acc": 0.061,
+   "ci": [
+    -0.091,
+    0.212
+   ],
+   "refused_items_forced_acc": 1.0,
+   "refused_items_chance": 0.25,
+   "n_refused": 1
+  },
+  "LitQA2|forced-std": {
+   "n": 58,
+   "delta_acc": -0.034,
+   "ci": [
+    -0.155,
+    0.086
+   ],
+   "refused_items_forced_acc": 0.0,
+   "refused_items_chance": 0.233,
+   "n_refused": 3
+  },
+  "SuppQA|forced-std": {
+   "n": 50,
+   "delta_acc": 0.16,
+   "ci": [
+    0.06,
+    0.26
+   ],
+   "refused_items_forced_acc": 0.4,
+   "refused_items_chance": 0.217,
+   "n_refused": 10
+  },
+  "FigQA|blindf-blind": {
+   "n": 181,
+   "delta_acc": 0.166,
+   "ci": [
+    0.094,
+    0.238
+   ],
+   "refused_items_forced_acc": 0.344,
+   "refused_items_chance": 0.217,
+   "n_refused": 93
+  },
+  "TableQA|blindf-blind": {
+   "n": 120,
+   "delta_acc": 0.192,
+   "ci": [
+    0.125,
+    0.267
+   ],
+   "refused_items_forced_acc": 0.286,
+   "refused_items_chance": 0.199,
+   "n_refused": 70
+  },
+  "FigQA|blind-last": {
+   "n": 181,
+   "delta_acc": 0.011,
+   "ci": [
+    -0.028,
+    0.05
+   ],
+   "refusal_rate_diff_blind_minus_last": 0.006,
+   "refusal_ci": [
+    -0.028,
+    0.039
+   ]
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "n": 62,
+ "spent_usd": 0.166,
+ "total_usd": 2.5756,
+ "buckets": {
+  "correct": {
+   "forced": 58,
+   "swap1": 45
+  },
+  "wrong": {
+   "forced": 4,
+   "swap1": 17
+  }
+ },
+ "forced": 0.935,
+ "swap1": 0.726,
+ "drop": 0.21,
+ "drop_ci": [
+  0.113,
+  0.306
+ ],
+ "pick_S_forced": 0.016,
+ "pick_S_swap1": 0.113,
+ "pick_WS_swap1": 0.0,
+ "pick_G_swap1": 0.161,
+ "by_subtask": {
+  "SeqQA:PCR-gene-gibshindprimers-v1": {
+   "n": 36,
+   "forced": 0.944,
+   "swap1": 0.75
+  },
+  "SeqQA:PCR-gene-gibssmaprimers-v1": {
+   "n": 26,
+   "forced": 0.923,
+   "swap1": 0.692
+  }
+ },
+ "fresh_vs_previous": {
+  "previous_50": {
+   "n": 39,
+   "forced": 0.949,
+   "swap1": 0.718
+  },
+  "fresh": {
+   "n": 23,
+   "forced": 0.913,
+   "swap1": 0.739
+  }
+ }
+}
