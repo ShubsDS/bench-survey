@@ -1,0 +1,148 @@
+{
+ "P1_P2": {
+  "Claude 3.5 Haiku": {
+   "dispersion_obs": 2.1398047279779258,
+   "pairs_used": 1494,
+   "dispersion_null_mean": 0.927513443245814,
+   "dispersion_null_p97.5": 0.9936605118147893,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.1462556888705006,
+   "n_pairs_kappa_lt_0.5": 707
+  },
+  "Claude 3.5 Sonnet v2": {
+   "dispersion_obs": 2.51086697288705,
+   "pairs_used": 394,
+   "dispersion_null_mean": 0.8692381594144523,
+   "dispersion_null_p97.5": 0.9772329780671091,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.03144393876706661,
+   "n_pairs_kappa_lt_0.5": 152
+  },
+  "Claude 3.7 Sonnet": {
+   "dispersion_obs": 1.9013861837018105,
+   "pairs_used": 662,
+   "dispersion_null_mean": 0.9153777176394217,
+   "dispersion_null_p97.5": 1.0412384515583102,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.036615639222176255,
+   "n_pairs_kappa_lt_0.5": 177
+  },
+  "Claude 3.7 Sonnet (1k)": {
+   "dispersion_obs": 1.7936060738889223,
+   "pairs_used": 241,
+   "dispersion_null_mean": 0.8216686886876617,
+   "dispersion_null_p97.5": 0.9474364215513855,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.025444766239139428,
+   "n_pairs_kappa_lt_0.5": 123
+  },
+  "Claude 3.7 Sonnet (64k)": {
+   "dispersion_obs": 1.374526653426147,
+   "pairs_used": 212,
+   "dispersion_null_mean": 0.6992194195241386,
+   "dispersion_null_p97.5": 0.8409206038669583,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.02772031443938767,
+   "n_pairs_kappa_lt_0.5": 134
+  },
+  "DeepSeek V3": {
+   "dispersion_obs": 2.298251134523979,
+   "pairs_used": 544,
+   "dispersion_null_mean": 0.7685750248653801,
+   "dispersion_null_p97.5": 0.8540956269679612,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.06061232933388498,
+   "n_pairs_kappa_lt_0.5": 293
+  },
+  "DeepSeek R1": {
+   "dispersion_obs": 1.6106899818632483,
+   "pairs_used": 342,
+   "dispersion_null_mean": 0.7665124105210864,
+   "dispersion_null_p97.5": 0.8718800667343871,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.04468349193214729,
+   "n_pairs_kappa_lt_0.5": 216
+  },
+  "GPT-4o-mini": {
+   "dispersion_obs": 1.6190270291376911,
+   "pairs_used": 1941,
+   "dispersion_null_mean": 0.8510885774758851,
+   "dispersion_null_p97.5": 0.9081162672046987,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.19507654116673562,
+   "n_pairs_kappa_lt_0.5": 943
+  },
+  "GPT-4o Aug '24": {
+   "dispersion_obs": 1.6823421568988042,
+   "pairs_used": 319,
+   "dispersion_null_mean": 0.8145442339749136,
+   "dispersion_null_p97.5": 0.9346159481367352,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.027099710384774513,
+   "n_pairs_kappa_lt_0.5": 131
+  },
+  "ChatGPT-4o": {
+   "dispersion_obs": 1.7234624348711447,
+   "pairs_used": 162,
+   "dispersion_null_mean": 0.6577217469692744,
+   "dispersion_null_p97.5": 0.8094833589117048,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.02254861398427803,
+   "n_pairs_kappa_lt_0.5": 109
+  },
+  "Gemini 1.5 Pro": {
+   "dispersion_obs": 3.1171915017288647,
+   "pairs_used": 1467,
+   "dispersion_null_mean": 0.7849300417838707,
+   "dispersion_null_p97.5": 0.8454400909219274,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.1650806785270997,
+   "n_pairs_kappa_lt_0.5": 798
+  },
+  "Gemini 2.5 Flash": {
+   "dispersion_obs": 1.597771084101619,
+   "pairs_used": 877,
+   "dispersion_null_mean": 0.8419262328562142,
+   "dispersion_null_p97.5": 0.9149495074522099,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.058129913115432356,
+   "n_pairs_kappa_lt_0.5": 281
+  },
+  "Gemini 2.5 Pro": {
+   "dispersion_obs": 1.3662526235282761,
+   "pairs_used": 150,
+   "dispersion_null_mean": 0.6586556004141462,
+   "dispersion_null_p97.5": 0.8071481642554926,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.0215142738932561,
+   "n_pairs_kappa_lt_0.5": 104
+  },
+  "Llama 3.1 70B": {
+   "dispersion_obs": 1.7045236760785518,
+   "pairs_used": 1128,
+   "dispersion_null_mean": 0.8421300017209221,
+   "dispersion_null_p97.5": 0.9118430465025098,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.06868018204385602,
+   "n_pairs_kappa_lt_0.5": 332
+  },
+  "Llama 3.3 70B Instruct": {
+   "dispersion_obs": 1.4327366324785666,
+   "pairs_used": 1017,
+   "dispersion_null_mean": 0.8030634196126036,
+   "dispersion_null_p97.5": 0.8633674557773728,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.08812577575506826,
+   "n_pairs_kappa_lt_0.5": 426
+  },
+  "Qwen 32B": {
+   "dispersion_obs": 1.4617215082639243,
+   "pairs_used": 1512,
+   "dispersion_null_mean": 0.7339361309278257,
+   "dispersion_null_p97.5": 0.7845844129339961,
+   "p_null_ge_obs": 0.0,
+   "share_pairs_kappa_lt_0.5": 0.1868018204385602,
+   "n_pairs_kappa_lt_0.5": 903
+  }
+ }
+}
