@@ -1,0 +1,19 @@
+{
+ "n_pairs": 117,
+ "yn_parsed": 117,
+ "fc_parsed": 106,
+ "same_answer_yn_share": 0.23931623931623933,
+ "same_position_fc_share": 0.05128205128205128,
+ "diff": 0.18803418803418803,
+ "diff_ci95": [
+  0.1111111111111111,
+  0.26495726495726496
+ ],
+ "acc_yes_no": 0.8803418803418803,
+ "acc_forced_choice": 0.8888888888888888,
+ "yn_patterns": {
+  "YES/NO": 89,
+  "NO/NO": 28
+ },
+ "spent_usd_total": 0.25371130000000003
+}

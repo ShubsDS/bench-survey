@@ -1,0 +1,118 @@
+pkey,group,n_flag,YN_Y,YN_N,FC_xy,FC_yx
+Caumasee || Philippine Sea,wm-world-natural-lat_lt,4,YES,NO,x,x
+Central Panay Mountain Range || Hornindalsvatnet,wm-world-natural-lat_lt,3,YES,NO,x,x
+Achwa 2 Hydroelectric Power Station || Lake Waco,wm-world-structure-lat_lt,4,NO,NO,x,x
+Berg Castle || Cluj-Napoca National Theatre,wm-world-structure-long_lt,3,YES,NO,x,x
+Great Craggy Mountains || Taal Lake,wm-world-natural-lat_lt,4,YES,NO,x,y
+Qattara Depression || River Gannel,wm-world-natural-long_gt,3,YES,NO,x,x
+Dandenong Ranges || Ghodaghodi Tal,wm-world-natural-long_lt,3,YES,NO,x,x
+Bexley railway station || Yale Repertory Theatre,wm-world-structure-lat_lt,4,YES,NO,x,x
+Erythraean Sea || Lake Volvi,wm-world-natural-lat_lt,3,YES,NO,x,x
+"Chaeng Watthana Government Complex || Shrine of St. Therese, Doctor of the Church",wm-world-structure-long_lt,3,NO,NO,UNK,y
+Oregon Coast Range || Pashan Lake,wm-world-natural-lat_lt,5,YES,NO,x,x
+Ramganga Dam || Tadworth railway station,wm-world-structure-lat_lt,3,YES,NO,x,x
+Caha Mountains || Lake Lyndon B. Johnson,wm-world-natural-lat_lt,5,YES,NO,x,x
+Old National Centre || Sydenham Hill railway station,wm-world-structure-lat_lt,3,NO,NO,x,x
+Dudipatsar || Patenggang Lake,wm-world-natural-lat_lt,3,NO,NO,x,x
+Simandou || Small Prespa Lake,wm-world-natural-long_gt,3,YES,NO,x,x
+Fairy Lake || Oulujärvi,wm-world-natural-lat_lt,4,NO,NO,x,x
+Church on the Hill (Sighișoara) || Jim Chapman Lake,wm-world-structure-lat_lt,3,NO,NO,x,x
+"Danjiangkou Dam || Russell Street, Melbourne",wm-world-structure-long_lt,3,YES,NO,x,x
+Bhagalpur division || Ranau District,wm-world-populated-lat_lt,4,YES,NO,x,x
+Big Rideau Lake || Lake Kossou,wm-world-natural-long_gt,3,YES,NO,x,x
+Budgam district || Scotter,wm-world-populated-lat_lt,3,YES,NO,x,x
+Hongze Lake || Muckross Lake,wm-world-natural-lat_lt,3,YES,NO,x,x
+Lough Conn || Quartz Mountains,wm-world-natural-lat_lt,7,YES,NO,x,x
+Mirror Lake (California) || Mount Belinda,wm-world-natural-long_gt,4,YES,NO,x,x
+Lough Gill || Wheeler Lake,wm-world-natural-lat_lt,4,YES,NO,x,x
+Ryanggang Hotel || Trawsfynydd nuclear power station,wm-world-structure-lat_lt,3,YES,NO,x,x
+"Electoral Palace, Mainz || Granite Basin Lake",wm-world-structure-lat_lt,3,NO,NO,x,x
+Gippsland Lakes || Niyamgiri,wm-world-natural-long_lt,3,YES,NO,x,x
+Mityana || Santo Domingo Oeste,wm-world-populated-lat_lt,4,YES,NO,x,x
+"Khanpur Dam || St James Church, Gerrards Cross",wm-world-structure-lat_lt,3,NO,NO,x,x
+Caraballo Mountains || Lake Inari,wm-world-natural-long_gt,3,YES,NO,x,x
+Glarus Alps || Lake Afrera,wm-world-natural-long_lt,3,YES,NO,x,x
+Kitanglad Mountain Range || Sayram Lake,wm-world-natural-long_gt,3,YES,NO,x,x
+Lake Okutama || Tonlé Sap,wm-world-natural-long_lt,3,YES,NO,x,x
+Clearwater Mountains || Lake Pehoé,wm-world-natural-long_gt,3,YES,NO,x,x
+East Brixton railway station || O'Reilly Theater,wm-world-structure-lat_lt,3,NO,NO,x,x
+Gary Junction Road || Rampal Power Station,wm-world-structure-long_lt,4,NO,NO,y,x
+Aïr Mountains || Parry Sound,wm-world-natural-long_gt,3,YES,NO,x,x
+Flamanville Nuclear Power Plant || Pine Flat Lake,wm-world-structure-lat_lt,3,YES,NO,x,x
+"Bay of Islands, Newfoundland and Labrador || Gravelly Lake",wm-world-natural-long_lt,3,NO,NO,x,x
+Imatong Mountains || Laguna Salada (Mexico),wm-world-natural-lat_lt,4,YES,NO,x,x
+"Concordia, Portland, Oregon || Modasa",wm-world-populated-lat_lt,3,YES,NO,x,UNK
+Bandaranaike Memorial International Conference Hall || Barker Meadow Reservoir,wm-world-structure-lat_lt,3,YES,NO,x,x
+Chicabal Lake || Moberly Lake (British Columbia),wm-world-natural-long_gt,5,NO,NO,x,x
+Pulicat Lake || Saronic Gulf,wm-world-natural-lat_lt,3,YES,NO,x,x
+Acarai Mountains || Straits of Corfu,wm-world-natural-lat_lt,4,YES,NO,x,x
+Ince Power Station || Lake Dukan,wm-world-structure-lat_lt,3,YES,NO,x,x
+Lake Rukwa || Mount Bulusan,wm-world-natural-lat_lt,3,YES,NO,x,x
+"Lexington Reservoir, CA || Shrine Church of St. Stanislaus, OH",wm-us-structure-lat_lt,3,YES,NO,x,UNK
+"Hebgen Lake, MT || Washington Avenue Immigration Station, PA",wm-us-structure-lat_lt,3,YES,NO,UNK,UNK
+Gaspar Strait || Lake Massaciuccoli,wm-world-natural-lat_lt,4,YES,NO,x,x
+Central Sofia Market Hall || Elephant & Castle railway station,wm-world-structure-lat_lt,4,YES,NO,x,x
+Cofton Hackett || Tawang district,wm-world-populated-lat_lt,4,YES,NO,x,x
+Hijaz Mountains || Raquette Lake,wm-world-natural-lat_lt,4,YES,NO,x,x
+"Belhar || Frisco, North Carolina",wm-world-populated-long_lt,3,YES,NO,x,UNK
+"Big Pink, NY || Hells Canyon Dam, ID",wm-us-structure-lat_lt,4,YES,NO,x,UNK
+Dholpur House || San Andreas Lake,wm-world-structure-lat_lt,4,YES,NO,x,x
+Argao Church || Ben Chifley Dam,wm-world-structure-long_lt,3,YES,NO,x,x
+Laguna Colorada || Loch Torridon,wm-world-natural-long_gt,3,YES,NO,x,x
+Absaroka Range || Rajsamand Lake,wm-world-natural-lat_lt,4,YES,NO,x,x
+"Inner City Bypass, Brisbane || South Gippsland Freeway",wm-world-structure-lat_lt,3,YES,NO,x,x
+Lake Decatur || Sudirman Range,wm-world-natural-lat_lt,4,YES,NO,x,x
+Cherokee Lake || Sai Ying Pun Community Complex,wm-world-structure-lat_lt,5,YES,NO,x,x
+Blackwater Reservoir || Navesink Highlands,wm-world-natural-long_lt,3,NO,NO,y,x
+Didicas Volcano || Lake Iseo,wm-world-natural-lat_lt,5,NO,NO,x,x
+Lake Sandoval || Mount Binuluan,wm-world-natural-lat_lt,5,NO,NO,x,x
+Ballarat || October Revolution Island,wm-world-populated-long_lt,3,YES,NO,x,x
+Khyargas Nuur || Safa and Marwa,wm-world-natural-lat_lt,3,NO,NO,x,x
+Batchawana Bay || Satpura Range,wm-world-natural-lat_lt,3,YES,NO,x,x
+Detroit Lake || Woman Lake,wm-world-natural-long_gt,3,YES,NO,x,x
+Pashan Lake || Võrtsjärv,wm-world-natural-long_gt,3,YES,NO,x,x
+Ana Sagar Lake || Lough Tay,wm-world-natural-lat_lt,4,YES,NO,x,x
+Calabogie Lake || Celtic Sea,wm-world-natural-long_gt,4,YES,NO,x,x
+Caraballo Mountains || Lake Oscawana,wm-world-natural-lat_lt,5,YES,NO,x,x
+Saban Theatre || Southwark tube station,wm-world-structure-lat_lt,5,NO,NO,x,x
+"Moroni, Comoros || Nalagarh",wm-world-populated-long_lt,3,YES,NO,x,UNK
+Buffalo Pound Lake || Ganesh Himal,wm-world-natural-lat_lt,3,YES,NO,x,x
+Lake Sibhayi || Rangrim Mountains,wm-world-natural-long_lt,3,YES,NO,x,x
+Patenggang Lake || Rodna Mountains,wm-world-natural-long_lt,3,YES,NO,x,x
+Lake Winnipegosis || Loch Alsh,wm-world-natural-long_gt,3,YES,NO,x,x
+Clearwater Mountains || Lake Pehoé,wm-world-natural-long_lt,4,YES,NO,x,x
+"Koltur || Uri, Jammu and Kashmir",wm-world-populated-lat_lt,3,YES,NO,x,UNK
+Lake Kizi || Mambilla Plateau,wm-world-natural-lat_lt,4,NO,NO,y,x
+Bemetara district || Froxfield,wm-world-populated-lat_lt,4,YES,NO,x,x
+Dandenong Ranges || Ghodaghodi Tal,wm-world-natural-long_gt,3,YES,NO,x,x
+Cagua Volcano || Lewis Hills,wm-world-natural-lat_lt,3,NO,NO,x,x
+"Lake Steilacoom, WA || Royal Oak Music Theatre, MI",wm-us-structure-lat_lt,3,YES,NO,UNK,UNK
+Fansipan || Wazee Lake,wm-world-natural-lat_lt,3,NO,NO,x,x
+Badin Lake || Elstree South tube station,wm-world-structure-lat_lt,3,YES,NO,x,x
+Clear Fork Reservoir || Nuba Mountains,wm-world-natural-lat_lt,4,YES,NO,x,x
+Gjende || Lake Mountains,wm-world-natural-lat_lt,3,YES,NO,x,x
+"El Hogar Filipino Building || Sacred Heart Cathedral, Lahore",wm-world-structure-lat_lt,4,NO,NO,y,x
+Great Haseley || UMuziwabantu Local Municipality,wm-world-populated-long_lt,3,YES,NO,x,x
+"Ngulu Atoll || Osceola County, Florida",wm-world-populated-lat_lt,3,YES,NO,x,x
+Lake Duluti || Satpara Lake,wm-world-natural-long_lt,3,YES,NO,x,x
+Arfa Software Technology Park || Shrine of Saint Andrew Kim,wm-world-structure-lat_lt,3,NO,NO,y,y
+Gulf of Honduras || Lake Wisconsin,wm-world-natural-lat_lt,3,YES,NO,x,x
+"Anderson Ranch Dam, ID || Star Lite Motel, MN",wm-us-structure-lat_lt,4,YES,NO,x,x
+Lake Sibhayi || Rangrim Mountains,wm-world-natural-long_gt,3,NO,NO,x,x
+Polgolla Barrage || Rend Lake,wm-world-structure-lat_lt,4,YES,NO,x,x
+Ajay River || Salar de Arizaro,wm-world-natural-lat_lt,5,YES,NO,x,x
+Loch Striven || Mount Sumagaya,wm-world-natural-lat_lt,3,YES,NO,x,x
+Rif || Ruby Mountain,wm-world-natural-lat_lt,3,NO,NO,x,x
+Mirani Dam || Turnham Green tube station,wm-world-structure-lat_lt,3,YES,NO,x,x
+St. Mary's in the Mountains Catholic Church || Tower Gateway DLR station,wm-world-structure-lat_lt,3,NO,NO,x,y
+Jindabyne Dam || National Shrine of the Divine Mercy (Philippines),wm-world-structure-long_lt,3,YES,NO,x,x
+Germasogeia || Sibi District,wm-world-populated-long_lt,3,YES,NO,x,x
+"Binoculars Building, CA || Buckhorn Lake (Kentucky), KY",wm-us-structure-lat_lt,3,NO,NO,UNK,UNK
+Celtic Sea || Lake Mariout,wm-world-natural-lat_lt,3,YES,NO,x,x
+Hampstead Heath railway station || Kulekhani Reservoir,wm-world-structure-lat_lt,4,YES,NO,x,x
+Cordillera Blanca || Mount Pierre Elliott Trudeau,wm-world-natural-long_gt,3,YES,NO,y,y
+Kindaruma Hydroelectric Power Station || Windy Hill Wind Farm,wm-world-structure-lat_lt,3,NO,NO,x,x
+Lake Galilee (Queensland) || Namcha Barwa,wm-world-natural-long_lt,3,YES,NO,x,x
+"Lake Lemon || St Cross Church, Oxford",wm-world-structure-lat_lt,4,NO,NO,x,x
+"Basilica of Saints Peter and Paul (Lewiston, Maine), ME || Lake Youngs, WA",wm-us-structure-lat_lt,3,YES,NO,UNK,UNK
+Andraus Building || Grapevine Lake,wm-world-structure-long_gt,3,YES,NO,x,x
