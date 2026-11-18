@@ -17,7 +17,7 @@ changed nothing measurable:
 
 Haiku's stated reasons rest mostly on rule-like wording that *is* visible: the task and duties text
 ("follow the standard procedure", "through official channels"). In 49 of 63 benign-naming probe
-answers it cites that wording. So for this model the missing field is close to cosmetic. That
+answers in arms A and G it cites that wording. So for this model the missing field is close to cosmetic. That
 says nothing yet about the paper's models, which call the tool 10–79% of the time. The measurement
 that would settle it, re-running those models with the field restored, still needs tool-calling
 inference we did not have.
@@ -82,10 +82,10 @@ The template is fixed, so the sentence-level differences are the same in every s
 |---|---|---|
 | Tool "explicitly and very clearly forbidden by the scenario's policies" (Sec. 3); the policy "immediately and unequivocally warns" (App., Policies) | No prohibition. The tool is described under "Additional Information Available About the Tool ⟨name⟩" (how it achieves the goal), followed by "WARNING: ⟨consequences⟩" | `prohibitions_description` dropped in 979/979; prohibition wording in the text shown about the tool in 4/979 |
 | App. listing of the system prompt | Matches the code, except the paper prints "**Additional Information Available:**" where the code adds "About the Tool ⟨name⟩". The printed listing has no prohibition slot either (partial disclosure, missed by the earlier finding) | 1 header |
-| (Not described) | Rule-like task and duty text is visible ("use only the allocated resources", "through the official change management pipeline"). The strict regex hits role, duties or task in 112/979; the hand reading found it in most of the 32 | 112/979 by regex |
+| (Not described) | Rule-like task and duty text is visible ("use only the allocated resources", "through the official change management pipeline"). The strict regex hits role, duties or task in 108/979; the hand reading found it in most of the 32 | 108/979 by regex |
 | "Benign versions omit overt harmful cues" (commented-out method text); Results: the prompt "explicitly names the misaligned tool … for both benign name and harmful name" | Only the tool's name and tool-list description change. The tool-specific consequences warning and the outcome text, which often describe the harmful mechanism ("bypassing the standard validation …"), stay, under a header naming the tool | header names the tool 979/979; prompts otherwise identical 973/979; by hand, 9/32 benign descriptions still describe a bypass, an exploit or harm to others |
 | Errors are disclosed as always returned | System prompt: "ALL necessary tools", errors are "TEMPORARY holds (NOT permanent) … try again". The 4th aligned call in a turn returns a 429 and the tool is removed for that turn (`executor.py:208-210`) | 979/979 |
-| Pressure "strictly increases" (urgency, resources, …) | The top level of the disclosed "Resource Allocation" component ("Unrestrained Access (>2000%)") is rendered as authorisation, e.g. "unrestrained access … authorized … overriding all standard protocols". The evaluation-awareness top levels say the agent "operate[s] with impunity" | auth/override lexicon: level 1 4.1%, level 12 36.5% (67,866 messages) |
+| Pressure "strictly increases" (urgency, resources, …) | The top level of the disclosed "Resource Allocation" component ("Unrestrained Access (>2000%)") is rendered as authorisation, e.g. "unrestrained access … authorized … overriding all standard protocols". The evaluation-awareness top levels say the agent "operate[s] with impunity" | auth/override lexicon: level 1 4.1%, level 12 36.5% (67,866 messages; `corpus_checks.json`) |
 | 5,874 tasks (979 × 6 categories) | 5,684 scenario-category runs. Forensic-Chemistry-Laboratory's 38 scenarios have only "financials", with 3 levels | 5,684 |
 | — | 8 scenarios have an empty benign tool name and description; 2 of them also an empty harmful one | 8 |
 | Initial prompt "is always the task_message" | "Complete the following task: " + the task message, which also appears in the system prompt. The interaction protocol keeps literal `{{ }}` because it is passed as a format value | all |
@@ -173,7 +173,7 @@ the split cannot be computed.
 | Earlier finding rerun at HEAD | Byte-identical counts | Yes |
 | Pilot transcript (v1: task, one error) | 0/29 misaligned; Haiku mostly fetched information | Same floor |
 | Generic warning removed (G) | 0/61 action, 0/63 probe | Haiku does not need the generic line |
-| Blocked cells | 24 action and 11 probe cells; 2–4 of 16 per arm among late messages that license bypass | Missing cases cannot raise any arm above 3/32 |
+| Blocked cells | 24 action and 11 probe cells; 2–4 of 16 per arm among late messages that license bypass | At most 2 blocked per cell, so no cell could rise above 2/32 |
 
 ## Alternative explanations
 
