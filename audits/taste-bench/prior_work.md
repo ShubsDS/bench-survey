@@ -47,4 +47,5 @@ No independent re-run, critique, or per-item analysis of Taste-Bench was found.
    "detour harder in both domains", and the construction-relation pattern in the SWE-bench
    comparison and in the domain gaps.
 5. The human-review agreement statistic's insensitivity to the defect it is cited against.
-6. Ready-to-run item-level scripts (Phase B), blocked by the gate.
+6. Item-level tests after the gate was opened by the repository owner: the option-origin cue,
+   the options-only below-chance detour-engineering result, and the final-step intervention.
