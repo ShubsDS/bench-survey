@@ -1,0 +1,317 @@
+{
+ "cell_median_prefix_chars": {
+  "parallel_engineering": 23101.0,
+  "parallel_research": 25665.5,
+  "detour_engineering": 28807.0,
+  "detour_research": 12841.5
+ },
+ "models": {
+  "deepseek-v4-flash": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 2,
+    "detour_research": 0
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 0.0,
+    "parallel_research": 0.0,
+    "detour_engineering": 0.4,
+    "detour_research": 0.0
+   },
+   "published_paired_average": 43.3,
+   "single_order_average": {
+    "wrong": 54.9,
+    "chance": 55.0,
+    "parsed_rate": 55.0
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    43.4,
+    43.5
+   ],
+   "paired_average_parsed_only_bounds": [
+    43.4,
+    43.4
+   ],
+   "position_choices_total": 980,
+   "parsed_total": 1002
+  },
+  "glm-5.2": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 4,
+    "parallel_research": 4,
+    "detour_engineering": 4,
+    "detour_research": 5
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 1.6,
+    "parallel_research": 4.2,
+    "detour_engineering": 0.8,
+    "detour_research": 3.9
+   },
+   "published_paired_average": 53.9,
+   "single_order_average": {
+    "wrong": 64.0,
+    "chance": 65.3,
+    "parsed_rate": 65.8
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    54.3,
+    56.4
+   ],
+   "paired_average_parsed_only_bounds": [
+    55.9,
+    57.0
+   ],
+   "position_choices_total": 987,
+   "parsed_total": 987
+  },
+  "gpt-5.4-mini": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 94,
+    "parallel_research": 0,
+    "detour_engineering": 18,
+    "detour_research": 0
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 37.9,
+    "parallel_research": 0.0,
+    "detour_engineering": 3.4,
+    "detour_research": 0.0
+   },
+   "published_paired_average": 40.1,
+   "single_order_average": {
+    "wrong": 49.5,
+    "chance": 53.1,
+    "parsed_rate": 53.4
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    41.8,
+    43.8
+   ],
+   "paired_average_parsed_only_bounds": [
+    42.3,
+    45.0
+   ],
+   "position_choices_total": 846,
+   "parsed_total": 892
+  },
+  "gpt-5.4-nano": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 20,
+    "parallel_research": 4,
+    "detour_engineering": 57,
+    "detour_research": 12
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 8.1,
+    "parallel_research": 4.2,
+    "detour_engineering": 10.7,
+    "detour_research": 9.4
+   },
+   "published_paired_average": 36.6,
+   "single_order_average": {
+    "wrong": 48.8,
+    "chance": 53.0,
+    "parsed_rate": 53.2
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    38.3,
+    45.1
+   ],
+   "paired_average_parsed_only_bounds": [
+    40.7,
+    43.9
+   ],
+   "position_choices_total": 911,
+   "parsed_total": 911
+  },
+  "grok-4.20-reasoning": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 77,
+    "parallel_research": 66,
+    "detour_engineering": 232,
+    "detour_research": 84
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 31.0,
+    "parallel_research": 68.8,
+    "detour_engineering": 43.6,
+    "detour_research": 65.6
+   },
+   "published_paired_average": 15.7,
+   "single_order_average": {
+    "wrong": 29.0,
+    "chance": 55.7,
+    "parsed_rate": 61.1
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    28.9,
+    39.0
+   ],
+   "paired_average_parsed_only_bounds": [
+    32.8,
+    94.0
+   ],
+   "position_choices_total": 523,
+   "parsed_total": 545
+  },
+  "grok-4.5": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 9,
+    "parallel_research": 0,
+    "detour_engineering": 1,
+    "detour_research": 0
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 3.6,
+    "parallel_research": 0.0,
+    "detour_engineering": 0.2,
+    "detour_research": 0.0
+   },
+   "published_paired_average": 54.6,
+   "single_order_average": {
+    "wrong": 62.0,
+    "chance": 62.3,
+    "parsed_rate": 62.4
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    54.7,
+    55.2
+   ],
+   "paired_average_parsed_only_bounds": [
+    55.0,
+    55.3
+   ],
+   "position_choices_total": 940,
+   "parsed_total": 994
+  },
+  "minimax-m3": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 3,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 1.2,
+    "parallel_research": 0.0,
+    "detour_engineering": 0.0,
+    "detour_research": 0.0
+   },
+   "published_paired_average": 45.3,
+   "single_order_average": {
+    "wrong": 57.2,
+    "chance": 57.3,
+    "parsed_rate": 57.4
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    45.3,
+    45.5
+   ],
+   "paired_average_parsed_only_bounds": [
+    45.4,
+    45.4
+   ],
+   "position_choices_total": 1001,
+   "parsed_total": 1001
+  },
+  "mistral-medium-3.5": {
+   "unparsed_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 12,
+    "detour_engineering": 5,
+    "detour_research": 7
+   },
+   "errors_by_cell": {
+    "parallel_engineering": 0,
+    "parallel_research": 0,
+    "detour_engineering": 0,
+    "detour_research": 0
+   },
+   "unparsed_rate_by_cell": {
+    "parallel_engineering": 0.0,
+    "parallel_research": 12.5,
+    "detour_engineering": 0.9,
+    "detour_research": 5.5
+   },
+   "published_paired_average": 37.7,
+   "single_order_average": {
+    "wrong": 51.8,
+    "chance": 54.0,
+    "parsed_rate": 54.4
+   },
+   "paired_average_unparsed_as_chance_bounds": [
+    38.6,
+    42.3
+   ],
+   "paired_average_parsed_only_bounds": [
+    39.9,
+    41.5
+   ],
+   "position_choices_total": 980,
+   "parsed_total": 980
+  }
+ },
+ "published_rank": {
+  "gpt-5.6-sol": 1,
+  "gpt-5.5": 2,
+  "claude-opus-5": 3,
+  "grok-4.5": 4,
+  "gpt-5.6-terra": 5,
+  "glm-5.2": 6,
+  "claude-sonnet-5": 7,
+  "gpt-5.6-luna": 8,
+  "minimax-m3": 9,
+  "deepseek-v4-flash": 10,
+  "gpt-5.4-mini": 11,
+  "mistral-medium-3.5": 12,
+  "gpt-5.4-nano": 13,
+  "grok-4.20-reasoning": 14
+ },
+ "glm_rank_if_chance_lower_bound": 5,
+ "grok420_parsed_single_order": 63.5,
+ "sol_single_order": 63.5
+}

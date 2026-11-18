@@ -1,0 +1,36 @@
+{
+ "n": 502,
+ "contrast_detour_minus_parallel": 6.82,
+ "mean_h2_minus_h1": {
+  "detour": 3.33,
+  "parallel": -3.49
+ },
+ "detour": {
+  "cut_chars_median": 448.0,
+  "share_last_step_ge_2000": 0.039,
+  "window_jaccard_median": 0.735,
+  "removed_step_overlap_correct_minus_wrong_mean": -0.0085,
+  "share_removed_step_closer_to_wrong": 0.497,
+  "share_items_changed": 0.233,
+  "share_prefix_short_equals_full": 0.215
+ },
+ "parallel": {
+  "cut_chars_median": 895.0,
+  "share_last_step_ge_2000": 0.0,
+  "window_jaccard_median": 0.597,
+  "removed_step_overlap_correct_minus_wrong_mean": 0.002,
+  "share_removed_step_closer_to_wrong": 0.401,
+  "share_items_changed": 0.221,
+  "share_prefix_short_equals_full": 0.203
+ },
+ "contrast_short_cut": 6.66,
+ "contrast_long_cut": 8.23,
+ "cut_median_all": 594.5,
+ "contrast_engineering": 7.82,
+ "contrast_research": 4.17,
+ "placebo_construction_shuffle": {
+  "n": 1000,
+  "p97.5": 5.5,
+  "share_ge_observed": 0.007
+ }
+}

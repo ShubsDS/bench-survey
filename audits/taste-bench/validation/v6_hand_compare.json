@@ -1,0 +1,501 @@
+{
+ "n": 44,
+ "n_tasks": 38,
+ "confidence_counts": {
+  "1": 11,
+  "2": 26,
+  "3": 7
+ },
+ "all": {
+  "me_vs_key": {
+   "n": 44,
+   "agree": 38,
+   "rate": 86.4
+  },
+  "me_vs_lower_cont": {
+   "n": 40,
+   "agree": 27,
+   "rate": 67.5
+  },
+  "lower_cont_vs_key": {
+   "n": 40,
+   "agree": 29,
+   "rate": 72.5
+  },
+  "lower_ground_vs_key": {
+   "n": 43,
+   "agree": 30,
+   "rate": 69.8
+  },
+  "me_vs_lower_ground": {
+   "n": 43,
+   "agree": 30,
+   "rate": 69.8
+  },
+  "haiku_H0_seeded_vs_key": {
+   "n": 44,
+   "agree": 15,
+   "rate": 34.1
+  },
+  "me_vs_haiku_H0_seeded": {
+   "n": 44,
+   "agree": 17,
+   "rate": 38.6
+  },
+  "haiku_H1_seeded_vs_key": {
+   "n": 44,
+   "agree": 12,
+   "rate": 27.3
+  },
+  "me_vs_key_ci_task_boot": [
+   74.5,
+   95.5
+  ],
+  "me_vs_key_binom_p_vs_50": 0.0
+ },
+ "conf_ge2": {
+  "me_vs_key": {
+   "n": 33,
+   "agree": 28,
+   "rate": 84.8
+  },
+  "me_vs_lower_cont": {
+   "n": 31,
+   "agree": 20,
+   "rate": 64.5
+  },
+  "lower_cont_vs_key": {
+   "n": 31,
+   "agree": 23,
+   "rate": 74.2
+  },
+  "lower_ground_vs_key": {
+   "n": 32,
+   "agree": 22,
+   "rate": 68.8
+  },
+  "me_vs_lower_ground": {
+   "n": 32,
+   "agree": 23,
+   "rate": 71.9
+  },
+  "haiku_H0_seeded_vs_key": {
+   "n": 33,
+   "agree": 9,
+   "rate": 27.3
+  },
+  "me_vs_haiku_H0_seeded": {
+   "n": 33,
+   "agree": 12,
+   "rate": 36.4
+  },
+  "haiku_H1_seeded_vs_key": {
+   "n": 33,
+   "agree": 9,
+   "rate": 27.3
+  },
+  "me_vs_key_ci_task_boot": [
+   70.6,
+   94.3
+  ]
+ },
+ "conf3": {
+  "me_vs_key": {
+   "n": 7,
+   "agree": 5,
+   "rate": 71.4
+  },
+  "me_vs_lower_cont": {
+   "n": 6,
+   "agree": 4,
+   "rate": 66.7
+  },
+  "lower_cont_vs_key": {
+   "n": 6,
+   "agree": 4,
+   "rate": 66.7
+  },
+  "lower_ground_vs_key": {
+   "n": 7,
+   "agree": 4,
+   "rate": 57.1
+  },
+  "me_vs_lower_ground": {
+   "n": 7,
+   "agree": 6,
+   "rate": 85.7
+  },
+  "haiku_H0_seeded_vs_key": {
+   "n": 7,
+   "agree": 3,
+   "rate": 42.9
+  },
+  "me_vs_haiku_H0_seeded": {
+   "n": 7,
+   "agree": 5,
+   "rate": 71.4
+  },
+  "haiku_H1_seeded_vs_key": {
+   "n": 7,
+   "agree": 3,
+   "rate": 42.9
+  },
+  "me_vs_key_ci_task_boot": null
+ },
+ "conf1": {
+  "me_vs_key": {
+   "n": 11,
+   "agree": 10,
+   "rate": 90.9
+  },
+  "me_vs_lower_cont": {
+   "n": 9,
+   "agree": 7,
+   "rate": 77.8
+  },
+  "lower_cont_vs_key": {
+   "n": 9,
+   "agree": 6,
+   "rate": 66.7
+  },
+  "lower_ground_vs_key": {
+   "n": 11,
+   "agree": 8,
+   "rate": 72.7
+  },
+  "me_vs_lower_ground": {
+   "n": 11,
+   "agree": 7,
+   "rate": 63.6
+  },
+  "haiku_H0_seeded_vs_key": {
+   "n": 11,
+   "agree": 6,
+   "rate": 54.5
+  },
+  "me_vs_haiku_H0_seeded": {
+   "n": 11,
+   "agree": 5,
+   "rate": 45.5
+  },
+  "haiku_H1_seeded_vs_key": {
+   "n": 11,
+   "agree": 3,
+   "rate": 27.3
+  },
+  "me_vs_key_ci_task_boot": [
+   72.7,
+   100.0
+  ]
+ },
+ "per_item": [
+  {
+   "id": "det-sse-05e43891ff256059-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-070bc57de5773039-v3",
+   "me": "B",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": null
+  },
+  {
+   "id": "det-sse-076fb98f204e8518-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": null
+  },
+  {
+   "id": "det-sse-0fcfebb608a0d385-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-15f04f0be01bdb96-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-1f26ce72e153174b-v3",
+   "me": "B",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-1f5bbe9081205d07-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-211de399d6a649e0-v3",
+   "me": "B",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-303e53b4fc1dbf2e-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-3643f20ab685bfbd-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "A",
+   "lower_cont": null
+  },
+  {
+   "id": "det-sse-3cc58eeeb24a81b5-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "A",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-3fe74c92cf2a3fa1-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-456159e4c9e67fed-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-49d076be4da0b2bb-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-4c285aa10ff87fe0-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-4ef9dc8acbbdc25c-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-52140e16097acdfb-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-616a2f14be84707a-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-618fc95babdbf24d-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-6190725449bf9489-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-677e14876b933fd1-v3",
+   "me": "B",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-685d2f39d5e64a64-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-6c8332eafce52464-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-6eb29bb10156ef31-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-6efe99bfab7fb1c3-v3",
+   "me": "B",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-846133ac04094ec0-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-87841aa9ee29e508-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-93e118d2d43f145d-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-a3b9e33520ba1b14-v3",
+   "me": "A",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-b50f75bc647a3bac-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-bb7e6b5d5e12573e-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-c3b57310048b0a9e-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": null
+  },
+  {
+   "id": "det-sse-c6a813d59426b944-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-c729e5086e89783b-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-c8e29414c7ed23e9-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-c970d377dc0f2414-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-cc5a7e1fc5469d92-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-d3920fd7def8fac4-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-d6936722ba7f5e69-v3",
+   "me": "B",
+   "conf": 2,
+   "key": "B",
+   "lower_cont": "B"
+  },
+  {
+   "id": "det-sse-d7b7e94bae85b698-v3",
+   "me": "A",
+   "conf": 1,
+   "key": "B",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-e445bfd2e428f720-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-f2caa554226d1d07-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-f596943ca2024863-v3",
+   "me": "B",
+   "conf": 3,
+   "key": "A",
+   "lower_cont": "A"
+  },
+  {
+   "id": "det-sse-fd10f2eac5f56912-v3",
+   "me": "A",
+   "conf": 2,
+   "key": "A",
+   "lower_cont": "B"
+  }
+ ]
+}

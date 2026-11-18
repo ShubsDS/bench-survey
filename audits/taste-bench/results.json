@@ -50,7 +50,7 @@
    "det-sse-9e0572f5a9dff29e-v3"
   ],
   "observations": [
-   "Detour-engineering queries are rewritten by the generator to pose the fork (for example asking the reader to choose the next verification strategy after a stated environment failure); most forks are between two ways to verify a patch in a sandbox with missing tools or dependencies.",
+   "Detour-engineering queries are rewritten by the generator to pose the fork (for example asking the reader to pick a way to verify after an environment failure the query states); most forks are between two ways to verify a patch in a sandbox with missing tools or dependencies.",
    "Several detour labels depend on facts of the sandbox that the prefix does not settle (whether a write is allowed, whether a toolchain exists elsewhere on disk).",
    "Detour-research prefixes include MALT runs in which the agent states a plan to sabotage or sandbag the task (5 of 64 by keyword scan; 2 of them in this sample: det-malt-7ed1e7063dba2815-v3, det-malt-03c02eba4542a9da-v3).",
    "Parallel-engineering options are near-paraphrases that differ in one implementation detail; the correct one often names the file or symbol the prefix tail was just reading.",
