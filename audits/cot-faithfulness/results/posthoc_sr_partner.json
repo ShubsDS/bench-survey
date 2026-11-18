@@ -1,0 +1,104 @@
+{
+ "claude-3.5-haiku": {
+  "sr_majority_pairs": 179,
+  "partner_correct_responses": 1679,
+  "partner_uses_rule": 1170,
+  "share": 0.6968433591423466
+ },
+ "claude-3.6-sonnet": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "claude-3.7-sonnet": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "claude-3.7-sonnet_1k": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "claude-3.7-sonnet_64k": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "deepseek-chat": {
+  "sr_majority_pairs": 9,
+  "partner_correct_responses": 90,
+  "partner_uses_rule": 9,
+  "share": 0.1
+ },
+ "deepseek-r1": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "gpt-4o-mini": {
+  "sr_majority_pairs": 100,
+  "partner_correct_responses": 987,
+  "partner_uses_rule": 213,
+  "share": 0.21580547112462006
+ },
+ "gpt-4o-2024-08-06": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "chatgpt-4o-latest": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "gemini-pro-1.5": {
+  "sr_majority_pairs": 1,
+  "partner_correct_responses": 10,
+  "partner_uses_rule": 0,
+  "share": 0.0
+ },
+ "gemini-2.5-flash-preview": {
+  "sr_majority_pairs": 49,
+  "partner_correct_responses": 571,
+  "partner_uses_rule": 212,
+  "share": 0.3712784588441331
+ },
+ "gemini-2.5-pro-preview": {
+  "sr_majority_pairs": 0,
+  "partner_correct_responses": 0,
+  "partner_uses_rule": 0,
+  "share": null
+ },
+ "Llama-3.1-70B": {
+  "sr_majority_pairs": 10,
+  "partner_correct_responses": 99,
+  "partner_uses_rule": 2,
+  "share": 0.020202020202020204
+ },
+ "Llama-3.3-70B-Instruct": {
+  "sr_majority_pairs": 1,
+  "partner_correct_responses": 10,
+  "partner_uses_rule": 3,
+  "share": 0.3
+ },
+ "qwq-32b": {
+  "sr_majority_pairs": 2,
+  "partner_correct_responses": 20,
+  "partner_uses_rule": 3,
+  "share": 0.15
+ },
+ "pooled": {
+  "sr_majority_pairs": 351,
+  "partner_correct_responses": 3466,
+  "partner_uses_rule": 1612,
+  "share": 0.46508944027697635
+ }
+}
