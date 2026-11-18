@@ -1,0 +1,98 @@
+{
+ "rows": 7913,
+ "variants": 48,
+ "positives": {
+  "hard": 1087,
+  "paper_hard_compliant": 925,
+  "paper_soft_compliant": 870
+ },
+ "heldout_auroc_K_hard": {
+  "mean": 0.7729647782468401,
+  "min": 0.7512669564477175,
+  "max": 0.7937425655524332
+ },
+ "heldout_auroc_K_paper_hard_compliant": {
+  "mean": 0.7566992201669291,
+  "min": 0.7336346089034591,
+  "max": 0.7803632921843848
+ },
+ "heldout_auroc_K_paper_soft_compliant": {
+  "mean": 0.7775991915566793,
+  "min": 0.7479123574761962,
+  "max": 0.7960809670012959
+ },
+ "heldout_auroc_V_hard": {
+  "mean": 0.747790221671812,
+  "min": 0.7277150037682232,
+  "max": 0.7714643634963596
+ },
+ "heldout_auroc_V_paper_hard_compliant": {
+  "mean": 0.7337156400509401,
+  "min": 0.7116439309576836,
+  "max": 0.7590588101039799
+ },
+ "heldout_auroc_V_paper_soft_compliant": {
+  "mean": 0.7502703457262482,
+  "min": 0.7251870758474503,
+  "max": 0.7695487877880874
+ },
+ "heldout_auroc_len_hard": {
+  "mean": 0.707468353738558,
+  "min": 0.685524050445613,
+  "max": 0.7275107804311195
+ },
+ "heldout_auroc_len_paper_hard_compliant": {
+  "mean": 0.6960072153977731,
+  "min": 0.6733314950417191,
+  "max": 0.7149673159458567
+ },
+ "heldout_auroc_len_paper_soft_compliant": {
+  "mean": 0.6908789456465823,
+  "min": 0.6637439849399136,
+  "max": 0.7144388293833674
+ },
+ "human106": {
+  "n": 106,
+  "pos": 51,
+  "K_auroc": 0.6431372549019607,
+  "K_bacc_at_train_rate": 0.5308377896613191,
+  "K_positives": 7,
+  "V_auroc": 0.6438502673796791,
+  "V_bacc_at_train_rate": 0.5014260249554368,
+  "V_positives": 4,
+  "original-sonnet-new-hard_bacc(=auroc)": 0.5836007130124777,
+  "original-sonnet-new-hard_positives": 49,
+  "original-sonnet-new-easy_bacc(=auroc)": 0.633868092691622,
+  "original-sonnet-new-easy_positives": 31,
+  "hard_and_easy_af_bacc(=auroc)": 0.6194295900178253,
+  "hard_and_easy_af_positives": 70,
+  "has_hard_af_Claude-3.5-Sonnet-20241022_bacc(=auroc)": 0.5850267379679144,
+  "has_hard_af_Claude-3.5-Sonnet-20241022_positives": 53,
+  "has_easy_af_Claude-3.5-Sonnet-20241022_bacc(=auroc)": 0.5877005347593582,
+  "has_easy_af_Claude-3.5-Sonnet-20241022_positives": 34,
+  "v5_classifier_decsision_auroc": 0.8848484848484848,
+  "yes_proportion_auroc": 0.9078431372549018,
+  "paired_bootstrap_ci": {
+   "K_minus_orighard_bacc": [
+    -0.1554278796727004,
+    0.05265430035650632
+   ],
+   "K_minus_origeasy_bacc": [
+    -0.19750011140819954,
+    -0.0023129514963880246
+   ],
+   "K_minus_hardandeasy_bacc": [
+    -0.1821735707364341,
+    0.006269278966647373
+   ],
+   "v5_minus_K_auroc": [
+    0.12716684136656795,
+    0.3517030233448143
+   ]
+  },
+  "K_auroc_ci": [
+   0.5368929586208998,
+   0.7471884140722039
+  ]
+ }
+}
