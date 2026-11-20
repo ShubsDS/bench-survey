@@ -1,19 +1,664 @@
 {
  "calls": {
   "haiku": {
-   "n": 1,
-   "cost_usd": 0.0013,
-   "mean_cost": 0.0013,
-   "mean_thinking_tokens": 1826.0
+   "n": 392,
+   "cost_usd": 0.4693,
+   "mean_cost": 0.0012,
+   "mean_thinking_tokens": 1617.7296
   },
   "sonnet": {
-   "n": 105,
-   "cost_usd": 1.7665,
-   "mean_cost": 0.0168,
-   "mean_thinking_tokens": 913.4286
+   "n": 141,
+   "cost_usd": 2.2431,
+   "mean_cost": 0.0159,
+   "mean_thinking_tokens": 813.9433
   }
  },
  "arms": [
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "ORF-seq-AAseq-v1",
+   "n": 15,
+   "acc": 1.0,
+   "wilson": [
+    0.7961,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.2
+  },
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "PCR-gene-enzprimers-v1",
+   "n": 15,
+   "acc": 0.6,
+   "wilson": [
+    0.3575,
+    0.8018
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "PCR-gene-gibshindprimers-v1",
+   "n": 15,
+   "acc": 0.6667,
+   "wilson": [
+    0.4171,
+    0.8482
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "PCR-gene-gibssmaprimers-v1",
+   "n": 15,
+   "acc": 0.7333,
+   "wilson": [
+    0.4805,
+    0.891
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "PCR-seq-enzprimers-v1",
+   "n": 15,
+   "acc": 1.0,
+   "wilson": [
+    0.7961,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "D",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 15,
+   "acc": 0.6667,
+   "wilson": [
+    0.4171,
+    0.8482
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "I",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 15,
+   "acc": 0.7333,
+   "wilson": [
+    0.4805,
+    0.891
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "ORF-seq-AAseq-v1",
+   "n": 15,
+   "acc": 1.0,
+   "wilson": [
+    0.7961,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.2
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "PCR-gene-enzprimers-v1",
+   "n": 15,
+   "acc": 0.6667,
+   "wilson": [
+    0.4171,
+    0.8482
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "PCR-gene-gibshindprimers-v1",
+   "n": 15,
+   "acc": 0.7333,
+   "wilson": [
+    0.4805,
+    0.891
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "PCR-gene-gibssmaprimers-v1",
+   "n": 15,
+   "acc": 0.8,
+   "wilson": [
+    0.5481,
+    0.9295
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "PCR-seq-enzprimers-v1",
+   "n": 15,
+   "acc": 1.0,
+   "wilson": [
+    0.7961,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "K",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 15,
+   "acc": 0.8,
+   "wilson": [
+    0.5481,
+    0.9295
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "ORF-seq-AAid-v1",
+   "n": 6,
+   "acc": 0.1667,
+   "wilson": [
+    0.0301,
+    0.5635
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "ORF-seq-AAseq-v1",
+   "n": 8,
+   "acc": 1.0,
+   "wilson": [
+    0.6756,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.2
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "ORF-seq-numlen-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "ORF-transeff-v1",
+   "n": 6,
+   "acc": 0.6667,
+   "wilson": [
+    0.3,
+    0.9032
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-gene-enzprimers-v1",
+   "n": 8,
+   "acc": 0.625,
+   "wilson": [
+    0.3057,
+    0.8632
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-gene-gibshindprimers-v1",
+   "n": 8,
+   "acc": 0.875,
+   "wilson": [
+    0.5291,
+    0.9776
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-gene-gibssmaprimers-v1",
+   "n": 8,
+   "acc": 0.875,
+   "wilson": [
+    0.5291,
+    0.9776
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-geneprimers-enz-v1",
+   "n": 6,
+   "acc": 0.5,
+   "wilson": [
+    0.1876,
+    0.8124
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-len-primers-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-primers-len-v1",
+   "n": 6,
+   "acc": 0.5,
+   "wilson": [
+    0.1876,
+    0.8124
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-seq-enzprimers-v1",
+   "n": 8,
+   "acc": 0.875,
+   "wilson": [
+    0.5291,
+    0.9776
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "PCR-seq-primers-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 8,
+   "acc": 0.5,
+   "wilson": [
+    0.2152,
+    0.7848
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "RE-seq-lenfrags-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "N",
+   "family": "RE-seq-numfrags-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "ORF-seq-AAid-v1",
+   "n": 6,
+   "acc": 0.5,
+   "wilson": [
+    0.1876,
+    0.8124
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "ORF-seq-AAseq-v1",
+   "n": 8,
+   "acc": 1.0,
+   "wilson": [
+    0.6756,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.2
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "ORF-seq-numlen-v1",
+   "n": 6,
+   "acc": 0.5,
+   "wilson": [
+    0.1876,
+    0.8124
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "ORF-transeff-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-gene-enzprimers-v1",
+   "n": 8,
+   "acc": 0.75,
+   "wilson": [
+    0.4093,
+    0.9285
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-gene-gibshindprimers-v1",
+   "n": 8,
+   "acc": 0.875,
+   "wilson": [
+    0.5291,
+    0.9776
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-gene-gibssmaprimers-v1",
+   "n": 8,
+   "acc": 0.75,
+   "wilson": [
+    0.4093,
+    0.9285
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-geneprimers-enz-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-len-primers-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-primers-len-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-seq-enzprimers-v1",
+   "n": 8,
+   "acc": 1.0,
+   "wilson": [
+    0.6756,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "PCR-seq-primers-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 15,
+   "acc": 0.8,
+   "wilson": [
+    0.5481,
+    0.9295
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "RE-seq-lenfrags-v1",
+   "n": 6,
+   "acc": 0.3333,
+   "wilson": [
+    0.0968,
+    0.7
+   ],
+   "refuse": 3,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "haiku",
+   "arm": "O",
+   "family": "RE-seq-numfrags-v1",
+   "n": 6,
+   "acc": 1.0,
+   "wilson": [
+    0.6097,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
   {
    "model": "sonnet",
    "arm": "D",
@@ -211,6 +856,201 @@
   },
   {
    "model": "sonnet",
+   "arm": "N",
+   "family": "ORF-seq-AAseq-v1",
+   "n": 3,
+   "acc": 1.0,
+   "wilson": [
+    0.4385,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.2
+  },
+  {
+   "model": "sonnet",
+   "arm": "N",
+   "family": "PCR-gene-enzprimers-v1",
+   "n": 3,
+   "acc": 1.0,
+   "wilson": [
+    0.4385,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "N",
+   "family": "PCR-gene-gibshindprimers-v1",
+   "n": 3,
+   "acc": 1.0,
+   "wilson": [
+    0.4385,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "N",
+   "family": "PCR-gene-gibssmaprimers-v1",
+   "n": 3,
+   "acc": 1.0,
+   "wilson": [
+    0.4385,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "N",
+   "family": "PCR-seq-enzprimers-v1",
+   "n": 3,
+   "acc": 1.0,
+   "wilson": [
+    0.4385,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "N",
+   "family": "Prop-seq-gcpercent-v1",
+   "n": 3,
+   "acc": 0.6667,
+   "wilson": [
+    0.2077,
+    0.9385
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "ORF-seq-AAid-v1",
+   "n": 2,
+   "acc": 0.5,
+   "wilson": [
+    0.0945,
+    0.9055
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "ORF-seq-numlen-v1",
+   "n": 2,
+   "acc": 0.0,
+   "wilson": [
+    0.0,
+    0.6576
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "ORF-transeff-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "PCR-geneprimers-enz-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "PCR-len-primers-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "PCR-primers-len-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "PCR-seq-primers-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
    "arm": "O",
    "family": "Prop-seq-gcpercent-v1",
    "n": 6,
@@ -223,9 +1063,711 @@
    "unparsed": 0,
    "error": 0,
    "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "RE-seq-lenfrags-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
+  },
+  {
+   "model": "sonnet",
+   "arm": "O",
+   "family": "RE-seq-numfrags-v1",
+   "n": 2,
+   "acc": 1.0,
+   "wilson": [
+    0.3424,
+    1.0
+   ],
+   "refuse": 0,
+   "unparsed": 0,
+   "error": 0,
+   "chance": 0.25
   }
  ],
  "models": {
+  "haiku": {
+   "K_minus_D_all_cue": {
+    "label": "K - D, all_cue",
+    "n_pairs": 90,
+    "acc_a": 0.8333,
+    "acc_b": 0.7778,
+    "diff": 0.0556,
+    "ci_items": [
+     -0.0333,
+     0.1444
+    ],
+    "ci_subtasks": [
+     0.0222,
+     0.0889
+    ],
+    "subtask_mean_diff_equal_weight": 0.0556,
+    "signflip_p_subtasks": 0.125,
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0556,
+    "n_answered_both": 90,
+    "centre_pick": 0.1111,
+    "other_pick": 0.0556,
+    "decision": "still cannot tell"
+   },
+   "K_minus_D_gene_absent": {
+    "label": "K - D, gene_absent",
+    "n_pairs": 45,
+    "acc_a": 0.7333,
+    "acc_b": 0.6667,
+    "diff": 0.0667,
+    "ci_items": [
+     -0.0889,
+     0.2222
+    ],
+    "ci_subtasks": [
+     0.0667,
+     0.0667
+    ],
+    "subtask_mean_diff_equal_weight": 0.0667,
+    "signflip_p_subtasks": 0.25,
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0667,
+    "n_answered_both": 45,
+    "centre_pick": 0.1111,
+    "other_pick": 0.1111,
+    "decision": "still cannot tell"
+   },
+   "K_minus_D_gene_present": {
+    "label": "K - D, gene_present",
+    "n_pairs": 45,
+    "acc_a": 0.9333,
+    "acc_b": 0.8889,
+    "diff": 0.0444,
+    "ci_items": [
+     -0.0667,
+     0.1556
+    ],
+    "ci_subtasks": [
+     0.0,
+     0.1333
+    ],
+    "subtask_mean_diff_equal_weight": 0.0444,
+    "signflip_p_subtasks": 1.0,
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0444,
+    "n_answered_both": 45,
+    "centre_pick": 0.1111,
+    "other_pick": 0.0,
+    "decision": "still cannot tell"
+   },
+   "per_subtask": {
+    "Prop-seq-gcpercent-v1": {
+     "n": 15,
+     "K": 0.8,
+     "D": 0.6667,
+     "diff": 0.1333,
+     "ci_items": [
+      -0.2,
+      0.4667
+     ],
+     "K_only": 4,
+     "D_only": 2,
+     "mcnemar_p": 0.6875,
+     "centre_pick": 0.3333,
+     "other_pick_mean": 0.0,
+     "holm_p": 1.0
+    },
+    "ORF-seq-AAseq-v1": {
+     "n": 15,
+     "K": 1.0,
+     "D": 1.0,
+     "diff": 0.0,
+     "ci_items": [
+      0.0,
+      0.0
+     ],
+     "K_only": 0,
+     "D_only": 0,
+     "mcnemar_p": 1.0,
+     "centre_pick": 0.0,
+     "other_pick_mean": 0.0,
+     "holm_p": 1.0
+    },
+    "PCR-gene-enzprimers-v1": {
+     "n": 15,
+     "K": 0.6667,
+     "D": 0.6,
+     "diff": 0.0667,
+     "ci_items": [
+      -0.1333,
+      0.3333
+     ],
+     "K_only": 2,
+     "D_only": 1,
+     "mcnemar_p": 1.0,
+     "centre_pick": 0.0,
+     "other_pick_mean": 0.2,
+     "holm_p": 1.0
+    },
+    "PCR-seq-enzprimers-v1": {
+     "n": 15,
+     "K": 1.0,
+     "D": 1.0,
+     "diff": 0.0,
+     "ci_items": [
+      0.0,
+      0.0
+     ],
+     "K_only": 0,
+     "D_only": 0,
+     "mcnemar_p": 1.0,
+     "centre_pick": 0.0,
+     "other_pick_mean": 0.0,
+     "holm_p": 1.0
+    },
+    "PCR-gene-gibshindprimers-v1": {
+     "n": 15,
+     "K": 0.7333,
+     "D": 0.6667,
+     "diff": 0.0667,
+     "ci_items": [
+      -0.2667,
+      0.4
+     ],
+     "K_only": 4,
+     "D_only": 3,
+     "mcnemar_p": 1.0,
+     "centre_pick": 0.1333,
+     "other_pick_mean": 0.1,
+     "holm_p": 1.0
+    },
+    "PCR-gene-gibssmaprimers-v1": {
+     "n": 15,
+     "K": 0.8,
+     "D": 0.7333,
+     "diff": 0.0667,
+     "ci_items": [
+      -0.1333,
+      0.2667
+     ],
+     "K_only": 2,
+     "D_only": 1,
+     "mcnemar_p": 1.0,
+     "centre_pick": 0.2,
+     "other_pick_mean": 0.0333,
+     "holm_p": 1.0
+    }
+   },
+   "drop_one": {
+    "Prop-seq-gcpercent-v1": 0.04,
+    "ORF-seq-AAseq-v1": 0.0667,
+    "PCR-gene-enzprimers-v1": 0.0533,
+    "PCR-seq-enzprimers-v1": 0.0667,
+    "PCR-gene-gibshindprimers-v1": 0.0533,
+    "PCR-gene-gibssmaprimers-v1": 0.0533
+   },
+   "centre_rules_agree": {
+    "True": {
+     "n": 75,
+     "diff": 0.04
+    }
+   },
+   "O_minus_K": {
+    "label": "O - K (rebuild check)",
+    "n_pairs": 40,
+    "acc_a": 0.875,
+    "acc_b": 0.825,
+    "diff": 0.05,
+    "ci_items": [
+     -0.05,
+     0.15
+    ],
+    "ci_subtasks": [
+     0.0,
+     0.1
+    ],
+    "subtask_mean_diff_equal_weight": 0.05,
+    "signflip_p_subtasks": 0.5,
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.05,
+    "n_answered_both": 40
+   },
+   "O_minus_D": {
+    "label": "O - D",
+    "n_pairs": 55,
+    "acc_a": 0.8545,
+    "acc_b": 0.8,
+    "diff": 0.0545,
+    "ci_items": [
+     -0.0545,
+     0.1818
+    ],
+    "ci_subtasks": [
+     -0.0417,
+     0.1472
+    ],
+    "subtask_mean_diff_equal_weight": 0.0431,
+    "signflip_p_subtasks": 0.5,
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0545,
+    "n_answered_both": 55
+   },
+   "I_minus_D_gc": {
+    "label": "I - D, GC",
+    "n_pairs": 15,
+    "acc_a": 0.7333,
+    "acc_b": 0.6667,
+    "diff": 0.0667,
+    "ci_items": [
+     -0.3333,
+     0.4
+    ],
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0667,
+    "n_answered_both": 15
+   },
+   "K_minus_I_gc": {
+    "label": "K(=O) - I, GC",
+    "n_pairs": 15,
+    "acc_a": 0.8,
+    "acc_b": 0.7333,
+    "diff": 0.0667,
+    "ci_items": [
+     -0.2,
+     0.3333
+    ],
+    "refuse_a": 0.0,
+    "refuse_b": 0.0,
+    "refuse_diff_ci": [
+     0.0,
+     0.0
+    ],
+    "diff_answered_both": 0.0667,
+    "n_answered_both": 15
+   },
+   "N_cue": {
+    "n": 48,
+    "acc": 0.7917,
+    "wilson": [
+     0.6574,
+     0.8827
+    ],
+    "ci_subtasks": [
+     0.6458,
+     0.9167
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.2417
+   },
+   "N_noncue": {
+    "n": 54,
+    "acc": 0.3889,
+    "wilson": [
+     0.2704,
+     0.5221
+    ],
+    "ci_subtasks": [
+     0.2963,
+     0.4815
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.25
+   },
+   "O_noncue": {
+    "n": 54,
+    "acc": 0.8148,
+    "wilson": [
+     0.6916,
+     0.8962
+    ],
+    "ci_subtasks": [
+     0.6296,
+     0.9444
+    ],
+    "refuse_rate": 0.0556,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.25
+   },
+   "K_cue": {
+    "n": 90,
+    "acc": 0.8333,
+    "wilson": [
+     0.7431,
+     0.8963
+    ],
+    "ci_subtasks": [
+     0.7442,
+     0.9333
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.2417
+   },
+   "D_cue": {
+    "n": 90,
+    "acc": 0.7778,
+    "wilson": [
+     0.6815,
+     0.8513
+    ],
+    "ci_subtasks": [
+     0.6556,
+     0.9
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.2417
+   },
+   "O_cue": {
+    "n": 55,
+    "acc": 0.8545,
+    "wilson": [
+     0.7384,
+     0.9244
+    ],
+    "ci_subtasks": [
+     0.7792,
+     0.9583
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.2427
+   },
+   "I_cue": {
+    "n": 15,
+    "acc": 0.7333,
+    "wilson": [
+     0.4805,
+     0.891
+    ],
+    "ci_subtasks": null,
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.25
+   },
+   "stratum_O": {
+    "obs_cue_minus_noncue": 0.0477,
+    "placebo_95": [
+     -0.152,
+     0.2074
+    ],
+    "percentile": 51.5,
+    "n_items": 109,
+    "per_subtask": {
+     "ORF-seq-AAid-v1": 0.5,
+     "ORF-seq-AAseq-v1": 1.0,
+     "ORF-seq-numlen-v1": 0.5,
+     "ORF-transeff-v1": 1.0,
+     "PCR-gene-enzprimers-v1": 0.75,
+     "PCR-gene-gibshindprimers-v1": 0.875,
+     "PCR-gene-gibssmaprimers-v1": 0.75,
+     "PCR-geneprimers-enz-v1": 1.0,
+     "PCR-len-primers-v1": 1.0,
+     "PCR-primers-len-v1": 1.0,
+     "PCR-seq-enzprimers-v1": 1.0,
+     "PCR-seq-primers-v1": 1.0,
+     "Prop-seq-gcpercent-v1": 0.8,
+     "RE-seq-lenfrags-v1": 0.3333,
+     "RE-seq-numfrags-v1": 1.0
+    }
+   },
+   "stratum_N": {
+    "obs_cue_minus_noncue": 0.4028,
+    "placebo_95": [
+     -0.1296,
+     0.3218
+    ],
+    "percentile": 99.2,
+    "n_items": 102,
+    "per_subtask": {
+     "ORF-seq-AAid-v1": 0.1667,
+     "ORF-seq-AAseq-v1": 1.0,
+     "ORF-seq-numlen-v1": 0.3333,
+     "ORF-transeff-v1": 0.6667,
+     "PCR-gene-enzprimers-v1": 0.625,
+     "PCR-gene-gibshindprimers-v1": 0.875,
+     "PCR-gene-gibssmaprimers-v1": 0.875,
+     "PCR-geneprimers-enz-v1": 0.5,
+     "PCR-len-primers-v1": 0.3333,
+     "PCR-primers-len-v1": 0.5,
+     "PCR-seq-enzprimers-v1": 0.875,
+     "PCR-seq-primers-v1": 0.3333,
+     "Prop-seq-gcpercent-v1": 0.5,
+     "RE-seq-lenfrags-v1": 0.3333,
+     "RE-seq-numfrags-v1": 0.3333
+    }
+   },
+   "cue_free": {
+    "per_cue_subtask": {
+     "Prop-seq-gcpercent-v1": {
+      "O": 0.8,
+      "K": 0.8,
+      "D": 0.6667,
+      "I": 0.7333
+     },
+     "ORF-seq-AAseq-v1": {
+      "O": 1.0,
+      "K": 1.0,
+      "D": 1.0,
+      "I": null
+     },
+     "PCR-gene-enzprimers-v1": {
+      "O": 0.75,
+      "K": 0.6667,
+      "D": 0.6,
+      "I": null
+     },
+     "PCR-seq-enzprimers-v1": {
+      "O": 1.0,
+      "K": 1.0,
+      "D": 1.0,
+      "I": null
+     },
+     "PCR-gene-gibshindprimers-v1": {
+      "O": 0.875,
+      "K": 0.7333,
+      "D": 0.6667,
+      "I": null
+     },
+     "PCR-gene-gibssmaprimers-v1": {
+      "O": 0.75,
+      "K": 0.8,
+      "D": 0.7333,
+      "I": null
+     }
+    },
+    "shift_K_minus_D_over15": 0.0222,
+    "shift_ci": [
+     -0.0178,
+     0.0622
+    ],
+    "noncue_O": {
+     "ORF-seq-AAid-v1": {
+      "n": 6,
+      "acc": 0.5
+     },
+     "ORF-seq-numlen-v1": {
+      "n": 6,
+      "acc": 0.5
+     },
+     "ORF-transeff-v1": {
+      "n": 6,
+      "acc": 1.0
+     },
+     "PCR-geneprimers-enz-v1": {
+      "n": 6,
+      "acc": 1.0
+     },
+     "PCR-len-primers-v1": {
+      "n": 6,
+      "acc": 1.0
+     },
+     "PCR-primers-len-v1": {
+      "n": 6,
+      "acc": 1.0
+     },
+     "PCR-seq-primers-v1": {
+      "n": 6,
+      "acc": 1.0
+     },
+     "RE-seq-lenfrags-v1": {
+      "n": 6,
+      "acc": 0.3333
+     },
+     "RE-seq-numfrags-v1": {
+      "n": 6,
+      "acc": 1.0
+     }
+    },
+    "as_benchmark": {
+     "score": 0.8339,
+     "ci_items_within_subtask": [
+      0.7783,
+      0.8906
+     ],
+     "minus_human_0.789": 0.0449
+    },
+    "cue_for_K": {
+     "score": 0.8222,
+     "ci_items_within_subtask": [
+      0.7689,
+      0.8733
+     ],
+     "minus_human_0.789": 0.0332
+    },
+    "cue_against_D": {
+     "score": 0.8,
+     "ci_items_within_subtask": [
+      0.7444,
+      0.8533
+     ],
+     "minus_human_0.789": 0.011
+    },
+    "honest_GC_I_else_D": {
+     "score": 0.8044,
+     "ci_items_within_subtask": [
+      0.7489,
+      0.8578
+     ],
+     "minus_human_0.789": 0.0154
+    }
+   },
+   "pcr_role_picks_posthoc": {
+    "PCR-gene-enzprimers-v1|D": {
+     "n": 15,
+     "key": 9,
+     "S": 0,
+     "G": 6,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-enzprimers-v1|K": {
+     "n": 15,
+     "key": 10,
+     "S": 0,
+     "G": 5,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-enzprimers-v1|O": {
+     "n": 8,
+     "key": 6,
+     "S": 0,
+     "G": 2,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibshindprimers-v1|D": {
+     "n": 15,
+     "key": 10,
+     "S": 2,
+     "G": 1,
+     "Wx": 2,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibshindprimers-v1|K": {
+     "n": 15,
+     "key": 11,
+     "S": 0,
+     "G": 1,
+     "Wx": 3,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibshindprimers-v1|O": {
+     "n": 8,
+     "key": 7,
+     "S": 1,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibssmaprimers-v1|D": {
+     "n": 15,
+     "key": 11,
+     "S": 3,
+     "G": 1,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibssmaprimers-v1|K": {
+     "n": 15,
+     "key": 12,
+     "S": 1,
+     "G": 2,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibssmaprimers-v1|O": {
+     "n": 8,
+     "key": 6,
+     "S": 1,
+     "G": 1,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-seq-enzprimers-v1|D": {
+     "n": 15,
+     "key": 15,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-seq-enzprimers-v1|K": {
+     "n": 15,
+     "key": 15,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-seq-enzprimers-v1|O": {
+     "n": 8,
+     "key": 8,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    }
+   }
+  },
   "sonnet": {
    "K_minus_D_all_cue": {
     "label": "K - D, all_cue",
@@ -481,9 +2023,39 @@
     "diff_answered_both": 0.1667,
     "n_answered_both": 6
    },
-   "N_cue": null,
+   "N_cue": {
+    "n": 18,
+    "acc": 0.9444,
+    "wilson": [
+     0.7424,
+     0.9901
+    ],
+    "ci_subtasks": [
+     0.8333,
+     1.0
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.2417
+   },
    "N_noncue": null,
-   "O_noncue": null,
+   "O_noncue": {
+    "n": 18,
+    "acc": 0.8333,
+    "wilson": [
+     0.6078,
+     0.9416
+    ],
+    "ci_subtasks": [
+     0.6111,
+     1.0
+    ],
+    "refuse_rate": 0.0,
+    "unparsed": 0,
+    "error": 0,
+    "chance": 0.25
+   },
    "K_cue": {
     "n": 48,
     "acc": 0.9792,
@@ -548,26 +2120,11 @@
      "PCR-gene-enzprimers-v1",
      "PCR-seq-enzprimers-v1",
      "PCR-gene-gibshindprimers-v1",
-     "PCR-gene-gibssmaprimers-v1",
-     "ORF-seq-AAid-v1",
-     "ORF-seq-numlen-v1",
-     "ORF-transeff-v1",
-     "PCR-geneprimers-enz-v1",
-     "PCR-len-primers-v1",
-     "PCR-primers-len-v1",
-     "PCR-seq-primers-v1",
-     "RE-seq-lenfrags-v1",
-     "RE-seq-numfrags-v1"
+     "PCR-gene-gibssmaprimers-v1"
     ]
    },
    "stratum_N": {
     "missing": [
-     "Prop-seq-gcpercent-v1",
-     "ORF-seq-AAseq-v1",
-     "PCR-gene-enzprimers-v1",
-     "PCR-seq-enzprimers-v1",
-     "PCR-gene-gibshindprimers-v1",
-     "PCR-gene-gibssmaprimers-v1",
      "ORF-seq-AAid-v1",
      "ORF-seq-numlen-v1",
      "ORF-transeff-v1",
@@ -623,11 +2180,155 @@
      0.0111,
      0.0734
     ],
-    "score": "not computed: no O data on all nine non-cue subtasks"
+    "noncue_O": {
+     "ORF-seq-AAid-v1": {
+      "n": 2,
+      "acc": 0.5
+     },
+     "ORF-seq-numlen-v1": {
+      "n": 2,
+      "acc": 0.0
+     },
+     "ORF-transeff-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "PCR-geneprimers-enz-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "PCR-len-primers-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "PCR-primers-len-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "PCR-seq-primers-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "RE-seq-lenfrags-v1": {
+      "n": 2,
+      "acc": 1.0
+     },
+     "RE-seq-numfrags-v1": {
+      "n": 2,
+      "acc": 1.0
+     }
+    },
+    "as_benchmark": {
+     "missing": [
+      "ORF-seq-AAseq-v1",
+      "PCR-gene-enzprimers-v1",
+      "PCR-seq-enzprimers-v1",
+      "PCR-gene-gibshindprimers-v1",
+      "PCR-gene-gibssmaprimers-v1"
+     ]
+    },
+    "cue_for_K": {
+     "score": 0.8933,
+     "ci_items_within_subtask": [
+      0.8533,
+      0.9333
+     ],
+     "minus_human_0.789": 0.1043
+    },
+    "cue_against_D": {
+     "score": 0.8511,
+     "ci_items_within_subtask": [
+      0.7933,
+      0.9089
+     ],
+     "minus_human_0.789": 0.0621
+    },
+    "honest_GC_I_else_D": {
+     "score": 0.8622,
+     "ci_items_within_subtask": [
+      0.8089,
+      0.9156
+     ],
+     "minus_human_0.789": 0.0732
+    }
+   },
+   "pcr_role_picks_posthoc": {
+    "PCR-gene-enzprimers-v1|D": {
+     "n": 10,
+     "key": 8,
+     "S": 0,
+     "G": 2,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-enzprimers-v1|K": {
+     "n": 10,
+     "key": 9,
+     "S": 0,
+     "G": 1,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibshindprimers-v1|D": {
+     "n": 10,
+     "key": 9,
+     "S": 0,
+     "G": 1,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibshindprimers-v1|K": {
+     "n": 10,
+     "key": 10,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibssmaprimers-v1|D": {
+     "n": 10,
+     "key": 9,
+     "S": 0,
+     "G": 1,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-gene-gibssmaprimers-v1|K": {
+     "n": 10,
+     "key": 10,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-seq-enzprimers-v1|D": {
+     "n": 6,
+     "key": 6,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    },
+    "PCR-seq-enzprimers-v1|K": {
+     "n": 6,
+     "key": 6,
+     "S": 0,
+     "G": 0,
+     "Wx": 0,
+     "refuse": 0,
+     "other": 0
+    }
    }
   }
  },
  "parse_routes": {
-  "tag": 106
+  "tag": 533
  }
 }

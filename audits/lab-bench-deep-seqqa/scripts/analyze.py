@@ -158,7 +158,7 @@ def pcr_roles(arms, i):
 
 def role_picks(df, arms, model):
     """Post hoc descriptive: which option each PCR answer picked, by arm."""
-    x = df[(df.model == model) & df.family.str.startswith("PCR") & df.arm.isin(["O", "K", "D"])]
+    x = df[(df.model == model) & df.family.isin([f for f in CUE if f.startswith("PCR")]) & df.arm.isin(["O", "K", "D"])]
     out = {}
     for (f, a), g in x.groupby(["family", "arm"]):
         c = {"key": 0, "S": 0, "G": 0, "Wx": 0, "refuse": 0, "other": 0}
