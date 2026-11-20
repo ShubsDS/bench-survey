@@ -1,6 +1,22 @@
-# LAB-Bench deep dive (ProtocolQA): most of the score without the protocol sits on items whose key is the standard fix; no sign of verbatim recall in Haiku, and at most a small one in Sonnet
+# LAB-Bench deep dive (ProtocolQA): about two thirds of the above-chance score survives without the protocol; it is higher on items Claude labellers call the standard fix (association only); no large verbatim recall in Haiku or Sonnet
 
-Status: complete, 2026-11-20, branch `audits-round3`. Not yet independently validated.
+Status: complete, 2026-11-20, branch `audits-round3`. **Independently validated** (see
+"Validation" below and [`validation/VALIDATION.md`](validation/VALIDATION.md)): claims 1, 2, 3a
+and 5 confirmed; claim 3 for Sonnet and claim 4 downgraded. Original headline: "most of the score
+without the protocol sits on items whose key is the standard fix; no sign of verbatim recall in
+Haiku, and at most a small one in Sonnet".
+
+**Validated result first.** Without the protocol Haiku keeps 0.71 [0.57, 0.91] of its
+above-chance score (107 items) and Sonnet 0.68 [0.48, 0.87] (on a non-random 62 items: the first
+62 in file order). For Haiku, 0.63 [0.42, 0.87] is reached from the options alone. Simple
+content-blind cues do not account for it. A paraphrase drop of 0.15 or more is excluded for both
+models; Sonnet's 0.08 drop does not survive removing the 6 paraphrases a hand read found changed
+in meaning (0.04 [−0.02, 0.09]). Blind accuracy is higher on items a Claude labeller calls "the
+one standard fix" with key-blind labels too (Haiku gap 0.28–0.31, Sonnet 0.16–0.34), but the
+auditor's 0.78 vs 0.34 split uses a label that conditions on the labeller's own blind pick being
+the key, and with key-blind labels Haiku's residual (0.40–0.44) is not near chance (0.23), so by
+the prereg rule route (c) is **cannot tell** for both models. Correlational; labels by Claude
+models, not humans.
 Parent audit: [`../lab-bench/`](../lab-bench/) (claim 4). Pre-registration: [`prereg.md`](prereg.md)
 (committed `c9605da` before any main-run outcome). Every number below is in
 [`results.json`](results.json) (`scripts/analyze.py`, seed 0, 2,000 protocol-cluster draws).
@@ -11,9 +27,9 @@ about Opus or any published model.**
 |---|---|---|
 | 1 | Without the protocol (question + options), Haiku reaches 0.55 [0.48, 0.67] and Sonnet 0.67 [0.58, 0.77] on 107 items (chance 0.23). With the protocol: Haiku 0.68 [0.60, 0.80]; Sonnet 0.89 [0.82, 0.96] on the 62 items it reached before the budget cap. Share of the above-chance score reached without the protocol: Haiku 0.71 [0.57, 0.92]; Sonnet 0.68 [0.49, 0.87] (62 items) | L2 (context removal, model as the rule) |
 | 2 | Simple answer-surface cues (length, numerals, step references, hedges, units, unique words, similarity) do not account for it: best held-out rule 0.29 (chance 0.23, permutation p = 0.07); where the longest option is not the key, Haiku options-only still scores 0.54 and Sonnet 0.70 | **R** for simple content-blind cues; a *semantic* surface cue cannot be separated from (c) |
-| 3 | Recall of the published wording: Haiku shows none (paraphrase drop 0.05 [−0.04, 0.13] with the question, −0.01 [−0.11, 0.09] options only; free generation of the key's step and value 2/68, distractor rate 0.02). Sonnet loses 0.08 [0.01, 0.14] under paraphrase (9 items lost, 2 gained, n = 91), which bounds verbatim recognition below about a third of its 0.44 above-chance blind margin; Sonnet's free-generation test was not run (budget) | **R** for verbatim recall (Haiku, L4-style edit); Sonnet: small effect, upper bound only |
-| 4 | Blind accuracy is concentrated on the 51 of 107 items whose key a blind (key-hidden) read labelled the one standard fix: Haiku 0.78 vs 0.34 on the rest (gap 0.45 [0.24, 0.61]); Sonnet 0.86 vs 0.50 (gap 0.36 [0.14, 0.53]); both above the 99.9th percentile of 1,000 placebo label sets. Haiku's residual on the other 56 items is near chance (0.34 [0.26, 0.48], chance 0.23); Sonnet's is not (0.50 [0.42, 0.63]) | L3-style association (labels by a model, see limits). Prereg verdict: (c) **supported** for Haiku; **cannot tell** for Sonnet's residual |
-| 5 | CloningScenarios (33 items, 9 scenarios), Haiku: full 0.70, sequences masked 0.42 [0.25, 0.55], options only 0.33 (chance 0.23) | lead only |
+| 3 | Recall of the published wording: Haiku shows none (paraphrase drop 0.05 [−0.04, 0.13] with the question, −0.01 [−0.11, 0.09] options only; free generation of the key's step and value 2/68, distractor rate 0.02). Sonnet loses 0.08 [0.01, 0.14] under paraphrase (9 items lost, 2 gained, n = 91), which bounds verbatim recognition below about a third of its 0.44 above-chance blind margin; Sonnet's free-generation test was not run (budget). **Validation:** 4 of Sonnet's 9 losses are paraphrases that changed meaning; without the 6 such items: Sonnet 0.04 [−0.02, 0.09], Haiku 0.08 [0.00, 0.15] (n = 85). A drop ≥ 0.15 is excluded in every version; a smaller drop is not established for either model | **R** for large verbatim recall (both models); Sonnet's small drop: **downgraded**, not robust |
+| 4 | *(original)* Blind accuracy is concentrated on the 51 of 107 items whose key a blind (key-hidden) read labelled the one standard fix: Haiku 0.78 vs 0.34 on the rest (gap 0.45 [0.24, 0.61]); Sonnet 0.86 vs 0.50 (gap 0.36 [0.14, 0.53]); both above the 99.9th percentile of 1,000 placebo label sets. Haiku's residual on the other 56 items is near chance (0.34 [0.26, 0.48], chance 0.23); Sonnet's is not (0.50 [0.42, 0.63]). **Validation:** the 51-item label is "class G *and* the labeller's blind pick equals the key", so it uses the key and selects items a Claude model answered blind; that condition alone gives larger gaps (Haiku 0.49, Sonnet 0.57) and the key-blind placebo does not control for it. Key-blind labels: auditor's class G (59 items) Haiku 0.68 vs 0.40, gap 0.28 [0.07, 0.42]; Sonnet 0.75 vs 0.58, gap 0.16 [−0.02, 0.32]. Validator's own blind labels (37 items): Haiku 0.76 vs 0.44, gap 0.31 [0.16, 0.45]; Sonnet 0.89 vs 0.56, gap 0.34 [0.26, 0.41]. Haiku's residual is 0.40–0.44, not near chance | Association between a Claude-made label and blind accuracy (L1–L2; correlational). Prereg verdict: original "(c) supported for Haiku" **failed**; with key-blind labels **cannot tell** for both models |
+| 5 | CloningScenarios (33 items, 9 scenarios), Haiku: full 0.70, sequences masked 0.42 [0.25, 0.55], options only 0.33 (chance 0.23) | lead only (confirmed) |
 
 ## The benchmark and what rests on it
 
@@ -28,9 +44,13 @@ options, (b) recall of the public items, or (c) knowledge a trained scientist al
 ## What we found
 
 **About two thirds of each model's above-chance score is reachable without the protocol, and it
-comes mostly from items where the keyed fix is ordinary good practice.** The evidence favours (c)
-over (a) and (b) for Haiku; for Sonnet it rules out large verbatim recall and simple cues, but
-leaves part of the blind score unexplained.
+is higher on items where a Claude labeller calls the keyed fix ordinary good practice.** For both
+models the evidence rules out simple cues and large verbatim recall; whether the rest is general
+knowledge (c) cannot be told from Claude-made labels. *(Original: "and it comes mostly from items
+where the keyed fix is ordinary good practice. The evidence favours (c) over (a) and (b) for
+Haiku". Validation: with the auditor's labels 40 of Haiku's 59 blind-correct answers (68%) are on
+the 51 standard-key items; with the validator's key-blind labels 28 of 59 (47%) are on its 37 K
+items.)*
 
 | Arm (ProtocolQA, forced choice) | Haiku n | Haiku acc [cluster 95%] | Sonnet n | Sonnet acc [cluster 95%] |
 |---|---|---|---|---|
@@ -107,9 +127,28 @@ Placebo: 1,000 random "standard" sets of 51 items, stratified by number of optio
 the key. Without the 6 items whose key I had seen while checking the data format, the `qo` gaps are
 0.49 (Haiku) and 0.38 (Sonnet).
 
+**Validation (key-blind labels).** "Standard-key" requires the labeller's blind pick to be the
+key, so the table above conditions on the answer; the placebo, built without the key, does not
+match that. The same test with labels that never used the key (validator, `validation/v3`):
+
+| Arm | auditor class G, key-blind (59 / 48) | gap [cluster 95%], placebo pct | validator K, key-blind (37 / 70) | gap [cluster 95%], placebo pct |
+|---|---|---|---|---|
+| Haiku `qo` | 0.68 / 0.40 | 0.28 [0.07, 0.42], 99.6 | 0.76 / 0.44 | 0.31 [0.16, 0.45], 99.8 |
+| Haiku `opts` | 0.61 / 0.40 | 0.21 [0.05, 0.35], 98.9 | 0.62 / 0.46 | 0.16 [0.02, 0.30], 94.5 |
+| Sonnet `qo` | 0.75 / 0.58 | 0.16 [−0.02, 0.32], 96.5 | 0.89 / 0.56 | 0.34 [0.26, 0.41], 100 |
+| Haiku full | 0.78 / 0.56 | 0.22 [−0.02, 0.38], 98.8 | 0.95 / 0.54 | 0.40 [0.26, 0.52], 100 |
+
+Validator K and auditor G agree on 74% of items (kappa 0.49). Both labellers are Claude models,
+and Claude models share wrong answers (auditor and Sonnet pick the same wrong option on 64% of
+items both miss, chance 31%), so the label may mean "obvious to a Claude model" rather than
+"standard practice"; K items are also easier with the protocol (Haiku full 0.95 vs 0.54).
+
 Exploratory (not pre-registered): reading the protocol adds little on standard-key items for
 Haiku (+0.06 [−0.07, 0.17]) and much more on the others (+0.20 [0.09, 0.30]). For Sonnet (62
 items) the gain is +0.18 [0.04, 0.32] on standard-key and +0.24 [0.04, 0.44] on the others.
+**Validation: label-dependent, not supported.** With the validator's key-blind labels Haiku's gain
+reverses: +0.19 [0.06, 0.29] on K items, +0.10 [−0.02, 0.21] on the rest (auditor's key-blind G:
++0.10 vs +0.17).
 
 ## The effect
 
@@ -117,14 +156,24 @@ items) the gain is +0.18 [0.04, 0.32] on standard-key and +0.24 [0.04, 0.44] on 
   re-run or tested here.
 - **Reproduced number.** Haiku full 0.68 (parent's 0.68, the same cached responses).
 - **What the items measure.** For both models about two thirds of the above-chance accuracy is
-  reachable without the protocol (Haiku 0.71 [0.57, 0.92]; Sonnet 0.68 [0.49, 0.87], 62 items).
-  For Haiku that blind part sits on items whose keyed fix is the standard practice, i.e. route (c):
-  these items test general troubleshooting knowledge, not reading the protocol. The bias direction:
-  as a measure of *protocol reading*, ProtocolQA accuracy overstates it for both models; as a
-  measure of *troubleshooting knowledge*, it does not obviously overstate it.
+  reachable without the protocol (Haiku 0.71 [0.57, 0.91]; Sonnet 0.68 [0.48, 0.87], 62 items;
+  validated intervals with joint protocol resampling). For Haiku, 0.63 [0.42, 0.87] is reached
+  from the options alone. The blind part is higher on items a Claude labeller calls the standard
+  fix; whether those items test general troubleshooting knowledge or are simply obvious to Claude
+  models is not settled here. *(Original: "For Haiku that blind part sits on items whose keyed fix
+  is the standard practice, i.e. route (c): these items test general troubleshooting knowledge, not
+  reading the protocol." Validation: causal reading not supported by a correlational,
+  model-labelled split.)* The bias direction: as a measure of *protocol reading*, ProtocolQA
+  accuracy overstates it for both models.
 - **The protocol-dependent part.** On the 56 non-standard-key items, Haiku goes from 0.34 to 0.54
   with the protocol; Sonnet from 0.59 to 0.82 on the 34 such items it ran. These are the items
   where the benchmark measures what it says; no human or published-model number exists for them.
+  (Validation: this split inherits the key-dependent label; with the validator's labels, Haiku goes
+  from 0.44 to 0.54 on the 70 non-K items.)
+- **Sonnet's 62 items (validation).** They are the first 62 in file order, not a random sample: 3
+  of 23 protocols occur only in the 45 not run, and those 45 have longer protocols (median 5,325
+  vs 4,158 characters). Haiku's share is 0.65 [0.49, 0.82] on the 62 and 0.79 [0.49, 1.35] on the
+  45, so if Sonnet behaves like Haiku its 62-item share understates its share on all 107 items.
 
 ## Robustness
 
@@ -136,8 +185,12 @@ items) the gain is +0.18 [0.04, 0.32] on standard-key and +0.24 [0.04, 0.44] on 
 | Reorder-only control for paraphrase (Haiku) | −0.04 and +0.03, intervals include 0 | claim 3 yes |
 | Second paraphrase arm (options only, Haiku) | −0.01 [−0.11, 0.09] | yes |
 | Cue rules on paraphrased options | change ≤ 0.08 | weakens the reading of Sonnet's 0.08 drop as recall |
-| Sonnet full on a non-random 62-item subset (first 62 in file order, 20 of 23 protocols) | Haiku on the same 62: full 0.69, `qo` 0.53 (all 107: 0.68, 0.55) | subset looks typical for Haiku; Sonnet's 107-item full score unknown |
+| Sonnet full on a non-random 62-item subset (first 62 in file order, 20 of 23 protocols) | Haiku on the same 62: full 0.69, `qo` 0.53 (all 107: 0.68, 0.55) | subset looks typical for Haiku; Sonnet's 107-item full score unknown. *Validation: Haiku's share is 0.65 on the 62 and 0.79 on the 45 (longer protocols, 3 protocols only there)* |
 | Count of tests | 13 verdict-bearing tests across two models; no correction | stated |
+| Validator: six further content-blind rules, held out by protocol half | 0.26 [0.14, 0.32], p = 0.11 | claim 2 yes |
+| Validator: key-blind labels (auditor's G; validator's own K) | gaps 0.28 / 0.31 (Haiku), 0.16 / 0.34 (Sonnet); Haiku residual 0.40 / 0.44 | claim 4 association yes; "supported" verdict no |
+| Validator: paraphrase drop without the 6 meaning-changed paraphrases | Sonnet 0.04 [−0.02, 0.09], Haiku 0.08 [0.00, 0.15] | "no drop ≥ 0.15" yes; Sonnet's small drop no |
+| Validator: hidden-protocol details in Haiku's no-protocol reasoning | only generic numbers and topic words match the hidden protocol | no sign of source-protocol recall (Haiku; Sonnet untestable) |
 
 ## Alternative explanations
 
@@ -145,7 +198,9 @@ items) the gain is +0.18 [0.04, 0.32] on standard-key and +0.24 [0.04, 0.44] on 
    picks by construction."** The labeller is Opus 5.5, and its blind pick agrees with Sonnet's
    blind pick on 73% of items (Haiku 65%). So claim 4 shows that what one Claude model finds the
    standard fix, two others pick without the protocol; it does not show that a human expert would.
-   Not tested; a refuter's independent (ideally human) labels are the check.
+   Not tested; a refuter's independent (ideally human) labels are the check. *Validation: the
+   validator's key-blind labels (another Claude model) keep a gap of 0.31 (Haiku) and 0.34
+   (Sonnet), so the association is not produced by using the key; human labels remain untested.*
 2. **"Blind accuracy is recall of the source protocol, not of the item."** The protocols are
    public, and a key that restores the original step would be guessable by someone who knows the
    original. R2 argues against this for Haiku (it cannot name the step and value); for Sonnet it
@@ -153,6 +208,33 @@ items) the gain is +0.18 [0.04, 0.32] on standard-key and +0.24 [0.04, 0.44] on 
 3. **"Standard-key items are simply easier."** Partly: Haiku with the protocol also does better on
    them (0.84 vs 0.54). But the protocol adds little there for Haiku (+0.06), which is the point:
    the item is answerable from general knowledge either way.
+
+## Validation
+
+An independent validator re-derived every number from the response cache with its own parser and
+made no model calls ([`validation/VALIDATION.md`](validation/VALIDATION.md),
+[`validation/validation.json`](validation/validation.json)). The auditor's scripts rerun to
+byte-identical outputs. Corrections:
+
+1. **Claim 4 downgraded; Haiku's prereg verdict "(c) supported" failed.** The standard-key label
+   uses the key (class G *and* the labeller's blind pick is right). With key-blind labels the gap
+   remains (Haiku 0.28 [0.07, 0.42] and 0.31 [0.16, 0.45]; Sonnet 0.16 [−0.02, 0.32] and 0.34
+   [0.26, 0.41]) but Haiku's residual is 0.40–0.44, not within 0.15 of chance, so the prereg rule
+   gives "cannot tell" for both models. The validator's labels were committed before it opened any
+   outcome or the key; they are still Claude-made, so circularity is reduced, not excluded.
+2. **Exploratory protocol-gain split marked label-dependent** (it reverses with key-blind labels).
+3. **Sonnet's paraphrase drop downgraded.** 6 of 51 hand-read paraphrases changed meaning (4 of
+   Sonnet's 9 losses); without them Sonnet's drop is 0.04 [−0.02, 0.09]. The rule change did
+   precede every paraphrase-arm call (timing checked against the ledger).
+4. **Sonnet's 62 items described** as the first 62 in file order (3 protocols missing, shorter
+   protocols); likely bias of the 62-item share is downward.
+5. **Wording:** the headline's "most of the score ... sits on items whose key is the standard fix"
+   and "these items test general troubleshooting knowledge" were replaced by correlational wording
+   and counts.
+
+Confirmed unchanged: claim 1 numbers and intervals; claim 2 (R); Haiku recall tests (3a, free
+generation 1/66 by the validator's stricter grader, distractor rate 0.02); R3; CloningScenarios
+(lead); forced-choice format identical across arms; spend 3.08 USD.
 
 ## What was already known
 
