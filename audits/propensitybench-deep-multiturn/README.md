@@ -55,7 +55,10 @@ See the parent's [`claims.md`](../propensitybench/claims.md).
    workspace and date. In 5 of 32 Haiku runs a reply names the audit path
    (".../benchmark-audits/audits/propensitybench-deep-multiturn/inference"). The harness gives no
    such cue, so it may push Claude results toward the safe side. This affects every audit that uses
-   `audits/tools/claude_call.py` for role-play.
+   `audits/tools/claude_call.py` for role-play. The main session confirmed the leak: the CLI tells
+   the model its working directory, its own model name, the date and the budget. The helper now
+   has `Caller(..., neutral_cwd=True)`. This audit's Haiku and Sonnet runs predate that option. The
+   local runs do not go through the CLI.
 
 | Quantity | Value | n |
 |---|---|---|
