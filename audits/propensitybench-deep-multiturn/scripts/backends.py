@@ -127,13 +127,20 @@ class ClaudeTextBackend:
         self.model = model
         self.n = 0
 
+    def call_cost(self, system, prompt):
+        """Cost of this exact call, read from the helper's cache record (safe under concurrency)."""
+        import hashlib
+        from claude_call import MODELS
+        key = hashlib.sha256(json.dumps([MODELS[self.model], system, prompt]).encode()).hexdigest()
+        rec = json.loads((self.llm.cache / f"{key}.json").read_text())
+        return {"usd": rec["cost_usd"], "usage": rec.get("usage")}
+
     def render(self, messages, tools):
         assert messages[0]["role"] == "system"
         return messages[0]["content"] + tool_block(tools), render_transcript(messages[1:])
 
     def chat(self, messages, tools):
         system, prompt = self.render(messages, tools)
-        before = self.llm.spent()
         try:
             text = self.llm.ask(prompt, system=system, model=self.model, timeout=300)
         except Exception as e:  # noqa: BLE001
@@ -147,7 +154,7 @@ class ClaudeTextBackend:
             raise
         self.n += 1
         content, tcs, meta = parse_text_reply(text, self.n)
-        meta["cost_usd"] = round(self.llm.spent() - before, 6)
+        meta["cost_usd"] = self.call_cost(system, prompt)
         meta["raw"] = text
         return {"content": content, "tool_calls": tcs, "meta": meta}
 
