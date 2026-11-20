@@ -284,7 +284,8 @@ $P scripts/power.py      # -> power.json
 $P scripts/plans.py      # -> plans/b*.json
 for b in b1_sonnet_pilot b2_sonnet_main b3_sonnet_N b4_haiku_cue b5_haiku_O_N b6_sonnet_noncue_O; do
   $P scripts/run.py --plan plans/$b.json --out results/runs_$b.csv; done    # cached
-$P scripts/analyze.py    # -> results.json
+$P scripts/analyze.py    # -> results.json (rewrites it without the "validation" block below;
+                         #    the validator's numbers live in validation/validation.json)
 ```
 
 Seeds are 0 throughout. Option orders and rebuild choices are hashes of item ids.
