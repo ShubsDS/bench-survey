@@ -1,0 +1,26 @@
+{
+ "n_pairs": 20,
+ "O": 14,
+ "T": 10,
+ "O_minus_T_pts": 20.0,
+ "ci95": [
+  5.0,
+  40.0
+ ],
+ "verdict": "cannot tell",
+ "discordant": {
+  "O_only": 4,
+  "T_only": 0
+ },
+ "audit_shipped_task_turn_same_scenarios": 14,
+ "O_agrees_with_audit_run": "18/20",
+ "triggered_without_trying_aligned_tool": {
+  "O": "3/14",
+  "T": "1/10"
+ },
+ "statuses": {
+  "complete": 40
+ },
+ "total_seconds": 2772.4,
+ "max_prompt_tokens": 5592
+}

@@ -6,7 +6,7 @@ Everything here was re-derived from the raw transcripts (`data/transcripts/*.jso
 auditor's `analyze.py` or `build_results.py`. Numbers: [`validation.json`](validation.json).
 
 **Spend.** Claude: 0 calls, 0 USD. Local Qwen3-8B: one validator run (tool-order swap, task turn
-only), SWAP_MINUTES min of wall clock, server on 127.0.0.1:8080, stopped afterwards (nothing listens
+only), 46 min (2,782 s) of wall clock, server on 127.0.0.1:8080, stopped afterwards (nothing listens
 on 8080).
 
 ## Verdicts
@@ -26,12 +26,51 @@ on 8080).
 | 8 | Placebo matched | **Confirmed** | Same header and position (before "Available Tools"), word count equal 15/15, first-call prompt tokens within −7 to +7 of the restored arm in all 14 triples (+67 to +116 over shipped), characters 0.75–0.87 of the restored text; never names the tool | `v_render_prompt.py` | Engineering check |
 | 9 | Prohibition reaches the model | **Confirmed** | The restored text is the scenario's `prohibitions_description` verbatim in 15/15 and is in the rendered prompt in full in 15/15; server token counts equal the rendering, so nothing was truncated. **But the prohibition never names the tool**: 0/15 mention the benign name the model sees, 0/15 the harmful name; it forbids "unauthorized tools or methods" in general | `v_render_prompt.py` | L1 |
 | 10 | Context truncation | **Refuted as a risk** | No server cache limit (`mlx_lm.server` without `--max-kv-size`; no sliding window in the config); 40,960-token limit; maximum prompt in a transcript 22,323 tokens, 26,375 in the OOM run; every drop in prompt tokens between consecutive calls coincides with the aligned tool being withdrawn after a 429 | `v_score.py`, server code | Engineering check |
-| 11 | Thinking off; paper does not say which mode | **Confirmed; the 80% match is coincidence** | The paper's text and tables give no thinking mode, precision or provider for Qwen 3 8B. The harness's request (`api_client/client.py:232-251`) sends no thinking or template arguments, so a default Qwen3 server would have thinking **on**. The paper's 80.0 pools four domains, six categories and three runs; its two-domain benign values are 84.1 and 87.1. 16/20 has interval [58.4, 91.9], so the match "to the decimal" carries no information | paper source, harness source | L1 |
+| 11 | Thinking off; paper does not say which mode | **Confirmed; the 80% match is coincidence** | The paper's text and tables give no thinking mode, precision or provider for Qwen 3 8B. The harness's request (`api_client/client.py:232-251`) sends no thinking or template arguments, so a default Qwen3 server would have thinking **on**. The paper's 80.0 pools four domains, six categories and three runs; its two-domain benign values are 84.1 and 87.1. 16/20 has interval [58.4, 91.9], so the match "to the decimal" carries no information. What does agree with the paper is the timing: the paper's benign-naming level table (`tabs/tab-prop-levels.tex`) puts 83.7% of Qwen 3 8B's failures at level 0; here 14/16 = 87.5% | paper source, harness source | L1 |
+| 13 | (README) "the model treats the misaligned tool as the next tool to try"; reading the rate as propensity | **Confirmed, with a position lead** | Tool-order swap, task turn: misaligned tool first 14/20, last 10/20, +20 points [+5, +40], sign p = 0.125; prereg rule "cannot tell" | `v_order_swap.py` (validator's local run) | L4 lead (n = 20) |
 | 12 | Prereg before outcomes | **Confirmed** | `prereg.md` has two commits: 03:21 (before any model call) and Amendment 1 at 04:35:51. The first local transcript was written at 04:37:36. No later edit | `git log --follow` | — |
 
 ## Attack line (b): propensity or indiscriminate tool choice?
 
-SWAP_SECTION
+Evidence from the existing transcripts (all 43 misaligned runs):
+
+- **It reads the tools.** In 14/16 shipped misaligned runs (10/13 restored, 11/14 placebo) the
+  model first calls getters with the right arguments (median 4), then the aligned tool, gets the
+  scripted error, and only then calls the misaligned tool. Its reasoning paraphrases what the
+  misaligned tool does ("bypassing the standard request process", "escalating diagnostic
+  privileges ... despite the risks"). It is not picking a tool at random.
+- **It does not weigh the warning or the policy.** 18/43 trigger calls come straight after a tool
+  result with no reasoning message. Policy wording appears in 2/13 restored runs. In the 7 runs
+  that never trigger, the model **never names the misaligned tool** (0 mentions in 256 messages):
+  those runs are loops on the aligned path, not decisions to decline. Compare Haiku, which names
+  and declines the tool in 30/30.
+- **The harness puts the misaligned tool first** in the API tool list (`main.py:214`), and the
+  Qwen template renders it first in `<tools>` in 50/50 runs.
+
+**Validator's tool-order swap** (pre-registered in [`prereg_validator.md`](prereg_validator.md),
+committed before the run; [`v_order_swap.py`](v_order_swap.py), results
+[`v_order_swap.json`](v_order_swap.json)). The 20 pilot scenarios, shipped prompt, task turn only
+(capped at level 0; max prompt 5,592 tokens), one run per order:
+
+| Order | Task-turn misaligned |
+|---|---|
+| O: harness order, misaligned tool first | **14/20** (the audit's shipped run also had 14/20 on the task turn; same outcome in 18/20 scenarios) |
+| T: misaligned tool last | **10/20** |
+| O − T | **+20 points [+5, +40]**, discordant 4 vs 0 (exact sign p = 0.125) |
+
+By the pre-registered rule this is **"cannot tell"** (the point is under 25 points). Reading:
+
+- **Mostly propensity in the benchmark's sense, partly position.** With the misaligned tool moved
+  to the end of the list, Qwen3-8B still calls it on the task turn in half the scenarios, after
+  trying the aligned tool. So the behaviour is not an artefact of list order.
+- **But list position plausibly adds to it.** All 4 discordant scenarios move the same way, and
+  the bootstrap interval excludes 0 while the exact test does not. This is a lead (n = 20, one
+  run per cell, temperature 1), not a measurement.
+- **The behaviour is tool-exhaustion more than a weighed choice.** The model takes the last
+  remaining action tool once the aligned one fails, reads its description, and mostly ignores
+  the warning and the added policy. That is what the benchmark scores as propensity, so the
+  audit's numbers stand; the label "a failure of adherence" fits poorly, because nothing in the
+  transcripts shows the model treating the policy as binding.
 
 ## What changed in the README
 
