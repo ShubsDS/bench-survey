@@ -1228,8 +1228,10 @@
    }
   },
   "local_model": {
-   "run": false,
+   "run": true,
+   "thinking": "off",
    "plan": "LOCAL_MODEL_PLAN.md",
+   "verdict_prereg": "still cannot tell (D CI [-21.4, +21.4] not within +/-15; A-B not >= 10)",
    "recommended": "Qwen/Qwen3-8B-MLX-4bit@383413e909f3bc5303ce195ebbdf0339c5a1a2a3 (4,351,884,216-byte safetensors)"
   },
   "local": {

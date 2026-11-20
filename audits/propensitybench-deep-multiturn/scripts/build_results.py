@@ -50,7 +50,8 @@ def main():
                                                            "Haiku 0/30, Sonnet 0 in 2 truncated runs"},
         "power_reference": [c for c in pw["cells"] if c["design"] == "one_category_all_32"],
         "inference": runs.get("inference"),
-        "local_model": {"run": False, "plan": "LOCAL_MODEL_PLAN.md",
+        "local_model": {"run": True, "thinking": "off", "plan": "LOCAL_MODEL_PLAN.md",
+                        "verdict_prereg": "still cannot tell (D CI [-21.4, +21.4] not within +/-15; A-B not >= 10)",
                         "recommended": "Qwen/Qwen3-8B-MLX-4bit@383413e909f3bc5303ce195ebbdf0339c5a1a2a3 (4,351,884,216-byte safetensors)"},
     }
     lk = [k for k in runs["groups"] if k.startswith("openai:")]
