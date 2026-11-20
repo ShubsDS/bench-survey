@@ -1,0 +1,210 @@
+{
+ "sonnet": {
+  "n_pairs": 48,
+  "K": 0.9792,
+  "D": 0.875,
+  "diff": 0.1042,
+  "ci_items": [
+   0.0208,
+   0.1875
+  ],
+  "ci_subtasks": [
+   0.0167,
+   0.25
+  ],
+  "b_K_only": 5,
+  "c_D_only": 0,
+  "mcnemar_exact_p": 0.0625,
+  "sign_flip_p_6_subtasks": 0.12184,
+  "per_subtask": {
+   "Prop-seq-gcpercent-v1": {
+    "n": 6,
+    "K": 1.0,
+    "D": 0.6667,
+    "K_only": 2,
+    "D_only": 0,
+    "p_exact": 0.5,
+    "p_holm": 1.0
+   },
+   "ORF-seq-AAseq-v1": {
+    "n": 6,
+    "K": 1.0,
+    "D": 1.0,
+    "K_only": 0,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-enzprimers-v1": {
+    "n": 10,
+    "K": 0.9,
+    "D": 0.8,
+    "K_only": 1,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-seq-enzprimers-v1": {
+    "n": 6,
+    "K": 1.0,
+    "D": 1.0,
+    "K_only": 0,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-gibshindprimers-v1": {
+    "n": 10,
+    "K": 1.0,
+    "D": 0.9,
+    "K_only": 1,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-gibssmaprimers-v1": {
+    "n": 10,
+    "K": 1.0,
+    "D": 0.9,
+    "K_only": 1,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "drop_one_subtask": {
+   "Prop-seq-gcpercent-v1": 0.0714,
+   "ORF-seq-AAseq-v1": 0.119,
+   "PCR-gene-enzprimers-v1": 0.1053,
+   "PCR-seq-enzprimers-v1": 0.119,
+   "PCR-gene-gibshindprimers-v1": 0.1053,
+   "PCR-gene-gibssmaprimers-v1": 0.1053
+  },
+  "gene_absent": {
+   "n": 30,
+   "diff": 0.1,
+   "ci_items": [
+    0.0,
+    0.2333
+   ]
+  },
+  "gene_present": {
+   "n": 18,
+   "diff": 0.1111,
+   "ci_items": [
+    0.0,
+    0.2778
+   ]
+  },
+  "pick_centre": {
+   "centre_rate": 0.0417,
+   "centre_n": 48,
+   "other_rate": 0.0392,
+   "other_n": 102
+  }
+ },
+ "haiku": {
+  "n_pairs": 90,
+  "K": 0.8333,
+  "D": 0.7778,
+  "diff": 0.0556,
+  "ci_items": [
+   -0.0444,
+   0.1444
+  ],
+  "ci_subtasks": [
+   -0.0444,
+   0.1556
+  ],
+  "b_K_only": 12,
+  "c_D_only": 7,
+  "mcnemar_exact_p": 0.35928,
+  "sign_flip_p_6_subtasks": 0.12184,
+  "per_subtask": {
+   "Prop-seq-gcpercent-v1": {
+    "n": 15,
+    "K": 0.8,
+    "D": 0.6667,
+    "K_only": 4,
+    "D_only": 2,
+    "p_exact": 0.6875,
+    "p_holm": 1.0
+   },
+   "ORF-seq-AAseq-v1": {
+    "n": 15,
+    "K": 1.0,
+    "D": 1.0,
+    "K_only": 0,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-enzprimers-v1": {
+    "n": 15,
+    "K": 0.6667,
+    "D": 0.6,
+    "K_only": 2,
+    "D_only": 1,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-seq-enzprimers-v1": {
+    "n": 15,
+    "K": 1.0,
+    "D": 1.0,
+    "K_only": 0,
+    "D_only": 0,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-gibshindprimers-v1": {
+    "n": 15,
+    "K": 0.7333,
+    "D": 0.6667,
+    "K_only": 4,
+    "D_only": 3,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   },
+   "PCR-gene-gibssmaprimers-v1": {
+    "n": 15,
+    "K": 0.8,
+    "D": 0.7333,
+    "K_only": 2,
+    "D_only": 1,
+    "p_exact": 1.0,
+    "p_holm": 1.0
+   }
+  },
+  "drop_one_subtask": {
+   "Prop-seq-gcpercent-v1": 0.04,
+   "ORF-seq-AAseq-v1": 0.0667,
+   "PCR-gene-enzprimers-v1": 0.0533,
+   "PCR-seq-enzprimers-v1": 0.0667,
+   "PCR-gene-gibshindprimers-v1": 0.0533,
+   "PCR-gene-gibssmaprimers-v1": 0.0533
+  },
+  "gene_absent": {
+   "n": 45,
+   "diff": 0.0667,
+   "ci_items": [
+    -0.0889,
+    0.2222
+   ]
+  },
+  "gene_present": {
+   "n": 45,
+   "diff": 0.0444,
+   "ci_items": [
+    -0.0667,
+    0.1556
+   ]
+  },
+  "pick_centre": {
+   "centre_rate": 0.1111,
+   "centre_n": 90,
+   "other_rate": 0.0513,
+   "other_n": 195
+  }
+ }
+}
