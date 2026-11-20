@@ -1,0 +1,35 @@
+{
+ "n_pairs": 30,
+ "Kp": 0.8667,
+ "Dp": 0.6,
+ "diff": 0.2667,
+ "ci_items": [
+  0.1,
+  0.4342
+ ],
+ "Kp_only": 9,
+ "Dp_only": 1,
+ "mcnemar_exact_p": 0.02148,
+ "unparsed": 0,
+ "errors": 0,
+ "mean_out_len": 739.8,
+ "spend_usd": 0.1265,
+ "total_spend_usd": 2.8389,
+ "prior_same_items": {
+  "K": 0.7667,
+  "D": 0.7,
+  "diff": 0.0667
+ },
+ "per_subtask": {
+  "PCR-gene-gibshindprimers-v1": {
+   "n": 15,
+   "Kp": 0.8667,
+   "Dp": 0.6
+  },
+  "PCR-gene-gibssmaprimers-v1": {
+   "n": 15,
+   "Kp": 0.8667,
+   "Dp": 0.6
+  }
+ }
+}
