@@ -19,7 +19,7 @@ are about those models, not the models in any paper or system card.
 | [`lab-bench-deep-seqqa`](lab-bench-deep-seqqa/) and [`lab-bench-deep-seqqa-reasoning`](lab-bench-deep-seqqa-reasoning/) | Does a strong model answer LAB-Bench sequence items from the structure of the options? | Mostly no for Sonnet; yes for Haiku when it reasons. On 48 paired items where the cue points at the key or at a wrong option, Sonnet goes 0.98 to 0.88 with letter-only answers (5 of 48 pairs, exact p = 0.06) and 0.96 to 0.88 with step-by-step reasoning (p = 0.22). A Haiku-sized drop is excluded (97% power); a drop of 0.10 is not resolved, so the pre-registered verdict is "cannot tell". Sonnet picks the decoy on 1 of 6 errors; 5 of 6 say they worked from memory of the gene. Haiku on 30 Gibson pairs: 0.87 to 0.60 with reasoning (p = 0.02), 0.06 with letter-only answers. Two restriction-enzyme subtasks (80 items) contradict the paper's primer convention; no key changes. The reasoning run had no second validator |
 | [`lab-bench-deep-recall`](lab-bench-deep-recall/) | Why is half of ProtocolQA answerable without the protocol? | The share is larger than the parent found and holds for a stronger model: without the protocol Haiku keeps 0.71 (0.57–0.91) of its above-chance score and Sonnet 0.68 (0.48–0.87, on a non-random 62 of 107 items). Simple answer cues do not explain it (held-out rules at chance). Haiku is not reciting items (1 of 66 in free generation). "General lab knowledge" is not established: labels made without the key leave a gap of about 0.3 but much unexplained, and the labels come from Claude models |
 | [`lab-bench-deep-successors`](lab-bench-deep-successors/) | Did the options-only flaw travel into later versions and reuse? | Yes into every multiple-choice release (six Hugging Face releases, the Inspect Evals port, two mirrors); LABBench2 removed it by dropping options. A leak on four of the six subtasks was already public three weeks before our audit (HuggingFaceBio), which the first audit missed. From published numbers alone, whether any "at or above human" sequence score depends on the cue cannot be told: in the worst case three Claude models sit below the cue-free human line, and under equal accuracy every statement holds or sits at the line |
-| [`propensitybench-deep-multiturn`](propensitybench-deep-multiturn/) | Does showing the dropped prohibition change behaviour in the real multi-turn format? | In progress. Haiku never calls the forbidden tool (0 of 30 full runs), so Claude models cannot answer it. A local run on Qwen3-8B, a model the paper tested, is under way |
+| [`propensitybench-deep-multiturn`](propensitybench-deep-multiturn/) | Does showing the dropped prohibition change behaviour in the real multi-turn format? | Cannot tell, and a large effect is excluded. Haiku never calls the forbidden tool (0 of 30 full runs, with the context caveat), so the test ran on Qwen3-8B on this machine (a model the paper tested; 4-bit, thinking off). Restoring the prohibition gave no detectable reduction: shipped 12/14, restored 13/14, placebo 13/14; restored beyond placebo 0.0 (−21 to +21), or +12.5 with an upper bound near 31 when the two restored runs outside the complete triples are counted. A reduction above about 20–30 points is excluded. The arms stopped at 15 of 32 planned scenarios. 14 of the 16 misaligned pilot runs call the tool on the first task turn, before any pressure; the model usually tries the permitted tool first, gets the scripted error, then takes the other. Lead from the validator: the harness always lists the forbidden tool first, and moving it last lowered the first-turn rate from 14/20 to 10/20 (4 scenarios changed, all one way, p = 0.125) |
 | [`helper-context-leak`](helper-context-leak/) | Did the command-line tool's injected context change our own results? | The folder name did not: re-running 1,470 sampled Haiku prompts from the original folder and from a meaningless one changed no reported result beyond run-to-run noise (SAD and Taste-Bench within ±0.06; other audits exclude only changes of 0.15–0.30). The lines that cannot be removed (the model's name, cutoff, the date, a budget) are cited in replies in four audits, so absolute levels there carry a caveat: Taste-Bench options-only rates, two SAD tasks about the model itself, MRT absolute AUROCs, and the PropensityBench zero floors. Paired differences stand. Not checked by a second agent; Sonnet calls not re-run |
 
 ### What validation changed in round three
@@ -27,6 +27,7 @@ are about those models, not the models in any paper or system card.
 - **SeqQA.** The auditor's letter-only prompt hid the effect in Haiku; the validator's reasoning prompt brought it back. Two interval calculations were wrong. "Above the human line" for Sonnet was withdrawn.
 - **ProtocolQA.** The "standard fix" labels used the answer key indirectly. The explanation went from supported to "cannot tell".
 - **Successors.** The bounds compared models with one human line where three are defensible, and not on the same items.
+- **PropensityBench.** The scorer and the counts held (50 of 50 runs match). "Did not lower" became "no detectable reduction": the two restored runs left out of the complete triples both did not trigger, which widens the excluded effect from 21 to about 30 points. The match to the paper's 80% is a coincidence: the paper states no thinking mode or precision for this model. The Haiku caveat was strengthened: in 7 of 32 runs Haiku says the scenario's 2024 deadline has passed.
 
 ## Round two
 
@@ -80,13 +81,18 @@ Palisade and Model-Written Evals held closest to what the auditor reported.
 
 ## Inference
 
-All on Claude Haiku through [`tools/claude_call.py`](tools/claude_call.py), capped at 3 USD per
-audit.
+Through [`tools/claude_call.py`](tools/claude_call.py), capped at 3 USD per audit: Claude Haiku in
+rounds one and two, Haiku and Sonnet in round three. Total 21.37 USD.
 
 - Round one, 4.13 USD: control-monitors-bash 2.34, control-monitors-shade 1.15,
   emergent-misalignment 0.29, sad 0.20, model-written-evals 0.16, and none for the other three.
 - Round two, 6.42 USD: lab-bench 2.58, taste-bench 2.21, propensitybench 1.38,
   cot-faithfulness 0.25, and none for taste and alignment-faking.
+- Round three, 10.82 USD: lab-bench-deep-recall 3.08 (0.08 over the cap), lab-bench-deep-seqqa
+  2.84, lab-bench-deep-seqqa-reasoning 2.12, propensitybench-deep-multiturn 1.92,
+  helper-context-leak 0.86, and none for lab-bench-deep-successors.
+- The PropensityBench deep dive also ran Qwen3-8B (MLX, 4-bit) on this machine at no cost: 51
+  auditor runs and 40 short validator runs. The weights sit in that folder's git-ignored `data/`.
 
 ## Reproducing
 

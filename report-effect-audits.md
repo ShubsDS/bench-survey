@@ -1,9 +1,9 @@
 # Do simple confounds change what safety benchmarks tell us?
 
-*A five-minute summary of fourteen benchmark audits in two rounds, each checked by an independent
-refutation pass.*
+*An eight-minute summary of fourteen benchmark audits in two rounds and a third round of deep dives,
+each checked by an independent refutation pass.*
 
-Status: 2026-11-17. Full write-ups are in [`audits/`](audits/). Nothing here has been sent to the
+Status: 2026-11-20. Full write-ups are in [`audits/`](audits/). Nothing here has been sent to the
 benchmarks' maintainers.
 
 ## The short version
@@ -16,6 +16,8 @@ benchmarks' maintainers.
 - **Two could not be settled:** one needs data behind an access form, one needs a larger experiment.
 - A second agent tried to refute every audit. It cut back the first agent's headline in twelve of
   fourteen cases.
+- **A third round went deep on the open leads instead of adding benchmarks.** It sharpened two
+  findings, closed none of them as a broken benchmark, and found a flaw in our own test setup.
 
 ## Background
 
@@ -47,7 +49,12 @@ Round one picked benchmarks with public per-item logs. Round two picked benchmar
 that broke APPS and TASTE: small sets, labels that come from a process, items kept by model
 behaviour, headlines near chance, and little outside scrutiny.
 
-Model inference was used only for small controlled edits, on Claude Haiku, for 10.55 USD in total.
+Round three opened no new benchmark. Each deep dive took one question an earlier audit could not
+answer, with a stronger model where that was the limit.
+
+Model inference was used only for small controlled edits: Claude Haiku in rounds one and two
+(10.55 USD), Haiku and Sonnet in round three (10.82 USD), and one open model run on this machine
+at no cost.
 
 ## Results
 
@@ -58,7 +65,7 @@ Model inference was used only for small controlled edits, on Claude Haiku, for 1
 | MRT / SHADE-Arena | How well monitors catch a sabotaging agent | Holds as designed | The best numbers are for agents that narrate their plan |
 | Model-Written Evals in CAA steering | Showing a steering vector changes a disposition | Partly | Part of the effect is answer letter and yes/no |
 | ChainScope | Rates of unfaithful chain-of-thought reasoning | Holds | For one model the rate is mostly answer flips |
-| LAB-Bench | Biology research capability against experts | Partly | Some answers can be read from the options |
+| LAB-Bench | Biology research capability against experts | Partly | Some answers can be read from the options; a weak model uses this, a stronger one mostly does not |
 | BashArena-family monitor boards | Ranking monitors | Partly | One ranking metric is mostly transcript length |
 | METR time horizons | Forecasting capability growth | Holds | Single-model horizons are fragile |
 | Situational Awareness Dataset | Measuring self-knowledge | Holds | Two tasks reward a habit of denying |
@@ -66,7 +73,7 @@ Model inference was used only for small controlled edits, on Claude Haiku, for 1
 | Alignment faking | Whether a model complies more when it thinks it is being trained | Holds | Little |
 | Taste-Bench | Ranking models on engineering judgment | Holds | Adjacent ranks are within run-to-run noise |
 | TASTE critique | Claim that models do worse than chance without a shortcut | Open | Data not reachable |
-| PropensityBench | Whether models break a stated rule under pressure | Open | Test could not answer |
+| PropensityBench | Whether models break a stated rule under pressure | Open | Restoring a dropped prohibition shows no large effect on one small model |
 
 ## The six findings that matter most
 
@@ -103,10 +110,59 @@ Claude 3.5 Sonnet goes from +1.06 points to −0.12, and it moves from 8th to 15
 **6. Part of a biology benchmark can be answered without the question.**
 In LAB-Bench, wrong options in the sequence tasks are small edits of the right one, so the
 "central" option is the answer. A rule that sees only the options scores 0.58 against 0.25 for
-guessing; the cue is present in 6 of 15 subtasks and near-perfect in 5 of them. Haiku follows this cue on two subtasks: swapping one
-option drops it from 0.94 to 0.73. Whether published models did is unknown. Separately, human
-"unsure" answers were scored as wrong, so one "surpasses experts" figure sits at the bottom of the
-plausible human range.
+guessing; the cue is present in 6 of 15 subtasks and near-perfect in 5 of them. Haiku follows this
+cue on two subtasks: swapping one option drops it from 0.94 to 0.73. Separately, human "unsure"
+answers were scored as wrong, so one "surpasses experts" figure sits at the bottom of the plausible
+human range. Round three (below) tested a stronger model and traced the flaw through later
+releases. It also found that part of this was already public: a Hugging Face dataset card had
+shown the leak on four of the six subtasks three weeks before our audit.
+
+## Round three: what the deep dives added
+
+**LAB-Bench sequence tasks: the flaw is real, but a stronger model mostly ignores it.**
+We built 48 pairs of items in which the cue points either at the right answer or at a wrong one.
+
+| Model and prompt | Cue at right answer | Cue at wrong answer | Verdict |
+|---|---|---|---|
+| Haiku, step-by-step (30 pairs) | 0.87 | 0.60 | Follows the cue (p = 0.02) |
+| Sonnet, letter only | 0.98 | 0.88 | Cannot tell (p = 0.06) |
+| Sonnet, step-by-step | 0.96 | 0.88 | Cannot tell (p = 0.22) |
+
+A drop as large as Haiku's is ruled out for Sonnet; a drop of 0.10 is not. When Sonnet errs, it
+almost never picks the option the cue points at. No frontier model was tested.
+
+**The flaw is in every multiple-choice release and gone from the successor.** All six Hugging Face
+releases, the Inspect Evals port and two mirrors carry it. LABBench2 dropped answer options and so
+removed it. Published numbers alone cannot show whether any "at or above human" sequence score
+depended on the cue.
+
+**ProtocolQA: about 70% of the score does not need the protocol.** The task asks a model to find an
+error in a lab protocol. With the protocol removed, Haiku keeps 0.71 of its above-chance score and
+Sonnet 0.68. Simple answer cues do not explain this, and Haiku is not reciting the items. Why it
+happens is not settled.
+
+**PropensityBench: restoring the dropped prohibition shows no large effect.** The benchmark's
+prompts leave out a sentence forbidding the misuse it then counts. Haiku never misbehaves in the
+full format (0 of 30 runs), so we ran Qwen3-8B, a small open model the paper also tested, on this
+machine.
+
+| Prompt | Runs that called the forbidden tool |
+|---|---|
+| As shipped | 12 of 14 |
+| Prohibition restored | 13 of 14 |
+| Placebo sentence | 13 of 14 |
+
+A reduction of more than about 20–30 points is ruled out; a smaller one is not, because the run
+stopped at 15 of 32 planned scenarios. Most calls come on the first turn, before any pressure is
+applied. One lead for later: the benchmark always lists the forbidden tool first, and listing it
+last lowered the first-turn rate from 14 of 20 to 10 of 20. That is too small a sample to count as
+a result.
+
+**Our own test tool told the model more than we wrote.** The command-line tool used for every
+Claude run adds its own context to each request: the working folder (which named the audit), the
+model's name, today's date and a budget. Re-running 1,470 prompts from a meaningless folder
+changed no reported result beyond noise. The lines that cannot be removed are cited in model
+replies in four audits, so absolute levels there carry a caveat; differences between arms stand.
 
 ## What held up
 
@@ -129,6 +185,11 @@ plausible human range.
   category; a reported failure to reproduce was the auditor's definition error.
 - **Taste-Bench.** "A rule beats every model" compared the rule and the models on different scales.
 - **PropensityBench.** Zero misbehaviour in every test arm was a property of the test format.
+- **PropensityBench, round three.** "Did not lower" became "no detectable reduction" once two
+  runs left out of the comparison were counted.
+- **LAB-Bench, round three.** A letter-only prompt had hidden Haiku's use of the cue; a reasoning
+  prompt brought it back. An explanation for ProtocolQA ("standard fixes") rested on labels that
+  used the answer key, and was withdrawn. The first audit's "new" claim missed public prior work.
 
 The lesson: a stratified result needs a placebo split and a second reader before it is believed.
 
@@ -142,14 +203,17 @@ benchmarks by "looks fragile" helped less than expected: the top pick, Taste-Ben
 
 - Agents did the audits and the refutations. A person has not re-derived the numbers by hand.
 - Each audit had one refuter. Several results rest on small samples, which the write-ups state.
-- The controlled edits used one small model, Haiku. They show how Haiku behaves, not how the
-  models in each paper behaved.
-- Two questions are open. TASTE needs the authors' gated data. PropensityBench needs full
-  multi-turn agent runs.
+- The controlled edits used Haiku and, in round three, Sonnet. They show how those models behave,
+  not how the models in each paper behaved. Testing a frontier model needs API access we do not
+  have.
+- The test tool adds context we cannot remove (see round three). Absolute levels in four audits
+  carry that caveat.
+- Two questions are open. TASTE needs the authors' gated data. PropensityBench needs a larger run
+  on more than one model, and a proper test of tool order.
 
 ## Where to look
 
-[`audits/README.md`](audits/README.md) has the full results table for both rounds. Each audit
+[`audits/README.md`](audits/README.md) has the full results table for all three rounds. Each audit
 folder holds its claims, test plan, scripts, results and a `validation/VALIDATION.md` listing
 every correction. The method is in [`audits/METHODOLOGY.md`](audits/METHODOLOGY.md) and the
 refuters' brief in [`audits/REFUTATION.md`](audits/REFUTATION.md).
