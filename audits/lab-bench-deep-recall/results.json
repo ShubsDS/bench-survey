@@ -1,4 +1,209 @@
 {
+ "validation": {
+  "status": "independently validated 2026-11-20; see validation/VALIDATION.md and validation/validation.json. Auditor's original numbers below are unchanged and reproduce.",
+  "verdicts": {
+   "claim1_blind_share": "confirmed (numbers); Sonnet 62-item subset = first 62 in file order, non-random; likely downward bias of Sonnet share",
+   "claim2_surface_cues": "confirmed (R)",
+   "claim3_recall_haiku": "confirmed (R for verbatim recall)",
+   "claim3_recall_sonnet_small_drop": "downgraded: 0.035 [-0.018, 0.085] without 6 meaning-changed paraphrases; drop >= 0.15 excluded for both models",
+   "claim4_standard_fix": "downgraded: label uses the key; association holds with key-blind labels; prereg A3 verdict 'supported' for Haiku failed -> 'cannot tell' for both models",
+   "claim4_exploratory_protocol_gain": "failed (label-dependent; reverses with key-blind labels)",
+   "claim5_cloning": "confirmed, lead"
+  },
+  "share_joint_cluster": {
+   "haiku_qo_over_full_chance_base": {
+    "n": 107,
+    "share": 0.709,
+    "ci_joint_cluster": [
+     0.57,
+     0.912
+    ]
+   },
+   "haiku_opts_over_full_chance_base": {
+    "n": 107,
+    "share": 0.6258,
+    "ci_joint_cluster": [
+     0.417,
+     0.874
+    ]
+   },
+   "haiku_qo_over_full_opts_base": {
+    "n": 107,
+    "share": 0.2222,
+    "ci_joint_cluster": [
+     -1.1,
+     0.792
+    ]
+   },
+   "sonnet_qo_over_full_chance_base_62": {
+    "n": 62,
+    "share": 0.681,
+    "ci_joint_cluster": [
+     0.483,
+     0.865
+    ]
+   },
+   "haiku_qo_over_full_chance_base_62": {
+    "n": 62,
+    "share": 0.6523,
+    "ci_joint_cluster": [
+     0.492,
+     0.824
+    ]
+   },
+   "haiku_qo_over_full_chance_base_45": {
+    "n": 45,
+    "share": 0.7933,
+    "ci_joint_cluster": [
+     0.486,
+     1.351
+    ]
+   }
+  },
+  "sonnet_62_subset": {
+   "is_first_62_in_file_order": true,
+   "clusters_in_62": 20,
+   "clusters_only_in_45": 3,
+   "protocol_len_median_62": 4157.5,
+   "protocol_len_median_45": 5325.0
+  },
+  "key_blind_label_gaps": {
+   "haiku_qo|auditor_G": {
+    "acc_in": 0.678,
+    "acc_out": 0.396,
+    "gap": 0.282,
+    "ci": [
+     0.07,
+     0.423
+    ],
+    "placebo_pct": 99.6,
+    "n_in": 59,
+    "n_out": 48
+   },
+   "haiku_qo|validator_K": {
+    "acc_in": 0.757,
+    "acc_out": 0.443,
+    "gap": 0.314,
+    "ci": [
+     0.156,
+     0.454
+    ],
+    "placebo_pct": 99.8,
+    "n_in": 37,
+    "n_out": 70
+   },
+   "sonnet_qo|auditor_G": {
+    "acc_in": 0.746,
+    "acc_out": 0.583,
+    "gap": 0.162,
+    "ci": [
+     -0.023,
+     0.317
+    ],
+    "placebo_pct": 96.5,
+    "n_in": 59,
+    "n_out": 48
+   },
+   "sonnet_qo|validator_K": {
+    "acc_in": 0.892,
+    "acc_out": 0.557,
+    "gap": 0.335,
+    "ci": [
+     0.264,
+     0.413
+    ],
+    "placebo_pct": 100.0,
+    "n_in": 37,
+    "n_out": 70
+   },
+   "haiku_qo|auditor_pick_is_key_only": {
+    "acc_in": 0.688,
+    "acc_out": 0.2,
+    "gap": 0.488,
+    "ci": [
+     0.286,
+     0.623
+    ],
+    "placebo_pct": 100.0,
+    "n_in": 77,
+    "n_out": 30
+   },
+   "sonnet_qo|auditor_pick_is_key_only": {
+    "acc_in": 0.831,
+    "acc_out": 0.267,
+    "gap": 0.565,
+    "ci": [
+     0.357,
+     0.74
+    ],
+    "placebo_pct": 100.0,
+    "n_in": 77,
+    "n_out": 30
+   }
+  },
+  "label_agreement_validator_K_vs_auditor_G": {
+   "agree": 0.738,
+   "kappa": 0.493,
+   "both": 34,
+   "only_first": 3,
+   "only_second": 25
+  },
+  "paraphrase_without_meaning_changed": {
+   "drift_items": [
+    "36cae278",
+    "3b5bd87a",
+    "e8afd1c6",
+    "abfb2fec",
+    "520f4620",
+    "16fc3385"
+   ],
+   "n": 85,
+   "drop": 0.0353,
+   "ci": [
+    -0.018,
+    0.085
+   ],
+   "lost": 5,
+   "gained": 2,
+   "drift_items_sonnet_lost": [
+    "e8afd1c6",
+    "abfb2fec",
+    "520f4620",
+    "16fc3385"
+   ],
+   "haiku_drop_without_drift": 0.0824,
+   "haiku_ci": [
+    0.0,
+    0.154
+   ]
+  },
+  "validator_content_blind_rules": {
+   "heldout_mean": 0.2606,
+   "heldout_p2.5_97.5": [
+    0.144,
+    0.322
+   ],
+   "p": 0.11,
+   "null_heldout_mean": 0.2316
+  },
+  "validator_qgen_grade": {
+   "n_responses_matched": 101,
+   "fix_line_present": 101,
+   "step_keyed_items": 86,
+   "key_step_hits": 6,
+   "key_step_rate": 0.06976744186046512,
+   "distractor_step_rate": 0.10481927710843372,
+   "value_keyed_items": 78,
+   "key_value_hits": 14,
+   "key_value_rate": 0.1794871794871795,
+   "distractor_value_rate": 0.12585470085470085,
+   "both_keyed_items": 66,
+   "key_exact_hits": 1,
+   "key_exact_rate": 0.015151515151515152,
+   "distractor_exact_rate": 0.02265625
+  },
+  "validator_spend_usd": 0
+ },
  "models": {
   "haiku": "claude-haiku-5-5 (parent CoT template)",
   "sonnet": "claude-sonnet-5-5 (answer-only template)"
