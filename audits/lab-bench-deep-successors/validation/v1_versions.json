@@ -1,0 +1,4467 @@
+{
+ "983956ce": {
+  "date": "2024-07-13/16",
+  "seqqa_sha256": "09c7b26ea1a4366dc6ce9e05a09e505d41e7073780a7c782a1018689d733c3f8",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent",
+   "RE-seq-numfrags"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "RE-seq-numfrags"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9167,
+  "all15_mainrule_mean": 0.6335,
+  "all15_ci": [
+   0.4464,
+   0.8161
+  ],
+  "placebo_sha_all15": 0.2417,
+  "vs_parent": {
+   "shared_ids": 400,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40,
+    "RE-seq-lenfrags": 40,
+    "RE-seq-numfrags": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3387,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7852,
+    "SHA": 0.25,
+    "SHA_p": 0.5514,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5824,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1349,
+    "NB1": 0.3312,
+    "NB1_p": 0.0709,
+    "NUM": 0.3875,
+    "NUM_p": 0.002,
+    "SHA": 0.2,
+    "SHA_p": 0.8352,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.956,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8202,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      0.9762
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2105,
+      0.1905
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1848,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.2238,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.125,
+    "J3_p": 0.986,
+    "KMER": 0.2125,
+    "KMER_p": 0.8621,
+    "LEV": 0.0375,
+    "LEV_p": 1.0,
+    "SHA": 0.25,
+    "SHA_p": 0.5475,
+    "halves": {
+     "J3": [
+      0.1364,
+      0.1111
+     ],
+     "KMER": [
+      0.1477,
+      0.2917
+     ],
+     "LEV": [
+      0.0227,
+      0.0556
+     ],
+     "SHA": [
+      0.3182,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.8921,
+    "KMER": 0.2,
+    "KMER_p": 0.9491,
+    "LEV": 0.3333,
+    "LEV_p": 0.1099,
+    "SHA": 0.2,
+    "SHA_p": 0.8082,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8891,
+    "NB1": 0.2562,
+    "NB1_p": 0.5015,
+    "NUM": 0.3,
+    "NUM_p": 0.1429,
+    "SHA": 0.3,
+    "SHA_p": 0.2747,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.275,
+    "SHA_p": 0.4196,
+    "halves": {
+     "J3": [
+      0.9444,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2222,
+      0.3182
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8042,
+    "KMER": 0.225,
+    "KMER_p": 0.7792,
+    "LEV": 0.1875,
+    "LEV_p": 0.8551,
+    "SHA": 0.15,
+    "SHA_p": 0.959,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5465,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.6375,
+    "J3_p": 0.001,
+    "KMER": 0.2313,
+    "KMER_p": 0.7103,
+    "LEV": 0.225,
+    "LEV_p": 0.6923,
+    "SHA": 0.325,
+    "SHA_p": 0.1718,
+    "halves": {
+     "J3": [
+      0.6,
+      0.66
+     ],
+     "KMER": [
+      0.2667,
+      0.21
+     ],
+     "LEV": [
+      0.2333,
+      0.22
+     ],
+     "SHA": [
+      0.3333,
+      0.32
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 0.2,
+    "J3_p": 1.0,
+    "KMER": 0.2,
+    "KMER_p": 1.0,
+    "LEV": 0.2046,
+    "LEV_p": 0.4835,
+    "NB1": 0.3333,
+    "NB1_p": 0.001,
+    "NUM": 1.0,
+    "NUM_p": 0.001,
+    "SHA": 0.225,
+    "SHA_p": 0.4066,
+    "halves": {
+     "J3": [
+      0.2,
+      0.2
+     ],
+     "KMER": [
+      0.2,
+      0.2
+     ],
+     "LEV": [
+      0.2063,
+      0.2026
+     ],
+     "NB1": [
+      0.3333,
+      0.3333
+     ],
+     "NUM": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2381,
+      0.2105
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": true,
+    "carries_generic_rules": true
+   }
+  }
+ },
+ "7268767a": {
+  "date": "2024-07-16",
+  "seqqa_sha256": "5140d05a8a4d7f761e38941a321597f498e54a33f88c90a35ff6e52c14da67fd",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent",
+   "RE-seq-numfrags"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "RE-seq-numfrags"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9167,
+  "all15_mainrule_mean": 0.6335,
+  "all15_ci": [
+   0.4497,
+   0.8114
+  ],
+  "placebo_sha_all15": 0.2417,
+  "vs_parent": {
+   "shared_ids": 400,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40,
+    "RE-seq-lenfrags": 40,
+    "RE-seq-numfrags": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3337,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7802,
+    "SHA": 0.25,
+    "SHA_p": 0.5634,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5435,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1508,
+    "NB1": 0.3312,
+    "NB1_p": 0.0699,
+    "NUM": 0.3875,
+    "NUM_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8162,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.957,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8132,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      0.9762
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2105,
+      0.1905
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1978,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1758,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.125,
+    "J3_p": 0.986,
+    "KMER": 0.2125,
+    "KMER_p": 0.8521,
+    "LEV": 0.0375,
+    "LEV_p": 1.0,
+    "SHA": 0.25,
+    "SHA_p": 0.5574,
+    "halves": {
+     "J3": [
+      0.1364,
+      0.1111
+     ],
+     "KMER": [
+      0.1477,
+      0.2917
+     ],
+     "LEV": [
+      0.0227,
+      0.0556
+     ],
+     "SHA": [
+      0.3182,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.9021,
+    "KMER": 0.2,
+    "KMER_p": 0.958,
+    "LEV": 0.3333,
+    "LEV_p": 0.1119,
+    "SHA": 0.2,
+    "SHA_p": 0.8232,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8282,
+    "NB1": 0.2562,
+    "NB1_p": 0.4905,
+    "NUM": 0.3,
+    "NUM_p": 0.1459,
+    "SHA": 0.3,
+    "SHA_p": 0.2657,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.275,
+    "SHA_p": 0.4336,
+    "halves": {
+     "J3": [
+      0.9444,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2222,
+      0.3182
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8042,
+    "KMER": 0.225,
+    "KMER_p": 0.7932,
+    "LEV": 0.1875,
+    "LEV_p": 0.8541,
+    "SHA": 0.15,
+    "SHA_p": 0.967,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5475,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.6375,
+    "J3_p": 0.001,
+    "KMER": 0.2313,
+    "KMER_p": 0.7053,
+    "LEV": 0.225,
+    "LEV_p": 0.6793,
+    "SHA": 0.325,
+    "SHA_p": 0.1918,
+    "halves": {
+     "J3": [
+      0.6,
+      0.66
+     ],
+     "KMER": [
+      0.2667,
+      0.21
+     ],
+     "LEV": [
+      0.2333,
+      0.22
+     ],
+     "SHA": [
+      0.3333,
+      0.32
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 0.2,
+    "J3_p": 1.0,
+    "KMER": 0.2,
+    "KMER_p": 1.0,
+    "LEV": 0.2046,
+    "LEV_p": 0.4645,
+    "NB1": 0.3333,
+    "NB1_p": 0.001,
+    "NUM": 1.0,
+    "NUM_p": 0.001,
+    "SHA": 0.225,
+    "SHA_p": 0.4416,
+    "halves": {
+     "J3": [
+      0.2,
+      0.2
+     ],
+     "KMER": [
+      0.2,
+      0.2
+     ],
+     "LEV": [
+      0.2063,
+      0.2026
+     ],
+     "NB1": [
+      0.3333,
+      0.3333
+     ],
+     "NUM": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2381,
+      0.2105
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": true,
+    "carries_generic_rules": true
+   }
+  }
+ },
+ "10866fa8": {
+  "date": "2024-08-20",
+  "seqqa_sha256": "80cac043b5ccaa638978b29ea8576beccf14613e67780c7a523759abf13ab523",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent",
+   "RE-seq-numfrags"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "RE-seq-numfrags"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9167,
+  "all15_mainrule_mean": 0.6335,
+  "all15_ci": [
+   0.4475,
+   0.8117
+  ],
+  "placebo_sha_all15": 0.2417,
+  "vs_parent": {
+   "shared_ids": 400,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40,
+    "RE-seq-lenfrags": 40,
+    "RE-seq-numfrags": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3457,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7672,
+    "SHA": 0.25,
+    "SHA_p": 0.5504,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5624,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1179,
+    "NB1": 0.3312,
+    "NB1_p": 0.0639,
+    "NUM": 0.3875,
+    "NUM_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8212,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.961,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8072,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      0.9762
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2105,
+      0.1905
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1728,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1698,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.125,
+    "J3_p": 0.987,
+    "KMER": 0.2125,
+    "KMER_p": 0.8601,
+    "LEV": 0.0375,
+    "LEV_p": 1.0,
+    "SHA": 0.25,
+    "SHA_p": 0.5694,
+    "halves": {
+     "J3": [
+      0.1364,
+      0.1111
+     ],
+     "KMER": [
+      0.1477,
+      0.2917
+     ],
+     "LEV": [
+      0.0227,
+      0.0556
+     ],
+     "SHA": [
+      0.3182,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.9031,
+    "KMER": 0.2,
+    "KMER_p": 0.962,
+    "LEV": 0.3333,
+    "LEV_p": 0.1139,
+    "SHA": 0.2,
+    "SHA_p": 0.8142,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8751,
+    "NB1": 0.2562,
+    "NB1_p": 0.5075,
+    "NUM": 0.3,
+    "NUM_p": 0.1169,
+    "SHA": 0.3,
+    "SHA_p": 0.2867,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.275,
+    "SHA_p": 0.4096,
+    "halves": {
+     "J3": [
+      0.9444,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2222,
+      0.3182
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8162,
+    "KMER": 0.225,
+    "KMER_p": 0.7982,
+    "LEV": 0.1875,
+    "LEV_p": 0.8651,
+    "SHA": 0.15,
+    "SHA_p": 0.953,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5544,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.6375,
+    "J3_p": 0.001,
+    "KMER": 0.2313,
+    "KMER_p": 0.6913,
+    "LEV": 0.225,
+    "LEV_p": 0.6983,
+    "SHA": 0.325,
+    "SHA_p": 0.1908,
+    "halves": {
+     "J3": [
+      0.6,
+      0.66
+     ],
+     "KMER": [
+      0.2667,
+      0.21
+     ],
+     "LEV": [
+      0.2333,
+      0.22
+     ],
+     "SHA": [
+      0.3333,
+      0.32
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 0.2,
+    "J3_p": 1.0,
+    "KMER": 0.2,
+    "KMER_p": 1.0,
+    "LEV": 0.2046,
+    "LEV_p": 0.4835,
+    "NB1": 0.3333,
+    "NB1_p": 0.001,
+    "NUM": 1.0,
+    "NUM_p": 0.001,
+    "SHA": 0.225,
+    "SHA_p": 0.4076,
+    "halves": {
+     "J3": [
+      0.2,
+      0.2
+     ],
+     "KMER": [
+      0.2,
+      0.2
+     ],
+     "LEV": [
+      0.2063,
+      0.2026
+     ],
+     "NB1": [
+      0.3333,
+      0.3333
+     ],
+     "NUM": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2381,
+      0.2105
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": true,
+    "carries_generic_rules": true
+   }
+  }
+ },
+ "8e6bb002": {
+  "date": "2024-12-18",
+  "seqqa_sha256": "582ec25fda40469dbdf329900c87cf8e2b3d73c583aad22d9e301dce965475ce",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent",
+   "RE-seq-numfrags"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "RE-seq-numfrags"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9167,
+  "all15_mainrule_mean": 0.6335,
+  "all15_ci": [
+   0.4548,
+   0.8109
+  ],
+  "placebo_sha_all15": 0.2417,
+  "vs_parent": {
+   "shared_ids": 400,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40,
+    "RE-seq-lenfrags": 40,
+    "RE-seq-numfrags": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3596,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7912,
+    "SHA": 0.25,
+    "SHA_p": 0.5834,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5734,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1179,
+    "NB1": 0.3312,
+    "NB1_p": 0.0639,
+    "NUM": 0.3875,
+    "NUM_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8032,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.962,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8022,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      0.9762
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2105,
+      0.1905
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1918,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1598,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.125,
+    "J3_p": 0.986,
+    "KMER": 0.2125,
+    "KMER_p": 0.8452,
+    "LEV": 0.0375,
+    "LEV_p": 1.0,
+    "SHA": 0.25,
+    "SHA_p": 0.5874,
+    "halves": {
+     "J3": [
+      0.1364,
+      0.1111
+     ],
+     "KMER": [
+      0.1477,
+      0.2917
+     ],
+     "LEV": [
+      0.0227,
+      0.0556
+     ],
+     "SHA": [
+      0.3182,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.9021,
+    "KMER": 0.2,
+    "KMER_p": 0.956,
+    "LEV": 0.3333,
+    "LEV_p": 0.1429,
+    "SHA": 0.2,
+    "SHA_p": 0.7802,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8631,
+    "NB1": 0.2562,
+    "NB1_p": 0.5185,
+    "NUM": 0.3,
+    "NUM_p": 0.1499,
+    "SHA": 0.3,
+    "SHA_p": 0.2917,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.275,
+    "SHA_p": 0.4156,
+    "halves": {
+     "J3": [
+      0.9444,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2222,
+      0.3182
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8142,
+    "KMER": 0.225,
+    "KMER_p": 0.7742,
+    "LEV": 0.1875,
+    "LEV_p": 0.8521,
+    "SHA": 0.15,
+    "SHA_p": 0.96,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5584,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.6375,
+    "J3_p": 0.001,
+    "KMER": 0.2313,
+    "KMER_p": 0.7203,
+    "LEV": 0.225,
+    "LEV_p": 0.6643,
+    "SHA": 0.325,
+    "SHA_p": 0.1998,
+    "halves": {
+     "J3": [
+      0.6,
+      0.66
+     ],
+     "KMER": [
+      0.2667,
+      0.21
+     ],
+     "LEV": [
+      0.2333,
+      0.22
+     ],
+     "SHA": [
+      0.3333,
+      0.32
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 0.2,
+    "J3_p": 1.0,
+    "KMER": 0.2,
+    "KMER_p": 1.0,
+    "LEV": 0.2046,
+    "LEV_p": 0.5055,
+    "NB1": 0.3333,
+    "NB1_p": 0.001,
+    "NUM": 1.0,
+    "NUM_p": 0.001,
+    "SHA": 0.225,
+    "SHA_p": 0.3766,
+    "halves": {
+     "J3": [
+      0.2,
+      0.2
+     ],
+     "KMER": [
+      0.2,
+      0.2
+     ],
+     "LEV": [
+      0.2063,
+      0.2026
+     ],
+     "NB1": [
+      0.3333,
+      0.3333
+     ],
+     "NUM": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2381,
+      0.2105
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": true,
+    "carries_generic_rules": true
+   }
+  }
+ },
+ "4709d14f": {
+  "date": "2025-02-19",
+  "seqqa_sha256": "1e0c69670c4c200ba47ae1d9dfc31f4bbff2dce7a2256558b032589c39c86f73",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9125,
+  "all15_mainrule_mean": 0.5736,
+  "all15_ci": [
+   0.4103,
+   0.76
+  ],
+  "placebo_sha_all15": 0.2433,
+  "vs_parent": {
+   "shared_ids": 480,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3526,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7672,
+    "SHA": 0.25,
+    "SHA_p": 0.5435,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5305,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1299,
+    "NB1": 0.3312,
+    "NB1_p": 0.0629,
+    "NUM": 0.3875,
+    "NUM_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8262,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.955,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.975,
+    "KMER_p": 0.001,
+    "LEV": 0.975,
+    "LEV_p": 0.001,
+    "SHA": 0.175,
+    "SHA_p": 0.9171,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      0.9545,
+      1.0
+     ],
+     "LEV": [
+      0.9545,
+      1.0
+     ],
+     "SHA": [
+      0.2273,
+      0.1111
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1828,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1838,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.3063,
+    "J3_p": 0.0979,
+    "KMER": 0.275,
+    "KMER_p": 0.2577,
+    "LEV": 0.25,
+    "LEV_p": 1.0,
+    "SHA": 0.275,
+    "SHA_p": 0.3806,
+    "halves": {
+     "J3": [
+      0.27,
+      0.3667
+     ],
+     "KMER": [
+      0.21,
+      0.3833
+     ],
+     "LEV": [
+      0.25,
+      0.25
+     ],
+     "SHA": [
+      0.2,
+      0.4
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.9031,
+    "KMER": 0.2,
+    "KMER_p": 0.96,
+    "LEV": 0.3333,
+    "LEV_p": 0.1259,
+    "SHA": 0.2,
+    "SHA_p": 0.8132,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8641,
+    "NB1": 0.2562,
+    "NB1_p": 0.5085,
+    "NUM": 0.3,
+    "NUM_p": 0.1508,
+    "SHA": 0.3,
+    "SHA_p": 0.2627,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5754,
+    "halves": {
+     "J3": [
+      1.0,
+      0.9375
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.3333,
+      0.125
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8332,
+    "KMER": 0.225,
+    "KMER_p": 0.7952,
+    "LEV": 0.1875,
+    "LEV_p": 0.8661,
+    "SHA": 0.15,
+    "SHA_p": 0.955,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5564,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2208,
+    "J3_p": 0.6943,
+    "KMER": 0.2625,
+    "KMER_p": 0.2478,
+    "LEV": 0.2333,
+    "LEV_p": 0.5934,
+    "SHA": 0.35,
+    "SHA_p": 0.1079,
+    "halves": {
+     "J3": [
+      0.1944,
+      0.2424
+     ],
+     "KMER": [
+      0.2639,
+      0.2614
+     ],
+     "LEV": [
+      0.2778,
+      0.197
+     ],
+     "SHA": [
+      0.2778,
+      0.4091
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2479,
+    "LEV_p": 0.5594,
+    "NB1": 0.2313,
+    "NB1_p": 0.7133,
+    "NUM": 0.325,
+    "NUM_p": 0.044,
+    "SHA": 0.25,
+    "SHA_p": 0.5744,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2255,
+      0.2645
+     ],
+     "NB1": [
+      0.2353,
+      0.2283
+     ],
+     "NUM": [
+      0.3235,
+      0.3261
+     ],
+     "SHA": [
+      0.3529,
+      0.1739
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   }
+  }
+ },
+ "8137378e": {
+  "date": "2025-07-15",
+  "seqqa_sha256": "b8bb6a94eb615656e15a9794c43506c8464b3f214371ab10c05b6f32c05f47d2",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9125,
+  "all15_mainrule_mean": 0.5736,
+  "all15_ci": [
+   0.3992,
+   0.7627
+  ],
+  "placebo_sha_all15": 0.2433,
+  "vs_parent": {
+   "shared_ids": 480,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {
+    "PCR-gene-enzprimers": 40,
+    "PCR-geneprimers-enz": 40,
+    "PCR-seq-enzprimers": 40
+   }
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3347,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7842,
+    "SHA": 0.25,
+    "SHA_p": 0.5604,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5534,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1209,
+    "NB1": 0.3312,
+    "NB1_p": 0.0519,
+    "NUM": 0.3875,
+    "NUM_p": 0.003,
+    "SHA": 0.2,
+    "SHA_p": 0.8352,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.964,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.975,
+    "KMER_p": 0.001,
+    "LEV": 0.975,
+    "LEV_p": 0.001,
+    "SHA": 0.175,
+    "SHA_p": 0.9111,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      0.9545,
+      1.0
+     ],
+     "LEV": [
+      0.9545,
+      1.0
+     ],
+     "SHA": [
+      0.2273,
+      0.1111
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.2048,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1718,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.3063,
+    "J3_p": 0.0999,
+    "KMER": 0.275,
+    "KMER_p": 0.2607,
+    "LEV": 0.25,
+    "LEV_p": 1.0,
+    "SHA": 0.275,
+    "SHA_p": 0.3826,
+    "halves": {
+     "J3": [
+      0.27,
+      0.3667
+     ],
+     "KMER": [
+      0.21,
+      0.3833
+     ],
+     "LEV": [
+      0.25,
+      0.25
+     ],
+     "SHA": [
+      0.2,
+      0.4
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.9001,
+    "KMER": 0.2,
+    "KMER_p": 0.955,
+    "LEV": 0.3333,
+    "LEV_p": 0.1219,
+    "SHA": 0.2,
+    "SHA_p": 0.8202,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8711,
+    "NB1": 0.2562,
+    "NB1_p": 0.5045,
+    "NUM": 0.3,
+    "NUM_p": 0.1379,
+    "SHA": 0.3,
+    "SHA_p": 0.2967,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.975,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5584,
+    "halves": {
+     "J3": [
+      1.0,
+      0.9375
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.3333,
+      0.125
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8252,
+    "KMER": 0.225,
+    "KMER_p": 0.8212,
+    "LEV": 0.1875,
+    "LEV_p": 0.8771,
+    "SHA": 0.15,
+    "SHA_p": 0.954,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5754,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2208,
+    "J3_p": 0.6793,
+    "KMER": 0.2625,
+    "KMER_p": 0.2647,
+    "LEV": 0.2333,
+    "LEV_p": 0.6354,
+    "SHA": 0.35,
+    "SHA_p": 0.1189,
+    "halves": {
+     "J3": [
+      0.1944,
+      0.2424
+     ],
+     "KMER": [
+      0.2639,
+      0.2614
+     ],
+     "LEV": [
+      0.2778,
+      0.197
+     ],
+     "SHA": [
+      0.2778,
+      0.4091
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2479,
+    "LEV_p": 0.5844,
+    "NB1": 0.2313,
+    "NB1_p": 0.7093,
+    "NUM": 0.325,
+    "NUM_p": 0.039,
+    "SHA": 0.25,
+    "SHA_p": 0.5644,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2255,
+      0.2645
+     ],
+     "NB1": [
+      0.2353,
+      0.2283
+     ],
+     "NUM": [
+      0.3235,
+      0.3261
+     ],
+     "SHA": [
+      0.3529,
+      0.1739
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   }
+  }
+ },
+ "5c77cec6": {
+  "date": "2025-09-27",
+  "seqqa_sha256": "5864776d3d85774f91d82432e30ac31e9222f1670621e8ea141414173c5e9b46",
+  "n_items": 600,
+  "n_subtasks": 15,
+  "per_subtask_counts": {
+   "ORF-seq-AAid": 40,
+   "ORF-seq-AAseq": 40,
+   "ORF-seq-numlen": 40,
+   "ORF-transeff": 40,
+   "PCR-gene-enzprimers": 40,
+   "PCR-gene-gibshindprimers": 40,
+   "PCR-gene-gibssmaprimers": 40,
+   "PCR-geneprimers-enz": 40,
+   "PCR-len-primers": 40,
+   "PCR-primers-len": 40,
+   "PCR-seq-enzprimers": 40,
+   "PCR-seq-primers": 40,
+   "Prop-seq-gcpercent": 40,
+   "RE-seq-lenfrags": 40,
+   "RE-seq-numfrags": 40
+  },
+  "carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "S6_carrying": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-seq-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "Prop-seq-gcpercent"
+  ],
+  "carrying_generic_rules_only": [
+   "ORF-seq-AAseq",
+   "PCR-gene-enzprimers",
+   "PCR-gene-gibshindprimers",
+   "PCR-gene-gibssmaprimers",
+   "PCR-seq-enzprimers"
+  ],
+  "S6_mainrule_mean": 1.0,
+  "S6_mainrule_ci": [
+   1.0,
+   1.0
+  ],
+  "S6_lev_or_num_mean": 0.9125,
+  "all15_mainrule_mean": 0.5724,
+  "all15_ci": [
+   0.4004,
+   0.7579
+  ],
+  "placebo_sha_all15": 0.2583,
+  "vs_parent": {
+   "shared_ids": 600,
+   "key_changed": 0,
+   "option_set_changed": 0,
+   "new_ids_by_subtask": {}
+  },
+  "dbqa_multi_seq": {
+   "n": 80,
+   "J3": 0.9938,
+   "LEV": 1.0,
+   "KMER": 1.0,
+   "SHA": 0.25,
+   "chance": 0.25
+  },
+  "per_subtask": {
+   "ORF-seq-AAid": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2687,
+    "J3_p": 0.3367,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2146,
+    "LEV_p": 0.7922,
+    "SHA": 0.25,
+    "SHA_p": 0.5594,
+    "halves": {
+     "J3": [
+      0.325,
+      0.2125
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.1542,
+      0.275
+     ],
+     "SHA": [
+      0.25,
+      0.25
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-seq-AAseq": {
+    "n": 40,
+    "chance": 0.2,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.5784,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2353,
+      0.1739
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "ORF-seq-numlen": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2646,
+    "LEV_p": 0.1239,
+    "NB1": 0.3312,
+    "NB1_p": 0.0649,
+    "NUM": 0.3875,
+    "NUM_p": 0.001,
+    "SHA": 0.2,
+    "SHA_p": 0.8272,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2556,
+      0.27
+     ],
+     "NB1": [
+      0.25,
+      0.38
+     ],
+     "NUM": [
+      0.3,
+      0.44
+     ],
+     "SHA": [
+      0.0667,
+      0.28
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "ORF-transeff": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.15,
+    "SHA_p": 0.9441,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.0625,
+      0.2083
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-gene-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 0.975,
+    "LEV_p": 0.001,
+    "SHA": 0.4,
+    "SHA_p": 0.026,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      0.9706
+     ],
+     "LEV": [
+      0.9565,
+      1.0
+     ],
+     "SHA": [
+      0.3913,
+      0.4118
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibshindprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.875,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1688,
+    "halves": {
+     "J3": [
+      0.88,
+      0.8667
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.36,
+      0.2667
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-gene-gibssmaprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 1.0,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.325,
+    "SHA_p": 0.1658,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      1.0,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2727,
+      0.3889
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-geneprimers-enz": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2875,
+    "J3_p": 0.2587,
+    "KMER": 0.2437,
+    "KMER_p": 0.6144,
+    "LEV": 0.25,
+    "LEV_p": 1.0,
+    "SHA": 0.225,
+    "SHA_p": 0.6733,
+    "halves": {
+     "J3": [
+      0.2344,
+      0.3229
+     ],
+     "KMER": [
+      0.2188,
+      0.2604
+     ],
+     "LEV": [
+      0.25,
+      0.25
+     ],
+     "SHA": [
+      0.3125,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-len-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.175,
+    "J3_p": 0.8961,
+    "KMER": 0.2,
+    "KMER_p": 0.952,
+    "LEV": 0.3333,
+    "LEV_p": 0.1079,
+    "SHA": 0.2,
+    "SHA_p": 0.8102,
+    "halves": {
+     "J3": [
+      0.1667,
+      0.1818
+     ],
+     "KMER": [
+      0.1528,
+      0.2386
+     ],
+     "LEV": [
+      0.1667,
+      0.4697
+     ],
+     "SHA": [
+      0.1667,
+      0.2273
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-primers-len": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2021,
+    "LEV_p": 0.8611,
+    "NB1": 0.2562,
+    "NB1_p": 0.5005,
+    "NUM": 0.3,
+    "NUM_p": 0.1379,
+    "SHA": 0.3,
+    "SHA_p": 0.2617,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.131,
+      0.2404
+     ],
+     "NB1": [
+      0.25,
+      0.2596
+     ],
+     "NUM": [
+      0.3214,
+      0.2885
+     ],
+     "SHA": [
+      0.3571,
+      0.2692
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-enzprimers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 1.0,
+    "J3_p": 0.001,
+    "KMER": 0.9875,
+    "KMER_p": 0.001,
+    "LEV": 1.0,
+    "LEV_p": 0.001,
+    "SHA": 0.3,
+    "SHA_p": 0.2907,
+    "halves": {
+     "J3": [
+      1.0,
+      1.0
+     ],
+     "KMER": [
+      0.9667,
+      1.0
+     ],
+     "LEV": [
+      1.0,
+      1.0
+     ],
+     "SHA": [
+      0.2667,
+      0.32
+     ]
+    },
+    "main_rule": "J3",
+    "carries": true,
+    "carries_generic_rules": true
+   },
+   "PCR-seq-primers": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.7972,
+    "KMER": 0.225,
+    "KMER_p": 0.8222,
+    "LEV": 0.1875,
+    "LEV_p": 0.8521,
+    "SHA": 0.15,
+    "SHA_p": 0.956,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "Prop-seq-gcpercent": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.4083,
+    "LEV_p": 0.001,
+    "NB1": 1.0,
+    "NB1_p": 0.001,
+    "NUM": 0.5,
+    "NUM_p": 0.001,
+    "SHA": 0.25,
+    "SHA_p": 0.5435,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.4127,
+      0.4035
+     ],
+     "NB1": [
+      1.0,
+      1.0
+     ],
+     "NUM": [
+      0.5,
+      0.5
+     ],
+     "SHA": [
+      0.2381,
+      0.2632
+     ]
+    },
+    "main_rule": "NB1",
+    "carries": true,
+    "carries_generic_rules": false
+   },
+   "RE-seq-lenfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2208,
+    "J3_p": 0.6993,
+    "KMER": 0.2625,
+    "KMER_p": 0.2298,
+    "LEV": 0.2333,
+    "LEV_p": 0.6384,
+    "SHA": 0.35,
+    "SHA_p": 0.1029,
+    "halves": {
+     "J3": [
+      0.1944,
+      0.2424
+     ],
+     "KMER": [
+      0.2639,
+      0.2614
+     ],
+     "LEV": [
+      0.2778,
+      0.197
+     ],
+     "SHA": [
+      0.2778,
+      0.4091
+     ]
+    },
+    "main_rule": "LEV",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "RE-seq-numfrags": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.25,
+    "KMER_p": 1.0,
+    "LEV": 0.2479,
+    "LEV_p": 0.5774,
+    "NB1": 0.2313,
+    "NB1_p": 0.7163,
+    "NUM": 0.325,
+    "NUM_p": 0.044,
+    "SHA": 0.25,
+    "SHA_p": 0.5714,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.25,
+      0.25
+     ],
+     "LEV": [
+      0.2255,
+      0.2645
+     ],
+     "NB1": [
+      0.2353,
+      0.2283
+     ],
+     "NUM": [
+      0.3235,
+      0.3261
+     ],
+     "SHA": [
+      0.3529,
+      0.1739
+     ]
+    },
+    "main_rule": "NUM",
+    "carries": false,
+    "carries_generic_rules": false
+   }
+  }
+ },
+ "hfbio_curated": {
+  "n": 120,
+  "ids_in_parent_pin": 120,
+  "keys_match_parent": 80,
+  "per_subtask": {
+   "ORF-transeff-v1-public": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.25,
+    "J3_p": 1.0,
+    "KMER": 0.5,
+    "KMER_p": 0.001,
+    "LEV": 0.0,
+    "LEV_p": 1.0,
+    "SHA": 0.175,
+    "SHA_p": 0.9111,
+    "halves": {
+     "J3": [
+      0.25,
+      0.25
+     ],
+     "KMER": [
+      0.5,
+      0.5
+     ],
+     "LEV": [
+      0.0,
+      0.0
+     ],
+     "SHA": [
+      0.25,
+      0.125
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-geneprimers-enz-v1-public": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2875,
+    "J3_p": 0.2537,
+    "KMER": 0.2437,
+    "KMER_p": 0.6164,
+    "LEV": 0.25,
+    "LEV_p": 1.0,
+    "SHA": 0.225,
+    "SHA_p": 0.6933,
+    "halves": {
+     "J3": [
+      0.2344,
+      0.3229
+     ],
+     "KMER": [
+      0.2188,
+      0.2604
+     ],
+     "LEV": [
+      0.25,
+      0.25
+     ],
+     "SHA": [
+      0.3125,
+      0.1667
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   },
+   "PCR-seq-primers-v1-public": {
+    "n": 40,
+    "chance": 0.25,
+    "J3": 0.2,
+    "J3_p": 0.8362,
+    "KMER": 0.225,
+    "KMER_p": 0.7872,
+    "LEV": 0.1875,
+    "LEV_p": 0.8691,
+    "SHA": 0.15,
+    "SHA_p": 0.962,
+    "halves": {
+     "J3": [
+      0.1739,
+      0.2353
+     ],
+     "KMER": [
+      0.2391,
+      0.2059
+     ],
+     "LEV": [
+      0.1957,
+      0.1765
+     ],
+     "SHA": [
+      0.1304,
+      0.1765
+     ]
+    },
+    "main_rule": "J3",
+    "carries": false,
+    "carries_generic_rules": false
+   }
+  }
+ }
+}
