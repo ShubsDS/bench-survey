@@ -329,6 +329,14 @@ intervention or to add a recent model to an L3 analysis, and only on benign cont
   running WMDP, HarmBench, AgentHarm and similar items.
 - Report the model, the number of calls and the total cost in the README. Commit
   `inference/ledger.jsonl`; the response cache is ignored by git.
+- **The tool adds context you did not write.** The CLI appends an environment block to every
+  request: the working folder, the platform, the model's own name and knowledge cutoff, today's
+  date and a budget line. Always construct the caller with `neutral_cwd=True`, so the folder is
+  meaningless. The rest cannot be removed on this login. It is the same in every arm, so paired
+  differences stand, but absolute rates do not transfer, and any item about the model's identity,
+  the date, being tested or resources is answered with that information in view. Scan replies for
+  mentions of the block and say so in the write-up. See
+  [`helper-context-leak`](helper-context-leak/).
 - A result from one small Claude model says how that model behaves. Do not generalise it to the
   models the benchmark's paper tested.
 
