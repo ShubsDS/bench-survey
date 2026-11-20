@@ -1,0 +1,158 @@
+{
+ "per_audit": {
+  "propensitybench-deep-multiturn": {
+   "n_prompts": 31,
+   "n_clusters": 30,
+   "agree_L_cached": 1.0,
+   "agree_N_cached": 1.0,
+   "agree_L_N": 1.0,
+   "delta_L_minus_N": 0.0,
+   "delta_ci95": [
+    0.0,
+    0.0
+   ],
+   "agree_N_ci95": [
+    1.0,
+    1.0
+   ],
+   "agree_L_ci95": [
+    1.0,
+    1.0
+   ],
+   "env_cue_rate": {
+    "C": "0/31",
+    "L": "0/31",
+    "N": "1/31"
+   },
+   "path_cue_rate": {
+    "L": "0/31",
+    "N": "0/31"
+   },
+   "date_cue_rate": {
+    "C": "0/31",
+    "L": "0/31",
+    "N": "0/31"
+   },
+   "by_stratum": {
+    "last_short_decision": {
+     "n": 31,
+     "agree_L": 1.0,
+     "agree_N": 1.0,
+     "env_C_L_N": [
+      0,
+      0,
+      1
+     ]
+    }
+   },
+   "caveat_rule_a": false
+  },
+  "propensitybench": {
+   "n_prompts": 6,
+   "n_clusters": 6,
+   "agree_L_cached": 0.5,
+   "agree_N_cached": 0.5,
+   "agree_L_N": 1.0,
+   "delta_L_minus_N": 0.0,
+   "delta_ci95": [
+    0.0,
+    0.0
+   ],
+   "agree_N_ci95": [
+    0.1667,
+    0.8333
+   ],
+   "agree_L_ci95": [
+    0.1667,
+    0.8333
+   ],
+   "env_cue_rate": {
+    "C": "0/6",
+    "L": "0/6",
+    "N": "0/6"
+   },
+   "path_cue_rate": {
+    "L": "0/6",
+    "N": "0/6"
+   },
+   "date_cue_rate": {
+    "C": "0/6",
+    "L": "0/6",
+    "N": "0/6"
+   },
+   "by_stratum": {
+    "A_late": {
+     "n": 6,
+     "agree_L": 0.5,
+     "agree_N": 0.5,
+     "env_C_L_N": [
+      0,
+      0,
+      0
+     ]
+    }
+   },
+   "caveat_rule_a": false
+  }
+ },
+ "effects": {
+  "propensitybench": {
+   "A_late": {
+    "C": {
+     "call_none": 3,
+     "other": 3
+    },
+    "L": {
+     "other": 3,
+     "call_none": 3
+    },
+    "N": {
+     "other": 3,
+     "call_none": 3
+    }
+   }
+  },
+  "propensitybench-deep-multiturn": {
+   "C": {
+    "text": 30,
+    "other_tool": 1
+   },
+   "L": {
+    "text": 30,
+    "other_tool": 1
+   },
+   "N": {
+    "text": 30,
+    "other_tool": 1
+   }
+  }
+ },
+ "not_scored": {
+  "propensitybench|not_run": 42,
+  "sad|not_run": 140,
+  "taste-bench|not_run": 240,
+  "control-monitors-bash|not_run": 20,
+  "control-monitors-shade|not_run": 16,
+  "emergent-misalignment|not_run": 40,
+  "model-written-evals|not_run": 40,
+  "cot-faithfulness|not_run": 40,
+  "lab-bench|not_run": 40,
+  "lab-bench-deep-seqqa|not_run": 40,
+  "lab-bench-deep-recall|not_run": 40
+ },
+ "spend": {
+  "arm_leaky": {
+   "calls": 40,
+   "usd": 0.0513
+  },
+  "arm_neutral": {
+   "calls": 40,
+   "usd": 0.05
+  },
+  "arm_probe": {
+   "calls": 3,
+   "usd": 0.0018
+  },
+  "total_usd": 0.1031
+ }
+}
