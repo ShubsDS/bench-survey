@@ -1,0 +1,18 @@
+{
+ "how": "Every K and D error's visible step-by-step text was read from data/errors_blind.txt, which analyze.py writes in a shuffled order with the option letters replaced by per-item tokens. The blinding is partial: the substitution regex missed bare letters in prose such as 'Options <opt3> and C', so some letters leaked. It does not matter for these labels, which depend only on what the text says it did, not on which option was the decoy centre; the centre's identity is not stated in any text and was not consulted while labelling. Labels follow prereg.md.",
+ "labels": {
+  "E00": {"label": "recall", "why": "asserts the primer body 'is the start of nrdE' and eliminates options as 'internal gene sequences'; the gene sequence is not in the question"},
+  "E01": {"label": "recall", "why": "states outright: 'I recognised these sequences from memory rather than checking them against a database'"},
+  "E02": {"label": "recall", "why": "'based on my recollection rather than a sequence check'"},
+  "E03": {"label": "recall", "why": "'my recollection of the sequence, not checked against a database'; the frame arithmetic it then does is correct in form but applied to a mis-recalled start"},
+  "E04": {"label": "recall", "why": "'UbiI (also called VisC) begins MQILKVIG, so the forward primer must begin ...'"},
+  "E05": {"label": "other", "why": "says it could not recall the gene and 'chose partly on primer design': picks between the two options with correct vector arms by which gives a plausible ORF. Not a resemblance comparison"},
+  "E06": {"label": "recall", "why": "'I picked it partly from memory of the rutA sequence rather than checking it'"},
+  "E07": {"label": "recall", "why": "'the start and stop assignments rest on my recall of the sequence'"}
+ },
+ "counts": {
+  "D_errors": 6, "D_recall": 5, "D_recall_plus_frame_slip": 1, "D_compares": 0, "D_other": 0,
+  "K_errors": 2, "K_recall": 1, "K_other": 1, "K_compares": 0,
+  "note": "'compares' = the text attributes the choice to which option the others resemble, or to elimination by resemblance between options. No error text of either arm does this. Every error is on one of the three gene-absent subtasks; the three subtasks whose answer is computable from the question (GC-percent, ORF-seq-AAseq, PCR-seq-enzprimers) had 0 errors in both arms, 18 pairs."
+ }
+}

@@ -1,0 +1,7 @@
+id,subtask,K_answer,K_role,D_answer,D_role,key,centre_role,K_bucket,D_bucket
+799f3052-f6e5-4e2f-84b3-c43ce418d740,PCR-gene-gibshindprimers-v1,D,2,A,0,A,[1],wrong,correct
+6452f1be-4efb-4146-8cdc-4ff48357560c,PCR-gene-gibssmaprimers-v1,A,0,C,2,A,[1],correct,wrong
+df397f08-19db-442e-a6ba-7eb0b9a125a4,PCR-gene-gibshindprimers-v1,B,0,D,2,B,[1],correct,wrong
+0eafde3b-6246-4ff7-9954-2a55c593a086,PCR-gene-gibssmaprimers-v1,B,0,C,2,B,[1],correct,wrong
+1421394f-98d4-4153-99c3-e11e668de733,PCR-gene-enzprimers-v1,C,0,A,2,C,[1],correct,wrong
+44c3cf75-4d5e-4c94-a643-e2e0899babd3,PCR-gene-enzprimers-v1,C,0,B,1,C,[1],correct,wrong

@@ -1,0 +1,351 @@
+{
+ "n_target": 48,
+ "n_pairs": 48,
+ "pairs_dropped_incomplete": [],
+ "buckets": {
+  "K": {
+   "correct": 46,
+   "wrong": 2
+  },
+  "D": {
+   "correct": 42,
+   "wrong": 6
+  }
+ },
+ "primary_all": {
+  "n_pairs": 48,
+  "K": 0.9583,
+  "D": 0.875,
+  "diff": 0.0833,
+  "K_only": 5,
+  "D_only": 1,
+  "mcnemar_exact_p": 0.21875,
+  "ci_items": [
+   0.0,
+   0.1875
+  ],
+  "ci_subtasks_two_stage": [
+   -0.0333,
+   0.1833
+  ]
+ },
+ "decision_all": "cannot tell",
+ "gibson": {
+  "n_pairs": 20,
+  "K": 0.95,
+  "D": 0.85,
+  "diff": 0.1,
+  "K_only": 3,
+  "D_only": 1,
+  "mcnemar_exact_p": 0.625,
+  "ci_items": [
+   -0.1,
+   0.3
+  ],
+  "ci_subtasks_two_stage": [
+   -0.15,
+   0.3012
+  ]
+ },
+ "non_gibson": {
+  "n_pairs": 28,
+  "K": 0.9643,
+  "D": 0.8929,
+  "diff": 0.0714,
+  "K_only": 2,
+  "D_only": 0,
+  "mcnemar_exact_p": 0.5,
+  "ci_items": [
+   0.0,
+   0.1786
+  ],
+  "ci_subtasks_two_stage": [
+   0.0,
+   0.175
+  ]
+ },
+ "both_parsed": {
+  "n_pairs": 48,
+  "K": 0.9583,
+  "D": 0.875,
+  "diff": 0.0833,
+  "K_only": 5,
+  "D_only": 1,
+  "mcnemar_exact_p": 0.21875,
+  "ci_items": [
+   0.0,
+   0.1875
+  ],
+  "ci_subtasks_two_stage": [
+   -0.0333,
+   0.1833
+  ]
+ },
+ "per_subtask": {
+  "PCR-gene-gibshindprimers-v1": {
+   "n_pairs": 10,
+   "K": 0.9,
+   "D": 0.9,
+   "diff": 0.0,
+   "K_only": 1,
+   "D_only": 1,
+   "mcnemar_exact_p": 1.0,
+   "ci_items": [
+    -0.3,
+    0.3
+   ]
+  },
+  "PCR-gene-gibssmaprimers-v1": {
+   "n_pairs": 10,
+   "K": 1.0,
+   "D": 0.8,
+   "diff": 0.2,
+   "K_only": 2,
+   "D_only": 0,
+   "mcnemar_exact_p": 0.5,
+   "ci_items": [
+    0.0,
+    0.5
+   ]
+  },
+  "Prop-seq-gcpercent-v1": {
+   "n_pairs": 6,
+   "K": 1.0,
+   "D": 1.0,
+   "diff": 0.0,
+   "K_only": 0,
+   "D_only": 0,
+   "mcnemar_exact_p": 1.0,
+   "ci_items": [
+    0.0,
+    0.0
+   ]
+  },
+  "ORF-seq-AAseq-v1": {
+   "n_pairs": 6,
+   "K": 1.0,
+   "D": 1.0,
+   "diff": 0.0,
+   "K_only": 0,
+   "D_only": 0,
+   "mcnemar_exact_p": 1.0,
+   "ci_items": [
+    0.0,
+    0.0
+   ]
+  },
+  "PCR-seq-enzprimers-v1": {
+   "n_pairs": 6,
+   "K": 1.0,
+   "D": 1.0,
+   "diff": 0.0,
+   "K_only": 0,
+   "D_only": 0,
+   "mcnemar_exact_p": 1.0,
+   "ci_items": [
+    0.0,
+    0.0
+   ]
+  },
+  "PCR-gene-enzprimers-v1": {
+   "n_pairs": 10,
+   "K": 0.9,
+   "D": 0.7,
+   "diff": 0.2,
+   "K_only": 2,
+   "D_only": 0,
+   "mcnemar_exact_p": 0.5,
+   "ci_items": [
+    0.0,
+    0.5
+   ]
+  }
+ },
+ "centre_all": {
+  "centre_pick_rate": 0.0208,
+  "per_other_distractor_rate": 0.049,
+  "D_errors": 6,
+  "D_errors_to_centre": 1
+ },
+ "centre_gibson": {
+  "centre_pick_rate": 0.0,
+  "per_other_distractor_rate": 0.075,
+  "D_errors": 3,
+  "D_errors_to_centre": 0
+ },
+ "follows_decoy_centre": false,
+ "earlier_prereg_rule": "still cannot tell",
+ "reasoning_minus_letter_only_drop": {
+  "n": 48,
+  "diff_in_diff": -0.0208,
+  "ci_items": [
+   -0.1042,
+   0.0625
+  ]
+ },
+ "discordant": [
+  {
+   "id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+   "subtask": "PCR-gene-gibshindprimers-v1",
+   "K_answer": "D",
+   "K_role": "2",
+   "D_answer": "A",
+   "D_role": "0",
+   "key": "A",
+   "centre_role": "[1]",
+   "K_bucket": "wrong",
+   "D_bucket": "correct"
+  },
+  {
+   "id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+   "subtask": "PCR-gene-gibssmaprimers-v1",
+   "K_answer": "A",
+   "K_role": "0",
+   "D_answer": "C",
+   "D_role": "2",
+   "key": "A",
+   "centre_role": "[1]",
+   "K_bucket": "correct",
+   "D_bucket": "wrong"
+  },
+  {
+   "id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+   "subtask": "PCR-gene-gibshindprimers-v1",
+   "K_answer": "B",
+   "K_role": "0",
+   "D_answer": "D",
+   "D_role": "2",
+   "key": "B",
+   "centre_role": "[1]",
+   "K_bucket": "correct",
+   "D_bucket": "wrong"
+  },
+  {
+   "id": "0eafde3b-6246-4ff7-9954-2a55c593a086",
+   "subtask": "PCR-gene-gibssmaprimers-v1",
+   "K_answer": "B",
+   "K_role": "0",
+   "D_answer": "C",
+   "D_role": "2",
+   "key": "B",
+   "centre_role": "[1]",
+   "K_bucket": "correct",
+   "D_bucket": "wrong"
+  },
+  {
+   "id": "1421394f-98d4-4153-99c3-e11e668de733",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "K_answer": "C",
+   "K_role": "0",
+   "D_answer": "A",
+   "D_role": "2",
+   "key": "C",
+   "centre_role": "[1]",
+   "K_bucket": "correct",
+   "D_bucket": "wrong"
+  },
+  {
+   "id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "K_answer": "C",
+   "K_role": "0",
+   "D_answer": "B",
+   "D_role": "1",
+   "key": "C",
+   "centre_role": "[1]",
+   "K_bucket": "correct",
+   "D_bucket": "wrong"
+  }
+ ],
+ "all_D_errors": [
+  {
+   "id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+   "subtask": "PCR-gene-gibssmaprimers-v1",
+   "D_answer": "C",
+   "D_role": "2",
+   "key": "A",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "correct"
+  },
+  {
+   "id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+   "subtask": "PCR-gene-gibshindprimers-v1",
+   "D_answer": "D",
+   "D_role": "2",
+   "key": "B",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "correct"
+  },
+  {
+   "id": "0eafde3b-6246-4ff7-9954-2a55c593a086",
+   "subtask": "PCR-gene-gibssmaprimers-v1",
+   "D_answer": "C",
+   "D_role": "2",
+   "key": "B",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "correct"
+  },
+  {
+   "id": "1421394f-98d4-4153-99c3-e11e668de733",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "D_answer": "A",
+   "D_role": "2",
+   "key": "C",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "correct"
+  },
+  {
+   "id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "D_answer": "B",
+   "D_role": "1",
+   "key": "C",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "correct"
+  },
+  {
+   "id": "70a336ff-90d7-4de8-9dcc-27963813a33f",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "D_answer": "D",
+   "D_role": "2",
+   "key": "B",
+   "centre_role": [
+    1
+   ],
+   "K_bucket": "wrong"
+  }
+ ],
+ "all_K_errors": [
+  {
+   "id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+   "subtask": "PCR-gene-gibshindprimers-v1",
+   "K_answer": "D",
+   "K_role": "2",
+   "key": "A"
+  },
+  {
+   "id": "70a336ff-90d7-4de8-9dcc-27963813a33f",
+   "subtask": "PCR-gene-enzprimers-v1",
+   "K_answer": "D",
+   "K_role": "2",
+   "key": "B"
+  }
+ ],
+ "spend": {
+  "calls": 100,
+  "usd": 2.1186,
+  "mean_per_call": 0.0212,
+  "cap": 2.5,
+  "pilot_calls": 4
+ }
+}
