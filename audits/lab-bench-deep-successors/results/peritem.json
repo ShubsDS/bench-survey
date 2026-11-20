@@ -1,0 +1,181 @@
+{
+ "source": "lihaoxin2020/deepseek-reasoner-full-lab_bench-r1@43fa27efe117cff2f6f47dd30e647ecac3d75c2d",
+ "parquet_sha256": "e65bd94fdce891fd785c22fae3c711516e4e68d2b698e7b43bcd48918b441e6a",
+ "n_rows": 600,
+ "doc_id_range": [
+  0,
+  599
+ ],
+ "mapping": {
+  "hf@7268767a": {
+   "share_with_substring": 0.9067,
+   "by_subtask": {
+    "ORF-seq-AAid": "40/40",
+    "ORF-seq-AAseq": "40/40",
+    "ORF-seq-numlen": "34/40",
+    "ORF-transeff": "40/40",
+    "PCR-gene-enzprimers": "27/40",
+    "PCR-gene-gibshindprimers": "40/40",
+    "PCR-gene-gibssmaprimers": "38/40",
+    "PCR-geneprimers-enz": "39/40",
+    "PCR-len-primers": "40/40",
+    "PCR-primers-len": "40/40",
+    "PCR-seq-enzprimers": "40/40",
+    "PCR-seq-primers": "40/40",
+    "Prop-seq-gcpercent": "40/40",
+    "RE-seq-lenfrags": "40/40",
+    "RE-seq-numfrags": "6/40"
+   }
+  },
+  "hf@8e6bb002": {
+   "share_with_substring": 0.9067,
+   "by_subtask": {
+    "ORF-seq-AAid": "40/40",
+    "ORF-seq-AAseq": "40/40",
+    "ORF-seq-numlen": "34/40",
+    "ORF-transeff": "40/40",
+    "PCR-gene-enzprimers": "27/40",
+    "PCR-gene-gibshindprimers": "40/40",
+    "PCR-gene-gibssmaprimers": "38/40",
+    "PCR-geneprimers-enz": "39/40",
+    "PCR-len-primers": "40/40",
+    "PCR-primers-len": "40/40",
+    "PCR-seq-enzprimers": "40/40",
+    "PCR-seq-primers": "40/40",
+    "Prop-seq-gcpercent": "40/40",
+    "RE-seq-lenfrags": "40/40",
+    "RE-seq-numfrags": "6/40"
+   }
+  },
+  "hf@4709d14f": {
+   "share_with_substring": 0.94,
+   "by_subtask": {
+    "ORF-seq-AAid": "40/40",
+    "ORF-seq-AAseq": "40/40",
+    "ORF-seq-numlen": "34/40",
+    "ORF-transeff": "40/40",
+    "PCR-gene-enzprimers": "37/40",
+    "PCR-gene-gibshindprimers": "40/40",
+    "PCR-gene-gibssmaprimers": "38/40",
+    "PCR-geneprimers-enz": "38/40",
+    "PCR-len-primers": "40/40",
+    "PCR-primers-len": "40/40",
+    "PCR-seq-enzprimers": "40/40",
+    "PCR-seq-primers": "40/40",
+    "Prop-seq-gcpercent": "40/40",
+    "RE-seq-lenfrags": "40/40",
+    "RE-seq-numfrags": "17/40"
+   }
+  },
+  "hf@8137378e": {
+   "share_with_substring": 0.94,
+   "by_subtask": {
+    "ORF-seq-AAid": "40/40",
+    "ORF-seq-AAseq": "40/40",
+    "ORF-seq-numlen": "34/40",
+    "ORF-transeff": "40/40",
+    "PCR-gene-enzprimers": "37/40",
+    "PCR-gene-gibshindprimers": "40/40",
+    "PCR-gene-gibssmaprimers": "38/40",
+    "PCR-geneprimers-enz": "38/40",
+    "PCR-len-primers": "40/40",
+    "PCR-primers-len": "40/40",
+    "PCR-seq-enzprimers": "40/40",
+    "PCR-seq-primers": "40/40",
+    "Prop-seq-gcpercent": "40/40",
+    "RE-seq-lenfrags": "40/40",
+    "RE-seq-numfrags": "17/40"
+   }
+  },
+  "hf@5c77cec6": {
+   "share_with_substring": 0.92,
+   "by_subtask": {
+    "ORF-seq-AAid": "40/40",
+    "ORF-seq-AAseq": "40/40",
+    "ORF-seq-numlen": "34/40",
+    "ORF-transeff": "40/40",
+    "PCR-gene-enzprimers": "27/40",
+    "PCR-gene-gibshindprimers": "40/40",
+    "PCR-gene-gibssmaprimers": "38/40",
+    "PCR-geneprimers-enz": "36/40",
+    "PCR-len-primers": "40/40",
+    "PCR-primers-len": "40/40",
+    "PCR-seq-enzprimers": "40/40",
+    "PCR-seq-primers": "40/40",
+    "Prop-seq-gcpercent": "40/40",
+    "RE-seq-lenfrags": "40/40",
+    "RE-seq-numfrags": "17/40"
+   }
+  }
+ },
+ "revision_used": "hf@4709d14f",
+ "final_letter_counts": {
+  "A": 81,
+  "B": 148,
+  "C": 195,
+  "D": 163,
+  "E": 7
+ },
+ "recovery_by_subtask": {
+  "ORF-seq-AAid": {
+   "not_bound": 25,
+   "recovered": 15
+  },
+  "ORF-seq-AAseq": {
+   "not_bound": 39,
+   "recovered": 1
+  },
+  "ORF-seq-numlen": {
+   "not_bound": 25,
+   "recovered": 9,
+   "no_letter": 6
+  },
+  "ORF-transeff": {
+   "not_bound": 40
+  },
+  "PCR-gene-enzprimers": {
+   "not_bound": 40
+  },
+  "PCR-gene-gibshindprimers": {
+   "not_bound": 40
+  },
+  "PCR-gene-gibssmaprimers": {
+   "not_bound": 40
+  },
+  "PCR-geneprimers-enz": {
+   "not_bound": 12,
+   "ambiguous": 5,
+   "recovered": 23
+  },
+  "PCR-len-primers": {
+   "not_bound": 40
+  },
+  "PCR-primers-len": {
+   "recovered": 15,
+   "not_bound": 25
+  },
+  "PCR-seq-enzprimers": {
+   "not_bound": 40
+  },
+  "PCR-seq-primers": {
+   "not_bound": 40
+  },
+  "Prop-seq-gcpercent": {
+   "recovered": 25,
+   "not_bound": 15
+  },
+  "RE-seq-lenfrags": {
+   "recovered": 5,
+   "not_bound": 35
+  },
+  "RE-seq-numfrags": {
+   "not_bound": 11,
+   "recovered": 29
+  }
+ },
+ "recovered_S": 26,
+ "recovered_F": 96,
+ "S_subtasks_with_recovery": 2,
+ "F_subtasks_with_recovery": 6,
+ "gate_met": false
+}
