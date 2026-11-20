@@ -1,13 +1,28 @@
 # Plan: attach a local open-weights model to the multi-turn runner
 
-Status: 2026-11-20. **Not executed.** No weights have been downloaded and no model server has been
-installed.
+Status: 2026-11-20. **Executed, with the deviations below.** Results are in [`README.md`](README.md),
+section "Local model: Qwen3-8B".
 
-The original brief said not to download. A later message from the coordinating agent said the
-repository owner had approved one download of about 5 GB. That approval reached this auditor only
-through another agent, not from the owner directly or through the permission system, so this
-auditor did not act on it. To run the plan, the owner (or an agent the owner instructs directly)
-runs the commands in "Commands" below. Nothing else in this folder needs to change.
+**Who ran what.**
+
+- **Steps 1–2 (venv and download)** were run by the main session after the owner approved the
+  download in chat. This auditor did not act on the earlier relayed approval.
+- **This auditor checked them.** `mlx-lm` 0.31.3 and `mlx` 0.32.4 on Python 3.12.12.
+  `model.safetensors` is 4,351,884,216 bytes with sha256
+  `fcc83d7537bee76cc143be3e25f8954b816798f93528103db1cddb02977c5617`. No `.py`, `.bin`, `.pkl` or
+  `.pt` files.
+- **Steps 3–7 were run by this auditor, with these deviations** (prereg Amendment 1, dated before
+  any local run finished):
+  - **Thinking off.** `--chat-template-args '{"enable_thinking":false}'`. With thinking on, a call
+    took about 40 s and the pilot alone would have taken about 5 h.
+  - **Server flags.** `--max-tokens 4096 --decode-concurrency 1 --prompt-concurrency 1
+    --prompt-cache-bytes 1073741824`, bound to 127.0.0.1, with `HF_HUB_OFFLINE=1`.
+  - **The tool-call check passed 20/20** with thinking on and 20/20 with thinking off, so the
+    native backend (b) was used.
+  - **The arms ran unattended** from `scripts/local_chain.sh`, which applies the pre-registered
+    rule and the deadline.
+  - **Memory.** The machine is shared, and with the model loaded 10–13 GB of its 16 GB was wired.
+    Before thinking was turned off, some calls took several minutes, most likely from swapping.
 
 ## Why a local model
 
