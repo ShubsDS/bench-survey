@@ -1,0 +1,5 @@
+id,subtask,arm,letter,role,bucket,centre,key_letter,out_len,err
+05e3f6d4-075e-4c81-b236-2cd3039200b1,PCR-gene-gibshindprimers-v1,K,C,0,correct,,C,1537,
+05e3f6d4-075e-4c81-b236-2cd3039200b1,PCR-gene-gibshindprimers-v1,D,C,0,correct,[1],C,1107,
+59998bf7-8d31-4fdc-88b4-0d7b46a86d2b,PCR-gene-gibssmaprimers-v1,K,D,0,correct,,D,972,
+59998bf7-8d31-4fdc-88b4-0d7b46a86d2b,PCR-gene-gibssmaprimers-v1,D,D,0,correct,[1],D,1179,
