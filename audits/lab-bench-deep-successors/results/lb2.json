@@ -1,0 +1,460 @@
+{
+ "commit": "5eafca562b9f162ff6074197396858a363083936",
+ "format": {
+  "cloning/file": {
+   "files": 10,
+   "max_cases": 14,
+   "cases_with_lettered_list": 0
+  },
+  "cloning/inject": {
+   "files": 12,
+   "max_cases": 14,
+   "cases_with_lettered_list": 1
+  },
+  "cloning/retrieve": {
+   "files": 10,
+   "max_cases": 14,
+   "cases_with_lettered_list": 0
+  },
+  "dbqa2/inject": {
+   "files": 10,
+   "max_cases": 86,
+   "cases_with_lettered_list": 0
+  },
+  "figqa2-img/file": {
+   "files": 10,
+   "max_cases": 101,
+   "cases_with_lettered_list": 0
+  },
+  "figqa2-pdf/file": {
+   "files": 10,
+   "max_cases": 101,
+   "cases_with_lettered_list": 0
+  },
+  "figqa2/inject": {
+   "files": 10,
+   "max_cases": 101,
+   "cases_with_lettered_list": 0
+  },
+  "litqa3/inject": {
+   "files": 10,
+   "max_cases": 168,
+   "cases_with_lettered_list": 0
+  },
+  "patentqa/inject": {
+   "files": 10,
+   "max_cases": 121,
+   "cases_with_lettered_list": 0
+  },
+  "protocolqa2/file": {
+   "files": 16,
+   "max_cases": 125,
+   "cases_with_lettered_list": 0
+  },
+  "seqqa2/file": {
+   "files": 12,
+   "max_cases": 400,
+   "cases_with_lettered_list": 0
+  },
+  "seqqa2/inject": {
+   "files": 11,
+   "max_cases": 400,
+   "cases_with_lettered_list": 0
+  },
+  "seqqa2/retrieve": {
+   "files": 10,
+   "max_cases": 200,
+   "cases_with_lettered_list": 0
+  },
+  "sourcequality/file": {
+   "files": 10,
+   "max_cases": 150,
+   "cases_with_lettered_list": 0
+  },
+  "suppqa2/inject": {
+   "files": 10,
+   "max_cases": 125,
+   "cases_with_lettered_list": 0
+  },
+  "tableqa2-img/file": {
+   "files": 10,
+   "max_cases": 100,
+   "cases_with_lettered_list": 0
+  },
+  "tableqa2-pdf/file": {
+   "files": 10,
+   "max_cases": 100,
+   "cases_with_lettered_list": 0
+  },
+  "tableqa2/inject": {
+   "files": 10,
+   "max_cases": 100,
+   "cases_with_lettered_list": 0
+  },
+  "trialqa/inject": {
+   "files": 10,
+   "max_cases": 120,
+   "cases_with_lettered_list": 0
+  }
+ },
+ "seqqa2_constant": {
+  "amplicon_gc": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "ba3911bd2e"
+  },
+  "amplicon_length": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "f70226ece5"
+  },
+  "codon_optimization": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "3a02ecee97"
+  },
+  "enzyme_kinetics": {
+   "n": 20,
+   "distinct_expected": 19,
+   "modal_share": 0.1,
+   "modal_is_None": false,
+   "modal_sha1": "70142f6647"
+  },
+  "gc_content": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "8b6ed61a97"
+  },
+  "gibson_primers": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "3faeff5713"
+  },
+  "molecular_weight": {
+   "n": 20,
+   "distinct_expected": 18,
+   "modal_share": 0.1,
+   "modal_is_None": false,
+   "modal_sha1": "7808b90456"
+  },
+  "msa_scoring": {
+   "n": 20,
+   "distinct_expected": 10,
+   "modal_share": 0.25,
+   "modal_is_None": false,
+   "modal_sha1": "b98f8fca7f"
+  },
+  "mutation_restriction": {
+   "n": 20,
+   "distinct_expected": 3,
+   "modal_share": 0.85,
+   "modal_is_None": true,
+   "modal_sha1": "6eef664840"
+  },
+  "mutation_synonymous": {
+   "n": 20,
+   "distinct_expected": 12,
+   "modal_share": 0.15,
+   "modal_is_None": false,
+   "modal_sha1": "c3156e00d3"
+  },
+  "oligo_design": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "3462ab296d"
+  },
+  "orf_amino_acid": {
+   "n": 20,
+   "distinct_expected": 12,
+   "modal_share": 0.15,
+   "modal_is_None": false,
+   "modal_sha1": "c3156e00d3"
+  },
+  "pairwise_distances": {
+   "n": 20,
+   "distinct_expected": 14,
+   "modal_share": 0.15,
+   "modal_is_None": false,
+   "modal_sha1": "b98f8fca7f"
+  },
+  "primer_design": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "ccd6696c2a"
+  },
+  "primer_interactions": {
+   "n": 20,
+   "distinct_expected": 17,
+   "modal_share": 0.2,
+   "modal_is_None": true,
+   "modal_sha1": "6eef664840"
+  },
+  "protein_hydrophobicity": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "6470d60994"
+  },
+  "restriction_counts": {
+   "n": 20,
+   "distinct_expected": 4,
+   "modal_share": 0.55,
+   "modal_is_None": false,
+   "modal_sha1": "356a192b79"
+  },
+  "restriction_digest": {
+   "n": 20,
+   "distinct_expected": 20,
+   "modal_share": 0.05,
+   "modal_is_None": false,
+   "modal_sha1": "54fa0830ab"
+  },
+  "sequence_complexity": {
+   "n": 20,
+   "distinct_expected": 13,
+   "modal_share": 0.15,
+   "modal_is_None": false,
+   "modal_sha1": "68146427d8"
+  },
+  "tm_calculations": {
+   "n": 20,
+   "distinct_expected": 15,
+   "modal_share": 0.15,
+   "modal_is_None": false,
+   "modal_sha1": "788235c7a7"
+  }
+ },
+ "mutation_restriction": {
+  "claude-opus-4-5": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.0,
+   "acc_key_none": 0.0,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.0,
+   "constant_none_baseline": 0.85
+  },
+  "claude-opus-4-5@tools,high": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.0,
+   "acc_key_none": 0.0,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.0,
+   "constant_none_baseline": 0.85
+  },
+  "claude-opus-4-6": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.0,
+   "acc_key_none": 0.0,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.0,
+   "constant_none_baseline": 0.85
+  },
+  "claude-opus-4-6@tools,high": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.0,
+   "acc_key_none": 0.0,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.0,
+   "constant_none_baseline": 0.85
+  },
+  "gemini-3-pro-preview": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.85,
+   "acc_key_none": 0.9412,
+   "acc_key_enzyme": 0.3333,
+   "answered_none_rate": 0.35,
+   "constant_none_baseline": 0.85
+  },
+  "gemini-3-pro-preview@tools,high": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.6,
+   "acc_key_none": 0.7059,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.0,
+   "constant_none_baseline": 0.85
+  },
+  "gpt-5-2-pro": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.7,
+   "acc_key_none": 0.8235,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.85,
+   "constant_none_baseline": 0.85
+  },
+  "gpt-5-2-pro@tools,high": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.8,
+   "acc_key_none": 0.9412,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.95,
+   "constant_none_baseline": 0.85
+  },
+  "gpt-5-2": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.35,
+   "acc_key_none": 0.4118,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.45,
+   "constant_none_baseline": 0.85
+  },
+  "gpt-5-2@tools,high": {
+   "n": 20,
+   "n_key_none": 17,
+   "acc": 0.7,
+   "acc_key_none": 0.8235,
+   "acc_key_enzyme": 0.0,
+   "answered_none_rate": 0.85,
+   "constant_none_baseline": 0.85
+  }
+ },
+ "n_report_files": 201,
+ "format_totals": {
+  "cases": 23721,
+  "lettered": 10
+ },
+ "unique_ids_per_tag": {
+  "cloning": 14,
+  "dbqa2": 86,
+  "figqa2": 101,
+  "figqa2-img": 101,
+  "figqa2-pdf": 101,
+  "litqa3": 168,
+  "patentqa": 121,
+  "protocolqa2": 125,
+  "seqqa2": 400,
+  "sourcequality": 150,
+  "suppqa2": 125,
+  "tableqa2": 100,
+  "tableqa2-img": 100,
+  "tableqa2-pdf": 100,
+  "trialqa": 120
+ },
+ "unique_ids_total": 1912,
+ "seqqa2_inject_means": {
+  "claude-opus-4-5": 0.41,
+  "claude-opus-4-5@tools,high": 0.57,
+  "claude-opus-4-6": 0.345,
+  "claude-opus-4-6@tools,high": 0.4425,
+  "gemini-3-pro-preview": 0.4925,
+  "gemini-3-pro-preview@tools,high": 0.525,
+  "gpt-5-2-pro": 0.5933,
+  "gpt-5-2-pro@tools,high": 0.6305,
+  "gpt-5-2": 0.3367,
+  "gpt-5-2@tools,high": 0.66
+ },
+ "grading_dispatch": {
+  "evals/evaluators.py:212": "cloning and seqqa2 -> RewardFunctionEvaluator (computed validators)",
+  "evals/evaluators.py:131-175": "seqqa2: validator from registry by type, answer parsed by regex",
+  "evals/evaluators.py:105": "cloning: cloning_reward against assembled ground truth",
+  "evals/evaluators.py:218": "figqa2/tableqa2/suppqa2 -> LLM judge, exact-match prompt",
+  "evals/evaluators.py:72-73": "LLM judge verdict 'unsure' scored 0.0",
+  "src/labbench2/seqqa2/validate_mutation_restriction.py:119": "answer 'None' parsed as the empty set"
+ },
+ "lettered_hits_by_task": {
+  "cloning:ae62bcdb-197b-4815-991f-cb7a9c151ff6": 10
+ },
+ "seqqa2_inject_refusals": {
+  "claude-opus-4-5": {
+   "n": 300,
+   "refused": 69,
+   "refused_by_type": {
+    "amplicon_gc": 20,
+    "codon_optimization": 11,
+    "mutation_restriction": 20,
+    "mutation_synonymous": 13,
+    "primer_interactions": 1,
+    "restriction_digest": 4
+   }
+  },
+  "claude-opus-4-5@tools,high": {
+   "n": 300,
+   "refused": 40,
+   "refused_by_type": {
+    "amplicon_gc": 20,
+    "mutation_restriction": 20
+   }
+  },
+  "claude-opus-4-6": {
+   "n": 400,
+   "refused": 136,
+   "refused_by_type": {
+    "amplicon_gc": 20,
+    "amplicon_length": 20,
+    "codon_optimization": 7,
+    "gibson_primers": 20,
+    "mutation_restriction": 20,
+    "mutation_synonymous": 9,
+    "oligo_design": 20,
+    "primer_design": 20
+   }
+  },
+  "claude-opus-4-6@tools,high": {
+   "n": 400,
+   "refused": 125,
+   "refused_by_type": {
+    "amplicon_gc": 20,
+    "amplicon_length": 20,
+    "gibson_primers": 20,
+    "mutation_restriction": 20,
+    "mutation_synonymous": 2,
+    "oligo_design": 20,
+    "primer_design": 20,
+    "restriction_counts": 3
+   }
+  },
+  "gemini-3-pro-preview": {
+   "n": 400,
+   "refused": 0,
+   "refused_by_type": {}
+  },
+  "gemini-3-pro-preview@tools,high": {
+   "n": 400,
+   "refused": 0,
+   "refused_by_type": {}
+  },
+  "gpt-5-2-pro": {
+   "n": 300,
+   "refused": 0,
+   "refused_by_type": {}
+  },
+  "gpt-5-2-pro@tools,high": {
+   "n": 295,
+   "refused": 0,
+   "refused_by_type": {}
+  },
+  "gpt-5-2": {
+   "n": 300,
+   "refused": 0,
+   "refused_by_type": {}
+  },
+  "gpt-5-2@tools,high": {
+   "n": 300,
+   "refused": 0,
+   "refused_by_type": {}
+  }
+ }
+}
