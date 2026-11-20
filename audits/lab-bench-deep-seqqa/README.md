@@ -63,16 +63,23 @@ L2).
 
 Paired contrasts:
 
-| Model | Contrast | n | Diff | 95% CI items | 95% CI subtasks | Pre-registered decision |
-|---|---|---|---|---|---|---|
-| Sonnet | K − D, all cue | 48 | **0.104** | [0.021, 0.188] | [0.033, 0.200] | still cannot tell (centre pick 0.042 vs other 0.042) |
-| Sonnet | K − D, gene absent | 30 | 0.100 | [0.000, 0.233] | 0.10 on each of 3 | still cannot tell |
-| Sonnet | K − D, gene present | 18 | 0.111 | [0.000, 0.278] | [0.0, 0.33] | still cannot tell |
-| Haiku | K − D, all cue | 90 | 0.056 | [−0.033, 0.144] | [0.022, 0.089] | still cannot tell |
-| Haiku | K − D, gene absent | 45 | 0.067 | [−0.089, 0.222] | | still cannot tell |
-| Haiku | K − D, gene present | 45 | 0.044 | [−0.067, 0.156] | | still cannot tell |
-| Haiku | O − K (rebuild check, 5 subtasks) | 40 | 0.050 | [−0.05, 0.15] | | — |
-| Haiku | O − D | 55 | 0.055 | [−0.055, 0.182] | | — |
+Subtask-level intervals are the validator's two-stage bootstrap (resample the six subtasks, then
+items within each). The auditor's `analyze.py:54` resampled subtask means only; those values are
+kept in the last column and should not be used — for Haiku they excluded 0 while the item
+interval did not, which a six-cluster interval cannot honestly do. Exact paired p is the McNemar
+binomial, two-sided.
+
+| Model | Contrast | n | Diff | 95% CI items | 95% CI subtasks (validated) | exact p | Pre-registered decision | auditor's subtask CI |
+|---|---|---|---|---|---|---|---|---|
+| Sonnet | K − D, all cue | 48 | **0.104** | [0.021, 0.188] | [0.017, 0.250] | 0.063 | still cannot tell (centre pick 0.042 vs other 0.039) | [0.033, 0.200] |
+| Sonnet | K − D, gene absent | 30 | 0.100 | [0.000, 0.233] | — | 0.25 | still cannot tell | 0.10 on each of 3 |
+| Sonnet | K − D, gene present | 18 | 0.111 | [0.000, 0.278] | — | 0.50 | still cannot tell | [0.0, 0.33] |
+| Haiku | K − D, all cue | 90 | 0.056 | [−0.033, 0.144] | [−0.044, 0.156] | 0.36 | still cannot tell | [0.022, 0.089] (withdrawn) |
+| Haiku | K − D, gene absent | 45 | 0.067 | [−0.089, 0.222] | — | 0.39–0.45 | still cannot tell | |
+| Haiku | K − D, gene present | 45 | 0.044 | [−0.067, 0.156] | — | 0.36–0.58 | still cannot tell | |
+| Haiku | O − K (rebuild check, 5 subtasks) | 40 | 0.050 | [−0.05, 0.15] | — | — | — | |
+| Haiku | O − D | 55 | 0.055 | [−0.055, 0.182] | — | — | — | |
+| Haiku | **Kp − Dp, Gibson, parent's prompt** (validator) | 30 | **0.267** | [0.100, 0.434] | — | **0.021** | n/a (validator's prereg) | |
 
 Per subtask, Sonnet (K → D; exact McNemar; Holm over 6 gives p = 1.0 for every subtask):
 
@@ -120,6 +127,19 @@ K and D alike (5 and 6 of 15), so G is a general confusion for Haiku there.
 - **Key verification by computation.** GC 40/40; AAseq 38/40 (2 ties dropped); named sites and
   junctions 160/160; PCR-seq-enz gene ends 40/40. Rebuilt distractors are wrong by site, junction,
   translation or value.
+- **Independently re-verified** (validator, `validation/v3_verify.py`, own code): the key is the
+  unique correct option in every K and D item — GC 40/40 and the paper's {x−1, x+1, x/2} pattern
+  40/40; AAseq keys are the longest forward-strand ORF 40/40 and no other option is a valid
+  translation on either strand; in every K and D PCR item exactly three options carry the named
+  sites or junction and the rebuilt one is wrong by site in both arms; no duplicated options.
+  A blind hand-read of 40 arm-blind K/D items (`validation/v5_blind*`) picked the parquet key 40
+  of 40 times and identified the arm 40 of 40 times.
+- **K and D are not identical apart from centrality.** In the D arm the key becomes the *unique
+  longest* option (PCR-gene-enzprimers 24/33, PCR-seq-enzprimers 26/37, gibshind 15/36, gibssma
+  21/29); in the K arm it never does (0 of 135), because in K the replaced option repeats the
+  key's longer body. A length heuristic would therefore help D, so this runs against the measured
+  drop, and accuracy does not track it (Sonnet D 0.889 when the key is not the unique longest vs
+  0.857 when it is; Haiku 0.780 vs 0.775). Found by the validator; not stated by the auditor.
 - **Centre check.** Both the 3-gram centroid and a Levenshtein medoid (num_center for GC) must
   pick a distractor in D and the key in K. Kept pairs: 40 / 38 / 33 / 37 / 36 / 29. 25 PCR items
   failed the centre check and are not in any pair.
@@ -153,8 +173,14 @@ choice.
   are unpublished.
   - Haiku's estimates under every variant are 0.80–0.83, at or slightly above 0.79 and inside or
     near the forced-choice range. Its intervals reach below 0.79 under D and I.
-  - Sonnet's estimates under D (0.85) and I (0.86) stay above 0.79 and at the top of the
-    forced-choice range. Its 18-item non-cue sample makes this a lead, not a measurement.
+  - Sonnet's estimates under D (0.851) and I (0.862) are above the paper's 0.79 but **inside** the
+    plausible forced-choice human range (0.808 if unsure humans guessed at chance, 0.854 at their
+    own precision, 0.866 if every unsure guess was right; parent `validation/v5_human.json`), and
+    the interval on the D score, [0.793, 0.904], covers that whole range. **Corrected by the
+    validator:** the auditor wrote that these "stay above 0.79 and at the top of the forced-choice
+    range", which holds only against the unsure-scored-wrong number. On 18 non-cue items this is a
+    lead, and it is not a like-for-like comparison (different item sample, different scoring rule,
+    the cards' own human line unpublished). **Quote the shift, not the levels.**
 - **Bias direction.** On these two models the cue makes SeqQA look more capable by about 0.02–0.04
   of the 15-subtask mean (Sonnet's upper bound 0.07). Nothing here gives the size for any other
   model.
@@ -163,9 +189,11 @@ choice.
 
 | Check | Result | Claim survives? |
 |---|---|---|
-| Drop each subtask (Sonnet K − D) | 0.071–0.119 | yes, all > 0 |
+| Drop each subtask (Sonnet K − D) | 0.071–0.119 | direction yes, all > 0; **but the interval does not**: dropping GC-percent gives 0.071, 3 of 42 discordant, exact p = 0.25, items [0.000, 0.167] (validator) |
 | Drop each subtask (Haiku) | 0.040–0.067 | inconclusive throughout |
-| Subtask-level resampling | Sonnet [0.033, 0.200]; sign-flip over 6 subtasks cannot reach p < 0.05 with zeros on two subtasks | item-level only; power at subtask level was stated in advance as < 80% (`power.json`) |
+| Exact paired test, pooled (validator) | Sonnet 5 vs 0 discordant, p = 0.063 two-sided (0.031 one-sided); Haiku 12 vs 7, p = 0.36 | the Sonnet contrast does not reach p < 0.05; the item bootstrap's lower bound 0.021 is 1/48, the smallest non-zero value it can return here |
+| Subtask-level resampling | Sonnet [0.017, 0.250], Haiku [−0.044, 0.156] (validator, resampling items within subtasks); sign-flip over 6 subtasks p = 0.12 and cannot reach 0.05 with zeros on two subtasks | item-level only; power at subtask level was stated in advance as < 80% (`power.json`). The auditor's [0.033, 0.200] / [0.022, 0.089] came from resampling subtask means alone and are withdrawn |
+| Prompt (validator, pre-registered) | Haiku on the same 30 Gibson pairs under the parent's step-by-step forced prompt: 0.867 → 0.600, drop 0.267 [0.100, 0.434], p = 0.021 | **no:** the size of the K/D effect depends on the elicitation. The Haiku null here is prompt-specific; the Sonnet equivalent was unaffordable |
 | Holm over 6 per-subtask tests | no subtask significant for either model | per-subtask claims not made |
 | Both centre rules agree on the D centre | all 42 Sonnet / 75 Haiku non-GC pairs (GC uses one rule) | n/a |
 | Abstention | 0 refusals and 0 unparsed in K, D, I for both models; Haiku 3 refusals in non-cue O | the K/D contrast is clean |
@@ -191,7 +219,12 @@ choice.
    - here W′ is a new junction in both arms, while the parent's swap kept W's junction;
    - Haiku's K-arm Gibson accuracy is 0.73–0.80, against 0.88–0.96 in the parent's runs.
    This run does not refute the parent's result; the two use different prompts and different
-   controls.
+   controls. **Settled by the validator, and the auditor's guess as to which difference mattered
+   was wrong in its emphasis:** running the *same 30 rebuilt K/D pairs* under the parent's prompt
+   gives 0.867 → 0.600 (drop 0.267 [0.100, 0.434], exact p = 0.021). The rebuild is not what
+   shrank the effect — the letter-only prompt is. So the audit's Haiku null, and claim 3's "most
+   of Sonnet's accuracy survives", hold for this elicitation and not necessarily for a
+   step-by-step one.
 4. **"Sonnet recalls the E. coli genes."** It is possible on the gene-absent subtasks, where K
    scores 0.97. This test cannot separate recall from corroboration.
 
@@ -202,7 +235,11 @@ come from the parent. New here:
 - the paired, pre-registered D/K design with verified keys;
 - the Sonnet measurements;
 - the GC independent-distractor arm;
-- the two key-definition findings (claim 6), which are not in the parent's write-up or validation.
+- the two key-definition findings (claim 6), which are not in the parent's write-up or validation;
+  one validator web search for a prior report of the reverse-primer orientation found none. Note
+  the corrected framing: 6a contradicts App. C.7.1 and the Gibson subtasks (an error), 6b is an
+  undisclosed convention that the paper neither states nor contradicts;
+- the validator's prompt test (claim 4b), which shows the K/D effect size depends on elicitation.
 
 ## What this does not show
 
@@ -216,15 +253,21 @@ come from the parent. New here:
 - Behaviour on the 25 PCR items that failed the centre check, the 9 GC items without an I arm, or
   the 2 AAseq ties.
 - Whether the sense-orientation reverse primers (claim 6a) change any model's score. Every option
-  follows the same convention.
+  follows the same convention, and the keyed option stayed the only defensible one in all 40
+  blind-read items.
+- Whether Sonnet's 0.104 would be larger under a step-by-step prompt, as Haiku's 0.067 becomes
+  0.267. That run needs about 1.5 USD and the folder had 0.16 USD left. **This is the largest
+  open question left by the validation.**
+- That the 0.104 is significant at the conventional level: the exact paired test gives p = 0.063.
 
 ## Pins and how to reproduce
 
 - Items: parent pins (HF `futurehouse/lab-bench` @ `5c77cec6…`, parquet sha256s checked by
   `../lab-bench/scripts/common.py`). Paper v3, App. C.7.1 and C.7.12, read from the parent's
   `data/paper/v3.txt` (sha256 in the parent README).
-- Inference: `audits/tools/claude_call.py`, 533 billed calls. Sonnet 141 calls, 2.24 USD; Haiku 392
-  calls, 0.47 USD. **Total 2.71 USD** of the 3 USD cap
+- Inference: `audits/tools/claude_call.py`, 533 billed calls by the auditor. Sonnet 141 calls,
+  2.24 USD; Haiku 392 calls, 0.47 USD; **2.71 USD**. The validator added 60 Haiku calls, 0.1265
+  USD, so the folder stands at **593 calls and 2.8389 USD** of the 3 USD cap
   ([`inference/ledger.jsonl`](inference/ledger.jsonl)). This includes a 4-call cost pilot on
   non-cue items run before the prereg (`results/runs_p0_cost.csv`, not used in any analysis).
   Responses are cached (git-ignored), so reruns cost nothing.
@@ -245,3 +288,46 @@ $P scripts/analyze.py    # -> results.json
 ```
 
 Seeds are 0 throughout. Option orders and rebuild choices are hashes of item ids.
+
+Validator's own code (run the same way):
+
+```bash
+$P validation/v1_rescore.py   # re-score all 533 cached responses -> validation/v1_rows.csv
+$P validation/v2_pairs.py     # paired K/D, exact tests, two-stage bootstrap, drop-one
+$P validation/v3_verify.py    # independent key verification and claim 6
+$P validation/v4_asym.py      # what differs between K and D besides centrality
+$P validation/v5_blind_make.py && $P validation/v5_blind_score.py   # arm-blind hand-read
+$P validation/v6_prompt.py    # 60 Haiku calls: the parent's prompt on the same Gibson pairs
+$P validation/v7_score.py     # 15-subtask score and the human line
+```
+
+## Validation
+
+Independent validator, 2026-11-20, full write-up in
+[`validation/VALIDATION.md`](validation/VALIDATION.md), numbers in
+[`validation/validation.json`](validation/validation.json). The pipeline reran byte-identically
+and every accuracy in `results.json` was re-derived from the response cache by separate code.
+What changed:
+
+| What | Auditor | Validated | Why |
+|---|---|---|---|
+| Sonnet K − D significance | "[0.021, 0.188] over items", interval excludes 0 | same interval, plus **exact paired p = 0.063** (5 vs 0 discordant; one-sided 0.031) | with 5 of 48 pairs discordant the bootstrap's lower bound is 1/48 almost mechanically; the exact test is the honest one. Direction unchanged |
+| Sonnet subtask interval | [0.033, 0.200] | **[0.017, 0.250]** | the auditor's cluster bootstrap (`analyze.py:54`) resamples subtask means only |
+| Haiku subtask interval | [0.022, 0.089] (excluded 0) | **[−0.044, 0.156]** (contains 0) | same cause; a six-cluster interval cannot be narrower than the item interval. The auditor's value is withdrawn |
+| Drop-one robustness | "0.071–0.119, yes, all > 0" | point estimates confirmed; **dropping GC-percent leaves 3 of 42 discordant, p = 0.25, [0.000, 0.167]** | the direction survives every drop, the interval does not |
+| Haiku's drop vs the parent's 0.21 | three possible causes listed, untested | **the prompt**: the same 30 Gibson K/D pairs under the parent's step-by-step forced prompt give 0.867 → 0.600, drop 0.267 [0.100, 0.434], p = 0.021 | validator's pre-registered run (claim 4b); claims 3 and 4a are now stated as prompt-specific |
+| Haiku's centre picks | not reported | **0.111 vs 0.051** for the other distractors | the one "yes"-rule component Haiku meets |
+| K vs D beyond centrality | "D and K differ in one option" | true, **but in D the key becomes the unique longest option (24/33, 26/37, 15/36, 21/29) and in K never (0/135)**; accuracy does not track it, and it favours D | validator's `v4_asym.py`; now stated in "The confound and the arms" |
+| Sonnet score vs the human line | "0.85 / 0.86 stay above 0.79 and at the top of the forced-choice range" | **inside** the plausible forced-choice range 0.808–0.866, with the D-score interval [0.793, 0.904] covering all of it; a lead on 18 non-cue items, not like for like | the 0.79 scores unsure answers as wrong (parent claim 7) |
+| Claim 6b framing | "differs from the paper's own description" | **an undisclosed convention**: App. C.7.12 names no strand. The numbers (40/40, 21/40) hold and no key changes | re-read of the appendix |
+| Claim 6a | sense-orientation reverse primers in the two restriction subtasks | **confirmed and sharpened**: both Gibson subtasks *do* reverse-complement (40/40 each), so the restriction subtasks contradict the paper and their sister families; 80 items; no key changes | validator's own translation and site checks |
+| Claim 1 and the score levels | L2 / "rough estimate" | **leads** (18 items each) | `METHODOLOGY.md`: under about 20 units is a lead |
+
+Confirmed unchanged: the rebuild's keys (independently verified, plus 40 of 40 blind picks and
+40 of 40 blind arm calls), the pre-registration's timing and the absence of post-hoc item or arm
+dropping, the pre-registered verdict "still cannot tell" for both models, all accuracies and
+counts, zero refusals and zero unparsed outputs in K, D and I, the 0.042 [0.011, 0.073] score
+shift, and the absence of any statement about Opus or a published model.
+
+Not checked: whether Sonnet's drop also quadruples under a step-by-step prompt (budget); the 27
+items dropped before any outcome; anything about published models.
