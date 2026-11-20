@@ -34,6 +34,7 @@ from pathlib import Path
 
 CAP_USD = 3.00
 MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5"}
+NEUTRAL_CWD = "/tmp/w"  # a fixed, meaningless folder, so the environment block is the same in every call
 _LOCK = threading.Lock()
 
 
@@ -42,15 +43,32 @@ class BudgetExceeded(RuntimeError):
 
 
 class Caller:
-    def __init__(self, audit_dir: str, cap_usd: float = CAP_USD):
+    def __init__(self, audit_dir: str, cap_usd: float = CAP_USD, neutral_cwd: bool = False):
+        """neutral_cwd: run the CLI from NEUTRAL_CWD instead of the audit's inference folder.
+
+        The CLI adds an environment block to every request, even with --system-prompt: the
+        working directory, platform, the model's own name and id, its knowledge cutoff, today's
+        date and the remaining budget. With the default (False, kept so that earlier runs
+        reproduce), the working directory is `<repo>/audits/<audit>/inference`, which tells the
+        model the audit's name. Pass True for any new run, and always for role-play or
+        propensity tests. The rest of the block cannot be removed on a subscription login; it
+        is the same in every arm, so it cancels in paired differences but not in absolute rates.
+        """
         if cap_usd > CAP_USD:
             raise ValueError(f"cap may not exceed {CAP_USD}")
+        self.run_cwd = NEUTRAL_CWD if neutral_cwd else None
         self.dir = Path(audit_dir) / "inference"
         self.cache = self.dir / "cache"
         self.cache.mkdir(parents=True, exist_ok=True)
         self.ledger = self.dir / "ledger.jsonl"
         self.cap = cap_usd
         self.bin = shutil.which("claude") or "/opt/homebrew/bin/claude"
+
+    def _cwd(self) -> str:
+        if self.run_cwd is None:
+            return str(self.dir)
+        Path(self.run_cwd).mkdir(parents=True, exist_ok=True)
+        return self.run_cwd
 
     def spent(self) -> float:
         if not self.ledger.exists():
@@ -76,7 +94,7 @@ class Caller:
         for attempt in range(retries + 1):
             try:
                 run = subprocess.run(cmd, input=prompt, capture_output=True, text=True, timeout=timeout,
-                                     env=env, cwd=str(self.dir))
+                                     env=env, cwd=self._cwd())
                 data = json.loads(run.stdout)
                 if data.get("is_error"):
                     raise RuntimeError(str(data.get("result"))[:300])
