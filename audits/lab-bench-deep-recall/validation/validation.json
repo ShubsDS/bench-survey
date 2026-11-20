@@ -1,0 +1,1862 @@
+{
+ "validator": "independent validator (Opus 5.5), 2026-11-20; no model calls; all numbers re-derived from inference/cache with validation/v2_rescore.py",
+ "reproduction": {
+  "auditor_scripts_rerun": "analyze.py, cues.py, grade_qgen.py rerun from the cache: results.json, cues.json, qgen_haiku.csv byte-identical",
+  "independent_rescoring": "all 10 ProtocolQA arms match the auditor's per-item buckets after one parser fix of my own (an option ending in a newline)",
+  "A0": {
+   "haiku_full": {
+    "n": 107,
+    "acc": 0.6822,
+    "ci": [
+     0.596,
+     0.805
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "haiku_qo": {
+    "n": 107,
+    "acc": 0.5514,
+    "ci": [
+     0.483,
+     0.667
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "haiku_opts": {
+    "n": 107,
+    "acc": 0.514,
+    "ci": [
+     0.42,
+     0.627
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "haiku_qo_ro": {
+    "n": 107,
+    "acc": 0.5888,
+    "ci": [
+     0.518,
+     0.697
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "haiku_qo_pa": {
+    "n": 91,
+    "acc": 0.5275,
+    "ci": [
+     0.449,
+     0.636
+    ],
+    "chance": 0.2312,
+    "clusters": 22
+   },
+   "haiku_opts_ro": {
+    "n": 107,
+    "acc": 0.514,
+    "ci": [
+     0.439,
+     0.608
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "haiku_opts_pa": {
+    "n": 91,
+    "acc": 0.5385,
+    "ci": [
+     0.474,
+     0.62
+    ],
+    "chance": 0.2312,
+    "clusters": 22
+   },
+   "sonnet_full": {
+    "n": 62,
+    "acc": 0.8871,
+    "ci": [
+     0.821,
+     0.962
+    ],
+    "chance": 0.2297,
+    "clusters": 20
+   },
+   "sonnet_qo": {
+    "n": 107,
+    "acc": 0.6729,
+    "ci": [
+     0.585,
+     0.776
+    ],
+    "chance": 0.2326,
+    "clusters": 23
+   },
+   "sonnet_qo_pa": {
+    "n": 91,
+    "acc": 0.6154,
+    "ci": [
+     0.516,
+     0.762
+    ],
+    "chance": 0.2312,
+    "clusters": 22
+   }
+  }
+ },
+ "claim1_blind_share": {
+  "verdict": "confirmed numbers; wording corrected (62-item subset is the first 62 in file order; most of Haiku's blind share is reached from the options alone)",
+  "sonnet_62": {
+   "positions_in_file_order": [
+    0,
+    61
+   ],
+   "is_first_62_in_file_order": true,
+   "clusters_in_62": 20,
+   "clusters_in_45": 13,
+   "clusters_in_both": 10,
+   "clusters_only_in_45": 3,
+   "protocol_len_median_62": 4157.5,
+   "protocol_len_median_45": 5325.0,
+   "n_options_mean_62": 4.451612903225806,
+   "n_options_mean_45": 4.288888888888889,
+   "chance_62": 0.22972350230414743,
+   "chance_45": 0.2366666666666666,
+   "haiku_full_on_62": {
+    "n": 62,
+    "acc": 0.6935,
+    "ci": [
+     0.613,
+     0.818
+    ],
+    "chance": 0.2297,
+    "clusters": 20
+   },
+   "haiku_full_on_45": {
+    "n": 45,
+    "acc": 0.6667,
+    "ci": [
+     0.523,
+     0.846
+    ],
+    "chance": 0.2367,
+    "clusters": 13
+   },
+   "haiku_full_45_minus_62": -0.0269,
+   "haiku_qo_on_62": {
+    "n": 62,
+    "acc": 0.5323,
+    "ci": [
+     0.431,
+     0.667
+    ],
+    "chance": 0.2297,
+    "clusters": 20
+   },
+   "haiku_qo_on_45": {
+    "n": 45,
+    "acc": 0.5778,
+    "ci": [
+     0.453,
+     0.774
+    ],
+    "chance": 0.2367,
+    "clusters": 13
+   },
+   "haiku_qo_45_minus_62": 0.0455,
+   "haiku_opts_on_62": {
+    "n": 62,
+    "acc": 0.5323,
+    "ci": [
+     0.426,
+     0.667
+    ],
+    "chance": 0.2297,
+    "clusters": 20
+   },
+   "haiku_opts_on_45": {
+    "n": 45,
+    "acc": 0.4889,
+    "ci": [
+     0.381,
+     0.647
+    ],
+    "chance": 0.2367,
+    "clusters": 13
+   },
+   "haiku_opts_45_minus_62": -0.0434,
+   "sonnet_qo_on_62": {
+    "n": 62,
+    "acc": 0.6774,
+    "ci": [
+     0.544,
+     0.804
+    ],
+    "chance": 0.2297,
+    "clusters": 20
+   },
+   "sonnet_qo_on_45": {
+    "n": 45,
+    "acc": 0.6667,
+    "ci": [
+     0.544,
+     0.818
+    ],
+    "chance": 0.2367,
+    "clusters": 13
+   },
+   "sonnet_qo_45_minus_62": -0.0108
+  },
+  "share": {
+   "haiku_qo_over_full_chance_base": {
+    "n": 107,
+    "share": 0.709,
+    "ci_joint_cluster": [
+     0.57,
+     0.912
+    ]
+   },
+   "haiku_opts_over_full_chance_base": {
+    "n": 107,
+    "share": 0.6258,
+    "ci_joint_cluster": [
+     0.417,
+     0.874
+    ]
+   },
+   "haiku_qo_over_full_opts_base": {
+    "n": 107,
+    "share": 0.2222,
+    "ci_joint_cluster": [
+     -1.1,
+     0.792
+    ]
+   },
+   "sonnet_qo_over_full_chance_base_62": {
+    "n": 62,
+    "share": 0.681,
+    "ci_joint_cluster": [
+     0.483,
+     0.865
+    ]
+   },
+   "sonnet_qo_over_full_haikuopts_base_62": {
+    "n": 62,
+    "share": 0.4091,
+    "ci_joint_cluster": [
+     -0.286,
+     0.8
+    ]
+   },
+   "haiku_qo_over_full_chance_base_62": {
+    "n": 62,
+    "share": 0.6523,
+    "ci_joint_cluster": [
+     0.492,
+     0.824
+    ]
+   },
+   "haiku_qo_over_full_chance_base_45": {
+    "n": 45,
+    "share": 0.7933,
+    "ci_joint_cluster": [
+     0.486,
+     1.351
+    ]
+   },
+   "letter_prior_chance": {
+    "haiku_full": [
+     0.236,
+     {
+      "C": 19,
+      "B": 26,
+      "A": 28,
+      "D": 24,
+      "E": 9,
+      "F": 1
+     }
+    ],
+    "haiku_qo": [
+     0.2364,
+     {
+      "A": 24,
+      "B": 30,
+      "C": 21,
+      "D": 22,
+      "E": 9,
+      "F": 1
+     }
+    ],
+    "haiku_opts": [
+     0.2305,
+     {
+      "C": 24,
+      "B": 22,
+      "A": 28,
+      "D": 25,
+      "E": 7,
+      "F": 1
+     }
+    ],
+    "sonnet_full": [
+     0.2379,
+     {
+      "C": 11,
+      "B": 10,
+      "A": 20,
+      "D": 16,
+      "E": 4,
+      "F": 1
+     }
+    ],
+    "sonnet_qo": [
+     0.2365,
+     {
+      "C": 22,
+      "B": 26,
+      "A": 32,
+      "D": 20,
+      "E": 7
+     }
+    ]
+   },
+   "diff_haiku_full_minus_haiku_qo_n107": {
+    "diff": 0.1308,
+    "ci": [
+     0.036,
+     0.216
+    ],
+    "both": 51,
+    "only_full": 22,
+    "only_blind": 8,
+    "neither": 26
+   },
+   "diff_sonnet_full_minus_sonnet_qo_n62": {
+    "diff": 0.2097,
+    "ci": [
+     0.078,
+     0.359
+    ],
+    "both": 40,
+    "only_full": 15,
+    "only_blind": 2,
+    "neither": 5
+   },
+   "diff_haiku_full_minus_haiku_qo_n62": {
+    "diff": 0.1613,
+    "ci": [
+     0.087,
+     0.242
+    ],
+    "both": 30,
+    "only_full": 13,
+    "only_blind": 3,
+    "neither": 16
+   }
+  },
+  "forced_choice": {
+   "insufficient_information_offered_in_any_arm": 0,
+   "unparsed": 0,
+   "full_and_qo_same_option_order": true
+  }
+ },
+ "claim2_surface_cues": {
+  "verdict": "confirmed (R for simple content-blind cues)",
+  "validator_rules": {
+   "rules": [
+    "max:closest_pair",
+    "max:majority_step",
+    "max:max_mean_overlap",
+    "max:max_q_overlap",
+    "max:median_number",
+    "max:min_numerals",
+    "min:closest_pair",
+    "min:majority_step",
+    "min:max_mean_overlap",
+    "min:max_q_overlap",
+    "min:median_number",
+    "min:min_numerals"
+   ],
+   "in_sample_acc": {
+    "max:closest_pair": 0.254,
+    "max:majority_step": 0.2899,
+    "max:max_mean_overlap": 0.1963,
+    "max:max_q_overlap": 0.1939,
+    "max:median_number": 0.2212,
+    "max:min_numerals": 0.2279,
+    "min:closest_pair": 0.1882,
+    "min:majority_step": 0.1777,
+    "min:max_mean_overlap": 0.1402,
+    "min:max_q_overlap": 0.222,
+    "min:median_number": 0.2009,
+    "min:min_numerals": 0.2318
+   },
+   "chance": 0.2326,
+   "heldout_mean": 0.2606,
+   "heldout_p2.5_97.5": [
+    0.144,
+    0.322
+   ],
+   "chosen": {
+    "max:majority_step": 740,
+    "max:closest_pair": 107,
+    "max:max_q_overlap": 15,
+    "min:max_q_overlap": 66,
+    "min:min_numerals": 39,
+    "max:median_number": 28,
+    "max:min_numerals": 4,
+    "min:median_number": 1
+   },
+   "null_heldout_mean": 0.2316,
+   "p": 0.11
+  }
+ },
+ "claim3_recall": {
+  "verdict": "Haiku confirmed; Sonnet 0.08 drop downgraded (not robust to removing paraphrases that changed meaning)",
+  "paraphrase": {
+   "haiku_qo_ro->haiku_qo_pa": {
+    "n": 91,
+    "drop": 0.0549,
+    "ci": [
+     -0.032,
+     0.136
+    ],
+    "lost": 12,
+    "gained": 7
+   },
+   "haiku_opts_ro->haiku_opts_pa": {
+    "n": 91,
+    "drop": -0.011,
+    "ci": [
+     -0.106,
+     0.089
+    ],
+    "lost": 12,
+    "gained": 13
+   },
+   "sonnet_qo->sonnet_qo_pa": {
+    "n": 91,
+    "drop": 0.0769,
+    "ci": [
+     0.012,
+     0.136
+    ],
+    "lost": 9,
+    "gained": 2
+   },
+   "haiku_qo->haiku_qo_pa": {
+    "n": 91,
+    "drop": 0.011,
+    "ci": [
+     -0.076,
+     0.096
+    ],
+    "lost": 11,
+    "gained": 10
+   },
+   "reorder haiku_qo->haiku_qo_ro": {
+    "diff": 0.0374,
+    "ci": [
+     -0.011,
+     0.086
+    ]
+   },
+   "reorder haiku_opts->haiku_opts_ro": {
+    "diff": 0.0,
+    "ci": [
+     -0.108,
+     0.084
+    ]
+   }
+  },
+  "timing": {
+   "haiku_qo_pa": {
+    "n_billed": 91,
+    "first_t": 1795163949,
+    "last_t": 1795164087,
+    "first_minus_rule_commit_s": 336
+   },
+   "sonnet_qo_pa": {
+    "n_billed": 91,
+    "first_t": 1795164940,
+    "last_t": 1795165042,
+    "first_minus_rule_commit_s": 1327
+   },
+   "haiku_opts_pa": {
+    "n_billed": 91,
+    "first_t": 1795164378,
+    "last_t": 1795164516,
+    "first_minus_rule_commit_s": 765
+   },
+   "haiku_qo": {
+    "n_billed": 107,
+    "first_t": 1795163639,
+    "last_t": 1795163786,
+    "first_minus_rule_commit_s": 26
+   },
+   "sonnet_qo": {
+    "n_billed": 107,
+    "first_t": 1795162906,
+    "last_t": 1795164935,
+    "first_minus_rule_commit_s": -707
+   },
+   "haiku_qo_ro": {
+    "n_billed": 107,
+    "first_t": 1795163717,
+    "last_t": 1795163944,
+    "first_minus_rule_commit_s": 104
+   },
+   "haiku_opts_ro": {
+    "n_billed": 104,
+    "first_t": 1795164095,
+    "last_t": 1795164372,
+    "first_minus_rule_commit_s": 482
+   },
+   "sonnet_full": {
+    "n_billed": 62,
+    "first_t": 1795162899,
+    "last_t": 1795165112,
+    "first_minus_rule_commit_s": -714
+   },
+   "paraphrase_generation": {
+    "n": 177,
+    "first_t": 1795163289,
+    "last_t": 1795163563
+   },
+   "rule_v2_commit_t": 1795163613,
+   "prereg_commit_t": 1795163101,
+   "total_cost_usd": 3.0796,
+   "n_ledger": 1085,
+   "cost_by_model": {
+    "haiku": 0.4838,
+    "sonnet": 2.5958
+   },
+   "calls_by_model": {
+    "claude-sonnet-5-5": 271,
+    "claude-haiku-5-5": 814
+   },
+   "calls_before_prereg_commit": {
+    "sonnet_cot_full": 5,
+    "sonnet_cot_opts": 3,
+    "sonnet_cot_qo": 2,
+    "sonnet_direct_full": 2,
+    "sonnet_direct_qo": 2
+   },
+   "sonnet_full_call_order_matches_file_order_rank_corr": 0.35190353766203375
+  },
+  "sonnet_without_drift": {
+   "drift_items": [
+    "36cae278",
+    "3b5bd87a",
+    "e8afd1c6",
+    "abfb2fec",
+    "520f4620",
+    "16fc3385"
+   ],
+   "n": 85,
+   "drop": 0.0353,
+   "ci": [
+    -0.018,
+    0.085
+   ],
+   "lost": 5,
+   "gained": 2,
+   "drift_items_sonnet_lost": [
+    "e8afd1c6",
+    "abfb2fec",
+    "520f4620",
+    "16fc3385"
+   ],
+   "haiku_drop_without_drift": 0.0824,
+   "haiku_ci": [
+    0.0,
+    0.154
+   ]
+  },
+  "handread": {
+   "items_read": 51,
+   "meaning_changed": 6,
+   "ids": [
+    "36cae278",
+    "3b5bd87a",
+    "e8afd1c6",
+    "abfb2fec",
+    "520f4620",
+    "16fc3385"
+   ],
+   "sonnet_losses_among_changed": 4,
+   "sonnet_losses_total": 9,
+   "blind_to_outcome": false
+  },
+  "relaxed_rule": {
+   "v1_pass_items": 40,
+   "v1_fail_items": 51,
+   "sonnet_net_lost_v1_pass": 3,
+   "sonnet_net_lost_v1_fail": 4
+  },
+  "qgen_validator_grade": {
+   "n_responses_matched": 101,
+   "fix_line_present": 101,
+   "step_keyed_items": 86,
+   "key_step_hits": 6,
+   "key_step_rate": 0.06976744186046512,
+   "distractor_step_rate": 0.10481927710843372,
+   "value_keyed_items": 78,
+   "key_value_hits": 14,
+   "key_value_rate": 0.1794871794871795,
+   "distractor_value_rate": 0.12585470085470085,
+   "both_keyed_items": 66,
+   "key_exact_hits": 1,
+   "key_exact_rate": 0.015151515151515152,
+   "distractor_exact_rate": 0.02265625
+  },
+  "R3": {
+   "n_D": 41,
+   "ceiling": 0.476,
+   "haiku": {
+    "acc": 0.415,
+    "minus_ceiling_ci": [
+     -0.148,
+     0.089
+    ]
+   },
+   "sonnet": {
+    "acc": 0.585,
+    "minus_ceiling_ci": [
+     0.0,
+     0.257
+    ]
+   }
+  },
+  "source_protocol_recall_haiku": {
+   "qo": {
+    "responses": 197,
+    "new_numbers_per_response": 0.08629441624365482,
+    "own_protocol_number_matches": 0.06598984771573604,
+    "other_protocol_number_matches": 0.044762344254730045,
+    "number_excess_ci": [
+     0.002173167275710344,
+     0.04240414915966384
+    ],
+    "own_protocol_word_matches": 1.6954314720812182,
+    "other_protocol_word_matches": 0.6363636363636365,
+    "word_excess_ci": [
+     0.7047599832615973,
+     1.380274756189047
+    ],
+    "responses_with_any_own_number": 11,
+    "responses_with_rare_own_token": 108
+   },
+   "qgen": {
+    "responses": 101,
+    "new_numbers_per_response": 2.702970297029703,
+    "own_protocol_number_matches": 1.7722772277227723,
+    "other_protocol_number_matches": 1.1548154815481546,
+    "number_excess_ci": [
+     0.2081711543588376,
+     0.8994399002442577
+    ],
+    "own_protocol_word_matches": 3.386138613861386,
+    "other_protocol_word_matches": 1.453195319531953,
+    "word_excess_ci": [
+     1.369937119842183,
+     2.3769768299881933
+    ],
+    "responses_with_any_own_number": 75,
+    "responses_with_rare_own_token": 72
+   },
+   "rare_token_examples": [
+    [
+     "6824f8de",
+     "qo",
+     [
+      "binding"
+     ]
+    ],
+    [
+     "e39ca05b",
+     "qgen",
+     [
+      "pre-wet"
+     ]
+    ],
+    [
+     "4fb3c795",
+     "qo",
+     [
+      "hematoxylin"
+     ]
+    ],
+    [
+     "4fb3c795",
+     "qo",
+     [
+      "hematoxylin"
+     ]
+    ],
+    [
+     "36cae278",
+     "qo",
+     [
+      "incubation",
+      "transformation"
+     ]
+    ],
+    [
+     "0d18e3c2",
+     "qgen",
+     [
+      "embedding",
+      "fixation"
+     ]
+    ],
+    [
+     "0fd4d23c",
+     "qo",
+     [
+      "crystal",
+      "crystallization"
+     ]
+    ],
+    [
+     "11d7d19c",
+     "qgen",
+     [
+      "extraction"
+     ]
+    ],
+    [
+     "1b396062",
+     "qo",
+     [
+      "describe",
+      "extracted"
+     ]
+    ],
+    [
+     "347e9fa7",
+     "qo",
+     [
+      "freezing",
+      "sectioning"
+     ]
+    ],
+    [
+     "e39ca05b",
+     "qo",
+     [
+      "digestion",
+      "dissociation",
+      "fragments",
+      "undigested"
+     ]
+    ],
+    [
+     "16fc3385",
+     "qo",
+     [
+      "cytometry"
+     ]
+    ],
+    [
+     "7e6c4405",
+     "qo",
+     [
+      "antibiotic",
+      "transduced"
+     ]
+    ],
+    [
+     "ea524341",
+     "qo",
+     [
+      "problem"
+     ]
+    ],
+    [
+     "0ccec700",
+     "qo",
+     [
+      "reprogramming"
+     ]
+    ],
+    [
+     "0d18e3c2",
+     "qo",
+     [
+      "embedding",
+      "freezing"
+     ]
+    ],
+    [
+     "e34e0c36",
+     "qgen",
+     [
+      "puromycin",
+      "survival",
+      "visible"
+     ]
+    ],
+    [
+     "5d454370",
+     "qo",
+     [
+      "amplification",
+      "problem"
+     ]
+    ],
+    [
+     "0ccec700",
+     "qo",
+     [
+      "reprogramming"
+     ]
+    ],
+    [
+     "51b68661",
+     "qo",
+     [
+      "provided"
+     ]
+    ],
+    [
+     "a55b740f",
+     "qgen",
+     [
+      "crystallization"
+     ]
+    ],
+    [
+     "e39429e0",
+     "qo",
+     [
+      "activity"
+     ]
+    ],
+    [
+     "6bc0df89",
+     "qgen",
+     [
+      "passaging"
+     ]
+    ],
+    [
+     "fb17bb32",
+     "qo",
+     [
+      "problem"
+     ]
+    ],
+    [
+     "0ab2f959",
+     "qgen",
+     [
+      "expected",
+      "stirring"
+     ]
+    ],
+    [
+     "67a36ceb",
+     "qo",
+     [
+      "competent",
+      "incubation",
+      "keeping",
+      "transformation"
+     ]
+    ],
+    [
+     "553e7a6c",
+     "qo",
+     [
+      "digestion",
+      "dissociation"
+     ]
+    ],
+    [
+     "087157ee",
+     "qo",
+     [
+      "embryoid"
+     ]
+    ],
+    [
+     "fca46ec7",
+     "qo",
+     [
+      "dissociation",
+      "extraction"
+     ]
+    ],
+    [
+     "389b4ed8",
+     "qgen",
+     [
+      "nuclease-free"
+     ]
+    ],
+    [
+     "644d2672",
+     "qo",
+     [
+      "incubation"
+     ]
+    ],
+    [
+     "520f4620",
+     "qgen",
+     [
+      "covering",
+      "crystal",
+      "crystallization",
+      "evaporation",
+      "saturated"
+     ]
+    ],
+    [
+     "a55b740f",
+     "qo",
+     [
+      "crystal",
+      "crystallization",
+      "produce"
+     ]
+    ],
+    [
+     "53524e6c",
+     "qo",
+     [
+      "changes"
+     ]
+    ],
+    [
+     "a55b740f",
+     "qo",
+     [
+      "crystal",
+      "crystallization"
+     ]
+    ],
+    [
+     "ad177c40",
+     "qo",
+     [
+      "freezing",
+      "quickly"
+     ]
+    ],
+    [
+     "ea524341",
+     "qo",
+     [
+      "problem"
+     ]
+    ],
+    [
+     "11d73398",
+     "qgen",
+     [
+      "crystallization",
+      "monosodium"
+     ]
+    ],
+    [
+     "dd06a1ee",
+     "qo",
+     [
+      "poly-d-lysine"
+     ]
+    ],
+    [
+     "a6231697",
+     "qo",
+     [
+      "ubiquitin"
+     ]
+    ]
+   ],
+   "examples_own_numbers": [
+    [
+     "0d18e3c2",
+     "qgen",
+     [
+      "200",
+      "30",
+      "37"
+     ]
+    ],
+    [
+     "a55b740f",
+     "qgen",
+     [
+      "22",
+      "37"
+     ]
+    ],
+    [
+     "0ab2f959",
+     "qgen",
+     [
+      "0.1",
+      "30"
+     ]
+    ],
+    [
+     "389b4ed8",
+     "qgen",
+     [
+      "17",
+      "30",
+      "50"
+     ]
+    ],
+    [
+     "520f4620",
+     "qgen",
+     [
+      "0.1",
+      "12",
+      "20",
+      "24"
+     ]
+    ],
+    [
+     "d5764058",
+     "qgen",
+     [
+      "1.5",
+      "24"
+     ]
+    ],
+    [
+     "b3f6c09c",
+     "qgen",
+     [
+      "000",
+      "13",
+      "30",
+      "50",
+      "55",
+      "60"
+     ]
+    ],
+    [
+     "5d454370",
+     "qgen",
+     [
+      "15",
+      "20"
+     ]
+    ],
+    [
+     "243057d2",
+     "qgen",
+     [
+      "0.7",
+      "000",
+      "12",
+      "20",
+      "30"
+     ]
+    ],
+    [
+     "d7c7547e",
+     "qgen",
+     [
+      "000",
+      "12",
+      "19",
+      "60",
+      "75"
+     ]
+    ],
+    [
+     "44b66cdb",
+     "qgen",
+     [
+      "15",
+      "37"
+     ]
+    ],
+    [
+     "6824f8de",
+     "qgen",
+     [
+      "0.1",
+      "20"
+     ]
+    ]
+   ]
+  }
+ },
+ "claim4_standard_fix": {
+  "verdict": "downgraded: association holds with key-blind labels, but the auditor's label conditions on the labeller's blind pick being the key; Haiku residual is not near chance with key-blind labels, so prereg A3 gives 'cannot tell', not 'supported'",
+  "sizes": {
+   "validator_K": 37,
+   "validator_K2_strict": 15,
+   "validator_U1": 37,
+   "auditor_G": 59,
+   "auditor_standard_key": 51,
+   "auditor_pick_is_key": 77
+  },
+  "agreement": {
+   "K_vs_auditor_G": {
+    "agree": 0.738,
+    "kappa": 0.493,
+    "both": 34,
+    "only_first": 3,
+    "only_second": 25
+   },
+   "K_vs_auditor_standard_key": {
+    "agree": 0.776,
+    "kappa": 0.545,
+    "both": 32,
+    "only_first": 5,
+    "only_second": 19
+   },
+   "U1_vs_auditor_G": {
+    "agree": 0.738,
+    "kappa": 0.493,
+    "both": 34,
+    "only_first": 3,
+    "only_second": 25
+   },
+   "K2_vs_auditor_G": {
+    "agree": 0.57,
+    "kappa": 0.199,
+    "both": 14,
+    "only_first": 1,
+    "only_second": 45
+   }
+  },
+  "auditor_pick_accuracy_by_class": {
+   "G": 0.864,
+   "not_G": 0.542,
+   "validator_K": 0.946,
+   "validator_not_K": 0.6
+  },
+  "pick_agreement": {
+   "sonnet_qo": {
+    "n": 107,
+    "agree": 0.729,
+    "agree_when_both_wrong": 0.6364,
+    "n_both_wrong": 22
+   },
+   "haiku_qo": {
+    "n": 107,
+    "agree": 0.6542,
+    "agree_when_both_wrong": 0.7083,
+    "n_both_wrong": 24
+   },
+   "haiku_opts": {
+    "n": 107,
+    "agree": 0.4953,
+    "agree_when_both_wrong": 0.4,
+    "n_both_wrong": 20
+   },
+   "haiku_full": {
+    "n": 107,
+    "agree": 0.6449,
+    "agree_when_both_wrong": 0.625,
+    "n_both_wrong": 16
+   },
+   "haiku_qo_vs_sonnet_qo": {
+    "agree": 0.6449,
+    "agree_when_both_wrong": 0.7308,
+    "n_both_wrong": 26
+   },
+   "chance_agree_when_both_wrong": 0.305
+  },
+  "gaps": {
+   "haiku_qo|auditor_standard_key": {
+    "n_in": 51,
+    "n_out": 56,
+    "acc_in": 0.784,
+    "acc_out": 0.339,
+    "gap": 0.445,
+    "ci": [
+     0.227,
+     0.613
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.23
+   },
+   "haiku_qo|auditor_G_keyblind": {
+    "n_in": 59,
+    "n_out": 48,
+    "acc_in": 0.678,
+    "acc_out": 0.396,
+    "gap": 0.282,
+    "ci": [
+     0.07,
+     0.423
+    ],
+    "placebo_pct": 99.6,
+    "chance_out": 0.227
+   },
+   "haiku_qo|auditor_pick_is_key": {
+    "n_in": 77,
+    "n_out": 30,
+    "acc_in": 0.688,
+    "acc_out": 0.2,
+    "gap": 0.488,
+    "ci": [
+     0.286,
+     0.623
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.23
+   },
+   "haiku_qo|validator_K": {
+    "n_in": 37,
+    "n_out": 70,
+    "acc_in": 0.757,
+    "acc_out": 0.443,
+    "gap": 0.314,
+    "ci": [
+     0.156,
+     0.454
+    ],
+    "placebo_pct": 99.8,
+    "chance_out": 0.229
+   },
+   "haiku_qo|validator_K2": {
+    "n_in": 15,
+    "n_out": 92,
+    "acc_in": 0.733,
+    "acc_out": 0.522,
+    "gap": 0.212,
+    "ci": [
+     -0.009,
+     0.505
+    ],
+    "placebo_pct": 90.1,
+    "chance_out": 0.231
+   },
+   "haiku_qo|auditor_G_within_pick_is_key": {
+    "n_in": 51,
+    "n_out": 26,
+    "acc_in": 0.784,
+    "acc_out": 0.5,
+    "gap": 0.284,
+    "ci": [
+     0.055,
+     0.493
+    ],
+    "placebo_pct": 98.9,
+    "chance_out": 0.23
+   },
+   "haiku_qo|validator_K_within_pick_is_key": {
+    "n_in": 35,
+    "n_out": 42,
+    "acc_in": 0.8,
+    "acc_out": 0.595,
+    "gap": 0.205,
+    "ci": [
+     0.028,
+     0.344
+    ],
+    "placebo_pct": 96.5,
+    "chance_out": 0.229
+   },
+   "haiku_qo|validator_K_within_pick_not_key": {
+    "n_in": 2,
+    "n_out": 28,
+    "acc_in": 0.0,
+    "acc_out": 0.214,
+    "gap": -0.214,
+    "ci": [
+     -0.444,
+     -0.092
+    ],
+    "placebo_pct": 0.0,
+    "chance_out": 0.228
+   },
+   "haiku_opts|auditor_standard_key": {
+    "n_in": 51,
+    "n_out": 56,
+    "acc_in": 0.667,
+    "acc_out": 0.375,
+    "gap": 0.292,
+    "ci": [
+     0.118,
+     0.455
+    ],
+    "placebo_pct": 99.7,
+    "chance_out": 0.23
+   },
+   "haiku_opts|auditor_G_keyblind": {
+    "n_in": 59,
+    "n_out": 48,
+    "acc_in": 0.61,
+    "acc_out": 0.396,
+    "gap": 0.214,
+    "ci": [
+     0.053,
+     0.347
+    ],
+    "placebo_pct": 98.9,
+    "chance_out": 0.227
+   },
+   "haiku_opts|auditor_pick_is_key": {
+    "n_in": 77,
+    "n_out": 30,
+    "acc_in": 0.584,
+    "acc_out": 0.333,
+    "gap": 0.251,
+    "ci": [
+     0.047,
+     0.414
+    ],
+    "placebo_pct": 98.4,
+    "chance_out": 0.23
+   },
+   "haiku_opts|validator_K": {
+    "n_in": 37,
+    "n_out": 70,
+    "acc_in": 0.622,
+    "acc_out": 0.457,
+    "gap": 0.164,
+    "ci": [
+     0.024,
+     0.3
+    ],
+    "placebo_pct": 94.5,
+    "chance_out": 0.229
+   },
+   "haiku_opts|validator_K2": {
+    "n_in": 15,
+    "n_out": 92,
+    "acc_in": 0.467,
+    "acc_out": 0.522,
+    "gap": -0.055,
+    "ci": [
+     -0.369,
+     0.24
+    ],
+    "placebo_pct": 30.2,
+    "chance_out": 0.231
+   },
+   "haiku_opts|auditor_G_within_pick_is_key": {
+    "n_in": 51,
+    "n_out": 26,
+    "acc_in": 0.667,
+    "acc_out": 0.423,
+    "gap": 0.244,
+    "ci": [
+     0.074,
+     0.408
+    ],
+    "placebo_pct": 97.4,
+    "chance_out": 0.23
+   },
+   "haiku_opts|validator_K_within_pick_is_key": {
+    "n_in": 35,
+    "n_out": 42,
+    "acc_in": 0.657,
+    "acc_out": 0.524,
+    "gap": 0.133,
+    "ci": [
+     -0.035,
+     0.324
+    ],
+    "placebo_pct": 80.7,
+    "chance_out": 0.229
+   },
+   "haiku_opts|validator_K_within_pick_not_key": {
+    "n_in": 2,
+    "n_out": 28,
+    "acc_in": 0.0,
+    "acc_out": 0.357,
+    "gap": -0.357,
+    "ci": [
+     -0.5,
+     -0.226
+    ],
+    "placebo_pct": 0.0,
+    "chance_out": 0.228
+   },
+   "sonnet_qo|auditor_standard_key": {
+    "n_in": 51,
+    "n_out": 56,
+    "acc_in": 0.863,
+    "acc_out": 0.5,
+    "gap": 0.363,
+    "ci": [
+     0.134,
+     0.536
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.23
+   },
+   "sonnet_qo|auditor_G_keyblind": {
+    "n_in": 59,
+    "n_out": 48,
+    "acc_in": 0.746,
+    "acc_out": 0.583,
+    "gap": 0.162,
+    "ci": [
+     -0.023,
+     0.317
+    ],
+    "placebo_pct": 96.5,
+    "chance_out": 0.227
+   },
+   "sonnet_qo|auditor_pick_is_key": {
+    "n_in": 77,
+    "n_out": 30,
+    "acc_in": 0.831,
+    "acc_out": 0.267,
+    "gap": 0.565,
+    "ci": [
+     0.357,
+     0.74
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.23
+   },
+   "sonnet_qo|validator_K": {
+    "n_in": 37,
+    "n_out": 70,
+    "acc_in": 0.892,
+    "acc_out": 0.557,
+    "gap": 0.335,
+    "ci": [
+     0.264,
+     0.413
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.229
+   },
+   "sonnet_qo|validator_K2": {
+    "n_in": 15,
+    "n_out": 92,
+    "acc_in": 0.8,
+    "acc_out": 0.652,
+    "gap": 0.148,
+    "ci": [
+     0.013,
+     0.295
+    ],
+    "placebo_pct": 83.9,
+    "chance_out": 0.231
+   },
+   "sonnet_qo|auditor_G_within_pick_is_key": {
+    "n_in": 51,
+    "n_out": 26,
+    "acc_in": 0.863,
+    "acc_out": 0.769,
+    "gap": 0.094,
+    "ci": [
+     -0.163,
+     0.3
+    ],
+    "placebo_pct": 77.0,
+    "chance_out": 0.23
+   },
+   "sonnet_qo|validator_K_within_pick_is_key": {
+    "n_in": 35,
+    "n_out": 42,
+    "acc_in": 0.943,
+    "acc_out": 0.738,
+    "gap": 0.205,
+    "ci": [
+     0.108,
+     0.309
+    ],
+    "placebo_pct": 98.8,
+    "chance_out": 0.229
+   },
+   "sonnet_qo|validator_K_within_pick_not_key": {
+    "n_in": 2,
+    "n_out": 28,
+    "acc_in": 0.0,
+    "acc_out": 0.286,
+    "gap": -0.286,
+    "ci": [
+     -0.436,
+     -0.182
+    ],
+    "placebo_pct": 0.0,
+    "chance_out": 0.228
+   },
+   "haiku_full|auditor_standard_key": {
+    "n_in": 51,
+    "n_out": 56,
+    "acc_in": 0.843,
+    "acc_out": 0.536,
+    "gap": 0.307,
+    "ci": [
+     0.046,
+     0.5
+    ],
+    "placebo_pct": 99.8,
+    "chance_out": 0.23
+   },
+   "haiku_full|auditor_G_keyblind": {
+    "n_in": 59,
+    "n_out": 48,
+    "acc_in": 0.78,
+    "acc_out": 0.562,
+    "gap": 0.217,
+    "ci": [
+     -0.019,
+     0.375
+    ],
+    "placebo_pct": 98.8,
+    "chance_out": 0.227
+   },
+   "haiku_full|auditor_pick_is_key": {
+    "n_in": 77,
+    "n_out": 30,
+    "acc_in": 0.766,
+    "acc_out": 0.467,
+    "gap": 0.3,
+    "ci": [
+     0.06,
+     0.507
+    ],
+    "placebo_pct": 99.9,
+    "chance_out": 0.23
+   },
+   "haiku_full|validator_K": {
+    "n_in": 37,
+    "n_out": 70,
+    "acc_in": 0.946,
+    "acc_out": 0.543,
+    "gap": 0.403,
+    "ci": [
+     0.259,
+     0.515
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.229
+   },
+   "haiku_full|validator_K2": {
+    "n_in": 15,
+    "n_out": 92,
+    "acc_in": 0.933,
+    "acc_out": 0.641,
+    "gap": 0.292,
+    "ci": [
+     0.058,
+     0.427
+    ],
+    "placebo_pct": 98.5,
+    "chance_out": 0.231
+   },
+   "haiku_full|auditor_G_within_pick_is_key": {
+    "n_in": 51,
+    "n_out": 26,
+    "acc_in": 0.843,
+    "acc_out": 0.615,
+    "gap": 0.228,
+    "ci": [
+     -0.098,
+     0.51
+    ],
+    "placebo_pct": 96.1,
+    "chance_out": 0.23
+   },
+   "haiku_full|validator_K_within_pick_is_key": {
+    "n_in": 35,
+    "n_out": 42,
+    "acc_in": 0.943,
+    "acc_out": 0.619,
+    "gap": 0.324,
+    "ci": [
+     0.167,
+     0.472
+    ],
+    "placebo_pct": 100.0,
+    "chance_out": 0.229
+   },
+   "haiku_full|validator_K_within_pick_not_key": {
+    "n_in": 2,
+    "n_out": 28,
+    "acc_in": 1.0,
+    "acc_out": 0.429,
+    "gap": 0.571,
+    "ci": [
+     0.386,
+     0.748
+    ],
+    "placebo_pct": 77.1,
+    "chance_out": 0.228
+   },
+   "sonnet_full|auditor_standard_key": {
+    "n_in": 28,
+    "n_out": 34,
+    "acc_in": 0.964,
+    "acc_out": 0.824,
+    "gap": 0.141,
+    "ci": [
+     -0.024,
+     0.275
+    ],
+    "placebo_pct": 90.8,
+    "chance_out": 0.227
+   },
+   "sonnet_full|auditor_G_keyblind": {
+    "n_in": 32,
+    "n_out": 30,
+    "acc_in": 0.969,
+    "acc_out": 0.8,
+    "gap": 0.169,
+    "ci": [
+     -0.009,
+     0.311
+    ],
+    "placebo_pct": 93.8,
+    "chance_out": 0.224
+   },
+   "sonnet_full|auditor_pick_is_key": {
+    "n_in": 48,
+    "n_out": 14,
+    "acc_in": 0.917,
+    "acc_out": 0.786,
+    "gap": 0.131,
+    "ci": [
+     -0.102,
+     0.379
+    ],
+    "placebo_pct": 84.0,
+    "chance_out": 0.223
+   },
+   "sonnet_full|validator_K": {
+    "n_in": 20,
+    "n_out": 42,
+    "acc_in": 1.0,
+    "acc_out": 0.833,
+    "gap": 0.167,
+    "ci": [
+     0.056,
+     0.25
+    ],
+    "placebo_pct": 93.4,
+    "chance_out": 0.227
+   },
+   "sonnet_full|validator_K2": {
+    "n_in": 9,
+    "n_out": 53,
+    "acc_in": 1.0,
+    "acc_out": 0.868,
+    "gap": 0.132,
+    "ci": [
+     0.047,
+     0.203
+    ],
+    "placebo_pct": 67.7,
+    "chance_out": 0.228
+   },
+   "sonnet_full|auditor_G_within_pick_is_key": {
+    "n_in": 28,
+    "n_out": 20,
+    "acc_in": 0.964,
+    "acc_out": 0.85,
+    "gap": 0.114,
+    "ci": [
+     -0.05,
+     0.269
+    ],
+    "placebo_pct": 81.4,
+    "chance_out": 0.229
+   },
+   "sonnet_full|validator_K_within_pick_is_key": {
+    "n_in": 19,
+    "n_out": 29,
+    "acc_in": 1.0,
+    "acc_out": 0.862,
+    "gap": 0.138,
+    "ci": [
+     0.04,
+     0.233
+    ],
+    "placebo_pct": 88.6,
+    "chance_out": 0.229
+   },
+   "sonnet_full|validator_K_within_pick_not_key": {
+    "n_in": 1,
+    "n_out": 13,
+    "acc_in": 1.0,
+    "acc_out": 0.769,
+    "gap": 0.231,
+    "ci": [
+     0.0,
+     0.5
+    ],
+    "placebo_pct": 11.3,
+    "chance_out": 0.221
+   }
+  },
+  "protocol_gain_by_label": {
+   "haiku|validator_K|in": {
+    "n": 37,
+    "full": 0.946,
+    "qo": 0.757,
+    "gain": 0.189,
+    "gain_ci": [
+     0.056,
+     0.294
+    ]
+   },
+   "haiku|validator_K|out": {
+    "n": 70,
+    "full": 0.543,
+    "qo": 0.443,
+    "gain": 0.1,
+    "gain_ci": [
+     -0.019,
+     0.213
+    ]
+   },
+   "haiku|auditor_G_keyblind|in": {
+    "n": 59,
+    "full": 0.78,
+    "qo": 0.678,
+    "gain": 0.102,
+    "gain_ci": [
+     -0.02,
+     0.194
+    ]
+   },
+   "haiku|auditor_G_keyblind|out": {
+    "n": 48,
+    "full": 0.562,
+    "qo": 0.396,
+    "gain": 0.167,
+    "gain_ci": [
+     0.042,
+     0.297
+    ]
+   },
+   "haiku|auditor_standard_key|in": {
+    "n": 51,
+    "full": 0.843,
+    "qo": 0.784,
+    "gain": 0.059,
+    "gain_ci": [
+     -0.075,
+     0.172
+    ]
+   },
+   "haiku|auditor_standard_key|out": {
+    "n": 56,
+    "full": 0.536,
+    "qo": 0.339,
+    "gain": 0.196,
+    "gain_ci": [
+     0.089,
+     0.292
+    ]
+   },
+   "sonnet|validator_K|in": {
+    "n": 20,
+    "full": 1.0,
+    "qo": 0.85,
+    "gain": 0.15,
+    "gain_ci": [
+     0.0,
+     0.278
+    ]
+   },
+   "sonnet|validator_K|out": {
+    "n": 42,
+    "full": 0.833,
+    "qo": 0.595,
+    "gain": 0.238,
+    "gain_ci": [
+     0.086,
+     0.408
+    ]
+   },
+   "sonnet|auditor_G_keyblind|in": {
+    "n": 32,
+    "full": 0.969,
+    "qo": 0.688,
+    "gain": 0.281,
+    "gain_ci": [
+     0.138,
+     0.41
+    ]
+   },
+   "sonnet|auditor_G_keyblind|out": {
+    "n": 30,
+    "full": 0.8,
+    "qo": 0.667,
+    "gain": 0.133,
+    "gain_ci": [
+     -0.059,
+     0.342
+    ]
+   },
+   "sonnet|auditor_standard_key|in": {
+    "n": 28,
+    "full": 0.964,
+    "qo": 0.786,
+    "gain": 0.179,
+    "gain_ci": [
+     0.038,
+     0.321
+    ]
+   },
+   "sonnet|auditor_standard_key|out": {
+    "n": 34,
+    "full": 0.824,
+    "qo": 0.588,
+    "gain": 0.235,
+    "gain_ci": [
+     0.033,
+     0.432
+    ]
+   }
+  },
+  "share_of_haiku_qo_correct_on_set": {
+   "auditor_standard_key": 0.678,
+   "auditor_G": 0.678,
+   "validator_K": 0.475
+  }
+ },
+ "claim5_cloning": {
+  "verdict": "confirmed as a lead",
+  "validator": {
+   "full": {
+    "n": 33,
+    "acc": 0.697,
+    "clusters": 9,
+    "ci": [
+     0.409,
+     0.871
+    ],
+    "chance": 0.2259
+   },
+   "opts": {
+    "n": 26,
+    "acc": 0.3462,
+    "clusters": 9,
+    "ci": [
+     0.13,
+     0.545
+    ],
+    "chance": 0.2194
+   },
+   "qo": {
+    "n": 33,
+    "acc": 0.4242,
+    "clusters": 9,
+    "ci": [
+     0.24,
+     0.553
+    ],
+    "chance": 0.2259
+   }
+  }
+ },
+ "spend": {
+  "validator_usd": 0,
+  "audit_total_usd": 3.0796,
+  "calls": 1085
+ }
+}
