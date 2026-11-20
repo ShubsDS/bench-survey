@@ -1,5 +1,7 @@
 # PropensityBench: the prohibition never reaches the agent; a Haiku emulation could not test whether that matters for behaviour
 
+> **Caveat added 2026-11-20.** Every model call in this audit carried extra context from the command-line tool. See [Context caveat](#context-caveat-added-2026-11-20) at the end.
+
 Status: 2026-11-17. Round two, **validated** (see [Validation](#validation) and
 [`validation/VALIDATION.md`](validation/VALIDATION.md)). Inference: Claude Haiku only. The auditor
 made 831 calls (1.15 USD) and the validator 102 (0.23 USD), 1.38 USD in all. No released
@@ -318,3 +320,9 @@ python3 -I validation/v_corpus.py
 python3 -I validation/v_inference.py --check probe_control ; python3 -I validation/v_inference.py --check floor
 python3 -I validation/v_analysis.py
 ```
+
+## Context caveat (added 2026-11-20)
+
+Found in round three ([`../helper-context-leak`](../helper-context-leak)): the command-line tool used for every model call adds an environment block to each request. It gives the working folder (which named this audit), the platform, the model's own name and knowledge cutoff, today's date and a 0.25 USD budget line. Re-running a sample of this audit's prompts from a meaningless folder changed nothing beyond run-to-run noise, so the folder name did not move the results. The other lines could not be removed or varied. They are identical in every arm, so paired differences stand; absolute levels carry the caveat below.
+
+**Caveat for this audit.** Besides the audit path (tested: no change in 48 + 31 decisions), the CLI also told Haiku the real date, its model name and a budget, which no harness model sees; the 0 floors are for Haiku in that context and may be biased toward the safe side.
