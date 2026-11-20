@@ -1,5 +1,7 @@
 # AI-control monitors and confession cues: monitors read agents' visible plans, not confession keywords; MRT's SHADE "unaware" agents plan where the monitor reads, unlike its CUA ones
 
+> **Caveat added 2026-11-20.** Every model call in this audit carried extra context from the command-line tool. See [Context caveat](#context-caveat-added-2026-11-20) at the end.
+
 Status: 2026-11-17. Released per-run monitor scores, plus a small Haiku intervention. Independently
 validated; see "Validation" below and [`validation/VALIDATION.md`](validation/VALIDATION.md).
 
@@ -356,3 +358,9 @@ $P scripts/make_results.py
 Seeds are fixed at 0 (and 1 for the subset null). The data is CC BY-NC (MRT) or unlicensed
 (ControlArena corpora, CTRL-ALT-DECEIT). This folder holds counts, scores, AUROCs and run ids only,
 with no transcript text.
+
+## Context caveat (added 2026-11-20)
+
+Found in round three ([`../helper-context-leak`](../helper-context-leak)): the command-line tool used for every model call adds an environment block to each request. It gives the working folder (which named this audit), the platform, the model's own name and knowledge cutoff, today's date and a 0.25 USD budget line. Re-running a sample of this audit's prompts from a meaningless folder changed nothing beyond run-to-run noise, so the folder name did not move the results. The other lines could not be removed or varied. They are identical in every arm, so paired differences stand; absolute levels carry the caveat below.
+
+**Caveat for this audit.** Haiku's monitor context included today's date from the CLI, and 55 of 244 replies used it to judge dates in the transcript; absolute suspicion scores and AUROCs (for example 0.998 and 0.852) are for that context. The paired edits share the date, so the differences stand.
