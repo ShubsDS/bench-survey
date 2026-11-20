@@ -1,28 +1,39 @@
-# LAB-Bench SeqQA deep dive: Sonnet 5.5 can read the option cue but mostly solves the cue subtasks; moving the cue costs it 0.10 [0.02, 0.19], which is about 0.04 of a SeqQA score; by the pre-registered rule the reliance question stays open
+# LAB-Bench SeqQA deep dive: moving the option cue costs Sonnet 5.5 about 0.10 on the cue-bearing SeqQA subtasks (exact p = 0.06, 48 pairs), which is about 0.04 of a SeqQA score; by the pre-registered rule the reliance question stays open — and on Haiku the same contrast is four times larger under a reasoning prompt
 
-Status: complete, 2026-11-20, branch `audits-round3`. Parent: [`../lab-bench`](../lab-bench)
-(validated). Pre-registration: [`prereg.md`](prereg.md), committed in `05d2d07` before any model
-output on a cue subtask. Models: `claude-sonnet-5-5` (primary) and `claude-haiku-5-5`, no tools,
-default extended thinking, letter-only answers. **All results are about these two models only.**
-They say nothing about Opus 4.5 or any other model in a system card.
+Status: validated, 2026-11-20, branch `audits-round3`. Parent: [`../lab-bench`](../lab-bench)
+(validated). Independent validation: [`validation/VALIDATION.md`](validation/VALIDATION.md)
+(the validator reran the pipeline byte-identically, re-derived every number from the response
+cache, hand-read 40 arm-blind items, and ran one new 60-call test). Pre-registration:
+[`prereg.md`](prereg.md), committed in `05d2d07` before any model output on a cue subtask
+(confirmed by the validator against the ledger). Models: `claude-sonnet-5-5` (primary) and
+`claude-haiku-5-5`, no tools, default extended thinking, **letter-only answers — which turns out
+to matter (claim 4b)**. **All results are about these two models only.** They say nothing about
+Opus 4.5 or any other model in a system card.
 
-| # | Claim | Level |
+Validated result first; the auditor's original numbers are kept in each row and in
+[`#validation`](#validation).
+
+| # | Claim (validated) | Level |
 |---|---|---|
-| 1 | Sonnet can read the cue. With the question withheld, it picks the key on 17 of 18 cue items, 0.94 [Wilson 0.74, 0.99] (chance 0.24) | L2 (Sonnet as a content-blind solver) |
-| 2 | Moving the cue changes Sonnet's accuracy. Same question and key; the wrong-site option carries the key's body (K) or a decoy's body (D). K 0.979 → D 0.875 on 48 pairs, **K − D = 0.104 [0.021, 0.188]** over items; over the 6 subtasks [0.03, 0.20] (6 clusters, so optimistic). All 5 discordant pairs go one way. **Pre-registered verdict: "still cannot tell".** The "yes" rule also required that Sonnet pick the new centre more often than the other distractors under D, and it did not (0.04 vs 0.04) | L4 for Sonnet that option structure moves accuracy; the pre-registered "follows the cue" test **not met** |
-| 3 | Sonnet does not *depend* on the cue for most of its SeqQA cue-subtask accuracy. Under D, with the cue pointing at a wrong option, it still scores 0.875 [0.75, 0.94] (n = 48). On the three subtasks where the answer can be computed from the question it scores 1.00 / 1.00 on AAseq and PCR-seq-enzprimers (6 + 6 pairs) | L4 (Sonnet), small n per subtask |
-| 4 | Haiku, with this prompt: K − D = 0.056 [−0.033, 0.144], n = 90. "Still cannot tell". Haiku shown only the options picks the key on 0.79 of cue items against 0.39 of non-cue items. That gap is at the 99.2nd percentile of 1,000 matched placebo splits. With the question shown, the cue/non-cue gap is at the 51.5th percentile | L4 inconclusive (Haiku); N stratum L2 |
-| 5 | Effect on a SeqQA score. If the six cue subtasks pointed at a wrong option, Sonnet's 15-subtask mean would fall by **0.042 [0.011, 0.073]**; Haiku's by 0.022 [−0.018, 0.062]. Haiku's scores: as benchmarked 0.83 [0.78, 0.89], cue against 0.80 [0.74, 0.85], GC honest-distractor variant 0.80 [0.75, 0.86]. Sonnet's cue-for / cue-against scores are 0.89 / 0.85. Their non-cue part rests on 18 items, so they are a rough estimate | arithmetic on L4 contrasts |
-| 6 | Two key definitions differ from the paper's own description. (a) In both restriction-cloning subtasks the keyed reverse primer is the gene's 3′ end in sense orientation, not reverse-complemented (PCR-seq-enzprimers 40/40 by computation; PCR-gene-enzprimers keys end in a sense stop codon 40/40). App. C.7.1 says the reverse primer was reverse-complemented. (b) AAseq keys are the longest *forward-strand* ORF (40/40). The reverse strand has a longer ORF in 21/40 items, and the question does not name a strand | L1 |
+| 1 | **Lead:** Sonnet can read the cue. With the question withheld, it picks the key on 17 of 18 cue items, 0.94 [Wilson 0.74, 0.99] (chance 0.24). 18 items is a lead, not a measurement | L2 (Sonnet as a content-blind solver), lead |
+| 2 | Moving the cue changes Sonnet's accuracy, **in direction**. Same question and key; the wrong-site option carries the key's body (K) or a decoy's body (D). K 0.979 → D 0.875 on 48 pairs, **K − D = 0.104**, 5 of 48 pairs discordant and all 5 one way: **exact paired p = 0.063** (one-sided 0.031), item bootstrap [0.021, 0.188], subtasks **[0.017, 0.250]** (validator's two-stage bootstrap; auditor reported [0.033, 0.200]). Dropping GC-percent: 0.071, p = 0.25, [0.000, 0.167]. **Pre-registered verdict: "still cannot tell"** (the "yes" rule also required the new centre to be picked more often than the other distractors under D, 0.042 vs 0.039 — not met) | L4 for Sonnet that option structure moves accuracy, direction only; the pre-registered "follows the cue" test **not met** |
+| 3 | **Under this prompt**, Sonnet does not *depend* on the cue for most of its cue-subtask accuracy: under D it still scores 0.875 [0.75, 0.94] (n = 48), and 1.00 on AAseq and PCR-seq-enzprimers (6 + 6 pairs). Claim 4b shows this can be a property of the letter-only prompt | L4 (Sonnet) for this prompt; small n per subtask |
+| 4a | Haiku, with this prompt: K − D = 0.056, items [−0.033, 0.144], exact p = 0.36, n = 90. "Still cannot tell". Subtask interval **[−0.044, 0.156]** (validator; the auditor's [0.022, 0.089] came from a cluster bootstrap that did not resample items and is withdrawn). Haiku shown only the options picks the key on 0.79 of cue items against 0.39 of non-cue items, the 99.2nd percentile of 1,000 matched placebo splits; with the question shown, the 51.5th. Haiku *does* pick the new D centre more often than the other distractors (0.111 vs 0.051) | L4 inconclusive (Haiku) for this prompt; N stratum L2 |
+| 4b | **Validator's finding: the prompt, not the rebuild, is why Haiku's drop here is small.** The same 30 Gibson K/D pairs, same options and order, rendered with the parent audit's prompt ("Think step by step.", no letter-only line, forced choice): **0.867 → 0.600, drop 0.267 [0.100, 0.434], exact p = 0.021** (9 vs 1 discordant), against 0.767 → 0.700 here. Pre-registered in [`validation/v6_prereg_prompt.md`](validation/v6_prereg_prompt.md) before the run | L4 for Haiku on the two Gibson subtasks (n = 30), reproducing the parent's effect size on these rebuilt items |
+| 5 | Effect on a SeqQA score. If the six cue subtasks pointed at a wrong option, Sonnet's 15-subtask mean would fall by **0.042 [0.011, 0.073]**; Haiku's by 0.022 [−0.018, 0.062]. Haiku's score levels: as benchmarked 0.83 [0.78, 0.89], cue against 0.80 [0.74, 0.85], GC honest-distractor variant 0.80 [0.75, 0.86]; Sonnet's cue-for / cue-against 0.89 / 0.85. **The score levels are a lead** (Sonnet's non-cue half is 18 items) and **are not comparable to the paper's human 0.79**: that number scores unsure answers as wrong, the plausible forced-choice human range is 0.81–0.85 (up to 0.87), and Sonnet's 0.851 is inside it with an interval [0.79, 0.90] covering all of it | arithmetic on L4 contrasts; shift measured, levels a lead |
+| 6 | Two key definitions in the benchmark. (a) **An error:** in both restriction-cloning subtasks the keyed reverse primer is the gene's 3′ end in sense orientation, not reverse-complemented (PCR-seq-enzprimers 40/40 sense and 0/40 reverse-complemented by computation; PCR-gene-enzprimers keys end in a sense stop codon 40/40, 0/40 start with a reverse-complemented stop) — while **both Gibson subtasks do reverse-complement, 40/40 each**, so the two restriction subtasks (80 items) contradict App. C.7.1 and their own sister families. (b) **An undisclosed convention, not a mismatch:** AAseq keys are the longest *forward-strand* ORF (40/40) and the reverse strand has a longer ORF in 21/40 items, but App. C.7.12 names no strand, so the paper neither states nor contradicts it. Neither changes which option is correct in any item | L1 |
 
 **Answer to the open question: still cannot tell, by the pre-registered rule.** What can be said:
-- Sonnet can read the cue.
-- Its accuracy falls by about 0.10 when the cue is moved, with an interval excluding 0.
+- Sonnet can read the cue (a lead, 18 items).
+- Its accuracy falls by about 0.10 when the cue is moved: the direction survives dropping any one
+  subtask, but an exact paired test gives p = 0.063 and the effect rests on 5 discordant pairs.
 - It does not follow the decoy centre.
-- Most of its cue-subtask accuracy survives a misleading cue.
+- Most of its cue-subtask accuracy survives a misleading cue **under the letter-only prompt used
+  here**. On Haiku the same contrast quadruples under a step-by-step prompt (claim 4b), and the
+  Sonnet version of that test was not affordable, so this is the main open question now.
 
-So at most a small part of Sonnet's SeqQA score (about 0.04 of the 15-subtask mean; upper bound
-0.07) rests on option structure.
+So on this evidence at most a small part of Sonnet's SeqQA score (about 0.04 of the 15-subtask
+mean; upper bound 0.07) rests on option structure **as elicited here**.
 
 ## The benchmark and what rests on it
 
