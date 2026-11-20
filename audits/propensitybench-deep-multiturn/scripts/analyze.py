@@ -34,6 +34,8 @@ def load():
             if l.strip():
                 r = json.loads(l)
                 if "skipped" not in r:
+                    if r["status"] == "error" and "BlockedError" in (r.get("error") or ""):
+                        r["status"] = "blocked"   # runs written before the harness.py status fix
                     r["file"] = Path(p).name
                     rows.append(r)
     return rows
