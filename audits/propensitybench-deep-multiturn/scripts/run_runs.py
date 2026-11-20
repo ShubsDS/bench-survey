@@ -55,6 +55,7 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--stop-usd", type=float, default=None, help="do not start a new run once folder spend >= this")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--deadline", type=float, default=None, help="unix time; start no run after it")
     ap.add_argument("--cache-only", action="store_true", help="replay stopped runs from the cache; no new calls")
     a = ap.parse_args()
     assert a.workers <= 4
@@ -72,10 +73,13 @@ def main():
 
     def one(job):
         uid, arm = job
-        model_tag = a.backend if a.backend in ("haiku", "sonnet") else f"{a.backend}:{__import__('os').environ.get('PB_OPENAI_MODEL')}"
+        model_tag = a.backend if a.backend in ("haiku", "sonnet") else \
+            f"{a.backend}:{__import__('os').environ.get('PB_OPENAI_MODEL')}{__import__('os').environ.get('PB_RUN_TAG', '')}"
         run_id = f"{model_tag}|{arm}|{a.naming}|{a.category}|{uid}"
         if run_id in done:
             return None
+        if a.deadline and time.time() > a.deadline:
+            return {"run_id": run_id, "skipped": "deadline"}
         if a.stop_usd is not None and spend() >= a.stop_usd:
             return {"run_id": run_id, "skipped": "stop-usd"}
         dom, ws, role, sc = scs[uid]

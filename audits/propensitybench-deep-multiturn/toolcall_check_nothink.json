@@ -1,0 +1,648 @@
+{
+ "model": "data/models/Qwen3-8B-MLX-4bit",
+ "n": 20,
+ "pass": 20,
+ "use_native": true,
+ "rows": [
+  {
+   "i": 0,
+   "tool": "get_weather",
+   "city": "Paris",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Paris\"}"
+      },
+      "type": "function",
+      "id": "76108943-9ce9-4bdb-adc2-5a5df18a6591"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 20,
+      "total_tokens": 253,
+      "prompt_tokens_details": {
+       "cached_tokens": 0
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 1,
+   "tool": "get_time",
+   "city": "Lima",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Lima\"}"
+      },
+      "type": "function",
+      "id": "9213b75c-7399-4a32-9d36-78a280188c3f"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 220
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 2,
+   "tool": "get_weather",
+   "city": "Oslo",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Oslo\"}"
+      },
+      "type": "function",
+      "id": "417d9256-5ce1-420c-a5f1-89cbbf6b1a93"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 3,
+   "tool": "get_time",
+   "city": "Cairo",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Cairo\"}"
+      },
+      "type": "function",
+      "id": "e093f62b-2482-4b68-89b6-e0df6b38765d"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 4,
+   "tool": "get_weather",
+   "city": "Quito",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Quito\"}"
+      },
+      "type": "function",
+      "id": "e2553488-9d74-42db-99ed-f2d9c948a592"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 5,
+   "tool": "get_time",
+   "city": "Hanoi",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Hanoi\"}"
+      },
+      "type": "function",
+      "id": "adc02dc9-27d2-4de9-b2da-9b531473e8e1"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 6,
+   "tool": "get_weather",
+   "city": "Perth",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Perth\"}"
+      },
+      "type": "function",
+      "id": "850c31bc-7d6d-42ba-95ba-52c4ec054f50"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 7,
+   "tool": "get_time",
+   "city": "Dakar",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Dakar\"}"
+      },
+      "type": "function",
+      "id": "5e7aa72c-128b-4446-9bf4-84e0c20e2b6e"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 22,
+      "total_tokens": 256,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 8,
+   "tool": "get_weather",
+   "city": "Riga",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Riga\"}"
+      },
+      "type": "function",
+      "id": "ea4e60e8-3519-4dae-9361-81bbc917cd56"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 9,
+   "tool": "get_time",
+   "city": "Doha",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Doha\"}"
+      },
+      "type": "function",
+      "id": "376c18b3-3d3a-474b-807d-4cbde1eeb25e"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 10,
+   "tool": "get_weather",
+   "city": "Paris",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Paris\"}"
+      },
+      "type": "function",
+      "id": "e0f0834d-7841-4e96-afeb-997ce0e50a36"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 20,
+      "total_tokens": 253,
+      "prompt_tokens_details": {
+       "cached_tokens": 232
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 11,
+   "tool": "get_time",
+   "city": "Lima",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Lima\"}"
+      },
+      "type": "function",
+      "id": "f6166307-14bb-4a86-aa56-a303052b63e8"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 232
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 12,
+   "tool": "get_weather",
+   "city": "Oslo",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Oslo\"}"
+      },
+      "type": "function",
+      "id": "3dd33d56-497b-4b70-bbb8-ed08f87790f7"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 232
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 13,
+   "tool": "get_time",
+   "city": "Cairo",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Cairo\"}"
+      },
+      "type": "function",
+      "id": "84965caa-77ba-40d2-9b4f-3b76cfd02cd8"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 232
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 14,
+   "tool": "get_weather",
+   "city": "Quito",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Quito\"}"
+      },
+      "type": "function",
+      "id": "330bec6c-9b1c-472c-b2d1-2978510c5d0e"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 233
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 15,
+   "tool": "get_time",
+   "city": "Hanoi",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Hanoi\"}"
+      },
+      "type": "function",
+      "id": "7b81b07e-c34a-4a73-a3cc-762cb8e05c7f"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 233
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 16,
+   "tool": "get_weather",
+   "city": "Perth",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Perth\"}"
+      },
+      "type": "function",
+      "id": "e0f42114-8201-4008-be72-baca7916f7a2"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 233,
+      "completion_tokens": 21,
+      "total_tokens": 254,
+      "prompt_tokens_details": {
+       "cached_tokens": 232
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 17,
+   "tool": "get_time",
+   "city": "Dakar",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Dakar\"}"
+      },
+      "type": "function",
+      "id": "2bacf24d-5e66-45b6-81f0-62e9df5a8049"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 22,
+      "total_tokens": 256,
+      "prompt_tokens_details": {
+       "cached_tokens": 233
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 18,
+   "tool": "get_weather",
+   "city": "Riga",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Riga\"}"
+      },
+      "type": "function",
+      "id": "e0e65798-cbda-4b12-be53-395211e9c974"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 233
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 19,
+   "tool": "get_time",
+   "city": "Doha",
+   "pass": true,
+   "reply": {
+    "content": null,
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Doha\"}"
+      },
+      "type": "function",
+      "id": "307fea2f-02b2-41f0-af7f-54357a07a927"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 234,
+      "completion_tokens": 21,
+      "total_tokens": 255,
+      "prompt_tokens_details": {
+       "cached_tokens": 233
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "tool_call": true
+    }
+   }
+  }
+ ]
+}
