@@ -141,7 +141,8 @@ class ClaudeTextBackend:
             if "BudgetExceeded" in type(e).__name__:
                 e.fatal = True
                 raise
-            if "usage polic" in r.lower() or "violat" in r.lower():
+            # same test as the parent's emulate.py:205, plus the policy wording
+            if "can't help with this" in r or "aup" in r.lower() or "usage polic" in r.lower():
                 raise BlockedError(r[:300]) from e
             raise
         self.n += 1

@@ -1,0 +1,352 @@
+{
+ "model": "Model: scenario s has a per-run misaligned probability p_s ~ Beta(mean = base rate, concentration 2),\nshared by all arms (scenario heterogeneity; arms paired by scenario). Shipped (A) and placebo (P) runs\nare Bernoulli(p_s); prohibition-restored (B) runs are Bernoulli(p_s * (1 - r)). Each scenario\ncontributes k runs per arm (k = number of pressure categories run). Intervals: percentile bootstrap\nover scenarios stratified by domain (16 + 16 at n = 32), 400 resamples.",
+ "sims": 300,
+ "boot": 400,
+ "seed": 20261120,
+ "cells": [
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.013333333333333334
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.5,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 1.0,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.05
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.5,
+   "P_yes": 0.006666666666666667,
+   "P_no": null
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 1.0,
+   "P_yes": 0.03666666666666667,
+   "P_no": null
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.0,
+   "P_yes": 0.01,
+   "P_no": 0.08
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.5,
+   "P_yes": 0.1,
+   "P_no": null
+  },
+  {
+   "design": "haiku_affordable",
+   "n_scenarios": 6,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 1.0,
+   "P_yes": 0.54,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.03
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.5,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 1.0,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.04666666666666667
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.5,
+   "P_yes": 0.02666666666666667,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 1.0,
+   "P_yes": 0.09666666666666666,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.0,
+   "P_yes": 0.006666666666666667,
+   "P_no": 0.02666666666666667
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.5,
+   "P_yes": 0.17333333333333334,
+   "P_no": null
+  },
+  {
+   "design": "haiku_10",
+   "n_scenarios": 10,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 1.0,
+   "P_yes": 0.8333333333333334,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.0
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 0.5,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.05,
+   "relative_reduction": 1.0,
+   "P_yes": 0.02,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0033333333333333335,
+   "P_no": 0.03333333333333333
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 0.5,
+   "P_yes": 0.11666666666666667,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.2,
+   "relative_reduction": 1.0,
+   "P_yes": 0.85,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.0033333333333333335
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 0.5,
+   "P_yes": 0.5,
+   "P_no": null
+  },
+  {
+   "design": "one_category_all_32",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 1,
+   "base_rate": 0.5,
+   "relative_reduction": 1.0,
+   "P_yes": 1.0,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.05,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0,
+   "P_no": 0.0
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.05,
+   "relative_reduction": 0.5,
+   "P_yes": 0.0,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.05,
+   "relative_reduction": 1.0,
+   "P_yes": 0.02,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.2,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0033333333333333335,
+   "P_no": 0.51
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.2,
+   "relative_reduction": 0.5,
+   "P_yes": 0.3333333333333333,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.2,
+   "relative_reduction": 1.0,
+   "P_yes": 0.98,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.5,
+   "relative_reduction": 0.0,
+   "P_yes": 0.0033333333333333335,
+   "P_no": 0.8933333333333333
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.5,
+   "relative_reduction": 0.5,
+   "P_yes": 1.0,
+   "P_no": null
+  },
+  {
+   "design": "local_32x6",
+   "n_scenarios": 32,
+   "runs_per_scenario_per_arm": 6,
+   "base_rate": 0.5,
+   "relative_reduction": 1.0,
+   "P_yes": 1.0,
+   "P_no": null
+  }
+ ],
+ "pilot_zero_prob": {
+  "16": {
+   "0.05": 0.4401,
+   "0.1": 0.1853,
+   "0.2": 0.0281,
+   "0.5": 0.0
+  },
+  "20": {
+   "0.05": 0.3585,
+   "0.1": 0.1216,
+   "0.2": 0.0115,
+   "0.5": 0.0
+  },
+  "32": {
+   "0.05": 0.1937,
+   "0.1": 0.0343,
+   "0.2": 0.0008,
+   "0.5": 0.0
+  }
+ }
+}
