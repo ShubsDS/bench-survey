@@ -1,0 +1,32 @@
+{
+ "7268767a": {
+  "n": 40,
+  "set_jaccard_centroid": 0.725,
+  "p": 0.001
+ },
+ "10866fa8": {
+  "n": 40,
+  "set_jaccard_centroid": 0.725,
+  "p": 0.001
+ },
+ "8e6bb002": {
+  "n": 40,
+  "set_jaccard_centroid": 0.725,
+  "p": 0.001
+ },
+ "4709d14f": {
+  "n": 40,
+  "set_jaccard_centroid": 0.1958,
+  "p": 0.966
+ },
+ "8137378e": {
+  "n": 40,
+  "set_jaccard_centroid": 0.1958,
+  "p": 0.953
+ },
+ "5c77cec6": {
+  "n": 40,
+  "set_jaccard_centroid": 0.1958,
+  "p": 0.9451
+ }
+}
