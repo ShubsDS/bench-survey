@@ -1,0 +1,3156 @@
+{
+ "q1_versions": {
+  "hf@7268767a": {
+   "date": "2024-07-16",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [
+    "RE-seq-numfrags"
+   ],
+   "flaw_present": true,
+   "r1_S_mean": 1.0,
+   "r1_S_ci_subtasks": [
+    1.0,
+    1.0
+   ],
+   "r2_S_mean": 0.9167,
+   "r2_S_ci_subtasks": [
+    0.75,
+    1.0
+   ],
+   "r1_all_mean": 0.6169,
+   "r1_all_ci_subtasks": [
+    0.4239,
+    0.8002
+   ],
+   "r2_all_mean": 0.5457,
+   "r2_all_ci_subtasks": [
+    0.3496,
+    0.7436
+   ],
+   "placebo_all_mean": 0.2417,
+   "placebo_all_ci_subtasks": [
+    0.2133,
+    0.27
+   ],
+   "r1_F_mean": 0.3616,
+   "r2_F_mean": 0.2984,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": {
+    "ids_shared": 400,
+    "ids_only_here": 200,
+    "ids_only_in_pin": 200,
+    "key_changed": 0,
+    "option_set_changed": 0,
+    "new_ids_by_subtask": {
+     "PCR-gene-enzprimers": 40,
+     "PCR-geneprimers-enz": 40,
+     "PCR-seq-enzprimers": 40,
+     "RE-seq-lenfrags": 40,
+     "RE-seq-numfrags": 40
+    }
+   },
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8252,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.0625,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.0455,
+      0.0833
+     ],
+     "r2": 0.0375,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0227,
+      0.0556
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5305,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.275,
+     "placebo_p": 0.3926,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.6625,
+     "r1_p": 0.001,
+     "r1_halves": [
+      0.6667,
+      0.66
+     ],
+     "r2": 0.225,
+     "r2_p": 0.6763,
+     "r2_halves": [
+      0.2333,
+      0.22
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1628,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.225,
+     "placebo_p": 0.3816,
+     "carries_cue": true
+    }
+   }
+  },
+  "hf@10866fa8": {
+   "date": "2024-08-20",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [
+    "RE-seq-numfrags"
+   ],
+   "flaw_present": true,
+   "r1_S_mean": 1.0,
+   "r1_S_ci_subtasks": [
+    1.0,
+    1.0
+   ],
+   "r2_S_mean": 0.9167,
+   "r2_S_ci_subtasks": [
+    0.75,
+    1.0
+   ],
+   "r1_all_mean": 0.6169,
+   "r1_all_ci_subtasks": [
+    0.4239,
+    0.8002
+   ],
+   "r2_all_mean": 0.5457,
+   "r2_all_ci_subtasks": [
+    0.3496,
+    0.7436
+   ],
+   "placebo_all_mean": 0.2417,
+   "placebo_all_ci_subtasks": [
+    0.2133,
+    0.27
+   ],
+   "r1_F_mean": 0.3616,
+   "r2_F_mean": 0.2984,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": {
+    "ids_shared": 400,
+    "ids_only_here": 200,
+    "ids_only_in_pin": 200,
+    "key_changed": 0,
+    "option_set_changed": 0,
+    "new_ids_by_subtask": {
+     "PCR-gene-enzprimers": 40,
+     "PCR-geneprimers-enz": 40,
+     "PCR-seq-enzprimers": 40,
+     "RE-seq-lenfrags": 40,
+     "RE-seq-numfrags": 40
+    }
+   },
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8252,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.0625,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.0455,
+      0.0833
+     ],
+     "r2": 0.0375,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0227,
+      0.0556
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5305,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.275,
+     "placebo_p": 0.3926,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.6625,
+     "r1_p": 0.001,
+     "r1_halves": [
+      0.6667,
+      0.66
+     ],
+     "r2": 0.225,
+     "r2_p": 0.6763,
+     "r2_halves": [
+      0.2333,
+      0.22
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1628,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.225,
+     "placebo_p": 0.3816,
+     "carries_cue": true
+    }
+   }
+  },
+  "hf@8e6bb002": {
+   "date": "2024-12-18",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [
+    "RE-seq-numfrags"
+   ],
+   "flaw_present": true,
+   "r1_S_mean": 1.0,
+   "r1_S_ci_subtasks": [
+    1.0,
+    1.0
+   ],
+   "r2_S_mean": 0.9167,
+   "r2_S_ci_subtasks": [
+    0.75,
+    1.0
+   ],
+   "r1_all_mean": 0.6169,
+   "r1_all_ci_subtasks": [
+    0.4239,
+    0.8002
+   ],
+   "r2_all_mean": 0.5457,
+   "r2_all_ci_subtasks": [
+    0.3496,
+    0.7436
+   ],
+   "placebo_all_mean": 0.2417,
+   "placebo_all_ci_subtasks": [
+    0.2133,
+    0.27
+   ],
+   "r1_F_mean": 0.3616,
+   "r2_F_mean": 0.2984,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": {
+    "ids_shared": 400,
+    "ids_only_here": 200,
+    "ids_only_in_pin": 200,
+    "key_changed": 0,
+    "option_set_changed": 0,
+    "new_ids_by_subtask": {
+     "PCR-gene-enzprimers": 40,
+     "PCR-geneprimers-enz": 40,
+     "PCR-seq-enzprimers": 40,
+     "RE-seq-lenfrags": 40,
+     "RE-seq-numfrags": 40
+    }
+   },
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8252,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.0625,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.0455,
+      0.0833
+     ],
+     "r2": 0.0375,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0227,
+      0.0556
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5305,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.275,
+     "placebo_p": 0.3926,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.6625,
+     "r1_p": 0.001,
+     "r1_halves": [
+      0.6667,
+      0.66
+     ],
+     "r2": 0.225,
+     "r2_p": 0.6763,
+     "r2_halves": [
+      0.2333,
+      0.22
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1628,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.225,
+     "placebo_p": 0.3816,
+     "carries_cue": true
+    }
+   }
+  },
+  "hf@4709d14f": {
+   "date": "2025-02-19",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [],
+   "flaw_present": true,
+   "r1_S_mean": 0.9958,
+   "r1_S_ci_subtasks": [
+    0.9875,
+    1.0
+   ],
+   "r2_S_mean": 0.9125,
+   "r2_S_ci_subtasks": [
+    0.7458,
+    1.0
+   ],
+   "r1_all_mean": 0.5546,
+   "r1_all_ci_subtasks": [
+    0.3705,
+    0.7272
+   ],
+   "r2_all_mean": 0.5137,
+   "r2_all_ci_subtasks": [
+    0.3461,
+    0.6992
+   ],
+   "placebo_all_mean": 0.2433,
+   "placebo_all_ci_subtasks": [
+    0.2133,
+    0.2733
+   ],
+   "r1_F_mean": 0.2604,
+   "r2_F_mean": 0.2479,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": {
+    "ids_shared": 480,
+    "ids_only_here": 120,
+    "ids_only_in_pin": 120,
+    "key_changed": 0,
+    "option_set_changed": 0,
+    "new_ids_by_subtask": {
+     "PCR-gene-enzprimers": 40,
+     "PCR-geneprimers-enz": 40,
+     "PCR-seq-enzprimers": 40
+    }
+   },
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.975,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.9545,
+      1.0
+     ],
+     "placebo": 0.175,
+     "placebo_p": 0.8951,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3187,
+     "r1_p": 0.05,
+     "r1_halves": [
+      0.27,
+      0.4
+     ],
+     "r2": 0.25,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.25,
+      0.25
+     ],
+     "placebo": 0.275,
+     "placebo_p": 0.3816,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.975,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      0.9375
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5644,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2458,
+     "r1_p": 0.5245,
+     "r1_halves": [
+      0.25,
+      0.2424
+     ],
+     "r2": 0.2333,
+     "r2_p": 0.5994,
+     "r2_halves": [
+      0.2778,
+      0.197
+     ],
+     "placebo": 0.35,
+     "placebo_p": 0.1029,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 0.5504,
+     "r1_halves": [
+      0.3529,
+      0.1739
+     ],
+     "r2": 0.325,
+     "r2_p": 0.044,
+     "r2_halves": [
+      0.3235,
+      0.3261
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5425,
+     "carries_cue": false
+    }
+   }
+  },
+  "hf@8137378e": {
+   "date": "2025-07-15",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [],
+   "flaw_present": true,
+   "r1_S_mean": 0.9958,
+   "r1_S_ci_subtasks": [
+    0.9875,
+    1.0
+   ],
+   "r2_S_mean": 0.9125,
+   "r2_S_ci_subtasks": [
+    0.7458,
+    1.0
+   ],
+   "r1_all_mean": 0.5546,
+   "r1_all_ci_subtasks": [
+    0.3705,
+    0.7272
+   ],
+   "r2_all_mean": 0.5137,
+   "r2_all_ci_subtasks": [
+    0.3461,
+    0.6992
+   ],
+   "placebo_all_mean": 0.2433,
+   "placebo_all_ci_subtasks": [
+    0.2133,
+    0.2733
+   ],
+   "r1_F_mean": 0.2604,
+   "r2_F_mean": 0.2479,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": {
+    "ids_shared": 480,
+    "ids_only_here": 120,
+    "ids_only_in_pin": 120,
+    "key_changed": 0,
+    "option_set_changed": 0,
+    "new_ids_by_subtask": {
+     "PCR-gene-enzprimers": 40,
+     "PCR-geneprimers-enz": 40,
+     "PCR-seq-enzprimers": 40
+    }
+   },
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.975,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.9545,
+      1.0
+     ],
+     "placebo": 0.175,
+     "placebo_p": 0.8951,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3187,
+     "r1_p": 0.05,
+     "r1_halves": [
+      0.27,
+      0.4
+     ],
+     "r2": 0.25,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.25,
+      0.25
+     ],
+     "placebo": 0.275,
+     "placebo_p": 0.3816,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.975,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      0.9375
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5644,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2458,
+     "r1_p": 0.5245,
+     "r1_halves": [
+      0.25,
+      0.2424
+     ],
+     "r2": 0.2333,
+     "r2_p": 0.5994,
+     "r2_halves": [
+      0.2778,
+      0.197
+     ],
+     "placebo": 0.35,
+     "placebo_p": 0.1029,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 0.5504,
+     "r1_halves": [
+      0.3529,
+      0.1739
+     ],
+     "r2": 0.325,
+     "r2_p": 0.044,
+     "r2_halves": [
+      0.3235,
+      0.3261
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5425,
+     "carries_cue": false
+    }
+   }
+  },
+  "hf@5c77cec6": {
+   "date": "2025-09-27",
+   "n_items": 600,
+   "S_carrying_cue": [
+    "ORF-seq-AAseq",
+    "PCR-gene-enzprimers",
+    "PCR-seq-enzprimers",
+    "PCR-gene-gibshindprimers",
+    "PCR-gene-gibssmaprimers",
+    "Prop-seq-gcpercent"
+   ],
+   "F_carrying_cue": [],
+   "flaw_present": true,
+   "r1_S_mean": 1.0,
+   "r1_S_ci_subtasks": [
+    1.0,
+    1.0
+   ],
+   "r2_S_mean": 0.9125,
+   "r2_S_ci_subtasks": [
+    0.7458,
+    1.0
+   ],
+   "r1_all_mean": 0.5558,
+   "r1_all_ci_subtasks": [
+    0.3697,
+    0.7313
+   ],
+   "r2_all_mean": 0.5137,
+   "r2_all_ci_subtasks": [
+    0.3461,
+    0.6992
+   ],
+   "placebo_all_mean": 0.2583,
+   "placebo_all_ci_subtasks": [
+    0.2217,
+    0.295
+   ],
+   "r1_F_mean": 0.2597,
+   "r2_F_mean": 0.2479,
+   "dbqa_variant_multi_sequence": {
+    "n": 80,
+    "r1": 1.0,
+    "r2": 1.0
+   },
+   "vs_parent_pin": null,
+   "per_subtask": {
+    "ORF-seq-AAid": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2687,
+     "r1_p": 0.3387,
+     "r1_halves": [
+      0.325,
+      0.2125
+     ],
+     "r2": 0.2146,
+     "r2_p": 0.7892,
+     "r2_halves": [
+      0.1542,
+      0.275
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5774,
+     "carries_cue": false
+    },
+    "ORF-seq-AAseq": {
+     "n": 40,
+     "chance": 0.2,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.5914,
+     "carries_cue": true
+    },
+    "ORF-seq-numlen": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3937,
+     "r1_p": 0.002,
+     "r1_halves": [
+      0.3,
+      0.45
+     ],
+     "r2": 0.3875,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.3,
+      0.44
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8182,
+     "carries_cue": false
+    },
+    "ORF-transeff": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.1667,
+     "r1_p": 0.9291,
+     "r1_halves": [
+      0.1458,
+      0.1806
+     ],
+     "r2": 0.0,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.0,
+      0.0
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.962,
+     "carries_cue": false
+    },
+    "PCR-gene-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.975,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.9565,
+      1.0
+     ],
+     "placebo": 0.4,
+     "placebo_p": 0.031,
+     "carries_cue": true
+    },
+    "PCR-gene-gibshindprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1718,
+     "carries_cue": true
+    },
+    "PCR-gene-gibssmaprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.325,
+     "placebo_p": 0.1758,
+     "carries_cue": true
+    },
+    "PCR-geneprimers-enz": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.3125,
+     "r1_p": 0.1089,
+     "r1_halves": [
+      0.2344,
+      0.3646
+     ],
+     "r2": 0.25,
+     "r2_p": 1.0,
+     "r2_halves": [
+      0.25,
+      0.25
+     ],
+     "placebo": 0.225,
+     "placebo_p": 0.6583,
+     "carries_cue": false
+    },
+    "PCR-len-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.175,
+     "r1_p": 0.9011,
+     "r1_halves": [
+      0.2222,
+      0.1364
+     ],
+     "r2": 0.3333,
+     "r2_p": 0.0989,
+     "r2_halves": [
+      0.1667,
+      0.4697
+     ],
+     "placebo": 0.2,
+     "placebo_p": 0.8112,
+     "carries_cue": false
+    },
+    "PCR-primers-len": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 1.0,
+     "r1_halves": [
+      0.25,
+      0.25
+     ],
+     "r2": 0.3,
+     "r2_p": 0.1189,
+     "r2_halves": [
+      0.3214,
+      0.2885
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2957,
+     "carries_cue": false
+    },
+    "PCR-seq-enzprimers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 1.0,
+     "r2_p": 0.001,
+     "r2_halves": [
+      1.0,
+      1.0
+     ],
+     "placebo": 0.3,
+     "placebo_p": 0.2897,
+     "carries_cue": true
+    },
+    "PCR-seq-primers": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.275,
+     "r1_p": 0.4066,
+     "r1_halves": [
+      0.2609,
+      0.2941
+     ],
+     "r2": 0.1875,
+     "r2_p": 0.8701,
+     "r2_halves": [
+      0.1957,
+      0.1765
+     ],
+     "placebo": 0.15,
+     "placebo_p": 0.967,
+     "carries_cue": false
+    },
+    "Prop-seq-gcpercent": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 1.0,
+     "r1_p": 0.001,
+     "r1_halves": [
+      1.0,
+      1.0
+     ],
+     "r2": 0.5,
+     "r2_p": 0.001,
+     "r2_halves": [
+      0.5,
+      0.5
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5504,
+     "carries_cue": true
+    },
+    "RE-seq-lenfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.2458,
+     "r1_p": 0.5245,
+     "r1_halves": [
+      0.25,
+      0.2424
+     ],
+     "r2": 0.2333,
+     "r2_p": 0.5994,
+     "r2_halves": [
+      0.2778,
+      0.197
+     ],
+     "placebo": 0.35,
+     "placebo_p": 0.1029,
+     "carries_cue": false
+    },
+    "RE-seq-numfrags": {
+     "n": 40,
+     "chance": 0.25,
+     "r1": 0.25,
+     "r1_p": 0.5504,
+     "r1_halves": [
+      0.3529,
+      0.1739
+     ],
+     "r2": 0.325,
+     "r2_p": 0.044,
+     "r2_halves": [
+      0.3235,
+      0.3261
+     ],
+     "placebo": 0.25,
+     "placebo_p": 0.5425,
+     "carries_cue": false
+    }
+   }
+  }
+ },
+ "q1_hfbio_curated": {
+  "ORF-transeff": {
+   "n": 40,
+   "chance": 0.25,
+   "r1": 0.1667,
+   "r1_p": 0.9371,
+   "r1_halves": [
+    0.1458,
+    0.1806
+   ],
+   "r2": 0.0,
+   "r2_p": 1.0,
+   "r2_halves": [
+    0.0,
+    0.0
+   ],
+   "placebo": 0.175,
+   "placebo_p": 0.8861,
+   "placebo_halves": [
+    0.25,
+    0.125
+   ],
+   "carries_cue": false
+  },
+  "PCR-geneprimers-enz": {
+   "n": 40,
+   "chance": 0.25,
+   "r1": 0.3125,
+   "r1_p": 0.1279,
+   "r1_halves": [
+    0.2344,
+    0.3646
+   ],
+   "r2": 0.25,
+   "r2_p": 1.0,
+   "r2_halves": [
+    0.25,
+    0.25
+   ],
+   "placebo": 0.225,
+   "placebo_p": 0.6474,
+   "placebo_halves": [
+    0.3125,
+    0.1667
+   ],
+   "carries_cue": false
+  },
+  "PCR-seq-primers": {
+   "n": 40,
+   "chance": 0.25,
+   "r1": 0.275,
+   "r1_p": 0.4226,
+   "r1_halves": [
+    0.2609,
+    0.2941
+   ],
+   "r2": 0.1875,
+   "r2_p": 0.8661,
+   "r2_halves": [
+    0.1957,
+    0.1765
+   ],
+   "placebo": 0.15,
+   "placebo_p": 0.966,
+   "placebo_halves": [
+    0.1304,
+    0.1765
+   ],
+   "carries_cue": false
+  }
+ },
+ "q1_labbench2": {
+  "report_files": 201,
+  "cases": 23721,
+  "cases_with_lettered_list_regex_hits": 10,
+  "lettered_hits_by_task": {
+   "cloning:ae62bcdb-197b-4815-991f-cb7a9c151ff6": 10
+  },
+  "unique_task_ids": 1912,
+  "grading_dispatch": {
+   "evals/evaluators.py:212": "cloning and seqqa2 -> RewardFunctionEvaluator (computed validators)",
+   "evals/evaluators.py:131-175": "seqqa2: validator from registry by type, answer parsed by regex",
+   "evals/evaluators.py:105": "cloning: cloning_reward against assembled ground truth",
+   "evals/evaluators.py:218": "figqa2/tableqa2/suppqa2 -> LLM judge, exact-match prompt",
+   "evals/evaluators.py:72-73": "LLM judge verdict 'unsure' scored 0.0",
+   "src/labbench2/seqqa2/validate_mutation_restriction.py:119": "answer 'None' parsed as the empty set"
+  }
+ },
+ "lead_labbench2_seqqa2": {
+  "constant_answer_ceiling_by_type": {
+   "amplicon_gc": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "ba3911bd2e"
+   },
+   "amplicon_length": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "f70226ece5"
+   },
+   "codon_optimization": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "3a02ecee97"
+   },
+   "enzyme_kinetics": {
+    "n": 20,
+    "distinct_expected": 19,
+    "modal_share": 0.1,
+    "modal_is_None": false,
+    "modal_sha1": "70142f6647"
+   },
+   "gc_content": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "8b6ed61a97"
+   },
+   "gibson_primers": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "3faeff5713"
+   },
+   "molecular_weight": {
+    "n": 20,
+    "distinct_expected": 18,
+    "modal_share": 0.1,
+    "modal_is_None": false,
+    "modal_sha1": "7808b90456"
+   },
+   "msa_scoring": {
+    "n": 20,
+    "distinct_expected": 10,
+    "modal_share": 0.25,
+    "modal_is_None": false,
+    "modal_sha1": "b98f8fca7f"
+   },
+   "mutation_restriction": {
+    "n": 20,
+    "distinct_expected": 3,
+    "modal_share": 0.85,
+    "modal_is_None": true,
+    "modal_sha1": "6eef664840"
+   },
+   "mutation_synonymous": {
+    "n": 20,
+    "distinct_expected": 12,
+    "modal_share": 0.15,
+    "modal_is_None": false,
+    "modal_sha1": "c3156e00d3"
+   },
+   "oligo_design": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "3462ab296d"
+   },
+   "orf_amino_acid": {
+    "n": 20,
+    "distinct_expected": 12,
+    "modal_share": 0.15,
+    "modal_is_None": false,
+    "modal_sha1": "c3156e00d3"
+   },
+   "pairwise_distances": {
+    "n": 20,
+    "distinct_expected": 14,
+    "modal_share": 0.15,
+    "modal_is_None": false,
+    "modal_sha1": "b98f8fca7f"
+   },
+   "primer_design": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "ccd6696c2a"
+   },
+   "primer_interactions": {
+    "n": 20,
+    "distinct_expected": 17,
+    "modal_share": 0.2,
+    "modal_is_None": true,
+    "modal_sha1": "6eef664840"
+   },
+   "protein_hydrophobicity": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "6470d60994"
+   },
+   "restriction_counts": {
+    "n": 20,
+    "distinct_expected": 4,
+    "modal_share": 0.55,
+    "modal_is_None": false,
+    "modal_sha1": "356a192b79"
+   },
+   "restriction_digest": {
+    "n": 20,
+    "distinct_expected": 20,
+    "modal_share": 0.05,
+    "modal_is_None": false,
+    "modal_sha1": "54fa0830ab"
+   },
+   "sequence_complexity": {
+    "n": 20,
+    "distinct_expected": 13,
+    "modal_share": 0.15,
+    "modal_is_None": false,
+    "modal_sha1": "68146427d8"
+   },
+   "tm_calculations": {
+    "n": 20,
+    "distinct_expected": 15,
+    "modal_share": 0.15,
+    "modal_is_None": false,
+    "modal_sha1": "788235c7a7"
+   }
+  },
+  "mutation_restriction": {
+   "claude-opus-4-5": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.0,
+    "acc_key_none": 0.0,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.0,
+    "constant_none_baseline": 0.85
+   },
+   "claude-opus-4-5@tools,high": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.0,
+    "acc_key_none": 0.0,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.0,
+    "constant_none_baseline": 0.85
+   },
+   "claude-opus-4-6": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.0,
+    "acc_key_none": 0.0,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.0,
+    "constant_none_baseline": 0.85
+   },
+   "claude-opus-4-6@tools,high": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.0,
+    "acc_key_none": 0.0,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.0,
+    "constant_none_baseline": 0.85
+   },
+   "gemini-3-pro-preview": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.85,
+    "acc_key_none": 0.9412,
+    "acc_key_enzyme": 0.3333,
+    "answered_none_rate": 0.35,
+    "constant_none_baseline": 0.85
+   },
+   "gemini-3-pro-preview@tools,high": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.6,
+    "acc_key_none": 0.7059,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.0,
+    "constant_none_baseline": 0.85
+   },
+   "gpt-5-2-pro": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.7,
+    "acc_key_none": 0.8235,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.85,
+    "constant_none_baseline": 0.85
+   },
+   "gpt-5-2-pro@tools,high": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.8,
+    "acc_key_none": 0.9412,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.95,
+    "constant_none_baseline": 0.85
+   },
+   "gpt-5-2": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.35,
+    "acc_key_none": 0.4118,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.45,
+    "constant_none_baseline": 0.85
+   },
+   "gpt-5-2@tools,high": {
+    "n": 20,
+    "n_key_none": 17,
+    "acc": 0.7,
+    "acc_key_none": 0.8235,
+    "acc_key_enzyme": 0.0,
+    "answered_none_rate": 0.85,
+    "constant_none_baseline": 0.85
+   }
+  },
+  "inject_refusals": {
+   "claude-opus-4-5": {
+    "n": 300,
+    "refused": 69,
+    "refused_by_type": {
+     "amplicon_gc": 20,
+     "codon_optimization": 11,
+     "mutation_restriction": 20,
+     "mutation_synonymous": 13,
+     "primer_interactions": 1,
+     "restriction_digest": 4
+    }
+   },
+   "claude-opus-4-5@tools,high": {
+    "n": 300,
+    "refused": 40,
+    "refused_by_type": {
+     "amplicon_gc": 20,
+     "mutation_restriction": 20
+    }
+   },
+   "claude-opus-4-6": {
+    "n": 400,
+    "refused": 136,
+    "refused_by_type": {
+     "amplicon_gc": 20,
+     "amplicon_length": 20,
+     "codon_optimization": 7,
+     "gibson_primers": 20,
+     "mutation_restriction": 20,
+     "mutation_synonymous": 9,
+     "oligo_design": 20,
+     "primer_design": 20
+    }
+   },
+   "claude-opus-4-6@tools,high": {
+    "n": 400,
+    "refused": 125,
+    "refused_by_type": {
+     "amplicon_gc": 20,
+     "amplicon_length": 20,
+     "gibson_primers": 20,
+     "mutation_restriction": 20,
+     "mutation_synonymous": 2,
+     "oligo_design": 20,
+     "primer_design": 20,
+     "restriction_counts": 3
+    }
+   },
+   "gemini-3-pro-preview": {
+    "n": 400,
+    "refused": 0,
+    "refused_by_type": {}
+   },
+   "gemini-3-pro-preview@tools,high": {
+    "n": 400,
+    "refused": 0,
+    "refused_by_type": {}
+   },
+   "gpt-5-2-pro": {
+    "n": 300,
+    "refused": 0,
+    "refused_by_type": {}
+   },
+   "gpt-5-2-pro@tools,high": {
+    "n": 295,
+    "refused": 0,
+    "refused_by_type": {}
+   },
+   "gpt-5-2": {
+    "n": 300,
+    "refused": 0,
+    "refused_by_type": {}
+   },
+   "gpt-5-2@tools,high": {
+    "n": 300,
+    "refused": 0,
+    "refused_by_type": {}
+   }
+  },
+  "inject_means": {
+   "claude-opus-4-5": 0.41,
+   "claude-opus-4-5@tools,high": 0.57,
+   "claude-opus-4-6": 0.345,
+   "claude-opus-4-6@tools,high": 0.4425,
+   "gemini-3-pro-preview": 0.4925,
+   "gemini-3-pro-preview@tools,high": 0.525,
+   "gpt-5-2-pro": 0.5933,
+   "gpt-5-2-pro@tools,high": 0.6305,
+   "gpt-5-2": 0.3367,
+   "gpt-5-2@tools,high": 0.66
+  },
+  "label": "post hoc; 'answered_none_rate' uses truncated answers in the reports and is a lower bound"
+ },
+ "lead_numfrags_2024": {
+  "paper_full_set": {
+   "accuracy": {
+    "human": 0.71,
+    "claude-3-5-sonnet": 0.1,
+    "claude-3-opus": 0.13,
+    "gemini-1.5-pro": 0.17,
+    "gpt-4o": 0.09,
+    "gpt-4-turbo": 0.12,
+    "claude-3-haiku": 0.12,
+    "llama-3-70b": 0.15
+   },
+   "precision": {
+    "human": 0.74,
+    "claude-3-5-sonnet": 0.28,
+    "claude-3-opus": 0.18,
+    "gemini-1.5-pro": 0.22,
+    "gpt-4o": 0.11,
+    "gpt-4-turbo": 0.22,
+    "claude-3-haiku": 0.12,
+    "llama-3-70b": 0.16
+   },
+   "coverage": {
+    "human": 0.96,
+    "claude-3-5-sonnet": 0.35,
+    "claude-3-opus": 0.76,
+    "gemini-1.5-pro": 0.75,
+    "gpt-4o": 0.81,
+    "gpt-4-turbo": 0.54,
+    "claude-3-haiku": 0.97,
+    "llama-3-70b": 0.96
+   }
+  },
+  "rule_on_2024_public_release": {
+   "n": 40,
+   "chance": 0.2,
+   "r1": 1.0,
+   "r1_p": 0.001,
+   "r1_halves": [
+    1.0,
+    1.0
+   ],
+   "r2": 1.0,
+   "r2_p": 0.001,
+   "r2_halves": [
+    1.0,
+    1.0
+   ],
+   "placebo": 0.225,
+   "placebo_p": 0.3816,
+   "placebo_halves": [
+    0.2381,
+    0.2105
+   ],
+   "carries_cue": true
+  },
+  "label": "post hoc; the paper's tables cover public+private items"
+ },
+ "q2_q3_exposure": {
+  "human_seqqa": {
+   "all15_unsure_wrong": 0.7893,
+   "S6_unsure_wrong": 0.8267,
+   "F9_unsure_wrong": 0.7644,
+   "all15_chance_credit": 0.8085,
+   "S6_chance_credit": 0.8371,
+   "F9_chance_credit": 0.7894,
+   "F8_unsure_wrong_2024_split": 0.7712,
+   "note": "paper Tables 2 and 4, full set (50 per subtask), mean over subtasks; chance credit = acc + (1-cov)/k, k from public items"
+  },
+  "claims": [
+   {
+    "label": "US/UK AISI, Sonnet 3.5 (new), Python tools",
+    "model": "claude-3.5-sonnet-new",
+    "score": 0.86,
+    "date": "2024-11",
+    "human_line_used": 0.81,
+    "claim": "\"slightly better than human experts on SeqQA\"; human = paper accuracy with chance credit for abstentions",
+    "source": "NIST joint report 2024-11-19, Fig. 4.2, p. 8",
+    "score_read_as": "read from a figure (by eye)",
+    "revision_assumed": "hf@10866fa8",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent",
+     "RE-seq-numfrags"
+    ],
+    "cue_share_w": 0.4667,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.7375,
+    "nonCue_readingB_same_accuracy": 0.86,
+    "human_nonCue_unsure_wrong": 0.7712,
+    "A_minus_human_nonCue": -0.0337,
+    "B_minus_human_nonCue": 0.0888,
+    "score_minus_line": 0.05
+   },
+   {
+    "label": "US/UK AISI, o1, Python tools",
+    "model": "o1",
+    "score": 0.77,
+    "date": "2024-12",
+    "human_line_used": 0.81,
+    "claim": "\"approaching the performance of human experts\"",
+    "source": "NIST joint report o1 2024-12, Fig. 10.1, p. 19",
+    "score_read_as": "read from a figure (by eye)",
+    "revision_assumed": "hf@8e6bb002",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent",
+     "RE-seq-numfrags"
+    ],
+    "cue_share_w": 0.4667,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.5687,
+    "nonCue_readingB_same_accuracy": 0.77,
+    "human_nonCue_unsure_wrong": 0.7712,
+    "A_minus_human_nonCue": -0.2025,
+    "B_minus_human_nonCue": -0.0012,
+    "score_minus_line": -0.04
+   },
+   {
+    "label": "Anthropic Claude 4 card, Opus 4 best k-shot",
+    "model": "claude-opus-4",
+    "score": 0.79,
+    "date": "2025-05",
+    "human_line_used": 0.79,
+    "claim": "\"reaches or exceeds the human baseline\"",
+    "source": "Claude 4 system card \u00a77.2.4.7, Fig. 7.2.4.7.A, p. 100",
+    "score_read_as": "read from a figure (by eye)",
+    "revision_assumed": "hf@4709d14f",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.65,
+    "nonCue_readingB_same_accuracy": 0.79,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.1144,
+    "B_minus_human_nonCue": 0.0256,
+    "score_minus_line": 0.0
+   },
+   {
+    "label": "Anthropic Opus 4.5 card, Opus 4.1",
+    "model": "claude-opus-4.1",
+    "score": 0.785,
+    "date": "2025-11",
+    "human_line_used": 0.79,
+    "claim": "(figure only)",
+    "source": "Opus 4.5 card Fig. 7.2.4.4.A, p. 126",
+    "score_read_as": "bar label printed in figure",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.6417,
+    "nonCue_readingB_same_accuracy": 0.785,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.1227,
+    "B_minus_human_nonCue": 0.0206,
+    "score_minus_line": -0.005
+   },
+   {
+    "label": "Anthropic Opus 4.5 card, Sonnet 4.5",
+    "model": "claude-sonnet-4.5",
+    "score": 0.78,
+    "date": "2025-11",
+    "human_line_used": 0.79,
+    "claim": "Sonnet 4.5 card: \"reached or exceeded the human baseline in 3/4 evaluations\"",
+    "source": "Opus 4.5 card Fig. 7.2.4.4.A, p. 126; Sonnet 4.5 card \u00a79.2.4.4",
+    "score_read_as": "bar label printed in figure",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.6333,
+    "nonCue_readingB_same_accuracy": 0.78,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.1311,
+    "B_minus_human_nonCue": 0.0156,
+    "score_minus_line": -0.01
+   },
+   {
+    "label": "Anthropic Opus 4.5 card, Opus 4.5",
+    "model": "claude-opus-4.5",
+    "score": 0.8517,
+    "date": "2025-11",
+    "human_line_used": 0.79,
+    "claim": "\"every evaluation except FigQA exceeded the human baseline\"",
+    "source": "Opus 4.5 card \u00a77.2.4.4, p. 126",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.7528,
+    "nonCue_readingB_same_accuracy": 0.8517,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.0116,
+    "B_minus_human_nonCue": 0.0873,
+    "score_minus_line": 0.0617
+   },
+   {
+    "label": "Anthropic Opus 4.1 addendum",
+    "model": "claude-opus-4.1",
+    "score": 0.71,
+    "date": "2025-08",
+    "human_line_used": null,
+    "claim": "(no human comparison in text)",
+    "source": "Opus 4.1 addendum \u00a76.3.1.2",
+    "score_read_as": "text",
+    "revision_assumed": "hf@8137378e",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.5167,
+    "nonCue_readingB_same_accuracy": 0.71,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.2477,
+    "B_minus_human_nonCue": -0.0544,
+    "score_minus_line": null
+   },
+   {
+    "label": "Anthropic Haiku 4.5 card",
+    "model": "claude-haiku-4.5",
+    "score": 0.66,
+    "date": "2025-10",
+    "human_line_used": null,
+    "claim": "(no human comparison in text)",
+    "source": "Haiku 4.5 card \u00a76.2.3.1",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.4333,
+    "nonCue_readingB_same_accuracy": 0.66,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": -0.3311,
+    "B_minus_human_nonCue": -0.1044,
+    "score_minus_line": null
+   },
+   {
+    "label": "Concordia AI 2025-Q4",
+    "model": "gemini-3-pro-preview",
+    "score": 0.87,
+    "date": "2025-12",
+    "human_line_used": 0.79,
+    "claim": "\"first instance of models surpassing human experts in sequence understanding (87 vs 79)\"",
+    "source": "airiskmonitor.net report 2025-Q4",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.7833,
+    "nonCue_readingB_same_accuracy": 0.87,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.0189,
+    "B_minus_human_nonCue": 0.1056,
+    "score_minus_line": 0.08
+   },
+   {
+    "label": "Concordia AI 2026-Q1",
+    "model": "gpt-5.4",
+    "score": 0.875,
+    "date": "2026-03",
+    "human_line_used": 0.79,
+    "claim": "human expert baseline of 79",
+    "source": "airiskmonitor.net report 2026-Q1 (via delegated reading)",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.7917,
+    "nonCue_readingB_same_accuracy": 0.875,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.0273,
+    "B_minus_human_nonCue": 0.1106,
+    "score_minus_line": 0.085
+   },
+   {
+    "label": "Concordia AI 2026-Q2",
+    "model": "gpt-5.5",
+    "score": 0.915,
+    "date": "2026-06",
+    "human_line_used": 0.79,
+    "claim": "\"11 models now exceed human-expert level\"",
+    "source": "airiskmonitor.net report 2026-Q2 (via delegated reading)",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.8583,
+    "nonCue_readingB_same_accuracy": 0.915,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.0939,
+    "B_minus_human_nonCue": 0.1506,
+    "score_minus_line": 0.125
+   },
+   {
+    "label": "Concordia AI 2026-Q3",
+    "model": "gpt-6-astra",
+    "score": 0.947,
+    "date": "2026-09",
+    "human_line_used": 0.79,
+    "claim": "\"On LAB-Bench-SeqQA, 21 models (+11 this quarter) now exceed human-expert level\"",
+    "source": "airiskmonitor.net report 2026-Q3",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.9117,
+    "nonCue_readingB_same_accuracy": 0.947,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.1473,
+    "B_minus_human_nonCue": 0.1826,
+    "score_minus_line": 0.157
+   },
+   {
+    "label": "Meta Muse Spark report, Python tools, no abstention",
+    "model": "muse-spark",
+    "score": 0.973,
+    "date": "2026-05",
+    "human_line_used": null,
+    "claim": "expert baseline drawn in Fig. 3; value not mappable from the extracted figure",
+    "source": "arXiv 2606.12429 summary table p. 5, \u00a72.1.1.1",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.955,
+    "nonCue_readingB_same_accuracy": 0.973,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.1906,
+    "B_minus_human_nonCue": 0.2086,
+    "score_minus_line": null
+   },
+   {
+    "label": "Meta Muse Spark report",
+    "model": "gpt-5.4",
+    "score": 0.965,
+    "date": "2026-05",
+    "human_line_used": null,
+    "claim": "(same)",
+    "source": "arXiv 2606.12429 p. 5",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.9417,
+    "nonCue_readingB_same_accuracy": 0.965,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.1773,
+    "B_minus_human_nonCue": 0.2006,
+    "score_minus_line": null
+   },
+   {
+    "label": "Meta Muse Spark report",
+    "model": "gemini-3.1-pro",
+    "score": 0.937,
+    "date": "2026-05",
+    "human_line_used": null,
+    "claim": "(same)",
+    "source": "arXiv 2606.12429 p. 5",
+    "score_read_as": "text",
+    "revision_assumed": "hf@5c77cec6",
+    "cue_subtasks": [
+     "ORF-seq-AAseq",
+     "PCR-gene-enzprimers",
+     "PCR-seq-enzprimers",
+     "PCR-gene-gibshindprimers",
+     "PCR-gene-gibssmaprimers",
+     "Prop-seq-gcpercent"
+    ],
+    "cue_share_w": 0.4,
+    "assumed": "600 public items, 40 per subtask, all 15 subtasks (not stated in the document)",
+    "nonCue_readingA_all_cue_correct": 0.895,
+    "nonCue_readingB_same_accuracy": 0.937,
+    "human_nonCue_unsure_wrong": 0.7644,
+    "A_minus_human_nonCue": 0.1306,
+    "B_minus_human_nonCue": 0.1726,
+    "score_minus_line": null
+   }
+  ]
+ },
+ "q4_peritem": {
+  "source": "lihaoxin2020/deepseek-reasoner-full-lab_bench-r1@43fa27efe117cff2f6f47dd30e647ecac3d75c2d",
+  "parquet_sha256": "e65bd94fdce891fd785c22fae3c711516e4e68d2b698e7b43bcd48918b441e6a",
+  "n_rows": 600,
+  "doc_id_range": [
+   0,
+   599
+  ],
+  "mapping": {
+   "hf@7268767a": {
+    "share_with_substring": 0.9067,
+    "by_subtask": {
+     "ORF-seq-AAid": "40/40",
+     "ORF-seq-AAseq": "40/40",
+     "ORF-seq-numlen": "34/40",
+     "ORF-transeff": "40/40",
+     "PCR-gene-enzprimers": "27/40",
+     "PCR-gene-gibshindprimers": "40/40",
+     "PCR-gene-gibssmaprimers": "38/40",
+     "PCR-geneprimers-enz": "39/40",
+     "PCR-len-primers": "40/40",
+     "PCR-primers-len": "40/40",
+     "PCR-seq-enzprimers": "40/40",
+     "PCR-seq-primers": "40/40",
+     "Prop-seq-gcpercent": "40/40",
+     "RE-seq-lenfrags": "40/40",
+     "RE-seq-numfrags": "6/40"
+    }
+   },
+   "hf@8e6bb002": {
+    "share_with_substring": 0.9067,
+    "by_subtask": {
+     "ORF-seq-AAid": "40/40",
+     "ORF-seq-AAseq": "40/40",
+     "ORF-seq-numlen": "34/40",
+     "ORF-transeff": "40/40",
+     "PCR-gene-enzprimers": "27/40",
+     "PCR-gene-gibshindprimers": "40/40",
+     "PCR-gene-gibssmaprimers": "38/40",
+     "PCR-geneprimers-enz": "39/40",
+     "PCR-len-primers": "40/40",
+     "PCR-primers-len": "40/40",
+     "PCR-seq-enzprimers": "40/40",
+     "PCR-seq-primers": "40/40",
+     "Prop-seq-gcpercent": "40/40",
+     "RE-seq-lenfrags": "40/40",
+     "RE-seq-numfrags": "6/40"
+    }
+   },
+   "hf@4709d14f": {
+    "share_with_substring": 0.94,
+    "by_subtask": {
+     "ORF-seq-AAid": "40/40",
+     "ORF-seq-AAseq": "40/40",
+     "ORF-seq-numlen": "34/40",
+     "ORF-transeff": "40/40",
+     "PCR-gene-enzprimers": "37/40",
+     "PCR-gene-gibshindprimers": "40/40",
+     "PCR-gene-gibssmaprimers": "38/40",
+     "PCR-geneprimers-enz": "38/40",
+     "PCR-len-primers": "40/40",
+     "PCR-primers-len": "40/40",
+     "PCR-seq-enzprimers": "40/40",
+     "PCR-seq-primers": "40/40",
+     "Prop-seq-gcpercent": "40/40",
+     "RE-seq-lenfrags": "40/40",
+     "RE-seq-numfrags": "17/40"
+    }
+   },
+   "hf@8137378e": {
+    "share_with_substring": 0.94,
+    "by_subtask": {
+     "ORF-seq-AAid": "40/40",
+     "ORF-seq-AAseq": "40/40",
+     "ORF-seq-numlen": "34/40",
+     "ORF-transeff": "40/40",
+     "PCR-gene-enzprimers": "37/40",
+     "PCR-gene-gibshindprimers": "40/40",
+     "PCR-gene-gibssmaprimers": "38/40",
+     "PCR-geneprimers-enz": "38/40",
+     "PCR-len-primers": "40/40",
+     "PCR-primers-len": "40/40",
+     "PCR-seq-enzprimers": "40/40",
+     "PCR-seq-primers": "40/40",
+     "Prop-seq-gcpercent": "40/40",
+     "RE-seq-lenfrags": "40/40",
+     "RE-seq-numfrags": "17/40"
+    }
+   },
+   "hf@5c77cec6": {
+    "share_with_substring": 0.92,
+    "by_subtask": {
+     "ORF-seq-AAid": "40/40",
+     "ORF-seq-AAseq": "40/40",
+     "ORF-seq-numlen": "34/40",
+     "ORF-transeff": "40/40",
+     "PCR-gene-enzprimers": "27/40",
+     "PCR-gene-gibshindprimers": "40/40",
+     "PCR-gene-gibssmaprimers": "38/40",
+     "PCR-geneprimers-enz": "36/40",
+     "PCR-len-primers": "40/40",
+     "PCR-primers-len": "40/40",
+     "PCR-seq-enzprimers": "40/40",
+     "PCR-seq-primers": "40/40",
+     "Prop-seq-gcpercent": "40/40",
+     "RE-seq-lenfrags": "40/40",
+     "RE-seq-numfrags": "17/40"
+    }
+   }
+  },
+  "revision_used": "hf@4709d14f",
+  "final_letter_counts": {
+   "A": 81,
+   "B": 148,
+   "C": 195,
+   "D": 163,
+   "E": 7
+  },
+  "recovery_by_subtask": {
+   "ORF-seq-AAid": {
+    "not_bound": 25,
+    "recovered": 15
+   },
+   "ORF-seq-AAseq": {
+    "not_bound": 39,
+    "recovered": 1
+   },
+   "ORF-seq-numlen": {
+    "not_bound": 25,
+    "recovered": 9,
+    "no_letter": 6
+   },
+   "ORF-transeff": {
+    "not_bound": 40
+   },
+   "PCR-gene-enzprimers": {
+    "not_bound": 40
+   },
+   "PCR-gene-gibshindprimers": {
+    "not_bound": 40
+   },
+   "PCR-gene-gibssmaprimers": {
+    "not_bound": 40
+   },
+   "PCR-geneprimers-enz": {
+    "not_bound": 12,
+    "ambiguous": 5,
+    "recovered": 23
+   },
+   "PCR-len-primers": {
+    "not_bound": 40
+   },
+   "PCR-primers-len": {
+    "recovered": 15,
+    "not_bound": 25
+   },
+   "PCR-seq-enzprimers": {
+    "not_bound": 40
+   },
+   "PCR-seq-primers": {
+    "not_bound": 40
+   },
+   "Prop-seq-gcpercent": {
+    "recovered": 25,
+    "not_bound": 15
+   },
+   "RE-seq-lenfrags": {
+    "recovered": 5,
+    "not_bound": 35
+   },
+   "RE-seq-numfrags": {
+    "not_bound": 11,
+    "recovered": 29
+   }
+  },
+  "recovered_S": 26,
+  "recovered_F": 96,
+  "S_subtasks_with_recovery": 2,
+  "F_subtasks_with_recovery": 6,
+  "gate_met": false
+ },
+ "inference": {
+  "calls": 0,
+  "usd": 0.0
+ }
+}
