@@ -1,0 +1,23 @@
+Validator's blind labelling rubric (written and committed before the validator opened any
+model output, the answer key, or the auditor's per-item labels).
+
+Input: v1_blind_sheet.py output (question + options, options in hashed order, no protocol,
+no key). The validator does NOT record or try to name a pick. Fields per item:
+
+T  (option type)  NUM  = the options are the same kind of action and differ mainly in a
+                         number, a step number, or which step is changed, so the right one
+                         depends on what the protocol currently states;
+                  PROC = the options are qualitatively different actions (add/omit a
+                         reagent, change a method, change a condition class);
+                  MIX  = neither clearly.
+S  (symptom points to a mechanism)  1 if the question's stated symptom names a specific failure
+                  (e.g. degradation, no pellet, low yield after a named step, background),
+                  0 if it is generic ("the experiment did not work", "results were bad").
+U  (count of options a trained bench scientist would call a standard remedy for that
+    symptom, judged from the symptom and general practice only): 0, 1, 2 (2 = two or more).
+CLS  K = "general practice singles out one option": U == 1 and S == 1 and T != NUM.
+     P = everything else (needs a protocol detail, or nothing looks standard).
+Second, stricter version (CLS2, for robustness): K2 = U == 1 and T == PROC.
+
+These are content judgements made by the validator, another Claude model (Opus 5.5). They are
+not human labels. Ties between auditor and validator labels can come from shared training.
