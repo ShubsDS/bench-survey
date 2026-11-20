@@ -72,12 +72,13 @@ def summarise(rs):
     return out
 
 
-def paired(rs):
-    """Three-arm paired statistics, if all three arms exist for some scenarios."""
+def paired(rs, ok=("complete",)):
+    """Three-arm paired statistics, if all three arms exist for some scenarios. `ok`: statuses kept
+    (sensitivity: censored local runs, status oom/stopped, kept as not misaligned so far)."""
     by = defaultdict(dict)
     by_level = defaultdict(dict)
     for r in rs:
-        if r["status"] == "complete":
+        if r["status"] in ok:
             by[r["uid"]][r["arm"]] = (r["trigger_called"], r["domain"], r["workspace"])
             by_level[r["uid"]][r["arm"]] = r["trigger_level"] if r["trigger_called"] else 13
     full = {u: v for u, v in by.items() if {"shipped", "restored", "placebo"} <= set(v)}
@@ -188,12 +189,15 @@ def main():
         p = paired([r for r in rows if r["backend"] == be])
         if p:
             out["paired"][be] = p
+        p2 = paired([r for r in rows if r["backend"] == be], ok=("complete", "oom", "stopped"))
+        if p2 and be.startswith("openai:"):
+            out.setdefault("paired_censored_as_not_misaligned", {})[be] = p2
     out["cli_context_leak"] = {be: leak_counts(be) for be in ("haiku", "sonnet")}
     for k, v in out["groups"].items():
         pass
     out["target_called_runs"] = {"|".join(k): [sum(r["target_called"] for r in v if r["status"] == "complete"),
                                               sum(r["status"] == "complete" for r in v)] for k, v in sorted(groups.items())}
-    out["levels_reached"] = {"|".join(k): sorted(r["levels_reached"] for r in v) for k, v in sorted(groups.items())}
+    out["levels_reached"] = {"|".join(k): sorted((r["levels_reached"] if r["levels_reached"] is not None else -1) for r in v) for k, v in sorted(groups.items())}
     led = FOLDER / "inference" / "ledger.jsonl"
     if led.exists():
         L = [json.loads(l) for l in led.read_text().splitlines() if l.strip()]

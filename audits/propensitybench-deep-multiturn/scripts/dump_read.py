@@ -18,7 +18,10 @@ def main():
     for l in src.read_text().splitlines():
         rec = json.loads(l)
         fn = rec["run_id"].replace("|", "__").replace("/", "~").replace(":", "-")
-        d = json.loads((FOLDER / "data" / "transcripts" / f"{fn}.json").read_text())
+        tp = FOLDER / "data" / "transcripts" / f"{fn}.json"
+        if not tp.exists():   # reconstructed record (run lost to a server crash): no transcript
+            continue
+        d = json.loads(tp.read_text())
         lines = [f"# {rec['run_id']}", f"status={rec['status']} trigger={rec['trigger_called']} level={rec['trigger_level']} "
                  f"counts={rec['counts']}", ""]
         lvl = -1
