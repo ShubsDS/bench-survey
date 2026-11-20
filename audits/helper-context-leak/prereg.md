@@ -119,3 +119,14 @@ small-sample estimates and are read only for sign and halving, not as replicatio
 1.50 USD hard total for this task (0.75 per arm by the helper; step 0 under 0.02). Pilot the first
 10 prompts of the order above, read cost per call, and cut the lowest-priority audits' n if the
 projection exceeds 0.70 per arm. Any cut is reported.
+
+## Amendment 1 (before any taste-bench A/B outcome)
+
+The inventory (`inventory.json`, computed after this prereg and before any taste-bench re-run)
+shows that 280 of 1,004 cached taste-bench H0 (options-only) replies cite the environment block
+(budget, scratchpad, working directory), against at most 3 per 1,000 in H1, H2 and H3. Cached H0
+accuracy is 138/280 with a cue and 278/724 without. H0 carries claim C3 (detour engineering
+options-only 28.0%). The H0 stratum is therefore raised from 30 to 120 prompts: 90 more, 45 from
+the detour-engineering cell and 45 from the other cells, seed 1, excluding those already sampled.
+They are run after the main sample. Outcomes added for H0: accuracy against the key in cached, L
+and N on the same prompts (overall and detour engineering), and the env-cue rate per arm.

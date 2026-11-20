@@ -1,0 +1,480 @@
+{
+ "snapshot_unix": 1795167577,
+ "audits": {
+  "control-monitors-bash": {
+   "cache_files": 661,
+   "by_model": {
+    "claude-haiku-5-5": 661
+   },
+   "by_arm": {
+    "R2:honest": 54,
+    "R:attack": 113,
+    "S:honest": 109,
+    "L:attack": 110,
+    "L:honest": 110,
+    "R:honest": 110,
+    "R2:attack": 55
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 2,
+    "test_aware": 2,
+    "scratchpad": 2
+   },
+   "example_keys": {
+    "test_aware": [
+     "18957e03fe",
+     "5c6e649230"
+    ],
+    "scratchpad": [
+     "1aed79d844",
+     "525653f557"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "R2:honest": "0/54",
+    "R:attack": "0/113",
+    "S:honest": "0/109",
+    "L:attack": "1/110",
+    "L:honest": "0/110",
+    "R:honest": "1/110",
+    "R2:attack": "0/55"
+   }
+  },
+  "control-monitors-shade": {
+   "cache_files": 244,
+   "by_model": {
+    "claude-haiku-5-5": 244
+   },
+   "by_arm": {
+    "agentdojo_monitor": 95,
+    "shade_monitor": 149
+   },
+   "reply_cues_not_in_input": {
+    "budget": 19,
+    "any_env_cue": 21,
+    "date_2026": 55,
+    "audit_word": 2
+   },
+   "example_keys": {
+    "budget": [
+     "005527995e",
+     "29733e1288",
+     "3b117a0569",
+     "3b36f8a8a0"
+    ],
+    "date_2026": [
+     "009e3e8f16",
+     "098ac91319",
+     "0b1be240cf",
+     "13fa7135a7"
+    ],
+    "audit_word": [
+     "af67a1cd41",
+     "ddcb63d86a"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "agentdojo_monitor": "19/95",
+    "shade_monitor": "2/149"
+   }
+  },
+  "emergent-misalignment": {
+   "cache_files": 1026,
+   "by_model": {
+    "claude-haiku-5-5": 1026
+   },
+   "by_arm": {
+    "category": 829,
+    "domain": 197
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0
+   },
+   "example_keys": {},
+   "env_cue_rate_by_arm": {
+    "category": "0/829",
+    "domain": "0/197"
+   }
+  },
+  "sad": {
+   "cache_files": 886,
+   "by_model": {
+    "claude-haiku-5-5": 886
+   },
+   "by_arm": {
+    "intervention:influence:b": 70,
+    "intervention:facts_human_defaults:c": 150,
+    "intervention:influence:a": 150,
+    "intervention:facts_human_defaults:b": 65,
+    "intervention:facts_human_defaults:a": 150,
+    "staleness:facts_which_llm:a": 151,
+    "intervention:influence:c": 150
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0
+   },
+   "example_keys": {},
+   "env_cue_rate_by_arm": {
+    "intervention:influence:b": "0/70",
+    "intervention:facts_human_defaults:c": "0/150",
+    "intervention:influence:a": "0/150",
+    "intervention:facts_human_defaults:b": "0/65",
+    "intervention:facts_human_defaults:a": "0/150",
+    "staleness:facts_which_llm:a": "0/151",
+    "intervention:influence:c": "0/150"
+   }
+  },
+  "model-written-evals": {
+   "cache_files": 731,
+   "by_model": {
+    "claude-haiku-5-5": 731
+   },
+   "by_arm": {
+    "all": 731
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0
+   },
+   "example_keys": {},
+   "env_cue_rate_by_arm": {
+    "all": "0/731"
+   }
+  },
+  "lab-bench": {
+   "cache_files": 2667,
+   "by_model": {
+    "claude-haiku-5-5": 2667
+   },
+   "by_arm": {
+    "haiku:forced": 1068,
+    "haiku:options_only": 788,
+    "haiku:with_refusal_option": 811
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 9,
+    "test_aware": 10,
+    "benchmark_word": 8,
+    "budget": 1
+   },
+   "example_keys": {
+    "test_aware": [
+     "0aa47ec118",
+     "1d9f7a6873",
+     "31ee37fe12",
+     "337995df4a"
+    ],
+    "benchmark_word": [
+     "0f88c5856c",
+     "267256b62f",
+     "2b06ffe207",
+     "2bde27c3d7"
+    ],
+    "budget": [
+     "87657e795a"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "haiku:forced": "3/1068",
+    "haiku:options_only": "4/788",
+    "haiku:with_refusal_option": "2/811"
+   }
+  },
+  "taste-bench": {
+   "cache_files": 3974,
+   "by_model": {
+    "claude-haiku-5-5": 3974
+   },
+   "by_arm": {
+    "H0": 1004,
+    "H3": 966,
+    "H2": 1000,
+    "H1": 1004
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 286,
+    "budget": 192,
+    "benchmark_word": 49,
+    "audit_word": 48,
+    "scratchpad": 26,
+    "env_block": 38,
+    "test_aware": 10,
+    "inference_dir": 10,
+    "repo_path": 10
+   },
+   "example_keys": {
+    "budget": [
+     "0142f0baa7",
+     "03ea799024",
+     "05cd3cd105",
+     "07463e3e79"
+    ],
+    "benchmark_word": [
+     "019c12146f",
+     "09893e2a08",
+     "0d164fc5ea",
+     "114772811d"
+    ],
+    "audit_word": [
+     "026ebcbc93",
+     "10735d0613",
+     "12bc392f42",
+     "148c58cd54"
+    ],
+    "scratchpad": [
+     "05da01c1b6",
+     "1557ab4217",
+     "1c95a6d9b6",
+     "2f4ac44527"
+    ],
+    "env_block": [
+     "05da01c1b6",
+     "12bc392f42",
+     "148c58cd54",
+     "1c95a6d9b6"
+    ],
+    "test_aware": [
+     "1173e4b65c",
+     "4541a00d76",
+     "5254a72fbc",
+     "59287bb01a"
+    ],
+    "inference_dir": [
+     "12bc392f42",
+     "148c58cd54",
+     "17f47cbe1a",
+     "3aa2a705ea"
+    ],
+    "repo_path": [
+     "148c58cd54",
+     "17f47cbe1a",
+     "3aa2a705ea",
+     "60bcbce30a"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "H0": "280/1004",
+    "H3": "2/966",
+    "H2": "1/1000",
+    "H1": "3/1004"
+   }
+  },
+  "propensitybench": {
+   "cache_files": 933,
+   "by_model": {
+    "claude-haiku-5-5": 933
+   },
+   "by_arm": {
+    "emulation_probe:A:probe": 63,
+    "emulation_full:P:none": 61,
+    "emulation_probe:P:probe": 62,
+    "emulation_probe:B1:probe": 64,
+    "emulation_full:A:late": 62,
+    "emulation_probe:G:probe": 63,
+    "v_floor:A:None": 37,
+    "emulation_full:A:none": 61,
+    "emulation_full:G:late": 61,
+    "emulation_full:B1:none": 61,
+    "emulation_pilot_v1:A:late": 20,
+    "unmatched (pilot or overwritten)": 55,
+    "emulation_full:B2:late": 60,
+    "emulation_probe:B2:probe": 61,
+    "emulation_full:P:late": 61,
+    "emulation_full:B1:late": 61,
+    "v_probe_control:A:None": 10,
+    "emulation_pilot_v1:A:none": 10
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0,
+    "date_2026": 15
+   },
+   "example_keys": {
+    "date_2026": [
+     "0e38d207ae",
+     "18989a859c",
+     "273fdf3494",
+     "32e7421502"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "emulation_probe:A:probe": "0/63",
+    "emulation_full:P:none": "0/61",
+    "emulation_probe:P:probe": "0/62",
+    "emulation_probe:B1:probe": "0/64",
+    "emulation_full:A:late": "0/62",
+    "emulation_probe:G:probe": "0/63",
+    "v_floor:A:None": "0/37",
+    "emulation_full:A:none": "0/61",
+    "emulation_full:G:late": "0/61",
+    "emulation_full:B1:none": "0/61",
+    "emulation_pilot_v1:A:late": "0/20",
+    "unmatched (pilot or overwritten)": "0/55",
+    "emulation_full:B2:late": "0/60",
+    "emulation_probe:B2:probe": "0/61",
+    "emulation_full:P:late": "0/61",
+    "emulation_full:B1:late": "0/61",
+    "v_probe_control:A:None": "0/10",
+    "emulation_pilot_v1:A:none": "0/10"
+   }
+  },
+  "cot-faithfulness": {
+   "cache_files": 468,
+   "by_model": {
+    "claude-haiku-5-5": 468
+   },
+   "by_arm": {
+    "yes_no": 234,
+    "forced_choice": 234
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0
+   },
+   "example_keys": {},
+   "env_cue_rate_by_arm": {
+    "yes_no": "0/234",
+    "forced_choice": "0/234"
+   }
+  },
+  "lab-bench-deep-seqqa": {
+   "cache_files": 593,
+   "by_model": {
+    "claude-haiku-5-5": 452,
+    "claude-sonnet-5-5": 141
+   },
+   "by_arm": {
+    "haiku:with_refusal_option": 290,
+    "sonnet:with_refusal_option": 123,
+    "haiku:forced": 162,
+    "sonnet:forced": 18
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 0
+   },
+   "example_keys": {},
+   "env_cue_rate_by_arm": {
+    "haiku:with_refusal_option": "0/290",
+    "sonnet:with_refusal_option": "0/123",
+    "haiku:forced": "0/162",
+    "sonnet:forced": "0/18"
+   }
+  },
+  "lab-bench-deep-recall": {
+   "cache_files": 1361,
+   "by_model": {
+    "claude-haiku-5-5": 1090,
+    "claude-sonnet-5-5": 271
+   },
+   "by_arm": {
+    "haiku:options_only": 636,
+    "sonnet:options_only": 203,
+    "haiku:forced": 173,
+    "haiku:paraphrase": 177,
+    "haiku:qgen": 104,
+    "sonnet:forced": 67,
+    "sonnet:qgen": 1
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 1,
+    "budget": 1,
+    "test_aware": 1
+   },
+   "example_keys": {
+    "budget": [
+     "87657e795a"
+    ],
+    "test_aware": [
+     "935949318c"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "haiku:options_only": "0/636",
+    "sonnet:options_only": "0/203",
+    "haiku:forced": "1/173",
+    "haiku:paraphrase": "0/177",
+    "haiku:qgen": "0/104",
+    "sonnet:forced": "0/67",
+    "sonnet:qgen": "0/1"
+   }
+  },
+  "propensitybench-deep-multiturn": {
+   "cache_files": 874,
+   "by_model": {
+    "claude-haiku-5-5": 853,
+    "claude-sonnet-5-5": 21
+   },
+   "by_arm": {
+    "haiku:run_call": 852,
+    "sonnet:run_call": 21,
+    "haiku:diagnostic": 1
+   },
+   "reply_cues_not_in_input": {
+    "any_env_cue": 16,
+    "date_2026": 7,
+    "inference_dir": 3,
+    "env_block": 9,
+    "audit_word": 5,
+    "benchmark_word": 5,
+    "scratchpad": 1,
+    "repo_path": 4,
+    "test_aware": 1
+   },
+   "example_keys": {
+    "date_2026": [
+     "013b4ead2b",
+     "5e18d21804",
+     "718e0c5a9c",
+     "88ef3cf620"
+    ],
+    "inference_dir": [
+     "0231cdf7ce",
+     "692705fd2d",
+     "8324061f9a"
+    ],
+    "env_block": [
+     "0eeb687cb4",
+     "141e09c7ad",
+     "33270a6b41",
+     "59ac27147c"
+    ],
+    "audit_word": [
+     "59ac27147c",
+     "692705fd2d",
+     "8324061f9a",
+     "9bab2e07fc"
+    ],
+    "benchmark_word": [
+     "59ac27147c",
+     "692705fd2d",
+     "7cd0259505",
+     "8324061f9a"
+    ],
+    "scratchpad": [
+     "63b424d594"
+    ],
+    "repo_path": [
+     "692705fd2d",
+     "8324061f9a",
+     "da15080433",
+     "f80da13340"
+    ],
+    "test_aware": [
+     "a668b9faac"
+    ]
+   },
+   "env_cue_rate_by_arm": {
+    "haiku:run_call": "16/852",
+    "sonnet:run_call": "0/21",
+    "haiku:diagnostic": "0/1"
+   }
+  }
+ },
+ "taste_bench_accuracy_by_env_cue": {
+  "H0|env_cue=False": "278/724",
+  "H0|env_cue=True": "138/280",
+  "H1|env_cue=False": "524/1001",
+  "H1|env_cue=True": "2/3",
+  "H2|env_cue=False": "532/999",
+  "H2|env_cue=True": "0/1",
+  "H3|env_cue=False": "513/964",
+  "H3|env_cue=True": "2/2"
+ }
+}
