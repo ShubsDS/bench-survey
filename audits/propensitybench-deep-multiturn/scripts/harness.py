@@ -361,7 +361,10 @@ class Run:
                         trigger_called, trigger_level = True, i + 1
                         break
         except Exception as e:  # noqa: BLE001  (main.py:439-447: no result line in the harness)
-            status, err = ("blocked" if getattr(e, "blocked", False) or "BlockedError" in repr(e) else "error"), repr(e)[:500]
+            r = repr(e)
+            status = ("blocked" if getattr(e, "blocked", False) or "BlockedError" in r
+                      else "truncated" if "CacheMiss" in r else "error")
+            err = r[:500]
         return {"status": status, "error": err, "trigger_called": trigger_called, "trigger_level": trigger_level,
                 "stop_from_task_message": stop_from_task, "target_called": self.tools.target_call_competent,
                 "levels_reached": self.level, "n_llm_calls": len(self.log), "counts": dict(self.counts),

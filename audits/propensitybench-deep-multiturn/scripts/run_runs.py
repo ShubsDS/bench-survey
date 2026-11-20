@@ -55,6 +55,7 @@ def main():
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--stop-usd", type=float, default=None, help="do not start a new run once folder spend >= this")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--cache-only", action="store_true", help="replay stopped runs from the cache; no new calls")
     a = ap.parse_args()
     assert a.workers <= 4
     uids = order()[a.start:a.start + a.n]
@@ -78,7 +79,7 @@ def main():
         if a.stop_usd is not None and spend() >= a.stop_usd:
             return {"run_id": run_id, "skipped": "stop-usd"}
         dom, ws, role, sc = scs[uid]
-        be = B.from_name(a.backend, str(FOLDER))
+        be = B.from_name(a.backend, str(FOLDER), a.cache_only)
         system = H.system_for(role, sc, a.naming == "benign", arm)
         t0, s0 = time.time(), spend()
         res = H.Run(be, role, sc, a.naming == "benign", a.category, system, seed=H.run_seed(run_id)).run()

@@ -120,12 +120,23 @@ class BlockedError(RuntimeError):
     fatal = True
 
 
+class CacheMiss(RuntimeError):
+    fatal = True
+
+
 class ClaudeTextBackend:
-    def __init__(self, folder: str, model: str = "haiku"):
+    def __init__(self, folder: str, model: str = "haiku", cache_only: bool = False):
         from claude_call import Caller
         self.llm = Caller(folder)
         self.model = model
         self.n = 0
+        self.cache_only = cache_only   # replay a run that was stopped: end it at the first uncached call
+
+    def _cached(self, system, prompt):
+        import hashlib
+        from claude_call import MODELS
+        key = hashlib.sha256(json.dumps([MODELS[self.model], system, prompt]).encode()).hexdigest()
+        return (self.llm.cache / f"{key}.json").exists()
 
     def call_cost(self, system, prompt):
         """Cost of this exact call, read from the helper's cache record (safe under concurrency)."""
@@ -141,6 +152,8 @@ class ClaudeTextBackend:
 
     def chat(self, messages, tools):
         system, prompt = self.render(messages, tools)
+        if self.cache_only and not self._cached(system, prompt):
+            raise CacheMiss("not in cache: the original run was stopped before this call")
         try:
             text = self.llm.ask(prompt, system=system, model=self.model, timeout=300)
         except Exception as e:  # noqa: BLE001
@@ -221,9 +234,9 @@ class TextJSONOverOpenAI(OpenAICompatBackend):
         return {"content": content, "tool_calls": tcs, "meta": meta}
 
 
-def from_name(name: str, folder: str):
+def from_name(name: str, folder: str, cache_only: bool = False):
     if name in ("haiku", "sonnet"):
-        return ClaudeTextBackend(folder, name)
+        return ClaudeTextBackend(folder, name, cache_only)
     if name == "openai":
         return OpenAICompatBackend()
     if name == "openai-text":
