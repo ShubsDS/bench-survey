@@ -1,6 +1,6 @@
 # Effect audits: methodology
 
-Status: 2026-11-17, with a section added after round one. This is the shared brief for the audits under [`audits/`](.). Each audit takes
+Status: 2026-11-20, with sections added after rounds one and two. This is the shared brief for the audits under [`audits/`](.). Each audit takes
 one benchmark and asks one question:
 
 > Does a simple confounding feature change what this benchmark tells us about a model's
@@ -173,6 +173,51 @@ A refuter cut back six of eight headlines. Each of these happened. Run the check
 - **Causal words for correlational results.** "Explains", "drives" and "because" need an
   intervention.
 
+### Mistakes auditors made in round two
+
+A refuter cut back all six round-two headlines. Each of these happened.
+
+- **Resampling items when items share a template.** Resample the template, subtask or task. With
+  15 templates an item-level interval of ±0.03 became ±0.18.
+- **Comparing a rule and a model on different scales.** Score the rule exactly as the models were
+  scored (same penalty, same inputs). A rule that needs a field models never see is not a baseline.
+- **A placebo that sees the label.** A placebo subset must be built without the answer key.
+- **Sizing a run before checking the floor.** An intervention where every arm scores 0, or every
+  arm scores 1, says nothing. Pilot the base rate in the exact format first, and stop if it is at
+  the floor or ceiling.
+- **Counting a category by its name.** Read 20 raw cases of every category before using it as
+  compliance, refusal, error or success.
+- **"New" findings that are in the paper's appendix.** Search the appendix and the released
+  analysis notebooks, not only the main text.
+
+## Deep dives (round three)
+
+Round three opens no new benchmark. Each deep dive takes one question that an earlier audit left
+open and tries to settle it. Two rounds showed that breadth finds little; the open questions are
+where a result could still change a conclusion.
+
+- **Folder.** `audits/<benchmark>-deep-<topic>/`. Write only there. Read the parent audit's
+  `README.md`, `validation/VALIDATION.md`, `prereg.md` and scripts first, and reuse its downloads
+  by path (`audits/<benchmark>/data/`). Do not edit the parent folder.
+- **State the inherited question** at the top of `prereg.md`: what the parent audit established,
+  what it left open, and which outcomes would count as "yes", "no" and "still cannot tell". Commit
+  that before any outcome.
+- **A null must be informative.** State the power of the design against the effect size the parent
+  audit saw, at the right resampling unit. If the design cannot reach 80% power within budget, say
+  so before running and either change the design or report the result as a lead.
+- **Stronger model allowed.** Where the question is how a strong model behaves, Sonnet may be the
+  primary model, with Haiku as a second model. The cap is still 3 USD per folder by the helper.
+  Pilot 10 calls, read the cost, then size the run. A Sonnet result is about Sonnet: do not extend
+  it to the models in a paper or a system card.
+- **Controls for every intervention.** Each edited arm needs an arm that applies the same kind of
+  edit without changing the feature under test, and the key must be verified as still correct
+  after the edit (by computation where the task allows it).
+- **No new outside access.** Do not download model weights, install system software, accept terms
+  or contact anyone. If a question can only be settled that way, write exactly what is needed and
+  stop.
+- The write-up structure, accuracy rules, data rules and the evidence ladder above all apply.
+  `claims.md` and `prior_work.md` may be short and point to the parent's.
+
 ## Procedure
 
 Work in this order. Commit after each file (see "Committing").
@@ -290,7 +335,8 @@ intervention or to add a recent model to an L3 analysis, and only on benign cont
 ## Committing
 
 All audits share one working tree. Round one ran on the branch `effect-audits`, since merged to
-`main`; round two runs on `audits-round2`. Do not create or change branches.
+`main`; round two ran on `audits-round2`, also merged. Round three runs on `audits-round3`. Do not
+create or change branches.
 
 - Write only inside your own folder, `audits/<benchmark>/`.
 - Commit with `audits/tools/commit.sh audits/<benchmark> "<message>"` after every file you create
