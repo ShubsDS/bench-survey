@@ -2330,5 +2330,217 @@
  },
  "parse_routes": {
   "tag": 533
+ },
+ "validation": {
+  "who": "independent validator, 2026-11-20; see validation/VALIDATION.md and validation/validation.json",
+  "rerun": "build.py, power.py, plans.py, all six run.py batches (from cache) and analyze.py reproduce every committed output byte-identically; all accuracies re-derived from the response cache by separate code (validation/v1_rescore.py)",
+  "corrections": [
+   {
+    "what": "sonnet K_minus_D_all_cue significance",
+    "auditor": {
+     "ci_items": [
+      0.0208,
+      0.1875
+     ],
+     "ci_subtasks": [
+      0.0333,
+      0.2
+     ]
+    },
+    "validated": {
+     "diff": 0.1042,
+     "ci_items": [
+      0.0208,
+      0.1875
+     ],
+     "ci_subtasks_two_stage": [
+      0.0167,
+      0.25
+     ],
+     "mcnemar_exact_p_two_sided": 0.0625,
+     "mcnemar_exact_p_one_sided": 0.03125,
+     "signflip_p_6_subtasks": 0.12184,
+     "drop_GC": {
+      "diff": 0.0714,
+      "discordant": "3/0",
+      "exact_p": 0.25,
+      "ci_items": [
+       0.0,
+       0.1667
+      ]
+     }
+    },
+    "note": "direction unchanged; 'interval excludes 0' is fragile and does not survive dropping GC-percent"
+   },
+   {
+    "what": "haiku K_minus_D_all_cue subtask interval",
+    "auditor": {
+     "ci_subtasks": [
+      0.0222,
+      0.0889
+     ]
+    },
+    "validated": {
+     "ci_subtasks_two_stage": [
+      -0.0444,
+      0.1556
+     ],
+     "mcnemar_exact_p": 0.35928
+    },
+    "note": "withdrawn: analyze.py:54 resamples subtask means without resampling items, so the interval excluded 0 while the item interval did not"
+   },
+   {
+    "what": "haiku centre pick under D (not reported by the auditor)",
+    "validated": {
+     "centre": 0.1111,
+     "other_distractors": 0.0513
+    }
+   },
+   {
+    "what": "K versus D beyond centrality",
+    "validated": {
+     "D_key_unique_longest": {
+      "PCR-gene-enzprimers-v1": "24/33",
+      "PCR-seq-enzprimers-v1": "26/37",
+      "PCR-gene-gibshindprimers-v1": "15/36",
+      "PCR-gene-gibssmaprimers-v1": "21/29"
+     },
+     "K_key_unique_longest": "0/135",
+     "accuracy_by_feature": {
+      "sonnet_D": {
+       "not_longest": [
+        27,
+        0.8889
+       ],
+       "longest": [
+        21,
+        0.8571
+       ]
+      },
+      "haiku_D": {
+       "not_longest": [
+        50,
+        0.78
+       ],
+       "longest": [
+        40,
+        0.775
+       ]
+      }
+     }
+    },
+    "note": "real and undisclosed, but it favours D, and accuracy does not track it"
+   },
+   {
+    "what": "sonnet cue-free score against the human line",
+    "auditor": "0.851 (D) and 0.862 (I) 'stay above 0.79 and at the top of the forced-choice range'",
+    "validated": {
+     "score_D": 0.8511,
+     "ci_items_within_subtask": [
+      0.7933,
+      0.9044
+     ],
+     "human_forced_choice_range": [
+      0.808,
+      0.866
+     ],
+     "inside_range": true,
+     "noncue_items": 18
+    },
+    "note": "a lead, and not like for like: different item sample and scoring rule"
+   },
+   {
+    "what": "claim 6b framing",
+    "auditor": "AAseq key definition 'differs from the paper's own description'",
+    "validated": {
+     "key_equals_longest_forward_ORF": "40/40",
+     "reverse_strand_longer": "21/40",
+     "reverse_answer_is_an_option": "0/38 pairs",
+     "paper": "App. C.7.12 names no strand"
+    },
+    "note": "an undisclosed convention, not a documented mismatch; no key changes"
+   },
+   {
+    "what": "claim 6a sharpened",
+    "validated": {
+     "PCR-seq-enzprimers_key_reverse_sense": "40/40",
+     "PCR-seq-enzprimers_key_reverse_rc": "0/40",
+     "PCR-gene-enzprimers_key_reverse_ends_sense_stop": "40/40",
+     "gibson_key_reverse_starts_rc_stop": "40/40 each subtask"
+    },
+    "note": "the two restriction subtasks (80 items) contradict App. C.7.1 and the Gibson subtasks; no key changes"
+   },
+   {
+    "what": "claim 1 and the score levels",
+    "validated": "marked as leads (18 items each)"
+   }
+  ],
+  "new_finding_prompt": {
+   "verdict": "validator's new finding (pre-registered in validation/v6_prereg_prompt.md before the run)",
+   "what": "The same 30 Gibson K/D pairs, same options and option order, rendered with the parent audit's prompt (FutureHouse template with 'Think step by step.', no letter-only line, forced choice).",
+   "Kp": 0.8667,
+   "Dp": 0.6,
+   "diff": 0.2667,
+   "ci_items": [
+    0.1,
+    0.4342
+   ],
+   "discordant_Kp_only": 9,
+   "discordant_Dp_only": 1,
+   "mcnemar_exact_p": 0.02148,
+   "same_items_letter_only_prompt": {
+    "K": 0.7667,
+    "D": 0.7,
+    "diff": 0.0667
+   },
+   "parent_validator_swap": {
+    "before": 0.935,
+    "after": 0.726,
+    "diff": 0.21,
+    "n": 62
+   },
+   "prereg_decision": "still cannot tell by my own rule (drop >= 0.15 met at 0.267, but Kp 0.867 < the 0.90 the rule asked for); the 'construction explains it' branch is ruled out",
+   "reading": "The deep dive's small Haiku drop is mostly an artefact of its own letter-only prompt, not of the rebuild. On the rebuilt items the parent's prompt reproduces the parent's effect size.",
+   "calls": 60,
+   "cost_usd": 0.1265,
+   "n_pairs": 30,
+   "limits": "30 pairs, one model, Gibson only; Kp - K = +0.10 and Dp - D = -0.10 on the same items, so the two prompts differ in both arms. Not tested for Sonnet (the cap left room for about 10 Sonnet calls)."
+  },
+  "rebuild_verification": {
+   "GC_key_equals_rounded_GC": "40/40",
+   "GC_paper_distractor_pattern": "40/40",
+   "GC_key_unique_correct_in_O_D_K": "40/40 each",
+   "GC_I_key_unique_correct": "31/31 built",
+   "AAseq_key_equals_longest_forward_ORF": "40/40",
+   "AAseq_no_other_option_valid_on_either_strand": "38/38 pairs in both arms",
+   "PCR_named_sites_or_junctions_on_key": "160/160",
+   "PCR_seq_enz_key_bodies_are_gene_ends": "40/40",
+   "PCR_exactly_three_site_correct_options_in_O_K_D": "135/135 pairs (the rebuilt option is wrong by site or junction in both arms)",
+   "duplicate_options": "0 in every arm"
+  },
+  "blind_hand_read": {
+   "blocks": 51,
+   "arm_calls": 40,
+   "arm_calls_right": 40,
+   "pick_equals_parquet_key": "40/40",
+   "gc_blocks_no_call": 11,
+   "note": "GC-percent is not readable by eye: in both arms the four values have the identical form {a, a+1, a+2, round((a+1)/2)}. On the 40 PCR and AAseq blocks the key is still the only defensible option in both arms, and the arm is readable from which body the odd-site option carries."
+  },
+  "process_checks": {
+   "prereg_before_outcomes": "prereg.md and every plans/*.json committed in 05d2d07 at 03:23:41 -0500; build.py, build_check.json and power.json in fb179e1 at 03:22:35. The ledger holds 4 calls before that time (the disclosed 4-call cost pilot on three non-cue items) and 529 after. Confirmed.",
+   "sample_sizes_pre_registered": "48 Sonnet pairs (6+6+6+10+10+10), 90 Haiku pairs (15 x 6) and 18 Sonnet N items (3 x 6) are the prereg table's numbers, drawn as prefixes of a seed-0 permutation. No item or arm was dropped after an outcome.",
+   "items_dropped_before_outcomes": "27 of 240 (25 PCR centre-check failures, 2 AAseq ties), by build.py, committed before the prereg. Reported in the README.",
+   "parsing": "533/533 cached responses carry exactly one [ANSWER]X[/ANSWER] tag; 530 of 533 are 18 characters long. 0 unparsed, 0 errors, 0 refusals in K, D and I for both models.",
+   "wording": "No statement about Opus or any published model's items appears in the README. Claim 1 (n = 18) and the Sonnet score levels (18 non-cue items) need to be marked as leads; the title's 'can read the option cue' rests on those 18 items."
+  },
+  "spend": {
+   "auditor_calls": 533,
+   "auditor_cost_usd": 2.7124,
+   "validator_calls": 60,
+   "validator_cost_usd": 0.1265,
+   "folder_calls": 593,
+   "folder_cost_usd": 2.8389,
+   "cap_usd": 3.0
+  }
  }
 }
