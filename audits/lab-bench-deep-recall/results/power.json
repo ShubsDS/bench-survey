@@ -1,0 +1,25 @@
+{
+ "n_items": 107,
+ "n_clusters": 23,
+ "sims": 400,
+ "boot": 400,
+ "model": "logit p = mu + N(0,0.8^2) cluster + N(0,2.0^2) item",
+ "paired_drop": {
+  "acc0.55_drop0.05": 0.1325,
+  "acc0.55_drop0.1": 0.425,
+  "acc0.55_drop0.15": 0.72,
+  "acc0.55_drop0.2": 0.915,
+  "acc0.7_drop0.05": 0.21,
+  "acc0.7_drop0.1": 0.4925,
+  "acc0.7_drop0.15": 0.755,
+  "acc0.7_drop0.2": 0.94
+ },
+ "strata_gap": {
+  "fracG0.5_gap0.15": 0.3825,
+  "fracG0.5_gap0.25": 0.7675,
+  "fracG0.5_gap0.35": 0.9625,
+  "fracG0.3_gap0.15": 0.37,
+  "fracG0.3_gap0.25": 0.67,
+  "fracG0.3_gap0.35": 0.915
+ }
+}

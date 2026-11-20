@@ -1,0 +1,3 @@
+id,cluster,arm,model,style,n_sub,out_len,refusal_text,bucket
+250c9945-376f-4745-b481-c09aa358f5e5,ccaed2dfc1e8,qgen,haiku,cot,0,708,False,free
+a548710c-944e-4a46-882c-fbd3a6391120,4bddf03bda06,qgen,haiku,cot,0,735,False,free

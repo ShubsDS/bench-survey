@@ -1,0 +1,4 @@
+id,cluster,arm,model,n_sub,out_len,refusal_text,letter,bucket,picked_role,roles
+250c9945-376f-4745-b481-c09aa358f5e5,ccaed2dfc1e8,full,sonnet,4,555,False,C,correct,key,"{""A"": ""d1"", ""B"": ""d2"", ""C"": ""key"", ""D"": ""d0""}"
+a548710c-944e-4a46-882c-fbd3a6391120,4bddf03bda06,full,sonnet,4,806,False,B,correct,key,"{""A"": ""d2"", ""B"": ""key"", ""C"": ""d0"", ""D"": ""d1""}"
+cc814af4-6021-4031-867a-2d695aa8911f,fe3873c0e755,full,sonnet,4,691,False,A,correct,key,"{""A"": ""key"", ""B"": ""d2"", ""C"": ""d1"", ""D"": ""d0""}"
