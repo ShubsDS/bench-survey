@@ -1,5 +1,7 @@
 # Taste-Bench: a mining-origin cue predicts the label, but it does not beat the leaderboard like for like, and the hardest cell's labels hold up
 
+> **Caveat added 2026-11-20.** Every model call in this audit carried extra context from the command-line tool. See [Context caveat](#context-caveat-added-2026-11-20) at the end.
+
 Status 2026-11-17. Round two. **Independently validated** ([`validation/VALIDATION.md`](validation/VALIDATION.md));
 corrections are listed in [Validation](#validation) and marked in place below, with the auditor's
 original numbers kept. Auditor's original title: "the answer can be read from how each item was
@@ -528,3 +530,9 @@ before the parquet files were written) and every auditor script reproduce exactl
     rephrased in `results.json` and `results/b0_handread.json`.
 12. **Spend.** The validator added 1,024 Haiku calls (0.57 USD). Audit total: 4,032 calls,
     2.21 USD of the 3 USD cap.
+
+## Context caveat (added 2026-11-20)
+
+Found in round three ([`../helper-context-leak`](../helper-context-leak)): the command-line tool used for every model call adds an environment block to each request. It gives the working folder (which named this audit), the platform, the model's own name and knowledge cutoff, today's date and a 0.25 USD budget line. Re-running a sample of this audit's prompts from a meaningless folder changed nothing beyond run-to-run noise, so the folder name did not move the results. The other lines could not be removed or varied. They are identical in every arm, so paired differences stand; absolute levels carry the caveat below.
+
+**Caveat for this audit.** Haiku's context also contained the CLI's environment block (a $0.25 budget line, a scratchpad rule and platform details); 280 of 1,004 options-only replies reason from it, and on detour engineering those replies are right 0.44 against 0.22 for the rest. Options-only rates (claim C3's 28.0% and the 41.4% / 31.9% options-only rates) are therefore for Haiku with that context; removing the working directory alone does not change them (−0.05 [−0.14, 0.03], n = 58).
