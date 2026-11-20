@@ -1,0 +1,44 @@
+{
+ "n_items": 107,
+ "accepted": 92,
+ "after_hand_check": 91,
+ "hand_dropped": [
+  "ad177c40-b7b1-4943-a5b8-abcdaac291cb"
+ ],
+ "accepted_first_try": 76,
+ "dropped": [
+  "7ad6f06c-1e25-452e-a5d1-58258ff2ed18",
+  "5e17c256-a2c1-48b8-8a30-bda9dba998bc",
+  "bc0ee7e7-45c7-49bd-a779-bcd9b3b5a8ac",
+  "a28d2081-f953-45cb-992f-8d0e394e60ab",
+  "f042d525-ec83-4e69-8246-c4cd5a7bbfcc",
+  "ac7d4931-90f0-431a-a722-bbbf13939472",
+  "cad5e744-2600-4674-a8ad-8a02897c6fd4",
+  "382c0dd9-716f-485b-89e5-3a4084f1bd98",
+  "a6231697-bb0c-41bc-b3bf-c7e237d7d423",
+  "4f8da757-bd4f-4412-8a57-cc52445d4e68",
+  "a8a75ed9-e081-4e68-bb80-34983699d26d",
+  "ec4a3241-3f52-4008-a6bd-cd668878bfb4",
+  "67a36ceb-b76a-47a2-bc41-a85a7b45bf9e",
+  "44b66cdb-bfc4-44db-a5c2-94d32d878123",
+  "275341e6-a13d-49b5-923e-fc45b78ce09a"
+ ],
+ "fail_reasons": {
+  "too_similar": 16,
+  "length": 23,
+  "too_similar_mean": 6,
+  "numbers": 1
+ },
+ "mean_jaccard_options": 0.49514633074152004,
+ "rule": "v2: numbers equal, length 0.6-1.6, Jaccard < 0.8 per text and < 0.6 item mean",
+ "v1": {
+  "rule": "numbers equal, length 0.6-1.6, Jaccard < 0.6 per text",
+  "accepted": 47,
+  "accepted_first_try": 37,
+  "fail_reasons": {
+   "too_similar": 109,
+   "length": 20,
+   "numbers": 1
+  }
+ }
+}

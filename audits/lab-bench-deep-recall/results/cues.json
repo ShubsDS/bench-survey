@@ -1,0 +1,92 @@
+{
+ "ProtocolQA": {
+  "n": 107,
+  "clusters": 23,
+  "chance": 0.23264352469959942,
+  "rule_in_sample": {
+   "max_len": 0.3348909657320872,
+   "min_len": 0.1853582554517134,
+   "max_words": 0.32398753894081,
+   "min_words": 0.1864485981308411,
+   "max_numerals": 0.23177570093457944,
+   "min_numerals": 0.2278816199376947,
+   "max_steps": 0.24984423676012463,
+   "min_steps": 0.2261682242990654,
+   "max_hedge": 0.23785046728971962,
+   "min_hedge": 0.22959501557632397,
+   "max_units": 0.2042056074766355,
+   "min_units": 0.2509345794392523,
+   "max_unique_words": 0.23457943925233646,
+   "min_unique_words": 0.18348909657320872,
+   "max_centroid": 0.22429906542056074,
+   "min_centroid": 0.20093457943925233
+  },
+  "rule_heldout_mean": 0.2933588849685269,
+  "rule_heldout_p2.5_97.5": [
+   0.12930675287356322,
+   0.3837222052223582
+  ],
+  "logit_heldout_mean": 0.25978984338698863,
+  "null_rule_heldout_mean": 0.23500418757045183,
+  "p_rule": 0.07308970099667775,
+  "p_logit": 0.24584717607973422,
+  "chosen_rules_freq": {
+   "max_len": 572,
+   "min_len": 16,
+   "max_words": 309,
+   "min_words": 1,
+   "max_numerals": 14,
+   "max_steps": 1,
+   "min_units": 22,
+   "min_unique_words": 1,
+   "max_centroid": 53,
+   "min_centroid": 11
+  },
+  "best_rule_all_items": "max_len",
+  "best_rule_all_items_acc": 0.3348909657320872,
+  "null_shuffles": 300
+ },
+ "CloningScenarios": {
+  "n": 33,
+  "clusters": 9,
+  "chance": 0.22586580086580085,
+  "rule_in_sample": {
+   "max_len": 0.19696969696969696,
+   "min_len": 0.22727272727272727,
+   "max_words": 0.1571067821067821,
+   "min_words": 0.31114718614718606,
+   "max_numerals": 0.1773088023088023,
+   "min_numerals": 0.22377344877344876,
+   "max_steps": 0.22586580086580085,
+   "min_steps": 0.22586580086580085,
+   "max_hedge": 0.22586580086580085,
+   "min_hedge": 0.22586580086580085,
+   "max_units": 0.20007215007215007,
+   "min_units": 0.22532467532467534,
+   "max_unique_words": 0.1268037518037518,
+   "min_unique_words": 0.27579365079365076,
+   "max_centroid": 0.21717171717171715,
+   "min_centroid": 0.1717171717171717
+  },
+  "rule_heldout_mean": 0.2685297630328851,
+  "rule_heldout_p2.5_97.5": [
+   0.12698412698412698,
+   0.33192147034252295
+  ],
+  "logit_heldout_mean": 0.25156161278395367,
+  "null_rule_heldout_mean": 0.2263219164503563,
+  "p_rule": 0.1893687707641196,
+  "p_logit": 0.34551495016611294,
+  "chosen_rules_freq": {
+   "min_len": 1,
+   "min_words": 194,
+   "min_numerals": 1,
+   "min_unique_words": 81,
+   "max_centroid": 21,
+   "min_centroid": 2
+  },
+  "best_rule_all_items": "min_words",
+  "best_rule_all_items_acc": 0.31114718614718606,
+  "null_shuffles": 300
+ }
+}
