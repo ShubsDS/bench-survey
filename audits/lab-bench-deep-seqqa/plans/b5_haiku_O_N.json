@@ -1,0 +1,982 @@
+[
+{
+"id": "85a93675-1bc9-48a9-9549-3312fa611b13",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "de3f2f52-bc6b-4ad5-9d4b-979b87a27e72",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "af3b3a9b-4567-4391-bfcd-61c621dce7da",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2e9b71bb-65cf-4663-83f0-ebefba7e510e",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2da2160a-dd1e-431c-a098-65404df1deda",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "c6716319-d32e-4da9-a6bb-6d6a768c3400",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1e11e93b-af7a-4265-9a3f-9e9c8689d321",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1b177af8-4388-4acf-af52-3814ef021711",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1421394f-98d4-4153-99c3-e11e668de733",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1fbe6049-2064-454d-b8cb-263947ba6d33",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "e39c274c-32da-47a6-8f5d-c2bf881676b8",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3634cc6e-8424-43f5-811e-9afa3070039e",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "7158dd79-9c9f-46de-bce6-6f389ddb58db",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "688d31f5-51f3-43cb-bfff-ddbab2c36cf6",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "da61a94f-1122-4bf0-8671-6888766d5427",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "7df21e90-5110-450b-9e9b-0e64df27a9a1",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "4ec3224a-2488-4fdc-bf7a-e1ad7c84a2b7",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "0dfbb96e-dbd8-4a9c-9c99-57ceda6d7d6f",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "dbff1694-e1fe-46f1-ac97-d52dd1a4734f",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "f58ffa68-94d9-4fb8-8e53-37b7f2a6aa31",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "855909f2-8dfd-4439-9a63-47642b04a171",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "77101ce9-8e55-4f7c-a5e6-d0583d79a3ef",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "14379785-6102-40ca-bf62-e87d330a45a3",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "e4a359fc-fcbf-4110-80f5-48d9967db709",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "9a0c2046-928f-4f00-9f31-d4f15f578160",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "08b87c52-e33c-4054-9850-eee93af7bcb8",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "53b30411-24d3-45b1-91a8-957ed1a2847f",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "e4b64632-4d9f-48bb-86bd-888bc90b32fd",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2c5ef6b4-00f4-4558-b89a-0204819504a7",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "aba0c05a-ad0b-4ec9-a904-dcbfad76e4c8",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "8c10507e-121d-4ebc-964d-4bf6e1a0f4b4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "efb435e0-6d7b-4c18-a303-594074699de5",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "e692585d-f100-4f9f-aa49-ad701acd2870",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "f7fccdae-fa55-4dbc-a01c-25cd590d8abb",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2defcddf-dc8a-4005-ab30-cba723d7179f",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "eed304eb-4f9a-41df-a943-79e3ab950331",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1381f736-bfd6-49bf-b5ce-00882dabc573",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "78b23d13-8f64-427a-8a7a-0ed8459a8c15",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "d52cae21-1b81-4674-8e93-9dd5ccaf8af9",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "a4e4dd53-e7e5-46fc-b3fa-fe64bf1ce186",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "6ff59ebd-f842-41f4-aa82-588a009e37be",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "179287d5-c3dd-455b-995b-f6113c4d8a8d",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "f4f9dc42-89ab-4435-ba8a-a5d7f83dcb5c",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "88ec8b3d-1f94-4338-b381-ce68db14485e",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "85a93675-1bc9-48a9-9549-3312fa611b13",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "de3f2f52-bc6b-4ad5-9d4b-979b87a27e72",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "af3b3a9b-4567-4391-bfcd-61c621dce7da",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2e9b71bb-65cf-4663-83f0-ebefba7e510e",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2da2160a-dd1e-431c-a098-65404df1deda",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "c6716319-d32e-4da9-a6bb-6d6a768c3400",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1e11e93b-af7a-4265-9a3f-9e9c8689d321",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1b177af8-4388-4acf-af52-3814ef021711",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1421394f-98d4-4153-99c3-e11e668de733",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1fbe6049-2064-454d-b8cb-263947ba6d33",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "e39c274c-32da-47a6-8f5d-c2bf881676b8",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3634cc6e-8424-43f5-811e-9afa3070039e",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "7158dd79-9c9f-46de-bce6-6f389ddb58db",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "688d31f5-51f3-43cb-bfff-ddbab2c36cf6",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "da61a94f-1122-4bf0-8671-6888766d5427",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "7df21e90-5110-450b-9e9b-0e64df27a9a1",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "4ec3224a-2488-4fdc-bf7a-e1ad7c84a2b7",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "0dfbb96e-dbd8-4a9c-9c99-57ceda6d7d6f",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "dbff1694-e1fe-46f1-ac97-d52dd1a4734f",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "f58ffa68-94d9-4fb8-8e53-37b7f2a6aa31",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "855909f2-8dfd-4439-9a63-47642b04a171",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "77101ce9-8e55-4f7c-a5e6-d0583d79a3ef",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "14379785-6102-40ca-bf62-e87d330a45a3",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "e4a359fc-fcbf-4110-80f5-48d9967db709",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "9a0c2046-928f-4f00-9f31-d4f15f578160",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "08b87c52-e33c-4054-9850-eee93af7bcb8",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "53b30411-24d3-45b1-91a8-957ed1a2847f",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "e4b64632-4d9f-48bb-86bd-888bc90b32fd",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2c5ef6b4-00f4-4558-b89a-0204819504a7",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "aba0c05a-ad0b-4ec9-a904-dcbfad76e4c8",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "8c10507e-121d-4ebc-964d-4bf6e1a0f4b4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "efb435e0-6d7b-4c18-a303-594074699de5",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "e692585d-f100-4f9f-aa49-ad701acd2870",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "f7fccdae-fa55-4dbc-a01c-25cd590d8abb",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2defcddf-dc8a-4005-ab30-cba723d7179f",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "eed304eb-4f9a-41df-a943-79e3ab950331",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "a5430e40-81cb-45eb-b97c-f7f4047d439e",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "a5430e40-81cb-45eb-b97c-f7f4047d439e",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "021ba895-4926-438f-8d18-d093cb4963b1",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "021ba895-4926-438f-8d18-d093cb4963b1",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "fcdd20b4-51a6-41ac-bc92-ee64fb9501e1",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "fcdd20b4-51a6-41ac-bc92-ee64fb9501e1",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3eafe1cd-3caf-4e06-ad36-cae1f653d5ff",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3eafe1cd-3caf-4e06-ad36-cae1f653d5ff",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "d3568ca3-1417-484d-8e48-0c3c3dcadf10",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "d3568ca3-1417-484d-8e48-0c3c3dcadf10",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "298466bc-8295-4062-89fd-05cd1609ca62",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "298466bc-8295-4062-89fd-05cd1609ca62",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "7b7620b7-bf69-4ab3-940b-7f4afc02954b",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "7b7620b7-bf69-4ab3-940b-7f4afc02954b",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2ef39ddd-ee65-4e3a-b3b8-b84203a2d9db",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2ef39ddd-ee65-4e3a-b3b8-b84203a2d9db",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "6cdb468e-7d73-46b6-99d8-7c59acf4bcdf",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "6cdb468e-7d73-46b6-99d8-7c59acf4bcdf",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "d56970cd-0385-421a-8582-67f944acd22d",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "d56970cd-0385-421a-8582-67f944acd22d",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3e28ee9e-97eb-4bd5-96cf-f3238bc27e64",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3e28ee9e-97eb-4bd5-96cf-f3238bc27e64",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "23eb55f3-b63b-4959-9701-b60b4a68d1c4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "23eb55f3-b63b-4959-9701-b60b4a68d1c4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "acc6db25-82e8-48db-8ec0-554638d2e3bb",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "acc6db25-82e8-48db-8ec0-554638d2e3bb",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "b6f3882f-4c3c-44a8-a9d8-bcc50019c74d",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "b6f3882f-4c3c-44a8-a9d8-bcc50019c74d",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1ac7c9a3-98d3-46d2-8e51-4014a0dea1cb",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1ac7c9a3-98d3-46d2-8e51-4014a0dea1cb",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "74880201-d804-4f19-bba0-615d4c5e5934",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "74880201-d804-4f19-bba0-615d4c5e5934",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "d948ad84-dbf5-4e7a-8916-8b9104305566",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "d948ad84-dbf5-4e7a-8916-8b9104305566",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "de3fb301-86cb-4f48-bce8-8d8dbf72fef4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "de3fb301-86cb-4f48-bce8-8d8dbf72fef4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "226e7494-d7b4-4e63-8d9d-1bc9e7be34e3",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "226e7494-d7b4-4e63-8d9d-1bc9e7be34e3",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "8235ad22-a87f-43c0-aafa-ead1af330e74",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "8235ad22-a87f-43c0-aafa-ead1af330e74",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "c59aa0ee-743b-46ac-ae84-f6984f3a0bc6",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "c59aa0ee-743b-46ac-ae84-f6984f3a0bc6",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3d2af49e-97ae-404d-ae60-ec6124dea91f",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3d2af49e-97ae-404d-ae60-ec6124dea91f",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "9ac19de6-af67-48b2-a583-75bfd25d5c7c",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "9ac19de6-af67-48b2-a583-75bfd25d5c7c",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "ae5e3404-d9b1-4e16-b04d-70f641787030",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "ae5e3404-d9b1-4e16-b04d-70f641787030",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "159eabd8-655c-408c-af49-753070ad9fd8",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "159eabd8-655c-408c-af49-753070ad9fd8",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1926ff06-f9d8-48f8-8101-1bc3b2c8dcd1",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1926ff06-f9d8-48f8-8101-1bc3b2c8dcd1",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "1a8cc9ae-276c-4aef-9806-8c840334f269",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "1a8cc9ae-276c-4aef-9806-8c840334f269",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "f71cbbab-f086-4c9b-996d-353a9e894ea4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "f71cbbab-f086-4c9b-996d-353a9e894ea4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "4da60aa1-7212-4bef-a23a-00abbc869bc3",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "4da60aa1-7212-4bef-a23a-00abbc869bc3",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "af0e4a98-6def-4554-b0cc-3cf6fcdf95e0",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "af0e4a98-6def-4554-b0cc-3cf6fcdf95e0",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "06e021d9-c0f7-4399-8d21-1d94753735ac",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "06e021d9-c0f7-4399-8d21-1d94753735ac",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "fc68c355-18ac-4c40-84c9-72044808e7e4",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "fc68c355-18ac-4c40-84c9-72044808e7e4",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "26e0a268-3a51-41d9-8c16-b0e7275757ae",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "26e0a268-3a51-41d9-8c16-b0e7275757ae",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "4d90741e-6d40-4fdc-9582-d23ead7229a5",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "4d90741e-6d40-4fdc-9582-d23ead7229a5",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "441be77d-4175-43e8-985f-c39ba1b9bf37",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "441be77d-4175-43e8-985f-c39ba1b9bf37",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "7c7c542c-0758-480b-bb52-af895766c679",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "7c7c542c-0758-480b-bb52-af895766c679",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "f1c9c933-7b85-40b5-88e4-60c18a503265",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "f1c9c933-7b85-40b5-88e4-60c18a503265",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "479810f6-ee2b-488d-b478-2542e518923b",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "479810f6-ee2b-488d-b478-2542e518923b",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "dfacdcad-c0ea-495e-9962-a28e06a6f42e",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "dfacdcad-c0ea-495e-9962-a28e06a6f42e",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "dd6291b9-a008-4f39-a362-47fbf01eaf4d",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "dd6291b9-a008-4f39-a362-47fbf01eaf4d",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "48eb85df-6d0b-423d-9706-862fd928b410",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "48eb85df-6d0b-423d-9706-862fd928b410",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3651ff8f-e133-4c45-b8ed-8eda84311be5",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3651ff8f-e133-4c45-b8ed-8eda84311be5",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "2e2e8344-d190-446f-8d57-385daaad39cf",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "2e2e8344-d190-446f-8d57-385daaad39cf",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "0fa51b74-8bd4-4645-a0e0-b4dc217314c3",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "0fa51b74-8bd4-4645-a0e0-b4dc217314c3",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "37776f2a-9885-41b8-9876-8335b2cbee9d",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "37776f2a-9885-41b8-9876-8335b2cbee9d",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "29483ce9-55aa-4fab-a461-bb741232d9f7",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "29483ce9-55aa-4fab-a461-bb741232d9f7",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "ac39580c-8063-4d39-a165-d2a42c8b1788",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "ac39580c-8063-4d39-a165-d2a42c8b1788",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "8151bfab-5474-4177-8694-33d29f2fde43",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "8151bfab-5474-4177-8694-33d29f2fde43",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "7fb23906-dea2-4e70-9073-62e8185795c2",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "7fb23906-dea2-4e70-9073-62e8185795c2",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "97a146a7-52b8-41a9-8d5d-4a4684029cea",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "97a146a7-52b8-41a9-8d5d-4a4684029cea",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "763f5c4e-01e1-4018-a241-86cbbdcb9b2a",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "763f5c4e-01e1-4018-a241-86cbbdcb9b2a",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "a6e8da3e-0867-4ea9-843c-692a99f67db0",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "a6e8da3e-0867-4ea9-843c-692a99f67db0",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "cbc6d33d-4d0f-43c1-a317-f78ab51e2d61",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "cbc6d33d-4d0f-43c1-a317-f78ab51e2d61",
+"arm": "N",
+"model": "haiku"
+},
+{
+"id": "3233dbe7-30f4-49bc-b29f-4e4668527e84",
+"arm": "O",
+"model": "haiku"
+},
+{
+"id": "3233dbe7-30f4-49bc-b29f-4e4668527e84",
+"arm": "N",
+"model": "haiku"
+}
+]

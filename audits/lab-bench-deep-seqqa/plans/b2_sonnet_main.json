@@ -1,0 +1,382 @@
+[
+{
+"id": "d52cae21-1b81-4674-8e93-9dd5ccaf8af9",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "d52cae21-1b81-4674-8e93-9dd5ccaf8af9",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "d52cae21-1b81-4674-8e93-9dd5ccaf8af9",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "a4e4dd53-e7e5-46fc-b3fa-fe64bf1ce186",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "a4e4dd53-e7e5-46fc-b3fa-fe64bf1ce186",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "a4e4dd53-e7e5-46fc-b3fa-fe64bf1ce186",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "6ff59ebd-f842-41f4-aa82-588a009e37be",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "6ff59ebd-f842-41f4-aa82-588a009e37be",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "6ff59ebd-f842-41f4-aa82-588a009e37be",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "179287d5-c3dd-455b-995b-f6113c4d8a8d",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "179287d5-c3dd-455b-995b-f6113c4d8a8d",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "179287d5-c3dd-455b-995b-f6113c4d8a8d",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "af3b3a9b-4567-4391-bfcd-61c621dce7da",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "af3b3a9b-4567-4391-bfcd-61c621dce7da",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "2e9b71bb-65cf-4663-83f0-ebefba7e510e",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "2e9b71bb-65cf-4663-83f0-ebefba7e510e",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "2da2160a-dd1e-431c-a098-65404df1deda",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "2da2160a-dd1e-431c-a098-65404df1deda",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "c6716319-d32e-4da9-a6bb-6d6a768c3400",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "c6716319-d32e-4da9-a6bb-6d6a768c3400",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "e39c274c-32da-47a6-8f5d-c2bf881676b8",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "e39c274c-32da-47a6-8f5d-c2bf881676b8",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "3634cc6e-8424-43f5-811e-9afa3070039e",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "3634cc6e-8424-43f5-811e-9afa3070039e",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "7158dd79-9c9f-46de-bce6-6f389ddb58db",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "7158dd79-9c9f-46de-bce6-6f389ddb58db",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "688d31f5-51f3-43cb-bfff-ddbab2c36cf6",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "688d31f5-51f3-43cb-bfff-ddbab2c36cf6",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "da61a94f-1122-4bf0-8671-6888766d5427",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "da61a94f-1122-4bf0-8671-6888766d5427",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "44c3cf75-4d5e-4c94-a643-e2e0899babd3",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "f1458a52-e1f7-4963-8255-38d5f5367d3b",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "f1458a52-e1f7-4963-8255-38d5f5367d3b",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "70a336ff-90d7-4de8-9dcc-27963813a33f",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "70a336ff-90d7-4de8-9dcc-27963813a33f",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "0dfbb96e-dbd8-4a9c-9c99-57ceda6d7d6f",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "0dfbb96e-dbd8-4a9c-9c99-57ceda6d7d6f",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "dbff1694-e1fe-46f1-ac97-d52dd1a4734f",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "dbff1694-e1fe-46f1-ac97-d52dd1a4734f",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "f58ffa68-94d9-4fb8-8e53-37b7f2a6aa31",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "f58ffa68-94d9-4fb8-8e53-37b7f2a6aa31",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "855909f2-8dfd-4439-9a63-47642b04a171",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "855909f2-8dfd-4439-9a63-47642b04a171",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "08b87c52-e33c-4054-9850-eee93af7bcb8",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "08b87c52-e33c-4054-9850-eee93af7bcb8",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "53b30411-24d3-45b1-91a8-957ed1a2847f",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "53b30411-24d3-45b1-91a8-957ed1a2847f",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "e4b64632-4d9f-48bb-86bd-888bc90b32fd",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "e4b64632-4d9f-48bb-86bd-888bc90b32fd",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "799f3052-f6e5-4e2f-84b3-c43ce418d740",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "df397f08-19db-442e-a6ba-7eb0b9a125a4",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "2c5ef6b4-00f4-4558-b89a-0204819504a7",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "2c5ef6b4-00f4-4558-b89a-0204819504a7",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "cebf9adf-64ca-455f-b57f-4c90958ab3ea",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "cebf9adf-64ca-455f-b57f-4c90958ab3ea",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "f12f8508-38ca-4e27-856d-32366a3b992d",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "f12f8508-38ca-4e27-856d-32366a3b992d",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "efb435e0-6d7b-4c18-a303-594074699de5",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "efb435e0-6d7b-4c18-a303-594074699de5",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "e692585d-f100-4f9f-aa49-ad701acd2870",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "e692585d-f100-4f9f-aa49-ad701acd2870",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "f7fccdae-fa55-4dbc-a01c-25cd590d8abb",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "f7fccdae-fa55-4dbc-a01c-25cd590d8abb",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "6452f1be-4efb-4146-8cdc-4ff48357560c",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "2defcddf-dc8a-4005-ab30-cba723d7179f",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "2defcddf-dc8a-4005-ab30-cba723d7179f",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "eed304eb-4f9a-41df-a943-79e3ab950331",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "eed304eb-4f9a-41df-a943-79e3ab950331",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "0eafde3b-6246-4ff7-9954-2a55c593a086",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "0eafde3b-6246-4ff7-9954-2a55c593a086",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "dc3ab7ad-6f73-4f6c-be81-5e26d939e337",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "dc3ab7ad-6f73-4f6c-be81-5e26d939e337",
+"arm": "D",
+"model": "sonnet"
+}
+]

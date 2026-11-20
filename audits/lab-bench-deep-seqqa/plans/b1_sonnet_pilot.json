@@ -1,0 +1,132 @@
+[
+{
+"id": "1381f736-bfd6-49bf-b5ce-00882dabc573",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "1381f736-bfd6-49bf-b5ce-00882dabc573",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "1381f736-bfd6-49bf-b5ce-00882dabc573",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "78b23d13-8f64-427a-8a7a-0ed8459a8c15",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "78b23d13-8f64-427a-8a7a-0ed8459a8c15",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "78b23d13-8f64-427a-8a7a-0ed8459a8c15",
+"arm": "I",
+"model": "sonnet"
+},
+{
+"id": "85a93675-1bc9-48a9-9549-3312fa611b13",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "85a93675-1bc9-48a9-9549-3312fa611b13",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "de3f2f52-bc6b-4ad5-9d4b-979b87a27e72",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "de3f2f52-bc6b-4ad5-9d4b-979b87a27e72",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "1421394f-98d4-4153-99c3-e11e668de733",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "1421394f-98d4-4153-99c3-e11e668de733",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "1fbe6049-2064-454d-b8cb-263947ba6d33",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "1fbe6049-2064-454d-b8cb-263947ba6d33",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "7df21e90-5110-450b-9e9b-0e64df27a9a1",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "7df21e90-5110-450b-9e9b-0e64df27a9a1",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "4ec3224a-2488-4fdc-bf7a-e1ad7c84a2b7",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "4ec3224a-2488-4fdc-bf7a-e1ad7c84a2b7",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "e4a359fc-fcbf-4110-80f5-48d9967db709",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "e4a359fc-fcbf-4110-80f5-48d9967db709",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "9a0c2046-928f-4f00-9f31-d4f15f578160",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "9a0c2046-928f-4f00-9f31-d4f15f578160",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "aba0c05a-ad0b-4ec9-a904-dcbfad76e4c8",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "aba0c05a-ad0b-4ec9-a904-dcbfad76e4c8",
+"arm": "D",
+"model": "sonnet"
+},
+{
+"id": "8c10507e-121d-4ebc-964d-4bf6e1a0f4b4",
+"arm": "K",
+"model": "sonnet"
+},
+{
+"id": "8c10507e-121d-4ebc-964d-4bf6e1a0f4b4",
+"arm": "D",
+"model": "sonnet"
+}
+]
