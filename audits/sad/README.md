@@ -1,5 +1,7 @@
 # SAD: the overall score and ranking survive the answer-choice shortcut; on three tasks the scores mix self-knowledge with a yes/no lean the keys reward
 
+> **Caveat added 2026-11-20.** Every model call in this audit carried extra context from the command-line tool. See [Context caveat](#context-caveat-added-2026-11-20) at the end.
+
 Status: complete, 2026-11-17, and independently validated (see
 [Validation](#validation) and [`validation/VALIDATION.md`](validation/VALIDATION.md)). Branch
 `effect-audits`.
@@ -317,3 +319,9 @@ $P -I scripts/collect.py                        # every number                  
 ```
 
 All seeds are 0. Haiku responses are cached, so a rerun costs nothing.
+
+## Context caveat (added 2026-11-20)
+
+Found in round three ([`../helper-context-leak`](../helper-context-leak)): the command-line tool used for every model call adds an environment block to each request. It gives the working folder (which named this audit), the platform, the model's own name and knowledge cutoff, today's date and a 0.25 USD budget line. Re-running a sample of this audit's prompts from a meaningless folder changed nothing beyond run-to-run noise, so the folder name did not move the results. The other lines could not be removed or varied. They are identical in every arm, so paired differences stand; absolute levels carry the caveat below.
+
+**Caveat for this audit.** Haiku was told its model name, knowledge cutoff and the current date by the CLI's environment block, so its disagreement with the copied key on date and version rows of facts_which_llm reflects that context and may not hold for the bare model. Its context also named it as a Claude model and described an agentic environment (shell, scratchpad, budget); its answers about itself (facts_human_defaults, influence) are under that context, identical in all conditions.
