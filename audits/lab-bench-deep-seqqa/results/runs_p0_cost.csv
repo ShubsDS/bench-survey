@@ -1,0 +1,5 @@
+id,family,arm,model,letter,parse,bucket,picked,n_sub,d_centre,cost_usd,out_tokens,thinking_tokens,out_len,err
+0914c85e-b365-45a6-ae1c-a4076e3f329e,RE-seq-numfrags-v1,O,sonnet,C,tag,correct,0,4,,0.019288,1148,1130,18,
+085e5fbd-cead-4dcc-8976-0b84f542cc51,PCR-len-primers-v1,O,sonnet,D,tag,correct,0,4,,0.015274,683,665,18,
+05cb64a3-16a4-4e3e-b3fe-19cf4c47e008,ORF-seq-numlen-v1,O,sonnet,A,tag,wrong,1,4,,0.019874000000000003,867,849,18,
+0914c85e-b365-45a6-ae1c-a4076e3f329e,RE-seq-numfrags-v1,O,haiku,C,tag,correct,0,4,,0.0013172000000000001,1844,1826,18,
