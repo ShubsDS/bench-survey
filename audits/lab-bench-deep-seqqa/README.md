@@ -332,3 +332,9 @@ shift, and the absence of any statement about Opus or a published model.
 
 Not checked: whether Sonnet's drop also quadruples under a step-by-step prompt (budget); the 27
 items dropped before any outcome; anything about published models.
+
+**Follow-up:** that open question was then run in
+[`../lab-bench-deep-seqqa-reasoning`](../lab-bench-deep-seqqa-reasoning) — the same 48 K/D pairs
+under the step-by-step prompt give Sonnet 0.958 → 0.875 (drop 0.083, exact p = 0.22, 48 pairs),
+i.e. no growth over the letter-only drop (difference-in-differences −0.021 [−0.104, 0.063]), and
+all 8 errors are gene-recall failures rather than option comparisons.
