@@ -363,7 +363,7 @@ class Run:
         except Exception as e:  # noqa: BLE001  (main.py:439-447: no result line in the harness)
             r = repr(e)
             status = ("blocked" if getattr(e, "blocked", False) or "BlockedError" in r
-                      else "truncated" if "CacheMiss" in r else "error")
+                      else "truncated" if "CacheMiss" in r else "oom" if "ServerOOM" in r else "error")
             err = r[:500]
         return {"status": status, "error": err, "trigger_called": trigger_called, "trigger_level": trigger_level,
                 "stop_from_task_message": stop_from_task, "target_called": self.tools.target_call_competent,

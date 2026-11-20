@@ -115,6 +115,10 @@ def parse_text_reply(text: str, call_no: int):
     return (t or None), None, meta
 
 
+class ServerOOM(RuntimeError):
+    fatal = True
+
+
 class BlockedError(RuntimeError):
     blocked = True
     fatal = True
@@ -199,8 +203,29 @@ class OpenAICompatBackend:
             b["max_tokens"] = int(self.max_tokens)
         return b
 
+    def _server_oom(self):
+        log = os.environ.get("PB_SERVER_LOG")
+        return bool(log) and os.path.exists(log) and "Insufficient Memory" in open(log, errors="ignore").read()
+
+    def _wait_healthy(self, limit=300):
+        import time
+        t0 = time.time()
+        while time.time() - t0 < limit:
+            try:
+                urllib.request.urlopen(self.base + "/models", timeout=5).read()
+                return True
+            except Exception:  # noqa: BLE001
+                time.sleep(5)
+        return False
+
     def chat(self, messages, tools):
-        d = _post(self.base + "/chat/completions", self.body(messages, tools), self.key, self.timeout)
+        try:
+            d = _post(self.base + "/chat/completions", self.body(messages, tools), self.key, self.timeout)
+        except Exception as e:  # noqa: BLE001
+            if self._server_oom():   # the local server ran out of GPU memory: a context-length censoring, not a model reply
+                raise ServerOOM(f"local server out of memory at {len(json.dumps(messages))} chars of messages") from e
+            self._wait_healthy()
+            raise
         msg = d["choices"][0]["message"]
         tcs = msg.get("tool_calls") or None
         meta = {"usage": d.get("usage"), "finish_reason": d["choices"][0].get("finish_reason"),
