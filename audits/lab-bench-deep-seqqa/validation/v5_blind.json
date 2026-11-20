@@ -1,0 +1,23 @@
+{
+ "n_blocks": 51,
+ "arm_calls": 40,
+ "arm_right": 40,
+ "pick_calls": 40,
+ "pick_is_key": 40,
+ "by_subtask_arm": {
+  "ORF-seq-AAseq-v1|right": 7,
+  "PCR-gene-enzprimers-v1|right": 8,
+  "PCR-gene-gibshindprimers-v1|right": 9,
+  "PCR-gene-gibssmaprimers-v1|right": 9,
+  "PCR-seq-enzprimers-v1|right": 7,
+  "Prop-seq-gcpercent-v1|no_call": 11
+ },
+ "by_subtask_pick": {
+  "ORF-seq-AAseq-v1|key": 7,
+  "PCR-gene-enzprimers-v1|key": 8,
+  "PCR-gene-gibshindprimers-v1|key": 9,
+  "PCR-gene-gibssmaprimers-v1|key": 9,
+  "PCR-seq-enzprimers-v1|key": 7
+ },
+ "mismatches": []
+}
