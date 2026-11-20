@@ -215,6 +215,13 @@ class OpenAICompatBackend:
                 tc.setdefault("id", f"call_{i}")
                 if not isinstance(tc["function"].get("arguments"), str):
                     tc["function"]["arguments"] = json.dumps(tc["function"].get("arguments") or {})
+        if os.environ.get("PB_DEBUG_LOG"):   # one line per call, for watching long local runs
+            with open(os.environ["PB_DEBUG_LOG"], "a") as f:
+                f.write(json.dumps({"t": __import__("time").time(), "n_messages": len(messages),
+                                    "finish": meta["finish_reason"], "usage": meta["usage"],
+                                    "tool": [t["function"]["name"] for t in (tcs or [])],
+                                    "content_head": (msg.get("content") or "")[:300],
+                                    "content_tail": (msg.get("content") or "")[-200:]}) + "\n")
         return {"content": msg.get("content"), "tool_calls": tcs, "meta": meta}
 
 

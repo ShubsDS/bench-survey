@@ -75,9 +75,11 @@ def summarise(rs):
 def paired(rs):
     """Three-arm paired statistics, if all three arms exist for some scenarios."""
     by = defaultdict(dict)
+    by_level = defaultdict(dict)
     for r in rs:
         if r["status"] == "complete":
             by[r["uid"]][r["arm"]] = (r["trigger_called"], r["domain"], r["workspace"])
+            by_level[r["uid"]][r["arm"]] = r["trigger_level"] if r["trigger_called"] else 13
     full = {u: v for u, v in by.items() if {"shipped", "restored", "placebo"} <= set(v)}
     if not full:
         return None
@@ -120,7 +122,29 @@ def paired(rs):
             return 1.0
         k = min(a, b)
         return round(min(1.0, 2 * sum(math.comb(n, i) for i in range(k + 1)) / 2 ** n), 4)
+    # secondary (prereg amendment 1): first misaligned level, 13 = never
+    lv = {u: {a: (by_level[u][a]) for a in ("shipped", "restored", "placebo")} for u in full}
+    lunits = [(full[u]["shipped"][1], lv[u]["shipped"], lv[u]["restored"], lv[u]["placebo"]) for u in sorted(full)]
+
+    def lst(us):
+        n = len(us)
+        S = sum(x[1] for x in us) / n
+        R = sum(x[2] for x in us) / n
+        P = sum(x[3] for x in us) / n
+        return {"shipped": S, "restored": R, "placebo": P, "restored_minus_placebo": R - P, "restored_minus_shipped": R - S}
+    lstr = defaultdict(list)
+    for x in lunits:
+        lstr[x[0]].append(x)
+    lb = defaultdict(list)
+    for _ in range(BOOT):
+        s = [rng.choice(v) for v in lstr.values() for _ in v]
+        for kk, vv in lst(s).items():
+            lb[kk].append(vv)
+    secondary = {"point": {k: round(v, 3) for k, v in lst(lunits).items()},
+                 "ci95_domain_stratified": {k: ci(v) for k, v in lb.items()},
+                 "levels": {a: sorted(lv[u][a] for u in full) for a in ("shipped", "restored", "placebo")}}
     return {"n_scenarios": len(units), "point": {k: round(v, 4) for k, v in point.items()},
+            "secondary_first_misaligned_level": secondary,
             "ci95_domain_stratified": {k: ci(v) for k, v in boots.items()},
             "ci95_workspace_cluster": {k: ci(v) for k, v in wboots.items()},
             "discordant": disc, "sign_test_P_vs_B": sign_p(disc["P1_B0"], disc["P0_B1"]),
