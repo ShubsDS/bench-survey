@@ -309,9 +309,16 @@ See [`prior_work.md`](prior_work.md). Already public:
 - the "longest option" rule on all non-programmatic subsets ([issue #18](https://github.com/Future-House/LAB-Bench/issues/18), two days before this audit);
 - the paper's warnings about distractor elimination, the low CloningScenarios human baseline and
   tool asymmetry;
-- the SeqQA generator descriptions themselves.
+- the SeqQA generator descriptions themselves;
+- **(correction, 2026-11-20)** an options-only leak on four of the six cue subtasks. HuggingFaceBio's
+  `seqqa-carbon-curated-3tasks` dataset card (2026-10-26, figures 2026-10-27, three weeks before
+  this audit) reports a small model given only the choices scoring 39/40 on one PCR subtask and
+  31/40 on three others, and drops those subtasks. This audit and its validator missed it; the
+  round-three deep dive [`../lab-bench-deep-successors`](../lab-bench-deep-successors) found it
+  (inventory row A6, validation section D).
 
-**New here:**
+**New here** (narrowed by that correction: the leak on four subtasks was already public; the
+deterministic rules, the mechanism, the two other subtasks and the DbQA subtask were not):
 - the centroid and middle-value rules that solve 6 SeqQA subtasks and one DbQA subtask outright;
 - the L4 demonstration that Haiku follows the centroid on the two Gibson subtasks;
 - the stratum-level test for the 2024 models (inconclusive: too few subtasks for power);

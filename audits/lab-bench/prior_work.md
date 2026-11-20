@@ -29,6 +29,15 @@ Searched on 2026-11-17:
 No LessWrong or Alignment Forum post on LAB-Bench was found. The EA Forum repost of Justen 2025
 argues for saturation, not against validity.
 
+## Correction, 2026-11-20: prior work this file missed
+
+HuggingFaceBio's `seqqa-carbon-curated-3tasks` dataset card (text 2026-10-26, per-task figures
+2026-10-27) already showed that a small model answers four SeqQA PCR subtasks from the choices
+alone (39/40, 31/40, 31/40, 31/40) and excluded them. It did not give a deterministic rule or the
+mechanism, and did not cover ORF-seq-AAseq, GC-percent or DbQA. Found by
+[`../lab-bench-deep-successors`](../lab-bench-deep-successors) (inventory row A6; validation
+section D). The first bullet below is new only for those parts.
+
 ## What is new here
 
 - That the key in 6 of the 15 SeqQA subtasks (240 of 600 public SeqQA items) is recoverable with

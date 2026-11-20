@@ -1,12 +1,32 @@
 # Effect audits: results
 
-Status: 2026-11-17. Fourteen audits in two rounds, each followed by an independent validation pass
+Status: 2026-11-20. Fourteen audits in two rounds and a third round of deep dives, each followed by an independent validation pass
 by a fresh agent told to refute it. The method is in [`METHODOLOGY.md`](METHODOLOGY.md) and the
 validators' brief in [`REFUTATION.md`](REFUTATION.md). Every row below states the result **after**
 validation; each folder's `validation/VALIDATION.md` lists what the validator corrected. Nothing
 here has been sent to any benchmark's maintainers.
 
 The question for each benchmark: does a simple confounding feature change a published conclusion?
+
+## Round three: deep dives
+
+Round three opened no new benchmark. Each deep dive took one question an earlier audit left open
+(rules under "Deep dives" in the methodology). Model runs used Claude Sonnet and Haiku; results
+are about those models, not the models in any paper or system card.
+
+| Deep dive | Open question | Verdict after validation |
+|---|---|---|
+| [`lab-bench-deep-seqqa`](lab-bench-deep-seqqa/) and [`lab-bench-deep-seqqa-reasoning`](lab-bench-deep-seqqa-reasoning/) | Does a strong model answer LAB-Bench sequence items from the structure of the options? | Mostly no for Sonnet; yes for Haiku when it reasons. On 48 paired items where the cue points at the key or at a wrong option, Sonnet goes 0.98 to 0.88 with letter-only answers (5 of 48 pairs, exact p = 0.06) and 0.96 to 0.88 with step-by-step reasoning (p = 0.22). A Haiku-sized drop is excluded (97% power); a drop of 0.10 is not resolved, so the pre-registered verdict is "cannot tell". Sonnet picks the decoy on 1 of 6 errors; 5 of 6 say they worked from memory of the gene. Haiku on 30 Gibson pairs: 0.87 to 0.60 with reasoning (p = 0.02), 0.06 with letter-only answers. Two restriction-enzyme subtasks (80 items) contradict the paper's primer convention; no key changes. The reasoning run had no second validator |
+| [`lab-bench-deep-recall`](lab-bench-deep-recall/) | Why is half of ProtocolQA answerable without the protocol? | The share is larger than the parent found and holds for a stronger model: without the protocol Haiku keeps 0.71 (0.57–0.91) of its above-chance score and Sonnet 0.68 (0.48–0.87, on a non-random 62 of 107 items). Simple answer cues do not explain it (held-out rules at chance). Haiku is not reciting items (1 of 66 in free generation). "General lab knowledge" is not established: labels made without the key leave a gap of about 0.3 but much unexplained, and the labels come from Claude models |
+| [`lab-bench-deep-successors`](lab-bench-deep-successors/) | Did the options-only flaw travel into later versions and reuse? | Yes into every multiple-choice release (six Hugging Face releases, the Inspect Evals port, two mirrors); LABBench2 removed it by dropping options. A leak on four of the six subtasks was already public three weeks before our audit (HuggingFaceBio), which the first audit missed. From published numbers alone, whether any "at or above human" sequence score depends on the cue cannot be told: in the worst case three Claude models sit below the cue-free human line, and under equal accuracy every statement holds or sits at the line |
+| [`propensitybench-deep-multiturn`](propensitybench-deep-multiturn/) | Does showing the dropped prohibition change behaviour in the real multi-turn format? | In progress. Haiku never calls the forbidden tool (0 of 30 full runs), so Claude models cannot answer it. A local run on Qwen3-8B, a model the paper tested, is under way |
+| [`helper-context-leak`](helper-context-leak/) | Did the command-line tool's injected context change our own results? | In progress. The tool tells the model its working folder (which named the audit), its own name, the date and its budget, in every request of all three rounds |
+
+### What validation changed in round three
+
+- **SeqQA.** The auditor's letter-only prompt hid the effect in Haiku; the validator's reasoning prompt brought it back. Two interval calculations were wrong. "Above the human line" for Sonnet was withdrawn.
+- **ProtocolQA.** The "standard fix" labels used the answer key indirectly. The explanation went from supported to "cannot tell".
+- **Successors.** The bounds compared models with one human line where three are defensible, and not on the same items.
 
 ## Round two
 
