@@ -1,0 +1,58 @@
+{
+ "human": {
+  "paper_unsure_wrong": 0.789,
+  "forced_q_chance": 0.808,
+  "forced_q_precision": 0.854,
+  "forced_q_one": 0.866
+ },
+ "models": {
+  "sonnet": {
+   "noncue_subtasks": 9,
+   "noncue_items": 21,
+   "noncue_mean": 0.8333,
+   "cue_for_K": {
+    "score": 0.8933,
+    "ci_items_within_subtask": [
+     0.8533,
+     0.9333
+    ],
+    "above_paper_human_0.789": 0.1043,
+    "inside_forced_range_0.808_0.866": false
+   },
+   "cue_against_D": {
+    "score": 0.8511,
+    "ci_items_within_subtask": [
+     0.7933,
+     0.9044
+    ],
+    "above_paper_human_0.789": 0.0621,
+    "inside_forced_range_0.808_0.866": true
+   },
+   "ci_overlaps_whole_forced_range": true
+  },
+  "haiku": {
+   "noncue_subtasks": 9,
+   "noncue_items": 55,
+   "noncue_mean": 0.8148,
+   "cue_for_K": {
+    "score": 0.8222,
+    "ci_items_within_subtask": [
+     0.7667,
+     0.8712
+    ],
+    "above_paper_human_0.789": 0.0332,
+    "inside_forced_range_0.808_0.866": true
+   },
+   "cue_against_D": {
+    "score": 0.8,
+    "ci_items_within_subtask": [
+     0.7444,
+     0.8556
+    ],
+    "above_paper_human_0.789": 0.011,
+    "inside_forced_range_0.808_0.866": false
+   },
+   "ci_overlaps_whole_forced_range": true
+  }
+ }
+}
