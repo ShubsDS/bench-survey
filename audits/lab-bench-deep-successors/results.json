@@ -2966,7 +2966,8 @@
     "B_minus_human_nonCue": 0.1726,
     "score_minus_line": null
    }
-  ]
+  ],
+  "validator_note": "auditor's A_minus_human_nonCue compares with unsure=wrong only; see validation.bounds_validated"
  },
  "q4_peritem": {
   "source": "lihaoxin2020/deepseek-reasoner-full-lab_bench-r1@43fa27efe117cff2f6f47dd30e647ecac3d75c2d",
@@ -3152,5 +3153,249 @@
  "inference": {
   "calls": 0,
   "usd": 0.0
+ },
+ "validation": {
+  "status": "validated 2026-11-20; see validation/VALIDATION.md and validation/validation.json",
+  "verdicts": {
+   "claim1_cue_in_every_release": "confirmed; 7 parquet files on HF, 6 distinct item contents (983956ce == 7268767a items)",
+   "claim2_labbench2_fixed": "confirmed, qualified: seqqa2 mutation_restriction lists a closed enzyme panel (key None 17/20)",
+   "claim2_hfbio_fixed_by_exclusion": "confirmed for the centroid cue; kept ORF-transeff has a 0.50 options-only rule (chance 0.25, p=0.001)",
+   "claim2_hfbio_prior_work": "confirmed; text 2026-10-26, per-task figures 2026-10-27; parent novelty statement needs correcting (VALIDATION.md D)",
+   "claim3_human_line": "confirmed; Opus 4 downgraded to 'at or below' 0.808 (figure reading +-0.02); xAI caveat added",
+   "claim4_bounds": "arithmetic confirmed; comparison corrected (three human lines; AISI on its own chance-credit rule; reading B equal prominence)",
+   "claim5_peritem": "confirmed (validator count 26 S in 2 subtasks)",
+   "lead_c_numfrags_chance": "corrected: chance 0.20, not 0.25"
+  },
+  "human_cuefree_lines": {
+   "all15": {
+    "unsure_wrong": 0.7893,
+    "chance_credit": 0.8084,
+    "guess_at_precision": 0.8428
+   },
+   "S6": {
+    "unsure_wrong": 0.8267,
+    "chance_credit": 0.8371,
+    "guess_at_precision": 0.8607
+   },
+   "F9": {
+    "unsure_wrong": 0.7644,
+    "chance_credit": 0.7892,
+    "guess_at_precision": 0.831
+   },
+   "S7_2024": {
+    "unsure_wrong": 0.81,
+    "chance_credit": 0.8201,
+    "guess_at_precision": 0.8434
+   },
+   "F8_2024": {
+    "unsure_wrong": 0.7712,
+    "chance_credit": 0.7981,
+    "guess_at_precision": 0.8424
+   },
+   "F9_not_regenerated": {
+    "unsure_wrong": 0.7333,
+    "chance_credit": 0.7658,
+    "guess_at_precision": 0.8159
+   },
+   "F8_not_regenerated": {
+    "unsure_wrong": 0.7333,
+    "chance_credit": 0.7658,
+    "guess_at_precision": 0.8159
+   }
+  },
+  "bounds_validated": [
+   {
+    "label": "US/UK AISI: Sonnet 3.5 (new), Python tools",
+    "s": 0.86,
+    "w": 0.4667,
+    "A_lower": 0.7375,
+    "A_minus_h_unsure_wrong": -0.0337,
+    "A_minus_h_chance_credit": -0.0606,
+    "A_minus_h_guess_at_precision": -0.1049,
+    "B_minus_h_unsure_wrong": 0.0888,
+    "B_minus_h_chance_credit": 0.0619,
+    "B_minus_h_guess_at_precision": 0.0176,
+    "doc_rule": "chance_credit"
+   },
+   {
+    "label": "US/UK AISI: o1, Python tools",
+    "s": 0.77,
+    "w": 0.4667,
+    "A_lower": 0.5687,
+    "A_minus_h_unsure_wrong": -0.2025,
+    "A_minus_h_chance_credit": -0.2294,
+    "A_minus_h_guess_at_precision": -0.2737,
+    "B_minus_h_unsure_wrong": -0.0012,
+    "B_minus_h_chance_credit": -0.0281,
+    "B_minus_h_guess_at_precision": -0.0724,
+    "doc_rule": "chance_credit"
+   },
+   {
+    "label": "Claude 4 card: Opus 4, best of 0/5/10-shot",
+    "s": 0.79,
+    "w": 0.4,
+    "A_lower": 0.65,
+    "A_minus_h_unsure_wrong": -0.1144,
+    "A_minus_h_chance_credit": -0.1392,
+    "A_minus_h_guess_at_precision": -0.181,
+    "B_minus_h_unsure_wrong": 0.0256,
+    "B_minus_h_chance_credit": 0.0008,
+    "B_minus_h_guess_at_precision": -0.041,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Sonnet 4.5 card: Sonnet 4.5, 10-shot",
+    "s": 0.78,
+    "w": 0.4,
+    "A_lower": 0.6333,
+    "A_minus_h_unsure_wrong": -0.1311,
+    "A_minus_h_chance_credit": -0.1559,
+    "A_minus_h_guess_at_precision": -0.1977,
+    "B_minus_h_unsure_wrong": 0.0156,
+    "B_minus_h_chance_credit": -0.0092,
+    "B_minus_h_guess_at_precision": -0.051,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Opus 4.5 card: Opus 4.1, 10-shot",
+    "s": 0.785,
+    "w": 0.4,
+    "A_lower": 0.6417,
+    "A_minus_h_unsure_wrong": -0.1227,
+    "A_minus_h_chance_credit": -0.1475,
+    "A_minus_h_guess_at_precision": -0.1893,
+    "B_minus_h_unsure_wrong": 0.0206,
+    "B_minus_h_chance_credit": -0.0042,
+    "B_minus_h_guess_at_precision": -0.046,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Opus 4.5 card: Opus 4.5, 10-shot",
+    "s": 0.8517,
+    "w": 0.4,
+    "A_lower": 0.7528,
+    "A_minus_h_unsure_wrong": -0.0116,
+    "A_minus_h_chance_credit": -0.0364,
+    "A_minus_h_guess_at_precision": -0.0782,
+    "B_minus_h_unsure_wrong": 0.0873,
+    "B_minus_h_chance_credit": 0.0625,
+    "B_minus_h_guess_at_precision": 0.0207,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Concordia 2025-Q4: Gemini 3 Pro Preview",
+    "s": 0.87,
+    "w": 0.4,
+    "A_lower": 0.7833,
+    "A_minus_h_unsure_wrong": 0.0189,
+    "A_minus_h_chance_credit": -0.0059,
+    "A_minus_h_guess_at_precision": -0.0477,
+    "B_minus_h_unsure_wrong": 0.1056,
+    "B_minus_h_chance_credit": 0.0808,
+    "B_minus_h_guess_at_precision": 0.039,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Concordia 2026-Q1: GPT-5.4",
+    "s": 0.875,
+    "w": 0.4,
+    "A_lower": 0.7917,
+    "A_minus_h_unsure_wrong": 0.0273,
+    "A_minus_h_chance_credit": 0.0025,
+    "A_minus_h_guess_at_precision": -0.0393,
+    "B_minus_h_unsure_wrong": 0.1106,
+    "B_minus_h_chance_credit": 0.0858,
+    "B_minus_h_guess_at_precision": 0.044,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Concordia 2026-Q2: GPT-5.5",
+    "s": 0.915,
+    "w": 0.4,
+    "A_lower": 0.8583,
+    "A_minus_h_unsure_wrong": 0.0939,
+    "A_minus_h_chance_credit": 0.0691,
+    "A_minus_h_guess_at_precision": 0.0273,
+    "B_minus_h_unsure_wrong": 0.1506,
+    "B_minus_h_chance_credit": 0.1258,
+    "B_minus_h_guess_at_precision": 0.084,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Concordia 2026-Q3: GPT 6 Astra",
+    "s": 0.947,
+    "w": 0.4,
+    "A_lower": 0.9117,
+    "A_minus_h_unsure_wrong": 0.1473,
+    "A_minus_h_chance_credit": 0.1225,
+    "A_minus_h_guess_at_precision": 0.0807,
+    "B_minus_h_unsure_wrong": 0.1826,
+    "B_minus_h_chance_credit": 0.1578,
+    "B_minus_h_guess_at_precision": 0.116,
+    "doc_rule": "unsure_wrong"
+   },
+   {
+    "label": "Meta Muse Spark report: Muse Spark, tools, no abstention",
+    "s": 0.973,
+    "w": 0.4,
+    "A_lower": 0.955,
+    "A_minus_h_unsure_wrong": 0.1906,
+    "A_minus_h_chance_credit": 0.1658,
+    "A_minus_h_guess_at_precision": 0.124,
+    "B_minus_h_unsure_wrong": 0.2086,
+    "B_minus_h_chance_credit": 0.1838,
+    "B_minus_h_guess_at_precision": 0.142,
+    "doc_rule": null
+   },
+   {
+    "label": "Meta Muse Spark report: GPT-5.4, tools",
+    "s": 0.965,
+    "w": 0.4,
+    "A_lower": 0.9417,
+    "A_minus_h_unsure_wrong": 0.1773,
+    "A_minus_h_chance_credit": 0.1525,
+    "A_minus_h_guess_at_precision": 0.1107,
+    "B_minus_h_unsure_wrong": 0.2006,
+    "B_minus_h_chance_credit": 0.1758,
+    "B_minus_h_guess_at_precision": 0.134,
+    "doc_rule": null
+   },
+   {
+    "label": "Meta Muse Spark report: Gemini 3.1 Pro, tools",
+    "s": 0.937,
+    "w": 0.4,
+    "A_lower": 0.895,
+    "A_minus_h_unsure_wrong": 0.1306,
+    "A_minus_h_chance_credit": 0.1058,
+    "A_minus_h_guess_at_precision": 0.064,
+    "B_minus_h_unsure_wrong": 0.1726,
+    "B_minus_h_chance_credit": 0.1478,
+    "B_minus_h_guess_at_precision": 0.106,
+    "doc_rule": null
+   }
+  ],
+  "corrected_values": {
+   "aisi_sonnet35_A_minus_human_doc_rule": {
+    "auditor": -0.0337,
+    "validator": -0.0609,
+    "why": "AISI used chance credit; F8 chance-credit line 0.7981"
+   },
+   "aisi_sonnet35_B_minus_human_doc_rule": {
+    "auditor": 0.0888,
+    "validator": 0.0619
+   },
+   "gemini3pro_A_minus_human_chance_credit": {
+    "auditor_reported_only_unsure_wrong": 0.0189,
+    "validator": -0.0059
+   },
+   "gpt54_A_minus_human_chance_credit": {
+    "auditor_reported_only_unsure_wrong": 0.0273,
+    "validator": 0.0025
+   },
+   "prereg_F9_human": {
+    "prereg": 0.76,
+    "correct": 0.7644
+   }
+  }
  }
 }
