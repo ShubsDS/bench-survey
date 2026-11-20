@@ -1,5 +1,7 @@
 # Control monitors on BashArena-family data: length moves the board's numbers, the scaffold tags never reach the monitors
 
+> **Caveat added 2026-11-20.** Every model call in this audit carried extra context from the command-line tool. See [Context caveat](#context-caveat-added-2026-11-20) at the end.
+
 Status: 2026-11-17. All numbers from committed scripts on pinned inputs (see the end).
 Evidence level per claim:
 
@@ -301,3 +303,9 @@ python -I l4_haiku.py data/evals data/site/monitors.json data/repos/control-towe
 python -I analyse_l4.py data/l4_retest.json results_l4_retest.json
 python -I collect_results.py   # writes results.json
 ```
+
+## Context caveat (added 2026-11-20)
+
+Found in round three ([`../helper-context-leak`](../helper-context-leak)): the command-line tool used for every model call adds an environment block to each request. It gives the working folder (which named this audit), the platform, the model's own name and knowledge cutoff, today's date and a 0.25 USD budget line. Re-running a sample of this audit's prompts from a meaningless folder changed nothing beyond run-to-run noise, so the folder name did not move the results. The other lines could not be removed or varied. They are identical in every arm, so paired differences stand; absolute levels carry the caveat below.
+
+**Caveat for this audit.** Re-running the cached prompts three days later raised Haiku's attack scores by about 15 points on 10 short items (in both the original-folder and neutral-folder arms), so absolute Haiku scores are not stable across days; the within-run paired comparisons are unaffected.
