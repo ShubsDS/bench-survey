@@ -1,0 +1,585 @@
+{
+ "timing": {
+  "haiku_qo_pa": {
+   "n_billed": 91,
+   "first_t": 1795163949,
+   "last_t": 1795164087,
+   "first_minus_rule_commit_s": 336
+  },
+  "sonnet_qo_pa": {
+   "n_billed": 91,
+   "first_t": 1795164940,
+   "last_t": 1795165042,
+   "first_minus_rule_commit_s": 1327
+  },
+  "haiku_opts_pa": {
+   "n_billed": 91,
+   "first_t": 1795164378,
+   "last_t": 1795164516,
+   "first_minus_rule_commit_s": 765
+  },
+  "haiku_qo": {
+   "n_billed": 107,
+   "first_t": 1795163639,
+   "last_t": 1795163786,
+   "first_minus_rule_commit_s": 26
+  },
+  "sonnet_qo": {
+   "n_billed": 107,
+   "first_t": 1795162906,
+   "last_t": 1795164935,
+   "first_minus_rule_commit_s": -707
+  },
+  "haiku_qo_ro": {
+   "n_billed": 107,
+   "first_t": 1795163717,
+   "last_t": 1795163944,
+   "first_minus_rule_commit_s": 104
+  },
+  "haiku_opts_ro": {
+   "n_billed": 104,
+   "first_t": 1795164095,
+   "last_t": 1795164372,
+   "first_minus_rule_commit_s": 482
+  },
+  "sonnet_full": {
+   "n_billed": 62,
+   "first_t": 1795162899,
+   "last_t": 1795165112,
+   "first_minus_rule_commit_s": -714
+  },
+  "paraphrase_generation": {
+   "n": 177,
+   "first_t": 1795163289,
+   "last_t": 1795163563
+  },
+  "rule_v2_commit_t": 1795163613,
+  "prereg_commit_t": 1795163101,
+  "total_cost_usd": 3.0796,
+  "n_ledger": 1085,
+  "cost_by_model": {
+   "haiku": 0.4838,
+   "sonnet": 2.5958
+  },
+  "calls_by_model": {
+   "claude-sonnet-5-5": 271,
+   "claude-haiku-5-5": 814
+  },
+  "calls_before_prereg_commit": {
+   "sonnet_cot_full": 5,
+   "sonnet_cot_opts": 3,
+   "sonnet_cot_qo": 2,
+   "sonnet_direct_full": 2,
+   "sonnet_direct_qo": 2
+  },
+  "sonnet_full_call_order_matches_file_order_rank_corr": 0.35190353766203375
+ },
+ "qgen": {
+  "n_responses_matched": 101,
+  "fix_line_present": 101,
+  "step_keyed_items": 86,
+  "key_step_hits": 6,
+  "key_step_rate": 0.06976744186046512,
+  "distractor_step_rate": 0.10481927710843372,
+  "value_keyed_items": 78,
+  "key_value_hits": 14,
+  "key_value_rate": 0.1794871794871795,
+  "distractor_value_rate": 0.12585470085470085,
+  "both_keyed_items": 66,
+  "key_exact_hits": 1,
+  "key_exact_rate": 0.015151515151515152,
+  "distractor_exact_rate": 0.02265625
+ },
+ "protocol_recall": {
+  "qo": {
+   "responses": 197,
+   "new_numbers_per_response": 0.08629441624365482,
+   "own_protocol_number_matches": 0.06598984771573604,
+   "other_protocol_number_matches": 0.044762344254730045,
+   "number_excess_ci": [
+    0.002173167275710344,
+    0.04240414915966384
+   ],
+   "own_protocol_word_matches": 1.6954314720812182,
+   "other_protocol_word_matches": 0.6363636363636365,
+   "word_excess_ci": [
+    0.7047599832615973,
+    1.380274756189047
+   ],
+   "responses_with_any_own_number": 11,
+   "responses_with_rare_own_token": 108
+  },
+  "qgen": {
+   "responses": 101,
+   "new_numbers_per_response": 2.702970297029703,
+   "own_protocol_number_matches": 1.7722772277227723,
+   "other_protocol_number_matches": 1.1548154815481546,
+   "number_excess_ci": [
+    0.2081711543588376,
+    0.8994399002442577
+   ],
+   "own_protocol_word_matches": 3.386138613861386,
+   "other_protocol_word_matches": 1.453195319531953,
+   "word_excess_ci": [
+    1.369937119842183,
+    2.3769768299881933
+   ],
+   "responses_with_any_own_number": 75,
+   "responses_with_rare_own_token": 72
+  },
+  "rare_token_examples": [
+   [
+    "6824f8de",
+    "qo",
+    [
+     "binding"
+    ]
+   ],
+   [
+    "e39ca05b",
+    "qgen",
+    [
+     "pre-wet"
+    ]
+   ],
+   [
+    "4fb3c795",
+    "qo",
+    [
+     "hematoxylin"
+    ]
+   ],
+   [
+    "4fb3c795",
+    "qo",
+    [
+     "hematoxylin"
+    ]
+   ],
+   [
+    "36cae278",
+    "qo",
+    [
+     "incubation",
+     "transformation"
+    ]
+   ],
+   [
+    "0d18e3c2",
+    "qgen",
+    [
+     "embedding",
+     "fixation"
+    ]
+   ],
+   [
+    "0fd4d23c",
+    "qo",
+    [
+     "crystal",
+     "crystallization"
+    ]
+   ],
+   [
+    "11d7d19c",
+    "qgen",
+    [
+     "extraction"
+    ]
+   ],
+   [
+    "1b396062",
+    "qo",
+    [
+     "describe",
+     "extracted"
+    ]
+   ],
+   [
+    "347e9fa7",
+    "qo",
+    [
+     "freezing",
+     "sectioning"
+    ]
+   ],
+   [
+    "e39ca05b",
+    "qo",
+    [
+     "digestion",
+     "dissociation",
+     "fragments",
+     "undigested"
+    ]
+   ],
+   [
+    "16fc3385",
+    "qo",
+    [
+     "cytometry"
+    ]
+   ],
+   [
+    "7e6c4405",
+    "qo",
+    [
+     "antibiotic",
+     "transduced"
+    ]
+   ],
+   [
+    "ea524341",
+    "qo",
+    [
+     "problem"
+    ]
+   ],
+   [
+    "0ccec700",
+    "qo",
+    [
+     "reprogramming"
+    ]
+   ],
+   [
+    "0d18e3c2",
+    "qo",
+    [
+     "embedding",
+     "freezing"
+    ]
+   ],
+   [
+    "e34e0c36",
+    "qgen",
+    [
+     "puromycin",
+     "survival",
+     "visible"
+    ]
+   ],
+   [
+    "5d454370",
+    "qo",
+    [
+     "amplification",
+     "problem"
+    ]
+   ],
+   [
+    "0ccec700",
+    "qo",
+    [
+     "reprogramming"
+    ]
+   ],
+   [
+    "51b68661",
+    "qo",
+    [
+     "provided"
+    ]
+   ],
+   [
+    "a55b740f",
+    "qgen",
+    [
+     "crystallization"
+    ]
+   ],
+   [
+    "e39429e0",
+    "qo",
+    [
+     "activity"
+    ]
+   ],
+   [
+    "6bc0df89",
+    "qgen",
+    [
+     "passaging"
+    ]
+   ],
+   [
+    "fb17bb32",
+    "qo",
+    [
+     "problem"
+    ]
+   ],
+   [
+    "0ab2f959",
+    "qgen",
+    [
+     "expected",
+     "stirring"
+    ]
+   ],
+   [
+    "67a36ceb",
+    "qo",
+    [
+     "competent",
+     "incubation",
+     "keeping",
+     "transformation"
+    ]
+   ],
+   [
+    "553e7a6c",
+    "qo",
+    [
+     "digestion",
+     "dissociation"
+    ]
+   ],
+   [
+    "087157ee",
+    "qo",
+    [
+     "embryoid"
+    ]
+   ],
+   [
+    "fca46ec7",
+    "qo",
+    [
+     "dissociation",
+     "extraction"
+    ]
+   ],
+   [
+    "389b4ed8",
+    "qgen",
+    [
+     "nuclease-free"
+    ]
+   ],
+   [
+    "644d2672",
+    "qo",
+    [
+     "incubation"
+    ]
+   ],
+   [
+    "520f4620",
+    "qgen",
+    [
+     "covering",
+     "crystal",
+     "crystallization",
+     "evaporation",
+     "saturated"
+    ]
+   ],
+   [
+    "a55b740f",
+    "qo",
+    [
+     "crystal",
+     "crystallization",
+     "produce"
+    ]
+   ],
+   [
+    "53524e6c",
+    "qo",
+    [
+     "changes"
+    ]
+   ],
+   [
+    "a55b740f",
+    "qo",
+    [
+     "crystal",
+     "crystallization"
+    ]
+   ],
+   [
+    "ad177c40",
+    "qo",
+    [
+     "freezing",
+     "quickly"
+    ]
+   ],
+   [
+    "ea524341",
+    "qo",
+    [
+     "problem"
+    ]
+   ],
+   [
+    "11d73398",
+    "qgen",
+    [
+     "crystallization",
+     "monosodium"
+    ]
+   ],
+   [
+    "dd06a1ee",
+    "qo",
+    [
+     "poly-d-lysine"
+    ]
+   ],
+   [
+    "a6231697",
+    "qo",
+    [
+     "ubiquitin"
+    ]
+   ]
+  ],
+  "examples_own_numbers": [
+   [
+    "0d18e3c2",
+    "qgen",
+    [
+     "200",
+     "30",
+     "37"
+    ]
+   ],
+   [
+    "a55b740f",
+    "qgen",
+    [
+     "22",
+     "37"
+    ]
+   ],
+   [
+    "0ab2f959",
+    "qgen",
+    [
+     "0.1",
+     "30"
+    ]
+   ],
+   [
+    "389b4ed8",
+    "qgen",
+    [
+     "17",
+     "30",
+     "50"
+    ]
+   ],
+   [
+    "520f4620",
+    "qgen",
+    [
+     "0.1",
+     "12",
+     "20",
+     "24"
+    ]
+   ],
+   [
+    "d5764058",
+    "qgen",
+    [
+     "1.5",
+     "24"
+    ]
+   ],
+   [
+    "b3f6c09c",
+    "qgen",
+    [
+     "000",
+     "13",
+     "30",
+     "50",
+     "55",
+     "60"
+    ]
+   ],
+   [
+    "5d454370",
+    "qgen",
+    [
+     "15",
+     "20"
+    ]
+   ],
+   [
+    "243057d2",
+    "qgen",
+    [
+     "0.7",
+     "000",
+     "12",
+     "20",
+     "30"
+    ]
+   ],
+   [
+    "d7c7547e",
+    "qgen",
+    [
+     "000",
+     "12",
+     "19",
+     "60",
+     "75"
+    ]
+   ],
+   [
+    "44b66cdb",
+    "qgen",
+    [
+     "15",
+     "37"
+    ]
+   ],
+   [
+    "6824f8de",
+    "qgen",
+    [
+     "0.1",
+     "20"
+    ]
+   ]
+  ]
+ },
+ "cloning": {
+  "full": {
+   "n": 33,
+   "acc": 0.697,
+   "clusters": 9,
+   "ci": [
+    0.409,
+    0.871
+   ],
+   "chance": 0.2259
+  },
+  "opts": {
+   "n": 26,
+   "acc": 0.3462,
+   "clusters": 9,
+   "ci": [
+    0.13,
+    0.545
+   ],
+   "chance": 0.2194
+  },
+  "qo": {
+   "n": 33,
+   "acc": 0.4242,
+   "clusters": 9,
+   "ci": [
+    0.24,
+    0.553
+   ],
+   "chance": 0.2259
+  }
+ }
+}
