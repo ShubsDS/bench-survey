@@ -1,0 +1,30 @@
+{
+ "files": 201,
+ "cases": 23721,
+ "unique_question_texts": 2777,
+ "cases_by_tag": {
+  "cloning": 375,
+  "dbqa2": 853,
+  "figqa2": 1010,
+  "figqa2-img": 1010,
+  "figqa2-pdf": 1009,
+  "litqa3": 1680,
+  "patentqa": 1203,
+  "protocolqa2": 1315,
+  "seqqa2": 8337,
+  "sourcequality": 1500,
+  "suppqa2": 1244,
+  "tableqa2": 1000,
+  "tableqa2-img": 1000,
+  "tableqa2-pdf": 985,
+  "trialqa": 1200
+ },
+ "hits_by_pattern_and_tag": {
+  "letter_list_3plus": {},
+  "inline_letters": {},
+  "options_word": {
+   "seqqa2": 560
+  },
+  "insufficient_info": {}
+ }
+}

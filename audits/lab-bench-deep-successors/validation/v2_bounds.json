@@ -1,0 +1,453 @@
+{
+ "k_per_subtask_2024": {
+  "ORF-seq-AAid": 4,
+  "ORF-seq-AAseq": 5,
+  "ORF-seq-numlen": 4,
+  "ORF-transeff": 4,
+  "PCR-gene-enzprimers": 4,
+  "PCR-gene-gibshindprimers": 4,
+  "PCR-gene-gibssmaprimers": 4,
+  "PCR-geneprimers-enz": 4,
+  "PCR-len-primers": 4,
+  "PCR-primers-len": 4,
+  "PCR-seq-enzprimers": 4,
+  "PCR-seq-primers": 4,
+  "Prop-seq-gcpercent": 4,
+  "RE-seq-lenfrags": 4,
+  "RE-seq-numfrags": 5
+ },
+ "human_lines": {
+  "all15": {
+   "unsure_wrong": 0.7893,
+   "chance_credit": 0.8084,
+   "guess_at_precision": 0.8428
+  },
+  "S6": {
+   "unsure_wrong": 0.8267,
+   "chance_credit": 0.8371,
+   "guess_at_precision": 0.8607
+  },
+  "F9": {
+   "unsure_wrong": 0.7644,
+   "chance_credit": 0.7892,
+   "guess_at_precision": 0.831
+  },
+  "S7_2024": {
+   "unsure_wrong": 0.81,
+   "chance_credit": 0.8201,
+   "guess_at_precision": 0.8434
+  },
+  "F8_2024": {
+   "unsure_wrong": 0.7712,
+   "chance_credit": 0.7981,
+   "guess_at_precision": 0.8424
+  },
+  "F9_not_regenerated": {
+   "unsure_wrong": 0.7333,
+   "chance_credit": 0.7658,
+   "guess_at_precision": 0.8159
+  },
+  "F8_not_regenerated": {
+   "unsure_wrong": 0.7333,
+   "chance_credit": 0.7658,
+   "guess_at_precision": 0.8159
+  }
+ },
+ "w": {
+  "2024": 0.4666666666666667,
+  "2025": 0.4
+ },
+ "claims": [
+  {
+   "label": "US/UK AISI: Sonnet 3.5 (new), Python tools",
+   "s": 0.86,
+   "read_error": 0.01,
+   "w": 0.4667,
+   "source": "NIST joint report 2024-11, Fig. 4.2 p. 8 (read from figure); forced choice; 600 items stated (s3.1)",
+   "statement": "slightly better than human experts on SeqQA",
+   "doc_rule": "chance_credit",
+   "A_lower": 0.7375,
+   "A_range_with_read_error": [
+    0.7187,
+    0.7562
+   ],
+   "identified_range_cue_free": [
+    0.7375,
+    1.0
+   ],
+   "B": 0.86,
+   "human_cuefree_unsure_wrong": 0.7712,
+   "A_minus_h_unsure_wrong": -0.0337,
+   "B_minus_h_unsure_wrong": 0.0888,
+   "human_cuefree_chance_credit": 0.7981,
+   "A_minus_h_chance_credit": -0.0606,
+   "B_minus_h_chance_credit": 0.0619,
+   "human_cuefree_guess_at_precision": 0.8424,
+   "A_minus_h_guess_at_precision": -0.1049,
+   "B_minus_h_guess_at_precision": 0.0176,
+   "A_minus_h_doc_rule": -0.0606,
+   "overall_minus_all15_doc_rule": 0.0516
+  },
+  {
+   "label": "US/UK AISI: o1, Python tools",
+   "s": 0.77,
+   "read_error": 0.02,
+   "w": 0.4667,
+   "source": "NIST o1 report 2024-12, Fig. 10.1 (read from figure, value taken from audit inventory, not re-read)",
+   "statement": "approaching the performance of human experts",
+   "doc_rule": "chance_credit",
+   "A_lower": 0.5687,
+   "A_range_with_read_error": [
+    0.5312,
+    0.6062
+   ],
+   "identified_range_cue_free": [
+    0.5687,
+    1.0
+   ],
+   "B": 0.77,
+   "human_cuefree_unsure_wrong": 0.7712,
+   "A_minus_h_unsure_wrong": -0.2025,
+   "B_minus_h_unsure_wrong": -0.0012,
+   "human_cuefree_chance_credit": 0.7981,
+   "A_minus_h_chance_credit": -0.2294,
+   "B_minus_h_chance_credit": -0.0281,
+   "human_cuefree_guess_at_precision": 0.8424,
+   "A_minus_h_guess_at_precision": -0.2737,
+   "B_minus_h_guess_at_precision": -0.0724,
+   "A_minus_h_doc_rule": -0.2294,
+   "overall_minus_all15_doc_rule": -0.0384
+  },
+  {
+   "label": "Claude 4 card: Opus 4, best of 0/5/10-shot",
+   "s": 0.79,
+   "read_error": 0.02,
+   "w": 0.4,
+   "source": "Claude 4 card Fig. 7.2.4.7.A p. 100 (read from figure; best of three shot settings)",
+   "statement": "reaches or exceeds the human baseline",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.65,
+   "A_range_with_read_error": [
+    0.6167,
+    0.6833
+   ],
+   "identified_range_cue_free": [
+    0.65,
+    1.0
+   ],
+   "B": 0.79,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": -0.1144,
+   "B_minus_h_unsure_wrong": 0.0256,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": -0.1392,
+   "B_minus_h_chance_credit": 0.0008,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.181,
+   "B_minus_h_guess_at_precision": -0.041,
+   "A_minus_h_doc_rule": -0.1144,
+   "overall_minus_all15_doc_rule": 0.0007
+  },
+  {
+   "label": "Sonnet 4.5 card: Sonnet 4.5, 10-shot",
+   "s": 0.78,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "Sonnet 4.5 card Fig. 9.2.4.4.A p. 133 (printed label); same in Opus 4.5 card Fig. 7.2.4.4.A",
+   "statement": "reached or exceeded the human baseline in 3/4 evaluations",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.6333,
+   "A_range_with_read_error": [
+    0.6333,
+    0.6333
+   ],
+   "identified_range_cue_free": [
+    0.6333,
+    1.0
+   ],
+   "B": 0.78,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": -0.1311,
+   "B_minus_h_unsure_wrong": 0.0156,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": -0.1559,
+   "B_minus_h_chance_credit": -0.0092,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.1977,
+   "B_minus_h_guess_at_precision": -0.051,
+   "A_minus_h_doc_rule": -0.1311,
+   "overall_minus_all15_doc_rule": -0.0093
+  },
+  {
+   "label": "Opus 4.5 card: Opus 4.1, 10-shot",
+   "s": 0.785,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "Opus 4.5 card Fig. 7.2.4.4.A p. 126 (printed label)",
+   "statement": "(figure only)",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.6417,
+   "A_range_with_read_error": [
+    0.6417,
+    0.6417
+   ],
+   "identified_range_cue_free": [
+    0.6417,
+    1.0
+   ],
+   "B": 0.785,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": -0.1227,
+   "B_minus_h_unsure_wrong": 0.0206,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": -0.1475,
+   "B_minus_h_chance_credit": -0.0042,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.1893,
+   "B_minus_h_guess_at_precision": -0.046,
+   "A_minus_h_doc_rule": -0.1227,
+   "overall_minus_all15_doc_rule": -0.0043
+  },
+  {
+   "label": "Opus 4.5 card: Opus 4.5, 10-shot",
+   "s": 0.8517,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "Opus 4.5 card s7.2.4.4 p. 126 (text); 0.8517 = 511/600",
+   "statement": "every evaluation except FigQA exceeded the human baseline",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.7528,
+   "A_range_with_read_error": [
+    0.7528,
+    0.7528
+   ],
+   "identified_range_cue_free": [
+    0.7528,
+    1.0
+   ],
+   "B": 0.8517,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": -0.0116,
+   "B_minus_h_unsure_wrong": 0.0873,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": -0.0364,
+   "B_minus_h_chance_credit": 0.0625,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.0782,
+   "B_minus_h_guess_at_precision": 0.0207,
+   "A_minus_h_doc_rule": -0.0116,
+   "overall_minus_all15_doc_rule": 0.0624
+  },
+  {
+   "label": "Concordia 2025-Q4: Gemini 3 Pro Preview",
+   "s": 0.87,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "airiskmonitor.net 2025-Q4 (web text, re-read 2026-11-20)",
+   "statement": "first instance of models surpassing human experts ... (87 vs 79)",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.7833,
+   "A_range_with_read_error": [
+    0.7833,
+    0.7833
+   ],
+   "identified_range_cue_free": [
+    0.7833,
+    1.0
+   ],
+   "B": 0.87,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.0189,
+   "B_minus_h_unsure_wrong": 0.1056,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": -0.0059,
+   "B_minus_h_chance_credit": 0.0808,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.0477,
+   "B_minus_h_guess_at_precision": 0.039,
+   "A_minus_h_doc_rule": 0.0189,
+   "overall_minus_all15_doc_rule": 0.0807
+  },
+  {
+   "label": "Concordia 2026-Q1: GPT-5.4",
+   "s": 0.875,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "airiskmonitor.net 2026-Q1 (web text, re-read 2026-11-20)",
+   "statement": "only the GPT and Gemini model families exceed the human expert baseline of 79",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.7917,
+   "A_range_with_read_error": [
+    0.7917,
+    0.7917
+   ],
+   "identified_range_cue_free": [
+    0.7917,
+    1.0
+   ],
+   "B": 0.875,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.0273,
+   "B_minus_h_unsure_wrong": 0.1106,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.0025,
+   "B_minus_h_chance_credit": 0.0858,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": -0.0393,
+   "B_minus_h_guess_at_precision": 0.044,
+   "A_minus_h_doc_rule": 0.0273,
+   "overall_minus_all15_doc_rule": 0.0857
+  },
+  {
+   "label": "Concordia 2026-Q2: GPT-5.5",
+   "s": 0.915,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "airiskmonitor.net 2026-Q2 (web text, re-read 2026-11-20)",
+   "statement": "11 models now exceed human-expert level",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.8583,
+   "A_range_with_read_error": [
+    0.8583,
+    0.8583
+   ],
+   "identified_range_cue_free": [
+    0.8583,
+    1.0
+   ],
+   "B": 0.915,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.0939,
+   "B_minus_h_unsure_wrong": 0.1506,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.0691,
+   "B_minus_h_chance_credit": 0.1258,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": 0.0273,
+   "B_minus_h_guess_at_precision": 0.084,
+   "A_minus_h_doc_rule": 0.0939,
+   "overall_minus_all15_doc_rule": 0.1257
+  },
+  {
+   "label": "Concordia 2026-Q3: GPT 6 Astra",
+   "s": 0.947,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "airiskmonitor.net 2026-Q3 (web text, re-read 2026-11-20)",
+   "statement": "21 models ... now exceed human-expert level",
+   "doc_rule": "unsure_wrong",
+   "A_lower": 0.9117,
+   "A_range_with_read_error": [
+    0.9117,
+    0.9117
+   ],
+   "identified_range_cue_free": [
+    0.9117,
+    1.0
+   ],
+   "B": 0.947,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.1473,
+   "B_minus_h_unsure_wrong": 0.1826,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.1225,
+   "B_minus_h_chance_credit": 0.1578,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": 0.0807,
+   "B_minus_h_guess_at_precision": 0.116,
+   "A_minus_h_doc_rule": 0.1473,
+   "overall_minus_all15_doc_rule": 0.1577
+  },
+  {
+   "label": "Meta Muse Spark report: Muse Spark, tools, no abstention",
+   "s": 0.973,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "arXiv 2606.12429 p. 5 table, s2.1.1.1",
+   "statement": "on par with or above that of other models (no numeric human comparison in text)",
+   "doc_rule": null,
+   "A_lower": 0.955,
+   "A_range_with_read_error": [
+    0.955,
+    0.955
+   ],
+   "identified_range_cue_free": [
+    0.955,
+    1.0
+   ],
+   "B": 0.973,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.1906,
+   "B_minus_h_unsure_wrong": 0.2086,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.1658,
+   "B_minus_h_chance_credit": 0.1838,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": 0.124,
+   "B_minus_h_guess_at_precision": 0.142
+  },
+  {
+   "label": "Meta Muse Spark report: GPT-5.4, tools",
+   "s": 0.965,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "arXiv 2606.12429 p. 5",
+   "statement": "(same)",
+   "doc_rule": null,
+   "A_lower": 0.9417,
+   "A_range_with_read_error": [
+    0.9417,
+    0.9417
+   ],
+   "identified_range_cue_free": [
+    0.9417,
+    1.0
+   ],
+   "B": 0.965,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.1773,
+   "B_minus_h_unsure_wrong": 0.2006,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.1525,
+   "B_minus_h_chance_credit": 0.1758,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": 0.1107,
+   "B_minus_h_guess_at_precision": 0.134
+  },
+  {
+   "label": "Meta Muse Spark report: Gemini 3.1 Pro, tools",
+   "s": 0.937,
+   "read_error": 0.0,
+   "w": 0.4,
+   "source": "arXiv 2606.12429 p. 5",
+   "statement": "(same)",
+   "doc_rule": null,
+   "A_lower": 0.895,
+   "A_range_with_read_error": [
+    0.895,
+    0.895
+   ],
+   "identified_range_cue_free": [
+    0.895,
+    1.0
+   ],
+   "B": 0.937,
+   "human_cuefree_unsure_wrong": 0.7644,
+   "A_minus_h_unsure_wrong": 0.1306,
+   "B_minus_h_unsure_wrong": 0.1726,
+   "human_cuefree_chance_credit": 0.7892,
+   "A_minus_h_chance_credit": 0.1058,
+   "B_minus_h_chance_credit": 0.1478,
+   "human_cuefree_guess_at_precision": 0.831,
+   "A_minus_h_guess_at_precision": 0.064,
+   "B_minus_h_guess_at_precision": 0.106
+  }
+ ],
+ "regenerated_after_human_baseline": [
+  "PCR-gene-enzprimers",
+  "PCR-geneprimers-enz",
+  "PCR-seq-enzprimers",
+  "RE-seq-lenfrags",
+  "RE-seq-numfrags"
+ ]
+}

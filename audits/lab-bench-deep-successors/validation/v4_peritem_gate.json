@@ -1,0 +1,35 @@
+{
+ "7268767a": {
+  "content_match_share": 0.2583,
+  "recovered_S": 26,
+  "recovered_S_subtasks": {
+   "ORF-seq-AAseq": 2,
+   "Prop-seq-gcpercent": 24
+  },
+  "recovered_F": 62,
+  "n_F_subtasks": 5,
+  "gate_met": false
+ },
+ "4709d14f": {
+  "content_match_share": 0.3817,
+  "recovered_S": 26,
+  "recovered_S_subtasks": {
+   "ORF-seq-AAseq": 2,
+   "Prop-seq-gcpercent": 24
+  },
+  "recovered_F": 123,
+  "n_F_subtasks": 7,
+  "gate_met": false
+ },
+ "5c77cec6": {
+  "content_match_share": 0.3083,
+  "recovered_S": 26,
+  "recovered_S_subtasks": {
+   "ORF-seq-AAseq": 2,
+   "Prop-seq-gcpercent": 24
+  },
+  "recovered_F": 100,
+  "n_F_subtasks": 6,
+  "gate_met": false
+ }
+}
