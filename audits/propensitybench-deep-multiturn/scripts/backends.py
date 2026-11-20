@@ -203,7 +203,11 @@ class OpenAICompatBackend:
         d = _post(self.base + "/chat/completions", self.body(messages, tools), self.key, self.timeout)
         msg = d["choices"][0]["message"]
         tcs = msg.get("tool_calls") or None
-        meta = {"usage": d.get("usage"), "finish_reason": d["choices"][0].get("finish_reason")}
+        meta = {"usage": d.get("usage"), "finish_reason": d["choices"][0].get("finish_reason"),
+                "output_cut_at_max_tokens": d["choices"][0].get("finish_reason") == "length"}
+        for k in ("reasoning", "reasoning_content"):
+            if msg.get(k):
+                meta["reasoning"] = msg[k]
         if tcs:
             meta["tool_call"] = True
             for i, tc in enumerate(tcs):

@@ -1,0 +1,668 @@
+{
+ "model": "data/models/Qwen3-8B-MLX-4bit",
+ "n": 20,
+ "pass": 20,
+ "use_native": true,
+ "rows": [
+  {
+   "i": 0,
+   "tool": "get_weather",
+   "city": "Paris",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Paris\"}"
+      },
+      "type": "function",
+      "id": "0a32f5bd-83c9-47a5-8750-9e91ade29a2a"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 115,
+      "total_tokens": 344,
+      "prompt_tokens_details": {
+       "cached_tokens": 3
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Paris. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Paris. I should make sure the JSON is correctly formatted with the city name. Let me structure the tool_call with the function name as get_weather and the arguments as {\"city\": \"Paris\"}. That should do it.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 1,
+   "tool": "get_time",
+   "city": "Lima",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Lima\"}"
+      },
+      "type": "function",
+      "id": "d221d280-d201-4fd4-aa91-dfa1ed924050"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 154,
+      "total_tokens": 383,
+      "prompt_tokens_details": {
+       "cached_tokens": 220
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Lima. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in the specified city. Since the user mentioned Lima, I need to make sure that's the city parameter. The function requires the city to be specified, so I should structure the tool call with \"Lima\" as the city. I don't need to use the get_weather function here because the request is about time, not weather. So the correct tool call is get_time with arguments {\"city\": \"Lima\"}.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 2,
+   "tool": "get_weather",
+   "city": "Oslo",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Oslo\"}"
+      },
+      "type": "function",
+      "id": "daac0dfe-f70b-49f0-809e-076be484ad81"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 117,
+      "total_tokens": 346,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Oslo. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Oslo. I should make sure the JSON is correctly formatted with the city name. Let me structure the tool_call with the function name as get_weather and the arguments as {\"city\": \"Oslo\"}. That should do it.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 3,
+   "tool": "get_time",
+   "city": "Cairo",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Cairo\"}"
+      },
+      "type": "function",
+      "id": "28595c97-0303-47ec-baae-7c12870a2556"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 132,
+      "total_tokens": 361,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Cairo. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in the specified city. Since the user mentioned Cairo, I need to use that as the city parameter. I should make sure the function is correctly called with \"Cairo\" as the argument. No other parameters are required, so the JSON object should just have the city name. Let me structure the tool call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 4,
+   "tool": "get_weather",
+   "city": "Quito",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Quito\"}"
+      },
+      "type": "function",
+      "id": "e9c9c914-f22e-49bf-b144-72d4207b4615"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 113,
+      "total_tokens": 343,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Quito. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Quito as the city. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Alright, I'll structure the tool call with Quito as the argument.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 5,
+   "tool": "get_time",
+   "city": "Hanoi",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Hanoi\"}"
+      },
+      "type": "function",
+      "id": "689cd038-1eaf-45cf-b299-820582dab873"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 147,
+      "total_tokens": 377,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Hanoi. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in the specified city. Since the user mentioned Hanoi, I need to use that as the city argument. I should make sure the function is correctly called with \"Hanoi\" as the city. No other parameters are required, so the tool call should be straightforward. Let me structure the JSON with the name as \"get_time\" and arguments as {\"city\": \"Hanoi\"}.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 6,
+   "tool": "get_weather",
+   "city": "Perth",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Perth\"}"
+      },
+      "type": "function",
+      "id": "50e3bdc9-eb14-4e81-a76f-fc857c48f796"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 101,
+      "total_tokens": 330,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Perth. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Perth. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Let me structure the tool_call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 7,
+   "tool": "get_time",
+   "city": "Dakar",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Dakar\"}"
+      },
+      "type": "function",
+      "id": "09a3ba66-7a90-4c2c-b4f8-03014e1abeea"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 117,
+      "total_tokens": 347,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Dakar. Let me check the tools provided. There's a function called get_time that takes a city parameter. The required parameter is city, so I need to specify Dakar as the city. I'll make sure to format the tool call correctly in JSON inside the XML tags. No other functions are needed here. Just a straightforward call to get_time with Dakar as the argument.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 8,
+   "tool": "get_weather",
+   "city": "Riga",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Riga\"}"
+      },
+      "type": "function",
+      "id": "17b7b5d5-8166-4822-b543-8909d6b6505f"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 113,
+      "total_tokens": 343,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Riga. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Riga as the city. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Alright, I'll structure the tool call with Riga as the argument.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 9,
+   "tool": "get_time",
+   "city": "Doha",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Doha\"}"
+      },
+      "type": "function",
+      "id": "0eaa4f3e-6ed9-45ae-a343-d2a1b6cca7c9"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 113,
+      "total_tokens": 343,
+      "prompt_tokens_details": {
+       "cached_tokens": 222
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Doha. Let me check the available tools. There's a function called get_time that takes a city parameter. The required parameter is city, so I need to specify Doha as the city. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Alright, I'll structure the tool call with Doha as the argument.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 10,
+   "tool": "get_weather",
+   "city": "Paris",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Paris\"}"
+      },
+      "type": "function",
+      "id": "d6cb20c1-5878-4cca-b963-b13985cd2291"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 176,
+      "total_tokens": 405,
+      "prompt_tokens_details": {
+       "cached_tokens": 228
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Paris. Let me check the available tools.\n\nLooking at the tools provided, there's a function called get_weather that takes a city parameter. The description says it returns the weather for a city. Since the user specified Paris, I need to use that city name in the function call.\n\nI should make sure that the parameters are correctly formatted. The required parameter is \"city\", and it's a string. Paris is the city here, so the arguments should be {\"city\": \"Paris\"}.\n\nNo other functions are needed here. The user didn't mention time, so I don't need to call get_time. Just the weather for Paris. Alright, I'll structure the tool call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 11,
+   "tool": "get_time",
+   "city": "Lima",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Lima\"}"
+      },
+      "type": "function",
+      "id": "c58e160c-86e6-4da8-859c-b0e99d27e15f"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 117,
+      "total_tokens": 346,
+      "prompt_tokens_details": {
+       "cached_tokens": 228
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Lima. Let me check the tools provided. There's a function called get_time that takes a city parameter. The required parameter is city, so I need to specify Lima. I should make sure the JSON is correctly formatted with the city name as a string. No other parameters are needed. Just call get_time with \"Lima\" as the argument. Let me structure the tool_call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 12,
+   "tool": "get_weather",
+   "city": "Oslo",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Oslo\"}"
+      },
+      "type": "function",
+      "id": "1b121ade-3ff0-4b01-afe0-541619a1c13c"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 148,
+      "total_tokens": 377,
+      "prompt_tokens_details": {
+       "cached_tokens": 228
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Oslo. Let me check the available tools. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Oslo. I should make sure the city name is correctly spelled. Oslo is the capital of Norway, so that's the right city. I'll structure the tool call with the name as get_weather and the arguments as {\"city\": \"Oslo\"}. Let me double-check the syntax to ensure it's a valid JSON object. Everything looks good. Ready to send the tool call.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 13,
+   "tool": "get_time",
+   "city": "Cairo",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Cairo\"}"
+      },
+      "type": "function",
+      "id": "13a033b0-ba5b-4457-befc-3e3ca824bd7b"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 162,
+      "total_tokens": 391,
+      "prompt_tokens_details": {
+       "cached_tokens": 228
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Cairo. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in the specified city. Since the user mentioned Cairo, I need to make sure that's the correct city name. No other parameters are required, just the city. So I should structure the tool call with the name as \"get_time\" and the arguments as {\"city\": \"Cairo\"}. Let me double-check the syntax to ensure it's correct. Yep, that looks right. No other functions are needed here. Alright, time to output the tool call.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 14,
+   "tool": "get_weather",
+   "city": "Quito",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Quito\"}"
+      },
+      "type": "function",
+      "id": "04e92778-734a-4acd-b05b-3565560e5ffb"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 113,
+      "total_tokens": 343,
+      "prompt_tokens_details": {
+       "cached_tokens": 229
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Quito. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Quito as the city. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Alright, I'll structure the tool call with Quito as the argument.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 15,
+   "tool": "get_time",
+   "city": "Hanoi",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Hanoi\"}"
+      },
+      "type": "function",
+      "id": "f69ead17-6aa7-4b47-bdb2-c6b48eda60b2"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 135,
+      "total_tokens": 365,
+      "prompt_tokens_details": {
+       "cached_tokens": 229
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Hanoi. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in a city. So I need to use that function with the city set to Hanoi. I should make sure the arguments are correctly formatted as JSON. The required parameter is city, so I just need to specify \"city\": \"Hanoi\". Alright, that's straightforward. I'll generate the tool call with those arguments.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 16,
+   "tool": "get_weather",
+   "city": "Perth",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Perth\"}"
+      },
+      "type": "function",
+      "id": "54f55329-45dc-487d-bbed-4e10a8b731c5"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 229,
+      "completion_tokens": 101,
+      "total_tokens": 330,
+      "prompt_tokens_details": {
+       "cached_tokens": 228
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Perth. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Perth. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Let me structure the tool_call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 17,
+   "tool": "get_time",
+   "city": "Dakar",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Dakar\"}"
+      },
+      "type": "function",
+      "id": "dbee546f-058d-44c2-8bdd-2a2c05323ca0"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 107,
+      "total_tokens": 337,
+      "prompt_tokens_details": {
+       "cached_tokens": 229
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Dakar. Let me check the tools provided. There's a function called get_time that takes a city parameter. The required parameter is city, so I need to specify Dakar as the city. I should make sure the JSON is correctly formatted with the city name. No other parameters are needed. Let me structure the tool call accordingly.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 18,
+   "tool": "get_weather",
+   "city": "Riga",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_weather",
+       "arguments": "{\"city\": \"Riga\"}"
+      },
+      "type": "function",
+      "id": "dc437900-eaeb-47d1-b221-6214361c631c"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 105,
+      "total_tokens": 335,
+      "prompt_tokens_details": {
+       "cached_tokens": 229
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_weather function for Riga. Let me check the tools provided. There's a function called get_weather that takes a city parameter. The required parameter is city, so I need to specify Riga as the city. I should make sure the JSON is correctly formatted with the city name. Let me structure the tool_call with the function name and arguments.\n",
+     "tool_call": true
+    }
+   }
+  },
+  {
+   "i": 19,
+   "tool": "get_time",
+   "city": "Doha",
+   "pass": true,
+   "reply": {
+    "content": "\n\n",
+    "tool_calls": [
+     {
+      "function": {
+       "name": "get_time",
+       "arguments": "{\"city\": \"Doha\"}"
+      },
+      "type": "function",
+      "id": "fba9c3e9-14ad-45c3-affb-d8b8a487c290"
+     }
+    ],
+    "meta": {
+     "usage": {
+      "prompt_tokens": 230,
+      "completion_tokens": 161,
+      "total_tokens": 391,
+      "prompt_tokens_details": {
+       "cached_tokens": 229
+      }
+     },
+     "finish_reason": "tool_calls",
+     "output_cut_at_max_tokens": false,
+     "reasoning": "\nOkay, the user wants me to call the get_time function for Doha. Let me check the tools provided. There's a function called get_time that takes a city parameter. The description says it returns the local time in the specified city. Since the user mentioned Doha, I need to make sure that's the correct city name. Doha is the capital of Qatar, so that's probably right. I should structure the tool call with the name as \"get_time\" and the arguments as {\"city\": \"Doha\"}. Let me double-check if there are any other parameters required, but the required field only lists city. Alright, that's all I need.\n",
+     "tool_call": true
+    }
+   }
+  }
+ ]
+}
