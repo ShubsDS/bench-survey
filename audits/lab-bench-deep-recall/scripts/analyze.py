@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import sys
+import warnings
 from pathlib import Path
 
 import numpy as np
@@ -16,11 +17,13 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common_r import AUDIT, PARENT, RESULTS, key_hash, load  # noqa: E402
 
+warnings.filterwarnings("ignore")
 B = 2000
 rng = np.random.default_rng(0)
 items = load()
 items["chash"] = items.cluster.map(key_hash)
 RUNS = RESULTS / "runs"
+NOT_RUN: dict = {}
 
 
 def run(arm, model, sub="ProtocolQA"):
@@ -28,6 +31,10 @@ def run(arm, model, sub="ProtocolQA"):
     if not f.exists():
         return None
     d = pd.read_csv(f)
+    # calls not made because the 3 USD cap was reached ("budget") or failed ("error") are
+    # missing data, not wrong answers: dropped (counted in res["not_run"])
+    NOT_RUN.setdefault(f.stem, int(d.bucket.isin(["budget", "error"]).sum()))
+    d = d[~d.bucket.isin(["budget", "error"])].copy()
     d["y"] = (d.bucket == "correct").astype(float)
     d["chance"] = 1 / d.n_sub
     return d.set_index("id")
@@ -225,6 +232,18 @@ for model in ("haiku", "sonnet"):
                 agree.append(lr == r.picked_role)
         res["A3"][f"{model}_{arm}"]["agreement_with_labeller_pick"] = float(np.mean(agree))
 
+# exploratory (not pre-registered): gain from the protocol (full - qo) by label class
+res["A3"]["exploratory_full_minus_qo_by_standard_key"] = {}
+for model in ("haiku", "sonnet"):
+    f, q = run("full", model), run("qo", model)
+    if f is None or q is None:
+        continue
+    out = {}
+    for name, ids in (("standard_key", lab.index[lab.standard_key]), ("other", lab.index[~lab.standard_key]),
+                      ("class_D", lab.index[lab["class"] == "D"])):
+        out[name] = paired(f, q, ids=list(ids))
+    res["A3"]["exploratory_full_minus_qo_by_standard_key"][model] = out
+
 # ---------------------------------------------------------------- A4 Cloning (lead)
 for model in ("haiku", "sonnet"):
     res["A4"][model] = {}
@@ -236,6 +255,16 @@ for model in ("haiku", "sonnet"):
     if f is not None and q is not None:
         res["A4"][model]["share_qo"] = share(f, q)
         res["A4"][model]["full_vs_qo"] = paired(f, q)
+
+res["not_run"] = NOT_RUN
+# Sonnet full ran on 62 of 107 items before the cap; the same-item comparisons
+sf, sq = run("full", "sonnet"), run("qo", "sonnet")
+if sf is not None and sq is not None:
+    sub = sq.loc[sq.index.intersection(sf.index)]
+    res["A0"]["sonnet"]["qo_on_full_items"] = arm_summary(sub)
+    res["A0"]["sonnet"]["full_items_clusters"] = int(sf.cluster.nunique())
+    hq_ = run("qo", "haiku"); hf_ = run("full", "haiku")
+    res["A0"]["haiku_on_sonnet_full_items"] = {"full": arm_summary(hf_.loc[sf.index]), "qo": arm_summary(hq_.loc[sf.index])}
 
 # ---------------------------------------------------------------- spend
 led = [json.loads(l) for l in (AUDIT / "inference" / "ledger.jsonl").read_text().splitlines() if l.strip()]
