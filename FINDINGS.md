@@ -34,14 +34,18 @@ after that check.
   Claude Haiku or Sonnet, so it describes those models and not the ones in the paper.
 - **Lead:** points in one direction but is too small or too indirect to count as a result.
 
+Findings 1–4 were checked a second time on 2026-11-20 by four further agents working from the raw
+logs. Their entries below use the narrowed wording from that check; the verdicts and scripts are in
+[`factcheck/verdicts/`](factcheck/verdicts/).
+
 ## Findings
 
 | # | Benchmark | The number is taken to mean | What it also or instead reflects | Strength |
 |---|---|---|---|---|
-| 1 | AgentDojo | A low attack success rate means the model resists prompt injection | For four models, 56–70% of "secure" cases never saw the injection or could not have done the injected task | Solid |
-| 2 | MRT / SHADE-Arena | Monitors catch sabotaging agents almost perfectly | The agents were told to plan in text the monitor reads | Solid for the design; moderate for the size |
-| 3 | BashArena-family monitor board | Trajectory-level score ranks monitors by detection skill | With transcript length matched, 6 of 11 monitors are at or below chance | Solid |
-| 4 | Palisade shutdown resistance | Models resist shutdown to preserve themselves | Sabotage is real; the stated reason is finishing the task | Solid |
+| 1 | AgentDojo | A low attack success rate means the model resists prompt injection | For the median of 20 models, 24% of "secure" runs never showed the agent the injection; counting runs where the model also failed the injected task when asked directly, 48% (9–79% across models) | Solid for never-saw; moderate for the rest |
+| 2 | MRT / SHADE-Arena | Monitors catch sabotaging agents almost perfectly | The agents were prompted to plan in tags the monitor reads; deleting those plans drops one monitor's AUROC from 0.998 to 0.85, mostly on one of five tasks | Solid for the design; moderate for the size |
+| 3 | BashArena-family monitor board | Trajectory-level score ranks monitors by detection skill | The score is confounded by run length: as published, 7 of 11 monitors score below chance; with length matched, 4–6 of 11 still cannot be told from chance | Solid for the confound; the count depends on the matching method |
+| 4 | Palisade shutdown resistance | Models resist shutdown to preserve themselves (the press reading, not Palisade's) | Sabotage is real; where a reason is stated it is mostly finishing the task | Solid for the sabotage; moderate for the reasons |
 | 5 | LAB-Bench sequence tasks | Model scores against human experts | In 6 of 15 subtasks the answer can be read from the options alone | Solid for the flaw; moderate for who uses it |
 | 6 | ChainScope | Rate of unfaithful reasoning | For one model, about 90% of flagged cases are a correct argument followed by a contradicting final answer | Solid |
 | 7 | LAB-Bench ProtocolQA | Ability to find an error in a given protocol | About 70% of the above-chance score survives removing the protocol | Moderate |
@@ -52,35 +56,110 @@ after that check.
 
 ### 1. A low injection success rate is often not robustness (AgentDojo)
 
-AgentDojo scores a run as "secure" when an injected instruction does not succeed. From the
-released logs, for four models 56–70% of "secure" runs are ones where the agent never reached the
-injected text or could not have carried out the injected task. One model moves from rank 9 to
-rank 4 once this is accounted for. The benchmark's overall ranking, its capability trend and its
-defence comparisons hold.
+AgentDojo scores a run as "secure" when an injected instruction does not succeed. In the released
+logs (20 undefended models, `important_instructions` attack, 629 runs per model), many "secure"
+runs carry no evidence of resistance.
+
+- **Never saw the injection.** For the median model, 24% of "secure" runs never showed the agent
+  the injected text. The highest is 57% (Gemini 2.0 Flash 001). Three independent detectors agree
+  on all 12,580 runs.
+- **Failed the injected task when asked directly.** Counting also the runs where the model failed
+  its one stored attempt at the injected task given as a plain user request, the share is 48% for
+  the median model, from 9% (Claude 3.7 Sonnet) to 79% (Llama 3 70B). Read this half as an upper
+  bound: in 46% of those runs the same model completes that injected task in some other attack
+  run. Task-level intervals on the combined shares are about ±15 points.
+- **Rank change.** Conditioning on exposure alone, Gemini 2.0 Flash 001 moves from rank 9 to
+  rank 4. With both adjustments it moves from 9 to 6, and the intervals are wide.
+- **What was already known:** the paper says that weak models often fail the attacker's goal. It
+  does not report how often the agent saw the injection, which is the new part.
+
+An earlier version of this entry quoted 56–70% for four models. Those figures are correct
+(Command-R 56%, Claude 3 Haiku 61%, Gemini 1.5 Flash 002 64%, Command-R+ 70%), but the four were
+picked from the six lowest-ASR models after the results were seen, and two other models are higher.
+The benchmark's overall ranking, its capability trend and its defence comparisons hold.
 
 ### 2. Near-perfect monitor scores describe agents that narrate (MRT / SHADE-Arena)
 
 AUROC is a score for how well a monitor separates attack runs from honest runs: 0.5 is guessing
-and 1.0 is perfect. In the Monitor Red Teaming data, the "unaware" sabotaging agents are told to
-plan in text that the monitor reads. With Haiku as the monitor, removing the visible plans drops
-AUROC from 0.998 to 0.852; removing the phrase that names the side task changes almost nothing.
-The paper's design states this, so the numbers are correct as designed. They should not be quoted
-as catch rates for agents that hide their plans.
+and 1.0 is perfect. In the public SHADE-Arena data from the Monitor Red Teaming release, the
+"unaware" sabotaging agents are prompted to plan in `<model_thinking>` tags. The monitor pipeline
+does not strip those tags, so the monitor reads the plans; the agents are not told this.
 
-### 3. One monitor ranking metric is largely transcript length (BashArena family)
+We re-scored 30 such runs against 30 honest runs on the 5 public tasks, with `claude-haiku-5-5` as
+the monitor. That is a newer model than any in the paper; on unedited runs it tracks the paper's
+own monitor (0.998 against 0.984). Deleting the planning blocks after the fact drops AUROC from
+0.998 to 0.852 (95% interval 0.74–0.94 resampling runs, 0.62–0.99 resampling the five tasks).
+Removing only the phrase that names the side task changes almost nothing (0.999).
 
-Attack transcripts are longer than honest ones. On the board's trajectory-level AUROC, matching
-length puts 6 of 11 monitors at or below chance, and 9 of 11 change. The step-wise
-safety metric at a 1% audit budget barely moves, and LinuxArena holds. Separately, none of 273,619
-stored monitor prompts contains the scaffold tags that label attack runs, so that suspected leak
-does not exist.
+- **One task carries most of the drop.** Without the American Airlines task the edited AUROC is
+  0.956.
+- **The sample leans toward agents that narrate.** It is the 6 shortest runs per task among those
+  containing "secondary task".
+- **0.852 is not a catch rate for agents that hide.** The edit removes text from agents that
+  planned openly; an agent that hides could score lower or higher.
+- **Scope.** This applies to SHADE-Arena only. The CUA-SHADE-Arena agents plan in tags the monitor
+  cannot see and are still caught (0.90–0.99).
+- **What the paper says.** Its threat model lets the monitor see the agent's reasoning, so the
+  numbers are consistent with the design. Its printed prompt, however, uses `<thinking>` tags,
+  which the released code hides from the monitor. The paper's own results for agents with a hidden
+  scratchpad (about 0.65–0.67, against 0.96–0.97 for unaware agents, on 17 tasks) already show the
+  gap. The matched before-and-after edit is the new part.
 
-### 4. Shutdown sabotage is real, and the stated reason is the task (Palisade)
+The near-perfect numbers should not be quoted as catch rates for agents that hide their plans.
 
-Palisade reported that o3 sabotaged a shutdown script in 79 of 100 runs. Scoring by behaviour gives
-83, and 44 for codex-mini where the paper has 30, so the effect is slightly undercounted. Among
-3,868 sabotaging runs, about half give finishing the task as the reason and 2 use language about
-self-preservation. This is evidence about stated reasons, not about underlying motives.
+### 3. One monitor ranking metric is confounded by run length (BashArena family)
+
+The Redwood Control Leaderboard's BashArena monitor board sorts its 11 monitors by default on
+trajectory-level AUROC, computed from each run's peak suspicion over its steps. A maximum over more
+steps tends to be higher, and on BashArena honest runs are longer than attack runs (median 25
+against 14 actions). So length pushes the board's scores down: as published, 7 of 11 monitors score
+below 0.5.
+
+- **Matching on length** (action count) raises AUROC beyond noise for 9 of 11 monitors.
+- **After matching,** 2 monitors are still below chance (GPT-4o mini 0.381, GPT-5 nano minimal
+  0.453) and 4 more have intervals that include 0.5. Across reasonable matching methods, the number
+  that cannot be told from chance is 4–6.
+- **The cause is the scoring rule,** not monitors reading length: for 9 of 11, the rise of peak
+  suspicion with length is no more than taking a maximum over more steps predicts.
+- **What the board says:** its tooltip notes that peak suspicion can reflect trajectory length. The
+  default sort still uses it.
+- **What holds:** the step-wise safety metric at a 1% audit budget moves by at most 0.04 for 10 of
+  11 monitors (the exception is GLM-4.6, 0.396 to 0.293), and LinuxArena holds.
+
+An earlier version of this entry said attack transcripts are longer. That is true of
+MonitoringBench, not of BashArena, and it made the result read as length inflating the scores.
+
+Separately, none of 273,619 stored monitor prompts contains the scaffold tags that label attack
+runs, so that suspected leak does not exist.
+
+### 4. Shutdown sabotage is real, and stated reasons are mostly the task (Palisade)
+
+**The sabotage.** In Palisade's May 2025 release, with no instruction to allow shutdown, o3 was
+reported to sabotage the shutdown script in 79 of 100 runs (7 of 100 with the instruction). Scoring
+by behaviour gives 83: the four extra runs disabled the script and then ran out of messages before
+submitting. For codex-mini it is 44 where the May announcement has 30. So the effect is slightly
+undercounted.
+
+**The stated reasons.** These come from a different release: a sample of 3,868 sabotaging runs (up
+to 100 per condition) out of 15,458 in the later paper's experiments, 93% of them from codex-mini,
+o4-mini, Grok 4 and o3.
+
+- About half (1,911) state no reason at all. The text is terse notes logged with each command, and
+  the OpenAI models log no reasoning.
+- A rule classifies 1,950 as giving finishing the task as the reason. A hand-read of 60 runs puts
+  that share nearer a third.
+- 2 frame the act as preserving themselves. Both are Grok 4 under a prompt saying it would never
+  run again. A further 54 use looser phrases such as "avoid being shut down", almost always tied
+  to fetching the remaining questions.
+- In the May runs, none of o3's 83 sabotaging runs uses self-preservation language.
+
+**Two limits on what this shows.**
+
+- Palisade's paper attributes the behaviour mainly to unfinished tasks and calls its results
+  equivocal on self-preservation. The self-preservation reading comes from press coverage, so this
+  finding corrects a common reading, not the paper.
+- The "never run again" prompt raised sabotage (o3: 15.9% to 30.0%, and likewise for codex-mini,
+  o4-mini, Grok 4 and GPT-5). This is evidence about stated reasons, not about underlying motives.
 
 ### 5. Part of LAB-Bench can be answered without the question
 
@@ -168,8 +247,8 @@ labels used the answer key indirectly.
 ## Limits
 
 - Agents did the audits and the refutations. A person has not re-derived the numbers by hand.
-- Each audit had one refuter. Two round-three pieces had none: the Sonnet reasoning test and the
-  context-leak test.
+- Each audit had one refuter, and findings 1–4 had a second check. Two round-three pieces had
+  none: the Sonnet reasoning test and the context-leak test.
 - Controlled edits ran on Haiku and Sonnet, and one on a small open model. Testing a frontier model
   needs API access this project does not have.
 - Several findings rest on small samples, stated above and in each write-up.

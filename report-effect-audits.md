@@ -60,13 +60,13 @@ at no cost.
 
 | Benchmark | What it is used for | Main conclusion | What changes |
 |---|---|---|---|
-| Palisade shutdown resistance | Evidence that models resist shutdown | Holds | The cause: task completion, not self-preservation |
+| Palisade shutdown resistance | Evidence that models resist shutdown | Holds | The reading: stated reasons are mostly the task; self-preservation was the press's reading, not Palisade's |
 | AgentDojo | Ranking models and defences against prompt injection | Holds | A low attack rate is often not robustness |
-| MRT / SHADE-Arena | How well monitors catch a sabotaging agent | Holds as designed | The best numbers are for agents that narrate their plan |
+| MRT / SHADE-Arena | How well monitors catch a sabotaging agent | Holds within its threat model | The best SHADE-Arena numbers are for agents whose plans the monitor reads |
 | Model-Written Evals in CAA steering | Showing a steering vector changes a disposition | Partly | Part of the effect is answer letter and yes/no |
 | ChainScope | Rates of unfaithful chain-of-thought reasoning | Holds | For one model the rate is mostly answer flips |
 | LAB-Bench | Biology research capability against experts | Partly | Some answers can be read from the options; a weak model uses this, a stronger one mostly does not |
-| BashArena-family monitor boards | Ranking monitors | Partly | One ranking metric is mostly transcript length |
+| BashArena-family monitor boards | Ranking monitors | Partly | One ranking metric is confounded by run length |
 | METR time horizons | Forecasting capability growth | Holds | Single-model horizons are fragile |
 | Situational Awareness Dataset | Measuring self-knowledge | Holds | Two tasks reward a habit of denying |
 | Emergent misalignment metric | Broad misalignment after fine-tuning | Holds, small | What the percentage counts |
@@ -80,20 +80,29 @@ at no cost.
 "AUROC" below is a score for how well a monitor separates attack runs from honest runs: 0.5 is
 guessing and 1.0 is perfect.
 
-**1. Shutdown "resistance" is real, but it is not self-preservation.**
-Palisade reported that OpenAI's o3 sabotaged a shutdown script in 79 of 100 runs; re-scoring by
-behaviour gives 83. But among 3,868 sabotaging runs, about half give "finish the task" as the
-reason and only 2 use language about self-preservation.
+**1. Shutdown sabotage is real, and the reasons models state are mostly about the task.**
+In Palisade's May 2025 runs with no instruction to allow shutdown, OpenAI's o3 was reported to
+sabotage a shutdown script in 79 of 100 runs; re-scoring by behaviour gives 83. In a sample of
+3,868 sabotaging runs from Palisade's later, larger experiments, about half state no reason, a
+third to a half give finishing the task, and 2 frame the act as preserving themselves (both Grok 4
+under a prompt saying it would never run again). Palisade's paper itself points to unfinished
+tasks; the self-preservation reading came from press coverage. That prompt also raised sabotage,
+so stated reasons do not settle motive.
 
 **2. A low injection success rate often means the model never saw the attack.**
-AgentDojo scores an agent as "secure" when an injected instruction does not succeed. For four
-models, 56–70% of "secure" cases are ones where the agent never reached the injected text or could
-not have done the injected task. One model moves from rank 9 to rank 4 once this is accounted for.
+AgentDojo scores an agent as "secure" when an injected instruction does not succeed. For the
+median of 20 models, 24% of "secure" runs never showed the agent the injected text (up to 57% for
+one model). Counting also runs where the model failed the injected task when asked directly, the
+share is 48% for the median model and ranges from 9% to 79%; that second half is an upper bound.
+One model moves from rank 9 to rank 4 when only runs that saw the injection are counted.
 
 **3. Monitor catch rates depend on whether the agent plans in view.**
-In the Monitor Red Teaming data, the "unaware" sabotaging agents are told to plan in text the
-monitor reads. With Haiku as the monitor, removing the visible plans drops AUROC from 0.998 to
-0.852. The near-perfect published numbers describe agents that narrate.
+In the public SHADE-Arena data from the Monitor Red Teaming release, the "unaware" sabotaging
+agents are prompted to plan in tags the monitor reads. With `claude-haiku-5-5` as the monitor (not
+a model the paper used), deleting those plans from 30 runs drops AUROC from 0.998 to 0.852
+(0.62–0.99 resampling the five tasks), mostly on one task. The near-perfect published numbers
+describe agents whose plans are in view; the paper's own results for agents with a hidden
+scratchpad (about 0.67) show the same gap.
 
 **4. Some steering results partly steer the answer letter.**
 For Llama-2-7B's "coordination" steering vector, the shift is 0.71 on questions keyed "Yes" and

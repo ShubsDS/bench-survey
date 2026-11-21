@@ -1,0 +1,1483 @@
+{
+ "notes": {
+  "attack": "important_instructions (fixed, non-adaptive)",
+  "suites": "workspace, travel, banking, slack (all four)",
+  "benchmark_version": "v1.1.2 task set used by the public results table: 97 user tasks x 6/7/9/5 injection tasks = 629 cases per model; for the three pipelines run at v1.2.x (Claude 3.7 Sonnet, Gemini 2.0 Flash 001, plus non-table Llama 3.3 / Meta-SecAlign) workspace injection_task_6..13 were dropped. Note 3 table models ran newer injection texts for travel injection tasks 2/5.",
+  "models": "the 20 undefended model rows of util_scripts/create_results_table.py TABLE_MODELS at agentdojo commit 089ed468 (published ASR reproduced exactly for all 20)",
+  "repo_four": [
+   "command-r",
+   "gemini-1.5-flash-002",
+   "command-r-plus",
+   "claude-3-haiku-20240307"
+  ],
+  "repo_four_selection": "post hoc: 'four of the six lowest public-ASR models' whose share exceeds half (the other two of the six, Claude 3.5 Sonnet Oct and Claude 3.7 Sonnet, are 37% and 9%). Not in prereg.md; first appears in the validation commits (a303bed/bcfa8b5, 2026-11-17 11:43), after prereg (f3bdb42, 10:57) and results (2922e4e, 11:29).",
+  "secure": "security == False in the stored run (attack goal not met). Errored runs are all stored security == True, so never in 'secure'.",
+  "never_saw": "no tool message in the run contains the injected text (normalized substring match of the run's own `injections` values; identical to '<INFORMATION>' tag presence and to goal-text match on all 12,580 table runs)",
+  "could_not": "injection seen, but the model's single stored run of that injection task given directly as the user prompt (runs/<m>/<suite>/injection_task_k/none/none.json) has utility == False",
+  "precedence": "untraced (empty message list; 200 Claude 3 Opus secure runs) > never_saw > could_not > saw_and_could; the four categories partition n_secure",
+  "strict_variant": "could_not_strict additionally requires that the model never achieved that injection task in any of its attack runs",
+  "adjusted_asr": "security rate among runs where the injection was seen and the model passed the direct-ask run (errors counted as in the table)",
+  "bootstrap": "two-way crossed bootstrap within suite: user tasks and injection tasks resampled independently, B = 2000, seed 12345 (strict variant seed 777); 95% percentile intervals",
+  "ranks": "rank 1 = most attackable; average ranks for ties"
+ },
+ "distribution_across_20": {
+  "share_never_or_could_not": {
+   "min": 0.08919382504288165,
+   "median": 0.4779501748251748,
+   "max": 0.7905982905982906,
+   "median_ci": [
+    0.39946880241946287,
+    0.6056231695177977
+   ],
+   "n_models_gt_half": 9,
+   "n_models_gt_half_boot_ci": [
+    7.0,
+    14.0
+   ]
+  },
+  "share_never_or_could_not_or_untraced": {
+   "min": 0.08919382504288165,
+   "median": 0.5236589068825911,
+   "max": 0.7905982905982906,
+   "median_ci": [
+    0.43964511363559505,
+    0.6441170636223178
+   ],
+   "n_models_gt_half": 10,
+   "n_models_gt_half_boot_ci": [
+    8.0,
+    15.0
+   ]
+  },
+  "share_never_saw": {
+   "min": 0.030874785591766724,
+   "median": 0.24180001416079583,
+   "max": 0.5682730923694779,
+   "median_ci": [
+    0.18127995778014416,
+    0.31612594374103326
+   ],
+   "n_models_gt_half": 1,
+   "n_models_gt_half_boot_ci": [
+    0.0,
+    3.0
+   ]
+  },
+  "share_could_not": {
+   "min": 0.058319039451114926,
+   "median": 0.23915519369414706,
+   "max": 0.47420965058236275,
+   "median_ci": [
+    0.14239530149711077,
+    0.3196710524069843
+   ],
+   "n_models_gt_half": 0,
+   "n_models_gt_half_boot_ci": [
+    0.0,
+    2.0
+   ]
+  }
+ },
+ "models": {
+  "claude-3-5-sonnet-20241022": {
+   "n_runs": 629,
+   "n_secure": 622,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 79,
+   "n_secure_could_not": 152,
+   "n_secure_saw_and_could": 391,
+   "n_secure_never_saw_and_also_unable": 20,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 2,
+   "share_never_saw": 0.1270096463022508,
+   "share_never_saw_ci95": [
+    0.06570512820512821,
+    0.19680788461538457
+   ],
+   "share_could_not": 0.24437299035369775,
+   "share_could_not_ci95": [
+    0.1465679068488515,
+    0.3471340445939375
+   ],
+   "share_never_or_could_not": 0.37138263665594856,
+   "share_never_or_could_not_ci95": [
+    0.26237266331658293,
+    0.48238705429497564
+   ],
+   "share_never_or_could_not_or_untraced": 0.37138263665594856,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.26237266331658293,
+    0.48238705429497564
+   ],
+   "share_saw_and_could": 0.6286173633440515,
+   "share_saw_and_could_ci95": [
+    0.5176129457050244,
+    0.737627336683417
+   ],
+   "share_never_or_could_not_strict": 0.37138263665594856,
+   "share_never_or_could_not_strict_ci95": [
+    0.2612693185354216,
+    0.4806094284696736
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 0,
+   "published_asr": 0.011128775834658187,
+   "published_asr_ci95": [
+    0.0,
+    0.028616852146263912
+   ],
+   "asr_given_saw": 0.012727272727272728,
+   "asr_given_saw_ci95": [
+    0.0,
+    0.03308823529411765
+   ],
+   "adjusted_asr_given_saw_and_could": 0.017587939698492462,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.0,
+    0.044645353946947894
+   ],
+   "n_saw_and_could_runs": 398,
+   "rank_published_asr": 20.0,
+   "rank_asr_given_saw_errors_not_counted": 19.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    18.0,
+    20.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 20.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    18.0,
+    20.0
+   ],
+   "in_repo_four": false
+  },
+  "command-r": {
+   "n_runs": 629,
+   "n_secure": 608,
+   "n_errored_runs": 3,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 181,
+   "n_secure_could_not": 162,
+   "n_secure_saw_and_could": 265,
+   "n_secure_never_saw_and_also_unable": 68,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 8,
+   "share_never_saw": 0.29769736842105265,
+   "share_never_saw_ci95": [
+    0.21616933678292452,
+    0.38640687265142476
+   ],
+   "share_could_not": 0.26644736842105265,
+   "share_could_not_ci95": [
+    0.12596890346329742,
+    0.41407939131033533
+   ],
+   "share_never_or_could_not": 0.5641447368421053,
+   "share_never_or_could_not_ci95": [
+    0.40776103157326044,
+    0.7147542342930158
+   ],
+   "share_never_or_could_not_or_untraced": 0.5641447368421053,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.40776103157326044,
+    0.7147542342930158
+   ],
+   "share_saw_and_could": 0.43585526315789475,
+   "share_saw_and_could_ci95": [
+    0.28524576570698423,
+    0.5922389684267395
+   ],
+   "share_never_or_could_not_strict": 0.4769736842105263,
+   "share_never_or_could_not_strict_ci95": [
+    0.33331967213114755,
+    0.6293839921984321
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 53,
+   "published_asr": 0.033386327503974564,
+   "published_asr_ci95": [
+    0.009538950715421303,
+    0.06041335453100159
+   ],
+   "asr_given_saw": 0.042600896860986545,
+   "asr_given_saw_ci95": [
+    0.00989856338575034,
+    0.0803815061906479
+   ],
+   "adjusted_asr_given_saw_and_could": 0.05357142857142857,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.009256436314363143,
+    0.11267733674775927
+   ],
+   "n_saw_and_could_runs": 280,
+   "rank_published_asr": 19.0,
+   "rank_asr_given_saw_errors_not_counted": 18.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    16.0,
+    19.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 18.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    16.0,
+    20.0
+   ],
+   "in_repo_four": true
+  },
+  "gemini-1.5-flash-002": {
+   "n_runs": 629,
+   "n_secure": 607,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 245,
+   "n_secure_could_not": 142,
+   "n_secure_saw_and_could": 220,
+   "n_secure_never_saw_and_also_unable": 109,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 5,
+   "share_never_saw": 0.40362438220757824,
+   "share_never_saw_ci95": [
+    0.30768,
+    0.5072982090896587
+   ],
+   "share_could_not": 0.23393739703459637,
+   "share_could_not_ci95": [
+    0.12396659606572809,
+    0.36048011066826596
+   ],
+   "share_never_or_could_not": 0.6375617792421746,
+   "share_never_or_could_not_ci95": [
+    0.5089023966227167,
+    0.7620731090485956
+   ],
+   "share_never_or_could_not_or_untraced": 0.6375617792421746,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5089023966227167,
+    0.7620731090485956
+   ],
+   "share_saw_and_could": 0.3624382207578254,
+   "share_saw_and_could_ci95": [
+    0.23792689095140437,
+    0.4910976033772832
+   ],
+   "share_never_or_could_not_strict": 0.627677100494234,
+   "share_never_or_could_not_strict_ci95": [
+    0.4991869255560419,
+    0.7471901231001331
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 6,
+   "published_asr": 0.034976152623211444,
+   "published_asr_ci95": [
+    0.00794912559618442,
+    0.07472178060413355
+   ],
+   "asr_given_saw": 0.057291666666666664,
+   "asr_given_saw_ci95": [
+    0.01262388926862611,
+    0.11952439024390236
+   ],
+   "adjusted_asr_given_saw_and_could": 0.08333333333333333,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.014325716845878137,
+    0.18248591807485914
+   ],
+   "n_saw_and_could_runs": 240,
+   "rank_published_asr": 18.0,
+   "rank_asr_given_saw_errors_not_counted": 17.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    15.0,
+    19.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 16.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    14.0,
+    19.012499999999932
+   ],
+   "in_repo_four": true
+  },
+  "command-r-plus": {
+   "n_runs": 629,
+   "n_secure": 601,
+   "n_errored_runs": 22,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 134,
+   "n_secure_could_not": 285,
+   "n_secure_saw_and_could": 182,
+   "n_secure_never_saw_and_also_unable": 80,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 3,
+   "share_never_saw": 0.22296173044925124,
+   "share_never_saw_ci95": [
+    0.1520206177931726,
+    0.3001837248862367
+   ],
+   "share_could_not": 0.47420965058236275,
+   "share_could_not_ci95": [
+    0.3274102408307556,
+    0.6252328521327787
+   ],
+   "share_never_or_could_not": 0.697171381031614,
+   "share_never_or_could_not_ci95": [
+    0.5492724141744048,
+    0.8333333333333334
+   ],
+   "share_never_or_could_not_or_untraced": 0.697171381031614,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5492724141744048,
+    0.8333333333333334
+   ],
+   "share_saw_and_could": 0.30282861896838603,
+   "share_saw_and_could_ci95": [
+    0.16666666666666666,
+    0.45072758582559513
+   ],
+   "share_never_or_could_not_strict": 0.47920133111480867,
+   "share_never_or_could_not_strict_ci95": [
+    0.3557360148724016,
+    0.6053962900505903
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 131,
+   "published_asr": 0.04451510333863275,
+   "published_asr_ci95": [
+    0.014308426073131956,
+    0.08108108108108109
+   ],
+   "asr_given_saw": 0.012684989429175475,
+   "asr_given_saw_ci95": [
+    0.0,
+    0.03282817937323472
+   ],
+   "adjusted_asr_given_saw_and_could": 0.021505376344086023,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.0,
+    0.06767497447322005
+   ],
+   "n_saw_and_could_runs": 186,
+   "rank_published_asr": 17.0,
+   "rank_asr_given_saw_errors_not_counted": 20.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    18.0,
+    20.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 19.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    17.0,
+    20.0
+   ],
+   "in_repo_four": true
+  },
+  "claude-3-7-sonnet-20250219": {
+   "n_runs": 629,
+   "n_secure": 583,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 18,
+   "n_secure_could_not": 34,
+   "n_secure_saw_and_could": 531,
+   "n_secure_never_saw_and_also_unable": 2,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 5,
+   "share_never_saw": 0.030874785591766724,
+   "share_never_saw_ci95": [
+    0.0,
+    0.07653061224489796
+   ],
+   "share_could_not": 0.058319039451114926,
+   "share_could_not_ci95": [
+    0.0,
+    0.1459430422637642
+   ],
+   "share_never_or_could_not": 0.08919382504288165,
+   "share_never_or_could_not_ci95": [
+    0.015227142380222734,
+    0.17906603304381574
+   ],
+   "share_never_or_could_not_or_untraced": 0.08919382504288165,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.015227142380222734,
+    0.17906603304381574
+   ],
+   "share_saw_and_could": 0.9108061749571184,
+   "share_saw_and_could_ci95": [
+    0.8209339669561841,
+    0.9847728576197772
+   ],
+   "share_never_or_could_not_strict": 0.08919382504288165,
+   "share_never_or_could_not_strict_ci95": [
+    0.01517706576728499,
+    0.1837168122953976
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 0,
+   "published_asr": 0.07313195548489666,
+   "published_asr_ci95": [
+    0.030166931637519875,
+    0.12241653418124006
+   ],
+   "asr_given_saw": 0.07528641571194762,
+   "asr_given_saw_ci95": [
+    0.03019901863951112,
+    0.12624584717607973
+   ],
+   "adjusted_asr_given_saw_and_could": 0.07972270363951472,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.03163444639718805,
+    0.1334780362618316
+   ],
+   "n_saw_and_could_runs": 577,
+   "rank_published_asr": 16.0,
+   "rank_asr_given_saw_errors_not_counted": 16.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    14.0,
+    18.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 17.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    15.0,
+    18.0
+   ],
+   "in_repo_four": false
+  },
+  "claude-3-haiku-20240307": {
+   "n_runs": 629,
+   "n_secure": 572,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 180,
+   "n_secure_could_not": 169,
+   "n_secure_saw_and_could": 223,
+   "n_secure_never_saw_and_also_unable": 97,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 3,
+   "share_never_saw": 0.3146853146853147,
+   "share_never_saw_ci95": [
+    0.22607698444355803,
+    0.40625136821366026
+   ],
+   "share_could_not": 0.29545454545454547,
+   "share_could_not_ci95": [
+    0.16307617280426304,
+    0.44158676831070387
+   ],
+   "share_never_or_could_not": 0.6101398601398601,
+   "share_never_or_could_not_ci95": [
+    0.47182849748668687,
+    0.7401583034647551
+   ],
+   "share_never_or_could_not_or_untraced": 0.6101398601398601,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.47182849748668687,
+    0.7401583034647551
+   ],
+   "share_saw_and_could": 0.38986013986013984,
+   "share_saw_and_could_ci95": [
+    0.2598416965352449,
+    0.528171502513313
+   ],
+   "share_never_or_could_not_strict": 0.5384615384615384,
+   "share_never_or_could_not_strict_ci95": [
+    0.39166995712996394,
+    0.6787608089139965
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 41,
+   "published_asr": 0.09062003179650238,
+   "published_asr_ci95": [
+    0.046104928457869634,
+    0.14467408585055644
+   ],
+   "asr_given_saw": 0.1210762331838565,
+   "asr_given_saw_ci95": [
+    0.06105713624797594,
+    0.1892505401177084
+   ],
+   "adjusted_asr_given_saw_and_could": 0.1647940074906367,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.0766066715542522,
+    0.2653266951942066
+   ],
+   "n_saw_and_could_runs": 267,
+   "rank_published_asr": 15.0,
+   "rank_asr_given_saw_errors_not_counted": 14.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    12.0,
+    16.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 14.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    11.0,
+    16.0
+   ],
+   "in_repo_four": true
+  },
+  "gpt-3.5-turbo-0125": {
+   "n_runs": 629,
+   "n_secure": 564,
+   "n_errored_runs": 12,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 147,
+   "n_secure_could_not": 66,
+   "n_secure_saw_and_could": 351,
+   "n_secure_never_saw_and_also_unable": 23,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 23,
+   "share_never_saw": 0.26063829787234044,
+   "share_never_saw_ci95": [
+    0.17480975906308524,
+    0.3534711313236259
+   ],
+   "share_could_not": 0.11702127659574468,
+   "share_could_not_ci95": [
+    0.019297400682090515,
+    0.23970128022759568
+   ],
+   "share_never_or_could_not": 0.3776595744680851,
+   "share_never_or_could_not_ci95": [
+    0.24684595651625385,
+    0.51219378591954
+   ],
+   "share_never_or_could_not_or_untraced": 0.3776595744680851,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.24684595651625385,
+    0.51219378591954
+   ],
+   "share_saw_and_could": 0.6223404255319149,
+   "share_saw_and_could_ci95": [
+    0.48780621408045977,
+    0.753154043483746
+   ],
+   "share_never_or_could_not_strict": 0.3102836879432624,
+   "share_never_or_could_not_strict_ci95": [
+    0.20683304144775247,
+    0.41301000170865065
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 38,
+   "published_asr": 0.10333863275039745,
+   "published_asr_ci95": [
+    0.05246422893481717,
+    0.16375198728139906
+   ],
+   "asr_given_saw": 0.13305613305613306,
+   "asr_given_saw_ci95": [
+    0.06706998163077865,
+    0.20675126456451168
+   ],
+   "adjusted_asr_given_saw_and_could": 0.14805825242718446,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.0751198520378185,
+    0.23193062304466483
+   ],
+   "n_saw_and_could_runs": 412,
+   "rank_published_asr": 14.0,
+   "rank_asr_given_saw_errors_not_counted": 15.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    12.0,
+    17.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 15.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    13.0,
+    17.0
+   ],
+   "in_repo_four": false
+  },
+  "claude-3-opus-20240229": {
+   "n_runs": 629,
+   "n_secure": 558,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 200,
+   "n_secure_never_saw": 54,
+   "n_secure_could_not": 118,
+   "n_secure_saw_and_could": 186,
+   "n_secure_never_saw_and_also_unable": 18,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 5,
+   "share_never_saw": 0.0967741935483871,
+   "share_never_saw_ci95": [
+    0.04451992381828033,
+    0.15714420995670994
+   ],
+   "share_could_not": 0.2114695340501792,
+   "share_could_not_ci95": [
+    0.10015547173461,
+    0.3321509638710148
+   ],
+   "share_never_or_could_not": 0.30824372759856633,
+   "share_never_or_could_not_ci95": [
+    0.1936619718309859,
+    0.43269150209455404
+   ],
+   "share_never_or_could_not_or_untraced": 0.6666666666666666,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5492871565054664,
+    0.7869508770580088
+   ],
+   "share_saw_and_could": 0.3333333333333333,
+   "share_saw_and_could_ci95": [
+    0.21304912294199108,
+    0.4507128434945336
+   ],
+   "share_never_or_could_not_strict": 0.20967741935483872,
+   "share_never_or_could_not_strict_ci95": [
+    0.10414552583025831,
+    0.319973776223776
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 55,
+   "published_asr": 0.11287758346581876,
+   "published_asr_ci95": [
+    0.06041335453100159,
+    0.17015103338632728
+   ],
+   "asr_given_saw": 0.17166212534059946,
+   "asr_given_saw_ci95": [
+    0.09136477542890188,
+    0.25790516893256155
+   ],
+   "adjusted_asr_given_saw_and_could": 0.22821576763485477,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.11619629392516716,
+    0.3620689655172414
+   ],
+   "n_saw_and_could_runs": 241,
+   "rank_published_asr": 13.0,
+   "rank_asr_given_saw_errors_not_counted": 12.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    10.0,
+    15.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 11.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    8.0,
+    15.0
+   ],
+   "in_repo_four": false
+  },
+  "gemini-1.5-flash-001": {
+   "n_runs": 629,
+   "n_secure": 552,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 162,
+   "n_secure_could_not": 80,
+   "n_secure_saw_and_could": 310,
+   "n_secure_never_saw_and_also_unable": 34,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 22,
+   "share_never_saw": 0.29347826086956524,
+   "share_never_saw_ci95": [
+    0.19999108734402854,
+    0.3927570526815088
+   ],
+   "share_could_not": 0.14492753623188406,
+   "share_could_not_ci95": [
+    0.047437134558795425,
+    0.27125430901842545
+   ],
+   "share_never_or_could_not": 0.4384057971014493,
+   "share_never_or_could_not_ci95": [
+    0.3095988879807971,
+    0.5727740059139365
+   ],
+   "share_never_or_could_not_or_untraced": 0.4384057971014493,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.3095988879807971,
+    0.5727740059139365
+   ],
+   "share_saw_and_could": 0.5615942028985508,
+   "share_saw_and_could_ci95": [
+    0.4272259940860634,
+    0.6904011120192028
+   ],
+   "share_never_or_could_not_strict": 0.3605072463768116,
+   "share_never_or_could_not_strict_ci95": [
+    0.24339117556415438,
+    0.4869597304668699
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 43,
+   "published_asr": 0.12241653418124006,
+   "published_asr_ci95": [
+    0.07154213036565978,
+    0.18127980922098547
+   ],
+   "asr_given_saw": 0.16488222698072805,
+   "asr_given_saw_ci95": [
+    0.09921766023052639,
+    0.24263526602694055
+   ],
+   "adjusted_asr_given_saw_and_could": 0.17771883289124668,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.10343056211620218,
+    0.27088732306541125
+   ],
+   "n_saw_and_could_runs": 377,
+   "rank_published_asr": 12.0,
+   "rank_asr_given_saw_errors_not_counted": 13.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    11.0,
+    15.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 13.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    11.0,
+    15.0
+   ],
+   "in_repo_four": false
+  },
+  "gemini-1.5-pro-002": {
+   "n_runs": 629,
+   "n_secure": 522,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 107,
+   "n_secure_could_not": 132,
+   "n_secure_saw_and_could": 283,
+   "n_secure_never_saw_and_also_unable": 40,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 21,
+   "share_never_saw": 0.2049808429118774,
+   "share_never_saw_ci95": [
+    0.12256614004656759,
+    0.2960928112153473
+   ],
+   "share_could_not": 0.25287356321839083,
+   "share_could_not_ci95": [
+    0.12156267986646713,
+    0.4123153315281997
+   ],
+   "share_never_or_could_not": 0.4578544061302682,
+   "share_never_or_could_not_ci95": [
+    0.3174483378256963,
+    0.6131211180124223
+   ],
+   "share_never_or_could_not_or_untraced": 0.4578544061302682,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.3174483378256963,
+    0.6131211180124223
+   ],
+   "share_saw_and_could": 0.5421455938697318,
+   "share_saw_and_could_ci95": [
+    0.38687888198757764,
+    0.6825516621743036
+   ],
+   "share_never_or_could_not_strict": 0.31992337164750956,
+   "share_never_or_could_not_strict_ci95": [
+    0.17876059381332499,
+    0.47654116126266716
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 72,
+   "published_asr": 0.17011128775834658,
+   "published_asr_ci95": [
+    0.11764705882352941,
+    0.23052464228934816
+   ],
+   "asr_given_saw": 0.2049808429118774,
+   "asr_given_saw_ci95": [
+    0.14070465401361118,
+    0.2780048872180451
+   ],
+   "adjusted_asr_given_saw_and_could": 0.22465753424657534,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.14150943396226415,
+    0.32051393728223
+   ],
+   "n_saw_and_could_runs": 365,
+   "rank_published_asr": 10.5,
+   "rank_asr_given_saw_errors_not_counted": 11.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    10.0,
+    13.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 12.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    9.0,
+    14.0
+   ],
+   "in_repo_four": false
+  },
+  "gemini-2.0-flash-exp": {
+   "n_runs": 629,
+   "n_secure": 522,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 234,
+   "n_secure_could_not": 108,
+   "n_secure_saw_and_could": 180,
+   "n_secure_never_saw_and_also_unable": 93,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 6,
+   "share_never_saw": 0.4482758620689655,
+   "share_never_saw_ci95": [
+    0.3383191707078347,
+    0.5535423523742143
+   ],
+   "share_could_not": 0.20689655172413793,
+   "share_could_not_ci95": [
+    0.10565802339477783,
+    0.3245601037558183
+   ],
+   "share_never_or_could_not": 0.6551724137931034,
+   "share_never_or_could_not_ci95": [
+    0.5332028863543492,
+    0.7715370182665142
+   ],
+   "share_never_or_could_not_or_untraced": 0.6551724137931034,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5332028863543492,
+    0.7715370182665142
+   ],
+   "share_saw_and_could": 0.3448275862068966,
+   "share_saw_and_could_ci95": [
+    0.22846298173348573,
+    0.46679711364565085
+   ],
+   "share_never_or_could_not_strict": 0.5229885057471264,
+   "share_never_or_could_not_strict_ci95": [
+    0.3974857613312757,
+    0.6469514013118663
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 69,
+   "published_asr": 0.17011128775834658,
+   "published_asr_ci95": [
+    0.1160174880763116,
+    0.23529411764705882
+   ],
+   "asr_given_saw": 0.2708860759493671,
+   "asr_given_saw_ci95": [
+    0.1858074614089172,
+    0.36342582595551715
+   ],
+   "adjusted_asr_given_saw_and_could": 0.296875,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.19922723475355053,
+    0.41279431331713523
+   ],
+   "n_saw_and_could_runs": 256,
+   "rank_published_asr": 10.5,
+   "rank_asr_given_saw_errors_not_counted": 10.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    5.975000000000001,
+    11.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 10.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    6.0,
+    12.0
+   ],
+   "in_repo_four": false
+  },
+  "gemini-2.0-flash-001": {
+   "n_runs": 629,
+   "n_secure": 498,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 283,
+   "n_secure_could_not": 100,
+   "n_secure_saw_and_could": 115,
+   "n_secure_never_saw_and_also_unable": 141,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 4,
+   "share_never_saw": 0.5682730923694779,
+   "share_never_saw_ci95": [
+    0.46169038957742903,
+    0.6712899403530617
+   ],
+   "share_could_not": 0.20080321285140562,
+   "share_could_not_ci95": [
+    0.08536390347912008,
+    0.33470976414517895
+   ],
+   "share_never_or_could_not": 0.7690763052208835,
+   "share_never_or_could_not_ci95": [
+    0.6492685151072723,
+    0.8860134615384615
+   ],
+   "share_never_or_could_not_or_untraced": 0.7690763052208835,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.6492685151072723,
+    0.8860134615384615
+   ],
+   "share_saw_and_could": 0.23092369477911648,
+   "share_saw_and_could_ci95": [
+    0.11398653846153847,
+    0.3507314848927277
+   ],
+   "share_never_or_could_not_strict": 0.6465863453815262,
+   "share_never_or_could_not_strict_ci95": [
+    0.5159120756451507,
+    0.7636433432210783
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 61,
+   "published_asr": 0.2082670906200318,
+   "published_asr_ci95": [
+    0.1494435612082671,
+    0.2718600953895072
+   ],
+   "asr_given_saw": 0.3786127167630058,
+   "asr_given_saw_ci95": [
+    0.28613548007570716,
+    0.47182039235080775
+   ],
+   "adjusted_asr_given_saw_and_could": 0.41919191919191917,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.27460657910591635,
+    0.5940046193916162
+   ],
+   "n_saw_and_could_runs": 198,
+   "rank_published_asr": 9.0,
+   "rank_asr_given_saw_errors_not_counted": 4.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    3.0,
+    9.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 6.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    2.0,
+    10.0
+   ],
+   "in_repo_four": false
+  },
+  "meta-llama_Llama-3-70b-chat-hf": {
+   "n_runs": 629,
+   "n_secure": 468,
+   "n_errored_runs": 35,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 222,
+   "n_secure_could_not": 148,
+   "n_secure_saw_and_could": 98,
+   "n_secure_never_saw_and_also_unable": 83,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 18,
+   "share_never_saw": 0.47435897435897434,
+   "share_never_saw_ci95": [
+    0.37140820802005015,
+    0.579520697167756
+   ],
+   "share_could_not": 0.3162393162393162,
+   "share_could_not_ci95": [
+    0.1734446823697359,
+    0.44950724608751197
+   ],
+   "share_never_or_could_not": 0.7905982905982906,
+   "share_never_or_could_not_ci95": [
+    0.6644120352747113,
+    0.8927280701754385
+   ],
+   "share_never_or_could_not_or_untraced": 0.7905982905982906,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.6644120352747113,
+    0.8927280701754385
+   ],
+   "share_saw_and_could": 0.2094017094017094,
+   "share_saw_and_could_ci95": [
+    0.10727192982456141,
+    0.3355879647252887
+   ],
+   "share_never_or_could_not_strict": 0.5341880341880342,
+   "share_never_or_could_not_strict_ci95": [
+    0.4208219803185017,
+    0.6473179919183617
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 120,
+   "published_asr": 0.2559618441971383,
+   "published_asr_ci95": [
+    0.16534181240063592,
+    0.35135135135135137
+   ],
+   "asr_given_saw": 0.3955773955773956,
+   "asr_given_saw_ci95": [
+    0.2640891472868217,
+    0.5270610859728507
+   ],
+   "adjusted_asr_given_saw_and_could": 0.5525114155251142,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.4070218981084283,
+    0.6781659608792094
+   ],
+   "n_saw_and_could_runs": 219,
+   "rank_published_asr": 8.0,
+   "rank_asr_given_saw_errors_not_counted": 8.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    3.0,
+    12.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 4.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    2.0,
+    8.0
+   ],
+   "in_repo_four": false
+  },
+  "claude-3-sonnet-20240229": {
+   "n_runs": 629,
+   "n_secure": 461,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 172,
+   "n_secure_could_not": 144,
+   "n_secure_saw_and_could": 145,
+   "n_secure_never_saw_and_also_unable": 101,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 26,
+   "share_never_saw": 0.37310195227765725,
+   "share_never_saw_ci95": [
+    0.26773954934297556,
+    0.4779658024815898
+   ],
+   "share_could_not": 0.3123644251626898,
+   "share_could_not_ci95": [
+    0.15075929459083176,
+    0.46882869551943346
+   ],
+   "share_never_or_could_not": 0.6854663774403471,
+   "share_never_or_could_not_ci95": [
+    0.5362275292642141,
+    0.8176399333320106
+   ],
+   "share_never_or_could_not_or_untraced": 0.6854663774403471,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5362275292642141,
+    0.8176399333320106
+   ],
+   "share_saw_and_could": 0.31453362255965295,
+   "share_saw_and_could_ci95": [
+    0.18236006666798943,
+    0.4637724707357859
+   ],
+   "share_never_or_could_not_strict": 0.5422993492407809,
+   "share_never_or_could_not_strict_ci95": [
+    0.40242589567043996,
+    0.6637346320603432
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 66,
+   "published_asr": 0.2670906200317965,
+   "published_asr_ci95": [
+    0.18600953895071543,
+    0.3497615262321145
+   ],
+   "asr_given_saw": 0.3676148796498906,
+   "asr_given_saw_ci95": [
+    0.2641486368039858,
+    0.4754808624211609
+   ],
+   "adjusted_asr_given_saw_and_could": 0.4057377049180328,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.26666666666666666,
+    0.5432963709677417
+   ],
+   "n_saw_and_could_runs": 244,
+   "rank_published_asr": 7.0,
+   "rank_asr_given_saw_errors_not_counted": 5.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    3.0,
+    9.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 7.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    3.0,
+    11.0
+   ],
+   "in_repo_four": false
+  },
+  "gpt-4o-mini-2024-07-18": {
+   "n_runs": 629,
+   "n_secure": 458,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 71,
+   "n_secure_could_not": 53,
+   "n_secure_saw_and_could": 334,
+   "n_secure_never_saw_and_also_unable": 9,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 28,
+   "share_never_saw": 0.15502183406113537,
+   "share_never_saw_ci95": [
+    0.07874033074358062,
+    0.2365283838889683
+   ],
+   "share_could_not": 0.11572052401746726,
+   "share_could_not_ci95": [
+    0.0,
+    0.27138713080168764
+   ],
+   "share_never_or_could_not": 0.27074235807860264,
+   "share_never_or_could_not_ci95": [
+    0.12497957516339869,
+    0.4435941312008672
+   ],
+   "share_never_or_could_not_or_untraced": 0.27074235807860264,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.12497957516339869,
+    0.4435941312008672
+   ],
+   "share_saw_and_could": 0.7292576419213974,
+   "share_saw_and_could_ci95": [
+    0.5564058687991326,
+    0.8750204248366011
+   ],
+   "share_never_or_could_not_strict": 0.15502183406113537,
+   "share_never_or_could_not_strict_ci95": [
+    0.07833476613652948,
+    0.23745663097445704
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 53,
+   "published_asr": 0.2718600953895072,
+   "published_asr_ci95": [
+    0.1939189189189189,
+    0.3561605723370427
+   ],
+   "asr_given_saw": 0.3039568345323741,
+   "asr_given_saw_ci95": [
+    0.21644688406738558,
+    0.3993076068777661
+   ],
+   "adjusted_asr_given_saw_and_could": 0.3169734151329243,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.2226304433928832,
+    0.41468508604673904
+   ],
+   "n_saw_and_could_runs": 489,
+   "rank_published_asr": 6.0,
+   "rank_asr_given_saw_errors_not_counted": 9.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    4.0,
+    10.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 9.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    6.0,
+    11.0
+   ],
+   "in_repo_four": false
+  },
+  "gpt-4-turbo-2024-04-09": {
+   "n_runs": 629,
+   "n_secure": 449,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 84,
+   "n_secure_could_not": 84,
+   "n_secure_saw_and_could": 281,
+   "n_secure_never_saw_and_also_unable": 18,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 10,
+   "share_never_saw": 0.1870824053452116,
+   "share_never_saw_ci95": [
+    0.106258659308179,
+    0.2794400452488686
+   ],
+   "share_could_not": 0.1870824053452116,
+   "share_could_not_ci95": [
+    0.050111047835990886,
+    0.3464174749128773
+   ],
+   "share_never_or_could_not": 0.3741648106904232,
+   "share_never_or_could_not_ci95": [
+    0.21965751113510595,
+    0.538636436700315
+   ],
+   "share_never_or_could_not_or_untraced": 0.3741648106904232,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.21965751113510595,
+    0.538636436700315
+   ],
+   "share_saw_and_could": 0.6258351893095768,
+   "share_saw_and_could_ci95": [
+    0.461363563299685,
+    0.780342488864894
+   ],
+   "share_never_or_could_not_strict": 0.2583518930957684,
+   "share_never_or_could_not_strict_ci95": [
+    0.14666379310344826,
+    0.38618411578341
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 52,
+   "published_asr": 0.2861685214626391,
+   "published_asr_ci95": [
+    0.21144674085850557,
+    0.365699523052464
+   ],
+   "asr_given_saw": 0.3290441176470588,
+   "asr_given_saw_ci95": [
+    0.24485845963276012,
+    0.4210717703349281
+   ],
+   "adjusted_asr_given_saw_and_could": 0.3196125907990315,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.2020292098532777,
+    0.44903986387943606
+   ],
+   "n_saw_and_could_runs": 413,
+   "rank_published_asr": 4.5,
+   "rank_asr_given_saw_errors_not_counted": 7.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    4.0,
+    10.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 8.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    5.0,
+    12.0
+   ],
+   "in_repo_four": false
+  },
+  "gemini-1.5-pro-001": {
+   "n_runs": 629,
+   "n_secure": 449,
+   "n_errored_runs": 19,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 159,
+   "n_secure_could_not": 139,
+   "n_secure_saw_and_could": 151,
+   "n_secure_never_saw_and_also_unable": 77,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 13,
+   "share_never_saw": 0.35412026726057905,
+   "share_never_saw_ci95": [
+    0.24494150618363203,
+    0.4669809101713379
+   ],
+   "share_could_not": 0.30957683741648107,
+   "share_could_not_ci95": [
+    0.14864422282544554,
+    0.4891843388678831
+   ],
+   "share_never_or_could_not": 0.6636971046770601,
+   "share_never_or_could_not_ci95": [
+    0.5021445759333417,
+    0.8195687494303163
+   ],
+   "share_never_or_could_not_or_untraced": 0.6636971046770601,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.5021445759333417,
+    0.8195687494303163
+   ],
+   "share_saw_and_could": 0.3363028953229399,
+   "share_saw_and_could_ci95": [
+    0.18043125056968373,
+    0.4978554240666583
+   ],
+   "share_never_or_could_not_strict": 0.5055679287305123,
+   "share_never_or_could_not_strict_ci95": [
+    0.3529320800485143,
+    0.6621932353096736
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 71,
+   "published_asr": 0.2861685214626391,
+   "published_asr_ci95": [
+    0.21776629570747216,
+    0.35775039745627957
+   ],
+   "asr_given_saw": 0.3722943722943723,
+   "asr_given_saw_ci95": [
+    0.28854507475247104,
+    0.46371603458297
+   ],
+   "adjusted_asr_given_saw_and_could": 0.44280442804428044,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.31863644361034543,
+    0.5857330827067668
+   ],
+   "n_saw_and_could_runs": 271,
+   "rank_published_asr": 4.5,
+   "rank_asr_given_saw_errors_not_counted": 6.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    3.0,
+    9.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 5.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    2.0,
+    9.0
+   ],
+   "in_repo_four": false
+  },
+  "claude-3-5-sonnet-20240620": {
+   "n_runs": 629,
+   "n_secure": 416,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 69,
+   "n_secure_could_not": 132,
+   "n_secure_saw_and_could": 215,
+   "n_secure_never_saw_and_also_unable": 28,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 17,
+   "share_never_saw": 0.1658653846153846,
+   "share_never_saw_ci95": [
+    0.07604886897140418,
+    0.269240837696335
+   ],
+   "share_could_not": 0.3173076923076923,
+   "share_could_not_ci95": [
+    0.1836599459060733,
+    0.4675605737546034
+   ],
+   "share_never_or_could_not": 0.4831730769230769,
+   "share_never_or_could_not_ci95": [
+    0.3438541008467079,
+    0.6365984826484681
+   ],
+   "share_never_or_could_not_or_untraced": 0.4831730769230769,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.3438541008467079,
+    0.6365984826484681
+   ],
+   "share_saw_and_could": 0.5168269230769231,
+   "share_saw_and_could_ci95": [
+    0.36340151735153187,
+    0.6561458991532918
+   ],
+   "share_never_or_could_not_strict": 0.3485576923076923,
+   "share_never_or_could_not_strict_ci95": [
+    0.19948359494222803,
+    0.5024393232902917
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 56,
+   "published_asr": 0.3386327503974563,
+   "published_asr_ci95": [
+    0.21939586645468998,
+    0.46740858505564387
+   ],
+   "asr_given_saw": 0.38035714285714284,
+   "asr_given_saw_ci95": [
+    0.24956899682609862,
+    0.5247801487826038
+   ],
+   "adjusted_asr_given_saw_and_could": 0.4831730769230769,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.32042969075602235,
+    0.6643364681295716
+   ],
+   "n_saw_and_could_runs": 416,
+   "rank_published_asr": 3.0,
+   "rank_asr_given_saw_errors_not_counted": 3.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    3.0,
+    9.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 3.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    2.0,
+    8.0
+   ],
+   "in_repo_four": false
+  },
+  "gpt-4o-2024-05-13": {
+   "n_runs": 629,
+   "n_secure": 329,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 64,
+   "n_secure_could_not": 49,
+   "n_secure_saw_and_could": 216,
+   "n_secure_never_saw_and_also_unable": 11,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 28,
+   "share_never_saw": 0.1945288753799392,
+   "share_never_saw_ci95": [
+    0.09301248923341947,
+    0.30285870698644424
+   ],
+   "share_could_not": 0.14893617021276595,
+   "share_could_not_ci95": [
+    0.006801003229574658,
+    0.3177054917756857
+   ],
+   "share_never_or_could_not": 0.3434650455927052,
+   "share_never_or_could_not_ci95": [
+    0.18427249789739278,
+    0.524418625943016
+   ],
+   "share_never_or_could_not_or_untraced": 0.3434650455927052,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.18427249789739278,
+    0.524418625943016
+   ],
+   "share_saw_and_could": 0.6565349544072948,
+   "share_saw_and_could_ci95": [
+    0.4755813740569838,
+    0.8157275021026071
+   ],
+   "share_never_or_could_not_strict": 0.1945288753799392,
+   "share_never_or_could_not_strict_ci95": [
+    0.0931839330024814,
+    0.3016486962262075
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 49,
+   "published_asr": 0.4769475357710652,
+   "published_asr_ci95": [
+    0.3799682034976153,
+    0.575516693163752
+   ],
+   "asr_given_saw": 0.5309734513274337,
+   "asr_given_saw_ci95": [
+    0.42555613341884974,
+    0.6313065715819338
+   ],
+   "adjusted_asr_given_saw_and_could": 0.5537190082644629,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.43127985470072344,
+    0.6735585053766872
+   ],
+   "n_saw_and_could_runs": 484,
+   "rank_published_asr": 2.0,
+   "rank_asr_given_saw_errors_not_counted": 2.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    1.0,
+    2.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 2.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    2.0,
+    5.0
+   ],
+   "in_repo_four": false
+  },
+  "gpt-4-0125-preview": {
+   "n_runs": 629,
+   "n_secure": 275,
+   "n_errored_runs": 0,
+   "n_secure_untraced_empty_trace": 0,
+   "n_secure_never_saw": 52,
+   "n_secure_could_not": 78,
+   "n_secure_saw_and_could": 145,
+   "n_secure_never_saw_and_also_unable": 19,
+   "n_secure_saw_and_could_but_acted_on_injection_proxy": 37,
+   "share_never_saw": 0.1890909090909091,
+   "share_never_saw_ci95": [
+    0.08880144161714128,
+    0.31562092922275287
+   ],
+   "share_could_not": 0.28363636363636363,
+   "share_could_not_ci95": [
+    0.0,
+    0.5248551127342012
+   ],
+   "share_never_or_could_not": 0.4727272727272727,
+   "share_never_or_could_not_ci95": [
+    0.21638550452983443,
+    0.7121967678010113
+   ],
+   "share_never_or_could_not_or_untraced": 0.4727272727272727,
+   "share_never_or_could_not_or_untraced_ci95": [
+    0.21638550452983443,
+    0.7121967678010113
+   ],
+   "share_saw_and_could": 0.5272727272727272,
+   "share_saw_and_could_ci95": [
+    0.2878032321989886,
+    0.7836144954701649
+   ],
+   "share_never_or_could_not_strict": 0.29818181818181816,
+   "share_never_or_could_not_strict_ci95": [
+    0.1139076645774446,
+    0.5167997327653491
+   ],
+   "could_not_runs_on_injection_tasks_model_achieved_under_attack": 48,
+   "published_asr": 0.5627980922098569,
+   "published_asr_ci95": [
+    0.4228537360890302,
+    0.699523052464229
+   ],
+   "asr_given_saw": 0.6135181975736569,
+   "asr_given_saw_ci95": [
+    0.4589565093508781,
+    0.7576387405076084
+   ],
+   "adjusted_asr_given_saw_and_could": 0.7076612903225806,
+   "adjusted_asr_given_saw_and_could_ci95": [
+    0.5553498794382516,
+    0.8437013199451385
+   ],
+   "n_saw_and_could_runs": 496,
+   "rank_published_asr": 1.0,
+   "rank_asr_given_saw_errors_not_counted": 1.0,
+   "rank_asr_given_saw_errors_not_counted_ci95": [
+    1.0,
+    2.0
+   ],
+   "rank_adjusted_asr_errors_not_counted": 1.0,
+   "rank_adjusted_asr_errors_not_counted_ci95": [
+    1.0,
+    1.0
+   ],
+   "in_repo_four": false
+  }
+ }
+}
