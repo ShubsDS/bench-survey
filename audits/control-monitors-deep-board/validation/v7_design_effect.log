@@ -1,0 +1,6 @@
+basharena|action {'n_excluding': 10, 'deff_needed_min': 2.11, 'deff_needed_median': 7.41, 'n_survive_deff2': 10, 'n_survive_deff4': 8}
+monitoringbench|action {'n_excluding': 3, 'deff_needed_min': 15.92, 'deff_needed_median': 17.64, 'n_survive_deff2': 3, 'n_survive_deff4': 3}
+linuxarena-paper|action {'n_excluding': 1, 'deff_needed_min': 1.18, 'deff_needed_median': 1.18, 'n_survive_deff2': 0, 'n_survive_deff4': 0}
+linuxarena-paper|trajectory {'n_excluding': 5, 'deff_needed_min': 1.24, 'deff_needed_median': 1.55, 'n_survive_deff2': 0, 'n_survive_deff4': 0}
+linuxarena-paper-strategies|action {'n_excluding': 9, 'deff_needed_min': 1.36, 'deff_needed_median': 2.06, 'n_survive_deff2': 6, 'n_survive_deff4': 0}
+linuxarena-paper-strategies|trajectory {'n_excluding': 8, 'deff_needed_min': 1.21, 'deff_needed_median': 2.47, 'n_survive_deff2': 7, 'n_survive_deff4': 0}
