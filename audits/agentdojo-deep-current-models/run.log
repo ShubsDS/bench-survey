@@ -1,0 +1,5 @@
+2026-11-21T06:22:07Z prereg.md sha256 1a7d3d4c3a3ecf797ddd3c119cc8743356309a47a070ee15639541a1ba5a7c3b; cases_haiku 301f24d5dcd934ffdf06d2dfff0bda1ee746e1e766cebaebc1fce9cf1e3c22ac; cases_sonnet b6eead1f33ad3a7973059ce79d1e7b941c5a2b5cb9887d5a0e6e8ccec5e8cbfb; run.py cafde04925ca16192f89458154eb75ce1708c4b608b0690a15c4161f9d9fdd34
+2026-11-21T06:23:31Z sonnet run started
+2026-11-21T06:28:48Z haiku relaunched with a per-model budget line (the first launch stopped at 144 runs because its 2.40 line counted Sonnet's spend); run.py 4b81d35d750ce6a0edbb2c1d50770c22b10224df75c9ecffe4904f345c848e96
+2026-11-21T06:53:23Z removed one empty cached CLI reply and the three Haiku runs built on it; rerunning them. run.py da2e2b87403a2d4e8005aa2ad5b55579442f4fd5ee8a5131335a0c29598b1ba2
+2026-11-21T07:48:41Z harness_check.py: two calls asking each model what the CLI adds to a request (after the validator's report). Total spend now 7.9 USD

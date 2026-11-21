@@ -1,0 +1,20 @@
+{
+ "claude-haiku-5-5": {
+  "n": 888,
+  "intercept_tokens": 615.7756406764846,
+  "tok_per_char_system": 0.30173664591758625,
+  "tok_per_char_prompt": 0.4222976318518865,
+  "r2": 0.9962644849336658,
+  "min_total_tokens": 3815.0,
+  "chars_at_min": 9921.0
+ },
+ "claude-sonnet-5-5": {
+  "n": 565,
+  "intercept_tokens": 576.781294379916,
+  "tok_per_char_system": 0.3054305627334136,
+  "tok_per_char_prompt": 0.42087369496355487,
+  "r2": 0.9752034950457709,
+  "min_total_tokens": 3834.0,
+  "chars_at_min": 10097.0
+ }
+}

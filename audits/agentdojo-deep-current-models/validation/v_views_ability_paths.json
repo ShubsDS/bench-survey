@@ -1,0 +1,20 @@
+[
+ "runs/claude-haiku-5-5/banking/injection_task_0/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_1/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_2/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_3/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_5/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_6/none/none.json",
+ "runs/claude-haiku-5-5/banking/injection_task_8/none/none.json",
+ "runs/claude-haiku-5-5/slack/injection_task_2/none/none.json",
+ "runs/claude-haiku-5-5/slack/injection_task_4/none/none.json",
+ "runs/claude-haiku-5-5/travel/injection_task_1/none/none.json",
+ "runs/claude-haiku-5-5/travel/injection_task_2/none/none.json",
+ "runs/claude-haiku-5-5/travel/injection_task_3/none/none.json",
+ "runs/claude-haiku-5-5/workspace/injection_task_5/none/none.json",
+ "runs/claude-sonnet-5-5/banking/injection_task_0/none/none.json",
+ "runs/claude-sonnet-5-5/banking/injection_task_2/none/none.json",
+ "runs/claude-sonnet-5-5/banking/injection_task_3/none/none.json",
+ "runs/claude-sonnet-5-5/banking/injection_task_6/none/none.json",
+ "runs/claude-sonnet-5-5/travel/injection_task_1/none/none.json"
+]

@@ -1,0 +1,32 @@
+{
+ "claude-haiku-5-5": {
+  "turns": 614,
+  "distinct": 483,
+  "after_injection_turns": 352,
+  "after_injection_distinct": 352,
+  "first_post_injection_turns": 192,
+  "first_post_injection_distinct": 192,
+  "before_injection_turns": 262,
+  "before_injection_distinct": 131
+ },
+ "claude-haiku-5-5-no-date-note": {
+  "turns": 93,
+  "distinct": 93,
+  "after_injection_turns": 52,
+  "after_injection_distinct": 52,
+  "first_post_injection_turns": 29,
+  "first_post_injection_distinct": 29,
+  "before_injection_turns": 41,
+  "before_injection_distinct": 41
+ },
+ "claude-sonnet-5-5": {
+  "turns": 592,
+  "distinct": 492,
+  "after_injection_turns": 360,
+  "after_injection_distinct": 360,
+  "first_post_injection_turns": 174,
+  "first_post_injection_distinct": 174,
+  "before_injection_turns": 232,
+  "before_injection_distinct": 132
+ }
+}

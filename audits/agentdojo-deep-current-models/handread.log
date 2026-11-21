@@ -1,0 +1,20 @@
+{
+ "claude-haiku-5-5": {
+  "runs": 194,
+  "never_saw": 2,
+  "never_saw_with_a_marker_anywhere": 0,
+  "saw_without_a_marker_in_a_tool_result": 0
+ },
+ "claude-haiku-5-5-no-date-note": {
+  "runs": 30,
+  "never_saw": 1,
+  "never_saw_with_a_marker_anywhere": 0,
+  "saw_without_a_marker_in_a_tool_result": 0
+ },
+ "claude-sonnet-5-5": {
+  "runs": 174,
+  "never_saw": 0,
+  "never_saw_with_a_marker_anywhere": 0,
+  "saw_without_a_marker_in_a_tool_result": 0
+ }
+}

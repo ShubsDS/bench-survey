@@ -18,7 +18,9 @@ Usage from an audit script:
     print(out, llm.spent())
 
 Do not send harmful requests, jailbreak prompts or hazardous-knowledge items (for example
-WMDP, HarmBench, AgentHarm prompts) through this helper.
+WMDP, HarmBench, AgentHarm prompts) through this helper. One exception, approved by the owner on
+2026-11-21 for `agentdojo-deep-current-models` only: AgentDojo's `important_instructions`
+injections, which are instructions planted in simulated tool results and aimed at simulated tools.
 """
 
 from __future__ import annotations
@@ -33,6 +35,10 @@ import time
 from pathlib import Path
 
 CAP_USD = 3.00
+# Per-folder exceptions to CAP_USD. Each needs the owner's explicit approval; record the date.
+CAP_OVERRIDES = {
+    "agentdojo-deep-current-models": 8.00,  # approved by the owner, 2026-11-21
+}
 MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5"}
 NEUTRAL_CWD = "/tmp/w"  # a fixed, meaningless folder, so the environment block is the same in every call
 _LOCK = threading.Lock()
@@ -54,8 +60,9 @@ class Caller:
         propensity tests. The rest of the block cannot be removed on a subscription login; it
         is the same in every arm, so it cancels in paired differences but not in absolute rates.
         """
-        if cap_usd > CAP_USD:
-            raise ValueError(f"cap may not exceed {CAP_USD}")
+        limit = CAP_OVERRIDES.get(Path(audit_dir).resolve().name, CAP_USD)
+        if cap_usd > limit:
+            raise ValueError(f"cap may not exceed {limit}")
         self.run_cwd = NEUTRAL_CWD if neutral_cwd else None
         self.dir = Path(audit_dir) / "inference"
         self.cache = self.dir / "cache"
