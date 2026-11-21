@@ -60,7 +60,7 @@ at no cost.
 
 | Benchmark | What it is used for | Main conclusion | What changes |
 |---|---|---|---|
-| Palisade shutdown resistance | Evidence that models resist shutdown | Holds | The reading: stated reasons are mostly the task; self-preservation was the press's reading, not Palisade's |
+| Palisade shutdown resistance | Evidence that models resist shutdown | Holds | The reading: stated reasons are mostly the task, not self-preservation |
 | AgentDojo | Ranking models and defences against prompt injection | Holds | A low attack rate is often not robustness |
 | MRT / SHADE-Arena | How well monitors catch a sabotaging agent | Holds within its threat model | The best SHADE-Arena numbers are for agents whose plans the monitor reads |
 | Model-Written Evals in CAA steering | Showing a steering vector changes a disposition | Partly | Part of the effect is answer letter and yes/no |
@@ -86,7 +86,8 @@ sabotage a shutdown script in 79 of 100 runs; re-scoring by behaviour gives 83. 
 3,868 sabotaging runs from Palisade's later, larger experiments, about half state no reason, a
 third to a half give finishing the task, and 2 frame the act as preserving themselves (both Grok 4
 under a prompt saying it would never run again). Palisade's paper itself points to unfinished
-tasks; the self-preservation reading came from press coverage. That prompt also raised sabotage,
+tasks, though its July 2025 write-up also raises self-preservation as a hypothesis; the strong
+self-preservation reading is in press coverage. That prompt also raised sabotage,
 so stated reasons do not settle motive.
 
 **2. A low injection success rate often means the model never saw the attack.**
