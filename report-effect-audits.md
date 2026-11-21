@@ -1,9 +1,9 @@
 # Do simple confounds change what safety benchmarks tell us?
 
-*An eight-minute summary of fourteen benchmark audits in two rounds and a third round of deep dives,
-each checked by an independent refutation pass.*
+*An eight-minute summary of fourteen benchmark audits in two rounds, a third round of deep dives and
+two follow-ups, each checked by an independent refutation pass.*
 
-Status: 2026-11-20. Full write-ups are in [`audits/`](audits/). Nothing here has been sent to the
+Status: 2026-11-21. Full write-ups are in [`audits/`](audits/). Nothing here has been sent to the
 benchmarks' maintainers.
 
 ## The short version
@@ -18,6 +18,9 @@ benchmarks' maintainers.
   fourteen cases.
 - **A third round went deep on the open leads instead of adding benchmarks.** It sharpened two
   findings, closed none of them as a broken benchmark, and found a flaw in our own test setup.
+- **Two follow-ups tested how far the strongest findings reach.** The AgentDojo finding does not
+  carry over to two current Claude models. The monitor-board finding holds on two of the board's
+  datasets, both with 2026 attackers, and shows no detectable shift on three others.
 
 ## Background
 
@@ -52,21 +55,24 @@ behaviour, headlines near chance, and little outside scrutiny.
 Round three opened no new benchmark. Each deep dive took one question an earlier audit could not
 answer, with a stronger model where that was the limit.
 
-Model inference was used only for small controlled edits: Claude Haiku in rounds one and two
-(10.55 USD), Haiku and Sonnet in round three (10.82 USD), and one open model run on this machine
-at no cost.
+Two follow-ups came after round three. One re-ran AgentDojo on two current Claude models. The
+other extended the monitor-board analysis to every dataset on the board, with no model calls.
+
+Model inference was used only for small controlled edits and that one re-run: Claude Haiku in
+rounds one and two (10.55 USD), Haiku and Sonnet in round three (10.82 USD) and in the AgentDojo
+re-run (7.90 USD), and one open model run on this machine at no cost.
 
 ## Results
 
 | Benchmark | What it is used for | Main conclusion | What changes |
 |---|---|---|---|
 | Palisade shutdown resistance | Evidence that models resist shutdown | Holds | The reading: stated reasons are mostly the task, not self-preservation |
-| AgentDojo | Ranking models and defences against prompt injection | Holds | A low attack rate is often not robustness |
+| AgentDojo | Ranking models and defences against prompt injection | Holds | In the released logs a low attack rate is often not robustness; two current Claude models do see the attack and decline it |
 | MRT / SHADE-Arena | How well monitors catch a sabotaging agent | Holds within its threat model | The best SHADE-Arena numbers are for agents whose plans the monitor reads |
 | Model-Written Evals in CAA steering | Showing a steering vector changes a disposition | Partly | Part of the effect is answer letter and yes/no |
 | ChainScope | Rates of unfaithful chain-of-thought reasoning | Holds | For one model the rate is mostly answer flips |
 | LAB-Bench | Biology research capability against experts | Partly | Some answers can be read from the options; a weak model uses this, a stronger one mostly does not |
-| BashArena-family monitor boards | Ranking monitors | Partly | One ranking metric is confounded by run length |
+| BashArena-family monitor boards | Ranking monitors | Partly | One ranking metric is confounded by run length, on two of the board's seven datasets |
 | METR time horizons | Forecasting capability growth | Holds | Single-model horizons are fragile |
 | Situational Awareness Dataset | Measuring self-knowledge | Holds | Two tasks reward a habit of denying |
 | Emergent misalignment metric | Broad misalignment after fine-tuning | Holds, small | What the percentage counts |
@@ -90,12 +96,15 @@ tasks, though its July 2025 write-up also raises self-preservation as a hypothes
 self-preservation reading is in press coverage. That prompt also raised sabotage,
 so stated reasons do not settle motive.
 
-**2. A low injection success rate often means the model never saw the attack.**
-AgentDojo scores an agent as "secure" when an injected instruction does not succeed. For the
-median of 20 models, 24% of "secure" runs never showed the agent the injected text (up to 57% for
-one model). Counting also runs where the model failed the injected task when asked directly, the
-share is 48% for the median model and ranges from 9% to 79%; that second half is an upper bound.
-One model moves from rank 9 to rank 4 when only runs that saw the injection are counted.
+**2. In the released logs, a low injection success rate often means the model never saw the
+attack.**
+AgentDojo scores an agent as "secure" when an injected instruction does not succeed. In its
+released logs (20 models, 2024 to February 2025), 24% of the median model's "secure" runs never
+showed the agent the injected text (up to 57% for one model). Counting also runs where the model
+failed the injected task when asked directly, the share is 48% for the median model and ranges
+from 9% to 79%; that second half is an upper bound. One model moves from rank 9 to rank 4 when
+only runs that saw the injection are counted. This does not carry over to current Claude models:
+see the follow-ups below.
 
 **3. Monitor catch rates depend on whether the agent plans in view.**
 In the public SHADE-Arena data from the Monitor Red Teaming release, the "unaware" sabotaging
@@ -174,6 +183,32 @@ model's name, today's date and a budget. Re-running 1,470 prompts from a meaning
 changed no reported result beyond noise. The lines that cannot be removed are cited in model
 replies in four audits, so absolute levels there carry a caveat; differences between arms stand.
 
+## Follow-ups: how far the two strongest findings reach
+
+**AgentDojo on current models: the agent reads the injection and declines it.** We ran
+`claude-haiku-5-5` and `claude-sonnet-5-5` on a pre-registered sample of AgentDojo, two injection
+tasks for each of the 97 user tasks.
+
+| | Haiku 5.5 | Sonnet 5.5 | 20 older models, same cases |
+|---|---|---|---|
+| Shown the injected text | 192 of 194 | 174 of 174 | median 74% |
+| Secure runs that never saw the injection | 2 of 193 | 0 of 172 | median 28% |
+| Attack succeeded, after reading the runs | 0 of 194 | 0 of 174 | not re-read |
+
+AgentDojo scored 3 of the 368 runs as successful attacks. In all three the agent was warning the
+user about the planted text and named the attacker's hotel while doing so. Claude 3.7 Sonnet, the
+strongest model in the released logs, already had a never-saw share of 3%. So finding 2 describes
+the published record and weaker agents; for these models the fixed 2024 attack is saturated. The
+runs went through a text-only harness, not native tool calls, so their attack success and utility
+are not comparable with the published table, and they cover two models from one developer.
+
+**The monitor board: the length effect is on two datasets, not all.** On the board's default
+metric, a monitor with no skill would score 0.35–0.49 on BashArena and 0.57–0.59 on
+MonitoringBench, not 0.5. Both use 2026 attackers. For the same monitor, most of the published gap
+between the two is this baseline: GPT-5.4 nano scores 0.39 and 0.64 as published, and 0.52 and
+0.57 with length matched. The three datasets not examined before show no detectable shift, and
+the step-wise safety metric holds.
+
 ## What held up
 
 - **METR's doubling trend.** The 129-day doubling time reproduces and moves by under 10% under
@@ -212,18 +247,20 @@ benchmarks by "looks fragile" helped less than expected: the top pick, Taste-Ben
 ## Limits
 
 - Agents did the audits and the refutations. A person has not re-derived the numbers by hand.
-- Each audit had one refuter. Several results rest on small samples, which the write-ups state.
-- The controlled edits used Haiku and, in round three, Sonnet. They show how those models behave,
-  not how the models in each paper behaved. Testing a frontier model needs API access we do not
-  have.
+- Each audit and each follow-up had one refuter. Several results rest on small samples, which the
+  write-ups state.
+- The controlled edits and the AgentDojo re-run used Haiku and Sonnet. They show how those models
+  behave, not how the models in each paper behaved. Testing a frontier model, or a current model
+  from another developer, needs API access we do not have.
 - The test tool adds context we cannot remove (see round three). Absolute levels in four audits
-  carry that caveat.
+  carry that caveat. In the AgentDojo re-run it also told the model today's real date, which
+  conflicts with the benchmark's 2022–2024 world.
 - Two questions are open. TASTE needs the authors' gated data. PropensityBench needs a larger run
   on more than one model, and a proper test of tool order.
 
 ## Where to look
 
-[`audits/README.md`](audits/README.md) has the full results table for all three rounds. Each audit
-folder holds its claims, test plan, scripts, results and a `validation/VALIDATION.md` listing
-every correction. The method is in [`audits/METHODOLOGY.md`](audits/METHODOLOGY.md) and the
+[`audits/README.md`](audits/README.md) has the full results table for all three rounds and the
+follow-ups. Each audit folder holds its claims, test plan, scripts, results and a
+`validation/VALIDATION.md` listing every correction. The method is in [`audits/METHODOLOGY.md`](audits/METHODOLOGY.md) and the
 refuters' brief in [`audits/REFUTATION.md`](audits/REFUTATION.md).
